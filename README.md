@@ -2,8 +2,8 @@
 
 The San Francisco Fog RFC club calendar, published as a subscribable `.ics` feed.
 
-**Subscribe:** `https://san-francisco-fog-rfc.github.io/fog-calendar/fog.ics` (or `https://calendar.fogrugby.com/fog.ics`)
-**Landing page:** `https://san-francisco-fog-rfc.github.io/fog-calendar/` (or `https://calendar.fogrugby.com/`)
+**Subscribe:** `https://san-francisco-fog-rfc.github.io/fog-calendar/fog.ics` (or `https://events.fogrugby.com/fog.ics`)
+**Landing page:** `https://san-francisco-fog-rfc.github.io/fog-calendar/` (or `https://events.fogrugby.com/`)
 
 ## How it works
 
@@ -36,7 +36,7 @@ Rules that keep the feed sane:
 2. **Settings → Pages → Source: Deploy from a branch → `main` / `/docs`.**
 3. **Settings → Actions → General → Workflow permissions: Read and write.**
 4. Push once (or run the workflow manually) to generate the first `fog.ics`.
-5. Optional: put the subscribe page behind `calendar.fogrugby.com` via a CNAME in `docs/` and a DNS record.
+5. Optional: put the subscribe page behind `events.fogrugby.com` via a CNAME in `docs/` and a DNS record.
 
 ## Local build
 
