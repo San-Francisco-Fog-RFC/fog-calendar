@@ -2,8 +2,8 @@
 
 The San Francisco Fog RFC club calendar, published as a subscribable `.ics` feed.
 
-**Subscribe:** `https://justinmelbourne.github.io/fog-calendar/fog.ics` (or `https://calendar.fogrugby.com/fog.ics`)
-**Landing page:** `https://justinmelbourne.github.io/fog-calendar/` (or `https://calendar.fogrugby.com/`)
+**Subscribe:** `https://san-francisco-fog-rfc.github.io/fog-calendar/fog.ics` (or `https://calendar.fogrugby.com/fog.ics`)
+**Landing page:** `https://san-francisco-fog-rfc.github.io/fog-calendar/` (or `https://calendar.fogrugby.com/`)
 
 ## How it works
 
