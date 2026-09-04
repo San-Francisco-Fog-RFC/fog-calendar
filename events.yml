@@ -1,0 +1,343 @@
+# San Francisco Fog RFC — club calendar (single source of truth for fog.ics)
+#
+# SOURCES
+#   • "SF Fog 2026–2027 Season Update" — Dany Samreth → players@ / FogRookies@, 2 Sep 2026 (preseason, league, playoffs, NorAm)
+#   • "Rucktacular 2026 SAN DIEGO" — Danny Jimenez (SD Armada) → club presidents, 3 Sep 2026 + weekend schedule graphic
+#   • Pathway to Rugby 2026 and 9/11 toast details — President, 3 Sep 2026
+#
+# HOW TO ADD/EDIT:  one entry per event. Commit to main → GitHub Action rebuilds docs/fog.ics.
+# Times are America/Los_Angeles. Leave `time:` out for all-day / TBD-kickoff events.
+# Location convention for matches: home = "San Francisco"; away = "TBC - <City>" until the venue is confirmed.
+#
+# Fields:
+#   id        stable slug, never change once published (it's the calendar UID)
+#   title     what shows on the calendar
+#   date      YYYY-MM-DD           (or multi-day: start: YYYY-MM-DD, end: YYYY-MM-DD — end is inclusive)
+#   time      HH:MM (24h, optional) end_time: HH:MM (optional, default +2h)
+#   location  free text
+#   category  fixture | training | pathway | tournament | social | board | community
+#   status    confirmed | tentative
+#   notes     description text (optional)
+#   url       link (optional)
+#   rrule     RFC5545 RRULE for repeating events (optional)
+#   exdates   list of YYYY-MM-DD to skip within a repeating event (optional)
+
+calendar_name: SF Fog Rugby
+calendar_url: https://www.fogrugby.com/season-fixtures-results
+
+events:
+
+# ---------------------------------------------------------------- September 2026
+  - id: 2026-09-11-memorial-toast
+    title: "Fog 9/11 Memorial Toast — Pilsner Inn"
+    date: 2026-09-11
+    time: "19:00"
+    end_time: "23:00"
+    location: Pilsner Inn, 225 Church St, San Francisco
+    category: social
+    status: confirmed
+    notes: "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome."
+
+# ---------------------------------------------------------------- Pathway to Rugby 2026 (Tue = Raymond Kimbell, Thu = Crocker Amazon)
+  - id: 2026-10-06-pathways-1
+    title: "Pathway to Rugby — Session 1"
+    date: 2026-10-06
+    time: "19:30"
+    end_time: "22:00"
+    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    category: pathway
+    status: confirmed
+    notes: "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one."
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-08-pathways-2
+    title: "Pathway to Rugby — Session 2"
+    date: 2026-10-08
+    time: "20:00"
+    end_time: "22:00"
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    category: pathway
+    status: confirmed
+    notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-13-pathways-3
+    title: "Pathway to Rugby — Session 3"
+    date: 2026-10-13
+    time: "20:00"
+    end_time: "22:00"
+    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    category: pathway
+    status: confirmed
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-15-pathways-4
+    title: "Pathway to Rugby — Session 4"
+    date: 2026-10-15
+    time: "20:00"
+    end_time: "22:00"
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    category: pathway
+    status: confirmed
+    notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-20-pathways-5
+    title: "Pathway to Rugby — Session 5"
+    date: 2026-10-20
+    time: "20:00"
+    end_time: "22:00"
+    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    category: pathway
+    status: confirmed
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-22-pathways-6
+    title: "Pathway to Rugby — Session 6"
+    date: 2026-10-22
+    time: "20:00"
+    end_time: "22:00"
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    category: pathway
+    status: confirmed
+    notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
+    url: https://www.fogrugby.com/p2r
+  - id: 2026-10-27-pathways-7
+    title: "Pathway to Rugby — Session 7"
+    date: 2026-10-27
+    time: "20:00"
+    end_time: "22:00"
+    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    category: pathway
+    status: confirmed
+    notes: "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there."
+    url: https://www.fogrugby.com/p2r
+
+# ---------------------------------------------------------------- Training (repeating, Tue/Thu 7:45–10pm)
+  - id: 2026-27-training
+    title: "Fog Training"
+    date: 2026-11-03   # recurring rule starts the week after the standalone first practice (29 Oct) so it isn't doubled up
+    time: "19:45"
+    end_time: "22:00"
+    location: San Francisco — field TBC weekly
+    category: training
+    status: confirmed
+    rrule: "FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z"
+    exdates:
+      - 2026-11-26   # Thanksgiving
+      - 2026-12-24
+      - 2026-12-29
+      - 2026-12-31
+      - 2027-01-05
+      - 2027-01-07
+      - 2027-01-12
+      - 2027-01-14
+    notes: "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
+
+  - id: 2026-10-29-first-preseason-practice
+    title: "First Preseason Practice"
+    date: 2026-10-29
+    time: "19:45"
+    end_time: "22:00"
+    location: San Francisco — field TBC
+    category: training
+    status: confirmed
+    notes: "Preseason 2026 kicks off. Pathways graduates — this is your first full-squad session."
+
+# ---------------------------------------------------------------- Preseason 2026 (email: tentative, may change)
+  - id: 2026-11-07-usf-away
+    title: "USF vs SF Fog — Away"
+    date: 2026-11-07
+    location: TBC - San Francisco
+    category: fixture
+    status: tentative
+    notes: "Preseason friendly. Kickoff TBD."
+  - id: 2026-11-14-usf-away
+    title: "USF vs SF Fog — Away"
+    date: 2026-11-14
+    location: TBC - San Francisco
+    category: fixture
+    status: tentative
+    notes: "Preseason friendly. Kickoff TBD."
+
+# ---------------------------------------------------------------- Rucktacular 2026, San Diego (Thu 3 – Sun 6 Dec)
+  - id: 2026-12-03-rucktacular-weekend
+    title: "Rucktacular 2026 — San Diego"
+    start: 2026-12-03
+    end: 2026-12-06
+    location: San Diego, CA
+    category: tournament
+    status: tentative
+    notes: "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat."
+    url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
+  - id: 2026-12-03-rucktacular-blacks-beach
+    title: "Rucktacular: Black's Beach Naked Rugby"
+    date: 2026-12-03
+    time: "14:00"
+    end_time: "18:00"
+    location: Black's Beach, San Diego
+    category: tournament
+    status: tentative
+    notes: "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm."
+  - id: 2026-12-04-rucktacular-presidents-meeting
+    title: "Rucktacular: Presidents' Meeting"
+    date: 2026-12-04
+    time: "16:00"
+    end_time: "17:30"
+    location: San Diego — location TBD
+    category: board
+    status: tentative
+    notes: "Club presidents meetup. Hotel check-in and welcome table open all day Friday."
+  - id: 2026-12-04-rucktacular-drink-up
+    title: "Rucktacular: Drink-Up at Number One Fifth"
+    date: 2026-12-04
+    time: "19:00"
+    end_time: "23:00"
+    location: Number One Fifth Ave, 3845 5th Ave, San Diego
+    category: social
+    status: tentative
+    notes: "Kick off the weekend together."
+  - id: 2026-12-05-rucktacular-tournament
+    title: "Rucktacular 2026 Tournament Day"
+    date: 2026-12-05
+    time: "07:00"
+    end_time: "17:00"
+    location: San Diego — pitch TBC
+    category: tournament
+    status: tentative
+    notes: "7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony."
+  - id: 2026-12-05-rucktacular-after-party
+    title: "Rucktacular: Official After Party at Rich's"
+    date: 2026-12-05
+    time: "21:00"
+    end_time: "23:59"
+    location: Rich's, 1051 University Ave, San Diego
+    category: social
+    status: tentative
+  - id: 2026-12-06-rucktacular-survivors-brunch
+    title: "Rucktacular: Survivors Brunch"
+    date: 2026-12-06
+    time: "10:00"
+    end_time: "12:00"
+    location: Uptown Tavern, 1236 University Ave, San Diego
+    category: social
+    status: tentative
+  - id: 2026-12-06-rucktacular-goodbye-drinks
+    title: "Rucktacular: Final Goodbye Drinks"
+    date: 2026-12-06
+    time: "12:00"
+    end_time: "14:00"
+    location: Number One Fifth Ave, 3845 5th Ave, San Diego
+    category: social
+    status: tentative
+
+# ---------------------------------------------------------------- Preseason closer
+  - id: 2026-12-12-preseason-closer
+    title: "Friendly TBD / Preseason closer"
+    date: 2026-12-12
+    location: TBD
+    category: fixture
+    status: tentative
+    notes: "Additional preseason friendlies may be added based on availability — details to players in early October."
+
+# ---------------------------------------------------------------- 2027 regular season
+  - id: 2027-01-19-regular-season-practice-begins
+    title: "Regular Season practice begins"
+    date: 2027-01-19
+    location: San Francisco
+    category: training
+    status: confirmed
+
+# ---------------------------------------------------------------- 2027 NCRFU Tier 3 League
+  - id: 2027-02-06-fresno-home
+    title: "SF Fog vs Fresno (H)"
+    date: 2027-02-06
+    location: San Francisco
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-02-20-ba-baracus-away
+    title: "BA Baracus vs SF Fog (A)"
+    date: 2027-02-20
+    location: TBC - San Francisco
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-02-27-berkeley-home
+    title: "SF Fog vs Berkeley (H)"
+    date: 2027-02-27
+    location: San Francisco
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-03-06-bye
+    title: "Bye Weekend"
+    date: 2027-03-06
+    category: fixture
+    status: confirmed
+  - id: 2027-03-13-golden-dogs-away
+    title: "Golden Dogs vs SF Fog (A)"
+    date: 2027-03-13
+    location: TBC - Fresno
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-03-20-mendocino-home
+    title: "SF Fog vs Mendocino Steam Donkeys (H)"
+    date: 2027-03-20
+    location: San Francisco
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-03-27-redding-away
+    title: "Redding vs SF Fog (A)"
+    date: 2027-03-27
+    location: TBC - Redding
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-04-03-bye
+    title: "Bye Weekend"
+    date: 2027-04-03
+    category: fixture
+    status: confirmed
+  - id: 2027-04-10-stanislaus-home
+    title: "SF Fog vs Stanislaus Harlots (H)"
+    date: 2027-04-10
+    location: San Francisco
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-04-17-marin-away
+    title: "Marin vs SF Fog (A)"
+    date: 2027-04-17
+    location: TBC - Marin
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+  - id: 2027-04-24-chico-away
+    title: "Chico vs SF Fog (A)"
+    date: 2027-04-24
+    location: TBC - Chico
+    category: fixture
+    status: confirmed
+    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+
+# ---------------------------------------------------------------- Playoffs (conditional)
+  - id: 2027-05-08-ncrfu-semifinals
+    title: "NCRFU Semifinals (if qualified)"
+    date: 2027-05-08
+    location: TBD
+    category: fixture
+    status: tentative
+  - id: 2027-05-15-ncrfu-finals
+    title: "NCRFU Finals (if qualified)"
+    date: 2027-05-15
+    location: TBD
+    category: fixture
+    status: tentative
+
+# ---------------------------------------------------------------- IGR NorAm 2027
+  - id: 2027-05-28-igr-noram
+    title: "IGR NorAm 2027 — New Orleans"
+    start: 2027-05-28
+    end: 2027-05-31
+    location: New Orleans, LA
+    category: tournament
+    status: confirmed
+    notes: "Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come."

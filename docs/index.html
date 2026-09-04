@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SF Fog Rugby — Club Calendar</title>
+<style>
+  :root{--fog-blue:#006EB6;--fog-blue-dark:#00243C;--fog-blue-light:#24A0F1;--ink:#0b0f14;--paper:#fff}
+  body{margin:0;font-family:"Futura PT","Jost",Futura,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.45}
+  main{max-width:640px;margin:0 auto;padding:48px 20px 80px}
+  .eyebrow{color:var(--fog-blue);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.75rem}
+  h1{font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:2rem;margin:.25rem 0 1rem;color:var(--fog-blue-dark)}
+  p{font-weight:500;margin:.5rem 0}
+  .btn{display:inline-block;background:var(--fog-blue);color:#fff;text-decoration:none;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px;border-radius:2px;margin:6px 8px 6px 0;font-size:.85rem}
+  .btn.secondary{background:var(--fog-blue-dark)}
+  code{background:#f1f4f7;padding:2px 6px;border-radius:2px;font-size:.9em;word-break:break-all}
+  h2{font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:1rem;margin-top:2rem;color:var(--fog-blue-dark)}
+  ol{padding-left:1.2em}
+  footer{margin-top:3rem;font-size:.8rem;color:#555}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">San Francisco Fog RFC</div>
+  <h1>Club Calendar</h1>
+  <p>Fixtures, training, Pathway to Rugby, tournaments and socials — one subscription, always current. Subscribe once and new dates appear automatically.</p>
+
+  <p>
+    <a class="btn" id="webcal" href="#">Subscribe (Apple / Outlook)</a>
+    <a class="btn secondary" id="gcal" href="#" target="_blank" rel="noopener">Add to Google Calendar</a>
+  </p>
+  <p>Or paste this URL into any calendar app as a subscription:<br><code id="url"></code></p>
+
+  <h2>How to subscribe</h2>
+  <ol>
+    <li><strong>iPhone / Mac:</strong> tap <em>Subscribe</em> above and accept. Updates arrive on their own.</li>
+    <li><strong>Google Calendar:</strong> tap <em>Add to Google Calendar</em>, or go to Other calendars → + → From URL and paste the link. Google refreshes every 12–24 h.</li>
+    <li><strong>Outlook:</strong> Add calendar → Subscribe from web → paste the link.</li>
+  </ol>
+  <p>Don't <em>import</em> the .ics file — that makes a one-off copy that never updates. Subscribe instead.</p>
+
+  <footer>Kickoff times marked TBD are set as all-day until confirmed. Source of truth: <code>events.yml</code> in this repository. Questions: <a href="mailto:secretary@fogrugby.com">secretary@fogrugby.com</a></footer>
+</main>
+<script>
+  const ics = new URL('fog.ics', location.href).href;
+  document.getElementById('url').textContent = ics;
+  document.getElementById('webcal').href = ics.replace(/^https?:/, 'webcal:');
+  document.getElementById('gcal').href = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(ics.replace(/^https?:/, 'webcal:'));
+</script>
+</body>
+</html>
