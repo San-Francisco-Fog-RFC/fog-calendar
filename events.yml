@@ -52,7 +52,7 @@ events:
     title: "Magnitude Coat Check (volunteers)"
     date: 2026-09-26
     time: "20:00"
-    end_time: "23:59"
+    end_time: "04:00"
     location: SVN West, 10 Van Ness Ave, San Francisco
     category: community
     status: confirmed
@@ -61,12 +61,12 @@ events:
   - id: 2026-09-27-folsom-sunscreen-booth
     title: "Folsom Street Fair Sunscreen Booth (volunteers)"
     date: 2026-09-27
-    time: "11:00"
-    end_time: "18:00"
+    time: "10:00"
+    end_time: "19:00"
     location: Folsom Street Fair, San Francisco
     category: community
     status: confirmed
-    notes: "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 11am and 6pm. Volunteer: fundraising@fogrugby.com"
+    notes: "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com"
 
 # ---------------------------------------------------------------- Pathway to Rugby 2026 (Tue = Raymond Kimbell, Thu = Crocker Amazon)
   - id: 2026-10-06-pathways-1
@@ -155,13 +155,6 @@ events:
     category: community
     status: confirmed
     notes: "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com"
-  - id: 2026-10-29-kit-return-deadline
-    title: "Kit return deadline"
-    date: 2026-10-29
-    location: San Francisco
-    category: community
-    status: confirmed
-    notes: "Club kit at home (tackle bags, balls, cones, med kit, jerseys) back to Bryan before the first preseason practice. operations@fogrugby.com"
 
 # ---------------------------------------------------------------- Training (repeating, Tue/Thu 7:45–10pm)
   - id: 2026-27-training
