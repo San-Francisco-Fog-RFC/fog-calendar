@@ -38,6 +38,36 @@ events:
     status: confirmed
     notes: "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome."
 
+  - id: 2026-09-13-kangaroo-court-beach-bash
+    title: "Kangaroo Court and Beach Bash"
+    date: 2026-09-13
+    time: "15:00"
+    end_time: "19:00"
+    location: Ocean Beach, San Francisco
+    category: social
+    status: confirmed
+    notes: "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful."
+    url: https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E
+  - id: 2026-09-26-magnitude-coat-check
+    title: "Magnitude Coat Check (volunteers)"
+    date: 2026-09-26
+    time: "20:00"
+    end_time: "23:59"
+    location: SVN West, 10 Van Ness Ave, San Francisco
+    category: community
+    status: confirmed
+    notes: "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com"
+    url: https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659
+  - id: 2026-09-27-folsom-sunscreen-booth
+    title: "Folsom Street Fair Sunscreen Booth (volunteers)"
+    date: 2026-09-27
+    time: "11:00"
+    end_time: "18:00"
+    location: Folsom Street Fair, San Francisco
+    category: community
+    status: confirmed
+    notes: "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 11am and 6pm. Volunteer: fundraising@fogrugby.com"
+
 # ---------------------------------------------------------------- Pathway to Rugby 2026 (Tue = Raymond Kimbell, Thu = Crocker Amazon)
   - id: 2026-10-06-pathways-1
     title: "Pathway to Rugby — Session 1"
@@ -108,6 +138,31 @@ events:
     notes: "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there."
     url: https://www.fogrugby.com/p2r
 
+# ---------------------------------------------------------------- October 2026 (club dates)
+  - id: 2026-10-14-fog-turns-26
+    title: "The Fog turns 26"
+    date: 2026-10-14
+    location: San Francisco
+    category: community
+    status: confirmed
+    notes: "Club anniversary. 26 years of inclusive rugby."
+  - id: 2026-10-18-eagle-beer-bust
+    title: "Eagle Beer Bust (volunteers)"
+    date: 2026-10-18
+    time: "15:00"
+    end_time: "19:00"
+    location: SF Eagle, San Francisco
+    category: community
+    status: confirmed
+    notes: "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com"
+  - id: 2026-10-29-kit-return-deadline
+    title: "Kit return deadline"
+    date: 2026-10-29
+    location: San Francisco
+    category: community
+    status: confirmed
+    notes: "Club kit at home (tackle bags, balls, cones, med kit, jerseys) back to Bryan before the first preseason practice. operations@fogrugby.com"
+
 # ---------------------------------------------------------------- Training (repeating, Tue/Thu 7:45–10pm)
   - id: 2026-27-training
     title: "Fog Training"
@@ -141,14 +196,14 @@ events:
 
 # ---------------------------------------------------------------- Preseason 2026 (email: tentative, may change)
   - id: 2026-11-07-usf-away
-    title: "USF vs SF Fog — Away"
+    title: "USF vs SF Fog"
     date: 2026-11-07
     location: TBC - San Francisco
     category: fixture
     status: tentative
     notes: "Preseason friendly. Kickoff TBD."
   - id: 2026-11-14-usf-away
-    title: "USF vs SF Fog — Away"
+    title: "USF vs SF Fog"
     date: 2026-11-14
     location: TBC - San Francisco
     category: fixture

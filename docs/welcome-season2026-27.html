@@ -659,10 +659,10 @@
 <div id="dc-root">
 <div class="sc-host">
 <div style="min-height: 100vh; background: #fefefe;">
+<header style="position: sticky; top: 0px; z-index: 20; background: #00243c; box-shadow: rgba(36, 160, 241, 0.35) 0px 1px 0px;">
 <div class="sc-host-x" style="display: contents;">
 <div aria-hidden="true" style="display: block; background-image: linear-gradient(90deg, var(--pride-black) 0%, var(--pride-black) 9.0909%, var(--pride-brown) 9.0909%, var(--pride-brown) 18.1818%, var(--pride-light-blue) 18.1818%, var(--pride-light-blue) 27.2727%, var(--pride-pink) 27.2727%, var(--pride-pink) 36.3636%, var(--pride-white) 36.3636%, var(--pride-white) 45.4545%, var(--pride-red) 45.4545%, var(--pride-red) 54.5454%, var(--pride-orange) 54.5454%, var(--pride-orange) 63.6363%, var(--pride-yellow) 63.6363%, var(--pride-yellow) 72.7272%, var(--pride-green) 72.7272%, var(--pride-green) 81.8181%, var(--pride-blue) 81.8181%, var(--pride-blue) 90.909%, var(--pride-violet) 90.909%, var(--pride-violet) 100%), linear-gradient(var(--border-default), var(--border-default)); background-repeat: no-repeat; background-size: 100% 8px, 100% 1px; background-position: left top, left bottom; height: 9px; width: 100%;"></div>
 </div>
-<header style="position: sticky; top: 0px; z-index: 20; background: #00243c; box-shadow: rgba(36, 160, 241, 0.35) 0px 1px 0px;">
 <div style="max-width: 1160px; margin: 0px auto; padding: 14px 32px 12px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 12px;"><a href="#top" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/img/fog-logo.png" alt="San Francisco Fog Rugby Football Club" style="display: block; height: 44px; width: auto;"></a><nav style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; font: 700 13px/18px var(--font-display); letter-spacing: 0.12em; text-transform: uppercase;"><a href="#top" class="scp0" style="color: #fefefe; text-decoration: none;">Welcome</a> <a href="#thankyou" class="scp0" style="color: #fefefe; text-decoration: none;">Thanks</a> <a href="#board" class="scp0" style="color: #fefefe; text-decoration: none;">New board</a> <a href="#archives" class="scp0" style="color: #fefefe; text-decoration: none;">9/11 Toast</a> <a href="#kangaroo" class="scp0" style="color: #fefefe; text-decoration: none;">KCourt &amp; Calendar</a> <a href="#folsom" class="scp0" style="color: #fefefe; text-decoration: none;">Volunteer</a> <a href="#rucktacular" class="scp0" style="color: #fefefe; text-decoration: none;">RuckTacular</a> <a href="#season" class="scp0" style="color: #fefefe; text-decoration: none;">This season</a> <a href="#pathways" class="scp0" style="color: #fefefe; text-decoration: none;">Extra extra</a></nav></div>
 </header>
 <section id="top" style="background: #00243c; color: #fefefe;">
@@ -752,10 +752,10 @@
 /* Board cards: hover / focus reveals the role and an email button */
 .bcard{display:flex;flex-direction:column;gap:12px}
 .bphoto{position:relative;width:100%;aspect-ratio:4/5;border-radius:3px;background-color:#dcddde;background-size:cover;background-position:center;overflow:hidden}
-.brole{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:16px;background:rgba(0,36,60,.94);color:#fefefe;opacity:0;transition:opacity .2s ease}
+.brole{position:absolute;inset:0;overflow:auto;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:16px;background:rgba(0,36,60,.94);color:#fefefe;opacity:0;transition:opacity .2s ease}
 .bcard:hover .brole,.bcard:focus-within .brole{opacity:1}
 .brole-title{font:700 11px/16px var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:#24a0f1}
-.brole-text{margin:0;font:400 13px/18px var(--font-body);color:#fefefe;text-wrap:pretty}
+.brole-text{margin:0;font:400 12px/17px var(--font-body);color:#fefefe;text-wrap:pretty}
 .brole-cta{align-self:flex-start;font:700 12px/16px var(--font-display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#fefefe;background:#006eb6;padding:9px 14px;border-radius:var(--radius-sm)}
 .brole-cta:hover{background:#24a0f1}
 @media (hover:none){.brole{position:static;opacity:1;background:#00243c;padding:14px}.bphoto{aspect-ratio:auto;background-size:cover}.bphoto::before{content:"";display:block;aspect-ratio:4/5}}
@@ -774,8 +774,8 @@
 <div class="bphoto" role="img" aria-label="Justin Melbourne" style="background-image: url('assets/board/justin-melbourne.jpg');">
 <div class="brole">
 <div class="brole-title">President</div>
-<p class="brole-text">Leads and guides the club, fostering a positive and inclusive culture, overseeing administration and finances, and working closely with the board on the season ahead.</p>
-<a class="brole-cta" href="mailto:president@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Justin</a>
+<p class="brole-text">The President leads and guides the club, fostering a positive and inclusive culture, and ensuring member well-being and development; overseeing club administration and finances and working closely with the Board of Directors.</p>
+<a class="brole-cta" href="mailto:president@fogrugby.com">Email Justin</a>
 </div>
 </div>
 <div>
@@ -787,8 +787,8 @@
 <div class="bphoto" role="img" aria-label="Fernando Avalos" style="background-image: url('assets/board/fernando-avalos.jpg');">
 <div class="brole">
 <div class="brole-title">Secretary</div>
-<p class="brole-text">Keeps the minutes, member records and club paperwork straight, and is the first stop for governance and membership questions.</p>
-<a class="brole-cta" href="mailto:secretary@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Fernando</a>
+<p class="brole-text">The Secretary oversees the governance of the club. Ensures we have proper board minutes, governmental and annual filings.</p>
+<a class="brole-cta" href="mailto:secretary@fogrugby.com">Email Fernando</a>
 </div>
 </div>
 <div>
@@ -800,8 +800,8 @@
 <div class="bphoto" role="img" aria-label="Mitchell Felton" style="background-image: url('assets/board/mitchell-felton.jpg');">
 <div class="brole">
 <div class="brole-title">Treasurer</div>
-<p class="brole-text">Keeps the club financially stable: manages every transaction, collects dues and sponsor fees, and pays the club's expenses.</p>
-<a class="brole-cta" href="mailto:treasurer@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Mitchell</a>
+<p class="brole-text">The Treasurer has a critical role in ensuring the financial stability of the club by managing all financial transactions, including collecting dues and sponsor fees, as well as paying the club's expenses.</p>
+<a class="brole-cta" href="mailto:treasurer@fogrugby.com">Email Mitchell</a>
 </div>
 </div>
 <div>
@@ -813,8 +813,8 @@
 <div class="bphoto" role="img" aria-label="Justice D" style="background-image: url('assets/board/justice-d.jpg');">
 <div class="brole">
 <div class="brole-title">Fundraising</div>
-<p class="brole-text">Finds sponsors, builds corporate partnerships, looks after existing sponsor relationships and runs the club's fundraising events.</p>
-<a class="brole-cta" href="mailto:fundraising@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Justice</a>
+<p class="brole-text">The Director of Fundraising identifies potential sponsors, establishing corporate partnerships, maintaining existing sponsorship relationships and coordinating fundraising events; collaborating closely with the club's board, players and supporters to maximize exposure and generate funds to support the team.</p>
+<a class="brole-cta" href="mailto:fundraising@fogrugby.com">Email Justice</a>
 </div>
 </div>
 <div>
@@ -826,8 +826,8 @@
 <div class="bphoto" role="img" aria-label="Bryan Langley" style="background-image: url('assets/board/bryan-langley.jpg');">
 <div class="brole">
 <div class="brole-title">Operations</div>
-<p class="brole-text">Coordinates with players, coaches and the board ahead of practices, matches and socials so facilities and equipment are ready for us.</p>
-<a class="brole-cta" href="mailto:operations@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Bryan</a>
+<p class="brole-text">The Director of Operations communicates and coordinates with players, coaches and the Board ahead of practices, matches and social events to make sure our facilities and equipment are in good shape and ready for use.</p>
+<a class="brole-cta" href="mailto:operations@fogrugby.com">Email Bryan</a>
 </div>
 </div>
 <div>
@@ -839,8 +839,8 @@
 <div class="bphoto" role="img" aria-label="D.J. Kirkland-DeJesus" style="background-image: url('assets/board/d-j-kirkland-dejesus.jpg');">
 <div class="brole">
 <div class="brole-title">Marketing</div>
-<p class="brole-text">Develops and runs the marketing plans that promote the club's brand, events, merch and sponsors, and keeps fans and members engaged.</p>
-<a class="brole-cta" href="mailto:marketing@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email D.J.</a>
+<p class="brole-text">The Director of Marketing is responsible for developing and executing strategic marketing plans to promote the club's brand, events, merchandise, and sponsorships; spreading awareness, engaging fans, and driving the growth of the team.</p>
+<a class="brole-cta" href="mailto:marketing@fogrugby.com">Email D.J.</a>
 </div>
 </div>
 <div>
@@ -852,8 +852,8 @@
 <div class="bphoto" role="img" aria-label="Jacob Wilson" style="background-image: url('assets/board/jacob-wilson.jpg');">
 <div class="brole">
 <div class="brole-title">Recruitment &amp; RETENTION</div>
-<p class="brole-text">Attracts players of every skill level to the club, and keeps them here with the events and programs that hold the team together.</p>
-<a class="brole-cta" href="mailto:recruiting@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Jacob</a>
+<p class="brole-text">The Director of Recruiting identifies and attracts players of all skill levels to join our club, and retains players by building and maintaining events and programs that keep the team together as a community.</p>
+<a class="brole-cta" href="mailto:recruiting@fogrugby.com">Email Jacob</a>
 </div>
 </div>
 <div>
@@ -865,8 +865,8 @@
 <div class="bphoto" role="img" aria-label="Nate Durand" style="background-image: url('assets/board/nate-durand.jpg');">
 <div class="brole">
 <div class="brole-title">Community</div>
-<p class="brole-text">Builds a strong sense of community within the team and with local groups, continuously expanding and strengthening the Fog family.</p>
-<a class="brole-cta" href="mailto:development@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Nate</a>
+<p class="brole-text">The Director of Community develops a strong sense of community within our team and local community groups; continuously expanding and strengthening the Fog family.</p>
+<a class="brole-cta" href="mailto:development@fogrugby.com">Email Nate</a>
 </div>
 </div>
 <div>
@@ -878,8 +878,8 @@
 <div class="bphoto" role="img" aria-label="Daniel Crowley" style="background-image: url('assets/board/daniel-crowley.jpg');">
 <div class="brole">
 <div class="brole-title">Tournaments &amp; special events</div>
-<p class="brole-text">Organises the club's tournaments and special events through the season: travel logistics, registration and team coordination.</p>
-<a class="brole-cta" href="mailto:tse@fogrugby.com?subject=Hello%20from%20the%20Fog%20Family">Email Daniel</a>
+<p class="brole-text">The Director of Tournaments &amp; Special Events organizes the club's participation in tournaments throughout the season, handling travel logistics, registration, and team coordination.</p>
+<a class="brole-cta" href="mailto:tse@fogrugby.com">Email Daniel</a>
 </div>
 </div>
 <div>
@@ -891,8 +891,8 @@
 <div class="bphoto" role="img" aria-label="Mike Ratcliffe" style="background-image: url('assets/board/mike-ratcliffe.jpg');">
 <div class="brole">
 <div class="brole-title">information technology</div>
-<p class="brole-text">Runs the club's systems: the website, the calendar, the members' database and the tools working behind the scenes.</p>
-<a class="brole-cta" href="mailto:president@fogrugby.com?subject=For%20Mike%20(information%20technology)">Email Mike</a>
+<p class="brole-text">The Director of Information Technology manages the club's digital infrastructure, website systems, software platforms, and technical tooling.</p>
+<a class="brole-cta" href="mailto:it@fogrugby.com">Email Mike</a>
 </div>
 </div>
 <div>
@@ -904,8 +904,8 @@
 <div class="bphoto" role="img" aria-label="Heriberto Madrigal" style="background-image: url('assets/board/pollo.jpg');">
 <div class="brole">
 <div class="brole-title">Antiquities</div>
-<p class="brole-text">Keeper of the club's history, archives and memorabilia, and the 25 years of stories that come with them.</p>
-<a class="brole-cta" href="mailto:president@fogrugby.com?subject=For%20Heriberto%20(Antiquities)">Email Heriberto</a>
+<p class="brole-text">The Director of Antiquities curates club heritage, preserves archives and memorabilia, and connects Fog alumni across 25+ seasons.</p>
+<a class="brole-cta" href="mailto:antiquities@fogrugby.com">Email Pollo</a>
 </div>
 </div>
 <div>
@@ -917,8 +917,8 @@
 <div class="bphoto" role="img" aria-label="Luke Kushner" style="background-image: url('assets/board/luke-kushner.jpg');">
 <div class="brole">
 <div class="brole-title">Game day socials</div>
-<p class="brole-text">Organises the post-match socials and the third half, home and away, so every game day ends the Fog way.</p>
-<a class="brole-cta" href="mailto:president@fogrugby.com?subject=For%20Luke%20(Game%20day%20socials)">Email Luke</a>
+<p class="brole-text">The Director of Game Day Socials coordinates third-half hospitality, social traditions, and post-match hosting with visiting clubs.</p>
+<a class="brole-cta" href="mailto:socials@fogrugby.com">Email Luke</a>
 </div>
 </div>
 <div>
@@ -1163,7 +1163,7 @@
 <span style="display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: var(--radius-sm); padding: 3px 8px; background: transparent; color: #00243c; border: 1px solid rgb(0, 36, 60);">Away</span>
 </div>
 <div style="font: 700 19px/23px var(--font-display); letter-spacing: 0.03em; text-transform: uppercase; color: #00243c; text-wrap: balance;">BA Baracus vs SF Fog</div>
-<div style="font: 400 14px/20px var(--font-body); color: #5e6265;">Bay Area, city TBC</div>
+<div style="font: 400 14px/20px var(--font-body); color: #5e6265;">San Francisco</div>
 </div>
 <div style="background: #fefefe; border-top: 4px solid rgb(0, 110, 182); border-radius: 2px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px;">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
@@ -1188,7 +1188,7 @@
 <span style="display: inline-block; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: var(--radius-sm); padding: 3px 8px; background: transparent; color: #00243c; border: 1px solid rgb(0, 36, 60);">Away</span>
 </div>
 <div style="font: 700 19px/23px var(--font-display); letter-spacing: 0.03em; text-transform: uppercase; color: #00243c; text-wrap: balance;">Golden Dogs vs SF Fog</div>
-<div style="font: 400 14px/20px var(--font-body); color: #5e6265;">Away, city TBC</div>
+<div style="font: 400 14px/20px var(--font-body); color: #5e6265;">Fresno</div>
 </div>
 <div style="background: #fefefe; border-top: 4px solid rgb(0, 110, 182); border-radius: 2px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px;">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
@@ -1349,7 +1349,7 @@
 <img src="assets/img/fog-coat-of-arms.png" alt="San Francisco Fog RFC coat of arms" width="480" height="480" style="display: block; width: 112px; height: 112px;">
 <div>
 <div style="font: 700 13px/18px var(--font-display); letter-spacing: 0.15em; text-transform: uppercase; color: #fefefe;">San Francisco Fog RFC</div>
-<div style="font: 400 13px/20px var(--font-body); color: #dcddde; margin-top: 6px;">For players, supporters, and friends of the club. Please don't share this page outside the Fog Family.</div>
+<div style="font: 400 13px/20px var(--font-body); color: #dcddde; margin-top: 6px;">The season newsletter for players, supporters, and friends of the club. Share it with anyone who loves the Fog.</div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 14px; font: 700 12px/16px var(--font-display); letter-spacing: 0.12em; text-transform: uppercase;"><a href="https://www.fogrugby.com" target="_blank" rel="noopener" style="color: #24a0f1; text-decoration: none;">fogrugby.com</a> <a href="https://www.instagram.com/fogrugby" target="_blank" rel="noopener" style="color: #24a0f1; text-decoration: none;">Instagram</a> <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" rel="noopener" style="color: #24a0f1; text-decoration: none;">TikTok</a> <a href="#top" style="color: #24a0f1; text-decoration: none;">Back to top</a></div>
 <div style="font: 400 12px/18px var(--font-body); color: rgba(220, 221, 222, 0.75); margin-top: 16px; max-width: 640px;">The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.</div>
 </div>
