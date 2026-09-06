@@ -1,0 +1,1025 @@
+/* ==========================================================================
+   San Francisco Fog RFC — Calendar Portal Stylesheet
+   Strict adherence to Fog Rugby Design System (fog-rugby-design.skill)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Typography / Font Faces
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-BookItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Canonical 6 colors + strict semantics */
+  --fog-blue: #006EB6;        /* Primary headlines-2, links, primary buttons, crest */
+  --fog-light-blue: #24A0F1;  /* Accents, hovers, text accent on dark */
+  --fog-dark-blue: #00243C;   /* Dark backgrounds, footers, default heading */
+  --fog-gray: #DCDDDE;        /* Neutral panels, borders, stat cards */
+  --fog-dark-gray: #141718;   /* Body copy (near-black, never pure black for text) */
+  --fog-white: #FFFFFF;
+  --fog-black: #000000;
+
+  /* Semantic Alerts */
+  --fog-green: #157A38;       /* Confirmed / Win */
+  --fog-red: #C4321F;         /* Loss / Destructive action */
+
+  /* UI Tokens */
+  --font-family: "Futura PT", "Jost", Futura, Arial, Helvetica, sans-serif;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --border-light: 1px solid var(--fog-gray);
+  --border-dark: 1px solid var(--fog-dark-blue);
+  --max-width: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Global Resets & Base Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fog-white);
+  color: var(--fog-dark-gray);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.05;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  color: var(--fog-white);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: var(--fog-blue);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--fog-dark-blue);
+}
+
+a {
+  color: var(--fog-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--fog-dark-blue);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & Controls (Component Spec)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: var(--fog-blue);
+  color: var(--fog-white);
+  border-color: var(--fog-blue);
+}
+
+.btn-primary:hover {
+  background-color: #0084da;
+  border-color: #0084da;
+  color: var(--fog-white);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--fog-blue);
+  border-color: var(--fog-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--fog-blue);
+  color: var(--fog-white);
+}
+
+.btn-dark {
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  border-color: var(--fog-dark-blue);
+}
+
+.btn-dark:hover {
+  background-color: #003a61;
+  border-color: #003a61;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--fog-white);
+  border-color: var(--fog-white);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--fog-white);
+  color: var(--fog-dark-blue);
+}
+
+.btn-danger {
+  background-color: var(--fog-red);
+  color: var(--fog-white);
+  border-color: var(--fog-red);
+}
+
+.btn-danger:hover {
+  background-color: #a32717;
+  border-color: #a32717;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Header & Hero Banner
+   -------------------------------------------------------------------------- */
+.header-hero {
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  border-bottom: 4px solid var(--fog-blue);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px clamp(16px, 4vw, 32px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+.header-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-eyebrow {
+  color: var(--fog-light-blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.auth-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--fog-light-blue);
+}
+
+.auth-badge.authenticated {
+  background-color: rgba(21, 122, 56, 0.25);
+  color: #5edb8a;
+  border: 1px solid var(--fog-green);
+}
+
+/* --------------------------------------------------------------------------
+   6. Control & Filter Bar
+   -------------------------------------------------------------------------- */
+.control-bar {
+  background-color: #f3f4f5;
+  border-bottom: var(--border-light);
+  padding: 16px 0;
+}
+
+.control-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.control-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.view-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.segmented-control {
+  display: inline-flex;
+  background-color: var(--fog-gray);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.segmented-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fog-dark-gray);
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.segmented-btn.active {
+  background-color: var(--fog-white);
+  color: var(--fog-blue);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-label {
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fog-dark-blue);
+  min-width: 170px;
+  text-align: center;
+}
+
+.search-box {
+  position: relative;
+  min-width: 220px;
+}
+
+.search-box input {
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  padding: 8px 12px 8px 34px;
+  border: 1px solid #b8bec2;
+  border-radius: var(--radius-sm);
+  background-color: var(--fog-white);
+  color: var(--fog-dark-gray);
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: var(--fog-blue);
+  box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #6a737d;
+  pointer-events: none;
+}
+
+/* Filter Chips */
+.filter-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+  margin-right: 4px;
+}
+
+.chip {
+  background-color: var(--fog-white);
+  border: 1px solid #c8ccd0;
+  color: var(--fog-dark-gray);
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 11px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.chip:hover {
+  border-color: var(--fog-blue);
+  color: var(--fog-blue);
+}
+
+.chip.active {
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  border-color: var(--fog-dark-blue);
+}
+
+/* --------------------------------------------------------------------------
+   7. Main Container & Views
+   -------------------------------------------------------------------------- */
+.main-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px clamp(16px, 4vw, 32px) 80px;
+}
+
+/* Month Calendar Grid */
+.calendar-grid-card {
+  background-color: var(--fog-white);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.calendar-weekdays-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  text-align: center;
+  border-bottom: 2px solid var(--fog-blue);
+}
+
+.calendar-weekday {
+  padding: 10px 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--fog-gray);
+  gap: 1px;
+}
+
+.calendar-day-cell {
+  background-color: var(--fog-white);
+  min-height: 110px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  transition: background-color 0.15s ease;
+}
+
+.calendar-day-cell.other-month {
+  background-color: #fafbfc;
+  color: #9aa3ab;
+}
+
+.calendar-day-cell.today {
+  background-color: #f0f7fc;
+}
+
+.calendar-day-cell.today .day-number {
+  background-color: var(--fog-blue);
+  color: var(--fog-white);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.day-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.day-add-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--fog-blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+body.admin-mode .calendar-day-cell:hover .day-add-btn {
+  display: block;
+}
+
+/* Event Chips in Month Grid */
+.event-chip {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.event-chip:hover {
+  filter: brightness(0.92);
+}
+
+/* Category Color Systems */
+.event-chip.cat-fixture {
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  border-left-color: var(--fog-light-blue);
+}
+
+.event-chip.cat-training {
+  background-color: var(--fog-blue);
+  color: var(--fog-white);
+  border-left-color: #003a61;
+}
+
+.event-chip.cat-pathway {
+  background-color: #005a96;
+  color: var(--fog-white);
+  border-left-color: var(--fog-light-blue);
+}
+
+.event-chip.cat-tournament {
+  background-color: #1a2f3b;
+  color: var(--fog-white);
+  border-left-color: #e59325;
+}
+
+.event-chip.cat-social,
+.event-chip.cat-community,
+.event-chip.cat-board {
+  background-color: #e8eaec;
+  color: var(--fog-dark-gray);
+  border-left-color: var(--fog-blue);
+}
+
+.event-chip.status-tentative {
+  border: 1px dashed #7a8288;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   8. Chronological Agenda List View
+   -------------------------------------------------------------------------- */
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.agenda-month-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agenda-month-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--fog-blue);
+  border-bottom: 2px solid var(--fog-blue);
+  padding-bottom: 6px;
+  margin-top: 8px;
+}
+
+.agenda-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agenda-card {
+  background-color: var(--fog-white);
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.agenda-card:hover {
+  border-color: var(--fog-blue);
+}
+
+.agenda-card-date {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--fog-gray);
+  padding-right: 14px;
+}
+
+.card-weekday {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fog-blue);
+}
+
+.card-numeric-date {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--fog-dark-blue);
+  margin: 2px 0;
+}
+
+.card-time {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.agenda-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.pill-fixture { background: var(--fog-dark-blue); color: var(--fog-white); }
+.pill-training { background: var(--fog-blue); color: var(--fog-white); }
+.pill-pathway { background: #005a96; color: var(--fog-white); }
+.pill-tournament { background: #1a2f3b; color: var(--fog-white); }
+.pill-social { background: #e8eaec; color: var(--fog-dark-gray); }
+.pill-community { background: #e8eaec; color: var(--fog-dark-gray); }
+.pill-board { background: #e8eaec; color: var(--fog-dark-gray); }
+
+.card-status-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.card-status-pill.confirmed {
+  background-color: rgba(21, 122, 56, 0.12);
+  color: var(--fog-green);
+  border: 1px solid var(--fog-green);
+}
+
+.card-status-pill.tentative {
+  background-color: #fff4e5;
+  color: #b25e00;
+  border: 1px dashed #b25e00;
+}
+
+.agenda-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--fog-dark-blue);
+  margin: 0;
+}
+
+.agenda-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.agenda-card-notes {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 4px 0 0;
+  line-height: 1.45;
+}
+
+.agenda-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Dialog Modals & Drawers (Modern Web Guidance)
+   -------------------------------------------------------------------------- */
+dialog.fog-dialog {
+  border: 2px solid var(--fog-dark-blue);
+  border-radius: var(--radius-md);
+  padding: 0;
+  max-width: 620px;
+  width: 90vw;
+  background-color: var(--fog-white);
+  box-shadow: 0 16px 36px rgba(0, 36, 60, 0.28);
+}
+
+dialog.fog-dialog::backdrop {
+  background-color: rgba(0, 36, 60, 0.65);
+  backdrop-filter: blur(2px);
+}
+
+.dialog-header {
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--fog-blue);
+}
+
+.dialog-header h3 {
+  color: var(--fog-white);
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+
+.dialog-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--fog-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.dialog-close-btn:hover {
+  color: var(--fog-light-blue);
+}
+
+.dialog-body {
+  padding: 24px 20px;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.dialog-footer {
+  padding: 14px 20px;
+  background-color: #f7f8f9;
+  border-top: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Form Groups */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.col-span-2 {
+  grid-column: span 2;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fog-dark-blue);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  padding: 9px 12px;
+  border: 1px solid #b8bec2;
+  border-radius: var(--radius-sm);
+  background-color: var(--fog-white);
+  color: var(--fog-dark-gray);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--fog-blue);
+  box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
+}
+
+.form-input[readonly] {
+  background-color: #f3f4f5;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.form-help {
+  font-size: 0.72rem;
+  color: #666;
+  line-height: 1.35;
+}
+
+/* Exdate Chip Tag Cloud */
+.exdates-manager {
+  background-color: #f6f8fa;
+  border: var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exdates-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exdate-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--fog-white);
+  border: 1px solid #c2c7cb;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.exdate-remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--fog-red);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.exdate-add-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Persistent Unsaved Changes Floating Bar
+   -------------------------------------------------------------------------- */
+.changes-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background-color: var(--fog-dark-blue);
+  color: var(--fog-white);
+  border: 2px solid var(--fog-light-blue);
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.changes-bar.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.changes-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.changes-badge {
+  background-color: var(--fog-blue);
+  color: var(--fog-white);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. Responsive Layout Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .agenda-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .agenda-card-date {
+    border-right: none;
+    border-bottom: 2px solid var(--fog-gray);
+    padding-bottom: 8px;
+    padding-right: 0;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.col-span-2 {
+    grid-column: span 1;
+  }
+
+  .calendar-weekday {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .calendar-day-cell {
+    min-height: 80px;
+    padding: 4px 2px;
+  }
+
+  .event-chip {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+}

@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SF Fog Rugby — Club Calendar Portal</title>
+  <link rel="icon" type="image/png" href="assets/img/fog-logo.png">
+  <link rel="stylesheet" href="assets/css/portal.css">
+  <script src="assets/js/js-yaml.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Hero & Navigation -->
+  <header class="header-hero">
+    <div class="header-inner">
+      <div class="header-branding">
+        <img src="assets/img/fog-logo.png" alt="SF Fog RFC Crest" class="header-logo" width="52" height="60">
+        <div class="header-title-block">
+          <span class="header-eyebrow">San Francisco Fog RFC</span>
+          <h1>Club Calendar Portal</h1>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="auth-status-badge" class="auth-badge">Public Schedule</span>
+        <a href="index.html" class="btn btn-outline-white btn-sm">Subscribe Feed (.ics)</a>
+        <button id="btn-toggle-admin" class="btn btn-outline-white btn-sm" aria-haspopup="dialog">Admin Access</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls & Filter Bar -->
+  <nav class="control-bar" aria-label="Calendar Controls">
+    <div class="control-inner">
+      <div class="control-row-top">
+        <div class="view-nav-group">
+          <!-- Segmented View Toggle -->
+          <div class="segmented-control" role="group" aria-label="View Mode">
+            <button id="btn-view-month" class="segmented-btn active" type="button">Month Grid</button>
+            <button id="btn-view-agenda" class="segmented-btn" type="button">Agenda List</button>
+          </div>
+
+          <!-- Month Navigation -->
+          <div class="month-nav">
+            <button id="btn-prev-month" class="btn btn-secondary btn-sm" aria-label="Previous Month">&lt; Prev</button>
+            <span id="label-current-month" class="month-label">October 2026</span>
+            <button id="btn-next-month" class="btn btn-secondary btn-sm" aria-label="Next Month">Next &gt;</button>
+            <button id="btn-today" class="btn btn-secondary btn-sm">Today</button>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <!-- Search Input -->
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search fixtures, venues, notes..." aria-label="Search events">
+          </div>
+
+          <!-- Add Event (Admin Mode) -->
+          <button id="btn-new-event" class="btn btn-primary btn-sm" style="display: none;">+ Add Event</button>
+        </div>
+      </div>
+
+      <!-- Filter Chips Row -->
+      <div class="filter-chips-row">
+        <span class="filter-label">Category:</span>
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="fixture">Fixtures</button>
+        <button class="chip" data-filter="training">Training</button>
+        <button class="chip" data-filter="pathway">Pathway</button>
+        <button class="chip" data-filter="tournament">Tournaments</button>
+        <button class="chip" data-filter="social">Socials</button>
+        <button class="chip" data-filter="community">Community</button>
+        <button class="chip" data-filter="board">Board</button>
+
+        <span class="filter-label" style="margin-left: 12px;">Status:</span>
+        <button class="chip active" data-status="all">All</button>
+        <button class="chip" data-status="confirmed">Confirmed</button>
+        <button class="chip" data-status="tentative">Tentative</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+    <!-- Month Grid View -->
+    <section id="view-month-grid" class="calendar-grid-card">
+      <div class="calendar-weekdays-header">
+        <div class="calendar-weekday">Sun</div>
+        <div class="calendar-weekday">Mon</div>
+        <div class="calendar-weekday">Tue</div>
+        <div class="calendar-weekday">Wed</div>
+        <div class="calendar-weekday">Thu</div>
+        <div class="calendar-weekday">Fri</div>
+        <div class="calendar-weekday">Sat</div>
+      </div>
+      <div id="calendar-days-container" class="calendar-days-grid" role="grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Agenda List View -->
+    <section id="view-agenda-list" class="agenda-list" style="display: none;">
+      <!-- Rendered dynamically -->
+    </section>
+  </main>
+
+  <!-- Persistent Unsaved Changes Bar -->
+  <aside id="changes-bar" class="changes-bar" role="status" aria-live="polite">
+    <div class="changes-info">
+      <span id="changes-count-badge" class="changes-badge">0</span>
+      <span>Unsaved Changes to Schedule</span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button id="btn-discard-changes" class="btn btn-outline-white btn-sm">Discard</button>
+      <button id="btn-review-commit" class="btn btn-primary btn-sm">Review &amp; Commit</button>
+    </div>
+  </aside>
+
+  <!-- Event Details / Edit Dialog Modal -->
+  <dialog id="event-dialog" class="fog-dialog" aria-labelledby="dialog-event-title">
+    <div class="dialog-header">
+      <h3 id="dialog-event-title">Event Details</h3>
+      <button type="button" class="dialog-close-btn" data-close="event-dialog" aria-label="Close dialog">&times;</button>
+    </div>
+    <form id="event-form" method="dialog">
+      <div class="dialog-body">
+        <div class="form-grid">
+
+          <!-- UID (ID) -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="event-id">Calendar Event ID (UID)</label>
+            <input type="text" id="event-id" class="form-input" required pattern="^[a-z0-9\-_]+$">
+            <span class="form-help" id="id-help-text">Stable identifier for calendar clients. Once published, IDs must never change.</span>
+          </div>
+
+          <!-- Title -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="event-title">Event Title</label>
+            <input type="text" id="event-title" class="form-input" placeholder="e.g. SF Fog vs Berkeley (H)" required>
+          </div>
+
+          <!-- Date Configuration -->
+          <div class="form-group">
+            <label class="form-label" for="event-date">Date (Single Day)</label>
+            <input type="date" id="event-date" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Date Format</label>
+            <div style="display: flex; gap: 12px; margin-top: 8px;">
+              <label style="font-size: 0.85rem;"><input type="radio" name="date-type" value="single" checked> Single Day</label>
+              <label style="font-size: 0.85rem;"><input type="radio" name="date-type" value="range"> Multi-Day</label>
+            </div>
+          </div>
+
+          <div class="form-group multi-day-field" style="display: none;">
+            <label class="form-label" for="event-start">Start Date</label>
+            <input type="date" id="event-start" class="form-input">
+          </div>
+
+          <div class="form-group multi-day-field" style="display: none;">
+            <label class="form-label" for="event-end">End Date (Inclusive)</label>
+            <input type="date" id="event-end" class="form-input">
+          </div>
+
+          <!-- Time Configuration -->
+          <div class="form-group">
+            <label class="form-label" for="event-time">Start Time (24h)</label>
+            <input type="time" id="event-time" class="form-input" placeholder="19:45">
+            <span class="form-help">Leave empty for TBD kickoff or all-day.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="event-end-time">End Time (24h)</label>
+            <input type="time" id="event-end-time" class="form-input" placeholder="22:00">
+            <span class="form-help">Default is +2 hours from start time.</span>
+          </div>
+
+          <!-- Category & Status -->
+          <div class="form-group">
+            <label class="form-label" for="event-category">Category</label>
+            <select id="event-category" class="form-select" required>
+              <option value="fixture">Fixture (Match)</option>
+              <option value="training">Training</option>
+              <option value="pathway">Pathway to Rugby</option>
+              <option value="tournament">Tournament</option>
+              <option value="social">Social</option>
+              <option value="community">Community / Volunteer</option>
+              <option value="board">Board / Admin</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="event-status">Status</label>
+            <select id="event-status" class="form-select" required>
+              <option value="confirmed">Confirmed</option>
+              <option value="tentative">Tentative (Playoffs / Unconfirmed)</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="event-location">Location / Venue</label>
+            <input type="text" id="event-location" class="form-input" placeholder="e.g. Raymond Kimbell Playground, Geary & Steiner, SF">
+            <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap;">
+              <button type="button" class="chip btn-sm location-chip" data-loc="Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco">Kimbell</button>
+              <button type="button" class="chip btn-sm location-chip" data-loc="Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco">Crocker Amazon</button>
+              <button type="button" class="chip btn-sm location-chip" data-loc="Pilsner Inn, 225 Church St, San Francisco">Pilsner Inn</button>
+              <button type="button" class="chip btn-sm location-chip" data-loc="San Francisco">San Francisco (Home)</button>
+              <button type="button" class="chip btn-sm location-chip" data-loc="TBC - San Francisco">TBC Venue</button>
+            </div>
+          </div>
+
+          <!-- URL -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="event-url">Link URL (Optional)</label>
+            <input type="url" id="event-url" class="form-input" placeholder="https://www.fogrugby.com/...">
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="event-notes">Notes / Logistics</label>
+            <textarea id="event-notes" class="form-textarea" rows="3" placeholder="Match notes, volunteer shift details, kickoff instructions..."></textarea>
+          </div>
+
+          <!-- Recurrence / Exdates Section (Advanced) -->
+          <div id="recurrence-section" class="form-group col-span-2" style="border-top: 1px solid var(--fog-gray); padding-top: 12px; margin-top: 6px;">
+            <label class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Repeating Rule &amp; Blackout Dates (Training)</span>
+              <span id="rrule-status" style="font-size: 0.72rem; color: #666; font-weight: 400;">RFC 5545</span>
+            </label>
+            <div style="margin-top: 6px;">
+              <input type="text" id="event-rrule" class="form-input" placeholder="e.g. FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z">
+              <span class="form-help">Leave empty for standard single/multi-day events.</span>
+            </div>
+
+            <!-- Exdates Cloud -->
+            <div id="exdates-manager-container" class="exdates-manager" style="margin-top: 10px; display: none;">
+              <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Excluded Dates (Holiday / Break):</span>
+              <div id="exdates-cloud" class="exdates-cloud"></div>
+              <div class="exdate-add-row">
+                <input type="date" id="input-new-exdate" class="form-input" style="width: auto; padding: 4px 8px; font-size: 0.8rem;">
+                <button type="button" id="btn-add-exdate" class="btn btn-secondary btn-sm">+ Add Exdate</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" id="btn-delete-event" class="btn btn-danger btn-sm" style="margin-right: auto; display: none;">Delete Event</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-close="event-dialog">Cancel</button>
+        <button type="submit" id="btn-save-event" class="btn btn-primary btn-sm">Save Event</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- GitHub Authentication Dialog -->
+  <dialog id="auth-dialog" class="fog-dialog" aria-labelledby="dialog-auth-title">
+    <div class="dialog-header">
+      <h3 id="dialog-auth-title">Admin Authentication</h3>
+      <button type="button" class="dialog-close-btn" data-close="auth-dialog" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p style="font-size: 0.9rem;">
+        Authenticate with a GitHub Personal Access Token (PAT) to commit schedule changes directly to <code>events.yml</code> in the repository.
+      </p>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label class="form-label" for="gh-token-input">GitHub Personal Access Token</label>
+        <input type="password" id="gh-token-input" class="form-input" placeholder="ghp_... or github_pat_..." autocomplete="off">
+        <span class="form-help">
+          Requires repository write permissions (<code>Contents: Read and write</code>). Your token is stored only in your local browser session and is never sent to any third-party server.
+        </span>
+      </div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="gh-remember-token" checked>
+          Remember token in this browser (LocalStorage)
+        </label>
+      </div>
+      <div id="auth-error-msg" style="display: none; color: var(--fog-red); font-size: 0.85rem; margin-bottom: 12px; font-weight: 600;"></div>
+      <div id="auth-user-info" style="display: none; background: #eef7f0; padding: 10px; border-radius: 2px; border: 1px solid var(--fog-green); font-size: 0.85rem; margin-bottom: 12px;"></div>
+    </div>
+    <div class="dialog-footer">
+      <button type="button" id="btn-sign-out" class="btn btn-danger btn-sm" style="display: none; margin-right: auto;">Clear Credentials</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-close="auth-dialog">Close</button>
+      <button type="button" id="btn-save-token" class="btn btn-primary btn-sm">Connect &amp; Verify</button>
+    </div>
+  </dialog>
+
+  <!-- Review & Commit Dialog -->
+  <dialog id="commit-dialog" class="fog-dialog" aria-labelledby="dialog-commit-title" style="max-width: 720px;">
+    <div class="dialog-header">
+      <h3 id="dialog-commit-title">Review &amp; Commit Schedule Updates</h3>
+      <button type="button" class="dialog-close-btn" data-close="commit-dialog" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <div id="commit-summary-box" style="margin-bottom: 16px; padding: 12px; background: #f3f6f9; border-radius: 4px; font-size: 0.88rem;">
+        <!-- Summary populated by JS -->
+      </div>
+
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label class="form-label" for="commit-message-input">Commit Message</label>
+        <input type="text" id="commit-message-input" class="form-input" value="cal: update schedule" required>
+        <span class="form-help">This commit triggers GitHub Actions to rebuild <code>docs/fog.ics</code>.</span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Generated events.yml Preview</label>
+        <pre id="yaml-preview-block" style="background: #141718; color: #f0f0f0; padding: 14px; border-radius: 4px; font-family: monospace; font-size: 0.78rem; max-height: 240px; overflow-y: auto; white-space: pre;"></pre>
+      </div>
+
+      <div id="commit-status-msg" style="margin-top: 12px; font-size: 0.85rem; font-weight: 600;"></div>
+    </div>
+    <div class="dialog-footer">
+      <button type="button" id="btn-download-yaml" class="btn btn-secondary btn-sm" style="margin-right: auto;">Download events.yml</button>
+      <button type="button" class="btn btn-secondary btn-sm" data-close="commit-dialog">Cancel</button>
+      <button type="button" id="btn-execute-commit" class="btn btn-primary btn-sm">Push to GitHub</button>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       Application Logic & Controller
+       ========================================================================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      // --- Constants & Config ---
+      const REPO_OWNER = 'san-francisco-fog-rfc';
+      const REPO_NAME = 'fog-calendar';
+      const FILE_PATH = 'events.yml';
+      const LOCAL_PATH = '../events.yml';
+      const GITHUB_RAW_FALLBACK = 'https://raw.githubusercontent.com/' + REPO_OWNER + '/' + REPO_NAME + '/main/' + FILE_PATH;
+      const GITHUB_API_URL = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + FILE_PATH;
+
+      // --- State ---
+      const state = {
+        calendarName: 'SF Fog Rugby',
+        calendarUrl: 'https://www.fogrugby.com/season-fixtures-results',
+        originalEvents: [],
+        events: [],
+        currentYear: 2026,
+        currentMonth: 9, // 0-indexed (9 = October 2026)
+        viewMode: 'month', // 'month' | 'agenda'
+        activeCategory: 'all',
+        activeStatus: 'all',
+        searchQuery: '',
+        isAdmin: false,
+        githubToken: '',
+        fileSha: '',
+        editingEventId: null,
+        currentExdates: [],
+        unsavedCount: 0
+      };
+
+      // --- DOM Elements ---
+      const elements = {
+        btnViewMonth: document.getElementById('btn-view-month'),
+        btnViewAgenda: document.getElementById('btn-view-agenda'),
+        viewMonthGrid: document.getElementById('view-month-grid'),
+        viewAgendaList: document.getElementById('view-agenda-list'),
+        calendarDaysContainer: document.getElementById('calendar-days-container'),
+        labelCurrentMonth: document.getElementById('label-current-month'),
+        btnPrevMonth: document.getElementById('btn-prev-month'),
+        btnNextMonth: document.getElementById('btn-next-month'),
+        btnToday: document.getElementById('btn-today'),
+        searchInput: document.getElementById('search-input'),
+        btnToggleAdmin: document.getElementById('btn-toggle-admin'),
+        authStatusBadge: document.getElementById('auth-status-badge'),
+        btnNewEvent: document.getElementById('btn-new-event'),
+        changesBar: document.getElementById('changes-bar'),
+        changesCountBadge: document.getElementById('changes-count-badge'),
+        btnDiscardChanges: document.getElementById('btn-discard-changes'),
+        btnReviewCommit: document.getElementById('btn-review-commit'),
+        // Dialogs
+        eventDialog: document.getElementById('event-dialog'),
+        eventForm: document.getElementById('event-form'),
+        dialogEventTitle: document.getElementById('dialog-event-title'),
+        eventIdInput: document.getElementById('event-id'),
+        idHelpText: document.getElementById('id-help-text'),
+        eventTitleInput: document.getElementById('event-title'),
+        eventDateInput: document.getElementById('event-date'),
+        eventStartInput: document.getElementById('event-start'),
+        eventEndInput: document.getElementById('event-end'),
+        eventTimeInput: document.getElementById('event-time'),
+        eventEndTimeInput: document.getElementById('event-end-time'),
+        eventCategorySelect: document.getElementById('event-category'),
+        eventStatusSelect: document.getElementById('event-status'),
+        eventLocationInput: document.getElementById('event-location'),
+        eventUrlInput: document.getElementById('event-url'),
+        eventNotesTextarea: document.getElementById('event-notes'),
+        eventRruleInput: document.getElementById('event-rrule'),
+        exdatesContainer: document.getElementById('exdates-manager-container'),
+        exdatesCloud: document.getElementById('exdates-cloud'),
+        inputNewExdate: document.getElementById('input-new-exdate'),
+        btnAddExdate: document.getElementById('btn-add-exdate'),
+        btnDeleteEvent: document.getElementById('btn-delete-event'),
+        btnSaveEvent: document.getElementById('btn-save-event'),
+        // Auth Dialog
+        authDialog: document.getElementById('auth-dialog'),
+        ghTokenInput: document.getElementById('gh-token-input'),
+        ghRememberCheckbox: document.getElementById('gh-remember-token'),
+        authErrorMsg: document.getElementById('auth-error-msg'),
+        authUserInfo: document.getElementById('auth-user-info'),
+        btnSaveToken: document.getElementById('btn-save-token'),
+        btnSignOut: document.getElementById('btn-sign-out'),
+        // Commit Dialog
+        commitDialog: document.getElementById('commit-dialog'),
+        commitSummaryBox: document.getElementById('commit-summary-box'),
+        commitMessageInput: document.getElementById('commit-message-input'),
+        yamlPreviewBlock: document.getElementById('yaml-preview-block'),
+        commitStatusMsg: document.getElementById('commit-status-msg'),
+        btnDownloadYaml: document.getElementById('btn-download-yaml'),
+        btnExecuteCommit: document.getElementById('btn-execute-commit')
+      };
+
+      // --- Utility Helpers ---
+      function pad2(n) {
+        return String(n).padStart(2, '0');
+      }
+
+      function formatDate(d) {
+        if (!d) return '';
+        if (typeof d === 'string') return d;
+        return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+      }
+
+      function slugify(text) {
+        return text
+          .toString()
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+      }
+
+      const MONTH_NAMES = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+
+      const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+      // --- Data Loading & Fetching ---
+      async function loadCalendarData() {
+        let yamlText = '';
+        try {
+          // 1. Try local relative path first (when running on a local web server)
+          const localRes = await fetch(LOCAL_PATH);
+          if (localRes.ok) {
+            yamlText = await localRes.text();
+          }
+        } catch (e) {
+          // Local fetch failed, will try remote
+        }
+
+        if (!yamlText) {
+          try {
+            // 2. Fetch from GitHub API or raw fallback
+            const headers = state.githubToken ? { 'Authorization': 'Bearer ' + state.githubToken } : {};
+            const apiRes = await fetch(GITHUB_API_URL, { headers });
+            if (apiRes.ok) {
+              const fileData = await apiRes.json();
+              state.fileSha = fileData.sha;
+              yamlText = decodeURIComponent(escape(atob(fileData.content)));
+            } else {
+              const rawRes = await fetch(GITHUB_RAW_FALLBACK);
+              if (rawRes.ok) {
+                yamlText = await rawRes.text();
+              }
+            }
+          } catch (err) {
+            console.error('Error fetching remote events.yml:', err);
+          }
+        }
+
+        if (!yamlText) {
+          alert('Could not load events.yml. Please verify network access or run a local server.');
+          return;
+        }
+
+        try {
+          const parsed = jsyaml.load(yamlText);
+          state.calendarName = parsed.calendar_name || 'SF Fog Rugby';
+          state.calendarUrl = parsed.calendar_url || '';
+          // Clone events safely
+          state.originalEvents = JSON.parse(JSON.stringify(parsed.events || []));
+          state.events = JSON.parse(JSON.stringify(parsed.events || []));
+          normalizeEventDates(state.events);
+          normalizeEventDates(state.originalEvents);
+          updateUnsavedCount();
+          renderViews();
+        } catch (err) {
+          console.error('YAML parse error:', err);
+          alert('Error parsing events.yml: ' + err.message);
+        }
+      }
+
+      function normalizeEventDates(evList) {
+        evList.forEach(ev => {
+          if (ev.date) ev.date = formatDate(ev.date);
+          if (ev.start) ev.start = formatDate(ev.start);
+          if (ev.end) ev.end = formatDate(ev.end);
+          if (ev.exdates && Array.isArray(ev.exdates)) {
+            ev.exdates = ev.exdates.map(x => formatDate(x));
+          }
+        });
+      }
+
+      // --- Recurrence Expansion for Calendar View ---
+      function expandRecurringEvents(year, month) {
+        // Expand training rrule (FREQ=WEEKLY;BYDAY=TU,TH) for the selected month
+        const expanded = [];
+        const monthStart = new Date(year, month, 1);
+        const monthEnd = new Date(year, month + 1, 0);
+
+        state.events.forEach(ev => {
+          if (ev.rrule && ev.rrule.includes('FREQ=WEEKLY')) {
+            const daysToMatch = [];
+            if (ev.rrule.includes('TU')) daysToMatch.push(2);
+            if (ev.rrule.includes('TH')) daysToMatch.push(4);
+
+            const ruleStart = ev.date ? new Date(ev.date + 'T00:00:00') : new Date('2026-11-03T00:00:00');
+            const exdatesSet = new Set(ev.exdates || []);
+
+            // Loop through all days of the month
+            for (let d = new Date(monthStart); d <= monthEnd; d.setDate(d.getDate() + 1)) {
+              if (d < ruleStart) continue;
+              if (daysToMatch.includes(d.getDay())) {
+                const dateStr = formatDate(d);
+                if (!exdatesSet.has(dateStr)) {
+                  expanded.push({
+                    ...ev,
+                    date: dateStr,
+                    isRecurringInstance: true
+                  });
+                }
+              }
+            }
+          } else {
+            expanded.push(ev);
+          }
+        });
+        return expanded;
+      }
+
+      // --- Rendering: Month Calendar Grid ---
+      function renderMonthGrid() {
+        const year = state.currentYear;
+        const month = state.currentMonth;
+        elements.labelCurrentMonth.textContent = MONTH_NAMES[month] + ' ' + year;
+
+        elements.calendarDaysContainer.innerHTML = '';
+
+        const firstDayOfMonth = new Date(year, month, 1);
+        const startDayIndex = firstDayOfMonth.getDay(); // 0 = Sun
+        const daysInCurrentMonth = new Date(year, month + 1, 0).getDate();
+        const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+        const todayStr = formatDate(new Date());
+        const allVisibleEvents = expandRecurringEvents(year, month);
+        const filtered = filterEventsList(allVisibleEvents);
+
+        // Map events by date YYYY-MM-DD
+        const eventDateMap = new Map();
+        filtered.forEach(ev => {
+          if (ev.date) {
+            const list = eventDateMap.get(ev.date) || [];
+            list.push(ev);
+            eventDateMap.set(ev.date, list);
+          } else if (ev.start && ev.end) {
+            // Multi-day
+            const s = new Date(ev.start + 'T00:00:00');
+            const e = new Date(ev.end + 'T00:00:00');
+            for (let cur = new Date(s); cur <= e; cur.setDate(cur.getDate() + 1)) {
+              const curStr = formatDate(cur);
+              const list = eventDateMap.get(curStr) || [];
+              list.push(ev);
+              eventDateMap.set(curStr, list);
+            }
+          }
+        });
+
+        // Previous Month tail days
+        for (let i = startDayIndex - 1; i >= 0; i--) {
+          const dayNum = daysInPrevMonth - i;
+          const cell = document.createElement('div');
+          cell.className = 'calendar-day-cell other-month';
+          cell.innerHTML = '<div class="day-header"><span class="day-number">' + dayNum + '</span></div>';
+          elements.calendarDaysContainer.appendChild(cell);
+        }
+
+        // Current Month days
+        for (let d = 1; d <= daysInCurrentMonth; d++) {
+          const dateStr = year + '-' + pad2(month + 1) + '-' + pad2(d);
+          const isToday = (dateStr === todayStr);
+
+          const cell = document.createElement('div');
+          cell.className = 'calendar-day-cell' + (isToday ? ' today' : '');
+          cell.setAttribute('role', 'gridcell');
+
+          const header = document.createElement('div');
+          header.className = 'day-header';
+          header.innerHTML = '<span class="day-number">' + d + '</span>' +
+            '<button type="button" class="day-add-btn" data-date="' + dateStr + '" title="Add event on ' + dateStr + '">+</button>';
+          cell.appendChild(header);
+
+          const dayEvents = eventDateMap.get(dateStr) || [];
+          dayEvents.forEach(ev => {
+            const chip = document.createElement('a');
+            chip.className = 'event-chip cat-' + (ev.category || 'fixture') +
+              (ev.status === 'tentative' ? ' status-tentative' : '');
+            chip.href = '#';
+            chip.title = (ev.time ? ev.time + ' — ' : '') + ev.title;
+            chip.textContent = (ev.time ? ev.time + ' ' : '') + ev.title;
+            chip.addEventListener('click', function (e) {
+              e.preventDefault();
+              openEventModal(ev.id);
+            });
+            cell.appendChild(chip);
+          });
+
+          elements.calendarDaysContainer.appendChild(cell);
+        }
+
+        // Next Month leading days to fill grid (total cells multiple of 7)
+        const totalRendered = startDayIndex + daysInCurrentMonth;
+        const remainder = (7 - (totalRendered % 7)) % 7;
+        for (let n = 1; n <= remainder; n++) {
+          const cell = document.createElement('div');
+          cell.className = 'calendar-day-cell other-month';
+          cell.innerHTML = '<div class="day-header"><span class="day-number">' + n + '</span></div>';
+          elements.calendarDaysContainer.appendChild(cell);
+        }
+
+        // Attach add button listeners
+        elements.calendarDaysContainer.querySelectorAll('.day-add-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            openNewEventModal(btn.dataset.date);
+          });
+        });
+      }
+
+      // --- Rendering: Chronological Agenda List ---
+      function renderAgendaList() {
+        elements.viewAgendaList.innerHTML = '';
+        const filtered = filterEventsList(state.events);
+
+        // Sort chronologically
+        const sorted = [...filtered].sort((a, b) => {
+          const da = a.date || a.start || '';
+          const db = b.date || b.start || '';
+          return da.localeCompare(db);
+        });
+
+        if (sorted.length === 0) {
+          elements.viewAgendaList.innerHTML = '<div style="padding: 40px; text-align: center; color: #666; font-size: 1.1rem;">No events match the selected filters.</div>';
+          return;
+        }
+
+        // Group by Month/Year
+        const groups = new Map();
+        sorted.forEach(ev => {
+          const dStr = ev.date || ev.start;
+          const [y, m] = dStr.split('-');
+          const groupKey = MONTH_NAMES[parseInt(m, 10) - 1] + ' ' + y;
+          const list = groups.get(groupKey) || [];
+          list.push(ev);
+          groups.set(groupKey, list);
+        });
+
+        groups.forEach((groupEvents, groupKey) => {
+          const groupSec = document.createElement('div');
+          groupSec.className = 'agenda-month-group';
+
+          const heading = document.createElement('h2');
+          heading.className = 'agenda-month-heading';
+          heading.textContent = groupKey;
+          groupSec.appendChild(heading);
+
+          const container = document.createElement('div');
+          container.className = 'agenda-cards-container';
+
+          groupEvents.forEach(ev => {
+            const card = document.createElement('article');
+            card.className = 'agenda-card';
+
+            const dStr = ev.date || ev.start;
+            const dateObj = new Date(dStr + 'T00:00:00');
+            const weekday = WEEKDAY_NAMES[dateObj.getDay()];
+            const dayNum = dateObj.getDate();
+
+            let timeLabel = 'All Day / Kickoff TBD';
+            if (ev.time) {
+              timeLabel = ev.time + (ev.end_time ? ' – ' + ev.end_time : '');
+            }
+            if (ev.start && ev.end) {
+              timeLabel = 'Multi-day: ' + ev.start + ' to ' + ev.end;
+            }
+
+            const catClass = 'pill-' + (ev.category || 'fixture');
+            const statusClass = (ev.status === 'tentative' ? 'tentative' : 'confirmed');
+            const statusText = (ev.status === 'tentative' ? 'Tentative' : 'Confirmed');
+
+            card.innerHTML =
+              '<div class="agenda-card-date">' +
+                '<span class="card-weekday">' + weekday + '</span>' +
+                '<span class="card-numeric-date">' + dayNum + '</span>' +
+                '<span class="card-time">' + timeLabel + '</span>' +
+              '</div>' +
+              '<div class="agenda-card-info">' +
+                '<div class="card-meta-line">' +
+                  '<span class="card-pill ' + catClass + '">' + (ev.category || 'fixture') + '</span>' +
+                  '<span class="card-status-pill ' + statusClass + '">' + statusText + '</span>' +
+                '</div>' +
+                '<h3 class="agenda-card-title">' + escapeHtml(ev.title) + '</h3>' +
+                (ev.location ?
+                  '<div class="agenda-card-location">' +
+                    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>' +
+                    '<span>' + escapeHtml(ev.location) + '</span>' +
+                  '</div>' : '') +
+                (ev.notes ? '<p class="agenda-card-notes">' + escapeHtml(ev.notes) + '</p>' : '') +
+                (ev.url ? '<div style="margin-top:4px;"><a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener">Event Link &rarr;</a></div>' : '') +
+              '</div>' +
+              '<div class="agenda-card-actions">' +
+                '<button type="button" class="btn btn-secondary btn-sm" data-edit-id="' + ev.id + '">View Details</button>' +
+              '</div>';
+
+            container.appendChild(card);
+          });
+
+          groupSec.appendChild(container);
+          elements.viewAgendaList.appendChild(groupSec);
+        });
+
+        // Bind clicks
+        elements.viewAgendaList.querySelectorAll('[data-edit-id]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            openEventModal(btn.dataset.editId);
+          });
+        });
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function filterEventsList(list) {
+        return list.filter(ev => {
+          // Category filter
+          if (state.activeCategory !== 'all' && ev.category !== state.activeCategory) {
+            return false;
+          }
+          // Status filter
+          if (state.activeStatus !== 'all' && (ev.status || 'confirmed') !== state.activeStatus) {
+            return false;
+          }
+          // Search query
+          if (state.searchQuery) {
+            const q = state.searchQuery.toLowerCase();
+            const text = ((ev.title || '') + ' ' + (ev.location || '') + ' ' + (ev.notes || '') + ' ' + (ev.id || '')).toLowerCase();
+            if (!text.includes(q)) return false;
+          }
+          return true;
+        });
+      }
+
+      function renderViews() {
+        if (state.viewMode === 'month') {
+          elements.viewMonthGrid.style.display = 'block';
+          elements.viewAgendaList.style.display = 'none';
+          renderMonthGrid();
+        } else {
+          elements.viewMonthGrid.style.display = 'none';
+          elements.viewAgendaList.style.display = 'flex';
+          renderAgendaList();
+        }
+      }
+
+      // --- Event Modal & Form Management ---
+      function openEventModal(eventId) {
+        const ev = state.events.find(e => e.id === eventId);
+        if (!ev) return;
+
+        state.editingEventId = eventId;
+        elements.dialogEventTitle.textContent = state.isAdmin ? 'Edit Event' : 'Event Details';
+
+        // Populate fields
+        elements.eventIdInput.value = ev.id;
+        elements.eventIdInput.readOnly = true;
+        elements.idHelpText.textContent = 'Calendar UID. Locked to maintain subscriber sync parity.';
+
+        elements.eventTitleInput.value = ev.title || '';
+        elements.eventTitleInput.readOnly = !state.isAdmin;
+
+        if (ev.start && ev.end) {
+          setRadioValue('date-type', 'range');
+          elements.eventDateInput.value = '';
+          elements.eventStartInput.value = ev.start;
+          elements.eventEndInput.value = ev.end;
+          toggleDateFields('range');
+        } else {
+          setRadioValue('date-type', 'single');
+          elements.eventDateInput.value = ev.date || '';
+          elements.eventStartInput.value = '';
+          elements.eventEndInput.value = '';
+          toggleDateFields('single');
+        }
+
+        elements.eventTimeInput.value = ev.time || '';
+        elements.eventEndTimeInput.value = ev.end_time || '';
+        elements.eventCategorySelect.value = ev.category || 'fixture';
+        elements.eventStatusSelect.value = ev.status || 'confirmed';
+        elements.eventLocationInput.value = ev.location || '';
+        elements.eventUrlInput.value = ev.url || '';
+        elements.eventNotesTextarea.value = ev.notes || '';
+        elements.eventRruleInput.value = ev.rrule || '';
+
+        // Exdates
+        state.currentExdates = [...(ev.exdates || [])];
+        renderExdatesCloud();
+
+        if (ev.rrule) {
+          elements.exdatesContainer.style.display = 'flex';
+        } else {
+          elements.exdatesContainer.style.display = 'none';
+        }
+
+        // Admin controls visibility
+        elements.btnDeleteEvent.style.display = state.isAdmin ? 'inline-flex' : 'none';
+        elements.btnSaveEvent.style.display = state.isAdmin ? 'inline-flex' : 'none';
+        elements.btnAddExdate.style.display = state.isAdmin ? 'inline-flex' : 'none';
+
+        elements.eventDialog.showModal();
+      }
+
+      function openNewEventModal(defaultDate) {
+        state.editingEventId = null;
+        elements.dialogEventTitle.textContent = 'Add New Event';
+
+        elements.eventIdInput.value = '';
+        elements.eventIdInput.readOnly = false;
+        elements.idHelpText.textContent = 'Auto-generated slug. Must be unique across all events.';
+
+        elements.eventTitleInput.value = '';
+        elements.eventTitleInput.readOnly = false;
+
+        setRadioValue('date-type', 'single');
+        elements.eventDateInput.value = defaultDate || formatDate(new Date());
+        elements.eventStartInput.value = '';
+        elements.eventEndInput.value = '';
+        toggleDateFields('single');
+
+        elements.eventTimeInput.value = '';
+        elements.eventEndTimeInput.value = '';
+        elements.eventCategorySelect.value = 'fixture';
+        elements.eventStatusSelect.value = 'confirmed';
+        elements.eventLocationInput.value = 'San Francisco';
+        elements.eventUrlInput.value = '';
+        elements.eventNotesTextarea.value = '';
+        elements.eventRruleInput.value = '';
+
+        state.currentExdates = [];
+        renderExdatesCloud();
+        elements.exdatesContainer.style.display = 'none';
+
+        elements.btnDeleteEvent.style.display = 'none';
+        elements.btnSaveEvent.style.display = 'inline-flex';
+        elements.btnAddExdate.style.display = 'inline-flex';
+
+        elements.eventDialog.showModal();
+      }
+
+      function setRadioValue(name, value) {
+        const radios = document.getElementsByName(name);
+        radios.forEach(r => {
+          r.checked = (r.value === value);
+        });
+      }
+
+      function toggleDateFields(type) {
+        const multiFields = elements.eventForm.querySelectorAll('.multi-day-field');
+        const singleField = elements.eventDateInput.closest('.form-group');
+        if (type === 'range') {
+          multiFields.forEach(f => f.style.display = 'flex');
+          singleField.style.display = 'none';
+          elements.eventStartInput.required = true;
+          elements.eventEndInput.required = true;
+          elements.eventDateInput.required = false;
+        } else {
+          multiFields.forEach(f => f.style.display = 'none');
+          singleField.style.display = 'flex';
+          elements.eventStartInput.required = false;
+          elements.eventEndInput.required = false;
+          elements.eventDateInput.required = true;
+        }
+      }
+
+      function renderExdatesCloud() {
+        elements.exdatesCloud.innerHTML = '';
+        state.currentExdates.forEach((d, idx) => {
+          const tag = document.createElement('span');
+          tag.className = 'exdate-tag';
+          tag.innerHTML = '<span>' + d + '</span>' +
+            (state.isAdmin ? '<button type="button" class="exdate-remove-btn" data-idx="' + idx + '" aria-label="Remove exdate">&times;</button>' : '');
+          elements.exdatesCloud.appendChild(tag);
+        });
+
+        elements.exdatesCloud.querySelectorAll('.exdate-remove-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = parseInt(btn.dataset.idx, 10);
+            state.currentExdates.splice(idx, 1);
+            renderExdatesCloud();
+          });
+        });
+      }
+
+      // Auto-slug generator for new events
+      elements.eventTitleInput.addEventListener('input', () => {
+        if (!state.editingEventId) {
+          const d = elements.eventDateInput.value || elements.eventStartInput.value || formatDate(new Date());
+          const slug = slugify(elements.eventTitleInput.value);
+          if (slug) {
+            elements.eventIdInput.value = d + '-' + slug;
+          }
+        }
+      });
+
+      // Form Submit (Save Event)
+      elements.eventForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = elements.eventIdInput.value.trim();
+        const title = elements.eventTitleInput.value.trim();
+        if (!id || !title) {
+          alert('ID and Title are required.');
+          return;
+        }
+
+        const dateType = document.querySelector('input[name="date-type"]:checked').value;
+        const newEvent = {
+          id: id,
+          title: title,
+          category: elements.eventCategorySelect.value,
+          status: elements.eventStatusSelect.value
+        };
+
+        if (dateType === 'range') {
+          newEvent.start = elements.eventStartInput.value;
+          newEvent.end = elements.eventEndInput.value;
+        } else {
+          newEvent.date = elements.eventDateInput.value;
+        }
+
+        if (elements.eventTimeInput.value) {
+          newEvent.time = elements.eventTimeInput.value;
+        }
+        if (elements.eventEndTimeInput.value) {
+          newEvent.end_time = elements.eventEndTimeInput.value;
+        }
+        if (elements.eventLocationInput.value.trim()) {
+          newEvent.location = elements.eventLocationInput.value.trim();
+        }
+        if (elements.eventUrlInput.value.trim()) {
+          newEvent.url = elements.eventUrlInput.value.trim();
+        }
+        if (elements.eventNotesTextarea.value.trim()) {
+          newEvent.notes = elements.eventNotesTextarea.value.trim();
+        }
+        if (elements.eventRruleInput.value.trim()) {
+          newEvent.rrule = elements.eventRruleInput.value.trim();
+          if (state.currentExdates.length > 0) {
+            newEvent.exdates = [...state.currentExdates];
+          }
+        }
+
+        if (state.editingEventId) {
+          // Update existing
+          const idx = state.events.findIndex(x => x.id === state.editingEventId);
+          if (idx !== -1) {
+            state.events[idx] = newEvent;
+          }
+        } else {
+          // Add new (verify uniqueness)
+          if (state.events.some(x => x.id === id)) {
+            alert('An event with ID "' + id + '" already exists. IDs must be unique.');
+            return;
+          }
+          state.events.push(newEvent);
+        }
+
+        updateUnsavedCount();
+        renderViews();
+        elements.eventDialog.close();
+      });
+
+      // Delete Event
+      elements.btnDeleteEvent.addEventListener('click', () => {
+        if (!state.editingEventId) return;
+        const confirmDel = confirm('Are you sure you want to delete this event?\n\nSubscribers will see this event removed from their calendars on next refresh.');
+        if (confirmDel) {
+          state.events = state.events.filter(x => x.id !== state.editingEventId);
+          updateUnsavedCount();
+          renderViews();
+          elements.eventDialog.close();
+        }
+      });
+
+      // --- Unsaved Changes & Commit Management ---
+      function updateUnsavedCount() {
+        // Compare serialized state
+        const origYaml = serializeEvents(state.originalEvents);
+        const currYaml = serializeEvents(state.events);
+        const hasChanges = (origYaml !== currYaml);
+
+        if (hasChanges) {
+          state.unsavedCount = 1;
+          elements.changesCountBadge.textContent = 'Modifications Pending';
+          elements.changesBar.classList.add('visible');
+        } else {
+          state.unsavedCount = 0;
+          elements.changesBar.classList.remove('visible');
+        }
+      }
+
+      function serializeEvents(evList) {
+        const out = {
+          calendar_name: state.calendarName,
+          calendar_url: state.calendarUrl,
+          events: evList
+        };
+        return jsyaml.dump(out, {
+          lineWidth: -1,
+          noRefs: true,
+          quotingType: '"',
+          flowLevel: -1
+        });
+      }
+
+      elements.btnDiscardChanges.addEventListener('click', () => {
+        const confirmDiscard = confirm('Discard all unsaved edits and revert back to the published schedule?');
+        if (confirmDiscard) {
+          state.events = JSON.parse(JSON.stringify(state.originalEvents));
+          updateUnsavedCount();
+          renderViews();
+        }
+      });
+
+      elements.btnReviewCommit.addEventListener('click', () => {
+        const yamlText = serializeEvents(state.events);
+        elements.yamlPreviewBlock.textContent = yamlText;
+        elements.commitStatusMsg.textContent = '';
+
+        // Summary details
+        const countDiff = state.events.length - state.originalEvents.length;
+        let summaryHtml = '<strong>Schedule Changes:</strong> ' + state.events.length + ' total events.';
+        if (countDiff > 0) {
+          summaryHtml += ' (+' + countDiff + ' added)';
+        } else if (countDiff < 0) {
+          summaryHtml += ' (' + Math.abs(countDiff) + ' deleted)';
+        }
+        elements.commitSummaryBox.innerHTML = summaryHtml;
+
+        elements.commitDialog.showModal();
+      });
+
+      // Fallback Download events.yml
+      elements.btnDownloadYaml.addEventListener('click', () => {
+        const yamlText = serializeEvents(state.events);
+        const blob = new Blob([yamlText], { type: 'text/yaml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'events.yml';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      // Direct GitHub Commit
+      elements.btnExecuteCommit.addEventListener('click', async () => {
+        if (!state.githubToken) {
+          alert('You must connect your GitHub Personal Access Token to commit changes directly.');
+          elements.commitDialog.close();
+          elements.authDialog.showModal();
+          return;
+        }
+
+        const commitMessage = elements.commitMessageInput.value.trim() || 'cal: update schedule';
+        const yamlText = serializeEvents(state.events);
+        elements.commitStatusMsg.style.color = 'var(--fog-blue)';
+        elements.commitStatusMsg.textContent = 'Committing changes to GitHub main branch...';
+        elements.btnExecuteCommit.disabled = true;
+
+        try {
+          // Get latest SHA
+          const checkRes = await fetch(GITHUB_API_URL, {
+            headers: {
+              'Authorization': 'Bearer ' + state.githubToken,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+
+          let currentSha = state.fileSha;
+          if (checkRes.ok) {
+            const data = await checkRes.json();
+            currentSha = data.sha;
+          }
+
+          // Base64 encode YAML
+          const contentBase64 = btoa(unescape(encodeURIComponent(yamlText)));
+
+          const putRes = await fetch(GITHUB_API_URL, {
+            method: 'PUT',
+            headers: {
+              'Authorization': 'Bearer ' + state.githubToken,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              message: commitMessage,
+              content: contentBase64,
+              sha: currentSha
+            })
+          });
+
+          if (!putRes.ok) {
+            const errData = await putRes.json();
+            throw new Error(errData.message || 'GitHub API returned HTTP ' + putRes.status);
+          }
+
+          const resData = await putRes.json();
+          state.fileSha = resData.content.sha;
+          state.originalEvents = JSON.parse(JSON.stringify(state.events));
+          updateUnsavedCount();
+
+          elements.commitStatusMsg.style.color = 'var(--fog-green)';
+          elements.commitStatusMsg.textContent = '✓ Successfully committed to main! GitHub Actions is rebuilding fog.ics.';
+          setTimeout(() => {
+            elements.commitDialog.close();
+          }, 2000);
+        } catch (err) {
+          console.error('Commit error:', err);
+          elements.commitStatusMsg.style.color = 'var(--fog-red)';
+          elements.commitStatusMsg.textContent = 'Commit failed: ' + err.message;
+        } finally {
+          elements.btnExecuteCommit.disabled = false;
+        }
+      });
+
+      // --- Admin Auth Workflow ---
+      function initAuth() {
+        const savedToken = localStorage.getItem('fog_gh_token') || sessionStorage.getItem('fog_gh_token');
+        if (savedToken) {
+          state.githubToken = savedToken;
+          verifyToken(savedToken, false);
+        }
+      }
+
+      async function verifyToken(token, showSuccessAlert) {
+        elements.authErrorMsg.style.display = 'none';
+        elements.authUserInfo.style.display = 'none';
+
+        try {
+          const res = await fetch('https://api.github.com/user', {
+            headers: { 'Authorization': 'Bearer ' + token }
+          });
+          if (!res.ok) throw new Error('Invalid token or insufficient scope.');
+          const user = await res.json();
+
+          state.isAdmin = true;
+          state.githubToken = token;
+          document.body.classList.add('admin-mode');
+          elements.btnNewEvent.style.display = 'inline-flex';
+          elements.authStatusBadge.className = 'auth-badge authenticated';
+          elements.authStatusBadge.textContent = 'Admin: @' + user.login;
+          elements.btnSignOut.style.display = 'inline-flex';
+
+          elements.authUserInfo.style.display = 'block';
+          elements.authUserInfo.textContent = 'Connected as ' + (user.name || user.login) + ' (@' + user.login + '). Write access enabled.';
+
+          if (elements.ghRememberCheckbox.checked) {
+            localStorage.setItem('fog_gh_token', token);
+          } else {
+            sessionStorage.setItem('fog_gh_token', token);
+          }
+
+          if (showSuccessAlert) {
+            setTimeout(() => {
+              elements.authDialog.close();
+              renderViews();
+            }, 1000);
+          }
+        } catch (err) {
+          elements.authErrorMsg.style.display = 'block';
+          elements.authErrorMsg.textContent = 'Verification error: ' + err.message;
+        }
+      }
+
+      elements.btnSaveToken.addEventListener('click', () => {
+        const tok = elements.ghTokenInput.value.trim();
+        if (!tok) {
+          elements.authErrorMsg.style.display = 'block';
+          elements.authErrorMsg.textContent = 'Please enter a GitHub Personal Access Token.';
+          return;
+        }
+        verifyToken(tok, true);
+      });
+
+      elements.btnSignOut.addEventListener('click', () => {
+        localStorage.removeItem('fog_gh_token');
+        sessionStorage.removeItem('fog_gh_token');
+        state.githubToken = '';
+        state.isAdmin = false;
+        document.body.classList.remove('admin-mode');
+        elements.btnNewEvent.style.display = 'none';
+        elements.authStatusBadge.className = 'auth-badge';
+        elements.authStatusBadge.textContent = 'Public Schedule';
+        elements.btnSignOut.style.display = 'none';
+        elements.authUserInfo.style.display = 'none';
+        elements.ghTokenInput.value = '';
+        renderViews();
+        elements.authDialog.close();
+      });
+
+      // Dialog Close buttons
+      document.querySelectorAll('[data-close]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const dlg = document.getElementById(btn.dataset.close);
+          if (dlg) dlg.close();
+        });
+      });
+
+      // Toggle Admin Dialog
+      elements.btnToggleAdmin.addEventListener('click', () => {
+        elements.authDialog.showModal();
+      });
+
+      elements.btnNewEvent.addEventListener('click', () => {
+        openNewEventModal();
+      });
+
+      // View switcher buttons
+      elements.btnViewMonth.addEventListener('click', () => {
+        state.viewMode = 'month';
+        elements.btnViewMonth.classList.add('active');
+        elements.btnViewAgenda.classList.remove('active');
+        renderViews();
+      });
+
+      elements.btnViewAgenda.addEventListener('click', () => {
+        state.viewMode = 'agenda';
+        elements.btnViewAgenda.classList.add('active');
+        elements.btnViewMonth.classList.remove('active');
+        renderViews();
+      });
+
+      // Month navigation
+      elements.btnPrevMonth.addEventListener('click', () => {
+        state.currentMonth--;
+        if (state.currentMonth < 0) {
+          state.currentMonth = 11;
+          state.currentYear--;
+        }
+        renderViews();
+      });
+
+      elements.btnNextMonth.addEventListener('click', () => {
+        state.currentMonth++;
+        if (state.currentMonth > 11) {
+          state.currentMonth = 0;
+          state.currentYear++;
+        }
+        renderViews();
+      });
+
+      elements.btnToday.addEventListener('click', () => {
+        const today = new Date();
+        state.currentYear = today.getFullYear();
+        state.currentMonth = today.getMonth();
+        renderViews();
+      });
+
+      // Filter chips
+      document.querySelectorAll('.filter-chips-row button[data-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-chips-row button[data-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.activeCategory = btn.dataset.filter;
+          renderViews();
+        });
+      });
+
+      document.querySelectorAll('.filter-chips-row button[data-status]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-chips-row button[data-status]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.activeStatus = btn.dataset.status;
+          renderViews();
+        });
+      });
+
+      // Search input
+      elements.searchInput.addEventListener('input', () => {
+        state.searchQuery = elements.searchInput.value.trim();
+        renderViews();
+      });
+
+      // Location suggestion chips
+      document.querySelectorAll('.location-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          elements.eventLocationInput.value = chip.dataset.loc;
+        });
+      });
+
+      // Exdate Add Button
+      elements.btnAddExdate.addEventListener('click', () => {
+        const dateVal = elements.inputNewExdate.value;
+        if (!dateVal) return;
+        if (!state.currentExdates.includes(dateVal)) {
+          state.currentExdates.push(dateVal);
+          state.currentExdates.sort();
+          renderExdatesCloud();
+          elements.inputNewExdate.value = '';
+        }
+      });
+
+      // Radio date type switch
+      document.querySelectorAll('input[name="date-type"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          toggleDateFields(radio.value);
+        });
+      });
+
+      // --- Initialization ---
+      initAuth();
+      loadCalendarData();
+
+    })();
+  </script>
+</body>
+</html>
