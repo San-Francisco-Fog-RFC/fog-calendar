@@ -402,7 +402,7 @@
       <div class="form-group" style="margin-bottom: 16px;">
         <label class="form-label" for="commit-message-input">Commit Message</label>
         <input type="text" id="commit-message-input" class="form-input" value="cal: update schedule" required>
-        <span class="form-help">This commit triggers GitHub Actions to rebuild <code>docs/fog.ics</code>.</span>
+        <span class="form-help">This commit triggers GitHub Actions to strictly validate events and rebuild <code>fog.ics</code>, <code>events.json</code>, <code>schema-events.jsonld</code>, and <code>openapi.yaml</code>.</span>
       </div>
 
       <div class="form-group">
@@ -1463,7 +1463,38 @@
         } else if (countDiff < 0) {
           summaryHtml += ' (' + Math.abs(countDiff) + ' deleted)';
         }
-        summaryHtml += '<div style="margin-top:4px; font-size:0.8rem; color:#555;">Pushing to main branch triggers automated <code>build_ics.py</code> execution.</div>';
+
+        // Client-side validation check
+        const valErrors = [];
+        const ids = state.events.map(e => e.id).filter(Boolean);
+        const dupes = ids.filter((item, index) => ids.indexOf(item) !== index);
+        if (dupes.length > 0) {
+          valErrors.push('Duplicate event IDs found: ' + Array.from(new Set(dupes)).join(', '));
+        }
+        state.events.forEach((ev, idx) => {
+          if (!ev.id) valErrors.push(`Event #${idx + 1}: Missing required ID`);
+          if (!ev.title) valErrors.push(`[${ev.id || '#' + (idx + 1)}]: Missing title`);
+          if (!ev.date && !ev.start) valErrors.push(`[${ev.id || '#' + (idx + 1)}]: Missing date or start`);
+        });
+
+        if (valErrors.length > 0) {
+          summaryHtml += '<div style="margin-top:8px; padding:10px; background:#fff2f0; border:1px solid var(--fog-red); border-radius:3px; color:var(--fog-red); font-size:0.82rem;">'
+            + '<strong>❌ Pre-Commit Validation Failed:</strong><ul style="margin:4px 0 0 16px; padding:0;">'
+            + valErrors.map(e => `<li>${e}</li>`).join('')
+            + '</ul>Cannot push invalid data to GitHub.</div>';
+          elements.btnExecuteCommit.disabled = true;
+        } else {
+          summaryHtml += '<div style="margin-top:8px; padding:10px; background:#eef7f0; border:1px solid var(--fog-green); border-radius:3px; color:var(--fog-green); font-size:0.82rem;">'
+            + `<strong>✓ Pre-Commit Validation Passed:</strong> All ${state.events.length} events verified.`
+            + '<div style="margin-top:6px; font-size:0.78rem; color:#222;">'
+            + 'Live Search Engine &amp; Schema Verification Links (test once pushed):<br>'
+            + '<a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fevents.fogrugby.com%2F" target="_blank" rel="noopener" style="color:var(--fog-blue); font-weight:600; text-decoration:underline;">Google Rich Results Test</a> &middot; '
+            + '<a href="https://validator.schema.org/#url=https%3A%2F%2Fevents.fogrugby.com%2F" target="_blank" rel="noopener" style="color:var(--fog-blue); font-weight:600; text-decoration:underline;">Schema.org Validator</a> &middot; '
+            + '<a href="https://www.bing.com/webmasters/" target="_blank" rel="noopener" style="color:var(--fog-blue); font-weight:600; text-decoration:underline;">Bing Webmaster Tools</a>'
+            + '</div></div>';
+          elements.btnExecuteCommit.disabled = false;
+        }
+
         elements.commitSummaryBox.innerHTML = summaryHtml;
 
         elements.commitDialog.showModal();

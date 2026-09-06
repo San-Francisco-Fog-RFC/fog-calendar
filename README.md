@@ -48,12 +48,25 @@ Rules that keep the feed sane:
 4. Push once (or run the workflow manually) to generate the first `fog.ics`.
 5. Optional: put the subscribe page behind `events.fogrugby.com` via a CNAME in `docs/` and a DNS record.
 
-## Local build
+## Local build & validation
 
 ```bash
 pip install pyyaml
+
+# Strict validation check (halts with error code if any issue exists)
+python3 build_ics.py --validate-only
+
+# Compile all feeds (runs validation first; fails if errors exist)
 python3 build_ics.py
 ```
+
+## Search engine & Schema.org verification links
+
+After publishing or making schedule changes, verify that crawlers and aggregators detect all events cleanly:
+
+- [**Google Rich Results Test**](https://search.google.com/test/rich-results?url=https%3A%2F%2Fevents.fogrugby.com%2F) — Simulates Googlebot crawl to verify interactive event cards and carousels.
+- [**Schema.org Markup Validator**](https://validator.schema.org/#url=https%3A%2F%2Fevents.fogrugby.com%2F) — Official consortium validator across Google, Microsoft/Bing, and Yahoo.
+- [**Bing Webmaster Tools**](https://www.bing.com/webmasters/) — Inspect URL markup and request Bing indexing.
 
 ## Where this fits
 

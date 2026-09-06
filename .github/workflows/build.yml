@@ -18,7 +18,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
-      - run: python3 build_ics.py
+      - name: Validate events.yml & Build Feeds
+        run: python3 build_ics.py
+      - name: Publish Action Summary with Validation Links
+        if: always()
+        run: python3 build_ics.py --summary >> $GITHUB_STEP_SUMMARY
       - name: Commit generated calendar
         run: |
           git config user.name "fog-calendar-bot"
