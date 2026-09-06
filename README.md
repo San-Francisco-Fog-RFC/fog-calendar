@@ -1,20 +1,30 @@
 # fog-calendar
 
-The San Francisco Fog RFC club calendar, published as a subscribable `.ics` feed.
+The San Francisco Fog RFC club calendar and syndication engine, published as subscribable calendar feeds, open REST JSON APIs, and Schema.org rich data for search engines.
 
-**Subscribe:** `https://san-francisco-fog-rfc.github.io/fog-calendar/fog.ics` (or `https://events.fogrugby.com/fog.ics`)
-**Landing page:** `https://san-francisco-fog-rfc.github.io/fog-calendar/` (or `https://events.fogrugby.com/`)
+- **Calendar Feed (iCal):** `https://events.fogrugby.com/fog.ics`
+- **REST JSON API:** `https://events.fogrugby.com/events.json`
+- **Schema.org JSON-LD:** `https://events.fogrugby.com/schema-events.jsonld`
+- **OpenAPI 3.1 Spec:** `https://events.fogrugby.com/openapi.yaml`
+- **Portal & Landing Page:** `https://events.fogrugby.com/`
 
 ## How it works
 
 ```
-events.yml  ──(push to main)──►  GitHub Action runs build_ics.py  ──►  docs/fog.ics  ──►  GitHub Pages
+events.yml ──(push to main)──► GitHub Action runs build_ics.py ──► docs/fog.ics (iCal Feed)
+                                                                 ├── docs/events.json (REST API)
+                                                                 ├── docs/schema-events.jsonld (Schema.org)
+                                                                 ├── docs/openapi.yaml (OpenAPI 3.1)
+                                                                 └── docs/index.html (Web Portal)
 ```
 
 - **`events.yml`** is the only file humans edit. One entry per event.
-- **`build_ics.py`** turns it into a valid RFC 5545 calendar with an embedded Pacific timezone.
-- **`docs/fog.ics`** is generated — never edit it by hand.
-- **`docs/index.html`** is the subscribe page.
+- **`build_ics.py`** compiles `events.yml` into all syndication formats automatically.
+- **`docs/fog.ics`** is the RFC 5545 calendar feed with embedded Pacific timezone (`America/Los_Angeles`).
+- **`docs/events.json`** is a machine-readable JSON REST API with ISO-8601 timestamps and venue metadata.
+- **`docs/schema-events.jsonld`** is the Schema.org `@graph` for Google Events Rich Results and crawler indexing.
+- **`docs/openapi.yaml`** is the OpenAPI 3.1 contract for developers and partner clubs.
+- **`docs/index.html`** is the subscriber page with embedded Schema.org JSON-LD in the `<head>`.
 
 ## Editing the calendar
 
