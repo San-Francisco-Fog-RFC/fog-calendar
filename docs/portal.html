@@ -22,6 +22,7 @@
       </div>
       <div class="header-actions">
         <span id="auth-status-badge" class="auth-badge">Public Schedule</span>
+        <button id="btn-open-verifier" class="btn btn-outline-white btn-sm" aria-haspopup="dialog">Verify Files &amp; Feed</button>
         <a href="index.html" class="btn btn-outline-white btn-sm">Subscribe Feed (.ics)</a>
         <button id="btn-toggle-admin" class="btn btn-outline-white btn-sm" aria-haspopup="dialog">Admin Access</button>
       </div>
@@ -258,6 +259,102 @@
     </form>
   </dialog>
 
+  <!-- Calendar Files Verifier & Explainer Modal -->
+  <dialog id="verifier-dialog" class="fog-dialog" aria-labelledby="dialog-verifier-title" style="max-width: 800px;">
+    <div class="dialog-header">
+      <h3 id="dialog-verifier-title">Calendar File Verifier &amp; Feed Inspector</h3>
+      <button type="button" class="dialog-close-btn" data-close="verifier-dialog" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="dialog-body">
+
+      <!-- Architecture Explainer Box -->
+      <div class="explainer-box">
+        <div class="explainer-title">Why are there two files? (events.yml vs fog.ics)</div>
+        <p style="font-size: 0.82rem; margin: 0 0 6px;">
+          <strong>1. <code>events.yml</code> (The Human Editor):</strong> The human-friendly source of truth stored in this repository. Humans edit dates, venues, and match notes here.
+        </p>
+        <p style="font-size: 0.82rem; margin: 0 0 8px;">
+          <strong>2. <code>docs/fog.ics</code> (The Machine Feed):</strong> An RFC 5545 calendar standard file compiled from <code>events.yml</code>. Apple Calendar, Google Calendar, and Outlook cannot read YAML—they strictly read <code>.ics</code> calendar feeds.
+        </p>
+        <div class="flow-diagram">
+          <div class="flow-step">1. You edit events.yml</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">2. GitHub Action runs build_ics.py</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">3. docs/fog.ics is generated</div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step">4. Subscribers auto-sync</div>
+        </div>
+      </div>
+
+      <!-- Health Checks Grid -->
+      <div class="health-grid">
+        <div class="health-card">
+          <span class="health-label">Total Events</span>
+          <span id="health-event-count" class="health-value">0</span>
+          <span class="health-badge-pass">&#10003; Loaded Cleanly</span>
+        </div>
+        <div class="health-card">
+          <span class="health-label">ID Duplication Audit</span>
+          <span id="health-dupe-count" class="health-value">0</span>
+          <span id="health-dupe-badge" class="health-badge-pass">&#10003; All IDs Unique</span>
+        </div>
+        <div class="health-card">
+          <span class="health-label">RFC 5545 Timezone</span>
+          <span class="health-value" style="font-size: 0.95rem;">America/Los_Angeles</span>
+          <span class="health-badge-pass">&#10003; Embedded VTIMEZONE</span>
+        </div>
+        <div class="health-card">
+          <span class="health-label">Sync Status</span>
+          <span id="health-sync-status" class="health-value" style="font-size: 0.95rem;">In Sync</span>
+          <span id="health-sync-badge" class="health-badge-pass">&#10003; Ready for Feed</span>
+        </div>
+      </div>
+
+      <!-- Modal Tabs -->
+      <div class="modal-tabs" role="tablist">
+        <button type="button" class="modal-tab-btn active" id="tab-btn-yaml" data-tab="tab-yaml">1. events.yml (Source)</button>
+        <button type="button" class="modal-tab-btn" id="tab-btn-ics" data-tab="tab-ics">2. fog.ics (Compiled Feed)</button>
+        <button type="button" class="modal-tab-btn" id="tab-btn-diff" data-tab="tab-diff">3. Changes Diff</button>
+      </div>
+
+      <!-- Tab Content: YAML -->
+      <div id="tab-yaml" class="modal-tab-pane">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #555;">Human-Editable Master File:</span>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" id="btn-copy-yaml" class="btn btn-secondary btn-sm">Copy YAML</button>
+            <button type="button" id="btn-dl-yaml" class="btn btn-secondary btn-sm">Download events.yml</button>
+          </div>
+        </div>
+        <pre id="verifier-yaml-block" style="background: #141718; color: #f0f0f0; padding: 12px; border-radius: 4px; font-family: monospace; font-size: 0.78rem; max-height: 280px; overflow-y: auto; white-space: pre;"></pre>
+      </div>
+
+      <!-- Tab Content: ICS -->
+      <div id="tab-ics" class="modal-tab-pane" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: #555;">Compiled RFC 5545 Calendar Feed:</span>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" id="btn-copy-ics" class="btn btn-secondary btn-sm">Copy .ics</button>
+            <button type="button" id="btn-dl-ics" class="btn btn-secondary btn-sm">Download fog.ics</button>
+          </div>
+        </div>
+        <pre id="verifier-ics-block" style="background: #00243C; color: #24A0F1; padding: 12px; border-radius: 4px; font-family: monospace; font-size: 0.78rem; max-height: 280px; overflow-y: auto; white-space: pre;"></pre>
+      </div>
+
+      <!-- Tab Content: Diff -->
+      <div id="tab-diff" class="modal-tab-pane" style="display: none;">
+        <div id="verifier-diff-content" style="padding: 14px; background: #f6f8fa; border-radius: 4px; font-size: 0.85rem;">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+    <div class="dialog-footer">
+      <button type="button" class="btn btn-secondary btn-sm" data-close="verifier-dialog">Close</button>
+    </div>
+  </dialog>
+
   <!-- GitHub Authentication Dialog -->
   <dialog id="auth-dialog" class="fog-dialog" aria-labelledby="dialog-auth-title">
     <div class="dialog-header">
@@ -337,6 +434,13 @@
       const GITHUB_RAW_FALLBACK = 'https://raw.githubusercontent.com/' + REPO_OWNER + '/' + REPO_NAME + '/main/' + FILE_PATH;
       const GITHUB_API_URL = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + FILE_PATH;
 
+      const MONTH_NAMES = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+
+      const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
       // --- State ---
       const state = {
         calendarName: 'SF Fog Rugby',
@@ -370,13 +474,14 @@
         btnToday: document.getElementById('btn-today'),
         searchInput: document.getElementById('search-input'),
         btnToggleAdmin: document.getElementById('btn-toggle-admin'),
+        btnOpenVerifier: document.getElementById('btn-open-verifier'),
         authStatusBadge: document.getElementById('auth-status-badge'),
         btnNewEvent: document.getElementById('btn-new-event'),
         changesBar: document.getElementById('changes-bar'),
         changesCountBadge: document.getElementById('changes-count-badge'),
         btnDiscardChanges: document.getElementById('btn-discard-changes'),
         btnReviewCommit: document.getElementById('btn-review-commit'),
-        // Dialogs
+        // Event Dialog
         eventDialog: document.getElementById('event-dialog'),
         eventForm: document.getElementById('event-form'),
         dialogEventTitle: document.getElementById('dialog-event-title'),
@@ -400,6 +505,20 @@
         btnAddExdate: document.getElementById('btn-add-exdate'),
         btnDeleteEvent: document.getElementById('btn-delete-event'),
         btnSaveEvent: document.getElementById('btn-save-event'),
+        // Verifier Dialog
+        verifierDialog: document.getElementById('verifier-dialog'),
+        healthEventCount: document.getElementById('health-event-count'),
+        healthDupeCount: document.getElementById('health-dupe-count'),
+        healthDupeBadge: document.getElementById('health-dupe-badge'),
+        healthSyncStatus: document.getElementById('health-sync-status'),
+        healthSyncBadge: document.getElementById('health-sync-badge'),
+        verifierYamlBlock: document.getElementById('verifier-yaml-block'),
+        verifierIcsBlock: document.getElementById('verifier-ics-block'),
+        verifierDiffContent: document.getElementById('verifier-diff-content'),
+        btnCopyYaml: document.getElementById('btn-copy-yaml'),
+        btnDlYaml: document.getElementById('btn-dl-yaml'),
+        btnCopyIcs: document.getElementById('btn-copy-ics'),
+        btnDlIcs: document.getElementById('btn-dl-ics'),
         // Auth Dialog
         authDialog: document.getElementById('auth-dialog'),
         ghTokenInput: document.getElementById('gh-token-input'),
@@ -418,15 +537,31 @@
         btnExecuteCommit: document.getElementById('btn-execute-commit')
       };
 
-      // --- Utility Helpers ---
+      // --- Robust Date & String Utility Helpers ---
       function pad2(n) {
         return String(n).padStart(2, '0');
       }
 
       function formatDate(d) {
         if (!d) return '';
-        if (typeof d === 'string') return d;
-        return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+        if (typeof d === 'string') {
+          // If already string, extract the leading YYYY-MM-DD (strips any T00:00:00.000Z)
+          return d.split('T')[0].trim();
+        }
+        if (d instanceof Date) {
+          return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+        }
+        return String(d).substring(0, 10);
+      }
+
+      function parseLocalDate(dStr) {
+        if (!dStr) return new Date();
+        const clean = String(dStr).split('T')[0].trim();
+        const parts = clean.split('-').map(Number);
+        if (parts.length >= 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
+          return new Date(parts[0], parts[1] - 1, parts[2]);
+        }
+        return new Date(clean);
       }
 
       function slugify(text) {
@@ -439,18 +574,189 @@
           .replace(/^-+|-+$/g, '');
       }
 
-      const MONTH_NAMES = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-      ];
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
 
-      const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      // --- RFC 5545 Helpers matching build_ics.py ---
+      function escIcs(s) {
+        return String(s || '')
+          .replace(/\\/g, '\\\\')
+          .replace(/;/g, '\\;')
+          .replace(/,/g, '\\,')
+          .replace(/\r\n/g, '\\n')
+          .replace(/\n/g, '\\n');
+      }
 
-      // --- Data Loading & Fetching ---
+      function foldIcsLine(line) {
+        const out = [];
+        let cur = '';
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+          const testLen = new TextEncoder().encode(cur + ch).length;
+          if (testLen > 74) {
+            out.push(cur);
+            cur = ' ' + ch;
+          } else {
+            cur += ch;
+          }
+        }
+        out.push(cur);
+        return out.join('\r\n');
+      }
+
+      function generateIcsText(events, calendarName, calendarUrl) {
+        const TZID = 'America/Los_Angeles';
+        const DOMAIN = 'fogrugby.com';
+        const now = new Date();
+        const stamp = now.getUTCFullYear() +
+          pad2(now.getUTCMonth() + 1) +
+          pad2(now.getUTCDate()) + 'T' +
+          pad2(now.getUTCHours()) +
+          pad2(now.getUTCMinutes()) +
+          pad2(now.getUTCSeconds()) + 'Z';
+
+        const VTIMEZONE = [
+          'BEGIN:VTIMEZONE',
+          'TZID:America/Los_Angeles',
+          'X-LIC-LOCATION:America/Los_Angeles',
+          'BEGIN:DAYLIGHT',
+          'TZOFFSETFROM:-0800',
+          'TZOFFSETTO:-0700',
+          'TZNAME:PDT',
+          'DTSTART:19700308T020000',
+          'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU',
+          'END:DAYLIGHT',
+          'BEGIN:STANDARD',
+          'TZOFFSETFROM:-0700',
+          'TZOFFSETTO:-0800',
+          'TZNAME:PST',
+          'DTSTART:19701101T020000',
+          'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU',
+          'END:STANDARD',
+          'END:VTIMEZONE'
+        ];
+
+        let lines = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//San Francisco Fog RFC//fog-calendar//EN',
+          'CALSCALE:GREGORIAN',
+          'METHOD:PUBLISH',
+          'X-WR-CALNAME:' + escIcs(calendarName || 'SF Fog Rugby'),
+          'X-WR-TIMEZONE:' + TZID,
+          'X-WR-CALDESC:Fixtures\\, training\\, Pathway to Rugby\\, tournaments and club events.',
+          'REFRESH-INTERVAL;VALUE=DURATION:PT6H',
+          'X-PUBLISHED-TTL:PT6H'
+        ];
+
+        if (calendarUrl) {
+          lines.push('URL:' + calendarUrl);
+        }
+        lines = lines.concat(VTIMEZONE);
+
+        const sorted = [...events].sort((a, b) => {
+          const da = formatDate(a.date || a.start || '');
+          const db = formatDate(b.date || b.start || '');
+          return da.localeCompare(db);
+        });
+
+        sorted.forEach(ev => {
+          const uid = ev.id + '@' + DOMAIN;
+          lines.push('BEGIN:VEVENT');
+          lines.push('UID:' + uid);
+          lines.push('DTSTAMP:' + stamp);
+
+          const startDateStr = formatDate(ev.date || ev.start);
+          const endDateStr = ev.end ? formatDate(ev.end) : null;
+          const startObj = parseLocalDate(startDateStr);
+
+          const ymd = startObj.getFullYear() + pad2(startObj.getMonth() + 1) + pad2(startObj.getDate());
+
+          if (ev.time) {
+            const [th, tm] = ev.time.split(':').map(Number);
+            let endTh = th + 2;
+            let endTm = tm;
+            let endDayObj = new Date(startObj);
+
+            if (ev.end_time) {
+              const [eh, em] = ev.end_time.split(':').map(Number);
+              endTh = eh;
+              endTm = em;
+              if (eh < th || (eh === th && em < tm)) {
+                endDayObj.setDate(endDayObj.getDate() + 1);
+              }
+            } else {
+              if (endTh >= 24) {
+                endTh = endTh % 24;
+                endDayObj.setDate(endDayObj.getDate() + 1);
+              }
+            }
+
+            const endYmd = endDayObj.getFullYear() + pad2(endDayObj.getMonth() + 1) + pad2(endDayObj.getDate());
+            lines.push('DTSTART;TZID=' + TZID + ':' + ymd + 'T' + pad2(th) + pad2(tm) + '00');
+            lines.push('DTEND;TZID=' + TZID + ':' + endYmd + 'T' + pad2(endTh) + pad2(endTm) + '00');
+          } else {
+            // all-day, DTEND is exclusive
+            const lastObj = endDateStr ? parseLocalDate(endDateStr) : new Date(startObj);
+            lastObj.setDate(lastObj.getDate() + 1);
+            const endYmd = lastObj.getFullYear() + pad2(lastObj.getMonth() + 1) + pad2(lastObj.getDate());
+            lines.push('DTSTART;VALUE=DATE:' + ymd);
+            lines.push('DTEND;VALUE=DATE:' + endYmd);
+          }
+
+          if (ev.rrule) {
+            lines.push('RRULE:' + ev.rrule);
+          }
+
+          if (ev.exdates && Array.isArray(ev.exdates)) {
+            ev.exdates.forEach(x => {
+              const xdStr = formatDate(x);
+              const xdObj = parseLocalDate(xdStr);
+              const xymd = xdObj.getFullYear() + pad2(xdObj.getMonth() + 1) + pad2(xdObj.getDate());
+              if (ev.time) {
+                const [th, tm] = ev.time.split(':').map(Number);
+                lines.push('EXDATE;TZID=' + TZID + ':' + xymd + 'T' + pad2(th) + pad2(tm) + '00');
+              } else {
+                lines.push('EXDATE;VALUE=DATE:' + xymd);
+              }
+            });
+          }
+
+          lines.push('SUMMARY:' + escIcs(ev.title));
+          if (ev.location) {
+            lines.push('LOCATION:' + escIcs(ev.location));
+          }
+          let desc = (ev.notes || '').trim();
+          if (ev.url) {
+            lines.push('URL:' + ev.url);
+            desc = (desc ? desc + '\n\n' : '') + ev.url;
+          }
+          if (desc) {
+            lines.push('DESCRIPTION:' + escIcs(desc));
+          }
+          if (ev.category) {
+            lines.push('CATEGORIES:' + escIcs(ev.category).toUpperCase());
+          }
+          lines.push('STATUS:' + (ev.status === 'tentative' ? 'TENTATIVE' : 'CONFIRMED'));
+          lines.push(ev.time ? 'TRANSP:OPAQUE' : 'TRANSP:TRANSPARENT');
+          lines.push('END:VEVENT');
+        });
+
+        lines.push('END:VCALENDAR');
+        return lines.map(foldIcsLine).join('\r\n') + '\r\n';
+      }
+
+      // --- Data Loading & Normalization ---
       async function loadCalendarData() {
         let yamlText = '';
         try {
-          // 1. Try local relative path first (when running on a local web server)
           const localRes = await fetch(LOCAL_PATH);
           if (localRes.ok) {
             yamlText = await localRes.text();
@@ -461,7 +767,6 @@
 
         if (!yamlText) {
           try {
-            // 2. Fetch from GitHub API or raw fallback
             const headers = state.githubToken ? { 'Authorization': 'Bearer ' + state.githubToken } : {};
             const apiRes = await fetch(GITHUB_API_URL, { headers });
             if (apiRes.ok) {
@@ -488,7 +793,6 @@
           const parsed = jsyaml.load(yamlText);
           state.calendarName = parsed.calendar_name || 'SF Fog Rugby';
           state.calendarUrl = parsed.calendar_url || '';
-          // Clone events safely
           state.originalEvents = JSON.parse(JSON.stringify(parsed.events || []));
           state.events = JSON.parse(JSON.stringify(parsed.events || []));
           normalizeEventDates(state.events);
@@ -512,9 +816,8 @@
         });
       }
 
-      // --- Recurrence Expansion for Calendar View ---
+      // --- Recurrence Expansion for Month View ---
       function expandRecurringEvents(year, month) {
-        // Expand training rrule (FREQ=WEEKLY;BYDAY=TU,TH) for the selected month
         const expanded = [];
         const monthStart = new Date(year, month, 1);
         const monthEnd = new Date(year, month + 1, 0);
@@ -525,10 +828,10 @@
             if (ev.rrule.includes('TU')) daysToMatch.push(2);
             if (ev.rrule.includes('TH')) daysToMatch.push(4);
 
-            const ruleStart = ev.date ? new Date(ev.date + 'T00:00:00') : new Date('2026-11-03T00:00:00');
-            const exdatesSet = new Set(ev.exdates || []);
+            const ruleStartStr = formatDate(ev.date || '2026-11-03');
+            const ruleStart = parseLocalDate(ruleStartStr);
+            const exdatesSet = new Set((ev.exdates || []).map(formatDate));
 
-            // Loop through all days of the month
             for (let d = new Date(monthStart); d <= monthEnd; d.setDate(d.getDate() + 1)) {
               if (d < ruleStart) continue;
               if (daysToMatch.includes(d.getDay())) {
@@ -558,7 +861,7 @@
         elements.calendarDaysContainer.innerHTML = '';
 
         const firstDayOfMonth = new Date(year, month, 1);
-        const startDayIndex = firstDayOfMonth.getDay(); // 0 = Sun
+        const startDayIndex = firstDayOfMonth.getDay();
         const daysInCurrentMonth = new Date(year, month + 1, 0).getDate();
         const daysInPrevMonth = new Date(year, month, 0).getDate();
 
@@ -566,17 +869,16 @@
         const allVisibleEvents = expandRecurringEvents(year, month);
         const filtered = filterEventsList(allVisibleEvents);
 
-        // Map events by date YYYY-MM-DD
         const eventDateMap = new Map();
         filtered.forEach(ev => {
           if (ev.date) {
-            const list = eventDateMap.get(ev.date) || [];
+            const dKey = formatDate(ev.date);
+            const list = eventDateMap.get(dKey) || [];
             list.push(ev);
-            eventDateMap.set(ev.date, list);
+            eventDateMap.set(dKey, list);
           } else if (ev.start && ev.end) {
-            // Multi-day
-            const s = new Date(ev.start + 'T00:00:00');
-            const e = new Date(ev.end + 'T00:00:00');
+            const s = parseLocalDate(ev.start);
+            const e = parseLocalDate(ev.end);
             for (let cur = new Date(s); cur <= e; cur.setDate(cur.getDate() + 1)) {
               const curStr = formatDate(cur);
               const list = eventDateMap.get(curStr) || [];
@@ -586,7 +888,7 @@
           }
         });
 
-        // Previous Month tail days
+        // Prev Month tail
         for (let i = startDayIndex - 1; i >= 0; i--) {
           const dayNum = daysInPrevMonth - i;
           const cell = document.createElement('div');
@@ -595,7 +897,7 @@
           elements.calendarDaysContainer.appendChild(cell);
         }
 
-        // Current Month days
+        // Current Month
         for (let d = 1; d <= daysInCurrentMonth; d++) {
           const dateStr = year + '-' + pad2(month + 1) + '-' + pad2(d);
           const isToday = (dateStr === todayStr);
@@ -628,7 +930,7 @@
           elements.calendarDaysContainer.appendChild(cell);
         }
 
-        // Next Month leading days to fill grid (total cells multiple of 7)
+        // Next Month leading
         const totalRendered = startDayIndex + daysInCurrentMonth;
         const remainder = (7 - (totalRendered % 7)) % 7;
         for (let n = 1; n <= remainder; n++) {
@@ -638,7 +940,6 @@
           elements.calendarDaysContainer.appendChild(cell);
         }
 
-        // Attach add button listeners
         elements.calendarDaysContainer.querySelectorAll('.day-add-btn').forEach(btn => {
           btn.addEventListener('click', () => {
             openNewEventModal(btn.dataset.date);
@@ -646,15 +947,14 @@
         });
       }
 
-      // --- Rendering: Chronological Agenda List ---
+      // --- Rendering: Chronological Agenda List (Zero NaN) ---
       function renderAgendaList() {
         elements.viewAgendaList.innerHTML = '';
         const filtered = filterEventsList(state.events);
 
-        // Sort chronologically
         const sorted = [...filtered].sort((a, b) => {
-          const da = a.date || a.start || '';
-          const db = b.date || b.start || '';
+          const da = formatDate(a.date || a.start || '');
+          const db = formatDate(b.date || b.start || '');
           return da.localeCompare(db);
         });
 
@@ -663,12 +963,11 @@
           return;
         }
 
-        // Group by Month/Year
         const groups = new Map();
         sorted.forEach(ev => {
-          const dStr = ev.date || ev.start;
-          const [y, m] = dStr.split('-');
-          const groupKey = MONTH_NAMES[parseInt(m, 10) - 1] + ' ' + y;
+          const dStr = formatDate(ev.date || ev.start);
+          const dateObj = parseLocalDate(dStr);
+          const groupKey = MONTH_NAMES[dateObj.getMonth()] + ' ' + dateObj.getFullYear();
           const list = groups.get(groupKey) || [];
           list.push(ev);
           groups.set(groupKey, list);
@@ -690,17 +989,17 @@
             const card = document.createElement('article');
             card.className = 'agenda-card';
 
-            const dStr = ev.date || ev.start;
-            const dateObj = new Date(dStr + 'T00:00:00');
-            const weekday = WEEKDAY_NAMES[dateObj.getDay()];
-            const dayNum = dateObj.getDate();
+            const dStr = formatDate(ev.date || ev.start);
+            const dateObj = parseLocalDate(dStr);
+            const weekday = WEEKDAY_NAMES[dateObj.getDay()] || 'TBD';
+            const dayNum = dateObj.getDate() || 1;
 
             let timeLabel = 'All Day / Kickoff TBD';
             if (ev.time) {
               timeLabel = ev.time + (ev.end_time ? ' – ' + ev.end_time : '');
             }
             if (ev.start && ev.end) {
-              timeLabel = 'Multi-day: ' + ev.start + ' to ' + ev.end;
+              timeLabel = 'Multi-day: ' + formatDate(ev.start) + ' to ' + formatDate(ev.end);
             }
 
             const catClass = 'pill-' + (ev.category || 'fixture');
@@ -738,7 +1037,6 @@
           elements.viewAgendaList.appendChild(groupSec);
         });
 
-        // Bind clicks
         elements.viewAgendaList.querySelectorAll('[data-edit-id]').forEach(btn => {
           btn.addEventListener('click', () => {
             openEventModal(btn.dataset.editId);
@@ -746,27 +1044,14 @@
         });
       }
 
-      function escapeHtml(str) {
-        if (!str) return '';
-        return str
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      }
-
       function filterEventsList(list) {
         return list.filter(ev => {
-          // Category filter
           if (state.activeCategory !== 'all' && ev.category !== state.activeCategory) {
             return false;
           }
-          // Status filter
           if (state.activeStatus !== 'all' && (ev.status || 'confirmed') !== state.activeStatus) {
             return false;
           }
-          // Search query
           if (state.searchQuery) {
             const q = state.searchQuery.toLowerCase();
             const text = ((ev.title || '') + ' ' + (ev.location || '') + ' ' + (ev.notes || '') + ' ' + (ev.id || '')).toLowerCase();
@@ -796,7 +1081,6 @@
         state.editingEventId = eventId;
         elements.dialogEventTitle.textContent = state.isAdmin ? 'Edit Event' : 'Event Details';
 
-        // Populate fields
         elements.eventIdInput.value = ev.id;
         elements.eventIdInput.readOnly = true;
         elements.idHelpText.textContent = 'Calendar UID. Locked to maintain subscriber sync parity.';
@@ -807,12 +1091,12 @@
         if (ev.start && ev.end) {
           setRadioValue('date-type', 'range');
           elements.eventDateInput.value = '';
-          elements.eventStartInput.value = ev.start;
-          elements.eventEndInput.value = ev.end;
+          elements.eventStartInput.value = formatDate(ev.start);
+          elements.eventEndInput.value = formatDate(ev.end);
           toggleDateFields('range');
         } else {
           setRadioValue('date-type', 'single');
-          elements.eventDateInput.value = ev.date || '';
+          elements.eventDateInput.value = formatDate(ev.date);
           elements.eventStartInput.value = '';
           elements.eventEndInput.value = '';
           toggleDateFields('single');
@@ -827,8 +1111,7 @@
         elements.eventNotesTextarea.value = ev.notes || '';
         elements.eventRruleInput.value = ev.rrule || '';
 
-        // Exdates
-        state.currentExdates = [...(ev.exdates || [])];
+        state.currentExdates = [...(ev.exdates || [])].map(formatDate);
         renderExdatesCloud();
 
         if (ev.rrule) {
@@ -837,7 +1120,6 @@
           elements.exdatesContainer.style.display = 'none';
         }
 
-        // Admin controls visibility
         elements.btnDeleteEvent.style.display = state.isAdmin ? 'inline-flex' : 'none';
         elements.btnSaveEvent.style.display = state.isAdmin ? 'inline-flex' : 'none';
         elements.btnAddExdate.style.display = state.isAdmin ? 'inline-flex' : 'none';
@@ -857,7 +1139,7 @@
         elements.eventTitleInput.readOnly = false;
 
         setRadioValue('date-type', 'single');
-        elements.eventDateInput.value = defaultDate || formatDate(new Date());
+        elements.eventDateInput.value = defaultDate ? formatDate(defaultDate) : formatDate(new Date());
         elements.eventStartInput.value = '';
         elements.eventEndInput.value = '';
         toggleDateFields('single');
@@ -926,7 +1208,6 @@
         });
       }
 
-      // Auto-slug generator for new events
       elements.eventTitleInput.addEventListener('input', () => {
         if (!state.editingEventId) {
           const d = elements.eventDateInput.value || elements.eventStartInput.value || formatDate(new Date());
@@ -937,7 +1218,6 @@
         }
       });
 
-      // Form Submit (Save Event)
       elements.eventForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const id = elements.eventIdInput.value.trim();
@@ -956,10 +1236,10 @@
         };
 
         if (dateType === 'range') {
-          newEvent.start = elements.eventStartInput.value;
-          newEvent.end = elements.eventEndInput.value;
+          newEvent.start = formatDate(elements.eventStartInput.value);
+          newEvent.end = formatDate(elements.eventEndInput.value);
         } else {
-          newEvent.date = elements.eventDateInput.value;
+          newEvent.date = formatDate(elements.eventDateInput.value);
         }
 
         if (elements.eventTimeInput.value) {
@@ -985,13 +1265,11 @@
         }
 
         if (state.editingEventId) {
-          // Update existing
           const idx = state.events.findIndex(x => x.id === state.editingEventId);
           if (idx !== -1) {
             state.events[idx] = newEvent;
           }
         } else {
-          // Add new (verify uniqueness)
           if (state.events.some(x => x.id === id)) {
             alert('An event with ID "' + id + '" already exists. IDs must be unique.');
             return;
@@ -1004,7 +1282,6 @@
         elements.eventDialog.close();
       });
 
-      // Delete Event
       elements.btnDeleteEvent.addEventListener('click', () => {
         if (!state.editingEventId) return;
         const confirmDel = confirm('Are you sure you want to delete this event?\n\nSubscribers will see this event removed from their calendars on next refresh.');
@@ -1016,23 +1293,7 @@
         }
       });
 
-      // --- Unsaved Changes & Commit Management ---
-      function updateUnsavedCount() {
-        // Compare serialized state
-        const origYaml = serializeEvents(state.originalEvents);
-        const currYaml = serializeEvents(state.events);
-        const hasChanges = (origYaml !== currYaml);
-
-        if (hasChanges) {
-          state.unsavedCount = 1;
-          elements.changesCountBadge.textContent = 'Modifications Pending';
-          elements.changesBar.classList.add('visible');
-        } else {
-          state.unsavedCount = 0;
-          elements.changesBar.classList.remove('visible');
-        }
-      }
-
+      // --- Unsaved Changes & Verification Logic ---
       function serializeEvents(evList) {
         const out = {
           calendar_name: state.calendarName,
@@ -1047,6 +1308,139 @@
         });
       }
 
+      function updateUnsavedCount() {
+        const origYaml = serializeEvents(state.originalEvents);
+        const currYaml = serializeEvents(state.events);
+        const hasChanges = (origYaml !== currYaml);
+
+        if (hasChanges) {
+          state.unsavedCount = 1;
+          elements.changesCountBadge.textContent = 'Modifications Pending';
+          elements.changesBar.classList.add('visible');
+        } else {
+          state.unsavedCount = 0;
+          elements.changesBar.classList.remove('visible');
+        }
+      }
+
+      function openVerifierModal() {
+        // Run health audits
+        const total = state.events.length;
+        elements.healthEventCount.textContent = total;
+
+        const ids = state.events.map(e => e.id);
+        const dupes = ids.filter((item, index) => ids.indexOf(item) !== index);
+        elements.healthDupeCount.textContent = dupes.length;
+        if (dupes.length === 0) {
+          elements.healthDupeBadge.className = 'health-badge-pass';
+          elements.healthDupeBadge.innerHTML = '&#10003; All IDs Unique';
+        } else {
+          elements.healthDupeBadge.className = 'form-help';
+          elements.healthDupeBadge.style.color = 'var(--fog-red)';
+          elements.healthDupeBadge.innerHTML = '&#9888; Duplicates: ' + dupes.join(', ');
+        }
+
+        const origYaml = serializeEvents(state.originalEvents);
+        const currYaml = serializeEvents(state.events);
+        const hasChanges = (origYaml !== currYaml);
+
+        if (hasChanges) {
+          elements.healthSyncStatus.textContent = 'Changes Pending';
+          elements.healthSyncBadge.style.color = 'var(--fog-blue)';
+          elements.healthSyncBadge.textContent = 'Uncommitted edits held in memory';
+        } else {
+          elements.healthSyncStatus.textContent = 'In Sync';
+          elements.healthSyncBadge.className = 'health-badge-pass';
+          elements.healthSyncBadge.innerHTML = '&#10003; Synced with repo';
+        }
+
+        // Populate Tab Content
+        elements.verifierYamlBlock.textContent = currYaml;
+        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        elements.verifierIcsBlock.textContent = icsText;
+
+        // Diff tab content
+        if (!hasChanges) {
+          elements.verifierDiffContent.innerHTML = '<p style="margin:0; color: #555;">No changes made. Schedule matches the published repository.</p>';
+        } else {
+          let diffHtml = '<div style="display:flex; flex-direction:column; gap:8px;">';
+          const originalIds = new Set(state.originalEvents.map(e => e.id));
+          const currentIds = new Set(state.events.map(e => e.id));
+
+          state.events.forEach(ev => {
+            if (!originalIds.has(ev.id)) {
+              diffHtml += '<div style="color:var(--fog-green); font-weight:700;">+ ADDED: ' + escapeHtml(ev.title) + ' (' + ev.id + ')</div>';
+            } else {
+              const orig = state.originalEvents.find(e => e.id === ev.id);
+              if (JSON.stringify(orig) !== JSON.stringify(ev)) {
+                diffHtml += '<div style="color:var(--fog-blue); font-weight:700;">&bull; MODIFIED: ' + escapeHtml(ev.title) + ' (' + ev.id + ')</div>';
+              }
+            }
+          });
+
+          state.originalEvents.forEach(ev => {
+            if (!currentIds.has(ev.id)) {
+              diffHtml += '<div style="color:var(--fog-red); font-weight:700;">- DELETED: ' + escapeHtml(ev.title) + ' (' + ev.id + ')</div>';
+            }
+          });
+          diffHtml += '</div>';
+          elements.verifierDiffContent.innerHTML = diffHtml;
+        }
+
+        elements.verifierDialog.showModal();
+      }
+
+      // Verifier tabs
+      document.querySelectorAll('.modal-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.modal-tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.modal-tab-pane').forEach(p => p.style.display = 'none');
+          btn.classList.add('active');
+          const target = document.getElementById(btn.dataset.tab);
+          if (target) target.style.display = 'block';
+        });
+      });
+
+      // Downloads and Copies
+      function downloadFile(content, filename, mime) {
+        const blob = new Blob([content], { type: mime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      elements.btnDlYaml.addEventListener('click', () => {
+        downloadFile(serializeEvents(state.events), 'events.yml', 'text/yaml;charset=utf-8');
+      });
+
+      elements.btnCopyYaml.addEventListener('click', () => {
+        navigator.clipboard.writeText(serializeEvents(state.events)).then(() => {
+          elements.btnCopyYaml.textContent = '✓ Copied!';
+          setTimeout(() => { elements.btnCopyYaml.textContent = 'Copy YAML'; }, 1800);
+        });
+      });
+
+      elements.btnDlIcs.addEventListener('click', () => {
+        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        downloadFile(icsText, 'fog.ics', 'text/calendar;charset=utf-8');
+      });
+
+      elements.btnCopyIcs.addEventListener('click', () => {
+        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        navigator.clipboard.writeText(icsText).then(() => {
+          elements.btnCopyIcs.textContent = '✓ Copied!';
+          setTimeout(() => { elements.btnCopyIcs.textContent = 'Copy .ics'; }, 1800);
+        });
+      });
+
+      elements.btnOpenVerifier.addEventListener('click', openVerifierModal);
+
+      // Discard Changes
       elements.btnDiscardChanges.addEventListener('click', () => {
         const confirmDiscard = confirm('Discard all unsaved edits and revert back to the published schedule?');
         if (confirmDiscard) {
@@ -1056,12 +1450,12 @@
         }
       });
 
+      // Review & Commit Modal
       elements.btnReviewCommit.addEventListener('click', () => {
         const yamlText = serializeEvents(state.events);
         elements.yamlPreviewBlock.textContent = yamlText;
         elements.commitStatusMsg.textContent = '';
 
-        // Summary details
         const countDiff = state.events.length - state.originalEvents.length;
         let summaryHtml = '<strong>Schedule Changes:</strong> ' + state.events.length + ' total events.';
         if (countDiff > 0) {
@@ -1069,26 +1463,16 @@
         } else if (countDiff < 0) {
           summaryHtml += ' (' + Math.abs(countDiff) + ' deleted)';
         }
+        summaryHtml += '<div style="margin-top:4px; font-size:0.8rem; color:#555;">Pushing to main branch triggers automated <code>build_ics.py</code> execution.</div>';
         elements.commitSummaryBox.innerHTML = summaryHtml;
 
         elements.commitDialog.showModal();
       });
 
-      // Fallback Download events.yml
       elements.btnDownloadYaml.addEventListener('click', () => {
-        const yamlText = serializeEvents(state.events);
-        const blob = new Blob([yamlText], { type: 'text/yaml;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'events.yml';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        downloadFile(serializeEvents(state.events), 'events.yml', 'text/yaml;charset=utf-8');
       });
 
-      // Direct GitHub Commit
       elements.btnExecuteCommit.addEventListener('click', async () => {
         if (!state.githubToken) {
           alert('You must connect your GitHub Personal Access Token to commit changes directly.');
@@ -1104,7 +1488,6 @@
         elements.btnExecuteCommit.disabled = true;
 
         try {
-          // Get latest SHA
           const checkRes = await fetch(GITHUB_API_URL, {
             headers: {
               'Authorization': 'Bearer ' + state.githubToken,
@@ -1118,7 +1501,6 @@
             currentSha = data.sha;
           }
 
-          // Base64 encode YAML
           const contentBase64 = btoa(unescape(encodeURIComponent(yamlText)));
 
           const putRes = await fetch(GITHUB_API_URL, {
@@ -1159,7 +1541,7 @@
         }
       });
 
-      // --- Admin Auth Workflow ---
+      // --- Admin Auth ---
       function initAuth() {
         const savedToken = localStorage.getItem('fog_gh_token') || sessionStorage.getItem('fog_gh_token');
         if (savedToken) {
@@ -1242,7 +1624,6 @@
         });
       });
 
-      // Toggle Admin Dialog
       elements.btnToggleAdmin.addEventListener('click', () => {
         elements.authDialog.showModal();
       });
@@ -1311,39 +1692,36 @@
         });
       });
 
-      // Search input
       elements.searchInput.addEventListener('input', () => {
         state.searchQuery = elements.searchInput.value.trim();
         renderViews();
       });
 
-      // Location suggestion chips
       document.querySelectorAll('.location-chip').forEach(chip => {
         chip.addEventListener('click', () => {
           elements.eventLocationInput.value = chip.dataset.loc;
         });
       });
 
-      // Exdate Add Button
       elements.btnAddExdate.addEventListener('click', () => {
         const dateVal = elements.inputNewExdate.value;
         if (!dateVal) return;
-        if (!state.currentExdates.includes(dateVal)) {
-          state.currentExdates.push(dateVal);
+        const formatted = formatDate(dateVal);
+        if (!state.currentExdates.includes(formatted)) {
+          state.currentExdates.push(formatted);
           state.currentExdates.sort();
           renderExdatesCloud();
           elements.inputNewExdate.value = '';
         }
       });
 
-      // Radio date type switch
       document.querySelectorAll('input[name="date-type"]').forEach(radio => {
         radio.addEventListener('change', () => {
           toggleDateFields(radio.value);
         });
       });
 
-      // --- Initialization ---
+      // --- Start Application ---
       initAuth();
       loadCalendarData();
 

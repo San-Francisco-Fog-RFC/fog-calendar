@@ -1023,3 +1023,116 @@ dialog.fog-dialog::backdrop {
     padding: 2px 4px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   12. Verifier Modal, Tabs & Architecture Explainer
+   -------------------------------------------------------------------------- */
+.modal-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--fog-gray);
+  margin-bottom: 16px;
+  gap: 4px;
+}
+
+.modal-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fog-dark-gray);
+  padding: 8px 16px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modal-tab-btn:hover {
+  color: var(--fog-blue);
+}
+
+.modal-tab-btn.active {
+  color: var(--fog-blue);
+  border-bottom-color: var(--fog-blue);
+}
+
+.explainer-box {
+  background-color: #f0f6fa;
+  border: 1px solid #c2d8e8;
+  border-left: 4px solid var(--fog-blue);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.explainer-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fog-dark-blue);
+  margin-bottom: 6px;
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  background: var(--fog-white);
+  border: 1px solid #b8cde0;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fog-dark-blue);
+}
+
+.flow-arrow {
+  color: var(--fog-blue);
+  font-weight: 800;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.health-card {
+  background-color: var(--fog-white);
+  border: var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.health-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+}
+
+.health-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--fog-dark-blue);
+}
+
+.health-badge-pass {
+  color: var(--fog-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
