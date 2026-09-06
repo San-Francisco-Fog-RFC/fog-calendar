@@ -8,7 +8,7 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-09-06T21:47:00Z",
+  "updated_at": "2026-09-06T21:47:16Z",
   "total_events": 42,
   "events": [
     {
