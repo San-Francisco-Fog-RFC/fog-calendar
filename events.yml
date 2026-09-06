@@ -38,6 +38,34 @@ events:
     status: confirmed
     notes: "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome."
 
+  - id: 2026-09-13-drop-in-touch-st-marys-optional
+    title: "Sunday Drop-In Touch (SF Vintage) [Optional]"
+    date: 2026-09-13
+    time: "09:00"
+    end_time: "11:00"
+    location: "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112"
+    category: social
+    status: confirmed
+    rrule: "FREQ=WEEKLY;BYDAY=SU;UNTIL=20270530T180000Z"
+    exdates:
+      - 2026-12-06   # Rucktacular (San Diego)
+      - 2027-05-30   # IGR NorAm (New Orleans)
+    notes: |-
+      Cost: Free!
+
+      Who Can Play:
+       - Open to all ages, genders, orientations, and skill levels.
+       - Completely beginner-friendly—no prior experience necessary.
+
+      What to Bring:
+       - Cleats or athletic shoes.
+       - A blue or red shirt.
+
+      Website: sfvrfc.org
+      Facebook: https://www.facebook.com/groups/139383596170951/
+      Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+    url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+
   - id: 2026-09-13-kangaroo-court-beach-bash
     title: "Kangaroo Court and Beach Bash"
     date: 2026-09-13
