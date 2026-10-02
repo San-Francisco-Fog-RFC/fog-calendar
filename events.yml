@@ -19,6 +19,7 @@
 #   status    confirmed | tentative
 #   notes     description text (optional)
 #   url       link (optional)
+#   image     picture for the event (optional): a path inside docs/ (e.g. assets/img/flyer.jpg) or a full URL; JPG/PNG
 #   rrule     RFC5545 RRULE for repeating events (optional)
 #   exdates   list of YYYY-MM-DD to skip within a repeating event (optional)
 
@@ -104,6 +105,7 @@ events:
     end_time: "22:00"
     location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     notes: "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one."
     url: https://www.fogrugby.com/p2r
@@ -114,6 +116,7 @@ events:
     end_time: "22:00"
     location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
     url: https://www.fogrugby.com/p2r
@@ -124,6 +127,7 @@ events:
     end_time: "22:00"
     location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     url: https://www.fogrugby.com/p2r
   - id: 2026-10-15-pathways-4
@@ -133,6 +137,7 @@ events:
     end_time: "22:00"
     location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
     url: https://www.fogrugby.com/p2r
@@ -143,6 +148,7 @@ events:
     end_time: "22:00"
     location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     url: https://www.fogrugby.com/p2r
   - id: 2026-10-22-pathways-6
@@ -152,6 +158,7 @@ events:
     end_time: "22:00"
     location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
     url: https://www.fogrugby.com/p2r
@@ -162,6 +169,7 @@ events:
     end_time: "22:00"
     location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
+    image: assets/img/pathway-to-rugby-banner.jpg
     status: confirmed
     notes: "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there."
     url: https://www.fogrugby.com/p2r
@@ -238,6 +246,7 @@ events:
     end: 2026-12-06
     location: San Diego, CA
     category: tournament
+    image: assets/img/rucktacular-san-diego.jpg
     status: tentative
     notes: "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat."
     url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform

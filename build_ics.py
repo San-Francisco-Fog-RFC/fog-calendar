@@ -36,6 +36,8 @@ INDEX_HTML = ROOT / "docs" / "index.html"
 TZID = "America/Los_Angeles"
 TZ = zoneinfo.ZoneInfo(TZID)
 DOMAIN = "fogrugby.com"
+SITE_URL = "https://events.fogrugby.com"
+IMAGE_TYPES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".gif": "image/gif", ".webp": "image/webp"}
 
 GOOGLE_VALIDATOR_URL = "https://search.google.com/test/rich-results?url=https%3A%2F%2Fevents.fogrugby.com%2F"
 SCHEMA_VALIDATOR_URL = "https://validator.schema.org/#url=https%3A%2F%2Fevents.fogrugby.com%2F"
@@ -122,6 +124,20 @@ def parse_date(v: str | dt.date) -> dt.date:
 def parse_time(v: str | dt.time) -> dt.time:
     h, m = str(v).split(":")
     return dt.time(int(h), int(m))
+
+
+def image_url(ev: dict) -> str | None:
+    """Public URL for an event's `image`: a full URL, or a path inside docs/ served from events.fogrugby.com."""
+    img = str(ev.get("image") or "").strip()
+    if not img:
+        return None
+    if img.startswith(("http://", "https://")):
+        return img
+    return f"{SITE_URL}/{img.removeprefix('docs/').lstrip('/')}"
+
+
+def image_type(url: str) -> str:
+    return IMAGE_TYPES.get(pathlib.PurePosixPath(url.split("?")[0]).suffix.lower(), "image/jpeg")
 
 
 def validate_events(data: dict) -> tuple[list[str], list[str]]:
@@ -229,6 +245,15 @@ def validate_events(data: dict) -> tuple[list[str], list[str]]:
             if not u.startswith("http://") and not u.startswith("https://"):
                 errors.append(f"[{eid}] URL must start with http:// or https://: '{u}'")
 
+        if ev.get("image"):
+            img = str(ev["image"]).strip()
+            if not img.startswith(("http://", "https://")):
+                local = ROOT / "docs" / img.removeprefix("docs/").lstrip("/")
+                if not local.is_file():
+                    errors.append(f"[{eid}] Image not found: '{img}' (paths are relative to docs/).")
+            if pathlib.PurePosixPath(img.split("?")[0]).suffix.lower() not in IMAGE_TYPES:
+                warnings.append(f"[{eid}] Image '{img}' isn't a JPG, PNG, GIF or WebP; some calendars may not show it.")
+
         if ev.get("location"):
             loc = str(ev["location"])
             if "Francsico" in loc:
@@ -278,6 +303,10 @@ def event_lines(ev: dict, stamp: str) -> list[str]:
     if ev.get("url"):
         lines.append(f"URL:{ev['url']}")
         desc = (desc + "\n\n" if desc else "") + ev["url"]
+    img = image_url(ev)
+    if img:
+        lines.append(f"IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE={image_type(img)}:{img}")
+        lines.append(f"ATTACH;FMTTYPE={image_type(img)}:{img}")
     if desc:
         lines.append(f"DESCRIPTION:{esc(desc)}")
     if ev.get("category"):
@@ -375,6 +404,7 @@ def build_events_json(data: dict) -> dict:
             "location": ev.get("location"),
             "notes": (ev.get("notes") or "").strip() or None,
             "url": ev.get("url"),
+            "image": image_url(ev),
             "rrule": ev.get("rrule"),
             "exdates": [str(parse_date(x)) for x in (ev.get("exdates") or [])],
         }
@@ -435,6 +465,7 @@ def build_fullcalendar_json(data: dict) -> list[dict]:
             "uid": f"{ev['id']}@{DOMAIN}",
             "location": ev.get("location"),
             "description": (ev.get("notes") or "").strip() or None,
+            "image": image_url(ev),
             "category": ev.get("category", "club"),
             "status": ev.get("status", "confirmed"),
         }
@@ -524,6 +555,9 @@ def build_schema_jsonld(data: dict) -> dict:
 
         if schema_type == "SportsEvent":
             item["sport"] = "Rugby Union"
+
+        if image_url(ev):
+            item["image"] = [image_url(ev)]
 
         desc = (ev.get("notes") or "").strip()
         if desc:
