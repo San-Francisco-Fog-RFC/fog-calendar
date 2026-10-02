@@ -1,0 +1,45 @@
+# Event promotion: listing copy for promote.py (dates, times and venues come from events.yml)
+#
+#   uv run promote.py plan                      what's been submitted where, and what's due
+#   uv run promote.py fill <listing> <site>     open the site's form in a browser and fill it in; you click Submit
+#   uv run promote.py kit <listing> <site>      print copy-paste fields for sites without a filler
+#   uv run promote.py mark <listing> <site> ... record a status change (e.g. published, with the live link)
+#
+# Venue = the text before the first comma in an event's `location`; address = the rest.
+# Sites: funcheap, scruff, thegaycalendar, dothebay, eventbrite, plai, google
+
+contact:
+  name: San Francisco Fog RFC
+  email: clubhouse@fogrugby.com
+  organization: San Francisco Fog Rugby Football Club
+
+listings:
+  pathway-to-rugby-2026:
+    title: "Pathway to Rugby - SF Fog Rugby"
+    events:
+      - 2026-10-06-pathways-1
+      - 2026-10-08-pathways-2
+      - 2026-10-13-pathways-3
+      - 2026-10-15-pathways-4
+      - 2026-10-20-pathways-5
+      - 2026-10-22-pathways-6
+      - 2026-10-27-pathways-7
+    url: https://fogrugby.com/p2r
+    image: docs/assets/img/pathway-to-rugby-banner.jpg   # 1920x1005 JPG, 470 KB (Funcheap max 1 MB; SCRUFF wants ~1920x1080)
+    image_credit: San Francisco Fog RFC
+    cost: 0                       # adult GA price in USD incl. fees; 0 = free
+    region: San Francisco
+    tags: [LGBTQ+, Sports & Wellness, Community, Outdoors]
+    sites: [funcheap, scruff, thegaycalendar, dothebay, eventbrite, plai, google]
+    summary: "A free crash course in rugby for people who have never played, run by San Francisco's inclusive LGBTQ+ rugby club."
+    description: |
+      Pathway to Rugby is a crash course for people who have never played. Guided practices on Tuesdays and Thursdays throughout October, built so each session picks up where the last one left off.
+
+      Over the sessions you'll cover:
+      - Passing and catching
+      - Running with the ball, in attack and defence
+      - Tackling and contact — safely, and not until week two
+      - Rucking
+      - Putting it together in a game
+
+      No experience required, and we mean that literally — most of the people standing next to you will be in exactly the same position.
