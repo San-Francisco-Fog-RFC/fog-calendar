@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Build docs/fog.ics, docs/events.json, docs/schema-events.jsonld from events.yml.
+"""Build docs/fog.ics, docs/events.json, docs/fullcalendar.json, docs/schema-events.jsonld from events.yml.
 
-Zero config: `python3 build_ics.py`. Requires PyYAML (`pip install pyyaml`).
+Zero config: `python3 build_ics.py`. Requires PyYAML and python-dateutil
+(`pip install pyyaml python-dateutil`).
 All times are America/Los_Angeles; a VTIMEZONE block is embedded in ICS,
 and ISO-8601 timestamps with Pacific offset are emitted in JSON and Schema.org.
 
@@ -21,11 +22,13 @@ import sys
 import zoneinfo
 
 import yaml
+from dateutil.rrule import rrulestr
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SRC = ROOT / "events.yml"
 OUT_ICS = ROOT / "docs" / "fog.ics"
 OUT_JSON = ROOT / "docs" / "events.json"
+OUT_FULLCALENDAR = ROOT / "docs" / "fullcalendar.json"
 OUT_SCHEMA = ROOT / "docs" / "schema-events.jsonld"
 OUT_OPENAPI = ROOT / "docs" / "openapi.yaml"
 INDEX_HTML = ROOT / "docs" / "index.html"
@@ -393,6 +396,71 @@ def build_events_json(data: dict) -> dict:
     }
 
 
+def build_fullcalendar_json(data: dict) -> list[dict]:
+    """Compile events.yml into a FullCalendar JSON event feed (https://fullcalendar.io/docs/event-source).
+
+    Top-level array of Event Objects. All-day `end` is exclusive, and recurring
+    events are expanded into one entry per occurrence (sharing a `groupId`) so no
+    rrule plugin is needed on the consuming side.
+    """
+    fallback_url = data.get("calendar_url")
+    out = []
+
+    for ev in sorted(data.get("events") or [], key=lambda e: str(e.get("date") or e.get("start"))):
+        start_date = parse_date(ev.get("date") or ev["start"])
+        end_date = parse_date(ev["end"]) if ev.get("end") else None
+        has_time = bool(ev.get("time"))
+
+        if has_time:
+            t0 = parse_time(ev["time"])
+            if ev.get("end_time"):
+                t1 = parse_time(ev["end_time"])
+                duration = dt.datetime.combine(start_date, t1) - dt.datetime.combine(start_date, t0)
+                if duration <= dt.timedelta(0):
+                    duration += dt.timedelta(days=1)
+            else:
+                duration = dt.timedelta(hours=2)
+        else:
+            t0 = dt.time(0, 0)
+            duration = dt.timedelta(days=((end_date or start_date) - start_date).days + 1)
+
+        first = dt.datetime.combine(start_date, t0, tzinfo=TZ)
+        if ev.get("rrule"):
+            skip = {parse_date(x) for x in (ev.get("exdates") or [])}
+            starts = [o for o in rrulestr(ev["rrule"], dtstart=first) if o.date() not in skip]
+        else:
+            starts = [first]
+
+        props = {
+            "uid": f"{ev['id']}@{DOMAIN}",
+            "location": ev.get("location"),
+            "description": (ev.get("notes") or "").strip() or None,
+            "category": ev.get("category", "club"),
+            "status": ev.get("status", "confirmed"),
+        }
+        for occ in starts:
+            item = {
+                "id": ev["id"] if len(starts) == 1 else f"{ev['id']}-{occ:%Y%m%d}",
+                "title": ev["title"],
+                "allDay": not has_time,
+            }
+            if ev.get("rrule"):
+                item["groupId"] = ev["id"]
+            if has_time:
+                item["start"] = occ.isoformat()
+                item["end"] = (occ + duration).isoformat()
+            else:
+                item["start"] = str(occ.date())
+                item["end"] = str(occ.date() + duration)  # exclusive
+            if ev.get("url") or fallback_url:
+                item["url"] = ev.get("url") or fallback_url
+            item["extendedProps"] = {k: v for k, v in props.items() if v is not None}
+            out.append(item)
+
+    out.sort(key=lambda e: e["start"])
+    return out
+
+
 def build_schema_jsonld(data: dict) -> dict:
     """Compile events.yml into a Schema.org JSON-LD @graph for Google Events indexing."""
     events = data.get("events") or []
@@ -758,6 +826,13 @@ def main() -> int:
         json.dumps(events_json, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(f"wrote {OUT_JSON.relative_to(ROOT)} — {len(events)} events")
+
+    # 2b. Build FullCalendar event feed
+    fc_events = build_fullcalendar_json(data)
+    OUT_FULLCALENDAR.write_text(
+        json.dumps(fc_events, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"wrote {OUT_FULLCALENDAR.relative_to(ROOT)} — {len(fc_events)} occurrences")
 
     # 3. Build Schema.org JSON-LD
     schema_ld = build_schema_jsonld(data)
