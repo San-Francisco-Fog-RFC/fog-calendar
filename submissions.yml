@@ -19,3 +19,67 @@ submissions:
     status: submitted
     date: 2026-10-02
     note: "Submitted by hand; sessions covered not recorded."
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-06-pathways-1
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848843807
+    eventbrite_id: '2002848843807'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-08-pathways-2
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848847819
+    eventbrite_id: '2002848847819'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-13-pathways-3
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848858852
+    eventbrite_id: '2002848858852'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-15-pathways-4
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848860858
+    eventbrite_id: '2002848860858'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-20-pathways-5
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848862864
+    eventbrite_id: '2002848862864'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-22-pathways-6
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848866876
+    eventbrite_id: '2002848866876'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-27-pathways-7
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848868882
+    eventbrite_id: '2002848868882'
+  - listing: pathway-to-rugby-2026
+    site: eventbrite
+    events:
+    - 2026-10-29-first-preseason-practice
+    status: draft
+    date: '2026-10-02'
+    link: https://www.eventbrite.com/e/2002848871891
+    eventbrite_id: '2002848871891'

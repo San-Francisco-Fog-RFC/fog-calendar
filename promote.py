@@ -12,6 +12,8 @@ every submission is recorded in submissions.yml.
   uv run promote.py kit <listing> <site>           print copy-paste fields
   uv run promote.py fill <listing> <site> [N]      fill the site's form in a browser; you review and click Submit
   uv run promote.py mark <listing> <site> <status> [--events id,id] [--link URL] [--note TEXT]
+  uv run promote.py push <listing> eventbrite      create (or update) unpublished Eventbrite drafts via the API
+  uv run promote.py publish <listing> eventbrite   publish those drafts (makes them public)
 
 `fill` never clicks Submit. It uses a persistent browser profile in .promote-browser/,
 so sites that need an account only need you to sign in once.
@@ -42,8 +44,8 @@ SITES = {
                            min_hours=0, ideal_days=7, notes="Sign in, then 'Add Event'. Has an agent API (OAuth device flow) - not wired up yet."),
     "dothebay": dict(name="DoTheGay (DoTheBay)", url="https://gay.dothebay.com/events/new", multi_date=False, single_venue=True,
                      min_hours=0, ideal_days=7, notes="Requires a DoTheBay account."),
-    "eventbrite": dict(name="Eventbrite", url="https://www.eventbrite.com/manage/events/create", multi_date=True, single_venue=True,
-                       min_hours=0, ideal_days=14, notes="Create as a free-ticket event; use 'Recurring event' for a series at one venue."),
+    "eventbrite": dict(name="Eventbrite", url="https://www.eventbrite.com/manage/events/create", multi_date=False, single_venue=True,
+                       min_hours=0, ideal_days=14, notes="Use `push` (API) instead of the form. One event per date; free registration; PLAI can import from here."),
     "plai": dict(name="PLAI (plra.io)", url="https://plra.io/", multi_date=False, single_venue=True,
                  min_hours=0, ideal_days=7, notes="Create from the club's Events tab: name, start/end, type Training, location."),
     "google": dict(name="Google Business Profile post", url="https://business.google.com/", multi_date=True, single_venue=False,
@@ -274,13 +276,15 @@ def cmd_fill(listing_key: str, site_key: str, n: int | None = None, headless: bo
         append_log(listing_key, site_key, [o["id"] for o in unit], "submitted")
 
 
-def append_log(listing_key: str, site_key: str, ids: list[str], status: str, link: str | None = None, note: str | None = None):
+def append_log(listing_key: str, site_key: str, ids: list[str], status: str, link: str | None = None, note: str | None = None,
+               extra: dict | None = None):
     path = ROOT / "submissions.yml"
     entry = {"listing": listing_key, "site": site_key, "events": ids, "status": status, "date": dt.date.today().isoformat()}
     if link:
         entry["link"] = link
     if note:
         entry["note"] = note
+    entry.update(extra or {})
     text = path.read_text(encoding="utf-8") if path.exists() else "submissions:\n"
     item = yaml.safe_dump([entry], sort_keys=False, allow_unicode=True, width=1000)
     path.write_text(text.rstrip("\n") + "\n" + "".join("  " + l + "\n" for l in item.splitlines()), encoding="utf-8")
@@ -296,6 +300,125 @@ def cmd_mark(listing_key: str, site_key: str, status: str, args: list[str]):
         prior = [s for s in log if s.get("listing") == listing_key and s.get("site") == site_key]
         ids = prior[-1]["events"] if prior else promote["listings"][listing_key]["events"]
     append_log(listing_key, site_key, ids, status, opts.get("--link"), opts.get("--note"))
+
+
+# ---------------------------------------------------------------- Eventbrite API (push / publish)
+
+EB_API = "https://www.eventbriteapi.com/v3"
+
+
+def eb_call(method: str, path: str, body: dict | None = None) -> dict:
+    import json, os, urllib.error, urllib.request
+    token = os.environ.get("EVENTBRITE_API_KEY")
+    if not token:
+        sys.exit("Set EVENTBRITE_API_KEY (your Eventbrite private token) in your shell first.")
+    headers = {"Authorization": f"Bearer {token}"}
+    if body is not None:
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(EB_API + path, method=method, headers=headers,
+                                 data=json.dumps(body).encode() if body is not None else None)
+    try:
+        return json.load(urllib.request.urlopen(req))
+    except urllib.error.HTTPError as e:
+        sys.exit(f"Eventbrite {method} {path} failed ({e.code}): {e.read().decode()[:500]}")
+
+
+def eb_upload_image(path: pathlib.Path, kind: str = "image-event-logo") -> str:
+    import mimetypes, urllib.request, uuid
+    up = eb_call("GET", f"/media/upload/?type={kind}")
+    boundary = uuid.uuid4().hex
+    parts = [f'--{boundary}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode() for k, v in up["upload_data"].items()]
+    ctype = mimetypes.guess_type(path.name)[0] or "image/jpeg"
+    parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="{up["file_parameter_name"]}"; filename="{path.name}"\r\nContent-Type: {ctype}\r\n\r\n'.encode())
+    parts.append(path.read_bytes() + f"\r\n--{boundary}--\r\n".encode())
+    urllib.request.urlopen(urllib.request.Request(up["upload_url"], data=b"".join(parts), method="POST",
+                                                  headers={"Content-Type": f"multipart/form-data; boundary={boundary}"}))
+    return eb_call("POST", "/media/upload/", {"upload_token": up["upload_token"]})["id"]
+
+
+def eb_venue(org: str, o: dict) -> str:
+    """Find the organization's venue with this name, or create it from the event's address."""
+    for v in eb_call("GET", f"/organizations/{org}/venues/").get("venues", []):
+        if v.get("name") == o["venue"]:
+            return v["id"]
+    parts = [p.strip() for p in o["address"].split(",")]
+    region, _, postal = (parts[-1].partition(" ") if len(parts) >= 3 else ("CA", "", ""))
+    address = {"address_1": parts[0], "city": parts[-2] if len(parts) >= 3 else parts[-1],
+               "region": region or "CA", "postal_code": postal, "country": "US"}
+    return eb_call("POST", f"/organizations/{org}/venues/", {"venue": {"name": o["venue"], "address": address}})["id"]
+
+
+def eb_utc(t: dt.datetime) -> str:
+    return t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def cmd_push_eventbrite(listing_key: str):
+    events, promote, log = load()
+    listing = promote["listings"][listing_key]
+    cfg = promote.get("eventbrite") or {}
+    org, organizer = str(cfg["organization_id"]), str(cfg["organizer_id"])
+    contact = contact_for(promote, listing)
+    logo_id = None
+    now = dt.datetime.now(TZ)
+
+    for unit in units(listing, "eventbrite", events):
+        o = unit[0]
+        if o["end"] < now:
+            continue
+        prior = next((s for s in reversed(log) if s.get("listing") == listing_key and s.get("site") == "eventbrite"
+                      and o["id"] in (s.get("events") or []) and s.get("eventbrite_id")), None)
+        if logo_id is None:
+            logo_id = eb_upload_image(ROOT / listing["image"])
+        title = listing["title"] if len(listing["events"]) == 1 else f"{listing['title']} ({o['start']:%a %b %-d})"
+        event = {
+            "name": {"html": html.escape(title)},
+            "summary": (listing.get("summary") or "")[:140],
+            "start": {"timezone": "America/Los_Angeles", "utc": eb_utc(o["start"])},
+            "end": {"timezone": "America/Los_Angeles", "utc": eb_utc(o["end"])},
+            "currency": "USD", "online_event": False, "listed": True, "shareable": True,
+            "organizer_id": organizer, "venue_id": eb_venue(org, o), "logo_id": logo_id,
+        }
+        if prior:
+            eid = prior["eventbrite_id"]
+            eb_call("POST", f"/events/{eid}/", {"event": event})
+            action = "updated"
+        else:
+            eid = eb_call("POST", f"/organizations/{org}/events/", {"event": event})["id"]
+            eb_call("POST", f"/events/{eid}/ticket_classes/", {"ticket_class": {
+                "name": "Free registration", "free": True, "quantity_total": int(cfg.get("capacity", 100)),
+                "minimum_quantity": 1, "maximum_quantity": 1, "sales_end": eb_utc(o["end"])}})
+            append_log(listing_key, "eventbrite", [o["id"]], "draft", f"https://www.eventbrite.com/e/{eid}",
+                       extra={"eventbrite_id": eid})
+            action = "created draft"
+
+        # Description (structured content) and the registration confirmation message
+        signup = listing.get("signup_url", listing["url"])
+        body = to_html(description(listing, unit)) + f'<p>Sign up and full details: <a href="{signup}">{signup}</a></p>'
+        version = int(eb_call("GET", f"/events/{eid}/structured_content/").get("page_version_number") or 0) + 1
+        eb_call("POST", f"/events/{eid}/structured_content/{version}/", {
+            "modules": [{"type": "text", "data": {"body": {"type": "text", "text": body, "alignment": "left"}}}],
+            "publish": True, "purpose": "listing"})
+        eb_call("POST", f"/events/{eid}/ticket_buyer_settings/", {"ticket_buyer_settings": {
+            "confirmation_message": {"html": f"<p>You're registered, thanks! No ticket needed: just turn up and check in from "
+                                             f"{fmt_time(o['start'])}. Please also complete your sign-up at "
+                                             f'<a href="{signup}">{signup}</a>. Questions? Email {contact["email"]}.</p>'}}})
+        url = eb_call("GET", f"/events/{eid}/")["url"]
+        print(f"{action}: {fmt_range(o)}  {url}")
+
+
+def cmd_publish_eventbrite(listing_key: str):
+    _, _, log = load()
+    drafts = {}
+    for s in log:
+        if s.get("listing") == listing_key and s.get("site") == "eventbrite" and s.get("eventbrite_id"):
+            drafts[s["eventbrite_id"]] = s
+    for eid, s in drafts.items():
+        if s.get("status") != "draft":
+            continue
+        result = eb_call("POST", f"/events/{eid}/publish/")
+        if result.get("published"):
+            append_log(listing_key, "eventbrite", s["events"], "published", s.get("link"), extra={"eventbrite_id": eid})
+            print(f"published: {s['events'][0]}  {s.get('link')}")
 
 
 # ---------------------------------------------------------------- site fillers
@@ -387,6 +510,10 @@ def main(argv: list[str]) -> None:
         pos = [a for a in rest if not a.startswith("--")]
         shot = next((a.split("=", 1)[1] for a in flags if a.startswith("--screenshot=")), None)
         cmd_fill(pos[0], pos[1], int(pos[2]) if len(pos) > 2 else None, headless="--headless" in flags, screenshot=shot)
+    elif cmd == "push" and rest[1:2] == ["eventbrite"]:
+        cmd_push_eventbrite(rest[0])
+    elif cmd == "publish" and rest[1:2] == ["eventbrite"]:
+        cmd_publish_eventbrite(rest[0])
     elif cmd == "mark" and len(rest) >= 3:
         cmd_mark(rest[0], rest[1], rest[2], rest[3:])
     else:
