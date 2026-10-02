@@ -247,10 +247,10 @@ def validate_events(data: dict) -> tuple[list[str], list[str]]:
 
         if ev.get("image"):
             img = str(ev["image"]).strip()
-            if not img.startswith(("http://", "https://")):
-                local = ROOT / "docs" / img.removeprefix("docs/").lstrip("/")
-                if not local.is_file():
-                    errors.append(f"[{eid}] Image not found: '{img}' (paths are relative to docs/).")
+            # Our own images (full events.fogrugby.com URL or a docs/ path) must exist in the repo.
+            rel = img.removeprefix(SITE_URL) if img.startswith(SITE_URL) else (None if img.startswith(("http://", "https://")) else img)
+            if rel is not None and not (ROOT / "docs" / rel.removeprefix("docs/").lstrip("/")).is_file():
+                errors.append(f"[{eid}] Image not found in docs/: '{img}'.")
             if pathlib.PurePosixPath(img.split("?")[0]).suffix.lower() not in IMAGE_TYPES:
                 warnings.append(f"[{eid}] Image '{img}' isn't a JPG, PNG, GIF or WebP; some calendars may not show it.")
 
