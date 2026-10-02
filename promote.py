@@ -66,6 +66,11 @@ def load():
     return events, promote, log
 
 
+def contact_for(promote: dict, listing: dict) -> dict:
+    """The default contact, with any per-listing `contact:` overrides (e.g. a different email)."""
+    return {**promote["contact"], **(listing.get("contact") or {})}
+
+
 def occurrence(ev: dict) -> dict:
     """Resolve an events.yml entry into concrete start/end datetimes and venue fields."""
     day = dt.date.fromisoformat(str(ev.get("date") or ev["start"]))
@@ -219,7 +224,7 @@ def cmd_kit(listing_key: str, site_key: str):
             "Image": str(ROOT / listing["image"]),
             "Image credit": listing.get("image_credit", ""),
             "Tags": ", ".join(listing.get("tags", [])),
-            "Contact": f"{promote['contact']['name']} <{promote['contact']['email']}>",
+            "Contact": "{name} <{email}>".format(**contact_for(promote, listing)),
         }
         print(f"\n## Submission {n} of {len(units(listing, site_key, events))}")
         for k, v in fields.items():
@@ -252,7 +257,7 @@ def cmd_fill(listing_key: str, site_key: str, n: int | None = None, headless: bo
         page.goto(SITES[site_key]["url"])
         filler = FILLERS.get(site_key)
         if filler:
-            filler(page, listing, unit, promote["contact"])
+            filler(page, listing, unit, contact_for(promote, listing))
             print("Form filled. Check every field in the browser, then click Submit yourself.")
         else:
             print(f"No auto-fill for {SITES[site_key]['name']} yet - sign in if needed and use the fields below:\n")

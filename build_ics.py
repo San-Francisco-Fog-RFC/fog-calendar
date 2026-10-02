@@ -155,6 +155,10 @@ def validate_events(data: dict) -> tuple[list[str], list[str]]:
     if dupes:
         errors.append(f"Duplicate event IDs found: {sorted(dupes)}")
 
+    default_img = str(data.get("default_image") or "").strip()
+    if default_img.startswith(SITE_URL) and not (ROOT / "docs" / default_img.removeprefix(SITE_URL).lstrip("/")).is_file():
+        errors.append(f"default_image not found in docs/: '{default_img}'.")
+
     for idx, ev in enumerate(events):
         if not isinstance(ev, dict):
             errors.append(f"Event #{idx + 1}: item is not a valid YAML mapping.")
@@ -624,7 +628,7 @@ info:
   contact:
     name: San Francisco Fog RFC
     url: https://www.fogrugby.com
-    email: secretary@fogrugby.com
+    email: clubhouse@fogrugby.com
 servers:
   - url: https://events.fogrugby.com
     description: Production CDN (GitHub Pages)
@@ -826,6 +830,11 @@ def main() -> int:
     if is_validate_only:
         print("Validation complete. (--validate-only: output files untouched)")
         return 0
+
+    # Events without their own image use the calendar's default_image (e.g. the club crest)
+    if data.get("default_image"):
+        for ev in events:
+            ev.setdefault("image", data["default_image"])
 
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     name = data.get("calendar_name", "SF Fog Rugby")
