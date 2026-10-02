@@ -212,7 +212,7 @@
       "description": "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -248,7 +248,7 @@
       "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -283,7 +283,7 @@
       "sport": "Rugby Union",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -353,7 +353,7 @@
       "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -422,7 +422,7 @@
       "sport": "Rugby Union",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -458,7 +458,7 @@
       "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
@@ -494,7 +494,7 @@
       "description": "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there.",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
