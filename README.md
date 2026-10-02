@@ -60,6 +60,19 @@ python3 build_ics.py --validate-only
 python3 build_ics.py
 ```
 
+## Promoting events on listing sites
+
+`promote.py` submits events to sites like Funcheap and SCRUFF without retyping them. Listing copy (description, image, cost, tags, which sites) lives in `promote.yml`; dates, times and venues come from `events.yml`; every submission is recorded in `submissions.yml`.
+
+```bash
+uv run promote.py plan                                   # what's been submitted where, and what's due
+uv run promote.py fill pathway-to-rugby-2026 funcheap    # fill the form in a browser; you review and click Submit
+uv run promote.py kit pathway-to-rugby-2026 plai         # copy-paste fields for sites without auto-fill
+uv run promote.py mark pathway-to-rugby-2026 funcheap published --link https://...
+```
+
+`fill` never clicks Submit. It opens a real browser window with a saved profile in `.promote-browser/` (gitignored), so for sites that need an account you sign in once and stay signed in. Sites that take several dates in one submission (Funcheap, Eventbrite) get one per venue; the rest get one per date. First run only: `uv run --with playwright playwright install chromium`.
+
 ## Search engine & Schema.org verification links
 
 After publishing or making schedule changes, verify that crawlers and aggregators detect all events cleanly:

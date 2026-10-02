@@ -102,7 +102,7 @@ events:
     date: 2026-10-06
     time: "19:30"
     end_time: "22:00"
-    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
     status: confirmed
     notes: "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one."
@@ -122,7 +122,7 @@ events:
     date: 2026-10-13
     time: "20:00"
     end_time: "22:00"
-    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
     status: confirmed
     url: https://www.fogrugby.com/p2r
@@ -141,7 +141,7 @@ events:
     date: 2026-10-20
     time: "20:00"
     end_time: "22:00"
-    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
     status: confirmed
     url: https://www.fogrugby.com/p2r
@@ -160,7 +160,7 @@ events:
     date: 2026-10-27
     time: "20:00"
     end_time: "22:00"
-    location: Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco
+    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
     category: pathway
     status: confirmed
     notes: "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there."
