@@ -112,7 +112,7 @@ events:
     date: 2026-10-08
     time: "20:00"
     end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
@@ -131,7 +131,7 @@ events:
     date: 2026-10-15
     time: "20:00"
     end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
@@ -150,7 +150,7 @@ events:
     date: 2026-10-22
     time: "20:00"
     end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco
+    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
     category: pathway
     status: confirmed
     notes: "Session 8–10pm, then social at the Pilsner Inn afterwards."
