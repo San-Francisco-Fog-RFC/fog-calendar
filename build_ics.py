@@ -36,6 +36,8 @@ INDEX_HTML = ROOT / "docs" / "index.html"
 TZID = "America/Los_Angeles"
 TZ = zoneinfo.ZoneInfo(TZID)
 DOMAIN = "fogrugby.com"
+SITE_URL = "https://events.fogrugby.com"
+IMAGE_TYPES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".gif": "image/gif", ".webp": "image/webp"}
 
 GOOGLE_VALIDATOR_URL = "https://search.google.com/test/rich-results?url=https%3A%2F%2Fevents.fogrugby.com%2F"
 SCHEMA_VALIDATOR_URL = "https://validator.schema.org/#url=https%3A%2F%2Fevents.fogrugby.com%2F"
@@ -124,6 +126,20 @@ def parse_time(v: str | dt.time) -> dt.time:
     return dt.time(int(h), int(m))
 
 
+def image_url(ev: dict) -> str | None:
+    """Public URL for an event's `image`: a full URL, or a path inside docs/ served from events.fogrugby.com."""
+    img = str(ev.get("image") or "").strip()
+    if not img:
+        return None
+    if img.startswith(("http://", "https://")):
+        return img
+    return f"{SITE_URL}/{img.removeprefix('docs/').lstrip('/')}"
+
+
+def image_type(url: str) -> str:
+    return IMAGE_TYPES.get(pathlib.PurePosixPath(url.split("?")[0]).suffix.lower(), "image/jpeg")
+
+
 def validate_events(data: dict) -> tuple[list[str], list[str]]:
     """Strictly validate events.yml before compiling feeds."""
     errors: list[str] = []
@@ -138,6 +154,10 @@ def validate_events(data: dict) -> tuple[list[str], list[str]]:
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
         errors.append(f"Duplicate event IDs found: {sorted(dupes)}")
+
+    default_img = str(data.get("default_image") or "").strip()
+    if default_img.startswith(SITE_URL) and not (ROOT / "docs" / default_img.removeprefix(SITE_URL).lstrip("/")).is_file():
+        errors.append(f"default_image not found in docs/: '{default_img}'.")
 
     for idx, ev in enumerate(events):
         if not isinstance(ev, dict):
@@ -229,6 +249,15 @@ def validate_events(data: dict) -> tuple[list[str], list[str]]:
             if not u.startswith("http://") and not u.startswith("https://"):
                 errors.append(f"[{eid}] URL must start with http:// or https://: '{u}'")
 
+        if ev.get("image"):
+            img = str(ev["image"]).strip()
+            # Our own images (full events.fogrugby.com URL or a docs/ path) must exist in the repo.
+            rel = img.removeprefix(SITE_URL) if img.startswith(SITE_URL) else (None if img.startswith(("http://", "https://")) else img)
+            if rel is not None and not (ROOT / "docs" / rel.removeprefix("docs/").lstrip("/")).is_file():
+                errors.append(f"[{eid}] Image not found in docs/: '{img}'.")
+            if pathlib.PurePosixPath(img.split("?")[0]).suffix.lower() not in IMAGE_TYPES:
+                warnings.append(f"[{eid}] Image '{img}' isn't a JPG, PNG, GIF or WebP; some calendars may not show it.")
+
         if ev.get("location"):
             loc = str(ev["location"])
             if "Francsico" in loc:
@@ -278,6 +307,10 @@ def event_lines(ev: dict, stamp: str) -> list[str]:
     if ev.get("url"):
         lines.append(f"URL:{ev['url']}")
         desc = (desc + "\n\n" if desc else "") + ev["url"]
+    img = image_url(ev)
+    if img:
+        lines.append(f"IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE={image_type(img)}:{img}")
+        lines.append(f"ATTACH;FMTTYPE={image_type(img)}:{img}")
     if desc:
         lines.append(f"DESCRIPTION:{esc(desc)}")
     if ev.get("category"):
@@ -375,6 +408,7 @@ def build_events_json(data: dict) -> dict:
             "location": ev.get("location"),
             "notes": (ev.get("notes") or "").strip() or None,
             "url": ev.get("url"),
+            "image": image_url(ev),
             "rrule": ev.get("rrule"),
             "exdates": [str(parse_date(x)) for x in (ev.get("exdates") or [])],
         }
@@ -435,6 +469,7 @@ def build_fullcalendar_json(data: dict) -> list[dict]:
             "uid": f"{ev['id']}@{DOMAIN}",
             "location": ev.get("location"),
             "description": (ev.get("notes") or "").strip() or None,
+            "image": image_url(ev),
             "category": ev.get("category", "club"),
             "status": ev.get("status", "confirmed"),
         }
@@ -525,6 +560,9 @@ def build_schema_jsonld(data: dict) -> dict:
         if schema_type == "SportsEvent":
             item["sport"] = "Rugby Union"
 
+        if image_url(ev):
+            item["image"] = [image_url(ev)]
+
         desc = (ev.get("notes") or "").strip()
         if desc:
             item["description"] = desc
@@ -590,7 +628,7 @@ info:
   contact:
     name: San Francisco Fog RFC
     url: https://www.fogrugby.com
-    email: secretary@fogrugby.com
+    email: clubhouse@fogrugby.com
 servers:
   - url: https://events.fogrugby.com
     description: Production CDN (GitHub Pages)
@@ -792,6 +830,11 @@ def main() -> int:
     if is_validate_only:
         print("Validation complete. (--validate-only: output files untouched)")
         return 0
+
+    # Events without their own image use the calendar's default_image (e.g. the club crest)
+    if data.get("default_image"):
+        for ev in events:
+            ev.setdefault("image", data["default_image"])
 
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     name = data.get("calendar_name", "SF Fog Rugby")

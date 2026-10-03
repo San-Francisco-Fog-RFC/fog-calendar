@@ -10,8 +10,13 @@
 
 contact:
   name: San Francisco Fog RFC
-  email: clubhouse@fogrugby.com
+  email: clubhouse@fogrugby.com          # default; a listing can override with its own `contact:`
   organization: San Francisco Fog Rugby Football Club
+
+eventbrite:
+  organization_id: "3015535079476"   # San Francisco Fog Rugby Football Club
+  organizer_id: "121791402523"
+  capacity: 100                      # free registrations per event
 
 listings:
   pathway-to-rugby-2026:
@@ -24,7 +29,11 @@ listings:
       - 2026-10-20-pathways-5
       - 2026-10-22-pathways-6
       - 2026-10-27-pathways-7
+      - 2026-10-29-first-preseason-practice   # mixed: Session 8 + first preseason practice
     url: https://fogrugby.com/p2r
+    signup_url: https://fogrugby.com/p2r
+    contact:
+      email: recruiting@fogrugby.com   # overrides the default contact for this listing
     image: docs/assets/img/pathway-to-rugby-banner.jpg   # 1920x1005 JPG, 470 KB (Funcheap max 1 MB; SCRUFF wants ~1920x1080)
     image_credit: San Francisco Fog RFC
     cost: 0                       # adult GA price in USD incl. fees; 0 = free
@@ -43,3 +52,5 @@ listings:
       - Putting it together in a game
 
       No experience required, and we mean that literally — most of the people standing next to you will be in exactly the same position.
+
+      Check-in from 7:30pm; sessions run until 10pm. Questions? Email recruiting@fogrugby.com
