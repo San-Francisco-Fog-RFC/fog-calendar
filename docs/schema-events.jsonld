@@ -29,12 +29,13 @@
       "description": "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome.",
       "location": {
         "@type": "Place",
-        "name": "Pilsner Inn, 225 Church St, San Francisco",
+        "name": "Pilsner Inn",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "225 Church St",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -66,13 +67,14 @@
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       "location": {
         "@type": "Place",
-        "name": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
+        "name": "St Mary's Rec Center",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
-          "addressRegion": "CA",
           "addressCountry": "US",
-          "streetAddress": "St Mary's Rec Center - 95 Justin Drive"
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt",
@@ -116,12 +118,12 @@
       "description": "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful.",
       "location": {
         "@type": "Place",
-        "name": "Ocean Beach, San Francisco",
+        "name": "Ocean Beach",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E"
@@ -154,12 +156,13 @@
       "description": "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com",
       "location": {
         "@type": "Place",
-        "name": "SVN West, 10 Van Ness Ave, San Francisco",
+        "name": "SVN West",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "10 Van Ness Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659"
@@ -230,12 +233,14 @@
       "description": "Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+        "name": "Raymond Kimbell Playground Park",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -269,12 +274,13 @@
       "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+        "name": "Crocker Amazon Soccer Fields",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -307,12 +313,14 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+        "name": "Raymond Kimbell Playground Park",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -383,12 +391,13 @@
       "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+        "name": "Crocker Amazon Soccer Fields",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -421,12 +430,12 @@
       "description": "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com",
       "location": {
         "@type": "Place",
-        "name": "SF Eagle, San Francisco",
+        "name": "SF Eagle",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -458,12 +467,14 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+        "name": "Raymond Kimbell Playground Park",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -497,12 +508,13 @@
       "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+        "name": "Crocker Amazon Soccer Fields",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -536,12 +548,14 @@
       "description": "Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together.",
       "location": {
         "@type": "Place",
-        "name": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+        "name": "Raymond Kimbell Playground Park",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -575,12 +589,13 @@
       "description": "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm.",
       "location": {
         "@type": "Place",
-        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+        "name": "Crocker Amazon Soccer Fields",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       },
       "url": "https://www.fogrugby.com/p2r"
@@ -641,7 +656,7 @@
       "name": "USF vs SF Fog",
       "startDate": "2026-11-07",
       "endDate": "2026-11-07",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -679,7 +694,7 @@
       "name": "USF vs SF Fog",
       "startDate": "2026-11-14",
       "endDate": "2026-11-14",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -717,7 +732,7 @@
       "name": "Rucktacular 2026 — San Diego",
       "startDate": "2026-12-03",
       "endDate": "2026-12-06",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -756,7 +771,7 @@
       "name": "Rucktacular: Black's Beach Naked Rugby",
       "startDate": "2026-12-03T14:00:00-08:00",
       "endDate": "2026-12-03T18:00:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -779,12 +794,12 @@
       "description": "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm.",
       "location": {
         "@type": "Place",
-        "name": "Black's Beach, San Diego",
+        "name": "Black's Beach",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Diego",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Diego"
         }
       }
     },
@@ -794,7 +809,7 @@
       "name": "Rucktacular: Presidents' Meeting",
       "startDate": "2026-12-04T16:00:00-08:00",
       "endDate": "2026-12-04T17:30:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -831,7 +846,7 @@
       "name": "Rucktacular: Drink-Up at Number One Fifth",
       "startDate": "2026-12-04T19:00:00-08:00",
       "endDate": "2026-12-04T23:00:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -853,12 +868,13 @@
       "description": "Kick off the weekend together.",
       "location": {
         "@type": "Place",
-        "name": "Number One Fifth Ave, 3845 5th Ave, San Diego",
+        "name": "Number One Fifth Ave",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Diego",
+          "addressCountry": "US",
+          "streetAddress": "3845 5th Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Diego"
         }
       }
     },
@@ -868,7 +884,7 @@
       "name": "Rucktacular 2026 Tournament Day",
       "startDate": "2026-12-05T07:00:00-08:00",
       "endDate": "2026-12-05T17:00:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -906,7 +922,7 @@
       "name": "Rucktacular: Official After Party at Rich's",
       "startDate": "2026-12-05T21:00:00-08:00",
       "endDate": "2026-12-05T23:59:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -927,12 +943,13 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Rich's, 1051 University Ave, San Diego",
+        "name": "Rich's",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Diego",
+          "addressCountry": "US",
+          "streetAddress": "1051 University Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Diego"
         }
       }
     },
@@ -942,7 +959,7 @@
       "name": "Rucktacular: Survivors Brunch",
       "startDate": "2026-12-06T10:00:00-08:00",
       "endDate": "2026-12-06T12:00:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -963,12 +980,13 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Uptown Tavern, 1236 University Ave, San Diego",
+        "name": "Uptown Tavern",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Diego",
+          "addressCountry": "US",
+          "streetAddress": "1236 University Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Diego"
         }
       }
     },
@@ -978,7 +996,7 @@
       "name": "Rucktacular: Final Goodbye Drinks",
       "startDate": "2026-12-06T12:00:00-08:00",
       "endDate": "2026-12-06T14:00:00-08:00",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -999,12 +1017,13 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Number One Fifth Ave, 3845 5th Ave, San Diego",
+        "name": "Number One Fifth Ave",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Diego",
+          "addressCountry": "US",
+          "streetAddress": "3845 5th Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "addressLocality": "San Diego"
         }
       }
     },
@@ -1014,7 +1033,7 @@
       "name": "Friendly TBD / Preseason closer",
       "startDate": "2026-12-12",
       "endDate": "2026-12-12",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -1505,7 +1524,7 @@
       "name": "NCRFU Semifinals (if qualified)",
       "startDate": "2027-05-08",
       "endDate": "2027-05-08",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",
@@ -1542,7 +1561,7 @@
       "name": "NCRFU Finals (if qualified)",
       "startDate": "2027-05-15",
       "endDate": "2027-05-15",
-      "eventStatus": "https://schema.org/EventPostponed",
+      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
         "@type": "SportsTeam",

@@ -8,7 +8,7 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-10-03T03:40:59Z",
+  "updated_at": "2026-10-03T18:21:02Z",
   "total_events": 42,
   "events": [
     {
@@ -42,7 +42,7 @@
       "date": "2026-09-13",
       "time": "09:00",
       "end_time": "11:00",
-      "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
+      "location": "St Mary's Rec Center, 95 Justin Drive, San Francisco, CA 94112",
       "notes": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
