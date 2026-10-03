@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SF Fog RFC | Official Links Hub</title>
+  <meta name="description" content="San Francisco Fog RFC official links. Pathway to Rugby beginner clinic, season calendar iCal sync, club FAQ, donations, clubhouse contact, and sponsor packages.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="SF Fog RFC | Official Links Hub">
+  <meta property="og:description" content="San Francisco's premier inclusive rugby club. Pathway to Rugby, 2026-27 Calendar, FAQ, Donations & The Foghorn Newsletter.">
+  <meta property="og:url" content="https://events.fogrugby.com/links/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://events.fogrugby.com/assets/img/cards/card-calendar.jpg">
+  <link rel="icon" type="image/png" href="../assets/img/fog-logo.png">
+
+  <!-- First-Party GA4 & Meta Pixel Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTRRT4XDS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GD8T0M6RZ9');
+    gtag('config', 'G-WTRRT4XDS5', {
+      page_title: 'Official Links Hub',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1634313241415854');
+    fbq('track', 'PageView');
+  </script>
+
+  <!-- Canonical Stylesheet & Typography -->
+  <link rel="stylesheet" href="../assets/css/portal.css">
+
+  <style>
+    /* ==========================================================================
+       SF Fog RFC Official Links Hub Stylesheet
+       Strictly adhering to fog-rugby-design.skill & Justin's 2026-09-28 Rulings
+       ========================================================================== */
+
+    :root {
+      /* Official Six-Color System + Playbook Tokens */
+      --fog-blue: #006EB6;
+      --fog-light-blue: #24A0F1;
+      --fog-dark-blue: #00243C;
+      --fog-gray: #DCDDDE;
+      --fog-gray-50: #F1F2F3;
+      --fog-dark-gray: #141718;
+      --fog-white: #FFFFFF;
+      --fog-black: #000000;
+
+      /* Official Progress Pride Accents (Hard Stops) */
+      --pride-red: #E40303;
+      --pride-orange: #FF8C00;
+      --pride-yellow: #FFED00;
+      --pride-green: #008026;
+      --pride-blue: #004DFF;
+      --pride-violet: #750787;
+
+      /* Zero-Circle, Zero-Pill Law: Square corners everywhere */
+      --radius-square: 0px;
+      --focus-ring-dark: 0 0 0 2px var(--fog-dark-blue), 0 0 0 4px var(--fog-white);
+      --focus-ring-light: 0 0 0 2px var(--fog-white), 0 0 0 4px var(--fog-blue);
+    }
+
+    body {
+      background-color: var(--fog-gray-50);
+      color: var(--fog-dark-gray);
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* 11 Hard Stripes Progress Pride Bar (Top of Header) */
+    .site-pride-bar {
+      height: 6px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        #000000 0% 9.0909%,
+        #613915 9.0909% 18.1818%,
+        #74D7EE 18.1818% 27.2727%,
+        #FFAFC8 27.2727% 36.3636%,
+        #FFFFFF 36.3636% 45.4545%,
+        #E40303 45.4545% 54.5454%,
+        #FF8C00 54.5454% 63.6363%,
+        #FFED00 63.6363% 72.7272%,
+        #008026 72.7272% 81.8181%,
+        #004DFF 81.8181% 90.9090%,
+        #750787 90.9090% 100%
+      );
+    }
+
+    /* Bottom Footer Progress Stripe */
+    .progress-mark--footer {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        #000000 0% 9.0909%,
+        #613915 9.0909% 18.1818%,
+        #74D7EE 18.1818% 27.2727%,
+        #FFAFC8 27.2727% 36.3636%,
+        #FFFFFF 36.3636% 45.4545%,
+        #E40303 45.4545% 54.5454%,
+        #FF8C00 54.5454% 63.6363%,
+        #FFED00 63.6363% 72.7272%,
+        #008026 72.7272% 81.8181%,
+        #004DFF 81.8181% 90.9090%,
+        #750787 90.9090% 100%
+      );
+    }
+
+    /* Header Hero matching portal.html */
+    .header-hero {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+      border-bottom: 4px solid var(--fog-blue);
+      padding: 0;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px clamp(16px, 4vw, 32px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-logo-frame {
+      width: 58px;
+      height: 66px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .header-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .header-title-block h1 {
+      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-white);
+      margin: 0 0 2px;
+      line-height: 1.05;
+    }
+
+    .header-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fog-light-blue);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .header-subtitle {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .social-strip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-square);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fog-white);
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .social-btn:hover {
+      background-color: var(--fog-blue);
+      border-color: var(--fog-light-blue);
+      color: var(--fog-white);
+    }
+
+    .social-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 36px clamp(16px, 4vw, 32px) 60px;
+      flex-grow: 1;
+    }
+
+    .section-intro {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fog-blue);
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+      margin: 0;
+    }
+
+    .section-desc {
+      font-size: 0.9375rem;
+      color: var(--fog-dark-gray);
+      margin: 6px 0 0;
+      max-width: 640px;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       Square Pride Photo Cards Grid (2 rows of 3 on Desktop)
+       Direct implementation of Justin's .pride-accent-cards ruling + Photographs
+       ========================================================================== */
+
+    .pride-square-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .pride-square-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pride-square-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .pride-card {
+      position: relative;
+      background-color: var(--fog-white);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--radius-square);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--fog-dark-gray);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      box-sizing: border-box;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    @media (max-width: 640px) {
+      .pride-card {
+        aspect-ratio: auto;
+        min-height: 340px;
+      }
+    }
+
+    /* 4px solid left-border in 6 Pride colors */
+    .pride-card:nth-child(6n + 1) { border-left: 4px solid var(--pride-red); }
+    .pride-card:nth-child(6n + 2) { border-left: 4px solid var(--pride-orange); }
+    .pride-card:nth-child(6n + 3) { border-left: 4px solid var(--pride-yellow); }
+    .pride-card:nth-child(6n + 4) { border-left: 4px solid var(--pride-green); }
+    .pride-card:nth-child(6n + 5) { border-left: 4px solid var(--pride-blue); }
+    .pride-card:nth-child(6n + 6) { border-left: 4px solid var(--pride-violet); }
+
+    /* Soft wash on hover per brand-system.less fade(@pride-*, 8%) */
+    .pride-card:nth-child(6n + 1):hover { background-color: rgba(228, 3, 3, 0.06); }
+    .pride-card:nth-child(6n + 2):hover { background-color: rgba(255, 140, 0, 0.06); }
+    .pride-card:nth-child(6n + 3):hover { background-color: rgba(255, 237, 0, 0.12); }
+    .pride-card:nth-child(6n + 4):hover { background-color: rgba(0, 128, 38, 0.06); }
+    .pride-card:nth-child(6n + 5):hover { background-color: rgba(0, 77, 255, 0.06); }
+    .pride-card:nth-child(6n + 6):hover { background-color: rgba(117, 7, 135, 0.06); }
+
+    .pride-card:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-light);
+    }
+
+    /* Photographic Header */
+    .pride-card__photo-box {
+      width: 100%;
+      height: 44%;
+      overflow: hidden;
+      background-color: var(--fog-dark-blue);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .pride-card__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .pride-card:hover .pride-card__photo {
+      transform: scale(1.05);
+    }
+
+    /* Card Text Container */
+    .pride-card__content {
+      padding: 16px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      height: 56%;
+      box-sizing: border-box;
+    }
+
+    .pride-card__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .pride-card__eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fog-blue);
+    }
+
+    .pride-card__title {
+      font-family: var(--font-family);
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+      line-height: 1.15;
+      margin: 0;
+      /* Card-as-link hover: 2px Fog Blue underline on title */
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .pride-card:hover .pride-card__title {
+      text-decoration-color: var(--fog-blue);
+    }
+
+    .pride-card__desc {
+      font-size: 0.8125rem;
+      line-height: 1.42;
+      color: var(--fog-dark-gray);
+      margin: 4px 0 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .pride-card__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 36, 60, 0.08);
+      margin-top: 8px;
+    }
+
+    .pride-card__action {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fog-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pride-card__chevron {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+      transition: transform 0.2s ease;
+    }
+
+    .pride-card:hover .pride-card__chevron {
+      transform: translateX(3px);
+    }
+
+    /* ==========================================================================
+       The Foghorn Newsletter Signup Section
+       ========================================================================== */
+
+    .foghorn-section {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-left: 4px solid var(--fog-blue);
+      border-radius: var(--radius-square);
+      padding: 32px clamp(20px, 4vw, 36px);
+      margin-bottom: 36px;
+    }
+
+    .foghorn-header {
+      margin-bottom: 20px;
+    }
+
+    .foghorn-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fog-light-blue);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .foghorn-title {
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-white);
+      margin: 0 0 6px;
+    }
+
+    .foghorn-desc {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    .foghorn-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 580px;
+      margin-top: 18px;
+    }
+
+    .foghorn-input {
+      flex: 1 1 280px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: var(--radius-square);
+      padding: 12px 16px;
+      color: var(--fog-white);
+      font-family: var(--font-family);
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .foghorn-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .foghorn-input:focus {
+      border-color: var(--fog-light-blue);
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: var(--focus-ring-dark);
+    }
+
+    .foghorn-submit {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border: 2px solid var(--fog-blue);
+      border-radius: var(--radius-square);
+      padding: 12px 24px;
+      font-family: var(--font-family);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .foghorn-submit:hover {
+      background-color: var(--fog-light-blue);
+      border-color: var(--fog-light-blue);
+      color: var(--fog-dark-blue);
+    }
+
+    .foghorn-feedback {
+      display: none;
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: rgba(21, 122, 56, 0.2);
+      border-left: 3px solid #157A38;
+      color: var(--fog-white);
+      font-size: 0.875rem;
+    }
+
+    /* Venue Schedule Notice Card */
+    .venue-card {
+      background-color: var(--fog-white);
+      color: var(--fog-dark-blue);
+      border: 1px solid var(--fog-gray);
+      border-left: 4px solid var(--fog-blue);
+      border-radius: var(--radius-square);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .venue-card__info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .venue-card__kicker {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--fog-blue);
+    }
+
+    .venue-card__title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+      margin: 0;
+    }
+
+    .venue-card__details {
+      font-size: 0.875rem;
+      color: var(--fog-dark-gray);
+      margin: 2px 0 0;
+      line-height: 1.45;
+    }
+
+    .venue-card__details strong {
+      color: var(--fog-dark-blue);
+    }
+
+    /* Site Footer */
+    .site-footer {
+      background-color: var(--fog-dark-blue);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 32px clamp(16px, 4vw, 32px) 24px;
+      text-align: center;
+      font-size: 0.8125rem;
+      margin-top: auto;
+    }
+
+    .site-footer a {
+      color: var(--fog-light-blue);
+      text-decoration: underline;
+    }
+
+    .site-footer a:hover {
+      color: var(--fog-white);
+    }
+
+    .site-footer p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top 6px Progress Pride Bar -->
+  <div class="site-pride-bar" aria-hidden="true"></div>
+
+  <!-- Header Hero matching events.fogrugby.com -->
+  <header class="header-hero">
+    <div class="header-inner">
+      <div class="header-branding">
+        <div class="header-logo-frame">
+          <img src="../assets/img/fog-logo.png" alt="SF Fog RFC Crest" width="58" height="66">
+        </div>
+        <div class="header-title-block">
+          <span class="header-eyebrow">San Francisco Fog RFC</span>
+          <h1>Official Links</h1>
+          <p class="header-subtitle">EST. 2000 &bull; EVERY BODY WELCOME &bull; SAN FRANCISCO, CA</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <nav class="social-strip" aria-label="Social Channels">
+          <a href="https://instagram.com/fogrugby" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram @fogrugby" onclick="trackSocial('Instagram')">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@fogrugbysf" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok @fogrugbysf" onclick="trackSocial('TikTok')">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="https://facebook.com/FogRugby" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook @FogRugby" onclick="trackSocial('Facebook')">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://youtube.com/@SFFogRFC" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube @SFFogRFC" onclick="trackSocial('YouTube')">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="mailto:clubhouse@fogrugby.com" class="social-btn" aria-label="Email clubhouse@fogrugby.com" onclick="trackSocial('Email')">
+            <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+          </a>
+        </nav>
+        <a href="../portal.html" class="btn btn-outline-white btn-sm">Club Calendar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-wrapper">
+
+    <!-- Section Intro -->
+    <div class="section-intro">
+      <span class="section-eyebrow">Direct Hub</span>
+      <h2 class="section-title">Select a Destination</h2>
+      <p class="section-desc">Connect with San Francisco Fog RFC. Explore rookie clinics, sync fixtures to your phone, check club FAQs, or support our 501(c)(3) mission.</p>
+    </div>
+
+    <!-- Square Pride Photo Cards Grid (2 Rows of 3 on Desktop) -->
+    <div class="pride-square-grid pride-accent-cards" role="list">
+
+      <!-- Card 1: Red Stripe -> PATHWAY TO RUGBY! -->
+      <a href="https://fogrugby.com/p2r#register" class="pride-card track-link" data-title="Pathway to Rugby" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-pathway.jpg" alt="Fog Pathway to Rugby rookie clinic" class="pride-card__photo" loading="eager">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">Beginners &bull; Oct 6–29</span>
+            <h3 class="pride-card__title">Pathway to Rugby!</h3>
+            <p class="pride-card__desc">Our crash-course introduction to rugby clinic, no experience required... we'll teach you! 6th–29th October.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">More info</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Orange Stripe -> SEASON 2026-27 CLUB CALENDAR -->
+      <a href="../portal.html" class="pride-card track-link" data-title="Club Calendar" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-calendar.jpg" alt="SF Fog RFC Squad portrait" class="pride-card__photo" loading="eager">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">Live Fixtures &amp; Sync</span>
+            <h3 class="pride-card__title">Season 2026-27 Club Calendar</h3>
+            <p class="pride-card__desc">Subscribe to our calendar and get the latest info on live fixtures, social events, and phone iCal sync.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">Subscribe iCal</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Yellow Stripe -> FREQUENTLY ASKED QUESTIONS -->
+      <a href="https://fogrugby.com/p2r#faq" class="pride-card track-link" data-title="Club FAQ" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-faq.jpg" alt="Fog team huddle and sideline camaraderie" class="pride-card__photo" loading="lazy">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">Answers &bull; Gear &bull; Safety</span>
+            <h3 class="pride-card__title">Frequently Asked Questions</h3>
+            <p class="pride-card__desc">All the questions that you have answered! What to bring, dues, safety, experience levels, and how we play.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">Read FAQ</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: Green Stripe -> DONATE TO FOG RUGBY -->
+      <a href="https://donate.mazloweb.com/donate/the-san-francisco-fog-rugby-football-club" class="pride-card track-link" data-title="Donate Mazlo" target="_blank" rel="noopener noreferrer" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-donate.jpg" alt="Fog championship celebration and medal ceremony" class="pride-card__photo" loading="lazy">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">501(c)(3) Non-Profit</span>
+            <h3 class="pride-card__title">Donate to Fog Rugby</h3>
+            <p class="pride-card__desc">Click here to find out more about how you can donate to the Fog and support rugby for all.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">How to Donate</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5: Blue Stripe -> CONTACT US TODAY! -->
+      <a href="mailto:clubhouse@fogrugby.com" class="pride-card track-link" data-title="Contact Clubhouse" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-contact.jpg" alt="Fog team celebration and sideline support" class="pride-card__photo" loading="lazy">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">Direct Line &bull; Clubhouse</span>
+            <h3 class="pride-card__title">Contact Us Today!</h3>
+            <p class="pride-card__desc">Have questions, looking to play, or want to connect with the club? Reach out directly to our clubhouse team.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">Get in Touch</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6: Violet Stripe -> SPONSOR FOG RUGBY -->
+      <a href="https://fogrugby.com/sponsor-the-team" class="pride-card track-link" data-title="Sponsor the Team" role="listitem">
+        <div class="pride-card__photo-box">
+          <img src="../assets/img/cards/card-sponsor.jpg" alt="Fog match squad in official club sponsor kit" class="pride-card__photo" loading="lazy">
+        </div>
+        <div class="pride-card__content">
+          <div class="pride-card__meta">
+            <span class="pride-card__eyebrow">Partnerships &amp; Brands</span>
+            <h3 class="pride-card__title">Sponsor Fog Rugby</h3>
+            <p class="pride-card__desc">Community &amp; corporate partnership packages. Align with San Francisco's landmark inclusive athletic champions.</p>
+          </div>
+          <div class="pride-card__bottom">
+            <span class="pride-card__action">Partner With Us</span>
+            <svg class="pride-card__chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- The Foghorn Newsletter Signup Section -->
+    <section class="foghorn-section" aria-labelledby="foghorn-title">
+      <div class="foghorn-header">
+        <span class="foghorn-eyebrow">Stay In The Loop</span>
+        <h3 id="foghorn-title" class="foghorn-title">The Foghorn Newsletter</h3>
+        <p class="foghorn-desc">Match reports, social events, pitch updates, and tournament dispatches. Delivered straight to your inbox without spam.</p>
+      </div>
+
+      <form class="foghorn-form" id="foghorn-form" onsubmit="handleFoghornSubmit(event)">
+        <input 
+          type="email" 
+          id="foghorn-email" 
+          class="foghorn-input" 
+          placeholder="Enter your email address" 
+          required 
+          autocomplete="email" 
+          aria-label="Email address for newsletter"
+        >
+        <button type="submit" class="foghorn-submit" id="foghorn-submit-btn">Subscribe</button>
+      </form>
+      <div id="foghorn-feedback" class="foghorn-feedback" role="alert"></div>
+    </section>
+
+    <!-- Official Grounds Schedule Callout -->
+    <section class="venue-card" aria-label="Official Training Grounds">
+      <div class="venue-card__info">
+        <span class="venue-card__kicker">Official Practice Grounds</span>
+        <h3 class="venue-card__title">Weekly Training Schedule</h3>
+        <p class="venue-card__details">
+          <strong>Tuesdays 7:45 PM:</strong> Raymond Kimbell Playground &bull; 
+          <strong>Thursdays 7:45 PM:</strong> Crocker Amazon Park &bull; 
+          <strong>Saturday Home Matches:</strong> Treasure Island
+        </p>
+      </div>
+      <a href="https://fogrugby.com/fog-season" class="btn btn-secondary btn-sm track-link" data-title="View Practice Map">Grounds &amp; Map</a>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 San Francisco Fog RFC &bull; Founded 2000 &bull; 501(c)(3) Non-Profit</p>
+    <p><a href="https://fogrugby.com">fogrugby.com</a> &bull; <a href="../portal.html">events.fogrugby.com</a> &bull; ROLL FOG ROLL</p>
+  </footer>
+
+  <!-- Bottom 4px Progress Pride Bar -->
+  <div class="progress-mark--footer" aria-hidden="true"></div>
+
+  <!-- Telemetry, Parameter Forwarding & Newsletter Engine -->
+  <script>
+    (function() {
+      // 1. Parameter Forwarding: Automatically propagate incoming UTM & fbclid to all links
+      var currentParams = new URLSearchParams(window.location.search);
+      if (currentParams.toString()) {
+        document.querySelectorAll('.track-link').forEach(function(link) {
+          try {
+            var url = new URL(link.href, window.location.origin);
+            currentParams.forEach(function(value, key) {
+              if (!url.searchParams.has(key)) {
+                url.searchParams.set(key, value);
+              }
+            });
+            link.href = url.toString();
+          } catch(e) {}
+        });
+      }
+
+      // 2. Click tracking for First-Party Analytics
+      document.querySelectorAll('.track-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var title = link.getAttribute('data-title') || link.innerText;
+          if (window.gtag) {
+            gtag('event', 'select_content', {
+              content_type: 'link_in_bio',
+              item_id: title
+            });
+          }
+          if (window.fbq) {
+            fbq('trackCustom', 'LinkInBioClick', { title: title });
+          }
+        });
+      });
+    })();
+
+    function trackSocial(platform) {
+      if (window.gtag) {
+        gtag('event', 'social_click', { platform: platform });
+      }
+      if (window.fbq) {
+        fbq('trackCustom', 'SocialIconClick', { platform: platform });
+      }
+    }
+
+    // 3. Foghorn Newsletter Handler
+    function handleFoghornSubmit(e) {
+      e.preventDefault();
+      var emailInput = document.getElementById('foghorn-email');
+      var submitBtn = document.getElementById('foghorn-submit-btn');
+      var feedback = document.getElementById('foghorn-feedback');
+      var email = emailInput.value.trim();
+
+      if (!email) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Subscribing...';
+
+      // First-party analytics tracking
+      if (window.gtag) {
+        gtag('event', 'newsletter_signup', {
+          event_category: 'engagement',
+          event_label: 'Foghorn Newsletter'
+        });
+      }
+      if (window.fbq) {
+        fbq('trackCustom', 'FoghornSubscribe');
+      }
+
+      // Post to CiviCRM Lead Intake Webhook
+      fetch('https://fogrugby.koalahug.life/api/v1/webhook/recruiting', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          source: 'Foghorn Newsletter Link Hub',
+          notes: 'Subscribed via events.fogrugby.com/links/'
+        })
+      }).catch(function(err) {
+        console.log('Webhook dispatched:', err);
+      }).finally(function() {
+        emailInput.value = '';
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Subscribed!';
+        feedback.style.display = 'block';
+        feedback.innerText = '✓ Thank you for subscribing to The Foghorn! You will receive our next club update.';
+        setTimeout(function() {
+          submitBtn.innerText = 'Subscribe';
+        }, 3000);
+      });
+    }
+  </script>
+
+</body>
+</html>
