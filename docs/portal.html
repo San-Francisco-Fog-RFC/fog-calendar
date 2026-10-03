@@ -16,6 +16,7 @@
   <link rel="icon" type="image/png" href="assets/img/fog-logo.png">
   <link rel="stylesheet" href="assets/css/portal.css">
   <script src="assets/js/js-yaml.min.js"></script>
+  <style>.card-status-pill.cancelled { background: #fdecea; color: #b42318; text-decoration: line-through; }</style>
 </head>
 <body>
 
@@ -89,6 +90,7 @@
         <button class="chip active" data-status="all">All</button>
         <button class="chip" data-status="confirmed">Confirmed</button>
         <button class="chip" data-status="tentative">Tentative</button>
+        <button class="chip" data-status="cancelled">Cancelled</button>
       </div>
     </div>
   </nav>
@@ -208,6 +210,7 @@
             <select id="event-status" class="form-select" required>
               <option value="confirmed">Confirmed</option>
               <option value="tentative">Tentative (Playoffs / Unconfirmed)</option>
+              <option value="cancelled">Cancelled (shows as cancelled everywhere; use instead of deleting)</option>
             </select>
           </div>
 
@@ -800,6 +803,7 @@
 
         try {
           const parsed = jsyaml.load(yamlText);
+          state.doc = parsed;
           state.calendarName = parsed.calendar_name || 'SF Fog Rugby';
           state.calendarUrl = parsed.calendar_url || '';
           state.originalEvents = JSON.parse(JSON.stringify(parsed.events || []));
@@ -831,7 +835,7 @@
         const monthStart = new Date(year, month, 1);
         const monthEnd = new Date(year, month + 1, 0);
 
-        state.events.forEach(ev => {
+        displayEvents().forEach(ev => {
           if (ev.rrule && ev.rrule.includes('FREQ=WEEKLY')) {
             const daysToMatch = [];
             if (ev.rrule.includes('TU')) daysToMatch.push(2);
@@ -959,7 +963,7 @@
       // --- Rendering: Chronological Agenda List (Zero NaN) ---
       function renderAgendaList() {
         elements.viewAgendaList.innerHTML = '';
-        const filtered = filterEventsList(state.events);
+        const filtered = filterEventsList(displayEvents());
 
         const sorted = [...filtered].sort((a, b) => {
           const da = formatDate(a.date || a.start || '');
@@ -1012,8 +1016,8 @@
             }
 
             const catClass = 'pill-' + (ev.category || 'fixture');
-            const statusClass = (ev.status === 'tentative' ? 'tentative' : 'confirmed');
-            const statusText = (ev.status === 'tentative' ? 'Tentative' : 'Confirmed');
+            const statusClass = ({ tentative: 'tentative', cancelled: 'cancelled' })[ev.status] || 'confirmed';
+            const statusText = ({ tentative: 'Tentative', cancelled: 'Cancelled' })[ev.status] || 'Confirmed';
 
             card.innerHTML =
               '<div class="agenda-card-date">' +
@@ -1084,8 +1088,9 @@
 
       // --- Event Modal & Form Management ---
       function openEventModal(eventId) {
-        const ev = state.events.find(e => e.id === eventId);
-        if (!ev) return;
+        const rawEv = state.events.find(e => e.id === eventId);
+        if (!rawEv) return;
+        const ev = resolveEvent(rawEv);
 
         state.editingEventId = eventId;
         elements.dialogEventTitle.textContent = state.isAdmin ? 'Edit Event' : 'Event Details';
@@ -1237,12 +1242,15 @@
         }
 
         const dateType = document.querySelector('input[name="date-type"]:checked').value;
-        const newEvent = {
+        const original = state.editingEventId ? (state.events.find(x => x.id === state.editingEventId) || {}) : {};
+        const newEvent = Object.assign({}, original, {
           id: id,
           title: title,
           category: elements.eventCategorySelect.value,
           status: elements.eventStatusSelect.value
-        };
+        });
+        // Fields the form controls are re-set from the form below (so clearing one removes it)
+        ['date', 'start', 'end', 'time', 'end_time', 'location', 'url', 'notes', 'rrule', 'exdates'].forEach(k => delete newEvent[k]);
 
         if (dateType === 'range') {
           newEvent.start = formatDate(elements.eventStartInput.value);
@@ -1272,6 +1280,8 @@
             newEvent.exdates = [...state.currentExdates];
           }
         }
+
+        compactEvent(newEvent);
 
         if (state.editingEventId) {
           const idx = state.events.findIndex(x => x.id === state.editingEventId);
@@ -1303,12 +1313,41 @@
       });
 
       // --- Unsaved Changes & Verification Logic ---
+      // Series defaults and venues (events.yml): resolve for display, keep raw events for saving.
+      function seriesDefaults(ev) {
+        const s = ((state.doc && state.doc.series) || {})[ev.series];
+        return (s && s.defaults) || {};
+      }
+      function venueText(key) {
+        const v = ((state.doc && state.doc.venues) || {})[key];
+        return v ? (v.address ? v.name + ', ' + v.address : v.name) : '';
+      }
+      function resolveEvent(ev) {
+        const r = Object.assign({}, seriesDefaults(ev), ev);
+        if (!r.location && r.venue) r.location = venueText(r.venue);
+        return r;
+      }
+      function displayEvents() {
+        return state.events.map(resolveEvent);
+      }
+      // Drop fields that just repeat the series default or the venue's location text.
+      function compactEvent(ev) {
+        const defaults = seriesDefaults(ev);
+        Object.keys(defaults).forEach(k => {
+          if (k !== 'venue' && JSON.stringify(ev[k]) === JSON.stringify(defaults[k])) delete ev[k];
+        });
+        const venue = ev.venue || defaults.venue;
+        if (venue && ev.location === venueText(venue)) delete ev.location;
+        return ev;
+      }
+
       function serializeEvents(evList) {
-        const out = {
+        // Keep every other top-level section (default_image, venues, series, ...) intact.
+        const out = Object.assign({}, state.doc || {}, {
           calendar_name: state.calendarName,
           calendar_url: state.calendarUrl,
           events: evList
-        };
+        });
         return jsyaml.dump(out, {
           lineWidth: -1,
           noRefs: true,
@@ -1365,7 +1404,7 @@
 
         // Populate Tab Content
         elements.verifierYamlBlock.textContent = currYaml;
-        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        const icsText = generateIcsText(displayEvents(), state.calendarName, state.calendarUrl);
         elements.verifierIcsBlock.textContent = icsText;
 
         // Diff tab content
@@ -1435,12 +1474,12 @@
       });
 
       elements.btnDlIcs.addEventListener('click', () => {
-        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        const icsText = generateIcsText(displayEvents(), state.calendarName, state.calendarUrl);
         downloadFile(icsText, 'fog.ics', 'text/calendar;charset=utf-8');
       });
 
       elements.btnCopyIcs.addEventListener('click', () => {
-        const icsText = generateIcsText(state.events, state.calendarName, state.calendarUrl);
+        const icsText = generateIcsText(displayEvents(), state.calendarName, state.calendarUrl);
         navigator.clipboard.writeText(icsText).then(() => {
           elements.btnCopyIcs.textContent = '✓ Copied!';
           setTimeout(() => { elements.btnCopyIcs.textContent = 'Copy .ics'; }, 1800);

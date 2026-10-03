@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["pyyaml", "playwright"]
+# dependencies = ["pyyaml", "python-dateutil", "playwright"]
 # ///
 """Submit events.yml events to listing sites without retyping them.
 
-Listing copy lives in promote.yml; dates, times and venues come from events.yml;
-every submission is recorded in submissions.yml.
+Listing copy lives in each series' `listing:` in events.yml (dates, times and venues come
+from its events); site settings live in promote.yml; every submission is recorded in submissions.yml.
 
   uv run promote.py plan [listing]                 status of every listing on every site
   uv run promote.py kit <listing> <site>           print copy-paste fields
@@ -62,10 +62,34 @@ def load_yaml(name: str) -> dict:
 
 
 def load():
-    events = {e["id"]: e for e in load_yaml("events.yml").get("events", [])}
+    """Resolved events (series defaults and venues applied), promote settings with listings, and the log."""
+    from build_ics import resolve_events
+    data = load_yaml("events.yml")
+    raw_series = {e["id"]: e.get("series") for e in data.get("events", [])}
+    errors = resolve_events(data)
+    if errors:
+        sys.exit("events.yml: " + "; ".join(errors))
+    events = {e["id"]: e for e in data["events"]}
     promote = load_yaml("promote.yml")
+    listings = dict(promote.get("listings") or {})
+    for key, s in (data.get("series") or {}).items():
+        if s.get("listing"):
+            members = sorted((i for i, sid in raw_series.items() if sid == key), key=lambda i: str(events[i].get("date") or events[i].get("start")))
+            listings[key] = {**s["listing"], "events": members}
+    promote["listings"] = listings
     log = load_yaml("submissions.yml").get("submissions") or []
     return events, promote, log
+
+
+def tracked(url: str, site_key: str, listing_key: str) -> str:
+    """Add UTM tags so Google Analytics can attribute visits and sign-ups to the listing site."""
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query))
+    query.setdefault("utm_source", site_key)
+    query.setdefault("utm_medium", "listing")
+    query.setdefault("utm_campaign", listing_key)
+    return urlunsplit(parts._replace(query=urlencode(query)))
 
 
 def contact_for(promote: dict, listing: dict) -> dict:
@@ -222,7 +246,7 @@ def cmd_kit(listing_key: str, site_key: str):
             "Venue": o["venue"],
             "Address": o["address"],
             "Cost": "Free" if not listing.get("cost") else f"${listing['cost']}",
-            "Website": listing["url"],
+            "Website": tracked(listing["url"], site_key, listing_key),
             "Image": str(ROOT / listing["image"]),
             "Image credit": listing.get("image_credit", ""),
             "Tags": ", ".join(listing.get("tags", [])),
@@ -259,7 +283,7 @@ def cmd_fill(listing_key: str, site_key: str, n: int | None = None, headless: bo
         page.goto(SITES[site_key]["url"])
         filler = FILLERS.get(site_key)
         if filler:
-            filler(page, listing, unit, contact_for(promote, listing))
+            filler(page, {**listing, "url": tracked(listing["url"], site_key, listing_key)}, unit, contact_for(promote, listing))
             print("Form filled. Check every field in the browser, then click Submit yourself.")
         else:
             print(f"No auto-fill for {SITES[site_key]['name']} yet - sign in if needed and use the fields below:\n")
@@ -392,7 +416,7 @@ def cmd_push_eventbrite(listing_key: str):
             action = "created draft"
 
         # Description (structured content) and the registration confirmation message
-        signup = listing.get("signup_url", listing["url"])
+        signup = tracked(listing.get("signup_url", listing["url"]), "eventbrite", listing_key)
         body = to_html(description(listing, unit)) + f'<p>Sign up and full details: <a href="{signup}">{signup}</a></p>'
         version = int(eb_call("GET", f"/events/{eid}/structured_content/").get("page_version_number") or 0) + 1
         eb_call("POST", f"/events/{eid}/structured_content/{version}/", {
