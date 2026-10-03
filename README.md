@@ -37,8 +37,11 @@ Rules that keep the feed sane:
 - **Never change an `id`** once published — it's the calendar UID. Change the title, date, anything else; not the id.
 - Leave `time:` out for TBD-kickoff or all-day items. Add it when the kickoff is known.
 - Use `status: tentative` for anything conditional (playoffs, unconfirmed friendlies).
-- Cancelled? Delete the entry. Subscribers' copies disappear on next refresh.
+- Cancelled? Set `status: cancelled` rather than deleting the entry. Calendars, bay.lgbt and Google then show it as cancelled instead of it silently vanishing.
 - Repeating events (training) use `rrule:` + `exdates:` — see the training entry for the pattern.
+- **Venues:** places are defined once under `venues:` and referenced with `venue: <key>`. Fix an address there and every event using it updates. Use free-text `location:` only for placeholders like "TBC - Fresno".
+- **Series:** events that share details (e.g. Pathway to Rugby) set `series: <key>`. They inherit the series `defaults` (time, venue, image, link, category, status); anything set on the event itself wins. A series `listing:` holds the copy `promote.py` submits to listing sites.
+- The build checks `events.yml` against [`schema/events-yml.schema.json`](schema/events-yml.schema.json) and stops on typos (e.g. `venu:`), unknown venues or series, or times like `7:30pm`. Editors such as VS Code use the same schema for autocomplete and inline errors.
 
 ## One-time setup
 
@@ -62,7 +65,7 @@ python3 build_ics.py
 
 ## Promoting events on listing sites
 
-`promote.py` submits events to sites like Funcheap and SCRUFF without retyping them. Listing copy (description, image, cost, tags, which sites) lives in `promote.yml`; dates, times and venues come from `events.yml`; every submission is recorded in `submissions.yml`.
+`promote.py` submits events to sites like Funcheap and SCRUFF without retyping them. Listing copy (description, image, cost, tags, which sites) lives in each series' `listing:` in `events.yml`, along with its dates, times and venues; site settings (default contact, Eventbrite ids) live in `promote.yml`; every submission is recorded in `submissions.yml`.
 
 ```bash
 uv run promote.py plan                                   # what's been submitted where, and what's due
@@ -70,6 +73,8 @@ uv run promote.py fill pathway-to-rugby-2026 funcheap    # fill the form in a br
 uv run promote.py kit pathway-to-rugby-2026 plai         # copy-paste fields for sites without auto-fill
 uv run promote.py mark pathway-to-rugby-2026 funcheap published --link https://...
 ```
+
+Links submitted to listing sites get UTM tags (`utm_source=<site>&utm_medium=listing&utm_campaign=<listing>`), so Google Analytics on fogrugby.com shows visits and sign-ups per site. Links inside `fog.ics` are left untagged, because bay.lgbt identifies events by their link.
 
 `fill` never clicks Submit. It opens a real browser window with a saved profile in `.promote-browser/` (gitignored), so for sites that need an account you sign in once and stay signed in. Sites that take several dates in one submission (Funcheap, Eventbrite) get one per venue; the rest get one per date. First run only: `uv run --with playwright playwright install chromium`.
 

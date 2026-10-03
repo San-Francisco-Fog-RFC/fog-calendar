@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Build docs/fog.ics, docs/events.json, docs/fullcalendar.json, docs/schema-events.jsonld from events.yml.
 
-Zero config: `python3 build_ics.py`. Requires PyYAML and python-dateutil
-(`pip install pyyaml python-dateutil`).
+Zero config: `python3 build_ics.py`. Requires PyYAML, python-dateutil and jsonschema
+(`pip install pyyaml python-dateutil jsonschema`).
+
+events.yml is checked against schema/events-yml.schema.json, then venues and series are
+resolved into plain events (see resolve_events) before validation and building.
 All times are America/Los_Angeles; a VTIMEZONE block is embedded in ICS,
 and ISO-8601 timestamps with Pacific offset are emitted in JSON and Schema.org.
 
@@ -26,6 +29,7 @@ from dateutil.rrule import rrulestr
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SRC = ROOT / "events.yml"
+SOURCE_SCHEMA = ROOT / "schema" / "events-yml.schema.json"
 OUT_ICS = ROOT / "docs" / "fog.ics"
 OUT_JSON = ROOT / "docs" / "events.json"
 OUT_FULLCALENDAR = ROOT / "docs" / "fullcalendar.json"
@@ -52,7 +56,7 @@ VALID_CATEGORIES = {
     "board",
     "community",
 }
-VALID_STATUSES = {"confirmed", "tentative"}
+VALID_STATUSES = {"confirmed", "tentative", "cancelled"}
 
 DAY_MAP = {
     "MO": "https://schema.org/Monday",
@@ -138,6 +142,53 @@ def image_url(ev: dict) -> str | None:
 
 def image_type(url: str) -> str:
     return IMAGE_TYPES.get(pathlib.PurePosixPath(url.split("?")[0]).suffix.lower(), "image/jpeg")
+
+
+def check_source_schema(data: dict) -> list[str]:
+    """Validate the raw events.yml against its JSON Schema (structure, field names, formats)."""
+    import jsonschema
+    schema = json.loads(SOURCE_SCHEMA.read_text(encoding="utf-8"))
+    # YAML turns bare dates into date objects; the schema describes them as strings.
+    plain = json.loads(json.dumps(data, default=str))
+    validator = jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker())
+    errors = []
+    for err in sorted(validator.iter_errors(plain), key=lambda e: list(e.absolute_path)):
+        where = "/".join(str(x) for x in err.absolute_path) or "(top level)"
+        errors.append(f"events.yml schema: {where}: {err.message}")
+    return errors
+
+
+def resolve_events(data: dict) -> list[str]:
+    """Expand series defaults and venue references into plain events, in place.
+
+    An event's own fields override its series `defaults`; a `venue` key becomes the
+    location text "name, address" unless the event (or series) sets `location` itself.
+    """
+    errors: list[str] = []
+    venues = data.get("venues") or {}
+    series = data.get("series") or {}
+    resolved = []
+    for ev in data.get("events") or []:
+        if not isinstance(ev, dict):
+            resolved.append(ev)
+            continue
+        eid = ev.get("id", "?")
+        sid = ev.get("series")
+        if sid and sid not in series:
+            errors.append(f"[{eid}] Unknown series '{sid}'.")
+        r = {**((series.get(sid) or {}).get("defaults") or {}), **ev}
+        r.pop("series", None)
+        vid = r.pop("venue", None)
+        if vid:
+            if vid not in venues:
+                errors.append(f"[{eid}] Unknown venue '{vid}'.")
+            elif not r.get("location"):
+                v = venues[vid]
+                r["location"] = f"{v['name']}, {v['address']}" if v.get("address") else v["name"]
+                r["_venue"] = v
+        resolved.append(r)
+    data["events"] = resolved
+    return errors
 
 
 def validate_events(data: dict) -> tuple[list[str], list[str]]:
@@ -315,14 +366,32 @@ def event_lines(ev: dict, stamp: str) -> list[str]:
         lines.append(f"DESCRIPTION:{esc(desc)}")
     if ev.get("category"):
         lines.append(f"CATEGORIES:{esc(ev['category']).upper()}")
-    lines.append("STATUS:" + ("TENTATIVE" if ev.get("status") == "tentative" else "CONFIRMED"))
+    lines.append("STATUS:" + {"tentative": "TENTATIVE", "cancelled": "CANCELLED"}.get(ev.get("status"), "CONFIRMED"))
     lines.append("TRANSP:TRANSPARENT" if not ev.get("time") else "TRANSP:OPAQUE")
 
     # SEQUENCE bumps whenever the entry's content changes → clients refresh it
-    digest = hashlib.sha1(repr(sorted(ev.items())).encode()).hexdigest()
+    digest = hashlib.sha1(repr(sorted((k, v) for k, v in ev.items() if not k.startswith("_"))).encode()).hexdigest()
     lines.append(f"SEQUENCE:{int(digest[:6], 16) % 100000}")
     lines.append("END:VEVENT")
     return lines
+
+
+def venue_address(venue: dict) -> dict:
+    """PostalAddress from a venue's address, e.g. '1901 Geary Blvd, San Francisco, CA 94115'."""
+    parts = [p.strip() for p in str(venue.get("address") or "").split(",") if p.strip()]
+    addr: dict = {"@type": "PostalAddress", "addressCountry": "US"}
+    if parts and parts[0][:1].isdigit():
+        addr["streetAddress"] = parts.pop(0)
+    last = parts[-1] if parts else ""
+    region, _, postal = last.partition(" ")
+    if len(region) == 2 and region.isupper():
+        addr["addressRegion"] = region
+        if postal:
+            addr["postalCode"] = postal
+        parts = parts[:-1]
+    addr.setdefault("addressRegion", "CA")
+    addr["addressLocality"] = parts[-1] if parts else "San Francisco"
+    return addr
 
 
 def extract_address(location: str | None) -> dict:
@@ -529,11 +598,10 @@ def build_schema_jsonld(data: dict) -> dict:
         else:
             schema_type = "Event"
 
+        # Tentative events are still scheduled (EventPostponed would tell Google they've been delayed)
         status = (
-            "https://schema.org/EventScheduled"
-            if ev.get("status") == "confirmed"
-            else "https://schema.org/EventPostponed"
-            if ev.get("status") == "tentative"
+            "https://schema.org/EventCancelled"
+            if ev.get("status") == "cancelled"
             else "https://schema.org/EventScheduled"
         )
 
@@ -567,7 +635,13 @@ def build_schema_jsonld(data: dict) -> dict:
         if desc:
             item["description"] = desc
 
-        if ev.get("location"):
+        if ev.get("_venue"):
+            item["location"] = {
+                "@type": "Place",
+                "name": ev["_venue"]["name"],
+                "address": venue_address(ev["_venue"]),
+            }
+        elif ev.get("location"):
             item["location"] = {
                 "@type": "Place",
                 "name": ev["location"],
@@ -816,8 +890,11 @@ def main() -> int:
         print(f"FATAL: Unable to parse events.yml: {ex}", file=sys.stderr)
         return 1
 
+    schema_errors = check_source_schema(data)
+    ref_errors = resolve_events(data)
     events = data.get("events") or []
     errors, warnings = validate_events(data)
+    errors = schema_errors + ref_errors + errors
 
     if is_summary:
         print(generate_markdown_summary(data, errors, warnings))
