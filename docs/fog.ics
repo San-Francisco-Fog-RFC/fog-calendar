@@ -30,22 +30,26 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-09-11-memorial-toast@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20260911T190000
 DTEND;TZID=America/Los_Angeles:20260911T230000
 SUMMARY:Fog 9/11 Memorial Toast — Pilsner Inn
 LOCATION:Pilsner Inn\, 225 Church St\, San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Doors 7pm. Toast at 8pm in memory of Mark Bingham\, those lost
   on 9/11\, and departed Fog alumni. Players\, supporters and friends welc
  ome.
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:20826
+SEQUENCE:9459
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20260913T090000
 DTEND;TZID=America/Los_Angeles:20260913T110000
 RRULE:FREQ=WEEKLY;BYDAY=SU;UNTIL=20270530T180000Z
@@ -54,6 +58,10 @@ EXDATE;TZID=America/Los_Angeles:20270530T090000
 SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
 LOCATION:St Mary's Rec Center - 95 Justin Drive\, San Francisco\, CA 94112
 URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
  orientations\, and skill levels.\n - Completely beginner-friendly—no pr
  ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
@@ -63,33 +71,41 @@ DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\,
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:42078
+SEQUENCE:33841
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-13-kangaroo-court-beach-bash@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20260913T150000
 DTEND;TZID=America/Los_Angeles:20260913T190000
 SUMMARY:Kangaroo Court and Beach Bash
 LOCATION:Ocean Beach\, San Francisco
 URL:https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Beach touch and potluck at Ocean Beach\, then Kangaroo Court s
  its. RSVP on Partiful.\n\nhttps://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=B
  yz1a63E
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:9708
+SEQUENCE:32267
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-26-magnitude-coat-check@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20260926T200000
 DTEND;TZID=America/Los_Angeles:20260927T040000
 SUMMARY:Magnitude Coat Check (volunteers)
 LOCATION:SVN West\, 10 Van Ness Ave\, San Francisco
 URL:https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-ev
  ent-of-folsom-street-fairtm-tickets-1894668557659
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:The Fog runs the coat check at Magnitude\, the Saturday night 
  main event of Folsom Street Fair. Shifts run from 8pm to 4am\; every tip 
  goes to the club. 21+. Volunteer: fundraising@fogrugby.com\n\nhttps://www
@@ -98,178 +114,227 @@ DESCRIPTION:The Fog runs the coat check at Magnitude\, the Saturday night
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:86243
+SEQUENCE:41722
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-27-folsom-sunscreen-booth@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20260927T100000
 DTEND;TZID=America/Los_Angeles:20260927T190000
 SUMMARY:Folsom Street Fair Sunscreen Booth (volunteers)
 LOCATION:Folsom Street Fair\, San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Sunscreen on strangers\, talk rugby\, hand out Pathway to Rugb
  y flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.co
  m
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:16494
+SEQUENCE:11338
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-06-pathways-1@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261006T193000
 DTEND;TZID=America/Los_Angeles:20261006T220000
 SUMMARY:Pathway to Rugby — Session 1
 LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
  \, CA 94115
 URL:https://www.fogrugby.com/p2r
-DESCRIPTION:Check-in 7:30pm\, session 8–10pm. First sessions are free 
- — bring boots or runners\, water\, and a mouthguard if you have one.\n\
- nhttps://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Check-in from 7:30pm\; session until 10pm. First sessions are 
+ free — bring boots or runners\, water\, and a mouthguard if you have on
+ e.\n\nhttps://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:6853
+SEQUENCE:80746
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-08-pathways-2@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261008T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261008T193000
 DTEND;TZID=America/Los_Angeles:20261008T220000
 SUMMARY:Pathway to Rugby — Session 2
 LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
  sco\, CA 94112
 URL:https://www.fogrugby.com/p2r
-DESCRIPTION:Session 8–10pm\, then social at the Pilsner Inn afterwards.\
- n\nhttps://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
+  Pilsner Inn afterwards.\n\nhttps://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:57404
+SEQUENCE:73158
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-13-pathways-3@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261013T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261013T193000
 DTEND;TZID=America/Los_Angeles:20261013T220000
 SUMMARY:Pathway to Rugby — Session 3
 LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
  \, CA 94115
 URL:https://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
 DESCRIPTION:https://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:41463
+SEQUENCE:15948
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-14-fog-turns-26@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:The Fog turns 26
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Club anniversary. 26 years of inclusive rugby.
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:70064
+SEQUENCE:41068
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-15-pathways-4@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261015T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261015T193000
 DTEND;TZID=America/Los_Angeles:20261015T220000
 SUMMARY:Pathway to Rugby — Session 4
 LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
  sco\, CA 94112
 URL:https://www.fogrugby.com/p2r
-DESCRIPTION:Session 8–10pm\, then social at the Pilsner Inn afterwards.\
- n\nhttps://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
+  Pilsner Inn afterwards.\n\nhttps://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:40198
+SEQUENCE:53756
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-18-eagle-beer-bust@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261018T150000
 DTEND;TZID=America/Los_Angeles:20261018T190000
 SUMMARY:Eagle Beer Bust (volunteers)
 LOCATION:SF Eagle\, San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Fog beer bust at the Eagle\, 3–7pm. Volunteers needed: fundr
  aising@fogrugby.com
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:85470
+SEQUENCE:28653
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-20-pathways-5@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261020T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261020T193000
 DTEND;TZID=America/Los_Angeles:20261020T220000
 SUMMARY:Pathway to Rugby — Session 5
 LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
  \, CA 94115
 URL:https://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
 DESCRIPTION:https://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:53642
+SEQUENCE:80361
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-22-pathways-6@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261022T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261022T193000
 DTEND;TZID=America/Los_Angeles:20261022T220000
 SUMMARY:Pathway to Rugby — Session 6
 LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
  sco\, CA 94112
 URL:https://www.fogrugby.com/p2r
-DESCRIPTION:Session 8–10pm\, then social at the Pilsner Inn afterwards.\
- n\nhttps://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
+  Pilsner Inn afterwards.\n\nhttps://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:16027
+SEQUENCE:70932
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-27-pathways-7@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261027T200000
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261027T193000
 DTEND;TZID=America/Los_Angeles:20261027T220000
 SUMMARY:Pathway to Rugby — Session 7
 LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
  \, CA 94115
 URL:https://www.fogrugby.com/p2r
-DESCRIPTION:Final Pathways session. Preseason practice starts Thu 29 Oct 
- — see you there.\n\nhttps://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Check-in from 7:30pm\; session until 10pm. Next up: Thu 29 Oct
+ \, the final Pathways session and first preseason practice together.\n\nh
+ ttps://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:96882
+SEQUENCE:79498
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-29-first-preseason-practice@fogrugby.com
-DTSTAMP:20261002T204839Z
-DTSTART;TZID=America/Los_Angeles:20261029T194500
+DTSTAMP:20261003T034059Z
+DTSTART;TZID=America/Los_Angeles:20261029T193000
 DTEND;TZID=America/Los_Angeles:20261029T220000
-SUMMARY:First Preseason Practice
-LOCATION:San Francisco — field TBC
-DESCRIPTION:Preseason 2026 kicks off. Pathways graduates — this is your 
- first full-squad session.
-CATEGORIES:TRAINING
+SUMMARY:Pathway to Rugby — Session 8 + First Preseason Practice
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+URL:https://www.fogrugby.com/p2r
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/pathway-to-rugby-flyer.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/pathway-t
+ o-rugby-flyer.jpg
+DESCRIPTION:Mixed session: the final Pathway to Rugby session and the firs
+ t preseason practice of 2026. Pathways players train alongside the full s
+ quad. Check-in from 7:30pm\; session until 10pm.\n\nhttps://www.fogrugby.
+ com/p2r
+CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:96358
+SEQUENCE:34346
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-27-training@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261103T194500
 DTEND;TZID=America/Los_Angeles:20261103T220000
 RRULE:FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z
@@ -283,49 +348,65 @@ EXDATE;TZID=America/Los_Angeles:20270112T194500
 EXDATE;TZID=America/Los_Angeles:20270114T194500
 SUMMARY:Fog Training
 LOCATION:San Francisco — field TBC weekly
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Tuesdays & Thursdays 7:45–10:00pm. First preseason practice 
  Thu 29 Oct 2026\; regular-season practice resumes 19 Jan 2027. Holiday br
  eak dates are best-guess — edit exdates once the coaches confirm.
 CATEGORIES:TRAINING
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:11537
+SEQUENCE:17230
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-07-usf-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261108
 SUMMARY:USF vs SF Fog
 LOCATION:TBC - San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Preseason friendly. Kickoff TBD.
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:96252
+SEQUENCE:32978
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-14-usf-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261115
 SUMMARY:USF vs SF Fog
 LOCATION:TBC - San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Preseason friendly. Kickoff TBD.
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:21919
+SEQUENCE:34692
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-rucktacular-weekend@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261207
 SUMMARY:Rucktacular 2026 — San Diego
 LOCATION:San Diego\, CA
 URL:https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3
  O7dI7NUL8NOSVm04Rndw/viewform
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/jpeg:https://events.fogrugby.c
+ om/assets/img/rucktacular-san-diego.jpg
+ATTACH;FMTTYPE=image/jpeg:https://events.fogrugby.com/assets/img/rucktacul
+ ar-san-diego.jpg
 DESCRIPTION:Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugb
  y. Fri: hotel check-in\, Presidents' meeting\, drink-up. Sat: tournament 
  + after party. Sun: Survivors Brunch. Interest form: see link. Travel det
@@ -334,310 +415,402 @@ DESCRIPTION:Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugb
 CATEGORIES:TOURNAMENT
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:55031
+SEQUENCE:64819
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-rucktacular-blacks-beach@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261203T140000
 DTEND;TZID=America/Los_Angeles:20261203T180000
 SUMMARY:Rucktacular: Black's Beach Naked Rugby
 LOCATION:Black's Beach\, San Diego
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Everyone welcome. All bodies. All fun. Clothing optional. Hang
   out for sunset from 6pm.
 CATEGORIES:TOURNAMENT
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:57490
+SEQUENCE:13556
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-04-rucktacular-presidents-meeting@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261204T160000
 DTEND;TZID=America/Los_Angeles:20261204T173000
 SUMMARY:Rucktacular: Presidents' Meeting
 LOCATION:San Diego — location TBD
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Club presidents meetup. Hotel check-in and welcome table open 
  all day Friday.
 CATEGORIES:BOARD
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:83163
+SEQUENCE:64841
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-04-rucktacular-drink-up@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261204T190000
 DTEND;TZID=America/Los_Angeles:20261204T230000
 SUMMARY:Rucktacular: Drink-Up at Number One Fifth
 LOCATION:Number One Fifth Ave\, 3845 5th Ave\, San Diego
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Kick off the weekend together.
 CATEGORIES:SOCIAL
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:23214
+SEQUENCE:59289
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-05-rucktacular-tournament@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261205T070000
 DTEND;TZID=America/Los_Angeles:20261205T170000
 SUMMARY:Rucktacular 2026 Tournament Day
 LOCATION:San Diego — pitch TBC
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:7:00am coffee & snacks. 8:00am tournament begins — all-day r
  ugby. Merch\, vendors and free concessions all day. 4:30pm awards & closi
  ng ceremony.
 CATEGORIES:TOURNAMENT
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:17321
+SEQUENCE:31429
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-05-rucktacular-after-party@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261205T210000
 DTEND;TZID=America/Los_Angeles:20261205T235900
 SUMMARY:Rucktacular: Official After Party at Rich's
 LOCATION:Rich's\, 1051 University Ave\, San Diego
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:SOCIAL
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:1858
+SEQUENCE:71952
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-06-rucktacular-survivors-brunch@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261206T100000
 DTEND;TZID=America/Los_Angeles:20261206T120000
 SUMMARY:Rucktacular: Survivors Brunch
 LOCATION:Uptown Tavern\, 1236 University Ave\, San Diego
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:SOCIAL
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:82289
+SEQUENCE:74243
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-06-rucktacular-goodbye-drinks@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;TZID=America/Los_Angeles:20261206T120000
 DTEND;TZID=America/Los_Angeles:20261206T140000
 SUMMARY:Rucktacular: Final Goodbye Drinks
 LOCATION:Number One Fifth Ave\, 3845 5th Ave\, San Diego
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:SOCIAL
 STATUS:TENTATIVE
 TRANSP:OPAQUE
-SEQUENCE:7093
+SEQUENCE:15636
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-12-preseason-closer@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:Friendly TBD / Preseason closer
 LOCATION:TBD
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Additional preseason friendlies may be added based on availabi
  lity — details to players in early October.
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:25423
+SEQUENCE:27674
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-19-regular-season-practice-begins@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270119
 DTEND;VALUE=DATE:20270120
 SUMMARY:Regular Season practice begins
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:TRAINING
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:68589
+SEQUENCE:68595
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-06-fresno-home@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270206
 DTEND;VALUE=DATE:20270207
 SUMMARY:SF Fog vs Fresno (H)
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:60110
+SEQUENCE:82578
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-20-ba-baracus-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
 SUMMARY:BA Baracus vs SF Fog (A)
 LOCATION:TBC - San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:86835
+SEQUENCE:78958
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-27-berkeley-home@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270227
 DTEND;VALUE=DATE:20270228
 SUMMARY:SF Fog vs Berkeley (H)
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:32030
+SEQUENCE:85921
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-06-bye@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270306
 DTEND;VALUE=DATE:20270307
 SUMMARY:Bye Weekend
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:39415
+SEQUENCE:17981
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-13-golden-dogs-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270313
 DTEND;VALUE=DATE:20270314
 SUMMARY:Golden Dogs vs SF Fog (A)
 LOCATION:TBC - Fresno
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:79426
+SEQUENCE:25066
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-20-mendocino-home@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270320
 DTEND;VALUE=DATE:20270321
 SUMMARY:SF Fog vs Mendocino Steam Donkeys (H)
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:13072
+SEQUENCE:63235
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-27-redding-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270327
 DTEND;VALUE=DATE:20270328
 SUMMARY:Redding vs SF Fog (A)
 LOCATION:TBC - Redding
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:8772
+SEQUENCE:75585
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-03-bye@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270403
 DTEND;VALUE=DATE:20270404
 SUMMARY:Bye Weekend
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:84218
+SEQUENCE:46934
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-10-stanislaus-home@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270410
 DTEND;VALUE=DATE:20270411
 SUMMARY:SF Fog vs Stanislaus Harlots (H)
 LOCATION:San Francisco
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:93564
+SEQUENCE:91617
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-17-marin-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270417
 DTEND;VALUE=DATE:20270418
 SUMMARY:Marin vs SF Fog (A)
 LOCATION:TBC - Marin
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:50711
+SEQUENCE:32570
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-24-chico-away@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270424
 DTEND;VALUE=DATE:20270425
 SUMMARY:Chico vs SF Fog (A)
 LOCATION:TBC - Chico
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
  rCal rugby.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:97044
+SEQUENCE:65610
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-08-ncrfu-semifinals@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270509
 SUMMARY:NCRFU Semifinals (if qualified)
 LOCATION:TBD
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:10759
+SEQUENCE:32657
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-15-ncrfu-finals@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270515
 DTEND;VALUE=DATE:20270516
 SUMMARY:NCRFU Finals (if qualified)
 LOCATION:TBD
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:92105
+SEQUENCE:48860
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-28-igr-noram@fogrugby.com
-DTSTAMP:20261002T204839Z
+DTSTAMP:20261003T034059Z
 DTSTART;VALUE=DATE:20270528
 DTEND;VALUE=DATE:20270601
 SUMMARY:IGR NorAm 2027 — New Orleans
 LOCATION:New Orleans\, LA
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
 DESCRIPTION:Memorial Day weekend. Arrive by Friday at the latest\; Thursda
  y preferred so players can acclimate. More details to come.
 CATEGORIES:TOURNAMENT
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:53377
+SEQUENCE:20886
 END:VEVENT
 END:VCALENDAR

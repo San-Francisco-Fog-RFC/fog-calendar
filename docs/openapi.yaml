@@ -6,7 +6,7 @@ info:
   contact:
     name: San Francisco Fog RFC
     url: https://www.fogrugby.com
-    email: secretary@fogrugby.com
+    email: clubhouse@fogrugby.com
 servers:
   - url: https://events.fogrugby.com
     description: Production CDN (GitHub Pages)

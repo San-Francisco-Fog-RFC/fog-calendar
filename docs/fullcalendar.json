@@ -10,6 +10,7 @@
       "uid": "2026-09-11-memorial-toast@fogrugby.com",
       "location": "Pilsner Inn, 225 Church St, San Francisco",
       "description": "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -26,6 +27,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -41,6 +43,7 @@
       "uid": "2026-09-13-kangaroo-court-beach-bash@fogrugby.com",
       "location": "Ocean Beach, San Francisco",
       "description": "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -57,6 +60,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -72,6 +76,7 @@
       "uid": "2026-09-26-magnitude-coat-check@fogrugby.com",
       "location": "SVN West, 10 Van Ness Ave, San Francisco",
       "description": "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "community",
       "status": "confirmed"
     }
@@ -88,6 +93,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -103,6 +109,7 @@
       "uid": "2026-09-27-folsom-sunscreen-booth@fogrugby.com",
       "location": "Folsom Street Fair, San Francisco",
       "description": "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "community",
       "status": "confirmed"
     }
@@ -119,6 +126,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -133,7 +141,8 @@
     "extendedProps": {
       "uid": "2026-10-06-pathways-1@fogrugby.com",
       "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
-      "description": "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.",
+      "description": "Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -142,13 +151,14 @@
     "id": "2026-10-08-pathways-2",
     "title": "Pathway to Rugby — Session 2",
     "allDay": false,
-    "start": "2026-10-08T20:00:00-07:00",
+    "start": "2026-10-08T19:30:00-07:00",
     "end": "2026-10-08T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-08-pathways-2@fogrugby.com",
       "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
-      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -165,6 +175,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -173,12 +184,13 @@
     "id": "2026-10-13-pathways-3",
     "title": "Pathway to Rugby — Session 3",
     "allDay": false,
-    "start": "2026-10-13T20:00:00-07:00",
+    "start": "2026-10-13T19:30:00-07:00",
     "end": "2026-10-13T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-13-pathways-3@fogrugby.com",
       "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -194,6 +206,7 @@
       "uid": "2026-10-14-fog-turns-26@fogrugby.com",
       "location": "San Francisco",
       "description": "Club anniversary. 26 years of inclusive rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "community",
       "status": "confirmed"
     }
@@ -202,13 +215,14 @@
     "id": "2026-10-15-pathways-4",
     "title": "Pathway to Rugby — Session 4",
     "allDay": false,
-    "start": "2026-10-15T20:00:00-07:00",
+    "start": "2026-10-15T19:30:00-07:00",
     "end": "2026-10-15T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-15-pathways-4@fogrugby.com",
       "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
-      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -225,6 +239,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -240,6 +255,7 @@
       "uid": "2026-10-18-eagle-beer-bust@fogrugby.com",
       "location": "SF Eagle, San Francisco",
       "description": "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "community",
       "status": "confirmed"
     }
@@ -248,12 +264,13 @@
     "id": "2026-10-20-pathways-5",
     "title": "Pathway to Rugby — Session 5",
     "allDay": false,
-    "start": "2026-10-20T20:00:00-07:00",
+    "start": "2026-10-20T19:30:00-07:00",
     "end": "2026-10-20T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-20-pathways-5@fogrugby.com",
       "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -262,13 +279,14 @@
     "id": "2026-10-22-pathways-6",
     "title": "Pathway to Rugby — Session 6",
     "allDay": false,
-    "start": "2026-10-22T20:00:00-07:00",
+    "start": "2026-10-22T19:30:00-07:00",
     "end": "2026-10-22T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-22-pathways-6@fogrugby.com",
       "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
-      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "description": "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
@@ -285,6 +303,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -293,29 +312,31 @@
     "id": "2026-10-27-pathways-7",
     "title": "Pathway to Rugby — Session 7",
     "allDay": false,
-    "start": "2026-10-27T20:00:00-07:00",
+    "start": "2026-10-27T19:30:00-07:00",
     "end": "2026-10-27T22:00:00-07:00",
     "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-27-pathways-7@fogrugby.com",
       "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
-      "description": "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there.",
+      "description": "Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
       "category": "pathway",
       "status": "confirmed"
     }
   },
   {
     "id": "2026-10-29-first-preseason-practice",
-    "title": "First Preseason Practice",
+    "title": "Pathway to Rugby — Session 8 + First Preseason Practice",
     "allDay": false,
-    "start": "2026-10-29T19:45:00-07:00",
+    "start": "2026-10-29T19:30:00-07:00",
     "end": "2026-10-29T22:00:00-07:00",
-    "url": "https://www.fogrugby.com/season-fixtures-results",
+    "url": "https://www.fogrugby.com/p2r",
     "extendedProps": {
       "uid": "2026-10-29-first-preseason-practice@fogrugby.com",
-      "location": "San Francisco — field TBC",
-      "description": "Preseason 2026 kicks off. Pathways graduates — this is your first full-squad session.",
-      "category": "training",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm.",
+      "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
+      "category": "pathway",
       "status": "confirmed"
     }
   },
@@ -331,6 +352,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -347,6 +369,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -363,6 +386,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -378,6 +402,7 @@
       "uid": "2026-11-07-usf-away@fogrugby.com",
       "location": "TBC - San Francisco",
       "description": "Preseason friendly. Kickoff TBD.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
     }
@@ -394,6 +419,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -410,6 +436,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -426,6 +453,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -441,6 +469,7 @@
       "uid": "2026-11-14-usf-away@fogrugby.com",
       "location": "TBC - San Francisco",
       "description": "Preseason friendly. Kickoff TBD.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
     }
@@ -457,6 +486,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -473,6 +503,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -489,6 +520,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -505,6 +537,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -521,6 +554,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -537,6 +571,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -553,6 +588,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -568,6 +604,7 @@
       "uid": "2026-12-03-rucktacular-weekend@fogrugby.com",
       "location": "San Diego, CA",
       "description": "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat.",
+      "image": "https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg",
       "category": "tournament",
       "status": "tentative"
     }
@@ -583,6 +620,7 @@
       "uid": "2026-12-03-rucktacular-blacks-beach@fogrugby.com",
       "location": "Black's Beach, San Diego",
       "description": "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "tournament",
       "status": "tentative"
     }
@@ -599,6 +637,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -614,6 +653,7 @@
       "uid": "2026-12-04-rucktacular-presidents-meeting@fogrugby.com",
       "location": "San Diego — location TBD",
       "description": "Club presidents meetup. Hotel check-in and welcome table open all day Friday.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "board",
       "status": "tentative"
     }
@@ -629,6 +669,7 @@
       "uid": "2026-12-04-rucktacular-drink-up@fogrugby.com",
       "location": "Number One Fifth Ave, 3845 5th Ave, San Diego",
       "description": "Kick off the weekend together.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "tentative"
     }
@@ -644,6 +685,7 @@
       "uid": "2026-12-05-rucktacular-tournament@fogrugby.com",
       "location": "San Diego — pitch TBC",
       "description": "7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "tournament",
       "status": "tentative"
     }
@@ -658,6 +700,7 @@
     "extendedProps": {
       "uid": "2026-12-05-rucktacular-after-party@fogrugby.com",
       "location": "Rich's, 1051 University Ave, San Diego",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "tentative"
     }
@@ -672,6 +715,7 @@
     "extendedProps": {
       "uid": "2026-12-06-rucktacular-survivors-brunch@fogrugby.com",
       "location": "Uptown Tavern, 1236 University Ave, San Diego",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "tentative"
     }
@@ -686,6 +730,7 @@
     "extendedProps": {
       "uid": "2026-12-06-rucktacular-goodbye-drinks@fogrugby.com",
       "location": "Number One Fifth Ave, 3845 5th Ave, San Diego",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "tentative"
     }
@@ -702,6 +747,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -718,6 +764,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -733,6 +780,7 @@
       "uid": "2026-12-12-preseason-closer@fogrugby.com",
       "location": "TBD",
       "description": "Additional preseason friendlies may be added based on availability — details to players in early October.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
     }
@@ -749,6 +797,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -765,6 +814,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -781,6 +831,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -797,6 +848,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -813,6 +865,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -829,6 +882,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -845,6 +899,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -861,6 +916,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -877,6 +933,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -891,6 +948,7 @@
     "extendedProps": {
       "uid": "2027-01-19-regular-season-practice-begins@fogrugby.com",
       "location": "San Francisco",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -907,6 +965,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -923,6 +982,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -939,6 +999,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -955,6 +1016,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -971,6 +1033,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -987,6 +1050,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1003,6 +1067,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1019,6 +1084,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1034,6 +1100,7 @@
       "uid": "2027-02-06-fresno-home@fogrugby.com",
       "location": "San Francisco",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1050,6 +1117,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1066,6 +1134,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1082,6 +1151,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1098,6 +1168,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1114,6 +1185,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1130,6 +1202,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1145,6 +1218,7 @@
       "uid": "2027-02-20-ba-baracus-away@fogrugby.com",
       "location": "TBC - San Francisco",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1161,6 +1235,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1177,6 +1252,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1193,6 +1269,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1208,6 +1285,7 @@
       "uid": "2027-02-27-berkeley-home@fogrugby.com",
       "location": "San Francisco",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1224,6 +1302,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1240,6 +1319,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1256,6 +1336,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1269,6 +1350,7 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2027-03-06-bye@fogrugby.com",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1285,6 +1367,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1301,6 +1384,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1317,6 +1401,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1332,6 +1417,7 @@
       "uid": "2027-03-13-golden-dogs-away@fogrugby.com",
       "location": "TBC - Fresno",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1348,6 +1434,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1364,6 +1451,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1380,6 +1468,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1395,6 +1484,7 @@
       "uid": "2027-03-20-mendocino-home@fogrugby.com",
       "location": "San Francisco",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1411,6 +1501,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1427,6 +1518,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1443,6 +1535,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1458,6 +1551,7 @@
       "uid": "2027-03-27-redding-away@fogrugby.com",
       "location": "TBC - Redding",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1474,6 +1568,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1490,6 +1585,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1506,6 +1602,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1519,6 +1616,7 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2027-04-03-bye@fogrugby.com",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1535,6 +1633,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1551,6 +1650,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1567,6 +1667,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1582,6 +1683,7 @@
       "uid": "2027-04-10-stanislaus-home@fogrugby.com",
       "location": "San Francisco",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1598,6 +1700,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1614,6 +1717,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1630,6 +1734,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1645,6 +1750,7 @@
       "uid": "2027-04-17-marin-away@fogrugby.com",
       "location": "TBC - Marin",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1661,6 +1767,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1677,6 +1784,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1693,6 +1801,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1708,6 +1817,7 @@
       "uid": "2027-04-24-chico-away@fogrugby.com",
       "location": "TBC - Chico",
       "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "confirmed"
     }
@@ -1724,6 +1834,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1740,6 +1851,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1756,6 +1868,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1772,6 +1885,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1788,6 +1902,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1804,6 +1919,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1818,6 +1934,7 @@
     "extendedProps": {
       "uid": "2027-05-08-ncrfu-semifinals@fogrugby.com",
       "location": "TBD",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
     }
@@ -1834,6 +1951,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1850,6 +1968,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1866,6 +1985,7 @@
       "uid": "2026-27-training@fogrugby.com",
       "location": "San Francisco — field TBC weekly",
       "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
@@ -1880,6 +2000,7 @@
     "extendedProps": {
       "uid": "2027-05-15-ncrfu-finals@fogrugby.com",
       "location": "TBD",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
     }
@@ -1896,6 +2017,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1912,6 +2034,7 @@
       "uid": "2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com",
       "location": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
       "status": "confirmed"
     }
@@ -1927,6 +2050,7 @@
       "uid": "2027-05-28-igr-noram@fogrugby.com",
       "location": "New Orleans, LA",
       "description": "Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "tournament",
       "status": "confirmed"
     }
