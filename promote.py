@@ -68,6 +68,17 @@ def load():
     return events, promote, log
 
 
+def tracked(url: str, site_key: str, listing_key: str) -> str:
+    """Add UTM tags so Google Analytics can attribute visits and sign-ups to the listing site."""
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query))
+    query.setdefault("utm_source", site_key)
+    query.setdefault("utm_medium", "listing")
+    query.setdefault("utm_campaign", listing_key)
+    return urlunsplit(parts._replace(query=urlencode(query)))
+
+
 def contact_for(promote: dict, listing: dict) -> dict:
     """The default contact, with any per-listing `contact:` overrides (e.g. a different email)."""
     return {**promote["contact"], **(listing.get("contact") or {})}
@@ -222,7 +233,7 @@ def cmd_kit(listing_key: str, site_key: str):
             "Venue": o["venue"],
             "Address": o["address"],
             "Cost": "Free" if not listing.get("cost") else f"${listing['cost']}",
-            "Website": listing["url"],
+            "Website": tracked(listing["url"], site_key, listing_key),
             "Image": str(ROOT / listing["image"]),
             "Image credit": listing.get("image_credit", ""),
             "Tags": ", ".join(listing.get("tags", [])),
@@ -259,7 +270,7 @@ def cmd_fill(listing_key: str, site_key: str, n: int | None = None, headless: bo
         page.goto(SITES[site_key]["url"])
         filler = FILLERS.get(site_key)
         if filler:
-            filler(page, listing, unit, contact_for(promote, listing))
+            filler(page, {**listing, "url": tracked(listing["url"], site_key, listing_key)}, unit, contact_for(promote, listing))
             print("Form filled. Check every field in the browser, then click Submit yourself.")
         else:
             print(f"No auto-fill for {SITES[site_key]['name']} yet - sign in if needed and use the fields below:\n")
@@ -392,7 +403,7 @@ def cmd_push_eventbrite(listing_key: str):
             action = "created draft"
 
         # Description (structured content) and the registration confirmation message
-        signup = listing.get("signup_url", listing["url"])
+        signup = tracked(listing.get("signup_url", listing["url"]), "eventbrite", listing_key)
         body = to_html(description(listing, unit)) + f'<p>Sign up and full details: <a href="{signup}">{signup}</a></p>'
         version = int(eb_call("GET", f"/events/{eid}/structured_content/").get("page_version_number") or 0) + 1
         eb_call("POST", f"/events/{eid}/structured_content/{version}/", {

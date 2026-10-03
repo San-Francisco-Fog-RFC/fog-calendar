@@ -71,6 +71,8 @@ uv run promote.py kit pathway-to-rugby-2026 plai         # copy-paste fields for
 uv run promote.py mark pathway-to-rugby-2026 funcheap published --link https://...
 ```
 
+Links submitted to listing sites get UTM tags (`utm_source=<site>&utm_medium=listing&utm_campaign=<listing>`), so Google Analytics on fogrugby.com shows visits and sign-ups per site. Links inside `fog.ics` are left untagged, because bay.lgbt identifies events by their link.
+
 `fill` never clicks Submit. It opens a real browser window with a saved profile in `.promote-browser/` (gitignored), so for sites that need an account you sign in once and stay signed in. Sites that take several dates in one submission (Funcheap, Eventbrite) get one per venue; the rest get one per date. First run only: `uv run --with playwright playwright install chromium`.
 
 ## Search engine & Schema.org verification links
