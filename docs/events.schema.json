@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://events.fogrugby.com/events.schema.json",
+  "title": "SF Fog Rugby events feed (events.json)",
+  "type": "object",
+  "required": [
+    "version",
+    "calendar_name",
+    "timezone",
+    "updated_at",
+    "events"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "calendar_name": {
+      "type": "string"
+    },
+    "calendar_url": {
+      "type": "string"
+    },
+    "feed_url": {
+      "type": "string"
+    },
+    "ics_url": {
+      "type": "string"
+    },
+    "schema_org_url": {
+      "type": "string"
+    },
+    "openapi_url": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "total_events": {
+      "type": "integer"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "uid",
+          "title",
+          "category",
+          "status",
+          "all_day",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "fixture",
+              "training",
+              "pathway",
+              "tournament",
+              "social",
+              "board",
+              "community"
+            ]
+          },
+          "status": {
+            "enum": [
+              "confirmed",
+              "tentative",
+              "cancelled"
+            ]
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": "string",
+            "description": "ISO 8601 date-time with Pacific offset, or YYYY-MM-DD for all-day"
+          },
+          "end": {
+            "type": "string",
+            "description": "ISO 8601 date-time, or YYYY-MM-DD (inclusive last day) for all-day"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rrule": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exdates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        }
+      }
+    }
+  }
+}

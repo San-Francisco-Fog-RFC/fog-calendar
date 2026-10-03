@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=schema/events-yml.schema.json
 # San Francisco Fog RFC — club calendar (single source of truth for fog.ics)
 #
 # SOURCES
@@ -28,6 +29,88 @@ calendar_name: SF Fog Rugby
 default_image: https://events.fogrugby.com/assets/img/fog-coat-of-arms.png   # used by events without their own `image`
 calendar_url: https://www.fogrugby.com/season-fixtures-results
 
+
+# Venues: each place is written once and referenced by key (`venue: raymond-kimbell`).
+# Its location text in the feeds is "name, address". Events can still use free-text
+# `location:` for placeholders like "TBC - Fresno".
+venues:
+  raymond-kimbell:
+    name: "Raymond Kimbell Playground Park"
+    address: "1901 Geary Blvd, San Francisco, CA 94115"
+  crocker-amazon:
+    name: "Crocker Amazon Soccer Fields"
+    address: "Moscow St & Italy Ave, San Francisco, CA 94112"
+  st-marys-rec-center:
+    name: "St Mary's Rec Center"
+    address: "95 Justin Drive, San Francisco, CA 94112"
+  pilsner-inn:
+    name: "Pilsner Inn"
+    address: "225 Church St, San Francisco"
+  ocean-beach:
+    name: "Ocean Beach"
+    address: "San Francisco"
+  svn-west:
+    name: "SVN West"
+    address: "10 Van Ness Ave, San Francisco"
+  sf-eagle:
+    name: "SF Eagle"
+    address: "San Francisco"
+  blacks-beach:
+    name: "Black's Beach"
+    address: "San Diego"
+  number-one-fifth:
+    name: "Number One Fifth Ave"
+    address: "3845 5th Ave, San Diego"
+  richs-san-diego:
+    name: "Rich's"
+    address: "1051 University Ave, San Diego"
+  uptown-tavern:
+    name: "Uptown Tavern"
+    address: "1236 University Ave, San Diego"
+
+# Series: events that share details. An event's own fields override its series `defaults`.
+# `listing` holds the copy promote.py submits to listing sites (Funcheap, SCRUFF, ...).
+series:
+  pathway-to-rugby-2026:
+    name: "Pathway to Rugby 2026"
+    defaults:
+      category: pathway
+      status: confirmed
+      time: "19:30"
+      end_time: "22:00"
+      image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
+      url: https://www.fogrugby.com/p2r
+    listing:
+      title: "Pathway to Rugby - SF Fog Rugby"
+      url: https://fogrugby.com/p2r
+      signup_url: https://fogrugby.com/p2r
+      contact:
+        email: recruiting@fogrugby.com   # overrides promote.yml's default contact
+      image: docs/assets/img/pathway-to-rugby-banner.jpg   # landscape for listing sites (Funcheap max 1 MB; SCRUFF ~1920x1080)
+      image_credit: San Francisco Fog RFC
+      cost: 0                       # adult GA price in USD incl. fees; 0 = free
+      region: San Francisco
+      tags: [LGBTQ+, Sports & Wellness, Community, Outdoors]
+      sites: [funcheap, scruff, thegaycalendar, dothebay, eventbrite, plai, google]
+      summary: "A free crash course in rugby for people who have never played, run by San Francisco's inclusive LGBTQ+ rugby club."
+      description: |
+        Pathway to Rugby is a crash course for people who have never played. Guided practices on Tuesdays and Thursdays throughout October, built so each session picks up where the last one left off.
+
+        Over the sessions you'll cover:
+        - Passing and catching
+        - Running with the ball, in attack and defence
+        - Tackling and contact — safely, and not until week two
+        - Rucking
+        - Putting it together in a game
+
+        No experience required, and we mean that literally — most of the people standing next to you will be in exactly the same position.
+
+        Check-in from 7:30pm; sessions run until 10pm. Questions? Email recruiting@fogrugby.com
+  rucktacular-2026:
+    name: "Rucktacular 2026, San Diego"
+    defaults:
+      status: tentative
+
 events:
 
 # ---------------------------------------------------------------- September 2026
@@ -36,7 +119,7 @@ events:
     date: 2026-09-11
     time: "19:00"
     end_time: "23:00"
-    location: Pilsner Inn, 225 Church St, San Francisco
+    venue: pilsner-inn
     category: social
     status: confirmed
     notes: "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome."
@@ -46,7 +129,7 @@ events:
     date: 2026-09-13
     time: "09:00"
     end_time: "11:00"
-    location: "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112"
+    venue: st-marys-rec-center
     category: social
     status: confirmed
     rrule: "FREQ=WEEKLY;BYDAY=SU;UNTIL=20270530T180000Z"
@@ -74,7 +157,7 @@ events:
     date: 2026-09-13
     time: "15:00"
     end_time: "19:00"
-    location: Ocean Beach, San Francisco
+    venue: ocean-beach
     category: social
     status: confirmed
     notes: "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful."
@@ -84,7 +167,7 @@ events:
     date: 2026-09-26
     time: "20:00"
     end_time: "04:00"
-    location: SVN West, 10 Van Ness Ave, San Francisco
+    venue: svn-west
     category: community
     status: confirmed
     notes: "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com"
@@ -101,81 +184,45 @@ events:
 
 # ---------------------------------------------------------------- Pathway to Rugby 2026 (Tue = Raymond Kimbell, Thu = Crocker Amazon)
   - id: 2026-10-06-pathways-1
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 1"
     date: 2026-10-06
-    time: "19:30"
-    end_time: "22:00"
-    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: raymond-kimbell
     notes: "Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one."
-    url: https://www.fogrugby.com/p2r
   - id: 2026-10-08-pathways-2
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 2"
     date: 2026-10-08
-    time: "19:30"
-    end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: crocker-amazon
     notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-    url: https://www.fogrugby.com/p2r
   - id: 2026-10-13-pathways-3
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 3"
     date: 2026-10-13
-    time: "19:30"
-    end_time: "22:00"
-    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
-    url: https://www.fogrugby.com/p2r
+    venue: raymond-kimbell
   - id: 2026-10-15-pathways-4
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 4"
     date: 2026-10-15
-    time: "19:30"
-    end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: crocker-amazon
     notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-    url: https://www.fogrugby.com/p2r
   - id: 2026-10-20-pathways-5
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 5"
     date: 2026-10-20
-    time: "19:30"
-    end_time: "22:00"
-    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
-    url: https://www.fogrugby.com/p2r
+    venue: raymond-kimbell
   - id: 2026-10-22-pathways-6
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 6"
     date: 2026-10-22
-    time: "19:30"
-    end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: crocker-amazon
     notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-    url: https://www.fogrugby.com/p2r
   - id: 2026-10-27-pathways-7
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 7"
     date: 2026-10-27
-    time: "19:30"
-    end_time: "22:00"
-    location: Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: raymond-kimbell
     notes: "Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together."
-    url: https://www.fogrugby.com/p2r
-    url: https://www.fogrugby.com/p2r
 
 # ---------------------------------------------------------------- October 2026 (club dates)
   - id: 2026-10-14-fog-turns-26
@@ -190,7 +237,7 @@ events:
     date: 2026-10-18
     time: "15:00"
     end_time: "19:00"
-    location: SF Eagle, San Francisco
+    venue: sf-eagle
     category: community
     status: confirmed
     notes: "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com"
@@ -217,16 +264,11 @@ events:
     notes: "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
 
   - id: 2026-10-29-first-preseason-practice
+    series: pathway-to-rugby-2026
     title: "Pathway to Rugby — Session 8 + First Preseason Practice"
     date: 2026-10-29
-    time: "19:30"
-    end_time: "22:00"
-    location: Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112
-    category: pathway
-    image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
-    status: confirmed
+    venue: crocker-amazon
     notes: "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm."
-    url: https://www.fogrugby.com/p2r
 
 # ---------------------------------------------------------------- Preseason 2026 (email: tentative, may change)
   - id: 2026-11-07-usf-away
@@ -246,75 +288,75 @@ events:
 
 # ---------------------------------------------------------------- Rucktacular 2026, San Diego (Thu 3 – Sun 6 Dec)
   - id: 2026-12-03-rucktacular-weekend
+    series: rucktacular-2026
     title: "Rucktacular 2026 — San Diego"
     start: 2026-12-03
     end: 2026-12-06
     location: San Diego, CA
     category: tournament
     image: https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg
-    status: tentative
     notes: "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat."
     url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
   - id: 2026-12-03-rucktacular-blacks-beach
+    series: rucktacular-2026
     title: "Rucktacular: Black's Beach Naked Rugby"
     date: 2026-12-03
     time: "14:00"
     end_time: "18:00"
-    location: Black's Beach, San Diego
+    venue: blacks-beach
     category: tournament
-    status: tentative
     notes: "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm."
   - id: 2026-12-04-rucktacular-presidents-meeting
+    series: rucktacular-2026
     title: "Rucktacular: Presidents' Meeting"
     date: 2026-12-04
     time: "16:00"
     end_time: "17:30"
     location: San Diego — location TBD
     category: board
-    status: tentative
     notes: "Club presidents meetup. Hotel check-in and welcome table open all day Friday."
   - id: 2026-12-04-rucktacular-drink-up
+    series: rucktacular-2026
     title: "Rucktacular: Drink-Up at Number One Fifth"
     date: 2026-12-04
     time: "19:00"
     end_time: "23:00"
-    location: Number One Fifth Ave, 3845 5th Ave, San Diego
+    venue: number-one-fifth
     category: social
-    status: tentative
     notes: "Kick off the weekend together."
   - id: 2026-12-05-rucktacular-tournament
+    series: rucktacular-2026
     title: "Rucktacular 2026 Tournament Day"
     date: 2026-12-05
     time: "07:00"
     end_time: "17:00"
     location: San Diego — pitch TBC
     category: tournament
-    status: tentative
     notes: "7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony."
   - id: 2026-12-05-rucktacular-after-party
+    series: rucktacular-2026
     title: "Rucktacular: Official After Party at Rich's"
     date: 2026-12-05
     time: "21:00"
     end_time: "23:59"
-    location: Rich's, 1051 University Ave, San Diego
+    venue: richs-san-diego
     category: social
-    status: tentative
   - id: 2026-12-06-rucktacular-survivors-brunch
+    series: rucktacular-2026
     title: "Rucktacular: Survivors Brunch"
     date: 2026-12-06
     time: "10:00"
     end_time: "12:00"
-    location: Uptown Tavern, 1236 University Ave, San Diego
+    venue: uptown-tavern
     category: social
-    status: tentative
   - id: 2026-12-06-rucktacular-goodbye-drinks
+    series: rucktacular-2026
     title: "Rucktacular: Final Goodbye Drinks"
     date: 2026-12-06
     time: "12:00"
     end_time: "14:00"
-    location: Number One Fifth Ave, 3845 5th Ave, San Diego
+    venue: number-one-fifth
     category: social
-    status: tentative
 
 # ---------------------------------------------------------------- Preseason closer
   - id: 2026-12-12-preseason-closer

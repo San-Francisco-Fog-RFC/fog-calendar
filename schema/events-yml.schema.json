@@ -1,0 +1,445 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://events.fogrugby.com/schema/events-yml.schema.json",
+  "title": "SF Fog Rugby calendar source (events.yml)",
+  "description": "The single source of truth for the club calendar. build_ics.py resolves series and venues, then publishes fog.ics, events.json, fullcalendar.json and Schema.org data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "calendar_name",
+    "events"
+  ],
+  "properties": {
+    "calendar_name": {
+      "type": "string"
+    },
+    "calendar_url": {
+      "type": "string",
+      "pattern": "^https?://",
+      "description": "Full http(s) URL"
+    },
+    "default_image": {
+      "type": "string",
+      "description": "Image for events without their own `image`"
+    },
+    "venues": {
+      "type": "object",
+      "description": "Places, written once and referenced by key from events (`venue: <key>`)",
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/venue"
+      }
+    },
+    "series": {
+      "type": "object",
+      "description": "Groups of events sharing details; an event's own fields override the series defaults",
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/series"
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
+  },
+  "$defs": {
+    "venue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address": {
+          "type": "string",
+          "description": "Street address and city, e.g. '1901 Geary Blvd, San Francisco, CA 94115'"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Full http(s) URL"
+        }
+      }
+    },
+    "event_fields": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What shows on the calendar"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Single-day event date (YYYY-MM-DD)"
+        },
+        "start": {
+          "type": "string",
+          "format": "date",
+          "description": "Multi-day event first day (use with `end`)"
+        },
+        "end": {
+          "type": "string",
+          "format": "date",
+          "description": "Multi-day event last day, inclusive"
+        },
+        "time": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+          "description": "Start time, 24-hour HH:MM. Omit for all-day / TBD kickoff."
+        },
+        "end_time": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+          "description": "End time, 24-hour HH:MM (default: start + 2h)"
+        },
+        "venue": {
+          "type": "string",
+          "description": "Key of an entry in `venues`"
+        },
+        "location": {
+          "type": "string",
+          "description": "Free-text location, for places without a venue entry (e.g. 'TBC - Fresno')"
+        },
+        "category": {
+          "enum": [
+            "fixture",
+            "training",
+            "pathway",
+            "tournament",
+            "social",
+            "board",
+            "community"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "tentative",
+            "cancelled"
+          ],
+          "description": "Use `cancelled` instead of deleting a published event"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Description text"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Full http(s) URL"
+        },
+        "image": {
+          "type": "string",
+          "description": "Full URL (https://events.fogrugby.com/assets/img/... for our own images), or a path inside docs/"
+        },
+        "rrule": {
+          "type": "string",
+          "pattern": "FREQ=",
+          "description": "RFC 5545 RRULE for repeating events, e.g. FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z"
+        },
+        "exdates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD"
+          },
+          "description": "Dates to skip within a repeating event"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "date"
+          ]
+        },
+        {
+          "required": [
+            "start"
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
+          "description": "Stable calendar UID. Never change once published."
+        },
+        "series": {
+          "type": "string",
+          "description": "Key of an entry in `series`"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What shows on the calendar"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Single-day event date (YYYY-MM-DD)"
+        },
+        "start": {
+          "type": "string",
+          "format": "date",
+          "description": "Multi-day event first day (use with `end`)"
+        },
+        "end": {
+          "type": "string",
+          "format": "date",
+          "description": "Multi-day event last day, inclusive"
+        },
+        "time": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+          "description": "Start time, 24-hour HH:MM. Omit for all-day / TBD kickoff."
+        },
+        "end_time": {
+          "type": "string",
+          "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+          "description": "End time, 24-hour HH:MM (default: start + 2h)"
+        },
+        "venue": {
+          "type": "string",
+          "description": "Key of an entry in `venues`"
+        },
+        "location": {
+          "type": "string",
+          "description": "Free-text location, for places without a venue entry (e.g. 'TBC - Fresno')"
+        },
+        "category": {
+          "enum": [
+            "fixture",
+            "training",
+            "pathway",
+            "tournament",
+            "social",
+            "board",
+            "community"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "tentative",
+            "cancelled"
+          ],
+          "description": "Use `cancelled` instead of deleting a published event"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Description text"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Full http(s) URL"
+        },
+        "image": {
+          "type": "string",
+          "description": "Full URL (https://events.fogrugby.com/assets/img/... for our own images), or a path inside docs/"
+        },
+        "rrule": {
+          "type": "string",
+          "pattern": "FREQ=",
+          "description": "RFC 5545 RRULE for repeating events, e.g. FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z"
+        },
+        "exdates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD"
+          },
+          "description": "Dates to skip within a repeating event"
+        }
+      }
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "defaults": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Fields every event in the series inherits unless it sets its own",
+          "properties": {
+            "time": {
+              "type": "string",
+              "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+              "description": "Start time, 24-hour HH:MM. Omit for all-day / TBD kickoff."
+            },
+            "end_time": {
+              "type": "string",
+              "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+              "description": "End time, 24-hour HH:MM (default: start + 2h)"
+            },
+            "venue": {
+              "type": "string",
+              "description": "Key of an entry in `venues`"
+            },
+            "location": {
+              "type": "string",
+              "description": "Free-text location, for places without a venue entry (e.g. 'TBC - Fresno')"
+            },
+            "category": {
+              "enum": [
+                "fixture",
+                "training",
+                "pathway",
+                "tournament",
+                "social",
+                "board",
+                "community"
+              ]
+            },
+            "status": {
+              "enum": [
+                "confirmed",
+                "tentative",
+                "cancelled"
+              ],
+              "description": "Use `cancelled` instead of deleting a published event"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Description text"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https?://",
+              "description": "Full http(s) URL"
+            },
+            "image": {
+              "type": "string",
+              "description": "Full URL (https://events.fogrugby.com/assets/img/... for our own images), or a path inside docs/"
+            }
+          }
+        },
+        "listing": {
+          "$ref": "#/$defs/listing"
+        }
+      }
+    },
+    "listing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "url",
+        "image",
+        "description",
+        "sites"
+      ],
+      "description": "Copy promote.py submits to listing sites",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Full http(s) URL"
+        },
+        "signup_url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Full http(s) URL"
+        },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "organization": {
+              "type": "string"
+            }
+          }
+        },
+        "image": {
+          "type": "string",
+          "description": "Local path to the listing image (landscape JPG works best)"
+        },
+        "image_credit": {
+          "type": "string"
+        },
+        "cost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Adult GA price in USD incl. fees; 0 = free"
+        },
+        "region": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sites": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "funcheap",
+              "scruff",
+              "thegaycalendar",
+              "dothebay",
+              "eventbrite",
+              "plai",
+              "google"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

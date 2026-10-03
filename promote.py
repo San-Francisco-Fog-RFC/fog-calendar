@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["pyyaml", "playwright"]
+# dependencies = ["pyyaml", "python-dateutil", "playwright"]
 # ///
 """Submit events.yml events to listing sites without retyping them.
 
-Listing copy lives in promote.yml; dates, times and venues come from events.yml;
-every submission is recorded in submissions.yml.
+Listing copy lives in each series' `listing:` in events.yml (dates, times and venues come
+from its events); site settings live in promote.yml; every submission is recorded in submissions.yml.
 
   uv run promote.py plan [listing]                 status of every listing on every site
   uv run promote.py kit <listing> <site>           print copy-paste fields
@@ -62,8 +62,21 @@ def load_yaml(name: str) -> dict:
 
 
 def load():
-    events = {e["id"]: e for e in load_yaml("events.yml").get("events", [])}
+    """Resolved events (series defaults and venues applied), promote settings with listings, and the log."""
+    from build_ics import resolve_events
+    data = load_yaml("events.yml")
+    raw_series = {e["id"]: e.get("series") for e in data.get("events", [])}
+    errors = resolve_events(data)
+    if errors:
+        sys.exit("events.yml: " + "; ".join(errors))
+    events = {e["id"]: e for e in data["events"]}
     promote = load_yaml("promote.yml")
+    listings = dict(promote.get("listings") or {})
+    for key, s in (data.get("series") or {}).items():
+        if s.get("listing"):
+            members = sorted((i for i, sid in raw_series.items() if sid == key), key=lambda i: str(events[i].get("date") or events[i].get("start")))
+            listings[key] = {**s["listing"], "events": members}
+    promote["listings"] = listings
     log = load_yaml("submissions.yml").get("submissions") or []
     return events, promote, log
 
