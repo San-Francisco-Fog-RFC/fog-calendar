@@ -339,11 +339,14 @@
     }
     .modal-box {
       background: var(--fog-white);
-      width: 90%;
-      max-width: 600px;
+      width: 92%;
+      max-width: 820px;
       border-radius: var(--fog-radius-card);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
     }
     .modal-header {
       background: var(--fog-dark-blue);
@@ -358,6 +361,7 @@
       font-weight: 700;
       font-family: "Futura PT", Arial, sans-serif;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
     .close-btn {
       background: none;
@@ -366,14 +370,53 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+    .modal-tabs {
+      display: flex;
+      background: #F0F2F5;
+      border-bottom: 1px solid var(--fog-gray);
+      padding: 0 1rem;
+      gap: 4px;
+    }
+    .modal-tab-btn {
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-family: "Futura PT", Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #555;
+      cursor: pointer;
+      border-radius: var(--fog-radius-btn) var(--fog-radius-btn) 0 0;
+      transition: all 0.15s ease;
+    }
+    .modal-tab-btn:hover {
+      color: var(--fog-blue);
+    }
+    .modal-tab-btn.active {
+      color: var(--fog-blue);
+      border-bottom-color: var(--fog-blue);
+      background: var(--fog-white);
+    }
     .modal-content {
       padding: 1.25rem;
-      max-height: 75vh;
       overflow-y: auto;
+      flex: 1;
     }
-    .modal-content p {
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
+    .modal-pane {
+      display: none;
+    }
+    .modal-pane.active {
+      display: block;
+    }
+    .table-row-clickable {
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .table-row-clickable:hover {
+      background-color: #F0F6FA !important;
     }
   </style>
 </head>
@@ -397,7 +440,7 @@
   <header class="fog-header">
     <div class="header-inner">
       <div class="header-brand-wrap">
-        <img src="assets/img/fog-crest.svg" alt="SF Fog RFC Crest" class="fog-header-logo">
+        <img src="https://fogrugby.com/s/fog-coat-of-arms-no-words-transparent.png" alt="SF Fog RFC Coat of Arms" class="fog-header-logo" style="height: 44px; width: auto; object-fit: contain;">
         <div>
           <div class="brand-title">PLAYER ONBOARDING &amp; MEDICAL CLEARANCE</div>
           <div class="brand-sub">San Francisco Fog Rugby Football Club</div>
@@ -415,7 +458,7 @@
   <div id="login-gate" class="login-backdrop">
     <div class="login-card">
       <div style="text-align: center; margin-bottom: 1.5rem;">
-        <img src="assets/img/fog-crest.svg" alt="SF Fog RFC" style="height: 56px; margin-bottom: 0.75rem;">
+        <img src="https://fogrugby.com/s/fog-coat-of-arms-no-words-transparent.png" alt="SF Fog RFC" style="height: 64px; width: auto; margin-bottom: 0.75rem; object-fit: contain;">
         <h2 style="font-family: 'Futura PT', Arial, sans-serif; font-size: 1.35rem; color: var(--fog-dark-blue); text-transform: uppercase; margin: 0 0 4px 0; letter-spacing: 0.05em;">Executive Board Access</h2>
         <p style="font-size: 0.82rem; color: #555; margin: 0;">Restricted to authorized club officers &amp; medical compliance staff.</p>
       </div>
@@ -487,20 +530,17 @@
       <table>
         <thead>
           <tr>
-            <th style="min-width: 170px;">Forms Status</th>
-            <th>Participant Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>USA Rugby Waiver</th>
+            <th style="min-width: 170px;">Status</th>
+            <th>Submission Date</th>
+            <th>Player Name</th>
             <th>Jotform Registration</th>
             <th>Waiver &amp; Insurance Answer</th>
-            <th>Submission Date</th>
-            <th>Action</th>
+            <th style="text-align: right;">Action</th>
           </tr>
         </thead>
 
         <tbody id="table-body">
-          <tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #666;">Loading live Google Sheet submissions...</td></tr>
+          <tr><td colspan="6" style="text-align: center; padding: 2.5rem; color: #666;">Loading live Google Sheet submissions...</td></tr>
         </tbody>
       </table>
     </div>
@@ -513,8 +553,18 @@
         <div class="modal-title" id="modal-player-name">Player Clearance Details</div>
         <button class="close-btn" onclick="closeModal()">&times;</button>
       </div>
-      <div class="modal-content" id="modal-body">
-        <!-- Injected via JS -->
+      <!-- Modal Two-Tab Navigation -->
+      <div class="modal-tabs">
+        <button id="modal-tab-details-btn" class="modal-tab-btn active" onclick="switchModalTab('details')">📋 Member Profile &amp; Details</button>
+        <button id="modal-tab-waiver-btn" class="modal-tab-btn" onclick="switchModalTab('waiver')">✍️ USA Rugby Waiver</button>
+      </div>
+      <div class="modal-content">
+        <div id="modal-pane-details" class="modal-pane active">
+          <!-- Injected via JS -->
+        </div>
+        <div id="modal-pane-waiver" class="modal-pane">
+          <!-- Injected via JS (Embedded IFrame or Resend Reminder Card) -->
+        </div>
       </div>
     </div>
   </div>
@@ -805,7 +855,7 @@
 
       const tbody = document.getElementById('table-body');
       if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #888;">No players found matching this filter.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2.5rem; color: #888;">No players found matching this filter.</td></tr>';
         return;
       }
 
@@ -817,75 +867,147 @@
         if (r.clearanceStatus === 'UNINSURED') { badgeClass = 'badge--uninsured'; badgeText = 'Uninsured'; }
         if (r.clearanceStatus === 'NON_CONTACT') { badgeClass = 'badge--noncontact'; badgeText = 'Non-Contact'; }
 
+        // Jotform Registration Status
+        const regCell = r.hasJotform
+          ? '<span class="badge badge--cleared">✓ Submitted</span>'
+          : '<span class="badge badge--orphan">Missing Registration</span>';
 
-        // 1. USA Rugby Waiver Cell
-        const firstPdf = (r.waiverPdfUrl || '').split('\n')[0].trim();
-        const waiverCell = (r.waiverSigned && firstPdf)
-          ? `<a href="${firstPdf}" target="_blank" class="btn-link">📄 Signed PDF</a>`
-          : '<span class="badge badge--waiver">❌ Missing Waiver</span>';
-
-        // 2. Jotform Registration Cell
-        let regCell = '<span class="badge badge--cleared">✅ Complete</span>';
-        if (!r.hasJotform) {
-          regCell = '<span class="badge badge--orphan">⚠️ Missing Form</span>';
-        } else if (r.isWorkflowErrored) {
-          regCell = '<span class="badge badge--waiver" title="Jotform workflow errored">⚠️ Workflow Errored</span>';
-        }
-
-        // 3. Status of Answer to Waiver and Insurance Question Cell
+        // Questionnaire Answer Badge
         let ansBadge = '';
         if (r.insurance.status === 'INSURED_BOTH') {
-          ansBadge = '<span class="badge badge--cleared">✅ Both: USA Rugby + Insured</span>';
+          ansBadge = '<span class="badge badge--cleared">Both: USA Rugby + Insured</span>';
         } else if (r.insurance.status === 'INSURED_ONLY') {
-          ansBadge = '<span class="badge badge--insonly">ℹ️ Insurance Only (Medical)</span>';
+          ansBadge = '<span class="badge badge--insonly">Insurance Only</span>';
         } else if (r.insurance.status === 'UNINSURED') {
-          ansBadge = '<span class="badge badge--uninsured">⚠️ Declared No Insurance</span>';
+          ansBadge = '<span class="badge badge--uninsured">Declared No Insurance</span>';
         } else if (r.insurance.status === 'NON_CONTACT') {
-          ansBadge = '<span class="badge badge--noncontact">🛡️ Non-Contact Only</span>';
+          ansBadge = '<span class="badge badge--noncontact">Non-Contact Only</span>';
         } else {
           ansBadge = `<span class="badge badge--waiver">${escapeHtml(r.insurance.label)}</span>`;
         }
 
         return `
-          <tr>
+          <tr class="table-row-clickable" onclick="openPlayerModal('${escapeHtml(r.uniqueId)}')">
             <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+            <td style="font-size: 0.82rem; color: #555; white-space: nowrap;">${escapeHtml(r.submissionDate || 'N/A')}</td>
             <td><strong>${escapeHtml(r.fullName)}</strong></td>
-            <td>${escapeHtml(r.email)}</td>
-            <td>${escapeHtml(r.phone)}</td>
-            <td>${waiverCell}</td>
             <td>${regCell}</td>
             <td>${ansBadge}</td>
-            <td>${escapeHtml(r.submissionDate)}</td>
-            <td>
-              <button class="btn-action" style="padding: 4px 8px; font-size: 0.72rem;" onclick="openPlayerModal('${escapeHtml(r.email)}')">Review</button>
+            <td style="text-align: right;">
+              <button class="btn-action" style="padding: 4px 10px; font-size: 0.75rem;" onclick="event.stopPropagation(); openPlayerModal('${escapeHtml(r.uniqueId)}')">View Details</button>
             </td>
           </tr>
         `;
       }).join('');
     }
 
-    function openPlayerModal(email) {
-      const p = allRecords.find(r => r.email === email);
+    function switchModalTab(tab) {
+      const detailsBtn = document.getElementById('modal-tab-details-btn');
+      const waiverBtn = document.getElementById('modal-tab-waiver-btn');
+      const detailsPane = document.getElementById('modal-pane-details');
+      const waiverPane = document.getElementById('modal-pane-waiver');
+      if (!detailsBtn || !waiverBtn || !detailsPane || !waiverPane) return;
+
+      if (tab === 'details') {
+        detailsBtn.classList.add('active');
+        waiverBtn.classList.remove('active');
+        detailsPane.classList.add('active');
+        waiverPane.classList.remove('active');
+      } else {
+        waiverBtn.classList.add('active');
+        detailsBtn.classList.remove('active');
+        waiverPane.classList.add('active');
+        detailsPane.classList.remove('active');
+      }
+    }
+
+    function openPlayerModal(uniqueId) {
+      const p = allRecords.find(r => r.uniqueId === uniqueId || r.email === uniqueId);
       if (!p) return;
 
-      document.getElementById('modal-player-name').textContent = p.fullName || 'Player Clearance';
+      document.getElementById('modal-player-name').textContent = p.fullName || 'Player Clearance Details';
       const firstPdf = (p.waiverPdfUrl || '').split('\n')[0].trim();
 
-      document.getElementById('modal-body').innerHTML = `
-        <p><strong>Unique ID:</strong> ${p.uniqueId}</p>
-        <p><strong>Email:</strong> ${p.email}</p>
-        <p><strong>Phone:</strong> ${p.phone || 'N/A'}</p>
-        <p><strong>Clearance Status:</strong> <strong>${p.clearanceStatus}</strong></p>
-        <p><strong>USA Rugby Signed Waiver:</strong> ${firstPdf ? `<a href="${firstPdf}" target="_blank" class="btn-link">Open PDF Link &rarr;</a>` : 'Missing'}</p>
-        <p><strong>Jotform Registration Status:</strong> ${p.hasJotform ? (p.isWorkflowErrored ? 'Submitted (Workflow Errored)' : 'Submitted & Complete') : 'Missing / Orphan'}</p>
-        <p><strong>Questionnaire Answer:</strong> ${p.insurance.label}</p>
-        <hr style="border: none; border-top: 1px solid var(--fog-gray); margin: 12px 0;">
-        <p style="font-size: 0.8rem; color: #555;"><strong>Target Google Group:</strong> rookies@fogrugby.com</p>
-        <p style="font-size: 0.8rem; color: #555;"><strong>WhatsApp Invite:</strong> Ready to dispatch via Meta Cloud API</p>
-        <div style="margin-top: 16px; text-align: right;">
-          <button class="btn-action" onclick="alert('Player status verified.')">Mark Verified</button>
+      // Reset to details tab
+      switchModalTab('details');
+
+      let badgeClass = 'badge--cleared';
+      let badgeText = 'Verified - Completed Both';
+      if (p.clearanceStatus === 'NEEDS_WAIVER') { badgeClass = 'badge--waiver'; badgeText = 'Missing Waiver'; }
+      if (p.clearanceStatus === 'ORPHAN_WAIVER') { badgeClass = 'badge--orphan'; badgeText = 'Missing Registration'; }
+      if (p.clearanceStatus === 'UNINSURED') { badgeClass = 'badge--uninsured'; badgeText = 'Uninsured'; }
+      if (p.clearanceStatus === 'NON_CONTACT') { badgeClass = 'badge--noncontact'; badgeText = 'Non-Contact'; }
+
+      // 1. Tab 1: Member Profile & Details
+      document.getElementById('modal-pane-details').innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 1.25rem;">
+          <div style="background: #F8F9FA; padding: 10px 12px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn);">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: #666; font-weight: 700;">Clearance Status</div>
+            <div style="margin-top: 4px;"><span class="badge ${badgeClass}">${badgeText}</span></div>
+          </div>
+          <div style="background: #F8F9FA; padding: 10px 12px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn);">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: #666; font-weight: 700;">Submission Date</div>
+            <div style="margin-top: 4px; font-weight: 600; font-size: 0.88rem; color: var(--fog-dark-blue);">${escapeHtml(p.submissionDate || 'N/A')}</div>
+          </div>
+          <div style="background: #F8F9FA; padding: 10px 12px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn);">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: #666; font-weight: 700;">Email Address</div>
+            <div style="margin-top: 4px; font-size: 0.88rem;">${p.email ? `<a href="mailto:${escapeHtml(p.email)}" class="btn-link" style="color: var(--fog-blue); font-weight: 600;">${escapeHtml(p.email)}</a>` : '<span style="color:#999;">Missing</span>'}</div>
+          </div>
+          <div style="background: #F8F9FA; padding: 10px 12px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn);">
+            <div style="font-size: 0.72rem; text-transform: uppercase; color: #666; font-weight: 700;">Phone Number</div>
+            <div style="margin-top: 4px; font-size: 0.88rem;">${p.phone ? `<a href="tel:${escapeHtml(p.phone)}" class="btn-link" style="color: var(--fog-blue); font-weight: 600;">${escapeHtml(p.phone)}</a>` : '<span style="color:#999;">N/A</span>'}</div>
+          </div>
+        </div>
+
+        <div style="background: #F8F9FA; padding: 12px 14px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn); margin-bottom: 1.25rem;">
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: #666; font-weight: 700; margin-bottom: 4px;">Insurance &amp; Medical Questionnaire Declaration</div>
+          <div style="font-size: 0.9rem; color: var(--fog-dark-blue); font-weight: 600;">${escapeHtml(p.insurance.label)}</div>
+        </div>
+
+        ${p.isWorkflowErrored ? `
+        <div style="padding: 10px 14px; background: #FFF8E1; border-left: 4px solid #EE9C00; font-size: 0.84rem; color: #5D4037; border-radius: var(--fog-radius-btn); margin-bottom: 1.25rem;">
+          ℹ️ <strong>Jotform Workflow Notice:</strong> The Jotform background webhook reported an execution error, but player signature, registration, and medical answers were successfully captured in the master sheet.
+        </div>` : ''}
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--fog-gray); font-size: 0.78rem; color: #666;">
+          <span>Unique ID: <code>${escapeHtml(p.uniqueId)}</code></span>
+          <span>Google Group: <code>rookies@fogrugby.com</code></span>
         </div>
       `;
+
+      // 2. Tab 2: USA Rugby Waiver
+      if (p.waiverSigned && firstPdf) {
+        document.getElementById('modal-pane-waiver').innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="font-size: 0.88rem; font-weight: 700; color: #157A38;">
+              ✅ Signed USA Rugby Waiver Attached
+            </div>
+            <a href="${escapeHtml(firstPdf)}" target="_blank" rel="noopener" class="btn-action" style="padding: 4px 10px; font-size: 0.75rem; text-decoration: none;">
+              Open in New Window ↗
+            </a>
+          </div>
+          <iframe src="${escapeHtml(firstPdf)}" style="width: 100%; height: 500px; border: 1px solid var(--fog-gray); border-radius: var(--fog-radius-btn); background: #FAFAFA;" title="USA Rugby Waiver PDF"></iframe>
+        `;
+      } else {
+        document.getElementById('modal-pane-waiver').innerHTML = `
+          <div style="padding: 2.5rem 1.5rem; text-align: center; background: #FDF7F7; border: 1px solid #F5C6CB; border-radius: var(--fog-radius-btn);">
+            <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">✍️</div>
+            <h3 style="font-family: 'Futura PT', Arial, sans-serif; font-size: 1.2rem; color: #721C24; margin: 0 0 0.5rem 0; text-transform: uppercase;">USA Rugby Waiver Not Signed</h3>
+            <p style="font-size: 0.9rem; color: #555; max-width: 520px; margin: 0 auto 1.5rem auto;">
+              ${escapeHtml(p.fullName)} has completed the registration form but has not signed the official USA Rugby waiver. Contact rugby participation requires a completed waiver.
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              <a href="mailto:${escapeHtml(p.email)}?subject=SF%20Fog%20Rugby%20-%20Please%20Sign%20Your%20USA%20Rugby%20Waiver&body=Hi%20${encodeURIComponent((p.fullName||'').split(' ')[0])},%0A%0AWelcome%20to%20SF%20Fog%20Rugby!%20To%20complete%20your%20clearance%20for%20practice,%20please%20sign%20the%20USA%20Rugby%20waiver%20here:%0Ahttps://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb%0A%0AThank%20you,%0ASF%20Fog%20RFC" class="btn-action" style="padding: 9px 18px; text-decoration: none; font-size: 0.85rem;">
+                📧 Send Waiver Reminder to ${escapeHtml(p.email || 'Player')}
+              </a>
+              <button class="btn-action" style="padding: 9px 18px; font-size: 0.85rem;" onclick="navigator.clipboard.writeText('https://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb').then(() => alert('Waiver link copied to clipboard!'))">
+                📋 Copy Waiver Signing Link
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
       document.getElementById('action-modal').style.display = 'flex';
     }
 
