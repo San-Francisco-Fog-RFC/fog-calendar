@@ -519,8 +519,9 @@
     </div>
   </div>
 
-  <script>
-    const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=417364230';
+    const SHEET_ARCHIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=417364230';
+    const SHEET_LIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=746206013';
+
     let allRecords = [];
     let currentFilter = 'ALL';
     let searchQuery = '';
@@ -585,73 +586,162 @@
 
     async function fetchLiveSheetData() {
       const tbody = document.getElementById('table-body');
-      tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #006EB6;">⚡ Connecting to live Google Sheet...</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #006EB6;">⚡ Connecting to live Google Sheet (fetching newest registrations)...</td></tr>';
 
       try {
-        const res = await fetch(SHEET_CSV_URL);
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const text = await res.text();
-        const parsed = parseCSV(text);
+        const cb = '&_cb=' + Date.now();
+        const [resArchive, resLive] = await Promise.all([
+          fetch(SHEET_ARCHIVE_URL + cb, { cache: 'no-store' }),
+          fetch(SHEET_LIVE_URL + cb, { cache: 'no-store' })
+        ]);
 
-        if (parsed.length < 2) throw new Error('Sheet returned no rows');
+        const textArchive = resArchive.ok ? await resArchive.text() : '';
+        const textLive = resLive.ok ? await resLive.text() : '';
 
-        const headers = parsed[0].map(h => h.trim().replace(/^"|"$/g, ''));
-        const colIdx = {
-          uniqueId: headers.indexOf('Unique ID'),
-          name: headers.indexOf('Full Name'),
-          email: headers.indexOf('Email'),
-          email1: headers.indexOf('Email1'),
-          phone: headers.indexOf('Phone Number'),
-          selectOne: headers.indexOf('Select one:'),
-          signedDoc: headers.indexOf('Signed Document'),
-          date: headers.indexOf('Submission Date'),
-          workflowStatus: headers.indexOf('Status (Workflow: 2026-2027 SF Fog Pathways Registration Form)')
-        };
+        const recordMap = new Map();
 
-        allRecords = [];
-        for (let i = 1; i < parsed.length; i++) {
-          const row = parsed[i];
-          const rawEmail = (row[colIdx.email] || (colIdx.email1 !== -1 ? row[colIdx.email1] : '') || '').trim();
-          const email = rawEmail.toLowerCase();
-          const name = (row[colIdx.name] || '').trim();
-          const phone = normalizePhone(row[colIdx.phone] || '');
-          const selectOne = row[colIdx.selectOne] || '';
-          const signedDoc = (row[colIdx.signedDoc] || '').trim();
-          const date = (row[colIdx.date] || '').trim();
-          const uniqueId = (row[colIdx.uniqueId] || 'FOG' + i).trim();
-          const isWorkflowErrored = (row[colIdx.workflowStatus] || '').trim() === 'ERRORED';
+        // 1. Process Archive Sheet (gid=417364230)
+        if (textArchive) {
+          const parsedArchive = parseCSV(textArchive);
+          if (parsedArchive.length > 1) {
+            const h = parsedArchive[0].map(c => c.trim().replace(/^"|"$/g, ''));
+            const idx = {
+              uniqueId: h.indexOf('Unique ID'),
+              name: h.indexOf('Full Name'),
+              email: h.indexOf('Email'),
+              email1: h.indexOf('Email1'),
+              phone: h.indexOf('Phone Number'),
+              selectOne: h.indexOf('Select one:'),
+              signedDoc: h.indexOf('Signed Document'),
+              date: h.indexOf('Submission Date'),
+              workflowStatus: h.indexOf('Status (Workflow: 2026-2027 SF Fog Pathways Registration Form)')
+            };
 
-          const insurance = classifyInsurance(selectOne);
-          const waiverSigned = Boolean(signedDoc);
-          const hasJotform = Boolean(email || name);
+            for (let i = 1; i < parsedArchive.length; i++) {
+              const row = parsedArchive[i];
+              const rawEmail = (row[idx.email] || (idx.email1 !== -1 ? row[idx.email1] : '') || '').trim();
+              const email = rawEmail.toLowerCase();
+              const name = (row[idx.name] || '').trim();
+              const phone = normalizePhone(row[idx.phone] || '');
+              const selectOne = row[idx.selectOne] || '';
+              const signedDoc = (row[idx.signedDoc] || '').trim();
+              const date = (row[idx.date] || '').trim();
+              const uniqueId = (row[idx.uniqueId] || 'FOG' + i).trim();
+              const isWorkflowErrored = (row[idx.workflowStatus] || '').trim() === 'ERRORED';
 
-          let clearanceStatus = 'CLEARED';
-          if (!waiverSigned) {
-            clearanceStatus = 'NEEDS_WAIVER';
-          } else if (!hasJotform) {
-            clearanceStatus = 'ORPHAN_WAIVER';
-          } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
-            clearanceStatus = 'UNINSURED';
-          } else if (insurance.status === 'NON_CONTACT') {
-            clearanceStatus = 'NON_CONTACT';
-          } else {
-            clearanceStatus = 'CLEARED';
+              const insurance = classifyInsurance(selectOne);
+              const waiverSigned = Boolean(signedDoc);
+              const hasJotform = Boolean(email || name);
+
+              let clearanceStatus = 'CLEARED';
+              if (!waiverSigned) {
+                clearanceStatus = 'NEEDS_WAIVER';
+              } else if (!hasJotform) {
+                clearanceStatus = 'ORPHAN_WAIVER';
+              } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
+                clearanceStatus = 'UNINSURED';
+              } else if (insurance.status === 'NON_CONTACT') {
+                clearanceStatus = 'NON_CONTACT';
+              }
+
+              const rec = {
+                uniqueId,
+                fullName: name,
+                email,
+                phone,
+                insurance,
+                waiverSigned,
+                waiverPdfUrl: signedDoc,
+                hasJotform,
+                isWorkflowErrored,
+                submissionDate: date,
+                clearanceStatus
+              };
+              const key = email || phone || name.toLowerCase();
+              if (key) recordMap.set(key, rec);
+            }
           }
-
-          allRecords.push({
-            uniqueId,
-            fullName: name,
-            email,
-            phone,
-            insurance,
-            waiverSigned,
-            waiverPdfUrl: signedDoc,
-            hasJotform,
-            isWorkflowErrored,
-            submissionDate: date,
-            clearanceStatus
-          });
         }
+
+        // 2. Process Live Active Sheet (gid=746206013 - where Jotform writes new registrations)
+        if (textLive) {
+          const parsedLive = parseCSV(textLive);
+          if (parsedLive.length > 1) {
+            const h = parsedLive[0].map(c => c.trim().replace(/^"|"$/g, ''));
+            const idx = {
+              fname: h.indexOf('Full Name - First Name'),
+              lname: h.indexOf('Full Name - Last Name'),
+              email: h.indexOf('Email'),
+              phone: h.indexOf('Phone Number'),
+              selectOne: h.indexOf('Select one:'),
+              signature: h.indexOf('Signature'),
+              uniqueId: h.indexOf('Unique ID'),
+              date: h.indexOf('Submission Date')
+            };
+
+            for (let i = 1; i < parsedLive.length; i++) {
+              const row = parsedLive[i];
+              const fname = (row[idx.fname] || '').trim();
+              const lname = (row[idx.lname] || '').trim();
+              const name = `${fname} ${lname}`.trim();
+              
+              let email = (row[idx.email] || '').trim();
+              if (!email.includes('@') && row[idx.email + 1] && row[idx.email + 1].includes('@')) {
+                email = row[idx.email + 1].trim();
+              }
+              email = email.toLowerCase();
+              const phone = normalizePhone(row[idx.phone] || '');
+              const selectOne = row[idx.selectOne] || '';
+              const signature = (row[idx.signature] || '').trim();
+              const date = (row[idx.date] || '').trim();
+              const uniqueId = (row[idx.uniqueId] || 'FOG-LIVE-' + i).trim();
+
+              const insurance = classifyInsurance(selectOne);
+              const waiverSigned = Boolean(signature && signature.startsWith('http'));
+              const hasJotform = Boolean(email || name);
+
+              let clearanceStatus = 'CLEARED';
+              if (!waiverSigned) {
+                clearanceStatus = 'NEEDS_WAIVER';
+              } else if (!hasJotform) {
+                clearanceStatus = 'ORPHAN_WAIVER';
+              } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
+                clearanceStatus = 'UNINSURED';
+              } else if (insurance.status === 'NON_CONTACT') {
+                clearanceStatus = 'NON_CONTACT';
+              }
+
+              const rec = {
+                uniqueId,
+                fullName: name,
+                email,
+                phone,
+                insurance,
+                waiverSigned,
+                waiverPdfUrl: signature,
+                hasJotform,
+                isWorkflowErrored: false,
+                submissionDate: date,
+                clearanceStatus
+              };
+
+              const key = email || phone || name.toLowerCase();
+              if (key) {
+                recordMap.set(key, rec);
+              }
+            }
+          }
+        }
+
+        allRecords = Array.from(recordMap.values());
+
+        // Sort newest submissions first
+        allRecords.sort((a, b) => {
+          const da = new Date(a.submissionDate);
+          const db = new Date(b.submissionDate);
+          if (!isNaN(da) && !isNaN(db)) return db - da;
+          return (b.submissionDate || '').localeCompare(a.submissionDate || '');
+        });
 
         updateKPIsAndRender();
       } catch (err) {
@@ -659,6 +749,7 @@
         tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #C4321F;">Failed to fetch live sheet: ${escapeHtml(err.message)}<br><button class="btn-action" style="margin-top: 10px;" onclick="fetchLiveSheetData()">Retry</button></td></tr>`;
       }
     }
+
 
     function updateKPIsAndRender() {
       const cleared = allRecords.filter(r => r.clearanceStatus === 'CLEARED').length;
