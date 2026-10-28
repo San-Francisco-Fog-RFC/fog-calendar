@@ -599,6 +599,7 @@
           uniqueId: headers.indexOf('Unique ID'),
           name: headers.indexOf('Full Name'),
           email: headers.indexOf('Email'),
+          email1: headers.indexOf('Email1'),
           phone: headers.indexOf('Phone Number'),
           selectOne: headers.indexOf('Select one:'),
           signedDoc: headers.indexOf('Signed Document'),
@@ -609,7 +610,8 @@
         allRecords = [];
         for (let i = 1; i < parsed.length; i++) {
           const row = parsed[i];
-          const email = (row[colIdx.email] || '').trim().toLowerCase();
+          const rawEmail = (row[colIdx.email] || (colIdx.email1 !== -1 ? row[colIdx.email1] : '') || '').trim();
+          const email = rawEmail.toLowerCase();
           const name = (row[colIdx.name] || '').trim();
           const phone = normalizePhone(row[colIdx.phone] || '');
           const selectOne = row[colIdx.selectOne] || '';
