@@ -438,22 +438,22 @@
     <!-- KPIs -->
     <div class="kpi-grid">
       <div class="kpi-card kpi-card--cleared">
-        <div class="kpi-label">Cleared to Play</div>
+        <div class="kpi-label">Verified - Completed Both</div>
         <div class="kpi-val" id="kpi-cleared">--</div>
         <div class="kpi-sub">Reg + Signed Waiver + Insured</div>
       </div>
       <div class="kpi-card kpi-card--waiver">
-        <div class="kpi-label">Missing USA Rugby Waiver</div>
+        <div class="kpi-label">Missing Waiver</div>
         <div class="kpi-val" id="kpi-waiver">--</div>
         <div class="kpi-sub">Registered, waiver missing</div>
       </div>
       <div class="kpi-card kpi-card--orphan">
-        <div class="kpi-label">Missing / Incomplete Reg</div>
+        <div class="kpi-label">Missing Registration</div>
         <div class="kpi-val" id="kpi-orphan">--</div>
         <div class="kpi-sub">Waiver signed, reg missing</div>
       </div>
       <div class="kpi-card kpi-card--uninsured">
-        <div class="kpi-label">Uninsured Attention</div>
+        <div class="kpi-label">Uninsured</div>
         <div class="kpi-val" id="kpi-uninsured">--</div>
         <div class="kpi-sub">Declared no health insurance</div>
       </div>
@@ -463,23 +463,23 @@
         <div class="kpi-sub">Restricted non-contact play</div>
       </div>
       <div class="kpi-card kpi-card--total">
-        <div class="kpi-label">Total Submissions</div>
+        <div class="kpi-label">Total Participants</div>
         <div class="kpi-val" id="kpi-total">--</div>
-        <div class="kpi-sub">Live in Jotform Sheet</div>
+        <div class="kpi-sub">Master Roster &amp; Submissions</div>
       </div>
     </div>
 
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div class="filter-tabs">
-        <button class="tab-btn active" onclick="setFilter('ALL', this)">All Players (<span id="tab-cnt-all">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('CLEARED', this)">🟢 Cleared (<span id="tab-cnt-cleared">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('NEEDS_WAIVER', this)">🟡 Missing USA Rugby Waiver (<span id="tab-cnt-waiver">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('ORPHAN_WAIVER', this)">🟠 Missing / Incomplete Reg (<span id="tab-cnt-orphan">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('UNINSURED', this)">🔴 Uninsured Question (<span id="tab-cnt-uninsured">0</span>)</button>
+        <button class="tab-btn active" onclick="setFilter('ALL', this)">All Participants (<span id="tab-cnt-all">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('CLEARED', this)">🟢 Verified - Completed Both (<span id="tab-cnt-cleared">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('NEEDS_WAIVER', this)">🟡 Missing Waiver (<span id="tab-cnt-waiver">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('ORPHAN_WAIVER', this)">🟠 Missing Registration (<span id="tab-cnt-orphan">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('UNINSURED', this)">🔴 Uninsured (<span id="tab-cnt-uninsured">0</span>)</button>
         <button class="tab-btn" onclick="setFilter('NON_CONTACT', this)">🔵 Non-Contact (<span id="tab-cnt-noncontact">0</span>)</button>
       </div>
-      <input type="text" id="search-input" class="search-box" placeholder="Search by name, email, phone..." oninput="handleSearch()">
+      <input type="text" id="search-input" class="search-box" placeholder="Search by participant name, email, phone..." oninput="handleSearch()">
     </div>
 
     <!-- Table Card -->
@@ -487,8 +487,8 @@
       <table>
         <thead>
           <tr>
-            <th>Status</th>
-            <th>Player Name</th>
+            <th style="min-width: 170px;">Forms Status</th>
+            <th>Participant Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>USA Rugby Waiver</th>
@@ -498,6 +498,7 @@
             <th>Action</th>
           </tr>
         </thead>
+
         <tbody id="table-body">
           <tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #666;">Loading live Google Sheet submissions...</td></tr>
         </tbody>
@@ -718,11 +719,12 @@
 
       tbody.innerHTML = filtered.map(r => {
         let badgeClass = 'badge--cleared';
-        let badgeText = 'CLEARED';
-        if (r.clearanceStatus === 'NEEDS_WAIVER') { badgeClass = 'badge--waiver'; badgeText = 'MISSING WAIVER'; }
-        if (r.clearanceStatus === 'ORPHAN_WAIVER') { badgeClass = 'badge--orphan'; badgeText = 'MISSING REG'; }
-        if (r.clearanceStatus === 'UNINSURED') { badgeClass = 'badge--uninsured'; badgeText = 'UNINSURED'; }
-        if (r.clearanceStatus === 'NON_CONTACT') { badgeClass = 'badge--noncontact'; badgeText = 'NON-CONTACT'; }
+        let badgeText = 'Verified - Completed Both';
+        if (r.clearanceStatus === 'NEEDS_WAIVER') { badgeClass = 'badge--waiver'; badgeText = 'Missing Waiver'; }
+        if (r.clearanceStatus === 'ORPHAN_WAIVER') { badgeClass = 'badge--orphan'; badgeText = 'Missing Registration'; }
+        if (r.clearanceStatus === 'UNINSURED') { badgeClass = 'badge--uninsured'; badgeText = 'Uninsured'; }
+        if (r.clearanceStatus === 'NON_CONTACT') { badgeClass = 'badge--noncontact'; badgeText = 'Non-Contact'; }
+
 
         // 1. USA Rugby Waiver Cell
         const firstPdf = (r.waiverPdfUrl || '').split('\n')[0].trim();
