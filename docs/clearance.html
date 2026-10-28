@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SF Fog RFC // Player Clearance & Registration Hub</title>
+  <title>SF Fog RFC // Player Onboarding &amp; Medical Clearance</title>
   <style>
     :root {
       --fog-blue: #006EB6;
@@ -44,11 +44,11 @@
     .fog-header {
       background-color: var(--fog-dark-blue);
       color: var(--fog-white);
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       border-bottom: 3px solid var(--fog-blue);
     }
     .header-inner {
-      max-width: 1320px;
+      max-width: 1440px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -56,20 +56,38 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
+    .header-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .fog-header-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       font-family: "Futura PT", Arial, sans-serif;
+      color: var(--fog-white);
+      line-height: 1.15;
     }
     .brand-sub {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--fog-light-blue);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.03em;
+      margin-top: 2px;
     }
 
+    .header-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
     .grounds-badge {
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -81,91 +99,57 @@
       letter-spacing: 0.04em;
     }
 
-    /* Main Container */
-    .main-wrap {
-      max-width: 1320px;
-      margin: 1.5rem auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Hero Card */
-    .hero-card {
-      background: var(--fog-white);
-      border: 1px solid var(--fog-gray);
-      border-left: 4px solid var(--fog-blue);
-      border-radius: var(--fog-radius-card);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-    .hero-title {
-      font-size: 1.5rem;
-      color: var(--fog-dark-blue);
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-      font-family: "Futura PT", Arial, sans-serif;
-    }
-    .hero-desc {
-      color: var(--fog-dark-gray);
-      font-size: 0.95rem;
-      max-width: 780px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
     .btn-action {
       background: var(--fog-blue);
       color: var(--fog-white);
       border: none;
-      padding: 9px 16px;
-      font-size: 0.82rem;
+      padding: 8px 16px;
+      font-size: 0.8rem;
       font-weight: 700;
       border-radius: var(--fog-radius-btn);
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: background 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .btn-action:hover {
       background: #005a96;
     }
-
-    .btn-secondary {
-      background: var(--fog-white);
-      color: var(--fog-dark-blue);
-      border: 1px solid var(--fog-gray);
+    .btn-reload {
+      background: var(--fog-blue);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .btn-secondary:hover {
-      background: #EAEBED;
+
+    /* Main Container */
+    .main-wrap {
+      max-width: 1440px;
+      margin: 1.25rem auto;
+      padding: 0 1.25rem;
     }
 
     /* Stats KPIs */
     .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .kpi-card {
       background: var(--fog-white);
       border: 1px solid var(--fog-gray);
-      padding: 1.15rem 1.25rem;
+      padding: 1.1rem 1.25rem;
       border-radius: var(--fog-radius-card);
       box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     }
     .kpi-card--cleared { border-top: 4px solid var(--fog-green); }
     .kpi-card--waiver { border-top: 4px solid var(--fog-amber); }
+    .kpi-card--orphan { border-top: 4px solid #C45500; }
     .kpi-card--uninsured { border-top: 4px solid var(--fog-red); }
-    .kpi-card--total { border-top: 4px solid var(--fog-blue); }
+    .kpi-card--noncontact { border-top: 4px solid var(--fog-blue); }
+    .kpi-card--total { border-top: 4px solid var(--fog-dark-blue); }
 
     .kpi-label {
       font-size: 0.75rem;
@@ -174,19 +158,21 @@
       letter-spacing: 0.05em;
     }
     .kpi-card--cleared .kpi-label { color: var(--fog-green); }
-    .kpi-card--waiver .kpi-label { color: var(--fog-amber); }
+    .kpi-card--waiver .kpi-label { color: #8A6D00; }
+    .kpi-card--orphan .kpi-label { color: #C45500; }
     .kpi-card--uninsured .kpi-label { color: var(--fog-red); }
-    .kpi-card--total .kpi-label { color: var(--fog-blue); }
+    .kpi-card--noncontact .kpi-label { color: var(--fog-blue); }
+    .kpi-card--total .kpi-label { color: var(--fog-dark-blue); }
 
     .kpi-val {
-      font-size: 2rem;
+      font-size: 1.85rem;
       font-weight: 800;
       color: var(--fog-dark-blue);
       margin: 0.25rem 0;
       font-family: "Futura PT", Arial, sans-serif;
     }
     .kpi-sub {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #666;
     }
 
@@ -207,8 +193,8 @@
     .tab-btn {
       background: var(--fog-white);
       border: 1px solid var(--fog-gray);
-      padding: 7px 14px;
-      font-size: 0.82rem;
+      padding: 7px 13px;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--fog-dark-blue);
       cursor: pointer;
@@ -231,7 +217,7 @@
       border: 1px solid var(--fog-gray);
       border-radius: var(--fog-radius-btn);
       font-size: 0.85rem;
-      width: 280px;
+      width: 300px;
       outline: none;
     }
     .search-box:focus {
@@ -259,7 +245,7 @@
       padding: 11px 14px;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       letter-spacing: 0.05em;
       white-space: nowrap;
     }
@@ -267,6 +253,7 @@
       padding: 10px 14px;
       border-bottom: 1px solid #EDEEF0;
       color: var(--fog-dark-gray);
+      vertical-align: middle;
     }
     tr:nth-child(even) td {
       background: #FAFAFA;
@@ -290,6 +277,8 @@
     .badge--waiver { background: #FEF7E0; color: #8A6D00; border: 1px solid rgba(197,160,0,0.3); }
     .badge--uninsured { background: #FCE8E6; color: var(--fog-red); border: 1px solid rgba(196,50,31,0.3); }
     .badge--orphan { background: #FFF0E6; color: #C45500; border: 1px solid rgba(196,85,0,0.3); }
+    .badge--noncontact { background: #E8F0FE; color: var(--fog-blue); border: 1px solid rgba(0,110,182,0.3); }
+    .badge--insonly { background: #F1F3F4; color: var(--fog-dark-blue); border: 1px solid var(--fog-gray); }
 
     .btn-link {
       color: var(--fog-blue);
@@ -318,47 +307,41 @@
     }
     .modal-box {
       background: var(--fog-white);
-      border-radius: var(--fog-radius-card);
       width: 90%;
-      max-width: 580px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      max-width: 600px;
+      border-radius: var(--fog-radius-card);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
     }
     .modal-header {
+      background: var(--fog-dark-blue);
+      color: var(--fog-white);
+      padding: 1rem 1.25rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--fog-gray);
-      padding-bottom: 0.75rem;
-      margin-bottom: 1rem;
     }
     .modal-title {
       font-size: 1.15rem;
-      color: var(--fog-dark-blue);
+      font-weight: 700;
+      font-family: "Futura PT", Arial, sans-serif;
       text-transform: uppercase;
-      font-weight: 800;
     }
     .close-btn {
       background: none;
       border: none;
-      font-size: 1.25rem;
+      color: var(--fog-white);
+      font-size: 1.5rem;
       cursor: pointer;
-      color: #888;
     }
-
+    .modal-content {
+      padding: 1.25rem;
+      max-height: 75vh;
+      overflow-y: auto;
+    }
     .modal-content p {
       margin-bottom: 0.75rem;
       font-size: 0.9rem;
-    }
-    .code-box {
-      background: #F4F5F6;
-      border: 1px solid var(--fog-gray);
-      padding: 10px;
-      font-family: monospace;
-      font-size: 0.8rem;
-      border-radius: 2px;
-      margin: 10px 0;
-      word-break: break-all;
     }
   </style>
 </head>
@@ -381,31 +364,21 @@
   <!-- Header -->
   <header class="fog-header">
     <div class="header-inner">
-      <div>
-        <div class="brand-title">San Francisco Fog RFC</div>
-        <div class="brand-sub">Rookie Clearance &bull; Registration &bull; USA Rugby Waiver Hub</div>
+      <div class="header-brand-wrap">
+        <img src="assets/img/fog-crest.svg" alt="SF Fog RFC Crest" class="fog-header-logo">
+        <div>
+          <div class="brand-title">PLAYER ONBOARDING &amp; MEDICAL CLEARANCE</div>
+          <div class="brand-sub">San Francisco Fog Rugby Football Club</div>
+        </div>
       </div>
-      <div class="grounds-badge">
-        GROUNDS: TI &bull; KIMBELL &bull; CROCKER AMAZON
+      <div class="header-right-actions">
+        <div class="grounds-badge">GROUNDS: TI &bull; KIMBELL &bull; CROCKER AMAZON</div>
+        <button class="btn-action btn-reload" onclick="fetchLiveSheetData()">🔄 Reload Data</button>
       </div>
     </div>
   </header>
 
   <div class="main-wrap">
-    <!-- Hero Card -->
-    <div class="hero-card">
-      <div>
-        <h1 class="hero-title">Player Onboarding &amp; Medical Clearance</h1>
-        <p class="hero-desc">
-          Live reconciliation connecting Jotform registrations, signed USA Rugby waiver PDFs, health insurance verification, and rookie email/WhatsApp group readiness.
-        </p>
-      </div>
-      <div class="hero-actions">
-        <button class="btn-action" onclick="fetchLiveSheetData()">🔄 Reload Live Data</button>
-        <button class="btn-action btn-secondary" onclick="exportFilteredCSV()">📥 Export Filtered CSV</button>
-      </div>
-    </div>
-
     <!-- KPIs -->
     <div class="kpi-grid">
       <div class="kpi-card kpi-card--cleared">
@@ -414,14 +387,24 @@
         <div class="kpi-sub">Reg + Signed Waiver + Insured</div>
       </div>
       <div class="kpi-card kpi-card--waiver">
-        <div class="kpi-label">Needs Waiver</div>
+        <div class="kpi-label">Missing USA Rugby Waiver</div>
         <div class="kpi-val" id="kpi-waiver">--</div>
-        <div class="kpi-sub">Registered, waiver missing/errored</div>
+        <div class="kpi-sub">Registered, waiver missing</div>
+      </div>
+      <div class="kpi-card kpi-card--orphan">
+        <div class="kpi-label">Missing / Incomplete Reg</div>
+        <div class="kpi-val" id="kpi-orphan">--</div>
+        <div class="kpi-sub">Waiver signed, reg missing</div>
       </div>
       <div class="kpi-card kpi-card--uninsured">
         <div class="kpi-label">Uninsured Attention</div>
         <div class="kpi-val" id="kpi-uninsured">--</div>
         <div class="kpi-sub">Declared no health insurance</div>
+      </div>
+      <div class="kpi-card kpi-card--noncontact">
+        <div class="kpi-label">Non-Contact</div>
+        <div class="kpi-val" id="kpi-noncontact">--</div>
+        <div class="kpi-sub">Restricted non-contact play</div>
       </div>
       <div class="kpi-card kpi-card--total">
         <div class="kpi-label">Total Submissions</div>
@@ -433,11 +416,12 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div class="filter-tabs">
-        <button class="tab-btn active" onclick="setFilter('ALL', this)">All Players</button>
+        <button class="tab-btn active" onclick="setFilter('ALL', this)">All Players (<span id="tab-cnt-all">0</span>)</button>
         <button class="tab-btn" onclick="setFilter('CLEARED', this)">🟢 Cleared (<span id="tab-cnt-cleared">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('NEEDS_WAIVER', this)">🟡 Missing Waiver (<span id="tab-cnt-waiver">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('UNINSURED', this)">🔴 Uninsured (<span id="tab-cnt-uninsured">0</span>)</button>
-        <button class="tab-btn" onclick="setFilter('ORPHAN_WAIVER', this)">🟠 Waiver Only (<span id="tab-cnt-orphan">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('NEEDS_WAIVER', this)">🟡 Missing USA Rugby Waiver (<span id="tab-cnt-waiver">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('ORPHAN_WAIVER', this)">🟠 Missing / Incomplete Reg (<span id="tab-cnt-orphan">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('UNINSURED', this)">🔴 Uninsured Question (<span id="tab-cnt-uninsured">0</span>)</button>
+        <button class="tab-btn" onclick="setFilter('NON_CONTACT', this)">🔵 Non-Contact (<span id="tab-cnt-noncontact">0</span>)</button>
       </div>
       <input type="text" id="search-input" class="search-box" placeholder="Search by name, email, phone..." oninput="handleSearch()">
     </div>
@@ -451,11 +435,11 @@
             <th>Player Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Health Insurance</th>
-            <th>Submission Date</th>
             <th>USA Rugby Waiver</th>
-            <th>Signed PDF</th>
-            <th>Quick Action</th>
+            <th>Jotform Registration</th>
+            <th>Waiver &amp; Insurance Answer</th>
+            <th>Submission Date</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="table-body">
@@ -531,15 +515,15 @@
     }
 
     function classifyInsurance(sel) {
-      if (!sel) return { status: 'UNKNOWN', label: 'Unknown (Missing)' };
+      if (!sel) return { status: 'UNKNOWN', isInsured: false, label: 'Unknown / Unanswered' };
       const s = sel.trim().toLowerCase();
-      if (s.startsWith('both:')) return { status: 'INSURED_BOTH', isInsured: true, label: 'Insured (Both Reg + Waiver)' };
-      if (s.startsWith('insurance only:')) return { status: 'INSURED_ONLY', isInsured: true, label: 'Insured (Medical Coverage Only)' };
+      if (s.startsWith('both:')) return { status: 'INSURED_BOTH', isInsured: true, label: 'Both: USA Rugby + Health Insurance' };
+      if (s.startsWith('insurance only:')) return { status: 'INSURED_ONLY', isInsured: true, label: 'Insurance Only (Medical Coverage)' };
       if (s.includes('do not currently have') || s.startsWith('registration only:')) {
-        return { status: 'UNINSURED', isInsured: false, label: 'UNINSURED (Attention Needed)' };
+        return { status: 'UNINSURED', isInsured: false, label: 'Registration Only: Declared No Insurance' };
       }
-      if (s.startsWith('no contact:')) return { status: 'NON_CONTACT', isInsured: false, label: 'Non-Contact Restricted' };
-      return { status: 'OTHER', isInsured: false, label: sel.substring(0, 32) };
+      if (s.startsWith('no contact:')) return { status: 'NON_CONTACT', isInsured: false, label: 'No Contact: Non-Contact Participation' };
+      return { status: 'OTHER', isInsured: false, label: sel.substring(0, 45) };
     }
 
     async function fetchLiveSheetData() {
@@ -576,16 +560,22 @@
           const signedDoc = (row[colIdx.signedDoc] || '').trim();
           const date = (row[colIdx.date] || '').trim();
           const uniqueId = (row[colIdx.uniqueId] || 'FOG' + i).trim();
+          const isWorkflowErrored = (row[colIdx.workflowStatus] || '').trim() === 'ERRORED';
 
           const insurance = classifyInsurance(selectOne);
           const waiverSigned = Boolean(signedDoc);
+          const hasJotform = Boolean(email || name);
 
-          let clearanceStatus = 'NEEDS_WAIVER';
-          if (!insurance.isInsured && insurance.status === 'UNINSURED') {
-            clearanceStatus = 'UNINSURED';
-          } else if (!waiverSigned) {
+          let clearanceStatus = 'CLEARED';
+          if (!waiverSigned) {
             clearanceStatus = 'NEEDS_WAIVER';
-          } else if (insurance.isInsured && waiverSigned) {
+          } else if (!hasJotform) {
+            clearanceStatus = 'ORPHAN_WAIVER';
+          } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
+            clearanceStatus = 'UNINSURED';
+          } else if (insurance.status === 'NON_CONTACT') {
+            clearanceStatus = 'NON_CONTACT';
+          } else {
             clearanceStatus = 'CLEARED';
           }
 
@@ -597,6 +587,8 @@
             insurance,
             waiverSigned,
             waiverPdfUrl: signedDoc,
+            hasJotform,
+            isWorkflowErrored,
             submissionDate: date,
             clearanceStatus
           });
@@ -605,25 +597,30 @@
         updateKPIsAndRender();
       } catch (err) {
         console.error('Fetch error:', err);
-        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #C4321F;">Failed to fetch live sheet: ${err.message}<br><button class="btn-action" style="margin-top: 10px;" onclick="fetchLiveSheetData()">Retry</button></td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #C4321F;">Failed to fetch live sheet: ${escapeHtml(err.message)}<br><button class="btn-action" style="margin-top: 10px;" onclick="fetchLiveSheetData()">Retry</button></td></tr>`;
       }
     }
 
     function updateKPIsAndRender() {
       const cleared = allRecords.filter(r => r.clearanceStatus === 'CLEARED').length;
       const waiver = allRecords.filter(r => r.clearanceStatus === 'NEEDS_WAIVER').length;
-      const uninsured = allRecords.filter(r => r.clearanceStatus === 'UNINSURED').length;
       const orphan = allRecords.filter(r => r.clearanceStatus === 'ORPHAN_WAIVER').length;
+      const uninsured = allRecords.filter(r => r.clearanceStatus === 'UNINSURED').length;
+      const noncontact = allRecords.filter(r => r.clearanceStatus === 'NON_CONTACT').length;
 
       document.getElementById('kpi-cleared').textContent = cleared;
       document.getElementById('kpi-waiver').textContent = waiver;
+      document.getElementById('kpi-orphan').textContent = orphan;
       document.getElementById('kpi-uninsured').textContent = uninsured;
+      document.getElementById('kpi-noncontact').textContent = noncontact;
       document.getElementById('kpi-total').textContent = allRecords.length;
 
+      document.getElementById('tab-cnt-all').textContent = allRecords.length;
       document.getElementById('tab-cnt-cleared').textContent = cleared;
       document.getElementById('tab-cnt-waiver').textContent = waiver;
-      document.getElementById('tab-cnt-uninsured').textContent = uninsured;
       document.getElementById('tab-cnt-orphan').textContent = orphan;
+      document.getElementById('tab-cnt-uninsured').textContent = uninsured;
+      document.getElementById('tab-cnt-noncontact').textContent = noncontact;
 
       applyFilterAndRender();
     }
@@ -664,15 +661,38 @@
       tbody.innerHTML = filtered.map(r => {
         let badgeClass = 'badge--cleared';
         let badgeText = 'CLEARED';
-        if (r.clearanceStatus === 'NEEDS_WAIVER') { badgeClass = 'badge--waiver'; badgeText = 'NEEDS WAIVER'; }
+        if (r.clearanceStatus === 'NEEDS_WAIVER') { badgeClass = 'badge--waiver'; badgeText = 'MISSING WAIVER'; }
+        if (r.clearanceStatus === 'ORPHAN_WAIVER') { badgeClass = 'badge--orphan'; badgeText = 'MISSING REG'; }
         if (r.clearanceStatus === 'UNINSURED') { badgeClass = 'badge--uninsured'; badgeText = 'UNINSURED'; }
-        if (r.clearanceStatus === 'ORPHAN_WAIVER') { badgeClass = 'badge--orphan'; badgeText = 'NOT REGISTERED'; }
+        if (r.clearanceStatus === 'NON_CONTACT') { badgeClass = 'badge--noncontact'; badgeText = 'NON-CONTACT'; }
 
-        // Extract first URL if multiline
+        // 1. USA Rugby Waiver Cell
         const firstPdf = (r.waiverPdfUrl || '').split('\n')[0].trim();
-        const waiverLink = firstPdf
+        const waiverCell = (r.waiverSigned && firstPdf)
           ? `<a href="${firstPdf}" target="_blank" class="btn-link">📄 Signed PDF</a>`
-          : '<span style="color: #999;">⚠️ Stalled/None</span>';
+          : '<span class="badge badge--waiver">❌ Missing Waiver</span>';
+
+        // 2. Jotform Registration Cell
+        let regCell = '<span class="badge badge--cleared">✅ Complete</span>';
+        if (!r.hasJotform) {
+          regCell = '<span class="badge badge--orphan">⚠️ Missing Form</span>';
+        } else if (r.isWorkflowErrored) {
+          regCell = '<span class="badge badge--waiver" title="Jotform workflow errored">⚠️ Workflow Errored</span>';
+        }
+
+        // 3. Status of Answer to Waiver and Insurance Question Cell
+        let ansBadge = '';
+        if (r.insurance.status === 'INSURED_BOTH') {
+          ansBadge = '<span class="badge badge--cleared">✅ Both: USA Rugby + Insured</span>';
+        } else if (r.insurance.status === 'INSURED_ONLY') {
+          ansBadge = '<span class="badge badge--insonly">ℹ️ Insurance Only (Medical)</span>';
+        } else if (r.insurance.status === 'UNINSURED') {
+          ansBadge = '<span class="badge badge--uninsured">⚠️ Declared No Insurance</span>';
+        } else if (r.insurance.status === 'NON_CONTACT') {
+          ansBadge = '<span class="badge badge--noncontact">🛡️ Non-Contact Only</span>';
+        } else {
+          ansBadge = `<span class="badge badge--waiver">${escapeHtml(r.insurance.label)}</span>`;
+        }
 
         return `
           <tr>
@@ -680,10 +700,10 @@
             <td><strong>${escapeHtml(r.fullName)}</strong></td>
             <td>${escapeHtml(r.email)}</td>
             <td>${escapeHtml(r.phone)}</td>
-            <td><span style="font-size: 0.8rem;">${escapeHtml(r.insurance.label)}</span></td>
+            <td>${waiverCell}</td>
+            <td>${regCell}</td>
+            <td>${ansBadge}</td>
             <td>${escapeHtml(r.submissionDate)}</td>
-            <td>${r.waiverSigned ? '✅ Signed' : '⚠️ Missing'}</td>
-            <td>${waiverLink}</td>
             <td>
               <button class="btn-action" style="padding: 4px 8px; font-size: 0.72rem;" onclick="openPlayerModal('${escapeHtml(r.email)}')">Review</button>
             </td>
@@ -704,13 +724,14 @@
         <p><strong>Email:</strong> ${p.email}</p>
         <p><strong>Phone:</strong> ${p.phone || 'N/A'}</p>
         <p><strong>Clearance Status:</strong> <strong>${p.clearanceStatus}</strong></p>
-        <p><strong>Insurance Selection:</strong> ${p.insurance.label}</p>
-        <p><strong>Signed Waiver PDF:</strong> ${firstPdf ? `<a href="${firstPdf}" target="_blank" class="btn-link">Open PDF Link &rarr;</a>` : 'None'}</p>
+        <p><strong>USA Rugby Signed Waiver:</strong> ${firstPdf ? `<a href="${firstPdf}" target="_blank" class="btn-link">Open PDF Link &rarr;</a>` : 'Missing'}</p>
+        <p><strong>Jotform Registration Status:</strong> ${p.hasJotform ? (p.isWorkflowErrored ? 'Submitted (Workflow Errored)' : 'Submitted & Complete') : 'Missing / Orphan'}</p>
+        <p><strong>Questionnaire Answer:</strong> ${p.insurance.label}</p>
         <hr style="border: none; border-top: 1px solid var(--fog-gray); margin: 12px 0;">
         <p style="font-size: 0.8rem; color: #555;"><strong>Target Google Group:</strong> rookies@fogrugby.com</p>
         <p style="font-size: 0.8rem; color: #555;"><strong>WhatsApp Invite:</strong> Ready to dispatch via Meta Cloud API</p>
         <div style="margin-top: 16px; text-align: right;">
-          <button class="btn-action" onclick="alert('Rookie confirmed! Status verified.')">Mark Verified</button>
+          <button class="btn-action" onclick="alert('Player status verified.')">Mark Verified</button>
         </div>
       `;
       document.getElementById('action-modal').style.display = 'flex';
@@ -718,32 +739,6 @@
 
     function closeModal() {
       document.getElementById('action-modal').style.display = 'none';
-    }
-
-    function exportFilteredCSV() {
-      let filtered = allRecords;
-      if (currentFilter !== 'ALL') {
-        filtered = filtered.filter(r => r.clearanceStatus === currentFilter);
-      }
-      if (searchQuery) {
-        filtered = filtered.filter(r =>
-          (r.fullName && r.fullName.toLowerCase().includes(searchQuery)) ||
-          (r.email && r.email.toLowerCase().includes(searchQuery))
-        );
-      }
-
-      let csv = 'Status,Full Name,Email,Phone,Health Insurance,Submitted,Waiver Signed,PDF URL\n';
-      filtered.forEach(r => {
-        const firstPdf = (r.waiverPdfUrl || '').split('\n')[0].trim();
-        csv += `"${r.clearanceStatus}","${r.fullName}","${r.email}","${r.phone}","${r.insurance.label}","${r.submissionDate}","${r.waiverSigned ? 'YES' : 'NO'}","${firstPdf}"\n`;
-      });
-
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `SF_Fog_Clearance_${currentFilter}_${new Date().toISOString().slice(0,10)}.csv`;
-      a.click();
     }
 
     function escapeHtml(str) {
