@@ -1,6 +1,6 @@
 # GitHub Copilot Toolbox — MCP & Skills awareness
 
-_Generated: 2026-09-05T04:00:43.048Z_
+_Generated: 2026-10-04T00:41:21.154Z_
 
 ## How to use this report
 
@@ -29,6 +29,8 @@ _No active workspace servers in mcp.json._
 | open-design | stdio | /Applications/Open Design.app/Contents/Frameworks/Open Design Helper.app/Contents/MacOS/Open Design Helper /Applications/Open Design.app/Contents/Resources/app/prebundled/daemon/daemon-cli.mjs mcp |
 | fastmcp-documentation-resource | http | https://abcstark-server.fastmcp.app/mcp |
 | MCP_DOCKER | stdio | docker mcp gateway run --profile melb_mcp_server |
+| io.github.github/github-mcp-server | http | https://api.githubcopilot.com/mcp/ |
+| io.github.ChromeDevTools/chrome-devtools-mcp | stdio | npx --registry https://registry.npmjs.org chrome-devtools-mcp@1.9.0 |
 
 ## Skills (local `SKILL.md` folders)
 
@@ -37,6 +39,9 @@ _No active workspace servers in mcp.json._
 _None found (or no workspace open)._
 
 ### User-scoped
+
+- **analyzing-nonprofit-tax-compliance** — `/Users/melbourne/.copilot/skills/analyzing-nonprofit-tax-compliance`
+  - Evaluates tax-exempt organization compliance with Form 990, UBIT, and private foundation requirements. Use when managing nonprofit tax, reviewing Form 990, or analyzing UBIT exposure.
 
 - **arch-lead** — `/Users/melbourne/.copilot/skills/arch-lead`
   - Adopt the persona of an Architectural Lead focused on system design,
@@ -63,7 +68,7 @@ _None found (or no workspace open)._
   - Make any repo AI-ready — analyzes your codebase and generates AGENTS.md, copilot-instructions.md, CI workflows, issue templates, and more. Mines your PR review patterns and creates files customized to your stack. USE THI
 
 - **awesome-copilot--ai-team-orchestration** — `/Users/melbourne/.copilot/skills/awesome-copilot--ai-team-orchestration`
-  - Bootstrap and run a multi-agent AI development team. Use when: starting a new software project with AI agents, setting up parallel dev/QA teams, creating sprint plans, writing brainstorm prompts with distinct agent voice
+  - Bootstrap and run a lightweight multi-agent development team. Use when starting or adopting a project, planning work, coordinating implementation and optional QA, brainstorming with distinct perspectives, or preserving c
 
 - **casing-law** — `/Users/melbourne/.copilot/skills/casing-law`
   - This skill should be used when the user is writing code with mixed casing conventions, choosing casing for identifiers, enforcing casing consistency across a codebase, or when camelCase and snake_case appear in the same 
@@ -76,6 +81,9 @@ _None found (or no workspace open)._
 
 - **corporate** — `/Users/melbourne/.copilot/skills/corporate`
   - Advises on corporate law matters including entity formation, governance, finance, M&A, securities, venture capital, non-profits, and dissolution. Use when drafting governance documents, structuring transactions, selectin
+
+- **finance** — `/Users/melbourne/.copilot/skills/finance`
+  - Budget planning, cash flow management, financial modeling, reporting, tax strategy, investment analysis, and fundraising skills. Spreadsheet models, P&L, balance sheets. Triggers on: finance, budget, cash flow, financial
 
 - **fix** — `/Users/melbourne/.copilot/skills/fix`
   - Use when you have lint errors, formatting issues, or before committing code to ensure it passes CI.
@@ -107,6 +115,9 @@ _None found (or no workspace open)._
 - **nonprofit-bylaws** — `/Users/melbourne/.copilot/skills/nonprofit-bylaws`
   - >-
 
+- **nonprofit-compliance-summary** — `/Users/melbourne/.copilot/skills/nonprofit-compliance-summary`
+  - Generates a structured regulatory compliance summary for U.S. 501(c)(3) nonprofit organizations covering federal tax-exempt status, multi-state charitable registration, and governance. Use when conducting compliance audi
+
 - **pptx** — `/Users/melbourne/.copilot/skills/pptx`
   - Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even 
 
@@ -127,6 +138,9 @@ _None found (or no workspace open)._
 
 - **search** — `/Users/melbourne/.copilot/skills/search`
   - Searches the web, legal databases, case law, patents, and case.dev knowledge base via the casedev CLI. Use when the user mentions "search", "legal research", "find cases", "case law", "patent search", "web search", "fetc
+
+- **skill-creator** — `/Users/melbourne/.copilot/skills/skill-creator`
+  - Author or review AgentSkills: create, repair, validate, or restructure SKILL.md files and bundled resources.
 
 - **social-media** — `/Users/melbourne/.copilot/skills/social-media`
   - Social media strategy, content creation, and platform optimization. Use when creating social content, developing engagement strategies, optimizing for platform algorithms, or building community.
@@ -149,6 +163,9 @@ _None found (or no workspace open)._
 - **web-design** — `/Users/melbourne/.copilot/skills/web-design`
   - Web graphic design for interfaces, layouts, and visual systems. Use when designing landing pages, dashboards, hero sections, or applying design aesthetics (Bauhaus, Pop Art, Retro, Futuristic). Triggers on "design a", "v
 
+- **analyzing-nonprofit-tax-compliance** — `/Users/melbourne/.claude/skills/analyzing-nonprofit-tax-compliance`
+  - Evaluates tax-exempt organization compliance with Form 990, UBIT, and private foundation requirements. Use when managing nonprofit tax, reviewing Form 990, or analyzing UBIT exposure.
+
 - **arch-lead** — `/Users/melbourne/.claude/skills/arch-lead`
   - Adopt the persona of an Architectural Lead focused on system design,
 
@@ -158,20 +175,53 @@ _None found (or no workspace open)._
 - **audit-billing** — `/Users/melbourne/.claude/skills/audit-billing`
   - Audit law firm billing data (LEDES files, Excel invoices, CSV time entries) for compliance issues, block billing, excessive hours, rate violations, and billing anomalies. Use when: (1) a user provides billing files and a
 
+- **brand-analyzer** — `/Users/melbourne/.claude/skills/brand-analyzer`
+  - This skill should be used when the user requests brand analysis, brand guidelines creation, brand audits, or establishing brand identity and consistency standards. It provides comprehensive frameworks for analyzing brand
+
+- **business-analytics-reporter** — `/Users/melbourne/.claude/skills/business-analytics-reporter`
+  - This skill should be used when analyzing business sales and revenue data from CSV files to identify weak areas, generate statistical insights, and provide strategic improvement recommendations. Use when the user requests
+
+- **business-document-generator** — `/Users/melbourne/.claude/skills/business-document-generator`
+  - This skill should be used when the user requests to create professional business documents (proposals, business plans, or budgets) from templates. It provides PDF templates and a Python script for generating filled docum
+
 - **casing-law** — `/Users/melbourne/.claude/skills/casing-law`
   - This skill should be used when the user is writing code with mixed casing conventions, choosing casing for identifiers, enforcing casing consistency across a codebase, or when camelCase and snake_case appear in the same 
 
 - **ccpa-cpra-privacy-expert** — `/Users/melbourne/.claude/skills/ccpa-cpra-privacy-expert`
   - >
 
+- **cicd-pipeline-generator** — `/Users/melbourne/.claude/skills/cicd-pipeline-generator`
+  - This skill should be used when creating or configuring CI/CD pipeline files for automated testing, building, and deployment. Use this for generating GitHub Actions workflows, GitLab CI configs, CircleCI configs, or other
+
 - **client-memo** — `/Users/melbourne/.claude/skills/client-memo`
   - >-
+
+- **codebase-documenter** — `/Users/melbourne/.claude/skills/codebase-documenter`
+  - This skill should be used when writing documentation for codebases, including README files, architecture documentation, code comments, and API documentation. Use this skill when users request help documenting their code,
 
 - **corporate** — `/Users/melbourne/.claude/skills/corporate`
   - Advises on corporate law matters including entity formation, governance, finance, M&A, securities, venture capital, non-profits, and dissolution. Use when drafting governance documents, structuring transactions, selectin
 
+- **csv-data-visualizer** — `/Users/melbourne/.claude/skills/csv-data-visualizer`
+  - This skill should be used when working with CSV files to create interactive data visualizations, generate statistical plots, analyze data distributions, create dashboards, or perform automatic data profiling. It provides
+
+- **data-analyst** — `/Users/melbourne/.claude/skills/data-analyst`
+  - This skill should be used when analyzing CSV datasets, handling missing values through intelligent imputation, and creating interactive dashboards to visualize data trends. Use this skill for tasks involving data quality
+
+- **docker-containerization** — `/Users/melbourne/.claude/skills/docker-containerization`
+  - This skill should be used when containerizing applications with Docker, creating Dockerfiles, docker-compose configurations, or deploying containers to various platforms. Ideal for Next.js, React, Node.js applications re
+
+- **finance** — `/Users/melbourne/.claude/skills/finance`
+  - Budget planning, cash flow management, financial modeling, reporting, tax strategy, investment analysis, and fundraising skills. Spreadsheet models, P&L, balance sheets. Triggers on: finance, budget, cash flow, financial
+
+- **finance-manager** — `/Users/melbourne/.claude/skills/finance-manager`
+  - Comprehensive personal finance management system for analyzing transaction data, generating insights, creating visualizations, and providing actionable financial recommendations. Use when users need to analyze spending p
+
 - **fix** — `/Users/melbourne/.claude/skills/fix`
   - Use when you have lint errors, formatting issues, or before committing code to ensure it passes CI.
+
+- **frontend-enhancer** — `/Users/melbourne/.claude/skills/frontend-enhancer`
+  - This skill should be used when enhancing the visual design and aesthetics of Next.js web applications. It provides modern UI components, design patterns, color palettes, animations, and layout templates. Use this skill f
 
 - **gh-issues** — `/Users/melbourne/.claude/skills/gh-issues`
   - Fetch GitHub issues, select candidates, spawn background fix agents, open PRs, and optionally process PR review comments.
@@ -401,6 +451,18 @@ _None found (or no workspace open)._
 - **nonprofit-bylaws** — `/Users/melbourne/.claude/skills/nonprofit-bylaws`
   - >-
 
+- **nonprofit-compliance-summary** — `/Users/melbourne/.claude/skills/nonprofit-compliance-summary`
+  - Generates a structured regulatory compliance summary for U.S. 501(c)(3) nonprofit organizations covering federal tax-exempt status, multi-state charitable registration, and governance. Use when conducting compliance audi
+
+- **nutritional-specialist** — `/Users/melbourne/.claude/skills/nutritional-specialist`
+  - This skill should be used whenever users ask food-related questions, meal suggestions, nutrition advice, recipe recommendations, or dietary planning. On first use, the skill collects comprehensive user preferences (aller
+
+- **personal-assistant** — `/Users/melbourne/.claude/skills/personal-assistant`
+  - This skill should be used whenever users request personal assistance tasks such as schedule management, task tracking, reminder setting, habit monitoring, productivity advice, time management, or any query requiring pers
+
+- **pitch-deck** — `/Users/melbourne/.claude/skills/pitch-deck`
+  - Generate professional PowerPoint pitch decks for startups and businesses. Use this skill when users request help creating investor pitch decks, sales presentations, or business pitch presentations. The skill follows stan
+
 - **pptx** — `/Users/melbourne/.claude/skills/pptx`
   - Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even 
 
@@ -419,20 +481,53 @@ _None found (or no workspace open)._
 - **request-reviews** — `/Users/melbourne/.claude/skills/request-reviews`
   - Generates personalized client review request scripts based on case disposition, client relationship quality, and target platforms (Google, Avvo, Yelp). Produces optimal timing recommendations, platform-specific guidance,
 
+- **research-paper-writer** — `/Users/melbourne/.claude/skills/research-paper-writer`
+  - Creates formal academic research papers following IEEE/ACM formatting standards with proper structure, citations, and scholarly writing style. Use when the user asks to write a research paper, academic paper, or conferen
+
+- **resume-manager** — `/Users/melbourne/.claude/skills/resume-manager`
+  - This skill should be used whenever users need help with resume creation, updating professional profiles, tracking career experiences, managing projects portfolio, or generating tailored resumes for job applications. On f
+
+- **script-writer** — `/Users/melbourne/.claude/skills/script-writer`
+  - This skill should be used whenever users need YouTube video scripts written. On first use, collects comprehensive preferences including script type, tone, target audience, style, video length, hook style, use of humor, p
+
 - **search** — `/Users/melbourne/.claude/skills/search`
   - Searches the web, legal databases, case law, patents, and case.dev knowledge base via the casedev CLI. Use when the user mentions "search", "legal research", "find cases", "case law", "patent search", "web search", "fetc
+
+- **seo-optimizer** — `/Users/melbourne/.claude/skills/seo-optimizer`
+  - This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta ta
+
+- **skill-creator** — `/Users/melbourne/.claude/skills/skill-creator`
+  - Author or review AgentSkills: create, repair, validate, or restructure SKILL.md files and bundled resources.
 
 - **social-media** — `/Users/melbourne/.claude/skills/social-media`
   - Social media strategy, content creation, and platform optimization. Use when creating social content, developing engagement strategies, optimizing for platform algorithms, or building community.
 
+- **social-media-generator** — `/Users/melbourne/.claude/skills/social-media-generator`
+  - This skill should be used when the user requests social media content creation for Twitter, Instagram, LinkedIn, or Facebook. It generates platform-optimized posts and saves them in an organized folder structure with mea
+
 - **sports-law-cases** — `/Users/melbourne/.claude/skills/sports-law-cases`
   - Generates structured summaries of sports law cases covering contract disputes, doping violations, and governance controversies. Use when summarizing sports litigation, researching athlete contract disputes, anti-doping a
+
+- **startup-validator** — `/Users/melbourne/.claude/skills/startup-validator`
+  - Comprehensive startup idea validation and market analysis tool. Use when users need to evaluate a startup idea, assess market fit, analyze competition, validate problem-solution fit, or determine market positioning. Trig
+
+- **storyboard-manager** — `/Users/melbourne/.claude/skills/storyboard-manager`
+  - Assist writers with story planning, character development, plot structuring, chapter writing, timeline tracking, and consistency checking. Use this skill when working with creative writing projects organized in folders c
 
 - **sue** — `/Users/melbourne/.claude/skills/sue`
   - A comprehensive AI agent skill for anyone considering or facing a lawsuit. Helps you evaluate whether suing is worth it, understand the litigation process from filing to resolution, prepare your case effectively, navigat
 
 - **surface-performance** — `/Users/melbourne/.claude/skills/surface-performance`
   - Transform raw case data exports into a structured performance dashboard -- surfaces KPIs like case volume, resolution time, disposition breakdown, revenue by case type and attorney, intake conversion, and source ROI with
+
+- **tech-debt-analyzer** — `/Users/melbourne/.claude/skills/tech-debt-analyzer`
+  - This skill should be used when analyzing technical debt in a codebase, documenting code quality issues, creating technical debt registers, or assessing code maintainability. Use this for identifying code smells, architec
+
+- **test-specialist** — `/Users/melbourne/.claude/skills/test-specialist`
+  - This skill should be used when writing test cases, fixing bugs, analyzing code for potential issues, or improving test coverage for JavaScript/TypeScript applications. Use this for unit tests, integration tests, end-to-e
+
+- **travel-planner** — `/Users/melbourne/.claude/skills/travel-planner`
+  - This skill should be used whenever users need help planning trips, creating travel itineraries, managing travel budgets, or seeking destination advice. On first use, collects comprehensive travel preferences including bu
 
 - **ui-craft** — `/Users/melbourne/.claude/skills/ui-craft`
   - Use for UI design and implementation work to avoid generic AI-looking interfaces. Provides anti-slop rules, a required discovery phase before coding, and guidance for layout, typography, color, motion, accessibility, das
@@ -478,6 +573,42 @@ _None found (or no workspace open)._
 
 - **60fps-animation** — `/Users/melbourne/.agents/skills/60fps-animation`
   - This skill should be used when the user asks to "fix janky CSS animation", "make animation 60fps", "stop layout thrashing", "animate width/height/top/left smoothly", "convert animation to transform", "animate box-shadow 
+
+- **AI Influencer Generation** — `/Users/melbourne/.agents/skills/AI Influencer Generation`
+  - Generate consistent AI influencer personas and social media content using each::sense API
+
+- **Book Cover Generation** — `/Users/melbourne/.agents/skills/Book Cover Generation`
+  - Generate professional book covers and ebook covers using each::sense API with AI-powered design
+
+- **Food Photography Generation** — `/Users/melbourne/.agents/skills/Food Photography Generation`
+  - Generate professional food photography using each::sense API for restaurant menus, food delivery apps, recipe blogs, and social media content
+
+- **NSFW Image Generation** — `/Users/melbourne/.agents/skills/NSFW Image Generation`
+  - Generate adult images, artistic nudes, glamour photography, and fantasy art using the each::sense API with safety checker disabled
+
+- **NSFW Video Generation** — `/Users/melbourne/.agents/skills/NSFW Video Generation`
+  - Generate adult video content using each::sense API with safety checker disabled
+
+- **Product Photo Generation** — `/Users/melbourne/.agents/skills/Product Photo Generation`
+  - Generate professional product photography using each::sense API for e-commerce, marketing, and catalog imagery
+
+- **QuickBooks Automation** — `/Users/melbourne/.agents/skills/QuickBooks Automation`
+  - Automate QuickBooks accounting workflows including invoicing, expenses, reporting, and bank reconciliation
+
+- **Real Estate Photo Generation** — `/Users/melbourne/.agents/skills/Real Estate Photo Generation`
+  - Generate professional real estate photography, virtual staging, interior design visuals, and architectural renders using each::sense API
+
+- **TikTok Ad Creative Generation** — `/Users/melbourne/.agents/skills/TikTok Ad Creative Generation`
+  - Generate TikTok-native ad creatives using each::sense API - vertical videos, Spark Ads style, trending formats, and UGC aesthetics
+
+- **UGC Video Generation** — `/Users/melbourne/.agents/skills/UGC Video Generation`
+  - Generate authentic user-generated content (UGC) style videos including testimonials, unboxings, reviews, and selfie-style content using each::sense API
+
+- **Virtual Try-On** — `/Users/melbourne/.agents/skills/Virtual Try-On`
+  - AI-powered virtual try-on for clothing, accessories, makeup, hairstyles, and more using each::sense API
+
+- **YouTube Thumbnail Generation** — `/Users/melbourne/.agents/skills/YouTube Thumbnail Generation`
+  - Generate click-worthy YouTube thumbnails with high CTR designs using each::sense API
 
 - **ab-test-setup** — `/Users/melbourne/.agents/skills/ab-test-setup`
   - Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.
@@ -554,6 +685,9 @@ _None found (or no workspace open)._
 - **age-transformation** — `/Users/melbourne/.agents/skills/age-transformation`
   - Transform faces across ages using each::sense AI. Create age progressions, de-aging effects, baby-to-adult predictions, and aging simulations for entertainment, forensics, and visual effects.
 
+- **agent-browser** — `/Users/melbourne/.agents/skills/agent-browser`
+  - Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating a
+
 - **agent-creator** — `/Users/melbourne/.agents/skills/agent-creator`
   - Create custom AI subagents with proper plugin structure, persona generation, and companion routing skills.
 
@@ -580,6 +714,45 @@ _None found (or no workspace open)._
 
 - **agent-orchestrator** — `/Users/melbourne/.agents/skills/agent-orchestrator`
   - Meta-skill que orquestra todos os agentes do ecossistema. Scan automatico de skills, match por capacidades, coordenacao de workflows multi-skill e registry management.
+
+- **agent-platform-alert-configuration** — `/Users/melbourne/.agents/skills/agent-platform-alert-configuration`
+  - >-
+
+- **agent-platform-deploy** — `/Users/melbourne/.agents/skills/agent-platform-deploy`
+  - >-
+
+- **agent-platform-endpoint-management** — `/Users/melbourne/.agents/skills/agent-platform-endpoint-management`
+  - >-
+
+- **agent-platform-eval-flywheel** — `/Users/melbourne/.agents/skills/agent-platform-eval-flywheel`
+  - >-
+
+- **agent-platform-inference** — `/Users/melbourne/.agents/skills/agent-platform-inference`
+  - >-
+
+- **agent-platform-migrate-from-ai-studio** — `/Users/melbourne/.agents/skills/agent-platform-migrate-from-ai-studio`
+  - >-
+
+- **agent-platform-model-registry** — `/Users/melbourne/.agents/skills/agent-platform-model-registry`
+  - >-
+
+- **agent-platform-prompt-management** — `/Users/melbourne/.agents/skills/agent-platform-prompt-management`
+  - >-
+
+- **agent-platform-rag-engine-management** — `/Users/melbourne/.agents/skills/agent-platform-rag-engine-management`
+  - >-
+
+- **agent-platform-skill-registry** — `/Users/melbourne/.agents/skills/agent-platform-skill-registry`
+  - >
+
+- **agent-platform-troubleshooting** — `/Users/melbourne/.agents/skills/agent-platform-troubleshooting`
+  - >-
+
+- **agent-platform-tuning** — `/Users/melbourne/.agents/skills/agent-platform-tuning`
+  - >-
+
+- **agent-platform-tuning-management** — `/Users/melbourne/.agents/skills/agent-platform-tuning-management`
+  - >-
 
 - **agent-squad** — `/Users/melbourne/.agents/skills/agent-squad`
   - Main agent orchestrator that coordinates a specialized squad of agents
@@ -679,6 +852,9 @@ _None found (or no workspace open)._
 
 - **algorithmic-art** — `/Users/melbourne/.agents/skills/algorithmic-art`
   - Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
+
+- **alloydb-basics** — `/Users/melbourne/.agents/skills/alloydb-basics`
+  - >-
 
 - **alpha-vantage** — `/Users/melbourne/.agents/skills/alpha-vantage`
   - Access 20+ years of global financial data: equities, options, forex, crypto, commodities, economic indicators, and 50+ technical indicators.
@@ -850,6 +1026,9 @@ _None found (or no workspace open)._
 
 - **apple-notes-search** — `/Users/melbourne/.agents/skills/apple-notes-search`
   - Semantic + keyword search and connection-discovery across the user's own Apple Notes via the apple-notes MCP server. Use when the user wants to find, recall, or synthesize something from their notes, or surface non-obvio
+
+- **application-design-center-design-deploy** — `/Users/melbourne/.agents/skills/application-design-center-design-deploy`
+  - >-
 
 - **application-performance-performance-optimization** — `/Users/melbourne/.agents/skills/application-performance-performance-optimization`
   - Optimize end-to-end application performance with profiling, observability, and backend/frontend tuning. Use when coordinating performance optimization across the stack.
@@ -1427,6 +1606,24 @@ _None found (or no workspace open)._
 - **bid-strategy-planner** — `/Users/melbourne/.agents/skills/bid-strategy-planner`
   - Use when the user asks to "pick a bid strategy", "set a tCPA/tROAS target", or "plan the learning-phase entry"; produces a bid-strategy choice (tCPA / tROAS / max-conversions / manual CPC), the starting target math, a po
 
+- **bigquery-ai-ml** — `/Users/melbourne/.agents/skills/bigquery-ai-ml`
+  - >-
+
+- **bigquery-basics** — `/Users/melbourne/.agents/skills/bigquery-basics`
+  - >-
+
+- **bigquery-bigframes** — `/Users/melbourne/.agents/skills/bigquery-bigframes`
+  - >-
+
+- **bigquery-observability** — `/Users/melbourne/.agents/skills/bigquery-observability`
+  - >-
+
+- **bigquery-slot-cost-optimizer** — `/Users/melbourne/.agents/skills/bigquery-slot-cost-optimizer`
+  - >-
+
+- **bigtable-basics** — `/Users/melbourne/.agents/skills/bigtable-basics`
+  - >-
+
 - **bilig-workpaper** — `/Users/melbourne/.agents/skills/bilig-workpaper`
   - Use formula-backed WorkPaper JSON and MCP tools for agent spreadsheet tasks without driving Excel or a browser UI.
 
@@ -1571,6 +1768,9 @@ _None found (or no workspace open)._
 - **business-analyst** — `/Users/melbourne/.agents/skills/business-analyst`
   - Master modern business analysis with AI-powered analytics, real-time dashboards, and data-driven insights. Build comprehensive KPI frameworks, predictive models, and strategic recommendations.
 
+- **business-brainstorm** — `/Users/melbourne/.agents/skills/business-brainstorm`
+  - When you want to pressure-test a potential new business, product, or side project against the serial-founder filter. Not \"marketing ideas for a product\" (that's marketing-skills:marketing-ideas) — this is \"should this
+
 - **business-card-generation** — `/Users/melbourne/.agents/skills/business-card-generation`
   - Generate professional business cards using each::sense AI. Create corporate, creative, minimalist, luxury, and specialty business cards optimized for print at standard 3.5 x 2 inch size.
 
@@ -1624,6 +1824,9 @@ _None found (or no workspace open)._
 
 - **carrier-relationship-management** — `/Users/melbourne/.agents/skills/carrier-relationship-management`
   - Codified expertise for managing carrier portfolios, negotiating freight rates, tracking carrier performance, allocating freight, and maintaining strategic carrier relationships.
+
+- **cash-flow-snapshot** — `/Users/melbourne/.agents/skills/cash-flow-snapshot`
+  - >
 
 - **category-narrative-mapper** — `/Users/melbourne/.agents/skills/category-narrative-mapper`
   - Use when the user asks to "map the category narrative", "tear down how competitors tell their story", or "find the language conventions in our market"; produces a category narrative map — the dominant stories and points 
@@ -1681,6 +1884,9 @@ _None found (or no workspace open)._
 
 - **chrome-extension-developer** — `/Users/melbourne/.agents/skills/chrome-extension-developer`
   - Expert in building Chrome Extensions using Manifest V3. Covers background scripts, service workers, content scripts, and cross-context communication.
+
+- **chrome-extensions** — `/Users/melbourne/.agents/skills/chrome-extensions`
+  - >
 
 - **churn-prevention** — `/Users/melbourne/.agents/skills/churn-prevention`
   - When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or implement retention strategies. Also use when the user mentions 'churn,' 'cancel flow,' 'offboarding,' 'save 
@@ -1763,11 +1969,47 @@ _None found (or no workspace open)._
 - **cloud-architect** — `/Users/melbourne/.agents/skills/cloud-architect`
   - Expert cloud architect specializing in AWS/Azure/GCP multi-cloud infrastructure design, advanced IaC (Terraform/OpenTofu/CDK), FinOps cost optimization, and modern architectural patterns.
 
+- **cloud-build-basics** — `/Users/melbourne/.agents/skills/cloud-build-basics`
+  - >-
+
+- **cloud-databases-onboarding** — `/Users/melbourne/.agents/skills/cloud-databases-onboarding`
+  - >-
+
 - **cloud-devops** — `/Users/melbourne/.agents/skills/cloud-devops`
   - Cloud infrastructure and DevOps workflow covering AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, monitoring, and cloud-native development.
 
+- **cloud-logging-configuration-basics** — `/Users/melbourne/.agents/skills/cloud-logging-configuration-basics`
+  - >-
+
+- **cloud-logging-cross-project-configuration** — `/Users/melbourne/.agents/skills/cloud-logging-cross-project-configuration`
+  - >-
+
+- **cloud-logging-query-generation** — `/Users/melbourne/.agents/skills/cloud-logging-query-generation`
+  - >-
+
+- **cloud-monitoring-chart-generation** — `/Users/melbourne/.agents/skills/cloud-monitoring-chart-generation`
+  - >-
+
+- **cloud-monitoring-list-time-series-request** — `/Users/melbourne/.agents/skills/cloud-monitoring-list-time-series-request`
+  - >-
+
+- **cloud-monitoring-metric-selection** — `/Users/melbourne/.agents/skills/cloud-monitoring-metric-selection`
+  - >-
+
+- **cloud-monitoring-promql-query** — `/Users/melbourne/.agents/skills/cloud-monitoring-promql-query`
+  - >-
+
 - **cloud-penetration-testing** — `/Users/melbourne/.agents/skills/cloud-penetration-testing`
   - Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+
+- **cloud-run-alert-configuration** — `/Users/melbourne/.agents/skills/cloud-run-alert-configuration`
+  - >-
+
+- **cloud-run-basics** — `/Users/melbourne/.agents/skills/cloud-run-basics`
+  - >-
+
+- **cloud-sql-basics** — `/Users/melbourne/.agents/skills/cloud-sql-basics`
+  - >-
 
 - **cloudflare-workers-expert** — `/Users/melbourne/.agents/skills/cloudflare-workers-expert`
   - Expert in Cloudflare Workers and the Edge Computing ecosystem. Covers Wrangler, KV, D1, Durable Objects, and R2 storage.
@@ -1864,6 +2106,12 @@ _None found (or no workspace open)._
 
 - **community-marketing** — `/Users/melbourne/.agents/skills/community-marketing`
   - Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a community strategy, grow a Discord or Slack community, manage a forum or subreddit, build brand advocat
+
+- **company-brain** — `/Users/melbourne/.agents/skills/company-brain`
+  - Your team's shared, AI-ready knowledge base — people, companies, meetings, SOPs, and decisions structured so Claude can answer questions on your team's behalf. Team-scope sibling to second-brain (which is personal-scope)
+
+- **company-cfo** — `/Users/melbourne/.agents/skills/company-cfo`
+  - Monthly CFO workflow for a company or agency — pull raw data from bank + payment processor + payroll + expense management, categorize and reconcile, compute end-of-month cash via transaction-sum method, update a scenario
 
 - **competitive-landscape** — `/Users/melbourne/.agents/skills/competitive-landscape`
   - Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies.
@@ -2186,6 +2434,15 @@ _None found (or no workspace open)._
 - **data-engineering-data-pipeline** — `/Users/melbourne/.agents/skills/data-engineering-data-pipeline`
   - You are a data pipeline architecture expert specializing in scalable, reliable, and cost-effective data pipelines for batch and streaming data processing.
 
+- **data-manager-api-audience-ingestion** — `/Users/melbourne/.agents/skills/data-manager-api-audience-ingestion`
+  - >-
+
+- **data-manager-api-event-ingestion** — `/Users/melbourne/.agents/skills/data-manager-api-event-ingestion`
+  - >-
+
+- **data-manager-api-setup** — `/Users/melbourne/.agents/skills/data-manager-api-setup`
+  - >-
+
 - **data-quality-frameworks** — `/Users/melbourne/.agents/skills/data-quality-frameworks`
   - Implement data quality validation with Great Expectations, dbt tests, and data contracts. Use when building data quality pipelines, implementing validation rules, or establishing data contracts.
 
@@ -2234,6 +2491,12 @@ _None found (or no workspace open)._
 - **datadog-automation** — `/Users/melbourne/.agents/skills/datadog-automation`
   - Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search tools first for current schemas.
 
+- **datalineage-bigquery-asset-impact-analysis** — `/Users/melbourne/.agents/skills/datalineage-bigquery-asset-impact-analysis`
+  - >-
+
+- **datalineage-summary** — `/Users/melbourne/.agents/skills/datalineage-summary`
+  - >-
+
 - **dbos-golang** — `/Users/melbourne/.agents/skills/dbos-golang`
   - Guide for building reliable, fault-tolerant Go applications with DBOS durable workflows. Use when adding DBOS to existing Go code, creating workflows and steps, or using queues for concurrency control.
 
@@ -2242,6 +2505,9 @@ _None found (or no workspace open)._
 
 - **dbos-typescript** — `/Users/melbourne/.agents/skills/dbos-typescript`
   - Guide for building reliable, fault-tolerant TypeScript applications with DBOS durable workflows. Use when adding DBOS to existing TypeScript code, creating workflows and steps, or using queues for concurrency control.
+
+- **dbt-sf-to-bq-translator** — `/Users/melbourne/.agents/skills/dbt-sf-to-bq-translator`
+  - >-
 
 - **dbt-transformation-patterns** — `/Users/melbourne/.agents/skills/dbt-transformation-patterns`
   - Production-ready patterns for dbt (data build tool) including model organization, testing strategies, documentation, and incremental processing.
@@ -2270,6 +2536,9 @@ _None found (or no workspace open)._
 - **debugging-toolkit-smart-debug** — `/Users/melbourne/.agents/skills/debugging-toolkit-smart-debug`
   - Use when working with debugging toolkit smart debug
 
+- **decide** — `/Users/melbourne/.agents/skills/decide`
+  - When you have a decision to make and want a structured workflow that picks the load-bearing questions, walks through them, reaches a call (or "wait"), and archives the rationale for future reference. Based on the 37signa
+
 - **decision-navigator** — `/Users/melbourne/.agents/skills/decision-navigator`
   - Guide stuck or overwhelmed users through targeted branching questions until they reach concrete next steps.
 
@@ -2280,7 +2549,7 @@ _None found (or no workspace open)._
   - This skill should be used when the user asks to "create a deck", "make a presentation", "build slides", "pitch deck", "investor deck", "sales presentation", "design a deck", "interactive presentation", "presenter mode", 
 
 - **deep-research** — `/Users/melbourne/.agents/skills/deep-research`
-  - Deep research on any topic — broad parallel web searches, multi-source validation, confidence tracking, and a cited Markdown report. Use whenever the deliverable is a thorough sourced report rather than a quick answer: '
+  - When you want multi-source, multi-step research on a topic — competitor research before a sales call, market research for a new business idea, positioning angles, due diligence on a partnership or podcast guest, tech dec
 
 - **defi-protocol-templates** — `/Users/melbourne/.agents/skills/defi-protocol-templates`
   - Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applications or smart contract protocols.
@@ -2336,11 +2605,29 @@ _None found (or no workspace open)._
 - **design-taste-frontend** — `/Users/melbourne/.agents/skills/design-taste-frontend`
   - Use when building high-agency frontend interfaces with strict design taste, calibrated color, responsive layout, and motion rules.
 
+- **detection-engineering-coverage-evaluation** — `/Users/melbourne/.agents/skills/detection-engineering-coverage-evaluation`
+  - >-
+
 - **deterministic-design** — `/Users/melbourne/.agents/skills/deterministic-design`
   - Render the UI and prove it's balanced + usable: a deterministic layout audit (centroid / optical-center / pixel-oracle balance via explicit math + annotated screenshot) plus a vision-judged Nielsen usability audit by a s
 
 - **devcontainer-setup** — `/Users/melbourne/.agents/skills/devcontainer-setup`
   - Creates devcontainers with Claude Code, language-specific tooling (Python/Node/Rust/Go), and persistent volumes. Use when adding devcontainer support to a project, setting up isolated development environments, or configu
+
+- **developer-device-platform-basics** — `/Users/melbourne/.agents/skills/developer-device-platform-basics`
+  - >-
+
+- **developing-genkit-dart** — `/Users/melbourne/.agents/skills/developing-genkit-dart`
+  - Generates code and provides documentation for the Genkit Dart SDK. Use when the user asks to build AI agents in Dart, use Genkit flows, or integrate LLMs into Dart/Flutter applications.
+
+- **developing-genkit-go** — `/Users/melbourne/.agents/skills/developing-genkit-go`
+  - Develop AI-powered applications using Genkit in Go. Use when the user asks to build AI features, agents, flows, or tools in Go using Genkit, or when working with Genkit Go code involving generation, prompts, streaming, t
+
+- **developing-genkit-js** — `/Users/melbourne/.agents/skills/developing-genkit-js`
+  - Develop AI-powered applications using Genkit in Node.js/TypeScript. Use when the user asks about Genkit, AI agents, flows, or tools in JavaScript/TypeScript, or when encountering Genkit errors, validation issues, type er
+
+- **developing-genkit-python** — `/Users/melbourne/.agents/skills/developing-genkit-python`
+  - Develop AI-powered applications using Genkit in Python. Use when the user asks about Genkit, AI agents, flows, or tools in Python, or when encountering Genkit errors, import issues, or API problems.
 
 - **development** — `/Users/melbourne/.agents/skills/development`
   - Comprehensive web, mobile, and backend development workflow bundling frontend, backend, full-stack, and mobile development skills for end-to-end application delivery.
@@ -2423,6 +2710,9 @@ _None found (or no workspace open)._
 - **docx-official** — `/Users/melbourne/.agents/skills/docx-official`
   - A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and work
 
+- **domain** — `/Users/melbourne/.agents/skills/domain`
+  - When you want to brainstorm and check available .com domains for a new project — brand naming, aftermarket pricing (HugeDomains / Afternic / Sedo / Dan), USPTO trademark screening, and social handle availability. Built o
+
 - **domain-authority-auditor** — `/Users/melbourne/.agents/skills/domain-authority-auditor`
   - Use when auditing domain authority, trust, or citation credibility; runs a peer-relative 40-item CITE profile with evidence coverage and verified manipulation/penalty veto checks. Not for page-level content quality — use
 
@@ -2444,6 +2734,9 @@ _None found (or no workspace open)._
 - **dotnet-backend-patterns** — `/Users/melbourne/.agents/skills/dotnet-backend-patterns`
   - Master C#/.NET patterns for building production-grade APIs, MCP servers, and enterprise backends with modern best practices (2024/2025).
 
+- **dpop-adoption** — `/Users/melbourne/.agents/skills/dpop-adoption`
+  - >-
+
 - **draft** — `/Users/melbourne/.agents/skills/draft`
   - >
 
@@ -2452,6 +2745,147 @@ _None found (or no workspace open)._
 
 - **dropbox-automation** — `/Users/melbourne/.agents/skills/dropbox-automation`
   - Automate Dropbox file management, sharing, search, uploads, downloads, and folder operations via Rube MCP (Composio). Always search tools first for current schemas.
+
+- **drupal-at-your-fingertips** — `/Users/melbourne/.agents/skills/drupal-at-your-fingertips`
+  - Comprehensive Drupal patterns from "Drupal at Your Fingertips" by Selwyn Polit. Covers 50+ topics including services, hooks, forms, entities, caching, testing, and more.
+
+- **drupal-backend** — `/Users/melbourne/.agents/skills/drupal-backend`
+  - Drupal Back End Specialist skill for custom module development, hooks, APIs, and PHP programming (Drupal 8-11+). Use when building custom modules, implementing hooks, working with entities, forms, plugins, or services.
+
+- **drupal-canvas** — `/Users/melbourne/.agents/skills/drupal-canvas`
+  - Drupal Canvas Code Components - a framework for building interactive, server-side-rendered components in Drupal. Covers scaffolding with @drupal-canvas/create, the Nebula starter template, component architecture, and int
+
+- **drupal-coding-standards** — `/Users/melbourne/.agents/skills/drupal-coding-standards`
+  - Review code according to Drupal's official coding standards. Provides AI agents with comprehensive guidelines for PHP, JavaScript, CSS, Twig, YAML, SQL, and markup files in Drupal projects. Uses dynamic context discovery
+
+- **drupal-config-mgmt** — `/Users/melbourne/.agents/skills/drupal-config-mgmt`
+  - Drupal configuration management including config import/export, config splits (complete and partial), syncing config across environments, drush commands for config management, config:import, config:export, config-split c
+
+- **drupal-contrib-mgmt** — `/Users/melbourne/.agents/skills/drupal-contrib-mgmt`
+  - Comprehensive guide for managing Drupal contributed modules via Composer, including updates, patches, version compatibility, and Drupal 11 upgrades. Use when updating modules or resolving dependency issues.
+
+- **drupal-contribute-fix** — `/Users/melbourne/.agents/skills/drupal-contribute-fix`
+  - >
+
+- **drupal-ddev** — `/Users/melbourne/.agents/skills/drupal-ddev`
+  - DDEV local development environment patterns for Drupal, including configuration, commands, database management, debugging tools, and performance optimization.
+
+- **drupal-development** — `/Users/melbourne/.agents/skills/drupal-development`
+  - Expert guidance for Drupal 10 module development with PHP 8+, SOLID principles, and Drupal coding standards
+
+- **drupal-expert** — `/Users/melbourne/.agents/skills/drupal-expert`
+  - Drupal 10/11 development expertise. Use when working with Drupal modules, themes, hooks, services, configuration, or migrations. Triggers on mentions of Drupal, Drush, Twig, modules, themes, or Drupal API.
+
+- **drupal-frontend** — `/Users/melbourne/.agents/skills/drupal-frontend`
+  - Drupal Front End Specialist skill for theme development, Twig templates, and rendering system (Drupal 8-11+). Use when working with Drupal themes, Twig syntax, preprocessing, CSS/JS libraries, or template suggestions.
+
+- **drupal-issue-queue** — `/Users/melbourne/.agents/skills/drupal-issue-queue`
+  - Search Drupal.org issue queues and summarize individual issues via the Drupal.org api-d7 endpoints. Use for triage or debugging errors by checking for existing issues before patching, filtering by status/priority/categor
+
+- **drupal-module-finder** — `/Users/melbourne/.agents/skills/drupal-module-finder`
+  - Find, evaluate, and install Drupal contributed modules by describing the problem to solve. Use whenever the user needs a Drupal module for a task, wants module recommendations or comparisons, or needs the composer comman
+
+- **drupal-search-api** — `/Users/melbourne/.agents/skills/drupal-search-api`
+  - Search API configuration, boosting strategies, and processor patterns for Drupal. Covers index configuration, field types, custom boost processors, number field boosting, engagement metrics, and reindexing workflows.
+
+- **drupal-security** — `/Users/melbourne/.agents/skills/drupal-security`
+  - Drupal security expertise. Auto-activates when writing forms, controllers, queries, or handling user input. Prevents XSS, SQL injection, and access bypass vulnerabilities.
+
+- **drupal-simple-oauth** — `/Users/melbourne/.agents/skills/drupal-simple-oauth`
+  - OAuth2 authentication patterns for Drupal using simple_oauth module. Covers TokenAuthUser permission logic, scope/role matching, mobile app token flows, field_permissions integration, CSRF bypass, and debugging token iss
+
+- **drupaltools-best-practices** — `/Users/melbourne/.agents/skills/drupaltools-best-practices`
+  - Audit code or a folder against Drupal best practices. Use this skill whenever the user wants to review, check, or improve Drupal code quality — including custom modules, themes, config YAML files, machine names, field de
+
+- **drupaltools-checklist-development** — `/Users/melbourne/.agents/skills/drupaltools-checklist-development`
+  - Guide Drupal projects through development lifecycle checklists. Use this skill when starting a new project, preparing for deployment, checking project completeness, or managing a Drupal project from setup to production l
+
+- **drupaltools-code-search** — `/Users/melbourne/.agents/skills/drupaltools-code-search`
+  - Search the source code of all Drupal contributed modules on drupal.org via the GitLab API. Use this skill whenever the user wants to find code examples, usage patterns, or implementations in Drupal contrib modules - e.g.
+
+- **drupaltools-coding-standards** — `/Users/melbourne/.agents/skills/drupaltools-coding-standards`
+  - Check and fix Drupal PHP coding standards violations using PHPCS and PHPStan. Use this skill when you need to validate code against Drupal standards, fix coding style issues, or run automated code quality checks.
+
+- **drupaltools-contrib-gitlab-ci** — `/Users/melbourne/.agents/skills/drupaltools-contrib-gitlab-ci`
+  - Generate and validate .gitlab-ci.yml files for Drupal modules using Drupal Association templates. Use this skill when you need to create GitLab CI configuration, update existing CI, or validate CI setup for a Drupal modu
+
+- **drupaltools-contrib-lookup** — `/Users/melbourne/.agents/skills/drupaltools-contrib-lookup`
+  - Find the equivalent online source code URL on git.drupalcode.org for a pasted code snippet from a Drupal contrib module. Use this skill whenever a user pastes PHP/Drupal code and asks to find it online, find the source, 
+
+- **drupaltools-contrib-readme** — `/Users/melbourne/.agents/skills/drupaltools-contrib-readme`
+  - Generate and validate README.md files for Drupal.org contribution. Use this skill when you need to create a README.md for a Drupal module, check an existing README for Drupal.org compliance, or fix README structure issue
+
+- **drupaltools-contrib-search** — `/Users/melbourne/.agents/skills/drupaltools-contrib-search`
+  - Search the source code of Drupal contributed modules and core via the tresbien.tech code search API. Use this skill whenever the user wants to find code examples, usage patterns, or implementations across Drupal projects
+
+- **drupaltools-contrib-validator** — `/Users/melbourne/.agents/skills/drupaltools-contrib-validator`
+  - Validates Drupal 10+ custom modules for Drupal.org contribution readiness. Use this skill when you need to check if a module is ready for Drupal.org, validate required files, or get recommendations for contribution.
+
+- **drupaltools-cost-estimation** — `/Users/melbourne/.agents/skills/drupaltools-cost-estimation`
+  - Estimate costs and timeline for Drupal projects using a structured breakdown of tasks, roles, content types, and development work. Use this skill when the user asks for a project quote, cost breakdown, timeline estimatio
+
+- **drupaltools-developer-setup** — `/Users/melbourne/.agents/skills/drupaltools-developer-setup`
+  - Configure a developer's local machine for Drupal development. Use this skill when setting up a new development machine, configuring PHP/Composer/DDEV, installing Drupal CLI tools, or optimizing IDE and terminal for Drupa
+
+- **drupaltools-git-blame** — `/Users/melbourne/.agents/skills/drupaltools-git-blame`
+  - Generate a git.drupalcode.org blame URL and fetch commit details for a code snippet from a Drupal contrib module or Drupal core. Use this skill when the user asks "who wrote this code", "git blame", "who is responsible f
+
+- **drupaltools-issue-generate** — `/Users/melbourne/.agents/skills/drupaltools-issue-generate`
+  - >
+
+- **drupaltools-maintenance-contract** — `/Users/melbourne/.agents/skills/drupaltools-maintenance-contract`
+  - Drupal maintenance and support contract templates, task lists, SLA parameters, and handoff procedures. Use this skill when the user asks about Drupal maintenance contracts, support plans, SLA definitions, maintenance pri
+
+- **drupaltools-markdownlint** — `/Users/melbourne/.agents/skills/drupaltools-markdownlint`
+  - Run the project markdownlint script in a Drupal project and fix the reported markdown violations. Use this skill whenever the user asks to run markdownlint, lint markdown, check the docs, or says "run scripts/markdownlin
+
+- **drupaltools-migration-plan** — `/Users/melbourne/.agents/skills/drupaltools-migration-plan`
+  - Generate comprehensive Drupal migration plans with entity mapping, ETL strategies, rollback procedures, and source analysis based on best practices from the Drupal migration guide.
+
+- **drupaltools-module-clone** — `/Users/melbourne/.agents/skills/drupaltools-module-clone`
+  - Clone a Drupal module as a structural scaffold - copy the file and folder structure of an existing local module, renaming all occurrences of the original machine name to a new one. Use this skill whenever the user wants 
+
+- **drupaltools-module-info** — `/Users/melbourne/.agents/skills/drupaltools-module-info`
+  - Identify the Drupal module or theme that owns a selected file or code snippet by locating the nearest *.info.yml file in the parent folder tree. Use this skill whenever the user selects code and wants to know which modul
+
+- **drupaltools-module-rename** — `/Users/melbourne/.agents/skills/drupaltools-module-rename`
+  - Rename a Drupal module's machine name throughout its codebase, updating all file names, class names, service names, and references. Use this skill when the user wants to rename an existing module to a new machine name, c
+
+- **drupaltools-onboarding** — `/Users/melbourne/.agents/skills/drupaltools-onboarding`
+  - Step-by-step onboarding checklist for Drupal newcomers covering basics, local setup, community engagement, and learning resources. Use this skill when the user is new to Drupal, asks "how do I start with Drupal", "I'm a 
+
+- **drupaltools-oop-hooks** — `/Users/melbourne/.agents/skills/drupaltools-oop-hooks`
+  - Generate production-grade Drupal 11 OOP code for any Drupal extension point - hooks, plugins, event subscribers, services, form alters, preprocess functions, access checkers, route subscribers, queue workers, block plugi
+
+- **drupaltools-optimize** — `/Users/melbourne/.agents/skills/drupaltools-optimize`
+  - Optimize selected Drupal PHP code for the Drupal and PHP versions currently in use in the project. Use this skill whenever the user selects code and asks to optimize, modernize, refactor, or improve it for their current 
+
+- **drupaltools-patch** — `/Users/melbourne/.agents/skills/drupaltools-patch`
+  - Apply a patch to a Drupal contrib module or theme from any source — a URL, a Drupal.org issue, an issue comment, a GitLab merge request, a git commit hash, a local file, or a natural language description. Use this skill 
+
+- **drupaltools-phpcs** — `/Users/melbourne/.agents/skills/drupaltools-phpcs`
+  - Run PHPCS in a Drupal project and fix the reported coding standards violations. Use this skill whenever the user asks to run phpcs, check coding standards, fix code style errors, lint PHP/Drupal code, or says things like
+
+- **drupaltools-phpstan** — `/Users/melbourne/.agents/skills/drupaltools-phpstan`
+  - Run PHPStan static analysis in a Drupal project and resolve the reported errors. Use this skill whenever the user asks to run phpstan, run static analysis, fix type errors, or says "run phpstan and fix the errors".
+
+- **drupaltools-phpunit** — `/Users/melbourne/.agents/skills/drupaltools-phpunit`
+  - Run the custom PHPUnit test suite in a Drupal project and fix the reported failures and errors. Use this skill whenever the user asks to run phpunit, run the tests, run the custom testsuite, or says "run phpunit and fix 
+
+- **drupaltools-postmortem** — `/Users/melbourne/.agents/skills/drupaltools-postmortem`
+  - Analyze Drupal project repositories and generate a comprehensive post-mortem reports for the development team.
+
+- **drupaltools-site-audit** — `/Users/melbourne/.agents/skills/drupaltools-site-audit`
+  - Generate comprehensive Drupal site audit reports before RFPs or project proposals. Use this skill when inspecting a Drupal site, preparing a technical report, or evaluating an existing Drupal project for fixes or changes
+
+- **drupaltools-site-clone** — `/Users/melbourne/.agents/skills/drupaltools-site-clone`
+  - Clone an entire Drupal project as a clean starter template — copying custom code, config structure, and tooling while stripping all site-specific data, credentials, UUIDs, and history. Use this skill whenever the user wa
+
+- **drupaltools-tip-generator** — `/Users/melbourne/.agents/skills/drupaltools-tip-generator`
+  - Show a random "tip of the day" related to Drupal development and its ecosystem. Use this skill whenever the user asks for a tip, hint, or suggestion related to Drupal — e.g. "drupal tip", "give me a Drupal tip", "tip of 
+
+- **drupaltools-translations** — `/Users/melbourne/.agents/skills/drupaltools-translations`
+  - Comprehensive guide for Drupal multilingual and translation workflows including interface translation, configuration translation, entity translation, PO/POT file management, and translation service integration. Use this 
 
 - **dwarf-expert** — `/Users/melbourne/.agents/skills/dwarf-expert`
   - Provides expertise for analyzing DWARF debug files and understanding the DWARF debug format/standard (v3-v5). Triggers when understanding DWARF information, interacting with DWARF files, answering DWARF-related questions
@@ -2750,17 +3184,26 @@ _None found (or no workspace open)._
 - **filesystem-context** — `/Users/melbourne/.agents/skills/filesystem-context`
   - Use for file-based context management, dynamic context discovery, and reducing context window bloat. Offload context to files for just-in-time loading.
 
+- **financial-insights** — `/Users/melbourne/.agents/skills/financial-insights`
+  - |
+
 - **find-bugs** — `/Users/melbourne/.agents/skills/find-bugs`
   - Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch.
 
 - **find-skills** — `/Users/melbourne/.agents/skills/find-skills`
   - Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used w
 
+- **finding-google-skills** — `/Users/melbourne/.agents/skills/finding-google-skills`
+  - >-
+
 - **finishing-a-development-branch** — `/Users/melbourne/.agents/skills/finishing-a-development-branch`
   - Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup
 
 - **firebase** — `/Users/melbourne/.agents/skills/firebase`
   - Firebase gives you a complete backend in minutes - auth, database,
+
+- **firebase-basics** — `/Users/melbourne/.agents/skills/firebase-basics`
+  - >-
 
 - **firecrawl-scraper** — `/Users/melbourne/.agents/skills/firecrawl-scraper`
   - Deep web scraping, screenshots, PDF parsing, and website crawling using Firecrawl API. Use when you need deep content extraction from web pages, page interaction is required (clicking, scrolling, etc.), or you want scree
@@ -2797,6 +3240,12 @@ _None found (or no workspace open)._
 
 - **flyer-design-generation** — `/Users/melbourne/.agents/skills/flyer-design-generation`
   - Generate professional flyers and leaflets using each::sense AI. Create event flyers, promotional materials, real estate listings, restaurant menus, and more with eye-catching designs optimized for print and digital distr
+
+- **fog-analytics-setup** — `/Users/melbourne/.agents/skills/fog-analytics-setup`
+  - Guided setup of the FOG Rugby marketing data foundation — GA4 on the Squarespace 7.0 site (fogrugby.com), Google Ads account + GA4 linking, Google for Nonprofits / Ad Grants application, and wiring GA4 + Google Ads + the
+
+- **fog-marketing-review** — `/Users/melbourne/.agents/skills/fog-marketing-review`
+  - Run the FOG Rugby monthly (or ad-hoc) marketing performance review — analyze GA4, Google Ads, and the Meta bridge Sheet data, produce a structured report with channel scorecard and campaign recommendations, and propose n
 
 - **food-database-query** — `/Users/melbourne/.agents/skills/food-database-query`
   - Food Database Query
@@ -2918,6 +3367,9 @@ _None found (or no workspace open)._
 - **game-development** — `/Users/melbourne/.agents/skills/game-development`
   - Game development orchestrator. Routes to platform-specific skills based on project needs.
 
+- **gcloud** — `/Users/melbourne/.agents/skills/gcloud`
+  - >-
+
 - **gcp-cloud-run** — `/Users/melbourne/.agents/skills/gcp-cloud-run`
   - Specialized skill for building production-ready serverless
 
@@ -2927,6 +3379,12 @@ _None found (or no workspace open)._
 - **gdpr-data-handling** — `/Users/melbourne/.agents/skills/gdpr-data-handling`
   - Practical implementation guide for GDPR-compliant data processing, consent management, and privacy controls.
 
+- **gemini-agents-api** — `/Users/melbourne/.agents/skills/gemini-agents-api`
+  - Manages custom Agent resources on Gemini Enterprise Agent Platform. Use when the user wants to programmatically create, configure, list, update, or delete stateful, server-managed Agent resources (including mounting file
+
+- **gemini-api** — `/Users/melbourne/.agents/skills/gemini-api`
+  - Use when the user asks about using Gemini in an enterprise environment or explicitly mentions Vertex AI, Google Cloud, or Agent Platform. Guides the usage of the Gemini API on Agent Platform with the Google Gen AI SDK. C
+
 - **gemini-api-dev** — `/Users/melbourne/.agents/skills/gemini-api-dev`
   - The Gemini API provides access to Google's most advanced AI models. Key capabilities include:
 
@@ -2935,6 +3393,12 @@ _None found (or no workspace open)._
 
 - **gemini-infographic** — `/Users/melbourne/.agents/skills/gemini-infographic`
   - >
+
+- **gemini-interactions-api** — `/Users/melbourne/.agents/skills/gemini-interactions-api`
+  - Guides the usage of Gemini Interactions API on Gemini Enterprise Agent Platform. Use when the user wants to use the stateful, server-managed Interactions API for multi-turn conversations, background execution, streaming,
+
+- **gemini-live-api** — `/Users/melbourne/.agents/skills/gemini-live-api`
+  - >-
 
 - **geminiignore-finops** — `/Users/melbourne/.agents/skills/geminiignore-finops`
   - Configure and optimize .geminiignore files for AI context window efficiency and token cost reduction (FinOps).
@@ -3017,6 +3481,108 @@ _None found (or no workspace open)._
 - **gitops-workflow** — `/Users/melbourne/.agents/skills/gitops-workflow`
   - Complete guide to implementing GitOps workflows with ArgoCD and Flux for automated Kubernetes deployments.
 
+- **gke-ai-troubleshooting-handle-disruption-gpu-tpu** — `/Users/melbourne/.agents/skills/gke-ai-troubleshooting-handle-disruption-gpu-tpu`
+  - >-
+
+- **gke-ai-troubleshooting-jobset-interruption** — `/Users/melbourne/.agents/skills/gke-ai-troubleshooting-jobset-interruption`
+  - >-
+
+- **gke-ai-troubleshooting-tpu-dynamic-slices-monitoring** — `/Users/melbourne/.agents/skills/gke-ai-troubleshooting-tpu-dynamic-slices-monitoring`
+  - >-
+
+- **gke-ai-troubleshooting-tpu-metrics-monitoring** — `/Users/melbourne/.agents/skills/gke-ai-troubleshooting-tpu-metrics-monitoring`
+  - >-
+
+- **gke-ai-troubleshooting-tpu-vbar-oom** — `/Users/melbourne/.agents/skills/gke-ai-troubleshooting-tpu-vbar-oom`
+  - >-
+
+- **gke-alert-configuration** — `/Users/melbourne/.agents/skills/gke-alert-configuration`
+  - >-
+
+- **gke-app-onboarding** — `/Users/melbourne/.agents/skills/gke-app-onboarding`
+  - >-
+
+- **gke-backup-dr** — `/Users/melbourne/.agents/skills/gke-backup-dr`
+  - >-
+
+- **gke-basics** — `/Users/melbourne/.agents/skills/gke-basics`
+  - >-
+
+- **gke-batch-hpc** — `/Users/melbourne/.agents/skills/gke-batch-hpc`
+  - >-
+
+- **gke-cluster-autoscaler** — `/Users/melbourne/.agents/skills/gke-cluster-autoscaler`
+  - >-
+
+- **gke-cluster-creation** — `/Users/melbourne/.agents/skills/gke-cluster-creation`
+  - >-
+
+- **gke-compute-classes** — `/Users/melbourne/.agents/skills/gke-compute-classes`
+  - >-
+
+- **gke-cost-analysis** — `/Users/melbourne/.agents/skills/gke-cost-analysis`
+  - >-
+
+- **gke-cost-optimization** — `/Users/melbourne/.agents/skills/gke-cost-optimization`
+  - >-
+
+- **gke-custom-golden-image-discovery** — `/Users/melbourne/.agents/skills/gke-custom-golden-image-discovery`
+  - >-
+
+- **gke-golden-path** — `/Users/melbourne/.agents/skills/gke-golden-path`
+  - >-
+
+- **gke-inference** — `/Users/melbourne/.agents/skills/gke-inference`
+  - >-
+
+- **gke-manifest-generation** — `/Users/melbourne/.agents/skills/gke-manifest-generation`
+  - >-
+
+- **gke-multitenancy** — `/Users/melbourne/.agents/skills/gke-multitenancy`
+  - >-
+
+- **gke-networking** — `/Users/melbourne/.agents/skills/gke-networking`
+  - >-
+
+- **gke-node-notready** — `/Users/melbourne/.agents/skills/gke-node-notready`
+  - >-
+
+- **gke-observability** — `/Users/melbourne/.agents/skills/gke-observability`
+  - >-
+
+- **gke-platform-security** — `/Users/melbourne/.agents/skills/gke-platform-security`
+  - >-
+
+- **gke-productionize** — `/Users/melbourne/.agents/skills/gke-productionize`
+  - Orchestrates comprehensive production readiness reviews and assessments for GKE clusters and workloads across scalability, security, reliability, observability, backup/DR, and cost optimization. Use when asked to product
+
+- **gke-reliability** — `/Users/melbourne/.agents/skills/gke-reliability`
+  - >-
+
+- **gke-service-networking** — `/Users/melbourne/.agents/skills/gke-service-networking`
+  - >-
+
+- **gke-storage** — `/Users/melbourne/.agents/skills/gke-storage`
+  - >-
+
+- **gke-storage-troubleshooting** — `/Users/melbourne/.agents/skills/gke-storage-troubleshooting`
+  - >-
+
+- **gke-upgrades** — `/Users/melbourne/.agents/skills/gke-upgrades`
+  - >-
+
+- **gke-workload-identity** — `/Users/melbourne/.agents/skills/gke-workload-identity`
+  - >-
+
+- **gke-workload-scaling** — `/Users/melbourne/.agents/skills/gke-workload-scaling`
+  - >-
+
+- **gke-workload-security** — `/Users/melbourne/.agents/skills/gke-workload-security`
+  - >-
+
+- **gke-workload-troubleshooting** — `/Users/melbourne/.agents/skills/gke-workload-troubleshooting`
+  - >-
+
 - **glassmorphism** — `/Users/melbourne/.agents/skills/glassmorphism`
   - This skill should be used when the user asks to "add a glassmorphism effect", "frosted glass UI", "Apple liquid glass style", "frosted blur card", "translucent glass panel animation", "make a frosted nav bar", "build a g
 
@@ -3050,17 +3616,143 @@ _None found (or no workspace open)._
 - **google-ad-creative-generation** — `/Users/melbourne/.agents/skills/google-ad-creative-generation`
   - Generate Google Ads creatives using each::sense AI. Create display ads, YouTube thumbnails, Discovery ads, Performance Max assets, and responsive display ads optimized for Google's ad formats and best practices.
 
+- **google-ads-api-account-diagnostics** — `/Users/melbourne/.agents/skills/google-ads-api-account-diagnostics`
+  - >-
+
+- **google-ads-api-mcp-setup** — `/Users/melbourne/.agents/skills/google-ads-api-mcp-setup`
+  - Guides developers through downloading, configuring, and installing the official open-source Google Ads MCP Server. Use this skill when a user wants to connect their AI assistant (such as Gemini, Claude Code, or Cursor) t
+
+- **google-ads-api-quickstart** — `/Users/melbourne/.agents/skills/google-ads-api-quickstart`
+  - |
+
+- **google-agents-cli-onboarding** — `/Users/melbourne/.agents/skills/google-agents-cli-onboarding`
+  - >-
+
+- **google-analytics-admin-api-basics** — `/Users/melbourne/.agents/skills/google-analytics-admin-api-basics`
+  - >-
+
 - **google-analytics-automation** — `/Users/melbourne/.agents/skills/google-analytics-automation`
   - Automate Google Analytics tasks via Rube MCP (Composio): run reports, list accounts/properties, funnels, pivots, key events. Always search tools first for current schemas.
 
+- **google-analytics-data-api-basics** — `/Users/melbourne/.agents/skills/google-analytics-data-api-basics`
+  - >-
+
 - **google-calendar-automation** — `/Users/melbourne/.agents/skills/google-calendar-automation`
   - Lightweight Google Calendar integration with standalone OAuth authentication. No MCP server required.
+
+- **google-cloud-filestore-auditing** — `/Users/melbourne/.agents/skills/google-cloud-filestore-auditing`
+  - >-
+
+- **google-cloud-filestore-autoscale** — `/Users/melbourne/.agents/skills/google-cloud-filestore-autoscale`
+  - >-
+
+- **google-cloud-filestore-nfs-browser** — `/Users/melbourne/.agents/skills/google-cloud-filestore-nfs-browser`
+  - >-
+
+- **google-cloud-global-frontend-configuration** — `/Users/melbourne/.agents/skills/google-cloud-global-frontend-configuration`
+  - |
+
+- **google-cloud-networking-observability** — `/Users/melbourne/.agents/skills/google-cloud-networking-observability`
+  - >-
+
+- **google-cloud-recipe-auth** — `/Users/melbourne/.agents/skills/google-cloud-recipe-auth`
+  - Provides expert guidance on authenticating and authorizing to Google Cloud services and APIs, covering human users, service identities, Application Default Credentials (ADC), and best practices for secure access.
+
+- **google-cloud-recipe-foundation-builder** — `/Users/melbourne/.agents/skills/google-cloud-recipe-foundation-builder`
+  - >-
+
+- **google-cloud-recipe-onboarding** — `/Users/melbourne/.agents/skills/google-cloud-recipe-onboarding`
+  - >-
+
+- **google-cloud-scc-query** — `/Users/melbourne/.agents/skills/google-cloud-scc-query`
+  - >-
+
+- **google-cloud-slo-alert-configuration** — `/Users/melbourne/.agents/skills/google-cloud-slo-alert-configuration`
+  - >-
+
+- **google-cloud-solution-agentic-ai-bidirectional-streaming** — `/Users/melbourne/.agents/skills/google-cloud-solution-agentic-ai-bidirectional-streaming`
+  - >-
+
+- **google-cloud-solution-agentic-ai-borderless-data-lakehouse** — `/Users/melbourne/.agents/skills/google-cloud-solution-agentic-ai-borderless-data-lakehouse`
+  - >-
+
+- **google-cloud-solution-agentic-ai-data-science-workflow** — `/Users/melbourne/.agents/skills/google-cloud-solution-agentic-ai-data-science-workflow`
+  - >-
+
+- **google-cloud-solution-agentic-analytics-spark-knowledge-catalog** — `/Users/melbourne/.agents/skills/google-cloud-solution-agentic-analytics-spark-knowledge-catalog`
+  - >-
+
+- **google-cloud-solution-architecture** — `/Users/melbourne/.agents/skills/google-cloud-solution-architecture`
+  - >-
+
+- **google-cloud-solution-build-deploy-agents** — `/Users/melbourne/.agents/skills/google-cloud-solution-build-deploy-agents`
+  - >-
+
+- **google-cloud-solution-guided-gke-ai-migration** — `/Users/melbourne/.agents/skills/google-cloud-solution-guided-gke-ai-migration`
+  - >-
+
+- **google-cloud-solution-hybrid-search-alloydb** — `/Users/melbourne/.agents/skills/google-cloud-solution-hybrid-search-alloydb`
+  - >-
+
+- **google-cloud-solution-multi-agent-security** — `/Users/melbourne/.agents/skills/google-cloud-solution-multi-agent-security`
+  - >-
+
+- **google-cloud-solution-n-tier-serverless-web-app** — `/Users/melbourne/.agents/skills/google-cloud-solution-n-tier-serverless-web-app`
+  - >-
+
+- **google-cloud-solution-rag-enterprise-search-gke-sqldb** — `/Users/melbourne/.agents/skills/google-cloud-solution-rag-enterprise-search-gke-sqldb`
+  - >-
+
+- **google-cloud-storage-basics** — `/Users/melbourne/.agents/skills/google-cloud-storage-basics`
+  - >-
+
+- **google-cloud-storage-bucket-architect** — `/Users/melbourne/.agents/skills/google-cloud-storage-bucket-architect`
+  - >-
+
+- **google-cloud-storage-fuse** — `/Users/melbourne/.agents/skills/google-cloud-storage-fuse`
+  - >-
+
+- **google-cloud-waf-cost-optimization** — `/Users/melbourne/.agents/skills/google-cloud-waf-cost-optimization`
+  - Generates cost optimization guidance for Google Cloud workloads based on the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify cost requirements and constraints, and provide a
+
+- **google-cloud-waf-operational-excellence** — `/Users/melbourne/.agents/skills/google-cloud-waf-operational-excellence`
+  - >-
+
+- **google-cloud-waf-performance-optimization** — `/Users/melbourne/.agents/skills/google-cloud-waf-performance-optimization`
+  - >-
+
+- **google-cloud-waf-reliability** — `/Users/melbourne/.agents/skills/google-cloud-waf-reliability`
+  - >-
+
+- **google-cloud-waf-security** — `/Users/melbourne/.agents/skills/google-cloud-waf-security`
+  - >-
+
+- **google-cloud-waf-sustainability** — `/Users/melbourne/.agents/skills/google-cloud-waf-sustainability`
+  - >-
 
 - **google-docs-automation** — `/Users/melbourne/.agents/skills/google-docs-automation`
   - Lightweight Google Docs integration with standalone OAuth authentication. No MCP server required.
 
 - **google-drive-automation** — `/Users/melbourne/.agents/skills/google-drive-automation`
   - Lightweight Google Drive integration with standalone OAuth authentication. No MCP server required. Full read/write access.
+
+- **google-mobile-ads-android-migrate-to-next-gen** — `/Users/melbourne/.agents/skills/google-mobile-ads-android-migrate-to-next-gen`
+  - Migrates Android applications from the old, legacy Google Mobile
+
+- **google-mobile-ads-banner** — `/Users/melbourne/.agents/skills/google-mobile-ads-banner`
+  - >-
+
+- **google-mobile-ads-get-started** — `/Users/melbourne/.agents/skills/google-mobile-ads-get-started`
+  - >-
+
+- **google-mobile-ads-interstitial** — `/Users/melbourne/.agents/skills/google-mobile-ads-interstitial`
+  - >-
+
+- **google-mobile-ads-rewarded** — `/Users/melbourne/.agents/skills/google-mobile-ads-rewarded`
+  - >-
+
+- **google-mobile-ads-validate** — `/Users/melbourne/.agents/skills/google-mobile-ads-validate`
+  - >-
 
 - **google-sheets-automation** — `/Users/melbourne/.agents/skills/google-sheets-automation`
   - Lightweight Google Sheets integration with standalone OAuth authentication. No MCP server required. Full read/write access.
@@ -3272,6 +3964,18 @@ _None found (or no workspace open)._
 - **i18n-localization** — `/Users/melbourne/.agents/skills/i18n-localization`
   - Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.
 
+- **iam-helper-for-policy-management** — `/Users/melbourne/.agents/skills/iam-helper-for-policy-management`
+  - >-
+
+- **iam-helper-for-policy-simulator** — `/Users/melbourne/.agents/skills/iam-helper-for-policy-simulator`
+  - >-
+
+- **iam-helper-for-privileged-access-management** — `/Users/melbourne/.agents/skills/iam-helper-for-privileged-access-management`
+  - >-
+
+- **iam-helper-for-troubleshooting** — `/Users/melbourne/.agents/skills/iam-helper-for-troubleshooting`
+  - >-
+
 - **iconsax-library** — `/Users/melbourne/.agents/skills/iconsax-library`
   - Extensive icon library and AI-driven icon generation skill for premium UI/UX design.
 
@@ -3295,6 +3999,12 @@ _None found (or no workspace open)._
 
 - **ilya-sutskever** — `/Users/melbourne/.agents/skills/ilya-sutskever`
   - Agente que simula Ilya Sutskever — co-fundador da OpenAI, ex-Chief Scientist, fundador da SSI. Use quando quiser perspectivas sobre: AGI safety-first, consciência de IA, scaling laws, deep learning profundo, o episódio d
+
+- **ima-dai-sdk** — `/Users/melbourne/.agents/skills/ima-dai-sdk`
+  - >-
+
+- **ima-sdk-client-side** — `/Users/melbourne/.agents/skills/ima-sdk-client-side`
+  - >-
 
 - **image** — `/Users/melbourne/.agents/skills/image`
   - When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product mockups, profile banners, listing visuals, or brand assets. Also use when the user mentions 'AI imag
@@ -3380,6 +4090,9 @@ _None found (or no workspace open)._
 - **infographic-outline-creator** — `/Users/melbourne/.agents/skills/infographic-outline-creator`
   - |
 
+- **ingest** — `/Users/melbourne/.agents/skills/ingest`
+  - When you paste raw human input — a call transcript (Grain, Zoom, Granola, Fathom), a text or email from a client/partner/friend, a voice-memo dump, or meeting notes — and want it converted into structured work. Extracts 
+
 - **ingest-youtube** — `/Users/melbourne/.agents/skills/ingest-youtube`
   - Pull a YouTube video transcript into a queryable markdown vault with yt-dlp subtitle discovery, VTT cleanup, metadata frontmatter, and capture-seed stubs.
 
@@ -3448,6 +4161,9 @@ _None found (or no workspace open)._
 
 - **itil-expert** — `/Users/melbourne/.agents/skills/itil-expert`
   - Expert advisor for ITIL 4 and ITIL 5 (2026 digital product paradigm), specialized in AI-native governance, sustainability, and value co-creation.
+
+- **jab-hook** — `/Users/melbourne/.agents/skills/jab-hook`
+  - Gary Vaynerchuk's jab-jab-jab-right-hook framework applied to a personal portfolio rotation on X and LinkedIn. Jabs = build-in-public + educational (value). Hooks = promo (the ask). Each property in the user's configured
 
 - **java-pro** — `/Users/melbourne/.agents/skills/java-pro`
   - Master Java 21+ with modern features like virtual threads, pattern matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including GraalVM, Project Loom, and cloud-native patterns.
@@ -3550,6 +4266,9 @@ _None found (or no workspace open)._
 
 - **langchain-architecture** — `/Users/melbourne/.agents/skills/langchain-architecture`
   - Master the LangChain framework for building sophisticated LLM applications with agents, chains, memory, and tool integration.
+
+- **langextract-usage** — `/Users/melbourne/.agents/skills/langextract-usage`
+  - How to use LangExtract to extract structured information from text. Use when writing code that calls lx.extract(), building extraction pipelines, defining examples, or troubleshooting alignment issues.
 
 - **langfuse** — `/Users/melbourne/.agents/skills/langfuse`
   - Expert in Langfuse - the open-source LLM observability platform.
@@ -3776,6 +4495,9 @@ _None found (or no workspace open)._
 - **loop-library** — `/Users/melbourne/.agents/skills/loop-library`
   - Find, compare, adapt, and design bounded AI-agent feedback loops with explicit checks, stop rules, guardrails, and handoffs.
 
+- **loopify** — `/Users/melbourne/.agents/skills/loopify`
+  - When you want to set up an agent loop, cron-scheduled task, or recurring workflow that runs autonomously in Claude Code. Judgment layer on top of ScheduleWakeup, CronCreate, and the /loop skill — decides whether to use d
+
 - **loss-aversion-designer** — `/Users/melbourne/.agents/skills/loss-aversion-designer`
   - One sentence - what this skill does and when to invoke it
 
@@ -3798,7 +4520,7 @@ _None found (or no workspace open)._
   - Design and implement a complete ML pipeline for: $ARGUMENTS
 
 - **macos-cleaner** — `/Users/melbourne/.agents/skills/macos-cleaner`
-  - Analyze and reclaim macOS disk space through intelligent cleanup recommendations. This skill should be used when users report disk space issues, need to clean up their Mac, or want to understand what's consuming storage.
+  - >-
 
 - **macos-menubar-tuist-app** — `/Users/melbourne/.agents/skills/macos-menubar-tuist-app`
   - Build, refactor, or review SwiftUI macOS menubar apps that use Tuist.
@@ -3872,11 +4594,23 @@ _None found (or no workspace open)._
 - **makepad-widgets** — `/Users/melbourne/.agents/skills/makepad-widgets`
   - Version: makepad-widgets (dev branch) | Last Updated: 2026-01-19 > > Check for updates: https://crates.io/crates/makepad-widgets
 
+- **maker-council** — `/Users/melbourne/.agents/skills/maker-council`
+  - When you want multiple expert perspectives on a founder/operator question — a simulated personal board of advisors staffed by legendary founders, CEOs, and operators (Jason Fried, Elon Musk, Jeff Bezos, Jensen Huang, Bob
+
 - **malware-analyst** — `/Users/melbourne/.agents/skills/malware-analyst`
   - Expert malware analyst specializing in defensive malware research, threat intelligence, and incident response. Masters sandbox analysis, behavioral analysis, and malware family identification.
 
 - **manage-skills** — `/Users/melbourne/.agents/skills/manage-skills`
   - Discover, list, create, edit, toggle, copy, move, and delete AI agent skills across 11 tools (Cursor, Claude, Agents, Windsurf, Copilot, Codex, Cline, Aider, Continue, Roo Code, Augment)
+
+- **managed-airflow-dag-authoring** — `/Users/melbourne/.agents/skills/managed-airflow-dag-authoring`
+  - >-
+
+- **managed-airflow-dag-troubleshooting** — `/Users/melbourne/.agents/skills/managed-airflow-dag-troubleshooting`
+  - >-
+
+- **managed-airflow-migrations** — `/Users/melbourne/.agents/skills/managed-airflow-migrations`
+  - Provides guidance for migrating Apache Airflow DAGs in Managed Service for Apache Airflow (MSAA; formerly Cloud Composer). Covers migration to Airflow 2.11.1 (MSAA Gen 2 and 3) and Airflow 3 (MSAA Gen 3), including envir
 
 - **management-core** — `/Users/melbourne/.agents/skills/management-core`
   - Apply a common management operating model when work spans goals, actions, decisions, risks, priorities, accountability, cadence, or executive synthesis.
@@ -3974,6 +4708,9 @@ _None found (or no workspace open)._
 - **meta-ad-creative-generation** — `/Users/melbourne/.agents/skills/meta-ad-creative-generation`
   - Generate Meta (Facebook & Instagram) ad creatives using each::sense AI. Create feed ads, stories, reels, carousel images, and video ads optimized for Meta's ad formats and best practices.
 
+- **meta-sheets-bridge** — `/Users/melbourne/.agents/skills/meta-sheets-bridge`
+  - Deploy and maintain the Meta (Instagram + Facebook + Ads) → Google Sheets data bridge that feeds Looker Studio. Use when the user wants to pull IG/FB insights or Meta ad spend into a spreadsheet, set up or rotate Meta Gr
+
 - **metasploit-framework** — `/Users/melbourne/.agents/skills/metasploit-framework`
   - ⚠️ AUTHORIZED USE ONLY > This skill is for educational purposes or authorized security assessments only. > You must have explicit, written permission from the system owner before using this tool. > Misuse of this tool is
 
@@ -4036,6 +4773,9 @@ _None found (or no workspace open)._
 
 - **modern-javascript-patterns** — `/Users/melbourne/.agents/skills/modern-javascript-patterns`
   - Comprehensive guide for mastering modern JavaScript (ES6+) features, functional programming patterns, and best practices for writing clean, maintainable, and performant code.
+
+- **modern-web-guidance** — `/Users/melbourne/.agents/skills/modern-web-guidance`
+  - |
 
 - **molykit** — `/Users/melbourne/.agents/skills/molykit`
   - |
@@ -4403,6 +5143,9 @@ _None found (or no workspace open)._
 - **openclaw-github-repo-commander** — `/Users/melbourne/.agents/skills/openclaw-github-repo-commander`
   - 7-stage super workflow for GitHub repo audit, cleanup, PR review, and competitor analysis
 
+- **opensource-pipeline** — `/Users/melbourne/.agents/skills/opensource-pipeline`
+  - Open-source pipeline: fork, sanitize, and package private projects for safe public release. Chains 3 agents (forker, sanitizer, packager). Triggers: '/opensource', 'open source this', 'make this public', 'prepare for ope
+
 - **operations-management** — `/Users/melbourne/.agents/skills/operations-management`
   - Improve day-to-day operations through process mapping, capacity, handoffs, service levels, bottlenecks, incidents, standard work, and operating cadence.
 
@@ -4478,6 +5221,9 @@ _None found (or no workspace open)._
 - **particle-system** — `/Users/melbourne/.agents/skills/particle-system`
   - This skill should be used when the user asks to "build a particle system", "make confetti/snow/smoke/sparks", "create a connected-dot/constellation network background", "add a flow-field or curl-noise particle effect", "
 
+- **paste** — `/Users/melbourne/.agents/skills/paste`
+  - When you want to clean and reformat content (usually from your terminal) for pasting into Slack, Notion, Twitter/X, LinkedIn, email, GitHub, or plain text. Strips ANSI codes, box-drawing chars, terminal prompt artifacts,
+
 - **payment-integration** — `/Users/melbourne/.agents/skills/payment-integration`
   - Integrate Stripe, PayPal, and payment processors. Handles checkout flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing payments, billing, or subscription features.
 
@@ -4528,6 +5274,9 @@ _None found (or no workspace open)._
 
 - **permission-manager** — `/Users/melbourne/.agents/skills/permission-manager`
   - Manage opencode permissions: review always-allow lists, suggest safe read-only commands, configure permission patterns
+
+- **personal-cfo** — `/Users/melbourne/.agents/skills/personal-cfo`
+  - When you want to model personal financial scenarios — house purchase + rental income (ADU, bedroom rentals, house-hacking), renovation budgets, monthly cash flow forecasts, big-purchase decisions, savings/investment what
 
 - **personal-tool-builder** — `/Users/melbourne/.agents/skills/personal-tool-builder`
   - Expert in building custom tools that solve your own problems first.
@@ -4594,6 +5343,9 @@ _None found (or no workspace open)._
 
 - **plotly** — `/Users/melbourne/.agents/skills/plotly`
   - Interactive visualization library. Use when you need hover info, zoom, pan, or web-embeddable charts. Best for dashboards, exploratory analysis, and presentations. For static publication figures use matplotlib or scienti
+
+- **pm** — `/Users/melbourne/.agents/skills/pm`
+  - When you want to manage projects across your businesses using a kanban + Eisenhower methodology. One kanban per business (whatever portfolio of businesses, projects, or initiatives you run). Tool-agnostic — connects via 
 
 - **podcast-generation** — `/Users/melbourne/.agents/skills/podcast-generation`
   - Generate real audio narratives from text content using Azure OpenAI's Realtime API.
@@ -4862,6 +5614,9 @@ _None found (or no workspace open)._
 - **quarterly-planning-review** — `/Users/melbourne/.agents/skills/quarterly-planning-review`
   - Run quarterly strategy and planning reviews covering assumptions, objectives, portfolio value, capacity, budget outlook, risks, trade-offs, and next-quarter commitments.
 
+- **quickbooks-automation** — `/Users/melbourne/.agents/skills/quickbooks-automation`
+  - Automate QuickBooks accounting workflows including invoicing, expenses, reporting, and bank reconciliation
+
 - **radix-ui-design-system** — `/Users/melbourne/.agents/skills/radix-ui-design-system`
   - Build accessible design systems with Radix UI primitives. Headless component customization, theming strategies, and compound component patterns for production-grade UI libraries.
 
@@ -4915,6 +5670,9 @@ _None found (or no workspace open)._
 
 - **reactivation-specialist** — `/Users/melbourne/.agents/skills/reactivation-specialist`
   - Use when the user asks to "build a win-back campaign", "re-engage lapsed subscribers", "run a re-permission / re-consent sweep", or "sunset my dead list"; produces a closed-loop reactivation program — a lapsed-cohort def
+
+- **read-book** — `/Users/melbourne/.agents/skills/read-book`
+  - When you want to read and extract structured notes from a book — PDF, EPUB, MOBI, markdown, .txt, pasted text, or URL to a public-domain work. Reads in chunks (by chapter when a TOC exists, by 50-page blocks otherwise), 
 
 - **readme** — `/Users/melbourne/.agents/skills/readme`
   - You are an expert technical writer creating comprehensive project documentation. Your goal is to write a README.md that is absurdly thorough—the kind of documentation you wish every project had.
@@ -4987,6 +5745,9 @@ _None found (or no workspace open)._
 
 - **resume-design-generation** — `/Users/melbourne/.agents/skills/resume-design-generation`
   - Generate professional resume and CV designs using each::sense AI. Create modern, creative, minimalist, executive, tech, academic, infographic, two-column, ATS-friendly, and portfolio-style resumes optimized for various i
+
+- **retrieving-developer-knowledge** — `/Users/melbourne/.agents/skills/retrieving-developer-knowledge`
+  - >-
 
 - **returns-reverse-logistics** — `/Users/melbourne/.agents/skills/returns-reverse-logistics`
   - Codified expertise for returns authorisation, receipt and inspection, disposition decisions, refund processing, fraud detection, and warranty claims management.
@@ -5128,6 +5889,24 @@ _None found (or no workspace open)._
 
 - **search-term-miner** — `/Users/melbourne/.agents/skills/search-term-miner`
   - Use when the user asks to "mine my search terms", "find new keywords from converting queries", "build a negative-keyword list", or "cut wasted paid spend"; harvests converting queries into new keywords/ad-groups, builds 
+
+- **second-brain** — `/Users/melbourne/.agents/skills/second-brain`
+  - When you want to capture into, compile, query, lint, or connect your personal Second Brain. Wraps the Karpathy LLM Wiki schema (Obsidian or any markdown vault) — raw/ (unprocessed sources), wiki/ (AI-compiled interlinked
+
+- **secops-cases** — `/Users/melbourne/.agents/skills/secops-cases`
+  - >-
+
+- **secops-detection-engineering** — `/Users/melbourne/.agents/skills/secops-detection-engineering`
+  - >-
+
+- **secops-hunt** — `/Users/melbourne/.agents/skills/secops-hunt`
+  - >-
+
+- **secops-investigate** — `/Users/melbourne/.agents/skills/secops-investigate`
+  - >-
+
+- **secops-triage** — `/Users/melbourne/.agents/skills/secops-triage`
+  - >-
 
 - **secrets-management** — `/Users/melbourne/.agents/skills/secrets-management`
   - Secure secrets management practices for CI/CD pipelines using Vault, AWS Secrets Manager, and other tools.
@@ -5441,6 +6220,9 @@ _None found (or no workspace open)._
 - **skill-writer** — `/Users/melbourne/.agents/skills/skill-writer`
   - Create and improve agent skills following the Agent Skills specification. Use when asked to create, write, or update skills.
 
+- **skillify** — `/Users/melbourne/.agents/skills/skillify`
+  - When you want to create, adapt, or update a Claude Code skill in one of your sibling repos (list your own repos in ~/.config/makerskills/skillify/repos.yaml; defaults to makerskills). Routes to the right mode automatical
+
 - **skin-health-analyzer** — `/Users/melbourne/.agents/skills/skin-health-analyzer`
   - Analyze skin health data, identify skin problem patterns, assess skin health status. Supports correlation analysis with nutrition, chronic diseases, and medication data.
 
@@ -5458,6 +6240,9 @@ _None found (or no workspace open)._
 
 - **sleep-analyzer** — `/Users/melbourne/.agents/skills/sleep-analyzer`
   - 分析睡眠数据、识别睡眠模式、评估睡眠质量，并提供个性化睡眠改善建议。支持与其他健康数据的关联分析。
+
+- **slide-deck** — `/Users/melbourne/.agents/skills/slide-deck`
+  - When you want to draft, update, convert, or export a slide deck for a React/Next.js slide system (${SLIDE_DECK_REPO:-$HOME/code/your-slide-deck-site}/src/app/slides/). Writes TypeScript Slide[] arrays using your primitiv
 
 - **slo-implementation** — `/Users/melbourne/.agents/skills/slo-implementation`
   - Framework for defining and implementing Service Level Indicators (SLIs), Service Level Objectives (SLOs), and error budgets.
@@ -5491,6 +6276,9 @@ _None found (or no workspace open)._
 
 - **social-creative-builder** — `/Users/melbourne/.agents/skills/social-creative-builder`
   - Use when the user asks to "turn this idea into posts for every platform", "write the X thread / LinkedIn post / 小红书 note", or "spec the carousel slides"; turns one idea into N platform-native ready-to-paste packages — po
+
+- **social-fetch** — `/Users/melbourne/.agents/skills/social-fetch`
+  - When you or another skill needs to fetch the content of a social media post by URL — tweet, X thread, LinkedIn post, Instagram post, TikTok video, Bluesky post, Reddit thread, Mastodon status, Threads post, Hacker News t
 
 - **social-measurement-loop** — `/Users/melbourne/.agents/skills/social-measurement-loop`
   - Use when the user asks to "run the weekly social readout", "which denominator does our engagement rate use", or "which posts won this week and what changes next cycle"; produces the organic-social metric dictionary (ever
@@ -5527,6 +6315,9 @@ _None found (or no workspace open)._
 
 - **solidity-security** — `/Users/melbourne/.agents/skills/solidity-security`
   - Master smart contract security best practices, vulnerability prevention, and secure Solidity development patterns.
+
+- **spanner-basics** — `/Users/melbourne/.agents/skills/spanner-basics`
+  - >-
 
 - **spark-optimization** — `/Users/melbourne/.agents/skills/spark-optimization`
   - Optimize Apache Spark jobs with partitioning, caching, shuffle optimization, and memory tuning. Use when improving Spark performance, debugging slow jobs, or scaling data processing pipelines.
@@ -5921,6 +6712,9 @@ _None found (or no workspace open)._
 - **tool-use-guardian** — `/Users/melbourne/.agents/skills/tool-use-guardian`
   - FREE — Intelligent tool-call reliability wrapper. Monitors, retries, fixes, and learns from tool failures. Auto-recovers from truncated JSON, timeouts, rate limits, and mid-chain failures.
 
+- **toolify** — `/Users/melbourne/.agents/skills/toolify`
+  - When you want to integrate an external tool, API, MCP server, or service into a project — the wizard walks you through auth, config, env vars, client wrapper code, example usage, and (optionally) a smoke-test. Scoped to 
+
 - **tools-page-seo-optimizer** — `/Users/melbourne/.agents/skills/tools-page-seo-optimizer`
   - Framework-agnostic SEO workflow for any site with multiple tool, product, or feature pages. Covers duplicate content, unique meta tags, heading hierarchy, internal linking, URL slugs, E-E-A-T, content registry pattern fo
 
@@ -5993,6 +6787,9 @@ _None found (or no workspace open)._
 - **ui-component** — `/Users/melbourne/.agents/skills/ui-component`
   - Generate a new UI component that follows StyleSeed Toss conventions for structure, tokens, accessibility, and component ergonomics.
 
+- **ui-logo-designer** — `/Users/melbourne/.agents/skills/ui-logo-designer`
+  - |
+
 - **ui-page** — `/Users/melbourne/.agents/skills/ui-page`
   - Scaffold a new mobile-first page using StyleSeed Toss layout patterns, section rhythm, and existing shell components.
 
@@ -6052,6 +6849,9 @@ _None found (or no workspace open)._
 
 - **unsplash-integration** — `/Users/melbourne/.agents/skills/unsplash-integration`
   - Integration skill for searching and fetching high-quality, free-to-use professional photography from Unsplash.
+
+- **unstuck** — `/Users/melbourne/.agents/skills/unstuck`
+  - When a solution seems impossible and the path forward is blocked — the antidote to any roadblock or wall. Refuses to take no for an answer: classifies what kind of \"no\" you actually hit, then runs targeted lateral-thin
 
 - **upgrading-expo** — `/Users/melbourne/.agents/skills/upgrading-expo`
   - Upgrade Expo SDK versions
@@ -6248,6 +7048,9 @@ _None found (or no workspace open)._
 - **warren-buffett** — `/Users/melbourne/.agents/skills/warren-buffett`
   - Agente que simula Warren Buffett — o maior investidor do seculo XX e XXI, CEO da Berkshire Hathaway, discipulo de Benjamin Graham e socio intelectual de Charlie Munger.
 
+- **watch-video** — `/Users/melbourne/.agents/skills/watch-video`
+  - When you want to extract content from a video — YouTube, Loom, Vimeo, Riverside, Zoom recording, local MP4, X/IG video, anything yt-dlp supports. Three depth modes user picks per invocation — transcript (just words, fast
+
 - **wcag-audit-patterns** — `/Users/melbourne/.agents/skills/wcag-audit-patterns`
   - Comprehensive guide to auditing web content against WCAG 2.2 guidelines with actionable remediation strategies.
 
@@ -6359,6 +7162,9 @@ _None found (or no workspace open)._
 - **workflow-patterns** — `/Users/melbourne/.agents/skills/workflow-patterns`
   - Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding the verification protocol.
 
+- **workload-manager-basics** — `/Users/melbourne/.agents/skills/workload-manager-basics`
+  - >-
+
 - **wrike-automation** — `/Users/melbourne/.agents/skills/wrike-automation`
   - Automate Wrike project management via Rube MCP (Composio): create tasks/folders, manage projects, assign work, and track progress. Always search tools first for current schemas.
 
@@ -6461,6 +7267,9 @@ _None found (or no workspace open)._
 - **adapt** — `/Users/melbourne/.cursor/skills/adapt`
   - Responsive layout pass covering breakpoints, touch targets, safe areas, and fluid type. Use when the UI has layout or touch issues on mobile/tablet, when adding a new screen that hasn't been tested across viewports, or w
 
+- **analyzing-nonprofit-tax-compliance** — `/Users/melbourne/.cursor/skills/analyzing-nonprofit-tax-compliance`
+  - Evaluates tax-exempt organization compliance with Form 990, UBIT, and private foundation requirements. Use when managing nonprofit tax, reviewing Form 990, or analyzing UBIT exposure.
+
 - **animate** — `/Users/melbourne/.cursor/skills/animate`
   - Motion design pass — adds purposeful animations or removes excessive ones, respecting MOTION_INTENSITY and the project's animation stack. Use when the user asks to add animation, "make it feel smoother", fix janky transi
 
@@ -6497,11 +7306,17 @@ _None found (or no workspace open)._
 - **finalize** — `/Users/melbourne/.cursor/skills/finalize`
   - Pre-ship gate — runs detector, verifies brief and tokens, applies the 10-pass finish bar, ranks findings by feedback hierarchy. Use when the user wants to ship, merge, or finalize a surface and needs a verdict (READY / N
 
+- **finance** — `/Users/melbourne/.cursor/skills/finance`
+  - Budget planning, cash flow management, financial modeling, reporting, tax strategy, investment analysis, and fundraising skills. Spreadsheet models, P&L, balance sheets. Triggers on: finance, budget, cash flow, financial
+
 - **harden** — `/Users/melbourne/.cursor/skills/harden`
   - Production-readiness pass — audits and implements the full non-happy-path matrix: loading skeletons, empty states, error messages, partial data, i18n, offline, permissions, and first-run guidance. Use when preparing a su
 
 - **heuristic** — `/Users/melbourne/.cursor/skills/heuristic`
   - Produce a scored heuristic critique of the UI using Nielsen's 10 + 6 design laws + optional persona walkthroughs. Outputs a machine-parseable scorecard plus a 0-100 UsabilityScore (the judged companion to the determinist
+
+- **nonprofit-compliance-summary** — `/Users/melbourne/.cursor/skills/nonprofit-compliance-summary`
+  - Generates a structured regulatory compliance summary for U.S. 501(c)(3) nonprofit organizations covering federal tax-exempt status, multi-state charitable registration, and governance. Use when conducting compliance audi
 
 - **polish** — `/Users/melbourne/.cursor/skills/polish`
   - Final craft pass applying the compound details from the polish checklist — micro-typography, spacing rhythm, hover states, and a signature detail — directly to code. Use when the surface is functionally complete but feel
@@ -6520,6 +7335,9 @@ _None found (or no workspace open)._
 
 - **shape** — `/Users/melbourne/.cursor/skills/shape`
   - Wireframe-first pass — outputs an ASCII layout + state list + content inventory + question list before any code. Use when starting a new screen from scratch or when the user's brief is still ambiguous. Invoke when the us
+
+- **skill-creator** — `/Users/melbourne/.cursor/skills/skill-creator`
+  - Author or review AgentSkills: create, repair, validate, or restructure SKILL.md files and bundled resources.
 
 - **social-media** — `/Users/melbourne/.cursor/skills/social-media`
   - Social media strategy, content creation, and platform optimization. Use when creating social content, developing engagement strategies, optimizing for platform algorithms, or building community.

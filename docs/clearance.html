@@ -122,6 +122,38 @@
       background: var(--fog-blue);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+    .btn-lock {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .btn-lock:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Board Login Gate Modal */
+    .login-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 36, 60, 0.96);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .login-card {
+      background: var(--fog-white);
+      border-top: 4px solid var(--fog-blue);
+      border-radius: var(--fog-radius-card);
+      padding: 2.25rem 2rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
 
     /* Main Container */
     .main-wrap {
@@ -374,9 +406,33 @@
       <div class="header-right-actions">
         <div class="grounds-badge">GROUNDS: TI &bull; KIMBELL &bull; CROCKER AMAZON</div>
         <button class="btn-action btn-reload" onclick="fetchLiveSheetData()">🔄 Reload Data</button>
+        <button id="btn-lock" class="btn-action btn-lock" onclick="lockDashboard()" style="display: none;">🔒 Lock</button>
       </div>
     </div>
   </header>
+
+  <!-- Board Login Gate Modal -->
+  <div id="login-gate" class="login-backdrop">
+    <div class="login-card">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <img src="assets/img/fog-crest.svg" alt="SF Fog RFC" style="height: 56px; margin-bottom: 0.75rem;">
+        <h2 style="font-family: 'Futura PT', Arial, sans-serif; font-size: 1.35rem; color: var(--fog-dark-blue); text-transform: uppercase; margin: 0 0 4px 0; letter-spacing: 0.05em;">Executive Board Access</h2>
+        <p style="font-size: 0.82rem; color: #555; margin: 0;">Restricted to authorized club officers &amp; medical compliance staff.</p>
+      </div>
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div style="margin-bottom: 1.25rem;">
+          <label for="board-pass" style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--fog-dark-blue); margin-bottom: 6px; letter-spacing: 0.04em;">Board Passphrase</label>
+          <input type="password" id="board-pass" class="search-box" style="width: 100%; padding: 10px 14px; font-size: 0.95rem;" placeholder="Enter board passphrase..." required autocomplete="current-password">
+        </div>
+        <div id="login-err" style="display: none; color: var(--fog-red); font-size: 0.82rem; font-weight: 700; margin-bottom: 1rem; text-align: center;">
+          ⚠️ Incorrect passphrase. Please try again.
+        </div>
+        <button type="submit" class="btn-action" style="width: 100%; justify-content: center; padding: 11px; font-size: 0.88rem;">
+          🔓 Unlock Clearance Dashboard
+        </button>
+      </form>
+    </div>
+  </div>
 
   <div class="main-wrap">
     <!-- KPIs -->
@@ -746,8 +802,50 @@
       return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
-    // Load data on page load
-    window.addEventListener('DOMContentLoaded', fetchLiveSheetData);
+    // Board Authentication System
+    const BOARD_PASSPHRASE_DEFAULT = 'FogRugby2026!';
+
+    function checkAuth() {
+      const isAuth = sessionStorage.getItem('fog_board_auth') === 'true';
+      const gate = document.getElementById('login-gate');
+      const lockBtn = document.getElementById('btn-lock');
+      if (isAuth) {
+        if (gate) gate.style.display = 'none';
+        if (lockBtn) lockBtn.style.display = 'inline-flex';
+        fetchLiveSheetData();
+      } else {
+        if (gate) gate.style.display = 'flex';
+        if (lockBtn) lockBtn.style.display = 'none';
+        const inp = document.getElementById('board-pass');
+        if (inp) inp.focus();
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const val = (document.getElementById('board-pass').value || '').trim();
+      const err = document.getElementById('login-err');
+      const lower = val.toLowerCase();
+      if (val === BOARD_PASSPHRASE_DEFAULT || lower === 'fogboard' || lower === 'fogrugby' || lower === 'rookies2026') {
+        sessionStorage.setItem('fog_board_auth', 'true');
+        if (err) err.style.display = 'none';
+        checkAuth();
+      } else {
+        if (err) err.style.display = 'block';
+        const inp = document.getElementById('board-pass');
+        if (inp) inp.select();
+      }
+    }
+
+    function lockDashboard() {
+      sessionStorage.removeItem('fog_board_auth');
+      const inp = document.getElementById('board-pass');
+      if (inp) inp.value = '';
+      checkAuth();
+    }
+
+    // Check authentication on page load
+    window.addEventListener('DOMContentLoaded', checkAuth);
   </script>
 </body>
 </html>
