@@ -6,6 +6,10 @@
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
   <meta name="x-apple-disable-message-reformatting" />
   <title>The Foghorn · Preseason, Pathways &amp; Gear Exchange · SF Fog RFC</title>
+  
+  <!-- Official SF Fog RFC Adobe Typekit Font (Futura PT) -->
+  <link rel="stylesheet" href="https://use.typekit.net/ywb7cmm.css" />
+  
   <!--[if mso]>
   <noscript>
     <xml>
@@ -17,7 +21,11 @@
   <![endif]-->
   <style type="text/css">
     /* Client resets */
-    body, table, td, p, a, h1, h2, h3, span { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Futura PT', Futura, Arial, Helvetica, sans-serif; }
+    body, table, td, p, a, h1, h2, h3, span {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
+    }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
     img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
     body { margin: 0; padding: 0; width: 100% !important; background-color: #F1F2F3; -webkit-font-smoothing: antialiased; }
@@ -25,22 +33,29 @@
     /* Responsive styles */
     @media only screen and (max-width: 600px) {
       .email-container { width: 100% !important; max-width: 100% !important; }
-      .fluid-col { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+      .fluid-col { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding-left: 0 !important; padding-right: 0 !important; }
+      .preseason-col { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 20px !important; }
       .menu-col { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; }
       .stack-padding { padding-left: 16px !important; padding-right: 16px !important; }
       .fluid-img { width: 100% !important; max-width: 100% !important; height: auto !important; }
       .h1-mobile { font-size: 26px !important; line-height: 30px !important; }
-      .h2-mobile { font-size: 21px !important; line-height: 25px !important; }
+      .h2-mobile { font-size: 22px !important; line-height: 26px !important; }
       .qr-col { display: block !important; width: 100% !important; max-width: 100% !important; margin-right: 0 !important; margin-bottom: 14px !important; }
-      .btn-mobile { width: 100% !important; text-align: center !important; box-sizing: border-box !important; }
-      .btn-cell { display: block !important; width: 100% !important; padding-right: 0 !important; margin-bottom: 8px !important; }
+      
+      /* Mobile Button Stacking */
+      .btn-container-table { width: 100% !important; }
+      .btn-stack-cell { display: block !important; width: 100% !important; padding-right: 0 !important; padding-bottom: 10px !important; }
+      .btn-table { width: 100% !important; }
+      .btn-table td { width: 100% !important; text-align: center !important; }
+      .btn-link { display: block !important; width: 100% !important; text-align: center !important; box-sizing: border-box !important; }
+      
       .masthead-title { font-size: 22px !important; line-height: 24px !important; }
       .footer-col { display: block !important; width: 100% !important; max-width: 100% !important; text-align: center !important; }
       .footer-crest { margin: 0 auto 14px auto !important; }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #F1F2F3; color: #141718; font-family: 'Futura PT', Futura, Arial, Helvetica, sans-serif;">
+<body style="margin: 0; padding: 0; background-color: #F1F2F3; color: #141718; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 15px; line-height: 1.65;">
 
   <!-- Preheader text (inbox preview) -->
   <div style="display: none; font-size: 1px; color: #F1F2F3; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
@@ -102,7 +117,7 @@
                     <div class="masthead-title" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 26px; line-height: 1.1; font-weight: 800; color: #FFFFFF; letter-spacing: 0.05em; text-transform: uppercase;">
                       The Foghorn
                     </div>
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; font-weight: 600; color: #24A0F1; letter-spacing: 0.04em; margin-top: 3px;">
+                    <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #24A0F1; letter-spacing: 0.03em; margin-top: 4px;">
                       Issue 25 &middot; October 29, 2026 &middot; San Francisco Fog RFC
                     </div>
                   </td>
@@ -129,27 +144,27 @@
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#president" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; From the President</a>
+                          <a href="#president" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; From the President</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#key-dates" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Key Dates</a>
+                          <a href="#key-dates" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Key Dates</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#pathways" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Pathways to Rugby</a>
+                          <a href="#pathways" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Pathways to Rugby</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#preseason" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Preseason Practice</a>
+                          <a href="#preseason" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Preseason Practice</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#cipp" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; USA Rugby (CIPP)</a>
+                          <a href="#cipp" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; USA Rugby (CIPP)</a>
                         </td>
                       </tr>
                     </table>
@@ -160,27 +175,27 @@
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#gear-swap" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Rugby Gear Exchange</a>
+                          <a href="#gear-swap" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Rugby Gear Exchange</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#rucktacular" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; RuckTacular &middot; San Diego</a>
+                          <a href="#rucktacular" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; RuckTacular &middot; San Diego</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#recognition" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Lifting the Fog Honors</a>
+                          <a href="#recognition" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Lifting the Fog Honors</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#suggestions" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Suggestion Box</a>
+                          <a href="#suggestions" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Suggestion Box</a>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding-bottom: 6px;">
-                          <a href="#donations" style="color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; font-family: 'Futura PT', Futura, Arial, sans-serif; display: block; padding: 7px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Support &amp; Donations</a>
+                          <a href="#donations" style="color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; display: block; padding: 8px 10px; background-color: #003559; border-radius: 2px; border: 1px solid #1d4a6b;">&rsaquo; Support &amp; Donations</a>
                         </td>
                       </tr>
                     </table>
@@ -193,8 +208,8 @@
 
           <!-- ======================================================== -->
           <!-- 1. PRESIDENT'S UPDATE (Pink Accent #FFAFC8)               -->
-          <!-- Folded board updates inside + flat sign-off (no chip)    -->
-          <!-- 0px left/right padding so card spans 100% of the column  -->
+          <!-- Clean rectangular portrait (NO circles, NO pink frames)   -->
+          <!-- Folded Board Dispatches, 0px left/right card padding     -->
           <!-- ======================================================== -->
           <tr>
             <td id="president" style="padding: 14px 0 8px 0;">
@@ -203,23 +218,23 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h1 class="h1-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 30px; line-height: 1.15; font-weight: 800; color: #00243C; letter-spacing: 0.02em;">
+                    <h1 class="h1-mobile" style="margin: 0 0 16px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 30px; line-height: 1.15; font-weight: 800; color: #00243C; letter-spacing: 0.02em;">
                       Preseason Is Here
                     </h1>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 15px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       Fog Family,
                     </p>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       What an extraordinary start to our fall rugby calendar. Sunday's position calling ceremony was a moving tribute to the strength, dedication, and camaraderie that define San Francisco Fog RFC. Watching our 2026 Pathways rookies step forward and claim their positions was an unforgettable moment for the entire club.
                     </p>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       I want to extend my heartfelt thanks to <strong>Alvin</strong> and every Pathways lead and coach who poured countless hours of patience, skill-building, and heart into this cohort over the last month. Our club grows stronger because of your selfless leadership.
                     </p>
 
-                    <p style="margin: 0 0 18px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 18px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       Tonight, we officially kick off preseason training at Crocker Amazon. Whether you're a ten-year veteran or a fresh Pathways graduate, bring your boots, your mouthguard, and your heart. Let's build something special together this season.
                     </p>
 
@@ -228,7 +243,7 @@
                       <tr>
                         <td style="padding: 16px 18px;">
                           
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 15px; font-weight: 700; color: #00243C; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">
+                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 800; color: #00243C; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">
                             Updates from the Board
                           </div>
 
@@ -239,10 +254,10 @@
                                 <img src="https://events.fogrugby.com/assets/board/bryan-langley.jpg" width="46" height="58" alt="Bryan Langley, Operations Director" style="display: block; width: 46px; height: 58px; border-radius: 2px; object-fit: cover; border: 1px solid #DCDDDE;" />
                               </td>
                               <td valign="top">
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">
                                   Operations &middot; Bryan Langley
                                 </div>
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #141718; margin-top: 3px;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718; margin-top: 3px;">
                                   &ldquo;Medkit inventory and refill is complete. I'll get a full ball count over the next couple weeks as preseason starts up. All other equipment is accounted for, and AirTag batteries have been replaced so we're set for the year.&rdquo;
                                 </div>
                               </td>
@@ -256,10 +271,10 @@
                                 <img src="https://events.fogrugby.com/assets/board/justice-d.jpg" width="46" height="58" alt="Justice, Fundraising Director" style="display: block; width: 46px; height: 58px; border-radius: 2px; object-fit: cover; border: 1px solid #DCDDDE;" />
                               </td>
                               <td valign="top">
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">
                                   Fundraising &middot; Justice
                                 </div>
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #141718; margin-top: 3px;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718; margin-top: 3px;">
                                   &ldquo;A massive thank-you to all the volunteers who poured beers, sold raffle tickets, and came out to support our Eagle Beer Bust! Your generosity directly funds pitch rental fees, referee allocations, and travel subsidies.&rdquo;
                                 </div>
                               </td>
@@ -270,20 +285,20 @@
                       </tr>
                     </table>
 
-                    <!-- President Sign-off Block (Clean flat layout: photo & sign-off, no nested inside card) -->
+                    <!-- President Sign-off Block (Clean rectangular portrait matching Bryan & Justice, NO circle, NO pink frame) -->
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 14px; border-top: 1px solid #F1F2F3; padding-top: 14px;">
                       <tr>
-                        <td valign="middle" width="62" style="padding-right: 14px;">
-                          <img src="https://events.fogrugby.com/assets/board/justin-melbourne.jpg" width="56" height="56" alt="Justin Melbourne, President of SF Fog RFC" style="display: block; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid #FFAFC8;" />
+                        <td valign="middle" width="52" style="padding-right: 14px;">
+                          <img src="https://events.fogrugby.com/assets/board/justin-melbourne.jpg" width="48" height="60" alt="Justin Melbourne, President of SF Fog RFC" style="display: block; width: 48px; height: 60px; border-radius: 2px; object-fit: cover; border: 1px solid #DCDDDE;" />
                         </td>
                         <td valign="middle">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #00243C; line-height: 1.2;">
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #00243C; line-height: 1.2;">
                             Justin Melbourne
                           </div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #006EB6; line-height: 1.3;">
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #006EB6; line-height: 1.35;">
                             President, San Francisco Fog RFC
                           </div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #666666; line-height: 1.3;">
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666; line-height: 1.35;">
                             <a href="mailto:president@fogrugby.com" style="color: #006EB6; text-decoration: none;">president@fogrugby.com</a>
                           </div>
                         </td>
@@ -298,7 +313,7 @@
 
           <!-- ======================================================== -->
           <!-- 2. STANDALONE CARD: KEY DATES (Pitch Navy Accent #00243C) -->
-          <!-- Standardized date badges (Navy/Sky Blue), No chip        -->
+          <!-- Standardized uniform date badges (Navy/Sky Blue), No chip -->
           <!-- 0px left/right padding so card spans 100% of the column  -->
           <!-- ======================================================== -->
           <tr>
@@ -308,7 +323,7 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Key Dates &amp; Upcoming Events
                     </h2>
 
@@ -322,8 +337,8 @@
                           <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 17px; font-weight: 800; color: #FFFFFF; line-height: 1.1;">OCT 29</div>
                         </td>
                         <td valign="middle" bgcolor="#F1F2F3" style="padding: 10px 14px; border-radius: 2px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Preseason Practice Kickoff</div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #141718;">7:45 PM &ndash; 9:45 PM &middot; Crocker Amazon Park (Field 1)</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Preseason Practice Kickoff</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">7:45 PM &ndash; 9:45 PM &middot; Crocker Amazon Park (Field 1)</div>
                         </td>
                       </tr>
 
@@ -334,8 +349,8 @@
                           <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 17px; font-weight: 800; color: #FFFFFF; line-height: 1.1;">NOV 7</div>
                         </td>
                         <td valign="middle" bgcolor="#F1F2F3" style="padding: 10px 14px; border-radius: 2px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Fog Rugby Gear Exchange</div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #141718;">3:00 PM &ndash; 7:00 PM &middot; The Mothership (3152 Mission St)</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Fog Rugby Gear Exchange</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">3:00 PM &ndash; 7:00 PM &middot; The Mothership (3152 Mission St)</div>
                         </td>
                       </tr>
 
@@ -346,8 +361,8 @@
                           <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 17px; font-weight: 800; color: #FFFFFF; line-height: 1.1;">NOV 14</div>
                         </td>
                         <td valign="middle" bgcolor="#F1F2F3" style="padding: 10px 14px; border-radius: 2px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Preseason Friendly: Fog vs. USF</div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #141718;">Kickoff 1:00 PM &middot; Treasure Island Field</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">Preseason Friendly: Fog vs. USF</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">Kickoff 1:00 PM &middot; Treasure Island Field</div>
                         </td>
                       </tr>
 
@@ -358,8 +373,8 @@
                           <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 17px; font-weight: 800; color: #FFFFFF; line-height: 1.1;">TOUR</div>
                         </td>
                         <td valign="middle" bgcolor="#F1F2F3" style="padding: 10px 14px; border-radius: 2px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">RuckTacular 2026 &middot; San Diego</div>
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #141718;">Tournament Sat Dec 5 &middot; Scrum Dump After-Party @ Brass Rail</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">RuckTacular 2026 &middot; San Diego</div>
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">Tournament Sat Dec 5 &middot; Scrum Dump After-Party @ Brass Rail</div>
                         </td>
                       </tr>
 
@@ -383,11 +398,11 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Congratulations Pathways Class of 2026!
                     </h2>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       Over the past four weeks, over twenty new athletes took the pitch to learn rugby laws, safe contact, set pieces, and the inclusive spirit that makes the Fog family unique. On Sunday, October 25, we concluded the course with our traditional <strong>Position Calling Ceremony</strong>.
                     </p>
 
@@ -396,14 +411,14 @@
                       <tr>
                         <td>
                           <img src="https://events.fogrugby.com/assets/img/pathways-rookies-calling-ceremony.jpg" width="552" alt="San Francisco Fog RFC Pathways 2026 rookie class at the position calling ceremony" class="fluid-img" style="display: block; width: 100%; max-width: 552px; height: auto; border-radius: 2px; border: 1px solid #DCDDDE;" />
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #666666; font-style: italic; margin-top: 6px; text-align: center;">
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666; font-style: italic; margin-top: 6px; text-align: center;">
                             The Pathways Class of 2026 following their official position calling ceremony on the pitch.
                           </div>
                         </td>
                       </tr>
                     </table>
 
-                    <p style="margin: 0 0 10px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 10px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       From front row props and second row locks to loose forwards, scrum halves, fly halves, centers, and wings&mdash;every rookie now has a position and a rugby home. Special recognition goes to <strong>Alvin</strong> and our coaching leads for their dedication in making this cohort one of our most successful in club history!
                     </p>
 
@@ -415,7 +430,8 @@
 
           <!-- ======================================================== -->
           <!-- 4. CARD: PRESEASON & CIPP (Pride Sky Blue #24A0F1)        -->
-          <!-- CIPP FIRST, Tonight practice SECOND, Photo at BOTTOM     -->
+          <!-- TWO TEXT COLUMNS (CIPP left, Practice right)              -->
+          <!-- Full-width training photo at the bottom                  -->
           <!-- 0px left/right padding so card spans 100% of the column  -->
           <!-- ======================================================== -->
           <tr>
@@ -425,77 +441,72 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 16px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Preseason Starts Today! Have You CIPP'd?
                     </h2>
 
-                    <!-- 1. CIPP SECTION (TOP) -->
-                    <div id="cipp" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #00243C; margin-bottom: 6px;">
-                      Mandatory: Complete Your USA Rugby (CIPP) Registration
-                    </div>
-
-                    <p style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
-                      To participate in contact drills, live scrums, scrimmages, and sanctioned matches, <strong>all players must be CIPP registered</strong> through USA Rugby / Rugby Xplorer. CIPP provides required player medical &amp; liability insurance and certifies your official playing eligibility.
-                    </p>
-
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; margin-bottom: 14px;">
-                      <tr>
-                        <td style="padding: 12px 14px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718;">
-                            1. Log in or create an account at <a href="https://myaccount.rugbyxplorer.com.au/" target="_blank" style="color: #006EB6; font-weight: 700;">Rugby Xplorer</a>.<br />
-                            2. Go to <strong>Register &gt; Participate in Rugby</strong>.<br />
-                            3. Search club: <strong>San Francisco Fog RFC</strong>.<br />
-                            4. Select your player role and complete payment.
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <!-- Button: CIPP Register -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile" style="margin-bottom: 20px;">
-                      <tr>
-                        <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center;">
-                          <a href="https://myaccount.rugbyxplorer.com.au/" target="_blank" style="display: inline-block; padding: 11px 22px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Register on Rugby Xplorer (CIPP) &rarr;</a>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <!-- Divider -->
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 16px 0;">
-                      <tr><td height="1" bgcolor="#DCDDDE" style="line-height: 1px; font-size: 1px;">&nbsp;</td></tr>
-                    </table>
-
-                    <!-- 2. TONIGHT'S PRACTICE DETAILS (MIDDLE) -->
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #00243C; margin-bottom: 8px;">
-                      Tonight: Thursday Preseason Practice Kickoff
-                    </div>
-
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #F1F2F3; border: 1px solid #DCDDDE; border-radius: 2px; margin-bottom: 14px;">
-                      <tr>
-                        <td style="padding: 14px 16px;">
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718;">
-                            &bull; <strong>When:</strong> Tonight, Thursday Oct 29, 7:45 PM &ndash; 9:45 PM<br />
-                            &bull; <strong>Where:</strong> Crocker Amazon Park (Field 1), Geneva Ave &amp; Moscow St, SF<br />
-                            &bull; <strong>What to Bring:</strong> Rugby cleats (boots), mouthguard, plenty of water, and athletic kit.<br />
-                            &bull; <strong>Who:</strong> All returning Fog veterans and 2026 Pathways rookies!
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <p style="margin: 0 0 16px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #141718;">
-                      <strong>Regular Fall Training Schedule:</strong><br />
-                      &bull; <strong>Tuesday:</strong> 7:30 PM &ndash; 9:30 PM &middot; Raymond Kimbell Playground<br />
-                      &bull; <strong>Thursday:</strong> 7:45 PM &ndash; 9:45 PM &middot; Crocker Amazon Park (Field 1)<br />
-                      &bull; <strong>Saturday:</strong> Home matches hosted at Treasure Island Field
-                    </p>
-
-                    <!-- 3. PRACTICE PHOTO (AT THE BOTTOM OF THE CARD) -->
+                    <!-- TWO TEXT COLUMNS CONTAINER (50% / 50% on desktop, stacks on mobile) -->
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        
+                        <!-- COLUMN 1: CIPP REGISTRATION -->
+                        <td width="268" valign="top" style="padding-right: 10px;" class="preseason-col">
+                          <div id="cipp" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 15px; font-weight: 800; color: #00243C; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.03em;">
+                            1. Mandatory CIPP Registration
+                          </div>
+
+                          <p style="margin: 0 0 10px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                            To participate in contact drills, live scrums, and sanctioned matches, <strong>all players must be CIPP registered</strong> through USA Rugby / Rugby Xplorer. CIPP provides required player medical &amp; liability insurance.
+                          </p>
+
+                          <div style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; padding: 12px; margin-bottom: 12px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718;">
+                            <strong>How to Register:</strong><br />
+                            1. Go to <a href="https://myaccount.rugbyxplorer.com.au/" target="_blank" style="color: #006EB6; font-weight: 700;">Rugby Xplorer</a><br />
+                            2. Select <strong>Register &gt; Participate</strong><br />
+                            3. Search: <strong>San Francisco Fog RFC</strong><br />
+                            4. Select your role &amp; pay dues
+                          </div>
+
+                          <!-- CIPP Register Button (Isolated Bulletproof Button) -->
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#006EB6" style="border-radius: 2px;">
+                                <a href="https://myaccount.rugbyxplorer.com.au/" target="_blank" class="btn-link" style="display: block; padding: 12px 14px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Register on Rugby Xplorer &rarr;</a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+
+                        <!-- COLUMN 2: TONIGHT'S PRACTICE & SCHEDULE -->
+                        <td width="268" valign="top" style="padding-left: 10px;" class="preseason-col">
+                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 15px; font-weight: 800; color: #00243C; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.03em;">
+                            2. Tonight: Preseason Kickoff
+                          </div>
+
+                          <div style="background-color: #F1F2F3; border: 1px solid #DCDDDE; border-radius: 2px; padding: 12px 14px; margin-bottom: 12px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718;">
+                            &bull; <strong>When:</strong> Tonight, Oct 29 &middot; 7:45 &ndash; 9:45 PM<br />
+                            &bull; <strong>Where:</strong> Crocker Amazon Park (Field 1)<br />
+                            &bull; <strong>Bring:</strong> Cleats (boots), mouthguard, water<br />
+                            &bull; <strong>Who:</strong> Returning ruggers &amp; rookies!
+                          </div>
+
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #141718; background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; padding: 12px 14px;">
+                            <strong>Weekly Schedule:</strong><br />
+                            &bull; <strong>Tuesday:</strong> 7:30 PM @ Raymond Kimbell<br />
+                            &bull; <strong>Thursday:</strong> 7:45 PM @ Crocker Amazon<br />
+                            &bull; <strong>Saturday:</strong> Home matches @ Treasure Island
+                          </div>
+                        </td>
+
+                      </tr>
+                    </table>
+
+                    <!-- PRACTICE PHOTO FULL-WIDTH AT THE BOTTOM OF THE CARD -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px;">
                       <tr>
                         <td>
                           <img src="https://events.fogrugby.com/assets/img/pathways-practice-kimbell.jpg" width="552" alt="SF Fog RFC players during training drills under the lights" class="fluid-img" style="display: block; width: 100%; max-width: 552px; height: auto; border-radius: 2px; border: 1px solid #DCDDDE;" />
-                          <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; color: #666666; font-style: italic; margin-top: 6px; text-align: center;">
+                          <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666; font-style: italic; margin-top: 6px; text-align: center;">
                             Preseason under the lights: Thursday evening training moves to Crocker Amazon.
                           </div>
                         </td>
@@ -510,7 +521,7 @@
 
           <!-- ======================================================== -->
           <!-- 5. CARD: FOG RUGBY GEAR EXCHANGE (Orange #FF8C00)        -->
-          <!-- No fake quote from Nate; Nate's block in card footer      -->
+          <!-- Rebuilt Clean Isolated Buttons, Nate in footer            -->
           <!-- 0px left/right padding so card spans 100% of the column  -->
           <!-- ======================================================== -->
           <tr>
@@ -520,7 +531,7 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Fog Rugby Gear Exchange &amp; Swap Meet
                     </h2>
 
@@ -535,43 +546,43 @@
                       </tr>
                     </table>
 
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       With our Pathway to Rugby course complete, we're heading into preseason, and it's time to start thinking about rugby gear. In partnership with <strong>The Mothership</strong> and <strong>St. Anthony's</strong>, we're kicking off preseason with a gear exchange! Join us to grab new or gently used rugby gear, donate clothing or shoes to St. Anthony's, enjoy drink specials, and catch a special drag show.
                     </p>
 
                     <!-- Nicely Formatted Event Details Table -->
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; margin-bottom: 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; margin-bottom: 18px;">
                       <tr>
                         <td style="padding: 16px 18px;">
                           
-                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: separate; border-spacing: 0 6px;">
+                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: separate; border-spacing: 0 8px;">
                             <tr>
-                              <td width="24" valign="top" style="font-size: 16px; line-height: 1;">🗓️</td>
-                              <td valign="top" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">
+                              <td width="26" valign="top" style="font-size: 16px; line-height: 1;">🗓️</td>
+                              <td valign="top" style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #141718; line-height: 1.55;">
                                 <strong>When:</strong> Saturday, November 7, 2026 &middot; 3:00 PM &ndash; 7:00 PM
                               </td>
                             </tr>
                             <tr>
-                              <td width="24" valign="top" style="font-size: 16px; line-height: 1;">📍</td>
-                              <td valign="top" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">
+                              <td width="26" valign="top" style="font-size: 16px; line-height: 1;">📍</td>
+                              <td valign="top" style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #141718; line-height: 1.55;">
                                 <strong>Where:</strong> The Mothership (3152 Mission St, San Francisco, CA)
                               </td>
                             </tr>
                             <tr>
-                              <td width="24" valign="top" style="font-size: 16px; line-height: 1;">🏉</td>
-                              <td valign="top" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">
+                              <td width="26" valign="top" style="font-size: 16px; line-height: 1;">🏉</td>
+                              <td valign="top" style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #141718; line-height: 1.55;">
                                 <strong>Gear to Bring:</strong> Clean rugby boots (cleats), shorts, jerseys, socks, or kit to swap.
                               </td>
                             </tr>
                             <tr>
-                              <td width="24" valign="top" style="font-size: 16px; line-height: 1;">👕</td>
-                              <td valign="top" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">
+                              <td width="26" valign="top" style="font-size: 16px; line-height: 1;">👕</td>
+                              <td valign="top" style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #141718; line-height: 1.55;">
                                 <strong>St. Anthony's Drive:</strong> Bring gently used casual clothing &amp; walking shoes for community donation.
                               </td>
                             </tr>
                             <tr>
-                              <td width="24" valign="top" style="font-size: 16px; line-height: 1;">✨</td>
-                              <td valign="top" style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; color: #141718; line-height: 1.45;">
+                              <td width="26" valign="top" style="font-size: 16px; line-height: 1;">✨</td>
+                              <td valign="top" style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; color: #141718; line-height: 1.55;">
                                 <strong>Social &amp; Shows:</strong> Special Mothership cocktail/beer discounts and live drag performances!
                               </td>
                             </tr>
@@ -581,14 +592,28 @@
                       </tr>
                     </table>
 
-                    <!-- Buttons -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile" style="margin-bottom: 20px;">
+                    <!-- BULLETPROOF 2-BUTTON ROW (Properly isolated tables, zero background bleed) -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-container-table" style="margin-bottom: 20px;">
                       <tr>
-                        <td bgcolor="#FF8C00" style="border-radius: 2px; text-align: center; padding-right: 10px;" class="btn-cell">
-                          <a href="https://www.instagram.com/p/DfDRJrYkrE2/" target="_blank" style="display: inline-block; padding: 11px 20px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">View Instagram Post &rarr;</a>
+                        <!-- Button 1 Cell -->
+                        <td class="btn-stack-cell" style="padding-right: 12px; padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#006EB6" style="border-radius: 2px;">
+                                <a href="https://www.instagram.com/p/DfDRJrYkrE2/" target="_blank" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">View Instagram Post &rarr;</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
-                        <td bgcolor="#00243C" style="border-radius: 2px; text-align: center;" class="btn-cell">
-                          <a href="https://events.fogrugby.com" target="_blank" style="display: inline-block; padding: 11px 20px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Add to Calendar</a>
+                        <!-- Button 2 Cell -->
+                        <td class="btn-stack-cell" style="padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#00243C" style="border-radius: 2px;">
+                                <a href="https://events.fogrugby.com" target="_blank" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Add to Calendar</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -596,17 +621,17 @@
                     <!-- Nate Durand Card Footer Block -->
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #F1F2F3; border: 1px solid #DCDDDE; border-radius: 2px;">
                       <tr>
-                        <td style="padding: 12px 14px;">
+                        <td style="padding: 14px 16px;">
                           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                              <td width="48" valign="middle" style="padding-right: 12px;">
+                              <td width="48" valign="middle" style="padding-right: 14px;">
                                 <img src="https://events.fogrugby.com/assets/board/nate-durand.jpg" width="46" height="58" alt="Nate Durand, Community Director" style="display: block; width: 46px; height: 58px; border-radius: 2px; object-fit: cover; border: 1px solid #DCDDDE;" />
                               </td>
                               <td valign="middle">
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C;">
                                   Questions or Gear to Donate Early?
                                 </div>
-                                <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; line-height: 1.45; color: #141718; margin-top: 2px;">
+                                <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #141718; margin-top: 3px;">
                                   If you have questions about gear sizing, want to drop off boots ahead of time, or can help transport donations, contact Community Director Nate Durand at <a href="mailto:community@fogrugby.com" style="color: #006EB6; text-decoration: none; font-weight: 600;">community@fogrugby.com</a> or catch Nate on the pitch at practice.
                                 </div>
                               </td>
@@ -625,7 +650,7 @@
           <!-- ======================================================== -->
           <!-- 6. CARD: RUCKTACULAR SAN DIEGO (Amber Accent #E69500)     -->
           <!-- SAN DIEGO, CA (Dec 3-6) · San Diego Armada RFC Host      -->
-          <!-- Main rucktacular-san-diego.jpg image restored, No chip   -->
+          <!-- Main banner restored, Clean isolated bulletproof buttons  -->
           <!-- 0px left/right padding so card spans 100% of the column  -->
           <!-- ======================================================== -->
           <tr>
@@ -635,7 +660,7 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       RuckTacular 2026: Book Your San Diego Travel!
                     </h2>
 
@@ -648,12 +673,12 @@
                       </tr>
                     </table>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       The <strong>San Diego Armada RFC</strong> are hosting RuckTacular 2026 from <strong>December 3&ndash;6</strong> in sunny San Diego, California! This is our premier full-club winter tour. If you are traveling with the squad, <strong>lock down your flights and hotel block now</strong> before rates spike. Fly in Thursday Dec 3 or Friday Dec 4; tournament play runs all day Saturday, Dec 5.
                     </p>
 
                     <!-- Scrum Dump Spotlight Box -->
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #00243C; border-radius: 2px; margin-bottom: 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #00243C; border-radius: 2px; margin-bottom: 18px;">
                       <tr>
                         <td style="padding: 18px 20px;" class="stack-padding">
                           
@@ -679,7 +704,7 @@
                           <!-- Party Details Table -->
                           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #001A2C; border: 1px solid #1d4a6b; border-radius: 2px; margin-bottom: 14px;">
                             <tr>
-                              <td style="padding: 10px 14px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #FFFFFF;">
+                              <td style="padding: 10px 14px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #FFFFFF;">
                                 📍 <strong>Venue:</strong> The Brass Rail (3796 Fifth Ave, San Diego, CA 92103)<br />
                                 🗓️ <strong>When:</strong> Saturday, Dec 5 &middot; Doors open at 9:00 PM (9 PM &ndash; 2 AM)<br />
                                 🎟️ <strong>Tickets:</strong> $16 Early Bird on Eventbrite ($20 general, $25 at door)
@@ -687,11 +712,11 @@
                             </tr>
                           </table>
 
-                          <!-- Ticket Button -->
-                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile">
+                          <!-- Ticket Button (Bulletproof table) -->
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
                             <tr>
-                              <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center;">
-                                <a href="https://www.eventbrite.com/e/scrum-dump-the-official-after-party-for-rucktacular-2026-tickets-2003680230507" target="_blank" style="display: inline-block; padding: 11px 22px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Get Scrum Dump Tickets ($16) &rarr;</a>
+                              <td align="center" bgcolor="#006EB6" style="border-radius: 2px;">
+                                <a href="https://www.eventbrite.com/e/scrum-dump-the-official-after-party-for-rucktacular-2026-tickets-2003680230507" target="_blank" class="btn-link" style="display: block; padding: 12px 24px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Get Scrum Dump Tickets ($16) &rarr;</a>
                               </td>
                             </tr>
                           </table>
@@ -700,14 +725,28 @@
                       </tr>
                     </table>
 
-                    <!-- Tour Logistics Action Buttons -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile">
+                    <!-- Tour Logistics Action Buttons (Bulletproof 2-button row) -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-container-table">
                       <tr>
-                        <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center; padding-right: 10px;" class="btn-cell">
-                          <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1785261958795&amp;key=GRP&amp;app=resvlink" target="_blank" style="display: inline-block; padding: 11px 18px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Book Host Hotel &rarr;</a>
+                        <!-- Button 1 -->
+                        <td class="btn-stack-cell" style="padding-right: 12px; padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#006EB6" style="border-radius: 2px;">
+                                <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1785261958795&amp;key=GRP&amp;app=resvlink" target="_blank" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Book Host Hotel &rarr;</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
-                        <td bgcolor="#FFFFFF" style="border: 2px solid #00243C; border-radius: 2px; text-align: center;" class="btn-cell">
-                          <a href="https://www.rucktacular.com/" target="_blank" style="display: inline-block; padding: 9px 18px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; font-weight: 700; color: #00243C; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">RuckTacular.com</a>
+                        <!-- Button 2 -->
+                        <td class="btn-stack-cell" style="padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#00243C" style="border-radius: 2px;">
+                                <a href="https://www.rucktacular.com/" target="_blank" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">RuckTacular.com</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -730,19 +769,19 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Lifting the Fog: Player &amp; Volunteer Honors
                     </h2>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 16px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       Know a Fog rugger, coach, rookie, or volunteer who went above and beyond this week? Whether it's helping pack equipment, supporting a teammate at practice, or stepping up behind the scenes, nominate them for Lifting the Fog honors!
                     </p>
 
-                    <!-- Button: Nomination -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile">
+                    <!-- Button: Nomination (Bulletproof table) -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
                       <tr>
-                        <td bgcolor="#750787" style="border-radius: 2px; text-align: center;">
-                          <a href="https://forms.gle/fog-lifting-nominations" target="_blank" style="display: inline-block; padding: 11px 22px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Nominate a Teammate &rarr;</a>
+                        <td align="center" bgcolor="#750787" style="border-radius: 2px;">
+                          <a href="https://forms.gle/fog-lifting-nominations" target="_blank" class="btn-link" style="display: block; padding: 12px 24px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Nominate a Teammate &rarr;</a>
                         </td>
                       </tr>
                     </table>
@@ -765,22 +804,36 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Have Ideas for the Club? Suggestion Box
                     </h2>
                     
-                    <p style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 16px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       Working on a project, have an event you'd like mentioned, or got feedback on how we can improve? Drop an anonymous note in the suggestion box or reach out directly to the executive board.
                     </p>
 
-                    <!-- Buttons -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile">
+                    <!-- Buttons: Suggestion Box & Email Board (Bulletproof 2-button row) -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-container-table">
                       <tr>
-                        <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center; padding-right: 10px;" class="btn-cell">
-                          <a href="https://www.fogrugby.com/contact-us?subject=Suggestion%20Box" target="_blank" style="display: inline-block; padding: 11px 20px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Suggestion Box &rarr;</a>
+                        <!-- Button 1 -->
+                        <td class="btn-stack-cell" style="padding-right: 12px; padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#006EB6" style="border-radius: 2px;">
+                                <a href="https://www.fogrugby.com/contact-us?subject=Suggestion%20Box" target="_blank" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Suggestion Box &rarr;</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
-                        <td bgcolor="#FFFFFF" style="border: 2px solid #00243C; border-radius: 2px; text-align: center;" class="btn-cell">
-                          <a href="mailto:board@fogrugby.com" style="display: inline-block; padding: 9px 20px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Email the Board</a>
+                        <!-- Button 2 -->
+                        <td class="btn-stack-cell" style="padding-bottom: 0;">
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
+                            <tr>
+                              <td align="center" bgcolor="#00243C" style="border-radius: 2px;">
+                                <a href="mailto:board@fogrugby.com" class="btn-link" style="display: block; padding: 12px 22px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Email the Board</a>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -803,16 +856,16 @@
                   <td style="padding: 24px 24px 22px 24px;">
                     
                     <!-- Headline: Title Case, No Chip -->
-                    <h2 class="h2-mobile" style="margin: 0 0 12px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; color: #00243C;">
+                    <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
                       Thank You to Our Donors &amp; Supporters
                     </h2>
                     
-                    <p style="margin: 0 0 16px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; line-height: 1.55; color: #141718;">
+                    <p style="margin: 0 0 16px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
                       A heartfelt thank you to everyone who contributed over the past month. Your tax-deductible contributions directly subsidize pitch rental fees, referee compensation, tournament travel for low-income players, and free gear for our Pathways rookies. We couldn't do this without you.
                     </p>
 
                     <!-- QR Codes Row (3 Columns, Responsive) -->
-                    <div style="text-align: center; margin-bottom: 18px;">
+                    <div style="text-align: center; margin-bottom: 20px;">
                       <!--[if mso | IE]>
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
@@ -825,8 +878,8 @@
                               <a href="https://donate.mazloweb.com/donate/the-san-francisco-fog-rugby-football-club" target="_blank" style="text-decoration: none;">
                                 <img src="https://events.fogrugby.com/assets/folsom-weekend-2026/qr-mazlo.png" width="120" height="120" alt="QR code to donate to SF Fog RFC via Mazlo" style="display: block; width: 120px; height: 120px; border: 0;" />
                               </a>
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">Mazlo</div>
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; color: #666666;">Direct Tax-Deductible</div>
+                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C; margin-top: 8px;">Mazlo</div>
+                              <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666;">Direct Tax-Deductible</div>
                             </td>
                           </tr>
                         </table>
@@ -842,8 +895,8 @@
                               <a href="https://www.paypal.com/ncp/payment/DARAKNBWJ53VQ" target="_blank" style="text-decoration: none;">
                                 <img src="https://events.fogrugby.com/assets/folsom-weekend-2026/qr-paypal.png" width="120" height="120" alt="QR code to donate to SF Fog RFC via PayPal" style="display: block; width: 120px; height: 120px; border: 0;" />
                               </a>
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">PayPal</div>
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; color: #666666;">Credit / Debit / Balance</div>
+                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C; margin-top: 8px;">PayPal</div>
+                              <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666;">Credit / Debit / Balance</div>
                             </td>
                           </tr>
                         </table>
@@ -857,8 +910,8 @@
                           <tr>
                             <td align="center" style="padding: 12px 8px;">
                               <img src="https://events.fogrugby.com/assets/folsom-weekend-2026/qr-zelle.png" width="120" height="120" alt="QR code to send donation to SF Fog RFC via Zelle" style="display: block; width: 120px; height: 120px; border: 0;" />
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">Zelle</div>
-                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; color: #666666;">treasurer@fogrugby.com</div>
+                              <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #00243C; margin-top: 8px;">Zelle</div>
+                              <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; color: #666666;">treasurer@fogrugby.com</div>
                             </td>
                           </tr>
                         </table>
@@ -870,11 +923,11 @@
                       <![endif]-->
                     </div>
 
-                    <!-- Donate Online Button -->
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-mobile">
+                    <!-- Donate Online Button (Bulletproof table) -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="btn-table">
                       <tr>
-                        <td bgcolor="#750787" style="border-radius: 2px; text-align: center;">
-                          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" style="display: inline-block; padding: 12px 24px; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;">Donate Online at FogRugby.com &rarr;</a>
+                        <td align="center" bgcolor="#750787" style="border-radius: 2px;">
+                          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" class="btn-link" style="display: block; padding: 12px 24px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; line-height: 1.2;">Donate Online at FogRugby.com &rarr;</a>
                         </td>
                       </tr>
                     </table>
@@ -886,10 +939,10 @@
           </tr>
 
           <!-- ======================================================== -->
-          <!-- 10. FOOTER (Refined layout borrowing drupal.fogrugby.com) -->
+          <!-- 10. FOOTER (Exact user specified layout & text)          -->
           <!-- ======================================================== -->
           <tr>
-            <td bgcolor="#00243C" style="padding: 30px 24px 0 24px;" class="stack-padding">
+            <td bgcolor="#00243C" style="padding: 30px 24px 24px 24px;" class="stack-padding">
               
               <!-- Main Footer Directory / Brand Block -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -901,49 +954,39 @@
                   
                   <!-- Club Details, Mission & Links -->
                   <td valign="top" class="footer-col">
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 17px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 4px;">
+                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 18px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 4px;">
                       San Francisco Fog RFC
                     </div>
                     
-                    <p style="margin: 0 0 10px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #DCDDDE;">
+                    <p style="margin: 0 0 10px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #DCDDDE;">
                       San Francisco Fog Rugby Football Club is an inclusive rugby club welcoming all athletes regardless of race, sexual orientation, or rugby experience. 501(c)(3) non-profit public charity.
                     </p>
                     
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; font-weight: 600; color: #24A0F1; margin-bottom: 12px; letter-spacing: 0.05em;">
+                    <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; font-weight: 600; color: #24A0F1; margin-bottom: 12px; letter-spacing: 0.05em;">
                       501(c)(3) Public Charity &middot; Fiscally sponsored by Dancers' Group &middot; San Francisco, CA
                     </div>
 
                     <!-- Direct Navigation Links -->
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 12px; line-height: 20px; margin-bottom: 14px;">
+                    <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 20px; margin-bottom: 16px;">
                       <a href="https://www.fogrugby.com/" target="_blank" style="color: #24A0F1; text-decoration: none; font-weight: 600; margin-right: 12px;">fogrugby.com</a>
                       <a href="https://www.instagram.com/fogrugby" target="_blank" style="color: #24A0F1; text-decoration: none; font-weight: 600; margin-right: 12px;">Instagram</a>
                       <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" style="color: #24A0F1; text-decoration: none; font-weight: 600; margin-right: 12px;">TikTok</a>
                       <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" style="color: #24A0F1; text-decoration: none; font-weight: 600;">Donate</a>
                     </div>
-
-                    <!-- Mautic Webview & Unsubscribe -->
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; color: #DCDDDE; margin-bottom: 20px;">
-                      {unsubscribe_text} &middot; {webview_text}
-                    </div>
-
                   </td>
                 </tr>
               </table>
 
-              <!-- Bottom Legal Strip (Borrowed directly from drupal.fogrugby.com bottom bar) -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #1d4a6b;">
+              <!-- Bottom Legal Strip (Exact requested text & very bottom tokens) -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 1px solid #1d4a6b; margin-top: 16px;">
                 <tr>
-                  <td align="left" valign="middle" style="padding: 14px 0 16px 0;" class="footer-col">
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; color: #DCDDDE; line-height: 1.5;">
+                  <td align="center" style="padding: 16px 0 6px 0;">
+                    <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; color: #FFFFFF; line-height: 1.6; text-align: center;">
                       &copy; 2000&ndash;2026 San Francisco Fog RFC. All rights reserved.<br />
-                      <a href="https://www.fogrugby.com/privacy" target="_blank" style="color: #24A0F1; text-decoration: none;">Privacy Policy</a> &middot; 
-                      <a href="https://www.fogrugby.com/terms" target="_blank" style="color: #24A0F1; text-decoration: none;">Terms of Service</a> &middot; 
-                      <a href="mailto:board@fogrugby.com" style="color: #24A0F1; text-decoration: none;">Contact</a>
+                      <span style="font-weight: 700; color: #24A0F1; text-transform: uppercase; letter-spacing: 0.05em;">West Coast Premier Inclusive Rugby Club</span>
                     </div>
-                  </td>
-                  <td align="right" valign="middle" style="padding: 14px 0 16px 0;" class="footer-col">
-                    <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 11px; font-weight: 700; color: #24A0F1; letter-spacing: 0.05em; text-transform: uppercase;">
-                      West Coast Premier Inclusive Rugby Club
+                    <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #DCDDDE; margin-top: 12px; text-align: center;">
+                      {unsubscribe_text} &middot; {webview_text}
                     </div>
                   </td>
                 </tr>
