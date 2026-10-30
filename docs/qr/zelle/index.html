@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>San Francisco Fog RFC | Donate via Zelle</title>
-  <meta name="description" content="San Francisco Fog RFC donation redirect to Zelle.">
+  <title>Send with Zelle | San Francisco Fog RFC</title>
+  <meta name="description" content="Send a donation directly to San Francisco Fog RFC with Zelle via your mobile banking app.">
   
   <!-- First-Party GA4 & Meta Pixel Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
@@ -20,13 +20,13 @@
     const utmCampaign = urlParams.get('utm_campaign') || 'newsletter-2026-10-29';
 
     gtag('config', 'G-GD8T0M6RZ9', {
-      page_title: 'Donation Redirect - Zelle',
+      page_title: 'Zelle Smart Launcher',
       campaign_source: utmSource,
       campaign_medium: utmMedium,
       campaign_name: utmCampaign
     });
     gtag('config', 'G-WTRRT4XDS5', {
-      page_title: 'Donation Redirect - Zelle',
+      page_title: 'Zelle Smart Launcher',
       send_page_view: true
     });
 
@@ -64,9 +64,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
     }
-    .redirect-card {
+    .launcher-card {
       background: #FFFFFF;
       max-width: 480px;
       width: 100%;
@@ -83,85 +83,223 @@
     }
     .pride-stripe { flex: 1; }
     .card-body {
-      padding: 32px 24px;
+      padding: 24px 20px 28px 20px;
     }
     .crest-img {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 16px auto;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px auto;
       display: block;
     }
     .club-title {
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       font-weight: 700;
       color: #006EB6;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .headline {
       font-size: 22px;
       line-height: 1.2;
       color: #00243C;
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-weight: 800;
+      margin-bottom: 6px;
     }
-    .badge {
-      display: inline-block;
-      background-color: #F1F2F3;
-      color: #00243C;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 4px 10px;
-      border-radius: 2px;
-      margin-bottom: 16px;
-    }
-    .desc {
-      font-size: 14px;
-      line-height: 1.5;
+    .subtext {
+      font-size: 13px;
       color: #555555;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
+      line-height: 1.45;
     }
-    .spinner-wrap {
-      margin-bottom: 20px;
+
+    /* Recipient Copy Box */
+    .recipient-box {
+      background-color: #F8F9FA;
+      border: 1px solid #DCDDDE;
+      border-left: 4px solid #006EB6;
+      border-radius: 2px;
+      padding: 14px 14px;
+      margin-bottom: 18px;
+      text-align: left;
     }
-    .spinner {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      border: 3px solid #DCDDDE;
-      border-top-color: #006EB6;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+    .recipient-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #666666;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .recipient-email {
+      font-size: 17px;
+      font-weight: 800;
+      color: #00243C;
+      word-break: break-all;
+      margin-bottom: 4px;
     }
-    .btn {
-      display: inline-block;
+    .recipient-name {
+      font-size: 12px;
+      color: #157A38;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
       background-color: #006EB6;
       color: #FFFFFF;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      text-decoration: none;
-      padding: 12px 24px;
+      padding: 10px 14px;
       border-radius: 2px;
-      transition: background 0.15s ease;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.05s ease;
     }
-    .btn:hover {
+    .copy-btn:hover {
       background-color: #005691;
     }
-    .footnote {
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+    .copy-btn.copied {
+      background-color: #157A38;
+    }
+
+    /* Bank Grid */
+    .section-title {
       font-size: 12px;
-      color: #888888;
-      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      color: #00243C;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .bank-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .bank-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      background-color: #FFFFFF;
+      border: 1px solid #DCDDDE;
+      border-radius: 2px;
+      padding: 10px 12px;
+      text-decoration: none;
+      color: #00243C;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+    }
+    .bank-btn:hover {
+      border-color: #006EB6;
+      background-color: #F1F2F3;
+      transform: translateY(-1px);
+    }
+    .bank-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #00243C;
+      color: #FFFFFF;
+      border-radius: 2px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* Step Guide */
+    .step-guide {
+      background-color: #F8F9FA;
+      border: 1px solid #E5E7EB;
+      border-radius: 2px;
+      padding: 12px 14px;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+    .step-item {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+    .step-num {
+      width: 18px;
+      height: 18px;
+      background-color: #006EB6;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Fallbacks */
+    .alt-options {
+      border-top: 1px solid #E5E7EB;
+      padding-top: 14px;
+      font-size: 12px;
+      color: #666666;
+    }
+    .alt-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .alt-links a {
+      color: #006EB6;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background-color: #00243C;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 2px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.25s ease-out;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
 <body>
-  <div class="redirect-card">
+  <div class="launcher-card">
     <!-- Progress Pride Stripe -->
     <div class="pride-bar" aria-hidden="true">
       <div class="pride-stripe" style="background:#000000;"></div>
@@ -180,44 +318,158 @@
     <div class="card-body">
       <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="crest-img">
       <div class="club-title">San Francisco Fog RFC</div>
-      <h1 class="headline">Forwarding to Zelle</h1>
-      <div class="badge">Direct Bank Transfer · Zero Fees</div>
-      <p class="desc">Direct donation to clubhouse@fogrugby.com via your banking app.</p>
-      
-      <div class="spinner-wrap">
-        <div class="spinner"></div>
+      <h1 class="headline">Send with Zelle</h1>
+      <p class="subtext">100% of your donation goes directly to our club bank account with <strong>0% processing fees</strong>.</p>
+
+      <!-- Recipient Copy Box -->
+      <div class="recipient-box">
+        <div class="recipient-label">Official Zelle Recipient</div>
+        <div class="recipient-email" id="zelle-email">clubhouse@fogrugby.com</div>
+        <div class="recipient-name">✓ Verified: THE SAN FRANCISCO FOG RUGBY FOOTBALL Accounts</div>
+        <button type="button" class="copy-btn" id="copy-btn" onclick="copyEmail()">
+          <span id="copy-icon">📋</span> <span id="copy-text">Tap to Copy clubhouse@fogrugby.com</span>
+        </button>
       </div>
-      
-      <div>
-        <a id="redirect-btn" href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=" class="btn">Continue with Zelle &rsaquo;</a>
+
+      <!-- Quick Bank Launcher Grid -->
+      <div class="section-title">Open Your Mobile Banking App</div>
+      <div class="bank-grid">
+        <button type="button" class="bank-btn" onclick="openBankApp('chase://', 'Chase')">
+          <span class="bank-icon" style="background:#117ACA;">C</span>
+          <span>Chase</span>
+        </button>
+        <button type="button" class="bank-btn" onclick="openBankApp('bofa://', 'Bank of America')">
+          <span class="bank-icon" style="background:#E31837;">B</span>
+          <span>Bank of America</span>
+        </button>
+        <button type="button" class="bank-btn" onclick="openBankApp('wellsfargo://', 'Wells Fargo')">
+          <span class="bank-icon" style="background:#D71E28;">W</span>
+          <span>Wells Fargo</span>
+        </button>
+        <button type="button" class="bank-btn" onclick="openBankApp('citi://', 'Citi')">
+          <span class="bank-icon" style="background:#002D62;">C</span>
+          <span>Citi</span>
+        </button>
+        <button type="button" class="bank-btn" onclick="openBankApp('capitalone://', 'Capital One')">
+          <span class="bank-icon" style="background:#A12830;">C</span>
+          <span>Capital One</span>
+        </button>
+        <button type="button" class="bank-btn" onclick="openBankApp('usbank://', 'U.S. Bank')">
+          <span class="bank-icon" style="background:#0C2074;">U</span>
+          <span>U.S. Bank</span>
+        </button>
       </div>
-      
-      <p class="footnote">If you are not redirected in 2 seconds, tap the button above.</p>
+
+      <!-- Simple 3-Step Guide -->
+      <div class="step-guide">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div>Tap your bank above (or open your banking app). <strong>clubhouse@fogrugby.com</strong> is already copied.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div>Go to <strong>Pay &amp; Transfer &rarr; Zelle</strong> and tap <strong>Send</strong>.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div>Paste <strong>clubhouse@fogrugby.com</strong> &amp; confirm recipient is <em>THE SAN FRANCISCO FOG RUGBY FOOTBALL Accounts</em>.</div>
+        </div>
+      </div>
+
+      <!-- Fallback and Alternative Options -->
+      <div class="alt-options">
+        <div>Prefer Apple Pay, credit card, or need a tax-deductible receipt?</div>
+        <div class="alt-links">
+          <a href="https://events.fogrugby.com/qr/mazlo?utm_source=the-foghorn&utm_medium=smart_launcher&utm_campaign=newsletter-2026-10-29">Mazlo (Tax Receipt) &rsaquo;</a>
+          <a href="https://events.fogrugby.com/qr/paypal?utm_source=the-foghorn&utm_medium=smart_launcher&utm_campaign=newsletter-2026-10-29">PayPal Checkout &rsaquo;</a>
+          <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=" target="_blank">Search Other Banks &rsaquo;</a>
+        </div>
+      </div>
     </div>
   </div>
 
+  <div id="toast">Copied clubhouse@fogrugby.com to clipboard! ✓</div>
+
   <script>
-    (function() {
-      const baseDest = "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=";
-      const urlParams = new URLSearchParams(window.location.search);
-      const utmSource = urlParams.get('utm_source') || 'the-foghorn';
-      const utmMedium = urlParams.get('utm_medium') || 'qr';
-      const utmCampaign = urlParams.get('utm_campaign') || 'newsletter-2026-10-29';
-      
-      let finalDest = baseDest;
-      const separator = finalDest.includes('?') ? '&' : '?';
-      finalDest += separator + 'utm_source=' + encodeURIComponent(utmSource) +
-                   '&utm_medium=' + encodeURIComponent(utmMedium) +
-                   '&utm_campaign=' + encodeURIComponent(utmCampaign);
+    const emailToCopy = 'clubhouse@fogrugby.com';
 
-      const btn = document.getElementById('redirect-btn');
-      if (btn) btn.href = finalDest;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      if (toast) {
+        toast.textContent = msg || 'Copied clubhouse@fogrugby.com! ✓';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2600);
+      }
+    }
 
-      // Allow tracking beacons 250ms before forward
+    function copyEmail() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(emailToCopy).then(() => {
+          updateCopyButtonState();
+          showToast('Copied clubhouse@fogrugby.com! ✓');
+        }).catch(() => fallbackCopy());
+      } else {
+        fallbackCopy();
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'copy_zelle_email', {
+          event_category: 'donation_zelle',
+          event_label: emailToCopy
+        });
+      }
+    }
+
+    function fallbackCopy() {
+      const tempInput = document.createElement('input');
+      tempInput.value = emailToCopy;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        updateCopyButtonState();
+        showToast('Copied clubhouse@fogrugby.com! ✓');
+      } catch (err) {
+        showToast('Please copy manually: ' + emailToCopy);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    function updateCopyButtonState() {
+      const btn = document.getElementById('copy-btn');
+      const text = document.getElementById('copy-text');
+      const icon = document.getElementById('copy-icon');
+      if (btn && text) {
+        btn.classList.add('copied');
+        icon.textContent = '✓';
+        text.textContent = 'Copied to Clipboard!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          icon.textContent = '📋';
+          text.textContent = 'Tap to Copy clubhouse@fogrugby.com';
+        }, 3500);
+      }
+    }
+
+    function openBankApp(scheme, bankName) {
+      // 1. Copy email first so user has it ready
+      copyEmail();
+
+      // 2. Track bank intent
+      if (typeof gtag === 'function') {
+        gtag('event', 'launch_bank_app', {
+          event_category: 'donation_zelle',
+          event_label: bankName
+        });
+      }
+
+      showToast('Opening ' + bankName + '... (Email copied!)');
+
+      // 3. Trigger bank app scheme
       setTimeout(function() {
-        window.location.replace(finalDest);
-      }, 250);
-    })();
+        window.location.href = scheme;
+      }, 200);
+    }
   </script>
 </body>
 </html>
