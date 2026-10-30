@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>San Francisco Fog RFC | Donate via Zelle</title>
+  <meta name="description" content="San Francisco Fog RFC donation redirect to Zelle.">
+  
+  <!-- First-Party GA4 & Meta Pixel Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTRRT4XDS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source') || 'the-foghorn';
+    const utmMedium = urlParams.get('utm_medium') || 'qr';
+    const utmCampaign = urlParams.get('utm_campaign') || 'newsletter-2026-10-29';
+
+    gtag('config', 'G-GD8T0M6RZ9', {
+      page_title: 'Donation Redirect - Zelle',
+      campaign_source: utmSource,
+      campaign_medium: utmMedium,
+      campaign_name: utmCampaign
+    });
+    gtag('config', 'G-WTRRT4XDS5', {
+      page_title: 'Donation Redirect - Zelle',
+      send_page_view: true
+    });
+
+    // Fire dedicated QR scan conversion event
+    gtag('event', 'qr_scan', {
+      event_category: 'donation_qr',
+      event_label: 'zelle',
+      donation_method: 'Zelle',
+      source_medium: utmMedium,
+      campaign: utmCampaign
+    });
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1634313241415854');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'QRScan', { destination: 'zelle', medium: utmMedium });
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background-color: #F1F2F3;
+      color: #141718;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .redirect-card {
+      background: #FFFFFF;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #DCDDDE;
+      box-shadow: 0 4px 14px rgba(0, 36, 60, 0.08);
+      overflow: hidden;
+      text-align: center;
+    }
+    .pride-bar {
+      display: flex;
+      height: 4px;
+      width: 100%;
+    }
+    .pride-stripe { flex: 1; }
+    .card-body {
+      padding: 32px 24px;
+    }
+    .crest-img {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 16px auto;
+      display: block;
+    }
+    .club-title {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #006EB6;
+      margin-bottom: 6px;
+    }
+    .headline {
+      font-size: 22px;
+      line-height: 1.2;
+      color: #00243C;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #F1F2F3;
+      color: #00243C;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .desc {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555555;
+      margin-bottom: 24px;
+    }
+    .spinner-wrap {
+      margin-bottom: 20px;
+    }
+    .spinner {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border: 3px solid #DCDDDE;
+      border-top-color: #006EB6;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .btn {
+      display: inline-block;
+      background-color: #006EB6;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 2px;
+      transition: background 0.15s ease;
+    }
+    .btn:hover {
+      background-color: #005691;
+    }
+    .footnote {
+      font-size: 12px;
+      color: #888888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect-card">
+    <!-- Progress Pride Stripe -->
+    <div class="pride-bar" aria-hidden="true">
+      <div class="pride-stripe" style="background:#000000;"></div>
+      <div class="pride-stripe" style="background:#613915;"></div>
+      <div class="pride-stripe" style="background:#74D7EE;"></div>
+      <div class="pride-stripe" style="background:#FFAFC8;"></div>
+      <div class="pride-stripe" style="background:#FFFFFF;"></div>
+      <div class="pride-stripe" style="background:#E40303;"></div>
+      <div class="pride-stripe" style="background:#FF8C00;"></div>
+      <div class="pride-stripe" style="background:#FFED00;"></div>
+      <div class="pride-stripe" style="background:#008026;"></div>
+      <div class="pride-stripe" style="background:#004DFF;"></div>
+      <div class="pride-stripe" style="background:#750787;"></div>
+    </div>
+
+    <div class="card-body">
+      <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="crest-img">
+      <div class="club-title">San Francisco Fog RFC</div>
+      <h1 class="headline">Forwarding to Zelle</h1>
+      <div class="badge">Direct Bank Transfer · Zero Fees</div>
+      <p class="desc">Direct donation to clubhouse@fogrugby.com via your banking app.</p>
+      
+      <div class="spinner-wrap">
+        <div class="spinner"></div>
+      </div>
+      
+      <div>
+        <a id="redirect-btn" href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=" class="btn">Continue with Zelle &rsaquo;</a>
+      </div>
+      
+      <p class="footnote">If you are not redirected in 2 seconds, tap the button above.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const baseDest = "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=";
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get('utm_source') || 'the-foghorn';
+      const utmMedium = urlParams.get('utm_medium') || 'qr';
+      const utmCampaign = urlParams.get('utm_campaign') || 'newsletter-2026-10-29';
+      
+      let finalDest = baseDest;
+      const separator = finalDest.includes('?') ? '&' : '?';
+      finalDest += separator + 'utm_source=' + encodeURIComponent(utmSource) +
+                   '&utm_medium=' + encodeURIComponent(utmMedium) +
+                   '&utm_campaign=' + encodeURIComponent(utmCampaign);
+
+      const btn = document.getElementById('redirect-btn');
+      if (btn) btn.href = finalDest;
+
+      // Allow tracking beacons 250ms before forward
+      setTimeout(function() {
+        window.location.replace(finalDest);
+      }, 250);
+    })();
+  </script>
+</body>
+</html>
