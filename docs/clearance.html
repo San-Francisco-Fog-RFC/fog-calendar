@@ -208,6 +208,57 @@
       color: #666;
     }
 
+    /* Program Tabs (Pathways / All-Team) */
+    .program-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 3px solid var(--fog-blue);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .program-tab {
+      background: var(--fog-white);
+      border: 1px solid var(--fog-gray);
+      border-bottom: none;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      cursor: pointer;
+      border-radius: var(--fog-radius-btn) var(--fog-radius-btn) 0 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: "Futura PT", Arial, sans-serif;
+      text-align: left;
+    }
+    .program-tab:hover {
+      background: #F0F2F4;
+    }
+    .program-tab.active {
+      background: var(--fog-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-blue);
+    }
+    .program-tab-sub {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.85;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .program-note {
+      display: none;
+      padding: 10px 14px;
+      background: #FFF8E1;
+      border-left: 4px solid #EE9C00;
+      font-size: 0.84rem;
+      color: #5D4037;
+      border-radius: var(--fog-radius-btn);
+      margin-bottom: 1rem;
+    }
+
     /* Controls Bar */
     .controls-bar {
       display: flex;
@@ -478,6 +529,19 @@
   </div>
 
   <div class="main-wrap">
+    <!-- Program Tabs -->
+    <div class="program-tabs" role="tablist">
+      <button class="program-tab active" data-program="PATHWAYS" role="tab" onclick="setProgram('PATHWAYS')">
+        Pathways (<span id="prog-cnt-pathways">0</span>)
+        <span class="program-tab-sub">New players &bull; Pathways to Rugby form</span>
+      </button>
+      <button class="program-tab" data-program="ALL_TEAM" role="tab" onclick="setProgram('ALL_TEAM')">
+        All-Team Registration (<span id="prog-cnt-allteam">0</span>)
+        <span class="program-tab-sub">Every squad &bull; 2026-27 participant waiver</span>
+      </button>
+    </div>
+    <div id="program-note" class="program-note"></div>
+
     <!-- KPIs -->
     <div class="kpi-grid">
       <div class="kpi-card kpi-card--cleared">
@@ -573,6 +637,21 @@
     const SHEET_ARCHIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=417364230';
     const SHEET_LIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=746206013';
 
+    // All-Team Registration (Jotform 263017776830057) writes to its own tab in the same spreadsheet.
+    // Paste that tab's gid here once the Jotform -> Google Sheets integration is connected
+    // (it's the number after "gid=" in the sheet URL when the tab is open).
+    const ALL_TEAM_SHEET_GID = '';
+    const ALL_TEAM_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=' + ALL_TEAM_SHEET_GID;
+    const ALL_TEAM_FORM_URL = 'https://form.jotform.com/263017776830057';
+    const PATHWAYS_WAIVER_URL = 'https://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb';
+
+    const recordsByProgram = { PATHWAYS: [], ALL_TEAM: [] };
+    let allTeamNotice = '';
+    let currentProgram = 'PATHWAYS';
+    try {
+      if (localStorage.getItem('fog_clearance_program') === 'ALL_TEAM') currentProgram = 'ALL_TEAM';
+    } catch (e) {}
+
     let allRecords = [];
     let currentFilter = 'ALL';
     let searchQuery = '';
@@ -626,6 +705,9 @@
     function classifyInsurance(sel) {
       if (!sel) return { status: 'UNKNOWN', isInsured: false, label: 'Unknown / Unanswered' };
       const s = sel.trim().toLowerCase();
+      // 2026-27 All-Team waiver wording
+      if (s.startsWith('usar registration & insurance:')) return { status: 'INSURED_BOTH', isInsured: true, label: 'USAR Registration & Insurance' };
+      if (s.startsWith('usar registration only:')) return { status: 'UNINSURED', isInsured: false, label: 'USAR Registration Only: Declared No Insurance' };
       if (s.startsWith('both:')) return { status: 'INSURED_BOTH', isInsured: true, label: 'Both: USA Rugby + Health Insurance' };
       if (s.startsWith('insurance only:')) return { status: 'INSURED_ONLY', isInsured: true, label: 'Insurance Only (Medical Coverage)' };
       if (s.includes('do not currently have') || s.startsWith('registration only:')) {
@@ -641,13 +723,15 @@
 
       try {
         const cb = '&_cb=' + Date.now();
-        const [resArchive, resLive] = await Promise.all([
+        const [resArchive, resLive, resAllTeam] = await Promise.all([
           fetch(SHEET_ARCHIVE_URL + cb, { cache: 'no-store' }),
-          fetch(SHEET_LIVE_URL + cb, { cache: 'no-store' })
+          fetch(SHEET_LIVE_URL + cb, { cache: 'no-store' }),
+          ALL_TEAM_SHEET_GID ? fetch(ALL_TEAM_SHEET_URL + cb, { cache: 'no-store' }) : Promise.resolve(null)
         ]);
 
         const textArchive = resArchive.ok ? await resArchive.text() : '';
         const textLive = resLive.ok ? await resLive.text() : '';
+        const textAllTeam = resAllTeam && resAllTeam.ok ? await resAllTeam.text() : '';
 
         const recordMap = new Map();
 
@@ -714,93 +798,149 @@
           }
         }
 
-        // 2. Process Live Active Sheet (gid=746206013 - where Jotform writes new registrations)
-        if (textLive) {
-          const parsedLive = parseCSV(textLive);
-          if (parsedLive.length > 1) {
-            const h = parsedLive[0].map(c => c.trim().replace(/^"|"$/g, ''));
-            const idx = {
-              fname: h.indexOf('Full Name - First Name'),
-              lname: h.indexOf('Full Name - Last Name'),
-              email: h.indexOf('Email'),
-              phone: h.indexOf('Phone Number'),
-              selectOne: h.indexOf('Select one:'),
-              signature: h.indexOf('Signature'),
-              uniqueId: h.indexOf('Unique ID'),
-              date: h.indexOf('Submission Date')
-            };
+        // 2. Process Live Active Sheet (gid=746206013 - where the Pathways Jotform writes new registrations)
+        parseLiveTab(textLive, 'FOG-LIVE-').forEach(rec => recordMap.set(recordKey(rec), rec));
 
-            for (let i = 1; i < parsedLive.length; i++) {
-              const row = parsedLive[i];
-              const fname = (row[idx.fname] || '').trim();
-              const lname = (row[idx.lname] || '').trim();
-              const name = `${fname} ${lname}`.trim();
-              
-              let email = (row[idx.email] || '').trim();
-              if (!email.includes('@') && row[idx.email + 1] && row[idx.email + 1].includes('@')) {
-                email = row[idx.email + 1].trim();
-              }
-              email = email.toLowerCase();
-              const phone = normalizePhone(row[idx.phone] || '');
-              const selectOne = row[idx.selectOne] || '';
-              const signature = (row[idx.signature] || '').trim();
-              const date = (row[idx.date] || '').trim();
-              const uniqueId = (row[idx.uniqueId] || 'FOG-LIVE-' + i).trim();
+        recordsByProgram.PATHWAYS = sortNewestFirst(Array.from(recordMap.values()));
 
-              const insurance = classifyInsurance(selectOne);
-              const waiverSigned = Boolean(signature && signature.startsWith('http'));
-              const hasJotform = Boolean(email || name);
-
-              let clearanceStatus = 'CLEARED';
-              if (!waiverSigned) {
-                clearanceStatus = 'NEEDS_WAIVER';
-              } else if (!hasJotform) {
-                clearanceStatus = 'ORPHAN_WAIVER';
-              } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
-                clearanceStatus = 'UNINSURED';
-              } else if (insurance.status === 'NON_CONTACT') {
-                clearanceStatus = 'NON_CONTACT';
-              }
-
-              const rec = {
-                uniqueId,
-                fullName: name,
-                email,
-                phone,
-                insurance,
-                waiverSigned,
-                waiverPdfUrl: signature,
-                hasJotform,
-                isWorkflowErrored: false,
-                submissionDate: date,
-                clearanceStatus
-              };
-
-              const key = email || phone || name.toLowerCase();
-              if (key) {
-                recordMap.set(key, rec);
-              }
-            }
+        // 3. All-Team Registration tab (Jotform 263017776830057)
+        allTeamNotice = '';
+        if (!ALL_TEAM_SHEET_GID) {
+          allTeamNotice = 'The All-Team Registration form (<a href="' + ALL_TEAM_FORM_URL + '" target="_blank" rel="noopener">263017776830057</a>) is not connected to this dashboard yet. Connect it to a new tab in the clearance Google Sheet, then set <code>ALL_TEAM_SHEET_GID</code> in clearance.html.';
+          recordsByProgram.ALL_TEAM = [];
+        } else if (!textAllTeam) {
+          allTeamNotice = 'Could not load the All-Team Registration tab. Check the sheet is still shared as "Anyone with the link" and that <code>ALL_TEAM_SHEET_GID</code> is right.';
+          recordsByProgram.ALL_TEAM = [];
+        } else {
+          const header = (parseCSV(textAllTeam)[0] || []).map(c => c.trim());
+          if (header.includes('How did you hear about Pathways?')) {
+            // Google returns the first tab when a gid is wrong, which would show Pathways players here.
+            allTeamNotice = '<code>ALL_TEAM_SHEET_GID</code> points at a Pathways tab, not the All-Team Registration tab. Showing nothing until it is fixed.';
+            recordsByProgram.ALL_TEAM = [];
+          } else {
+            const teamMap = new Map();
+            parseLiveTab(textAllTeam, 'FOG-TEAM-').forEach(rec => teamMap.set(recordKey(rec), rec));
+            recordsByProgram.ALL_TEAM = sortNewestFirst(Array.from(teamMap.values()));
           }
         }
 
-        allRecords = Array.from(recordMap.values());
-
-        // Sort newest submissions first
-        allRecords.sort((a, b) => {
-          const da = new Date(a.submissionDate);
-          const db = new Date(b.submissionDate);
-          if (!isNaN(da) && !isNaN(db)) return db - da;
-          return (b.submissionDate || '').localeCompare(a.submissionDate || '');
-        });
-
-        updateKPIsAndRender();
+        document.getElementById('prog-cnt-pathways').textContent = recordsByProgram.PATHWAYS.length;
+        document.getElementById('prog-cnt-allteam').textContent = recordsByProgram.ALL_TEAM.length;
+        showProgram();
       } catch (err) {
         console.error('Fetch error:', err);
         tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 2.5rem; color: #C4321F;">Failed to fetch live sheet: ${escapeHtml(err.message)}<br><button class="btn-action" style="margin-top: 10px;" onclick="fetchLiveSheetData()">Retry</button></td></tr>`;
       }
     }
 
+
+    // Rows written by a Jotform -> Google Sheets integration (split "Full Name - First/Last Name" columns)
+    function parseLiveTab(text, idPrefix) {
+      const out = [];
+      if (!text) return out;
+      const parsed = parseCSV(text);
+      if (parsed.length < 2) return out;
+      const h = parsed[0].map(c => c.trim().replace(/^"|"$/g, ''));
+      const idx = {
+        fname: h.indexOf('Full Name - First Name'),
+        lname: h.indexOf('Full Name - Last Name'),
+        fullName: h.indexOf('Full Name'),
+        email: h.indexOf('Email'),
+        phone: h.indexOf('Phone Number'),
+        selectOne: h.indexOf('Select one:'),
+        signature: h.indexOf('Signature'),
+        signedDoc: h.indexOf('Signed Document'),
+        uniqueId: h.indexOf('Unique ID'),
+        submissionId: h.indexOf('Submission ID'),
+        date: h.indexOf('Submission Date')
+      };
+      const cell = (row, k) => (idx[k] !== -1 ? (row[idx[k]] || '') : '').trim();
+
+      for (let i = 1; i < parsed.length; i++) {
+        const row = parsed[i];
+        const name = (`${cell(row, 'fname')} ${cell(row, 'lname')}`.trim()) || cell(row, 'fullName');
+
+        let email = cell(row, 'email');
+        if (!email.includes('@') && idx.email !== -1 && row[idx.email + 1] && row[idx.email + 1].includes('@')) {
+          email = row[idx.email + 1].trim();
+        }
+        email = email.toLowerCase();
+        const phone = normalizePhone(cell(row, 'phone'));
+        const insurance = classifyInsurance(cell(row, 'selectOne'));
+        const signedDoc = cell(row, 'signedDoc');
+        const signature = cell(row, 'signature');
+        const pdfUrl = signedDoc.startsWith('http') ? signedDoc : signature;
+        const waiverSigned = Boolean(pdfUrl && pdfUrl.startsWith('http'));
+        const hasJotform = Boolean(email || name);
+
+        let clearanceStatus = 'CLEARED';
+        if (!waiverSigned) {
+          clearanceStatus = 'NEEDS_WAIVER';
+        } else if (!hasJotform) {
+          clearanceStatus = 'ORPHAN_WAIVER';
+        } else if (!insurance.isInsured && insurance.status === 'UNINSURED') {
+          clearanceStatus = 'UNINSURED';
+        } else if (insurance.status === 'NON_CONTACT') {
+          clearanceStatus = 'NON_CONTACT';
+        }
+
+        const rec = {
+          uniqueId: cell(row, 'uniqueId') || cell(row, 'submissionId') || idPrefix + i,
+          fullName: name,
+          email,
+          phone,
+          insurance,
+          waiverSigned,
+          waiverPdfUrl: pdfUrl,
+          hasJotform,
+          isWorkflowErrored: false,
+          submissionDate: cell(row, 'date'),
+          clearanceStatus
+        };
+        if (recordKey(rec)) out.push(rec);
+      }
+      return out;
+    }
+
+    function recordKey(rec) {
+      return rec.email || rec.phone || (rec.fullName || '').toLowerCase();
+    }
+
+    function sortNewestFirst(list) {
+      return list.sort((a, b) => {
+        const da = new Date(a.submissionDate);
+        const db = new Date(b.submissionDate);
+        if (!isNaN(da) && !isNaN(db)) return db - da;
+        return (b.submissionDate || '').localeCompare(a.submissionDate || '');
+      });
+    }
+
+    function setProgram(program) {
+      currentProgram = program === 'ALL_TEAM' ? 'ALL_TEAM' : 'PATHWAYS';
+      try { localStorage.setItem('fog_clearance_program', currentProgram); } catch (e) {}
+      showProgram();
+    }
+
+    function showProgram() {
+      document.querySelectorAll('.program-tab').forEach(b => {
+        const on = b.dataset.program === currentProgram;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      const note = document.getElementById('program-note');
+      if (currentProgram === 'ALL_TEAM' && allTeamNotice) {
+        note.innerHTML = '⚠️ ' + allTeamNotice;
+        note.style.display = 'block';
+      } else {
+        note.style.display = 'none';
+      }
+      allRecords = recordsByProgram[currentProgram];
+      currentFilter = 'ALL';
+      const firstFilter = document.querySelector('.filter-tabs .tab-btn');
+      document.querySelectorAll('.filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+      if (firstFilter) firstFilter.classList.add('active');
+      updateKPIsAndRender();
+    }
 
     function updateKPIsAndRender() {
       const cleared = allRecords.filter(r => r.clearanceStatus === 'CLEARED').length;
@@ -828,7 +968,7 @@
 
     function setFilter(filter, btn) {
       currentFilter = filter;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       applyFilterAndRender();
     }
@@ -971,11 +1111,12 @@
 
         <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--fog-gray); font-size: 0.78rem; color: #666;">
           <span>Unique ID: <code>${escapeHtml(p.uniqueId)}</code></span>
-          <span>Google Group: <code>rookies@fogrugby.com</code></span>
+          <span>${currentProgram === 'PATHWAYS' ? 'Google Group: <code>rookies@fogrugby.com</code>' : 'All-Team Registration'}</span>
         </div>
       `;
 
       // 2. Tab 2: USA Rugby Waiver
+      const waiverUrl = currentProgram === 'ALL_TEAM' ? ALL_TEAM_FORM_URL : PATHWAYS_WAIVER_URL;
       if (p.waiverSigned && firstPdf) {
         document.getElementById('modal-pane-waiver').innerHTML = `
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
@@ -997,10 +1138,10 @@
               ${escapeHtml(p.fullName)} has completed the registration form but has not signed the official USA Rugby waiver. Contact rugby participation requires a completed waiver.
             </p>
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-              <a href="mailto:${escapeHtml(p.email)}?subject=SF%20Fog%20Rugby%20-%20Please%20Sign%20Your%20USA%20Rugby%20Waiver&body=Hi%20${encodeURIComponent((p.fullName||'').split(' ')[0])},%0A%0AWelcome%20to%20SF%20Fog%20Rugby!%20To%20complete%20your%20clearance%20for%20practice,%20please%20sign%20the%20USA%20Rugby%20waiver%20here:%0Ahttps://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb%0A%0AThank%20you,%0ASF%20Fog%20RFC" class="btn-action" style="padding: 9px 18px; text-decoration: none; font-size: 0.85rem;">
+              <a href="mailto:${escapeHtml(p.email)}?subject=SF%20Fog%20Rugby%20-%20Please%20Sign%20Your%20USA%20Rugby%20Waiver&body=Hi%20${encodeURIComponent((p.fullName||'').split(' ')[0])},%0A%0AWelcome%20to%20SF%20Fog%20Rugby!%20To%20complete%20your%20clearance%20for%20practice,%20please%20sign%20the%20USA%20Rugby%20waiver%20here:%0A${encodeURIComponent(waiverUrl)}%0A%0AThank%20you,%0ASF%20Fog%20RFC" class="btn-action" style="padding: 9px 18px; text-decoration: none; font-size: 0.85rem;">
                 📧 Send Waiver Reminder to ${escapeHtml(p.email || 'Player')}
               </a>
-              <button class="btn-action" style="padding: 9px 18px; font-size: 0.85rem;" onclick="navigator.clipboard.writeText('https://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb').then(() => alert('Waiver link copied to clipboard!'))">
+              <button class="btn-action" style="padding: 9px 18px; font-size: 0.85rem;" onclick="navigator.clipboard.writeText('${waiverUrl}').then(() => alert('Waiver link copied to clipboard!'))">
                 📋 Copy Waiver Signing Link
               </button>
             </div>
