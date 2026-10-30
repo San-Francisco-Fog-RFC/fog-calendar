@@ -637,11 +637,10 @@
     const SHEET_ARCHIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=417364230';
     const SHEET_LIVE_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=746206013';
 
-    // All-Team Registration (Jotform 263017776830057) writes to its own tab in the same spreadsheet.
-    // Paste that tab's gid here once the Jotform -> Google Sheets integration is connected
-    // (it's the number after "gid=" in the sheet URL when the tab is open).
-    const ALL_TEAM_SHEET_GID = '';
-    const ALL_TEAM_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1WVtjKI-IslrrqcHRJBWUBae7IanZCSwUT_c1wZTgRcE/gviz/tq?tqx=out:csv&gid=' + ALL_TEAM_SHEET_GID;
+    // All-Team Registration (Jotform 263017776830057) writes to its own spreadsheet,
+    // tab "Player Registrations" (gid=600037915), through Jotform's Google Sheets integration.
+    const ALL_TEAM_SHEET_GID = '600037915';
+    const ALL_TEAM_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1CGE4qkA0Rrj1TbO-N56ugFAhaA-0ELeKRLAmOgltZqI/gviz/tq?tqx=out:csv&gid=' + ALL_TEAM_SHEET_GID;
     const ALL_TEAM_FORM_URL = 'https://form.jotform.com/263017776830057';
     const PATHWAYS_WAIVER_URL = 'https://www.jotform.com/sign/262778375023059/invite/01m47jy3yafff00ecd2198cbeb';
 
@@ -806,10 +805,10 @@
         // 3. All-Team Registration tab (Jotform 263017776830057)
         allTeamNotice = '';
         if (!ALL_TEAM_SHEET_GID) {
-          allTeamNotice = 'The All-Team Registration form (<a href="' + ALL_TEAM_FORM_URL + '" target="_blank" rel="noopener">263017776830057</a>) is not connected to this dashboard yet. Connect it to a new tab in the clearance Google Sheet, then set <code>ALL_TEAM_SHEET_GID</code> in clearance.html.';
+          allTeamNotice = 'The All-Team Registration form (<a href="' + ALL_TEAM_FORM_URL + '" target="_blank" rel="noopener">263017776830057</a>) is not connected to this dashboard yet. Connect it to a Google Sheet, then set <code>ALL_TEAM_SHEET_URL</code> in clearance.html.';
           recordsByProgram.ALL_TEAM = [];
         } else if (!textAllTeam) {
-          allTeamNotice = 'Could not load the All-Team Registration tab. Check the sheet is still shared as "Anyone with the link" and that <code>ALL_TEAM_SHEET_GID</code> is right.';
+          allTeamNotice = 'Could not load the All-Team Registration tab. Check the All-Team sheet is still shared as "Anyone with the link" and that <code>ALL_TEAM_SHEET_GID</code> is right.';
           recordsByProgram.ALL_TEAM = [];
         } else {
           const header = (parseCSV(textAllTeam)[0] || []).map(c => c.trim());
@@ -821,6 +820,9 @@
             const teamMap = new Map();
             parseLiveTab(textAllTeam, 'FOG-TEAM-').forEach(rec => teamMap.set(recordKey(rec), rec));
             recordsByProgram.ALL_TEAM = sortNewestFirst(Array.from(teamMap.values()));
+            if (recordsByProgram.ALL_TEAM.length === 0) {
+              allTeamNotice = 'Connected to the All-Team Registration sheet. No submissions yet.';
+            }
           }
         }
 
@@ -929,7 +931,7 @@
       });
       const note = document.getElementById('program-note');
       if (currentProgram === 'ALL_TEAM' && allTeamNotice) {
-        note.innerHTML = '⚠️ ' + allTeamNotice;
+        note.innerHTML = (allTeamNotice.startsWith('Connected') ? 'ℹ️ ' : '⚠️ ') + allTeamNotice;
         note.style.display = 'block';
       } else {
         note.style.display = 'none';
