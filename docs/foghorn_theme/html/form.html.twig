@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>{{ page.title }} | San Francisco Fog RFC</title>
+  <title>{{ page.title }} | San Francisco Fog Rugby Football Club</title>
   <meta name="description" content="{{ page.metaDescription }}">
   <link rel="icon" type="image/png" href="https://events.fogrugby.com/assets/img/fog-crest-white.png">
 
@@ -64,16 +64,21 @@
     .hero-col {
       width: 44%;
       min-height: calc(100vh - 5px);
-      background: linear-gradient(180deg, rgba(0, 36, 60, 0.80) 0%, rgba(0, 18, 30, 0.95) 100%),
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.82) 0%, rgba(0, 18, 30, 0.95) 100%),
                   url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 44px 44px 36px 44px;
+      padding: 40px 44px 36px 44px;
       color: #FFFFFF;
       position: relative;
     }
 
+    .hero-top-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
     .hero-top-nav {
       display: flex;
       justify-content: flex-start;
@@ -94,13 +99,12 @@
     .hero-brand-lockup {
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin: auto 0;
-      max-width: 480px;
+      gap: 18px;
+      max-width: 520px;
     }
     .hero-crest {
-      width: 84px;
-      height: 84px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
       flex-shrink: 0;
       filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
@@ -111,27 +115,30 @@
       justify-content: center;
     }
     .hero-title {
-      font-size: 28px;
-      line-height: 1.15;
+      font-size: 23px;
+      line-height: 1.2;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
       color: #FFFFFF;
       margin: 0;
     }
+    .hero-title span {
+      display: block;
+    }
     .hero-subline {
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.3;
       color: var(--fog-light-blue);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 700;
-      margin-top: 6px;
+      margin-top: 5px;
     }
 
     .desktop-footer {
       border-top: 1px solid rgba(255, 255, 255, 0.18);
-      padding-top: 18px;
+      padding-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -155,10 +162,15 @@
       color: rgba(255, 255, 255, 0.4);
       padding: 0 6px;
     }
-    .footer-legal {
+    .footer-sponsor {
       font-size: 12px;
       line-height: 1.55;
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .footer-copyright {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.72);
     }
 
     .form-col {
@@ -198,22 +210,23 @@
         background: linear-gradient(180deg, rgba(0, 36, 60, 0.88) 0%, rgba(0, 18, 30, 0.96) 100%),
                     url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       }
-      .hero-top-nav {
-        margin-bottom: 14px;
+      .hero-top-section {
+        gap: 14px;
       }
       .hero-brand-lockup {
-        gap: 16px;
-        margin: 0;
+        gap: 15px;
       }
       .hero-crest {
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
       }
       .hero-title {
-        font-size: 20px;
+        font-size: 15.5px;
+        line-height: 1.2;
       }
+
       .hero-subline {
-        font-size: 12px;
+        font-size: 11.5px;
         margin-top: 3px;
       }
       .desktop-footer {
@@ -238,15 +251,30 @@
         text-align: center;
       }
       .mobile-footer .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px 14px;
         font-size: 13.5px;
         margin-bottom: 16px;
+        line-height: 1.5;
       }
-      .mobile-footer .footer-legal {
+      .mobile-footer .sep {
+        display: none;
+      }
+      .mobile-footer .footer-sponsor {
         font-size: 12px;
         line-height: 1.6;
-        color: rgba(255, 255, 255, 0.78);
-        max-width: 440px;
-        margin: 0 auto 16px auto;
+        color: rgba(255, 255, 255, 0.88);
+        max-width: 480px;
+        margin: 0 auto 8px auto;
+      }
+      .mobile-footer .footer-copyright {
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 16px;
       }
       .mobile-footer .back-link {
         display: inline-block;
@@ -262,14 +290,16 @@
 
   <div class="split-container">
     <div class="hero-col">
-      <div class="hero-top-nav">
-        <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="back-link">&larr; Back to The Foghorn</a>
-      </div>
-      <div class="hero-brand-lockup">
-        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-crest">
-        <div class="hero-brand-text">
-          <h1 class="hero-title">{{ page.title }}</h1>
-          <div class="hero-subline">Inclusive Rugby since 2000</div>
+      <div class="hero-top-section">
+        <div class="hero-top-nav">
+          <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="back-link">&larr; Back to The Foghorn</a>
+        </div>
+        <div class="hero-brand-lockup">
+          <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-crest">
+          <div class="hero-brand-text">
+            <h1 class="hero-title">{{ page.title }}</h1>
+            <div class="hero-subline">Inclusive Rugby since 2000</div>
+          </div>
         </div>
       </div>
       <div class="desktop-footer">
@@ -280,8 +310,11 @@
           <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
           <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
         </div>
-        <div class="footer-legal">
-          &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club &middot; A fiscally sponsored project of Dancers' Group
+        <div class="footer-sponsor">
+          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+        </div>
+        <div class="footer-copyright">
+          &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
         </div>
       </div>
     </div>
@@ -301,8 +334,11 @@
       <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
       <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
     </div>
-    <div class="footer-legal">
-      &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club &middot; A fiscally sponsored project of Dancers' Group
+    <div class="footer-sponsor">
+      The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+    </div>
+    <div class="footer-copyright">
+      &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
     </div>
     <div>
       <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="back-link">&larr; Back to The Foghorn</a>
