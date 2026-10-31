@@ -270,6 +270,16 @@ events:
     venue: crocker-amazon
     notes: "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm."
 
+  - id: 2026-10-30-rookie-graduation-halloween-party
+    title: "Pathway Graduation & Halloween Party"
+    date: 2026-10-30
+    time: "19:00"
+    end_time: "23:00"
+    venue: pilsner-inn
+    category: social
+    status: confirmed
+    notes: "Graduation celebration and Halloween party for Pathway rookies, senior players, and alumni! Costumes encouraged."
+
 # ---------------------------------------------------------------- Preseason 2026 (email: tentative, may change)
   - id: 2026-11-07-usf-away
     title: "USF vs SF Fog"
