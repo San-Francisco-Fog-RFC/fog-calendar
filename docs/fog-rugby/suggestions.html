@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Club Suggestion Box | San Francisco Fog RFC</title>
+  <meta name="description" content="Share your ideas, feedback, and suggestions with the San Francisco Fog RFC Executive Board.">
+  <link rel="icon" type="image/png" href="https://events.fogrugby.com/assets/img/fog-crest-white.png">
+
+  <!-- First-Party GA4 & Meta Pixel Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTRRT4XDS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GD8T0M6RZ9', { page_title: 'Club Suggestion Box' });
+    gtag('config', 'G-WTRRT4XDS5', { page_title: 'Club Suggestion Box', send_page_view: true });
+  </script>
+
+  <style>
+    /* ==========================================================================
+       SF FOG RFC SPLIT-SCREEN LANDING PAGE & FORM
+       Optimized to fit 100% within 100vh desktop viewport with zero vertical scroll
+       ========================================================================== */
+    :root {
+      --fog-blue: #006EB6;
+      --fog-light-blue: #24A0F1;
+      --fog-dark-blue: #00243C;
+      --fog-gray: #DCDDDE;
+      --fog-gray-50: #F1F2F3;
+      --fog-dark-gray: #141718;
+      --fog-white: #FFFFFF;
+      --fog-radius-btn: 2px;
+      --fog-radius-card: 4px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: var(--fog-dark-gray);
+      overflow-x: hidden;
+    }
+
+    .split-container {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* Left Hero Column: Image & Brand */
+    .hero-col {
+      width: 44%;
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.72) 0%, rgba(0, 24, 40, 0.92) 100%),
+                  url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 36px;
+      color: #FFFFFF;
+      position: relative;
+    }
+
+    /* Progress Pride Accent Stripe */
+    .pride-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      display: flex;
+    }
+    .pride-bar { flex: 1; height: 100%; }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .hero-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .hero-club-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    .hero-subline {
+      font-size: 11px;
+      color: var(--fog-light-blue);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero-body {
+      margin: auto 0;
+      max-width: 420px;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(36, 160, 241, 0.15);
+      border: 1px solid rgba(36, 160, 241, 0.4);
+      color: var(--fog-light-blue);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--fog-radius-btn);
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 18px;
+    }
+    .hero-quote-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid var(--fog-light-blue);
+      padding: 10px 14px;
+      border-radius: 2px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-footer {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 14px;
+    }
+    .hero-footer a {
+      color: var(--fog-light-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Right Form Column: Viewport-Budgeted Form */
+    .form-col {
+      width: 56%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 48px;
+      background-color: #FFFFFF;
+      overflow-y: auto;
+    }
+
+    .form-card {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .form-header {
+      margin-bottom: 18px;
+    }
+    .form-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fog-blue);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .form-title {
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      margin-bottom: 6px;
+    }
+    .form-subtitle {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #555555;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--fog-dark-blue);
+      margin-bottom: 4px;
+    }
+    .form-group .hint {
+      font-size: 11px;
+      color: #777777;
+      margin-top: 2px;
+    }
+    .form-control {
+      width: 100%;
+      font-family: inherit;
+      font-size: 13px;
+      padding: 8px 12px;
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-btn);
+      background-color: #FFFFFF;
+      color: var(--fog-dark-gray);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.15);
+    }
+    textarea.form-control {
+      height: 72px;
+      resize: vertical;
+      line-height: 1.4;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--fog-blue);
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 12px 18px;
+      border: none;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background-color 0.15s ease, transform 0.05s ease;
+    }
+    .submit-btn:hover {
+      background-color: #005691;
+    }
+    .submit-btn:active {
+      transform: scale(0.99);
+    }
+
+    .form-footnote {
+      font-size: 11px;
+      line-height: 1.4;
+      color: #777777;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* Success State */
+    .success-panel {
+      display: none;
+      background: #F8F9FA;
+      border: 1px solid #DCDDDE;
+      border-left: 4px solid #157A38;
+      border-radius: var(--fog-radius-card);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .success-icon {
+      font-size: 32px;
+      color: #157A38;
+      margin-bottom: 8px;
+    }
+    .success-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      margin-bottom: 6px;
+    }
+    .success-text {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #555555;
+      margin-bottom: 16px;
+    }
+
+    /* Responsive Mobile Layout (Stack cleanly) */
+    @media (max-width: 899px) {
+      .split-container {
+        flex-direction: column;
+        min-height: auto;
+      }
+      .hero-col {
+        width: 100%;
+        min-height: 260px;
+        padding: 24px 20px;
+      }
+      .hero-title {
+        font-size: 24px;
+      }
+      .form-col {
+        width: 100%;
+        min-height: auto;
+        padding: 32px 20px;
+      }
+      .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      textarea.form-control {
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="split-container">
+    
+    <!-- LEFT PANEL: High-Res Team Photo + Mission Backdrop -->
+    <div class="hero-col">
+      <div class="pride-stripe" aria-hidden="true">
+        <span class="pride-bar" style="background:#000000"></span>
+        <span class="pride-bar" style="background:#613915"></span>
+        <span class="pride-bar" style="background:#74D7EE"></span>
+        <span class="pride-bar" style="background:#FFAFC8"></span>
+        <span class="pride-bar" style="background:#FFFFFF"></span>
+        <span class="pride-bar" style="background:#E40303"></span>
+        <span class="pride-bar" style="background:#FF8C00"></span>
+        <span class="pride-bar" style="background:#FFED00"></span>
+        <span class="pride-bar" style="background:#008026"></span>
+        <span class="pride-bar" style="background:#004DFF"></span>
+        <span class="pride-bar" style="background:#750787"></span>
+      </div>
+
+      <div class="hero-brand">
+        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-logo">
+        <div>
+          <div class="hero-club-title">San Francisco Fog RFC</div>
+          <div class="hero-subline">West Coast Premier Inclusive Rugby</div>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <span class="hero-tag">Member Voice · 2026 Season</span>
+        <h1 class="hero-title">Shape Our 25th Anniversary Year</h1>
+        <p class="hero-desc">The Fog belongs to every player, rookie, supporter, and alumnus. Your honest suggestions steer coaching plans, social events, road trips, and club governance.</p>
+        
+        <div class="hero-quote-box">
+          <strong>🔒 Confidential &amp; Reviewed Monthly:</strong> Every submission is reviewed directly by the SF Fog Executive Board. Submissions are 100% anonymous unless you choose to share your name.
+        </div>
+      </div>
+
+      <div class="hero-footer">
+        <span>&copy; 2000&ndash;2026 SF Fog RFC &middot; 501(c)(3)</span>
+        <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html">&larr; Back to The Foghorn</a>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: Viewport-Constrained Form -->
+    <div class="form-col">
+      <div class="form-card">
+        
+        <div class="form-header">
+          <span class="form-eyebrow">Digital Suggestion Box</span>
+          <h2 class="form-title">Have an Idea or Suggestion?</h2>
+          <p class="form-subtitle">Tell the board what we should start, stop, or improve. All topics welcome.</p>
+        </div>
+
+        <!-- Mautic Form Embed (Form ID 7) -->
+        <form id="suggestion-form" method="post" action="https://mautic.fogrugby.com/form/submit?formId=7" data-mautic-form="clubsuggestionbox">
+          <input type="hidden" name="mauticform[formId]" value="7">
+          <input type="hidden" name="mauticform[formName]" value="clubsuggestionbox">
+          <input type="hidden" name="mauticform[return]" value="">
+          <input type="hidden" name="mauticform[mauticpage]" value="6">
+
+          <!-- Topic Select -->
+          <div class="form-group">
+            <label for="topic-select">Category / Topic *</label>
+            <select id="topic-select" name="mauticform[topic]" class="form-control" required>
+              <option value="" disabled selected>Select a topic...</option>
+              <option value="training">🏉 Training &amp; Coaching</option>
+              <option value="matches">🏆 Matches, Tours &amp; Tournaments</option>
+              <option value="socials">🍻 Social Mixers &amp; Team Events</option>
+              <option value="gear">👕 Gear, Boots &amp; Kit Design</option>
+              <option value="inclusion">🌈 Welcome, Inclusion &amp; Wellbeing</option>
+              <option value="comms">📣 Communications &amp; Social Media</option>
+              <option value="board">📋 Board &amp; Club Governance</option>
+              <option value="other">💡 Something Else</option>
+            </select>
+          </div>
+
+          <!-- Suggestion Textarea -->
+          <div class="form-group">
+            <label for="suggestion-text">Your Suggestion or Feedback *</label>
+            <textarea id="suggestion-text" name="mauticform[suggestion]" class="form-control" placeholder="Share your thoughts, specific ideas, or constructive feedback..." required></textarea>
+          </div>
+
+          <!-- Optional Name & Email (2-Column Grid on Desktop) -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="name-input">Your Name (Optional)</label>
+              <input type="text" id="name-input" name="mauticform[name]" class="form-control" placeholder="Leave blank for anonymous">
+            </div>
+            <div class="form-group">
+              <label for="email-input">Your Email (Optional)</label>
+              <input type="email" id="email-input" name="mauticform[email]" class="form-control" placeholder="If you'd like a response">
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn" class="submit-btn">Send to the Board &rsaquo;</button>
+
+          <p class="form-footnote">
+            Optional anonymous submission &middot; Reviewed at next board meeting &middot; Or email <a href="mailto:board@fogrugby.com" style="color:var(--fog-blue); text-decoration:none; font-weight:700;">board@fogrugby.com</a>
+          </p>
+        </form>
+
+        <!-- Inline Success State -->
+        <div id="success-panel" class="success-panel">
+          <div class="success-icon">&check;</div>
+          <h3 class="success-title">Thank You for Your Suggestion!</h3>
+          <p class="success-text">Your feedback has been delivered to the SF Fog Executive Board and will be reviewed in our monthly agenda.</p>
+          <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="submit-btn" style="display:inline-block; text-decoration:none; text-align:center; padding:10px 18px;">Return to The Foghorn &rsaquo;</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AJAX Form Submission Script for Instant Seamless Feedback -->
+  <script>
+    const form = document.getElementById('suggestion-form');
+    const successPanel = document.getElementById('success-panel');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        }).then(() => {
+          form.style.display = 'none';
+          successPanel.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'suggestion_submitted', {
+              event_category: 'feedback',
+              event_label: document.getElementById('topic-select').value
+            });
+          }
+        }).catch(() => {
+          // Fallback standard submit if fetch fails
+          form.submit();
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

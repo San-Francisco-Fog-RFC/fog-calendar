@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{{ page.title }} | San Francisco Fog RFC</title>
+  <meta name="description" content="{{ page.metaDescription }}">
+  <link rel="icon" type="image/png" href="https://events.fogrugby.com/assets/img/fog-crest-white.png">
+
+  <!-- First-Party GA4 & Meta Pixel Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTRRT4XDS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GD8T0M6RZ9', { page_title: '{{ page.title }}' });
+    gtag('config', 'G-WTRRT4XDS5', { page_title: '{{ page.title }}', send_page_view: true });
+  </script>
+
+  <style>
+    :root {
+      --fog-blue: #006EB6;
+      --fog-light-blue: #24A0F1;
+      --fog-dark-blue: #00243C;
+      --fog-gray: #DCDDDE;
+      --fog-gray-50: #F1F2F3;
+      --fog-dark-gray: #141718;
+      --fog-white: #FFFFFF;
+      --fog-radius-btn: 2px;
+      --fog-radius-card: 4px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: var(--fog-dark-gray);
+      overflow-x: hidden;
+    }
+
+    .split-container {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .hero-col {
+      width: 44%;
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.72) 0%, rgba(0, 24, 40, 0.92) 100%),
+                  url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 36px;
+      color: #FFFFFF;
+      position: relative;
+    }
+
+    .pride-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      display: flex;
+    }
+    .pride-bar { flex: 1; height: 100%; }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .hero-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .hero-club-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    .hero-subline {
+      font-size: 11px;
+      color: var(--fog-light-blue);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero-body {
+      margin: auto 0;
+      max-width: 420px;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(36, 160, 241, 0.15);
+      border: 1px solid rgba(36, 160, 241, 0.4);
+      color: var(--fog-light-blue);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--fog-radius-btn);
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 18px;
+    }
+    .hero-footer {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 14px;
+    }
+    .hero-footer a {
+      color: var(--fog-light-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .form-col {
+      width: 56%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 48px;
+      background-color: #FFFFFF;
+      overflow-y: auto;
+    }
+    .form-card {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    @media (max-width: 899px) {
+      .split-container {
+        flex-direction: column;
+        min-height: auto;
+      }
+      .hero-col {
+        width: 100%;
+        min-height: 240px;
+        padding: 24px 20px;
+      }
+      .hero-title {
+        font-size: 24px;
+      }
+      .form-col {
+        width: 100%;
+        min-height: auto;
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="split-container">
+    <div class="hero-col">
+      <div class="pride-stripe" aria-hidden="true">
+        <span class="pride-bar" style="background:#000000"></span><span class="pride-bar" style="background:#613915"></span><span class="pride-bar" style="background:#74D7EE"></span><span class="pride-bar" style="background:#FFAFC8"></span><span class="pride-bar" style="background:#FFFFFF"></span><span class="pride-bar" style="background:#E40303"></span><span class="pride-bar" style="background:#FF8C00"></span><span class="pride-bar" style="background:#FFED00"></span><span class="pride-bar" style="background:#008026"></span><span class="pride-bar" style="background:#004DFF"></span><span class="pride-bar" style="background:#750787"></span>
+      </div>
+      <div class="hero-brand">
+        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-logo">
+        <div>
+          <div class="hero-club-title">San Francisco Fog RFC</div>
+          <div class="hero-subline">West Coast Premier Inclusive Rugby</div>
+        </div>
+      </div>
+      <div class="hero-body">
+        <span class="hero-tag">Official Club Portal</span>
+        <h1 class="hero-title">{{ page.title }}</h1>
+        <p class="hero-desc">{{ page.metaDescription }}</p>
+      </div>
+      <div class="hero-footer">
+        <span>&copy; 2000&ndash;2026 SF Fog RFC &middot; 501(c)(3)</span>
+        <a href="https://www.fogrugby.com">fogrugby.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="form-col">
+      <div class="form-card" data-slot="text">
+        {{ page.content|raw }}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
