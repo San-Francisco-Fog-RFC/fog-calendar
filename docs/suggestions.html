@@ -21,7 +21,7 @@
   <style>
     /* ==========================================================================
        SF FOG RFC SPLIT-SCREEN LANDING PAGE & FORM
-       Full-width top pride bar, heroic left brand anchor, generous spacious form
+       Side-by-side logo lockup, generous form, comprehensive dual-mode footer
        ========================================================================== */
     :root {
       --fog-blue: #006EB6;
@@ -66,82 +66,114 @@
       display: flex;
       min-height: 100vh;
       width: 100%;
-      padding-top: 5px; /* Offset for fixed pride bar */
+      padding-top: 5px; /* Offset for top pride bar */
     }
 
-    /* LEFT HERO COLUMN: Atmospheric Photography + Heroic Centered Brand */
+    /* LEFT HERO COLUMN: Atmospheric Photography + Centered Side-by-Side Brand Lockup */
     .hero-col {
       width: 44%;
       min-height: calc(100vh - 5px);
-      background: linear-gradient(180deg, rgba(0, 36, 60, 0.78) 0%, rgba(0, 18, 30, 0.94) 100%),
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.80) 0%, rgba(0, 18, 30, 0.95) 100%),
                   url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 48px 44px 36px 44px;
+      padding: 44px 44px 36px 44px;
       color: #FFFFFF;
       position: relative;
     }
 
-    .hero-top-spacer {
-      height: 20px;
+    .hero-top-nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--fog-light-blue);
+      text-decoration: underline;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: color 0.15s ease;
+    }
+    .back-link:hover {
+      color: #FFFFFF;
+    }
+    .back-link:focus-visible {
+      outline: 2px solid var(--fog-light-blue);
+      outline-offset: 2px;
     }
 
-    /* Large Hero Brand Centerpiece */
-    .hero-centerpiece {
+    /* Side-by-Side Brand Lockup (Logo + Text next to each other) */
+    .hero-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 20px;
       margin: auto 0;
-      text-align: left;
-      max-width: 460px;
+      max-width: 480px;
     }
-    .hero-crest-lg {
-      width: 110px;
-      height: 110px;
+    .hero-crest {
+      width: 84px;
+      height: 84px;
       object-fit: contain;
-      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
-      margin-bottom: 22px;
-      display: block;
+      flex-shrink: 0;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
     }
-    .hero-title-lg {
-      font-size: 38px;
-      line-height: 1.1;
+    .hero-brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-title {
+      font-size: 28px;
+      line-height: 1.15;
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #FFFFFF;
-      margin-bottom: 8px;
+      margin: 0;
     }
-    .hero-subline-lg {
-      font-size: 16px;
+    .hero-subline {
+      font-size: 13.5px;
       line-height: 1.3;
       color: var(--fog-light-blue);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 700;
+      margin-top: 6px;
     }
 
-    /* Hero Footer with Exact Fiscal Sponsorship */
-    .hero-footer {
-      font-size: 12px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.75);
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    /* Desktop Footer at bottom of Left Hero */
+    .desktop-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
       padding-top: 18px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
-    .hero-footer-legal {
-      color: rgba(255, 255, 255, 0.85);
-    }
-    .hero-footer a {
-      color: var(--fog-light-blue);
-      text-decoration: underline;
+    .footer-links {
+      font-size: 13px;
       font-weight: 700;
-      align-self: flex-start;
+      color: var(--fog-light-blue);
+      line-height: 1.5;
     }
-    .hero-footer a:focus-visible {
-      outline: 2px solid var(--fog-light-blue);
-      outline-offset: 2px;
+    .footer-links a {
+      color: var(--fog-light-blue);
+      text-decoration: none;
+      transition: color 0.15s ease, text-decoration 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+    .footer-links .sep {
+      color: rgba(255, 255, 255, 0.4);
+      padding: 0 6px;
+    }
+    .footer-legal {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.78);
     }
 
     /* RIGHT FORM COLUMN: Generous, Elevated, Accessible Form */
@@ -157,7 +189,6 @@
       overflow-y: auto;
     }
 
-    /* Larger, commanding form card */
     .form-card {
       width: 100%;
       max-width: 580px;
@@ -211,11 +242,6 @@
       color: #C4321F;
       font-weight: 800;
       margin-left: 2px;
-    }
-    .form-group .hint {
-      font-size: 12.5px;
-      color: #4B5563; /* Contrast ratio 7.1:1 */
-      margin-top: 4px;
     }
     .form-control {
       width: 100%;
@@ -324,7 +350,12 @@
       margin-bottom: 18px;
     }
 
-    /* Responsive Mobile Layout (Stack cleanly) */
+    /* MOBILE FOOTER (Hidden on Desktop, Displayed at bottom of page on Mobile) */
+    .mobile-footer {
+      display: none;
+    }
+
+    /* RESPONSIVE MOBILE LAYOUT */
     @media (max-width: 899px) {
       .split-container {
         flex-direction: column;
@@ -333,28 +364,46 @@
       .hero-col {
         width: 100%;
         min-height: auto;
-        padding: 36px 24px 28px 24px;
+        padding: 26px 20px 24px 20px;
+        background: linear-gradient(180deg, rgba(0, 36, 60, 0.88) 0%, rgba(0, 18, 30, 0.96) 100%),
+                    url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       }
-      .hero-crest-lg {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 16px;
+      .hero-top-nav {
+        margin-bottom: 14px;
       }
-      .hero-title-lg {
-        font-size: 28px;
+      .hero-brand-lockup {
+        gap: 16px;
+        margin: 0;
       }
-      .hero-subline-lg {
-        font-size: 14px;
+      .hero-crest {
+        width: 62px;
+        height: 62px;
       }
+      .hero-title {
+        font-size: 20px;
+      }
+      .hero-subline {
+        font-size: 12px;
+        margin-top: 3px;
+      }
+
+      /* Hide desktop footer from inside hero header on mobile */
+      .desktop-footer {
+        display: none;
+      }
+
       .form-col {
         width: 100%;
         min-height: auto;
-        padding: 28px 16px 40px 16px;
+        padding: 24px 16px 32px 16px;
       }
       .form-card {
         padding: 28px 20px;
         box-shadow: none;
         border: 1px solid #E2E8F0;
+      }
+      .form-title {
+        font-size: 24px;
       }
       .form-row-2 {
         grid-template-columns: 1fr;
@@ -362,6 +411,31 @@
       }
       textarea.form-control {
         min-height: 100px;
+      }
+
+      /* Show full footer at very bottom of page on mobile */
+      .mobile-footer {
+        display: block;
+        background-color: var(--fog-dark-blue);
+        color: #FFFFFF;
+        padding: 32px 20px 44px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+      }
+      .mobile-footer .footer-links {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .mobile-footer .footer-legal {
+        font-size: 12px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.78);
+        max-width: 440px;
+        margin: 0 auto 16px auto;
+      }
+      .mobile-footer .back-link {
+        display: inline-block;
+        font-size: 13px;
       }
     }
   </style>
@@ -385,23 +459,33 @@
 
   <div class="split-container">
     
-    <!-- LEFT PANEL: Atmospheric Photo + Heroic Brand Centerpiece -->
+    <!-- LEFT PANEL: Atmospheric Photo + Side-by-Side Brand Lockup -->
     <div class="hero-col">
-      <div class="hero-top-spacer"></div>
-
-      <!-- Centered Hero Brand Element -->
-      <div class="hero-centerpiece">
-        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-crest-lg">
-        <h1 class="hero-title-lg">San Francisco Fog RFC</h1>
-        <div class="hero-subline-lg">Inclusive Rugby since 2000</div>
+      <div class="hero-top-nav">
+        <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="back-link">&larr; Back to The Foghorn</a>
       </div>
 
-      <!-- Hero Footer with Exact Fiscal Sponsorship -->
-      <div class="hero-footer">
-        <div class="hero-footer-legal">
+      <!-- Side-by-Side Brand Lockup (Logo + Text next to each other on both desktop & mobile) -->
+      <div class="hero-brand-lockup">
+        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-crest">
+        <div class="hero-brand-text">
+          <h1 class="hero-title">San Francisco Fog RFC</h1>
+          <div class="hero-subline">Inclusive Rugby since 2000</div>
+        </div>
+      </div>
+
+      <!-- Desktop Footer (At bottom of Left Hero on Desktop) -->
+      <div class="desktop-footer">
+        <div class="footer-links">
+          <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
+          <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
+          <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
+          <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
+          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
+        </div>
+        <div class="footer-legal">
           &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club &middot; A fiscally sponsored project of Dancers' Group
         </div>
-        <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html">&larr; Back to The Foghorn</a>
       </div>
     </div>
 
@@ -480,6 +564,23 @@
     </main>
 
   </div>
+
+  <!-- MOBILE FOOTER (Displayed at the bottom of the page on Mobile after the form) -->
+  <footer class="mobile-footer" role="contentinfo">
+    <div class="footer-links">
+      <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
+      <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
+      <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
+      <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
+      <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
+    </div>
+    <div class="footer-legal">
+      &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club &middot; A fiscally sponsored project of Dancers' Group
+    </div>
+    <div>
+      <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="back-link">&larr; Back to The Foghorn</a>
+    </div>
+  </footer>
 
   <!-- AJAX Form Submission Script for Instant Seamless Feedback -->
   <script>
