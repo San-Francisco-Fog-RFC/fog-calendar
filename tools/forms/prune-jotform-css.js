@@ -27,6 +27,9 @@ const PRUNE = !process.argv.includes('--no-prune');
 
 const KEEP = /hover|focus|active|checked|error|previewContainer|previewButtons|checkSubmission|backToForm|printForm|form-field-hidden|js-non-displayed|placeholder|disabled|invalid|required|prefers-reduced|#cid_171 \.form-header|#id_200 p|\.form-all li \.form-label|\.form-all #id_59, |\.form-all \.form-textbox|#cid_171 \.form-subHeader/;
 
+// Rules on the page root itself look redundant in a top-level tab but matter when the form is embedded in an iframe.
+const ROOT = /(^|,\s*)(html\.supernova|html\.supernova body|html\.supernova body::(before|after))\s*(,|$)/;
+
 const PROPS = ['display','position','top','left','width','height','margin-top','margin-right','margin-bottom','margin-left','padding-top','padding-right','padding-bottom','padding-left','border-top-width','border-left-width','border-top-color','border-left-color','background-color','background-image','color','font-size','font-weight','font-family','letter-spacing','text-transform','line-height','grid-template-columns','flex-direction','flex-wrap','gap','transform','opacity','overflow-y','z-index','box-shadow','max-width','pointer-events','text-align','border-radius','content'];
 
 async function frame(browser, width) {
@@ -42,7 +45,7 @@ const HELPERS = () => {
   window.__pref = (s) => { if (/^:root\b/.test(s)) return s; if (/^html\s+body\b/.test(s)) return s.replace(/^html\s+body/, 'html.supernova body'); if (/^html\b/.test(s)) return s.replace(/^html/, 'html.supernova'); if (/^body\b/.test(s)) return 'html.supernova ' + s; return '.supernova ' + s; };
   window.__ourStyle = () => [...document.querySelectorAll('style')].find(x => x.textContent.includes('--sb-gray-50'));
   window.__show = (k) => { const secs = [...document.querySelectorAll('ul.form-section')]; secs.forEach((s, i) => s.style.display = i === k ? '' : 'none'); if (k > 0) secs[0].classList.add('js-non-displayed-page'); else secs[0].classList.remove('js-non-displayed-page'); };
-  window.__snap = (props, pseudos) => { const els = [document.documentElement, ...document.body.querySelectorAll('*')]; const out = []; for (const e of els) { if (e.tagName === 'STYLE' || e.tagName === 'SCRIPT') { out.push(''); continue; } for (const ps of pseudos) { const c = getComputedStyle(e, ps); out.push(props.map(p => c.getPropertyValue(p)).join('|')); } } return out; };
+  window.__snap = (props, pseudos) => { const els = [document.documentElement, ...document.body.querySelectorAll('*')]; const out = []; for (const e of els) { if (e.tagName === 'STYLE' || e.tagName === 'SCRIPT' || (e !== document.documentElement && e !== document.body && e.closest('[style*="display: none"], .form-field-hidden') && !e.getClientRects().length && e.tagName === 'IFRAME')) { for (const ps of pseudos) out.push(''); continue; } for (const ps of pseudos) { const c = getComputedStyle(e, ps); out.push(props.map(p => c.getPropertyValue(p)).join('|')); } } return out; };
 };
 
 (async () => {
@@ -95,7 +98,7 @@ const HELPERS = () => {
     let removed = 0;
     for (const p of work) {
       const info = await cD.evaluate(p => { const s = document.getElementById('cand').sheet; const r = p.length === 1 ? s.cssRules[p[0]] : s.cssRules[p[0]].cssRules[p[1]]; return { sel: r.selectorText, props: [...r.style], text: r.cssText }; }, p);
-      if (!info.sel || KEEP.test(info.sel) || info.props.some(x => x.startsWith('--'))) continue;
+      if (!info.sel || KEEP.test(info.sel) || ROOT.test(info.sel) || info.props.some(x => x.startsWith('--'))) continue;
       const props = info.props.filter(x => !x.startsWith('--')); if (!props.length) continue;
       const pseudos = /::?(before|after)/.test(info.sel) ? ALLP : [null];
       const del = p => { const s = document.getElementById('cand').sheet; if (p.length === 1) s.deleteRule(p[0]); else s.cssRules[p[0]].deleteRule(p[1]); };
