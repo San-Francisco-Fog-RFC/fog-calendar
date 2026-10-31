@@ -21,7 +21,7 @@
   <style>
     /* ==========================================================================
        SF FOG RFC SPLIT-SCREEN LANDING PAGE & FORM
-       Optimized for 100vh desktop viewport, WCAG AA/AAA contrast & high legibility
+       Full-width top pride bar, heroic left brand anchor, generous spacious form
        ========================================================================== */
     :root {
       --fog-blue: #006EB6;
@@ -46,189 +46,165 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* FULL-WIDTH TOP PROGRESS PRIDE BAR (Spans whole browser window) */
+    .pride-stripe-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 5px;
+      display: flex;
+      z-index: 9999;
+    }
+    .pride-bar {
+      flex: 1;
+      height: 100%;
+    }
+
     .split-container {
       display: flex;
       min-height: 100vh;
       width: 100%;
+      padding-top: 5px; /* Offset for fixed pride bar */
     }
 
-    /* Left Hero Column: Photography, Pride & Brand */
+    /* LEFT HERO COLUMN: Atmospheric Photography + Heroic Centered Brand */
     .hero-col {
       width: 44%;
-      min-height: 100vh;
-      background: linear-gradient(180deg, rgba(0, 36, 60, 0.76) 0%, rgba(0, 18, 30, 0.94) 100%),
+      min-height: calc(100vh - 5px);
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.78) 0%, rgba(0, 18, 30, 0.94) 100%),
                   url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 36px 40px;
+      padding: 48px 44px 36px 44px;
       color: #FFFFFF;
       position: relative;
     }
 
-    /* Progress Pride Accent Stripe */
-    .pride-stripe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      display: flex;
+    .hero-top-spacer {
+      height: 20px;
     }
-    .pride-bar { flex: 1; height: 100%; }
 
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 6px;
+    /* Large Hero Brand Centerpiece */
+    .hero-centerpiece {
+      margin: auto 0;
+      text-align: left;
+      max-width: 460px;
     }
-    .hero-logo {
-      width: 48px;
-      height: 48px;
+    .hero-crest-lg {
+      width: 110px;
+      height: 110px;
       object-fit: contain;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
+      margin-bottom: 22px;
+      display: block;
     }
-    .hero-club-title {
-      font-size: 13px;
+    .hero-title-lg {
+      font-size: 38px;
+      line-height: 1.1;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #FFFFFF;
-      line-height: 1.2;
+      margin-bottom: 8px;
     }
-    .hero-subline {
-      font-size: 12px;
+    .hero-subline-lg {
+      font-size: 16px;
+      line-height: 1.3;
       color: var(--fog-light-blue);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 700;
-      margin-top: 2px;
     }
 
-    .hero-body {
-      margin: auto 0;
-      max-width: 440px;
-    }
-    .hero-tag {
-      display: inline-block;
-      background: rgba(36, 160, 241, 0.18);
-      border: 1px solid rgba(36, 160, 241, 0.5);
-      color: #74D7EE;
-      font-size: 11.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 10px;
-      border-radius: var(--fog-radius-btn);
-      margin-bottom: 14px;
-    }
-    .hero-title {
-      font-size: 32px;
-      line-height: 1.15;
-      font-weight: 800;
-      margin-bottom: 14px;
-      letter-spacing: 0.01em;
-      color: #FFFFFF;
-    }
-    .hero-desc {
-      font-size: 14.5px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 20px;
-    }
-    .hero-quote-box {
-      background: rgba(0, 24, 40, 0.78);
-      border: 1px solid rgba(36, 160, 241, 0.35);
-      border-left: 4px solid var(--fog-light-blue);
-      padding: 12px 16px;
-      border-radius: 2px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #FFFFFF;
-    }
-    .hero-quote-box strong {
-      color: var(--fog-light-blue);
-    }
-
+    /* Hero Footer with Exact Fiscal Sponsorship */
     .hero-footer {
       font-size: 12px;
+      line-height: 1.5;
       color: rgba(255, 255, 255, 0.75);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 16px;
+      padding-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-footer-legal {
+      color: rgba(255, 255, 255, 0.85);
     }
     .hero-footer a {
       color: var(--fog-light-blue);
       text-decoration: underline;
       font-weight: 700;
+      align-self: flex-start;
     }
     .hero-footer a:focus-visible {
       outline: 2px solid var(--fog-light-blue);
       outline-offset: 2px;
     }
 
-    /* Right Form Column: Elevated, Accessible Form Card */
+    /* RIGHT FORM COLUMN: Generous, Elevated, Accessible Form */
     .form-col {
       width: 56%;
-      min-height: 100vh;
+      min-height: calc(100vh - 5px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 32px 48px;
+      padding: 40px 48px;
       background-color: var(--fog-gray-50);
       overflow-y: auto;
     }
 
+    /* Larger, commanding form card */
     .form-card {
       width: 100%;
-      max-width: 500px;
+      max-width: 580px;
       background-color: #FFFFFF;
       border: 1px solid #D0D7DE;
-      box-shadow: 0 4px 20px rgba(0, 36, 60, 0.08);
+      box-shadow: 0 8px 30px rgba(0, 36, 60, 0.09);
       border-radius: var(--fog-radius-card);
-      padding: 32px 34px 28px 34px;
+      padding: 40px 44px 36px 44px;
     }
 
     .form-header {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
     .form-eyebrow {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--fog-blue);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       display: block;
     }
     .form-title {
-      font-size: 25px;
+      font-size: 28px;
       line-height: 1.2;
       font-weight: 800;
       color: var(--fog-dark-blue);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       letter-spacing: -0.01em;
     }
     .form-subtitle {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.5;
       color: #374151; /* Contrast ratio 9.2:1 against white */
     }
 
-    /* Form Fields - Accessible, Readable, High-Contrast */
+    /* Form Fields - Spacious, High-Contrast, WCAG Compliant */
     .form-group {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       text-align: left;
     }
     .form-group label {
       display: block;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--fog-dark-blue); /* Contrast ratio 15.9:1 against white */
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       letter-spacing: 0.01em;
     }
     .req-star {
@@ -237,17 +213,17 @@
       margin-left: 2px;
     }
     .form-group .hint {
-      font-size: 12px;
+      font-size: 12.5px;
       color: #4B5563; /* Contrast ratio 7.1:1 */
-      margin-top: 3px;
+      margin-top: 4px;
     }
     .form-control {
       width: 100%;
       font-family: inherit;
-      font-size: 14.5px;
+      font-size: 15px;
       line-height: 1.4;
-      padding: 10px 13px;
-      min-height: 44px; /* Exceeds accessible touch target minimum */
+      padding: 12px 16px;
+      min-height: 48px; /* Spacious, comfortable touch target */
       border: 1.5px solid #64748B; /* Contrast ratio 3.8:1 - meets SC 1.4.11 UI non-text contrast */
       border-radius: var(--fog-radius-btn);
       background-color: #FFFFFF;
@@ -264,16 +240,19 @@
       border-color: var(--fog-blue);
       box-shadow: 0 0 0 3px rgba(0, 110, 182, 0.25);
     }
+    select.form-control {
+      cursor: pointer;
+    }
     textarea.form-control {
-      min-height: 80px;
+      min-height: 110px;
       resize: vertical;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .form-row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 16px;
     }
 
     .submit-btn {
@@ -281,12 +260,12 @@
       background-color: var(--fog-blue);
       color: #FFFFFF;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 13px 20px;
-      min-height: 48px;
+      padding: 14px 24px;
+      min-height: 52px;
       border: none;
       border-radius: var(--fog-radius-btn);
       cursor: pointer;
@@ -305,11 +284,11 @@
     }
 
     .form-footnote {
-      font-size: 12px;
+      font-size: 12.5px;
       line-height: 1.5;
       color: #4B5563; /* Contrast ratio 7.1:1 */
       text-align: center;
-      margin-top: 12px;
+      margin-top: 14px;
     }
     .form-footnote a {
       color: var(--fog-blue);
@@ -324,25 +303,25 @@
       border: 1px solid #BBF7D0;
       border-left: 4px solid #157A38;
       border-radius: var(--fog-radius-card);
-      padding: 24px 20px;
+      padding: 28px 24px;
       text-align: center;
     }
     .success-icon {
-      font-size: 32px;
+      font-size: 36px;
       color: #157A38;
       margin-bottom: 8px;
     }
     .success-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--fog-dark-blue);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .success-text {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.5;
       color: #374151;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     /* Responsive Mobile Layout (Stack cleanly) */
@@ -353,77 +332,80 @@
       }
       .hero-col {
         width: 100%;
-        min-height: 260px;
-        padding: 24px 20px;
+        min-height: auto;
+        padding: 36px 24px 28px 24px;
       }
-      .hero-title {
-        font-size: 24px;
+      .hero-crest-lg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+      }
+      .hero-title-lg {
+        font-size: 28px;
+      }
+      .hero-subline-lg {
+        font-size: 14px;
       }
       .form-col {
         width: 100%;
         min-height: auto;
-        padding: 24px 16px;
+        padding: 28px 16px 40px 16px;
       }
       .form-card {
-        padding: 24px 20px;
+        padding: 28px 20px;
         box-shadow: none;
         border: 1px solid #E2E8F0;
       }
       .form-row-2 {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 12px;
       }
       textarea.form-control {
-        min-height: 90px;
+        min-height: 100px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- FULL-WIDTH PROGRESS PRIDE BAR ACROSS ENTIRE WINDOW -->
+  <div class="pride-stripe-top" aria-hidden="true">
+    <span class="pride-bar" style="background:#000000"></span>
+    <span class="pride-bar" style="background:#613915"></span>
+    <span class="pride-bar" style="background:#74D7EE"></span>
+    <span class="pride-bar" style="background:#FFAFC8"></span>
+    <span class="pride-bar" style="background:#FFFFFF"></span>
+    <span class="pride-bar" style="background:#E40303"></span>
+    <span class="pride-bar" style="background:#FF8C00"></span>
+    <span class="pride-bar" style="background:#FFED00"></span>
+    <span class="pride-bar" style="background:#008026"></span>
+    <span class="pride-bar" style="background:#004DFF"></span>
+    <span class="pride-bar" style="background:#750787"></span>
+  </div>
+
   <div class="split-container">
     
-    <!-- LEFT PANEL: High-Res Team Photo + Mission Backdrop -->
+    <!-- LEFT PANEL: Atmospheric Photo + Heroic Brand Centerpiece -->
     <div class="hero-col">
-      <div class="pride-stripe" aria-hidden="true">
-        <span class="pride-bar" style="background:#000000"></span>
-        <span class="pride-bar" style="background:#613915"></span>
-        <span class="pride-bar" style="background:#74D7EE"></span>
-        <span class="pride-bar" style="background:#FFAFC8"></span>
-        <span class="pride-bar" style="background:#FFFFFF"></span>
-        <span class="pride-bar" style="background:#E40303"></span>
-        <span class="pride-bar" style="background:#FF8C00"></span>
-        <span class="pride-bar" style="background:#FFED00"></span>
-        <span class="pride-bar" style="background:#008026"></span>
-        <span class="pride-bar" style="background:#004DFF"></span>
-        <span class="pride-bar" style="background:#750787"></span>
+      <div class="hero-top-spacer"></div>
+
+      <!-- Centered Hero Brand Element -->
+      <div class="hero-centerpiece">
+        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-crest-lg">
+        <h1 class="hero-title-lg">San Francisco Fog RFC</h1>
+        <div class="hero-subline-lg">Inclusive Rugby since 2000</div>
       </div>
 
-      <div class="hero-brand">
-        <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-logo">
-        <div>
-          <div class="hero-club-title">San Francisco Fog RFC</div>
-          <div class="hero-subline">Inclusive Rugby since 2000</div>
-        </div>
-      </div>
-
-      <div class="hero-body">
-        <span class="hero-tag">Member Voice · 2026 Season</span>
-        <h1 class="hero-title">Shape Our 25th Anniversary Year</h1>
-        <p class="hero-desc">The Fog belongs to every player, rookie, supporter, and alumnus. Your honest suggestions steer coaching plans, social events, road trips, and club governance.</p>
-        
-        <div class="hero-quote-box">
-          <strong>🔒 Confidential &amp; Reviewed Monthly:</strong> Every submission is reviewed directly by the SF Fog Executive Board. Submissions are 100% anonymous unless you choose to share your name.
-        </div>
-      </div>
-
+      <!-- Hero Footer with Exact Fiscal Sponsorship -->
       <div class="hero-footer">
-        <span>&copy; 2000&ndash;2026 SF Fog RFC &middot; 501(c)(3)</span>
+        <div class="hero-footer-legal">
+          &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club &middot; A fiscally sponsored project of Dancers' Group
+        </div>
         <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html">&larr; Back to The Foghorn</a>
       </div>
     </div>
 
-    <!-- RIGHT PANEL: Viewport-Constrained Accessible Form -->
+    <!-- RIGHT PANEL: Viewport-Constrained Elevated Accessible Form -->
     <main class="form-col" role="main">
       <div class="form-card">
         
@@ -469,11 +451,11 @@
           <!-- Optional Name & Email (2-Column Grid on Desktop) -->
           <div class="form-row-2">
             <div class="form-group">
-              <label for="name-input">Your Name <span style="font-weight:400; font-size:12px; color:#4B5563;">(Optional)</span></label>
+              <label for="name-input">Your Name <span style="font-weight:400; font-size:12.5px; color:#4B5563;">(Optional)</span></label>
               <input type="text" id="name-input" name="mauticform[name]" class="form-control" placeholder="Leave blank for anonymous">
             </div>
             <div class="form-group">
-              <label for="email-input">Your Email <span style="font-weight:400; font-size:12px; color:#4B5563;">(Optional)</span></label>
+              <label for="email-input">Your Email <span style="font-weight:400; font-size:12.5px; color:#4B5563;">(Optional)</span></label>
               <input type="email" id="email-input" name="mauticform[email]" class="form-control" placeholder="If you'd like a response">
             </div>
           </div>
@@ -491,7 +473,7 @@
           <div class="success-icon">&check;</div>
           <h3 class="success-title">Thank You for Your Suggestion!</h3>
           <p class="success-text">Your feedback has been delivered to the SF Fog Executive Board and will be reviewed in our monthly agenda.</p>
-          <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="submit-btn" style="display:inline-block; text-decoration:none; text-align:center; padding:12px 18px;">Return to The Foghorn &rsaquo;</a>
+          <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" class="submit-btn" style="display:inline-block; text-decoration:none; text-align:center; padding:14px 20px;">Return to The Foghorn &rsaquo;</a>
         </div>
 
       </div>
