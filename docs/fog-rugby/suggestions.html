@@ -109,16 +109,21 @@
       outline-offset: 2px;
     }
 
-    /* Top Side-by-Side Brand Lockup matching Jotform 263017776830057 */
+    /* BOTTOM-ANCHORED HERO SECTION (Above divider) */
+    .hero-bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
     .hero-brand-lockup {
       display: flex;
       align-items: center;
-      gap: 20px;
-      max-width: 540px;
+      gap: 18px;
+      max-width: 520px;
     }
     .hero-crest {
-      width: 84px;
-      height: 84px;
+      width: 76px;
+      height: 76px;
       object-fit: contain;
       flex-shrink: 0;
       filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
@@ -130,23 +135,37 @@
       min-width: 0;
     }
     .hero-title {
-      font-size: 28px;
+      font-size: 26px;
       line-height: 1.15;
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #FFFFFF;
       margin: 0;
-      white-space: nowrap;
     }
     .hero-subline {
       font-size: 13.5px;
       line-height: 1.3;
       color: var(--fog-light-blue); /* #24A0F1 */
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 700;
-      margin-top: 6px;
+      margin-top: 5px;
+    }
+    .hero-blurb {
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+      background: rgba(0, 36, 60, 0.45);
+      border-left: 3px solid var(--fog-light-blue);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      backdrop-filter: blur(4px);
+    }
+    .hero-blurb strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
 /* Desktop Footer at bottom of Left Hero */
     .desktop-footer {
@@ -382,23 +401,29 @@
         gap: 14px;
       }
       .hero-brand-lockup {
-        gap: 16px;
+        gap: 15px;
       }
       .hero-crest {
-        width: 62px;
-        height: 62px;
+        width: 58px;
+        height: 58px;
       }
       .hero-title {
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.15;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.03em;
         white-space: normal;
       }
       .hero-subline {
-        font-size: 12px;
+        font-size: 11.5px;
         line-height: 1.3;
         letter-spacing: 0.08em;
         margin-top: 3px;
+      }
+      .hero-blurb {
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 8px 12px;
+        margin-top: 12px;
       }
 
       /* Hide desktop footer from inside hero header on mobile */
@@ -488,38 +513,42 @@
 
   <div class="split-container">
     
-    <!-- LEFT PANEL: Atmospheric Photo + Top Brand Lockup -->
+    <!-- LEFT PANEL: Atmospheric Photo + Bottom-Anchored Brand & Mission Blurb -->
     <div class="hero-col">
-      <div class="hero-top-section">
-        <!-- Top Side-by-Side Brand Lockup matching Jotform 263017776830057 -->
+      <div class="hero-top-nav">
+        <a href="https://events.fogrugby.com/links.html" class="back-link">&larr; Back to Official Links</a>
+      </div>
+
+      <!-- Bottom Hero Section (Above divider) -->
+      <div class="hero-bottom-section">
         <div class="hero-brand-lockup">
           <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="hero-crest">
           <div class="hero-brand-text">
-            <h1 class="hero-title">San Francisco Fog RFC</h1>
-            <div class="hero-subline">Inclusive rugby since 2000</div>
+            <h1 class="hero-title">San Francisco Fog Rugby</h1>
+            <div class="hero-subline">Rugby Football Club</div>
           </div>
         </div>
 
-        <!-- Back Link positioned below the logo/heading -->
-        <div class="hero-top-nav">
-          <a href="https://linktr.ee/fogrugby" class="back-link">&larr; Back to Linktree</a>
+        <!-- 25+ Year Mission Blurb -->
+        <div class="hero-blurb">
+          <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
         </div>
-      </div>
 
-      <!-- Desktop Footer (At bottom of Left Hero on Desktop) -->
-      <div class="desktop-footer">
-        <div class="footer-links">
-          <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
-          <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
-          <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
-          <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
-          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
-        </div>
-        <div class="footer-sponsor">
-          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
-        </div>
-        <div class="footer-copyright">
-          &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
+        <!-- Desktop Footer (At bottom of Left Hero on Desktop) -->
+        <div class="desktop-footer">
+          <div class="footer-links">
+            <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
+            <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
+            <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
+            <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
+          </div>
+          <div class="footer-sponsor">
+            The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+          </div>
+          <div class="footer-copyright">
+            &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
+          </div>
         </div>
       </div>
     </div>
@@ -592,7 +621,7 @@
           <div class="success-icon">&check;</div>
           <h3 class="success-title">Thank You for Your Suggestion!</h3>
           <p class="success-text">Your feedback has been delivered to the SF Fog Executive Board and will be reviewed in our monthly agenda.</p>
-          <a href="https://linktr.ee/fogrugby" class="submit-btn" style="display:inline-block; text-decoration:none; text-align:center; padding:14px 20px;">Return to Linktree &rsaquo;</a>
+          <a href="https://events.fogrugby.com/links.html" class="submit-btn" style="display:inline-block; text-decoration:none; text-align:center; padding:14px 20px;">Return to Official Links &rsaquo;</a>
         </div>
 
       </div>
@@ -616,7 +645,7 @@
       &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
     </div>
     <div>
-      <a href="https://linktr.ee/fogrugby" class="back-link">&larr; Back to Linktree</a>
+      <a href="https://events.fogrugby.com/links.html" class="back-link">&larr; Back to Official Links</a>
     </div>
   </footer>
 

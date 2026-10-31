@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{{ page.title }} | San Francisco Fog Rugby Football Club</title>
-  <meta name="description" content="{{ page.metaDescription }}">
+  <meta name="description" content="Share your ideas, feedback, and suggestions with the San Francisco Fog RFC Executive Board.">
   <link rel="icon" type="image/png" href="https://events.fogrugby.com/assets/img/fog-crest-white.png">
 
   <!-- First-Party GA4 & Meta Pixel Tracking -->
@@ -14,11 +14,15 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-GD8T0M6RZ9', { page_title: '{{ page.title }}' });
-    gtag('config', 'G-WTRRT4XDS5', { page_title: '{{ page.title }}', send_page_view: true });
+    gtag('config', 'G-GD8T0M6RZ9', { page_title: 'Club Suggestion Box' });
+    gtag('config', 'G-WTRRT4XDS5', { page_title: 'Club Suggestion Box', send_page_view: true });
   </script>
 
   <style>
+    /* ==========================================================================
+       SF FOG RUGBY FOOTBALL CLUB - SPLIT-SCREEN LANDING PAGE & FORM
+       Brand lockup at top, generous form, comprehensive dual-mode footer
+       ========================================================================== */
     :root {
       --fog-blue: #006EB6;
       --fog-light-blue: #24A0F1;
@@ -42,6 +46,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* FULL-WIDTH TOP PROGRESS PRIDE BAR (Spans whole browser window) */
     .pride-stripe-top {
       position: fixed;
       top: 0;
@@ -52,15 +57,19 @@
       display: flex;
       z-index: 9999;
     }
-    .pride-bar { flex: 1; height: 100%; }
+    .pride-bar {
+      flex: 1;
+      height: 100%;
+    }
 
     .split-container {
       display: flex;
       min-height: 100vh;
       width: 100%;
-      padding-top: 5px;
+      padding-top: 5px; /* Offset for top pride bar */
     }
 
+    /* LEFT HERO COLUMN: Atmospheric Photography + Top Brand Lockup */
     .hero-col {
       width: 44%;
       min-height: calc(100vh - 5px);
@@ -95,7 +104,17 @@
     .back-link:hover {
       color: #FFFFFF;
     }
+    .back-link:focus-visible {
+      outline: 2px solid var(--fog-light-blue);
+      outline-offset: 2px;
+    }
 
+    /* BOTTOM-ANCHORED HERO SECTION (Above divider) */
+    .hero-bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
     .hero-brand-lockup {
       display: flex;
       align-items: center;
@@ -103,8 +122,8 @@
       max-width: 520px;
     }
     .hero-crest {
-      width: 80px;
-      height: 80px;
+      width: 76px;
+      height: 76px;
       object-fit: contain;
       flex-shrink: 0;
       filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
@@ -113,26 +132,42 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-width: 0;
     }
     .hero-title {
-      font-size: 24px;
+      font-size: 26px;
       line-height: 1.15;
       font-weight: 800;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #FFFFFF;
       margin: 0;
     }
     .hero-subline {
-      font-size: 13px;
+      font-size: 13.5px;
       line-height: 1.3;
-      color: var(--fog-light-blue);
-      letter-spacing: 0.08em;
+      color: var(--fog-light-blue); /* #24A0F1 */
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 700;
       margin-top: 5px;
     }
-
+    .hero-blurb {
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+      background: rgba(0, 36, 60, 0.45);
+      border-left: 3px solid var(--fog-light-blue);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      backdrop-filter: blur(4px);
+    }
+    .hero-blurb strong {
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+/* Desktop Footer at bottom of Left Hero */
     .desktop-footer {
       border-top: 1px solid rgba(255, 255, 255, 0.18);
       padding-top: 20px;
@@ -170,6 +205,7 @@
       color: rgba(255, 255, 255, 0.72);
     }
 
+    /* RIGHT FORM COLUMN: Generous, Elevated, Accessible Form */
     .form-col {
       width: 56%;
       min-height: calc(100vh - 5px);
@@ -181,6 +217,7 @@
       background-color: var(--fog-gray-50);
       overflow-y: auto;
     }
+
     .form-card {
       width: 100%;
       max-width: 580px;
@@ -190,11 +227,164 @@
       border-radius: var(--fog-radius-card);
       padding: 40px 44px 36px 44px;
     }
-    
+
+    .form-header {
+      margin-bottom: 22px;
+    }
+    .form-eyebrow {
+      font-size: 12.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--fog-blue);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .form-title {
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .form-subtitle {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #374151; /* Contrast ratio 9.2:1 against white */
+    }
+
+    /* Form Fields - Spacious, High-Contrast, WCAG Compliant */
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fog-dark-blue); /* Contrast ratio 15.9:1 against white */
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .req-star {
+      color: #C4321F;
+      font-weight: 800;
+      margin-left: 2px;
+    }
+    .form-control {
+      width: 100%;
+      font-family: inherit;
+      font-size: 15px;
+      line-height: 1.4;
+      padding: 12px 16px;
+      min-height: 48px; /* Spacious, comfortable touch target */
+      border: 1.5px solid #64748B; /* Contrast ratio 3.8:1 - meets SC 1.4.11 UI non-text contrast */
+      border-radius: var(--fog-radius-btn);
+      background-color: #FFFFFF;
+      color: var(--fog-dark-gray); /* Contrast ratio 16.5:1 */
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-control::placeholder {
+      color: #64748B;
+      opacity: 1;
+    }
+    .form-control:focus, .form-control:focus-visible {
+      outline: 2px solid transparent;
+      outline-offset: 1px;
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 3px rgba(0, 110, 182, 0.25);
+    }
+    select.form-control {
+      cursor: pointer;
+    }
+    textarea.form-control {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--fog-blue);
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 14px 24px;
+      min-height: 52px;
+      border: none;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background-color 0.15s ease, transform 0.05s ease;
+    }
+    .submit-btn:hover {
+      background-color: #005691;
+    }
+    .submit-btn:active {
+      transform: scale(0.99);
+    }
+    .submit-btn:focus-visible {
+      outline: 3px solid var(--fog-light-blue);
+      outline-offset: 3px;
+    }
+
+    .form-footnote {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #4B5563; /* Contrast ratio 7.1:1 */
+      text-align: center;
+      margin-top: 14px;
+    }
+    .form-footnote a {
+      color: var(--fog-blue);
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    /* Success State */
+    .success-panel {
+      display: none;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid #157A38;
+      border-radius: var(--fog-radius-card);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .success-icon {
+      font-size: 36px;
+      color: #157A38;
+      margin-bottom: 8px;
+    }
+    .success-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      margin-bottom: 8px;
+    }
+    .success-text {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    /* MOBILE FOOTER (Hidden on Desktop, Displayed at bottom of page on Mobile) */
     .mobile-footer {
       display: none;
     }
 
+    /* RESPONSIVE MOBILE LAYOUT */
     @media (max-width: 899px) {
       .split-container {
         flex-direction: column;
@@ -211,27 +401,36 @@
         gap: 14px;
       }
       .hero-brand-lockup {
-        gap: 16px;
+        gap: 15px;
       }
       .hero-crest {
-        width: 62px;
-        height: 62px;
+        width: 58px;
+        height: 58px;
       }
       .hero-title {
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.15;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.03em;
         white-space: normal;
       }
       .hero-subline {
-        font-size: 12px;
+        font-size: 11.5px;
         line-height: 1.3;
         letter-spacing: 0.08em;
         margin-top: 3px;
       }
+      .hero-blurb {
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 8px 12px;
+        margin-top: 12px;
+      }
+
+      /* Hide desktop footer from inside hero header on mobile */
       .desktop-footer {
         display: none;
       }
+
       .form-col {
         width: 100%;
         min-height: auto;
@@ -242,6 +441,18 @@
         box-shadow: none;
         border: 1px solid #E2E8F0;
       }
+      .form-title {
+        font-size: 24px;
+      }
+      .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      textarea.form-control {
+        min-height: 100px;
+      }
+
+      /* Show full footer at very bottom of page on mobile */
       .mobile-footer {
         display: block;
         background-color: var(--fog-dark-blue);
@@ -251,8 +462,17 @@
         text-align: center;
       }
       .mobile-footer .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px 14px;
         font-size: 13.5px;
         margin-bottom: 16px;
+        line-height: 1.5;
+      }
+      .mobile-footer .sep {
+        display: none;
       }
       .mobile-footer .footer-sponsor {
         font-size: 12px;
@@ -275,51 +495,74 @@
   </style>
 </head>
 <body>
+
+  <!-- FULL-WIDTH PROGRESS PRIDE BAR ACROSS ENTIRE WINDOW -->
   <div class="pride-stripe-top" aria-hidden="true">
-    <span class="pride-bar" style="background:#000000"></span><span class="pride-bar" style="background:#613915"></span><span class="pride-bar" style="background:#74D7EE"></span><span class="pride-bar" style="background:#FFAFC8"></span><span class="pride-bar" style="background:#FFFFFF"></span><span class="pride-bar" style="background:#E40303"></span><span class="pride-bar" style="background:#FF8C00"></span><span class="pride-bar" style="background:#FFED00"></span><span class="pride-bar" style="background:#008026"></span><span class="pride-bar" style="background:#004DFF"></span><span class="pride-bar" style="background:#750787"></span>
+    <span class="pride-bar" style="background:#000000"></span>
+    <span class="pride-bar" style="background:#613915"></span>
+    <span class="pride-bar" style="background:#74D7EE"></span>
+    <span class="pride-bar" style="background:#FFAFC8"></span>
+    <span class="pride-bar" style="background:#FFFFFF"></span>
+    <span class="pride-bar" style="background:#E40303"></span>
+    <span class="pride-bar" style="background:#FF8C00"></span>
+    <span class="pride-bar" style="background:#FFED00"></span>
+    <span class="pride-bar" style="background:#008026"></span>
+    <span class="pride-bar" style="background:#004DFF"></span>
+    <span class="pride-bar" style="background:#750787"></span>
   </div>
 
   <div class="split-container">
+    
+    <!-- LEFT PANEL: Atmospheric Photo + Bottom-Anchored Brand & Mission Blurb -->
     <div class="hero-col">
-      <div class="hero-top-section">
-        <!-- Top Side-by-Side Brand Lockup matching Jotform 263017776830057 -->
+      <div class="hero-top-nav">
+        <a href="https://events.fogrugby.com/links.html" class="back-link">&larr; Back to Official Links</a>
+      </div>
+
+      <!-- Bottom Hero Section (Above divider) -->
+      <div class="hero-bottom-section">
         <div class="hero-brand-lockup">
           <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="hero-crest">
           <div class="hero-brand-text">
-            <h1 class="hero-title">San Francisco Fog RFC</h1>
-            <div class="hero-subline">Inclusive rugby since 2000</div>
+            <h1 class="hero-title">San Francisco Fog Rugby</h1>
+            <div class="hero-subline">Rugby Football Club</div>
           </div>
+        </div>
 
-        <!-- Back Link positioned below the logo/heading -->
-        <div class="hero-top-nav">
-          <a href="https://linktr.ee/fogrugby" class="back-link">&larr; Back to Linktree</a>
+        <!-- 25+ Year Mission Blurb -->
+        <div class="hero-blurb">
+          <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
         </div>
-      </div>
-      </div>
-      <div class="desktop-footer">
-        <div class="footer-links">
-          <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
-          <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
-          <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
-          <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
-          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
-        </div>
-        <div class="footer-sponsor">
-          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
-        </div>
-        <div class="footer-copyright">
-          &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
+
+        <!-- Desktop Footer (At bottom of Left Hero on Desktop) -->
+        <div class="desktop-footer">
+          <div class="footer-links">
+            <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
+            <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
+            <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
+            <a href="https://events.fogrugby.com/" target="_blank">Events &amp; Calendar</a><span class="sep">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
+          </div>
+          <div class="footer-sponsor">
+            The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+          </div>
+          <div class="footer-copyright">
+            &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- RIGHT PANEL: Mautic Content Slot -->
     <main class="form-col" role="main">
       <div class="form-card" data-slot="text">
         {{ page.content|raw }}
       </div>
     </main>
+
   </div>
 
+  <!-- MOBILE FOOTER (Displayed at the bottom of the page on Mobile after the form) -->
   <footer class="mobile-footer" role="contentinfo">
     <div class="footer-links">
       <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
@@ -335,8 +578,9 @@
       &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
     </div>
     <div>
-      <a href="https://linktr.ee/fogrugby" class="back-link">&larr; Back to Linktree</a>
+      <a href="https://events.fogrugby.com/links.html" class="back-link">&larr; Back to Official Links</a>
     </div>
   </footer>
+
 </body>
 </html>
