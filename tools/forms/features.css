@@ -1,0 +1,20 @@
+/* ---- New features, added after the identical-render check ---- */
+
+/* Initials panel turns green once that section is initialled.
+   Driven by the "✓ Section X initialled" lines (qid 200-204), which Jotform shows via conditions. */
+html.supernova body .form-all > ul.form-section > li:is(
+  #id_141:has(+ #id_200:not(.form-field-hidden)),
+  #id_143:has(+ #id_201:not(.form-field-hidden)),
+  #id_144:has(+ #id_202:not(.form-field-hidden)),
+  #id_145:has(+ #id_203:not(.form-field-hidden)),
+  #id_148:has(+ #id_204:not(.form-field-hidden)),
+  #id_154:has(+ #id_148 + #id_204:not(.form-field-hidden))
+) {
+  background: #E6F4EA !important;
+  border-left-color: #1E8E4E !important;
+  transition: background-color .25s, border-color .25s;
+}
+html.supernova body .form-all li:is(#id_200, #id_201, #id_202, #id_203, #id_204) .form-html p { color: #1E8E4E !important; }
+@media (prefers-reduced-motion: reduce) {
+  html.supernova body .form-all > ul.form-section > li { transition: none !important; }
+}

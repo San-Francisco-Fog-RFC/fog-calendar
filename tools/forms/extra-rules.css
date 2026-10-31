@@ -1,0 +1,6 @@
+/* ---- Added on top of the pruned rules ---- */
+
+/* Phone crest band: two pruned rules jointly set this, so it is pinned here */
+@media (max-width: 900px) {
+  html.supernova body .form-cover-wrapper { top: 0px !important; height: 135px !important; padding-top: 5px !important; }
+}
