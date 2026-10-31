@@ -24,8 +24,8 @@
       --fog-light-blue: #24A0F1;
       --fog-dark-blue: #00243C;
       --fog-gray: #DCDDDE;
-      --fog-gray-50: #F1F2F3;
-      --fog-dark-gray: #141718;
+      --fog-gray-50: #F8FAFC;
+      --fog-dark-gray: #0F172A;
       --fog-white: #FFFFFF;
       --fog-radius-btn: 2px;
       --fog-radius-card: 4px;
@@ -36,9 +36,10 @@
     html, body {
       height: 100%;
       font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background-color: #FFFFFF;
+      background-color: var(--fog-gray-50);
       color: var(--fog-dark-gray);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     .split-container {
@@ -50,12 +51,12 @@
     .hero-col {
       width: 44%;
       min-height: 100vh;
-      background: linear-gradient(180deg, rgba(0, 36, 60, 0.72) 0%, rgba(0, 24, 40, 0.92) 100%),
+      background: linear-gradient(180deg, rgba(0, 36, 60, 0.76) 0%, rgba(0, 18, 30, 0.94) 100%),
                   url('https://events.fogrugby.com/assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 32px 36px;
+      padding: 36px 40px;
       color: #FFFFFF;
       position: relative;
     }
@@ -74,7 +75,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
     .hero-logo {
       width: 48px;
@@ -87,25 +88,27 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #FFFFFF;
+      line-height: 1.2;
     }
     .hero-subline {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--fog-light-blue);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
+      margin-top: 2px;
     }
 
     .hero-body {
       margin: auto 0;
-      max-width: 420px;
+      max-width: 440px;
     }
     .hero-tag {
       display: inline-block;
-      background: rgba(36, 160, 241, 0.15);
-      border: 1px solid rgba(36, 160, 241, 0.4);
-      color: var(--fog-light-blue);
-      font-size: 11px;
+      background: rgba(36, 160, 241, 0.18);
+      border: 1px solid rgba(36, 160, 241, 0.5);
+      color: #74D7EE;
+      font-size: 11.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -117,28 +120,29 @@
       font-size: 32px;
       line-height: 1.15;
       font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+      color: #FFFFFF;
     }
     .hero-desc {
-      font-size: 14px;
+      font-size: 14.5px;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 20px;
     }
     .hero-footer {
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 16px;
     }
     .hero-footer a {
       color: var(--fog-light-blue);
-      text-decoration: none;
-      font-weight: 600;
+      text-decoration: underline;
+      font-weight: 700;
     }
 
     .form-col {
@@ -148,33 +152,26 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 28px 48px;
-      background-color: #FFFFFF;
+      padding: 32px 48px;
+      background-color: var(--fog-gray-50);
       overflow-y: auto;
     }
     .form-card {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
+      background-color: #FFFFFF;
+      border: 1px solid #D0D7DE;
+      box-shadow: 0 4px 20px rgba(0, 36, 60, 0.08);
+      border-radius: var(--fog-radius-card);
+      padding: 32px 34px 28px 34px;
     }
-
+    
     @media (max-width: 899px) {
-      .split-container {
-        flex-direction: column;
-        min-height: auto;
-      }
-      .hero-col {
-        width: 100%;
-        min-height: 240px;
-        padding: 24px 20px;
-      }
-      .hero-title {
-        font-size: 24px;
-      }
-      .form-col {
-        width: 100%;
-        min-height: auto;
-        padding: 32px 20px;
-      }
+      .split-container { flex-direction: column; min-height: auto; }
+      .hero-col { width: 100%; min-height: 260px; padding: 24px 20px; }
+      .hero-title { font-size: 24px; }
+      .form-col { width: 100%; min-height: auto; padding: 24px 16px; }
+      .form-card { padding: 24px 20px; box-shadow: none; border: 1px solid #E2E8F0; }
     }
   </style>
 </head>
@@ -188,7 +185,7 @@
         <img src="https://events.fogrugby.com/assets/img/fog-shield.png" alt="SF Fog RFC Crest" class="hero-logo">
         <div>
           <div class="hero-club-title">San Francisco Fog RFC</div>
-          <div class="hero-subline">West Coast Premier Inclusive Rugby</div>
+          <div class="hero-subline">Inclusive Rugby since 2000</div>
         </div>
       </div>
       <div class="hero-body">
@@ -202,11 +199,11 @@
       </div>
     </div>
 
-    <div class="form-col">
+    <main class="form-col" role="main">
       <div class="form-card" data-slot="text">
         {{ page.content|raw }}
       </div>
-    </div>
+    </main>
   </div>
 </body>
 </html>
