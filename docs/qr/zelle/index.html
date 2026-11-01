@@ -289,12 +289,12 @@
       font-size: 13px;
       font-weight: 700;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.25s ease-out;
+      transition: transform 0.25s ease-out, opacity 0.25s; opacity: 0; visibility: hidden;
       z-index: 1000;
       pointer-events: none;
     }
     #toast.show {
-      transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible;
     }
   </style>
 </head>
@@ -331,49 +331,26 @@
         </button>
       </div>
 
-      <!-- Quick Bank Launcher Grid -->
-      <div class="section-title">Open Your Mobile Banking App</div>
-      <div class="bank-grid">
-        <button type="button" class="bank-btn" onclick="openBankApp('chase://', 'Chase')">
-          <span class="bank-icon" style="background:#117ACA;">C</span>
-          <span>Chase</span>
-        </button>
-        <button type="button" class="bank-btn" onclick="openBankApp('bofa://', 'Bank of America')">
-          <span class="bank-icon" style="background:#E31837;">B</span>
-          <span>Bank of America</span>
-        </button>
-        <button type="button" class="bank-btn" onclick="openBankApp('wellsfargo://', 'Wells Fargo')">
-          <span class="bank-icon" style="background:#D71E28;">W</span>
-          <span>Wells Fargo</span>
-        </button>
-        <button type="button" class="bank-btn" onclick="openBankApp('citi://', 'Citi')">
-          <span class="bank-icon" style="background:#002D62;">C</span>
-          <span>Citi</span>
-        </button>
-        <button type="button" class="bank-btn" onclick="openBankApp('capitalone://', 'Capital One')">
-          <span class="bank-icon" style="background:#A12830;">C</span>
-          <span>Capital One</span>
-        </button>
-        <button type="button" class="bank-btn" onclick="openBankApp('usbank://', 'U.S. Bank')">
-          <span class="bank-icon" style="background:#0C2074;">U</span>
-          <span>U.S. Bank</span>
-        </button>
-      </div>
-
-      <!-- Simple 3-Step Guide -->
+      <!-- How to send (works with any Zelle bank) -->
+      <div class="section-title">How to send</div>
       <div class="step-guide">
         <div class="step-item">
           <div class="step-num">1</div>
-          <div>Tap your bank above (or open your banking app). <strong>clubhouse@fogrugby.com</strong> is already copied.</div>
+          <div>Tap <strong>Copy</strong> above so <strong>clubhouse@fogrugby.com</strong> is ready to paste.</div>
         </div>
         <div class="step-item">
           <div class="step-num">2</div>
-          <div>Go to <strong>Pay &amp; Transfer &rarr; Zelle</strong> and tap <strong>Send</strong>.</div>
+          <div>Open your banking app yourself and go to <strong>Zelle &rarr; Send</strong>.</div>
         </div>
         <div class="step-item">
           <div class="step-num">3</div>
-          <div>Paste <strong>clubhouse@fogrugby.com</strong> &amp; confirm recipient is <em>THE SAN FRANCISCO FOG RUGBY FOOTBALL Accounts</em>.</div>
+          <div>Paste <strong>clubhouse@fogrugby.com</strong>, or scan the QR code below, and check the name reads <em>THE SAN FRANCISCO FOG RUGBY FOOTBALL Accounts</em> before you send.</div>
         </div>
+      </div>
+      <!-- QR for scanning from the bank app (desktop or a second phone) -->
+      <div style="text-align:center;margin:18px 0 6px;">
+        <img src="https://events.fogrugby.com/assets/qr/zelle-clubhouse.png" width="180" height="180" alt="Zelle QR code for clubhouse@fogrugby.com" style="width:180px;height:180px;border:1px solid #DCDDDE;border-radius:2px;">
+        <div style="font-size:12px;color:#555B60;margin-top:6px;">On a computer? Scan this from the Zelle screen in your banking app.</div>
       </div>
 
       <!-- Fallback and Alternative Options -->
@@ -382,7 +359,6 @@
         <div class="alt-links">
           <a href="https://events.fogrugby.com/qr/mazlo?utm_source=the-foghorn&utm_medium=smart_launcher&utm_campaign=newsletter-2026-10-29">Mazlo (Tax Receipt) &rsaquo;</a>
           <a href="https://events.fogrugby.com/qr/paypal?utm_source=the-foghorn&utm_medium=smart_launcher&utm_campaign=newsletter-2026-10-29">PayPal Checkout &rsaquo;</a>
-          <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFNBTiBGUkFOQ0lTQ08gRk9HIFJVR0JZIEZPT1RCQUxMIEFjY291bnRzIiwidG9rZW4iOiJjbHViaG91c2VAZm9ncnVnYnkuY29tIn0=" target="_blank">Search Other Banks &rsaquo;</a>
         </div>
       </div>
     </div>

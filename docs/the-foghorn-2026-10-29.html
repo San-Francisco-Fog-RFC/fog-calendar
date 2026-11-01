@@ -27,6 +27,12 @@
     body { margin: 0; padding: 0; width: 100% !important; background-color: #F1F2F3; -webkit-font-smoothing: antialiased; }
     
     /* Responsive styles */
+    /* Desktop: widen the layout on large screens */
+    @media only screen and (min-width: 900px) {
+      .email-container { max-width: 760px !important; }
+      .view-in-browser { max-width: 760px !important; }
+      .fluid-img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+    }
     @media only screen and (max-width: 600px) {
       .email-container { width: 100% !important; max-width: 100% !important; }
       .fluid-col { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; padding-left: 0 !important; padding-right: 0 !important; }
@@ -70,7 +76,7 @@
         <![endif]-->
 
         <!-- View in browser -->
-<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="max-width:600px;margin:0 auto;"><tr><td align="center" style="padding:10px 16px 8px 16px;font-family:'Futura PT',-apple-system,BlinkMacSystemFont,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#555B60;">Images or links not working? <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" target="_blank" style="color:#006EB6;text-decoration:underline;font-weight:600;">View this email in your browser</a></td></tr></table>
+<table class="view-in-browser" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="max-width:600px;margin:0 auto;"><tr><td align="center" style="padding:10px 16px 8px 16px;font-family:'Futura PT',-apple-system,BlinkMacSystemFont,Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#555B60;">Images or links not working? <a href="https://events.fogrugby.com/the-foghorn-2026-10-29.html" target="_blank" style="color:#006EB6;text-decoration:underline;font-weight:600;">View this email in your browser</a></td></tr></table>
 <!-- Main Email Container (600px max) -->
         <table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; width: 100%; margin: 0 auto;">
 
@@ -115,7 +121,7 @@
                       The Foghorn
                     </div>
                     <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #24A0F1; letter-spacing: 0.03em; margin-top: 4px;">
-                      Issue 25 &middot; October 29, 2026 &middot; San Francisco Fog RFC
+                      Issue 25 &middot; October 31, 2026 &middot; San Francisco Fog RFC
                     </div>
                   </td>
                 </tr>
@@ -128,6 +134,20 @@
           <!-- 1. PRESIDENT'S UPDATE (FULL WIDTH)                       -->
           <!-- Pink Accent #FFAFC8, Rectangular photo, Board dispatches  -->
           <!-- ======================================================== -->
+          <!-- HALLOWEEN 2026 (remove after Oct 31) -->
+          <tr>
+            <td style="padding: 8px 0 0 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #141718; border-left: 6px solid #FF8C00;">
+                <tr>
+                  <td style="padding: 14px 20px; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; color: #FFFFFF;">
+                    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FF8C00;">&#127875; Happy Halloween from the Fog</div>
+                    <div style="font-size: 14px; line-height: 21px; color: #DCDDDE; margin-top: 6px;">John Carpenter made <em>Halloween</em>, then <em>The Fog</em> (1980), shot up the coast at Point Reyes. Wear the costume to the bar, not to Thursday practice.</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
           <tr>
             <td id="president" style="padding: 14px 0 8px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFFFFF; border: 1px solid #DCDDDE; border-left: 6px solid #FFAFC8; border-radius: 2px;">
@@ -152,7 +172,7 @@
                     </p>
 
                     <p style="margin: 0 0 16px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.6; color: #141718;">
-                      Tonight, we officially kick off preseason training at Crocker Amazon (7:45&ndash;10:00 PM), followed by drinks at <strong>Pilsner Inn</strong>. Whether you're a ten-year veteran or a fresh Pathways graduate, bring your boots, your mouthguard, and your heart. Let's build something special together this season.
+                      Preseason training is underway: Thursdays at Crocker Amazon (7:45–10:00 PM), with drinks at <strong>Pilsner Inn</strong> after. Whether you're a ten-year veteran or a fresh Pathways graduate, bring your boots, your mouthguard, and your heart. Let's build something special together this season.
                     </p>
 
                     <!-- FOLDED BOARD UPDATES SUBSECTION -->
@@ -531,7 +551,7 @@
                     
                     <!-- Headline: Title Case, No Chip -->
                     <h2 class="h2-mobile" style="margin: 0 0 14px 0; font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 24px; line-height: 1.25; font-weight: 800; color: #00243C;">
-                      Preseason Starts Tonight! Have You CIPP'd?
+                      Preseason Is Underway. Have You CIPP'd?
                     </h2>
 
                     <!-- SECTION 1: CIPP REGISTRATION FIRST (Clean & prominent checklist) -->
@@ -590,11 +610,11 @@
                     <div style="margin-bottom: 18px;">
                       
                       <div style="font-family: 'Futura PT', Futura, Arial, sans-serif; font-size: 18px; font-weight: 800; color: #00243C; margin-bottom: 8px;">
-                        🏉 Tonight's Preseason Session &middot; Thursday, October 29
+                        🏉 Thursday Preseason Sessions
                       </div>
 
                       <p style="margin: 0 0 14px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
-                        Preseason training officially gets underway tonight under the lights. Coaches will introduce our 2026 tactical playbooks, structure phases, and fitness benchmarks. Rookies and veterans train together.
+                        Preseason training kicked off Thursday, October 29 under the lights. Coaches will introduce our 2026 tactical playbooks, structure phases, and fitness benchmarks. Rookies and veterans train together.
                       </p>
 
                       <!-- Practice Detail Highlights Table -->
@@ -762,7 +782,7 @@
                             Questions about gear or donations?
                           </div>
                           <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; line-height: 1.5; color: #555555;">
-                            Reach out to Match Secretary <strong>Nate Durand</strong> at <a href="mailto:matchsec@fogrugby.com" style="color: #006EB6; text-decoration: none; font-weight: 600;">matchsec@fogrugby.com</a> or connect in person at tonight's practice.
+                            Reach out to Match Secretary <strong>Nate Durand</strong> at <a href="mailto:matchsec@fogrugby.com" style="color: #006EB6; text-decoration: none; font-weight: 600;">matchsec@fogrugby.com</a> or find him at Thursday practice.
                           </div>
                         </td>
                       </tr>
@@ -968,7 +988,7 @@
                     </h2>
                     
                     <p style="margin: 0 0 12px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 15px; line-height: 1.65; color: #141718;">
-                      As a 501(c)(3) nonprofit amateur rugby club founded in 2000, San Francisco Fog RFC relies on the generous contributions of alumni, players, families, and community partners to maintain pitch access, safety gear, tournament travel subsidies, and beginner clinics.
+                      Founded in 2000, San Francisco Fog RFC relies on the generous contributions of alumni, players, families, and community partners to maintain pitch access, safety gear, tournament travel subsidies, and beginner clinics.
                     </p>
 
                     <p style="margin: 0 0 18px 0; font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #555555;">
@@ -981,15 +1001,15 @@
                         <!-- Mazlo: tax-deductible receipt -->
                         <td width="33.33%" valign="top" class="qr-col" align="center" style="padding: 0 6px;">
                           <div style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; padding: 14px 8px; text-align: center;">
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 0;">
+                              Mazlo
+                            </div>
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin: 2px 0 10px 0;">
+                              Tax-deductible receipt
+                            </div>
                             <a href="https://events.fogrugby.com/qr/mazlo?utm_source=the-foghorn&amp;utm_medium=email_btn&amp;utm_campaign=newsletter-2026-10-29" target="_blank" style="text-decoration: none;">
                               <img src="https://events.fogrugby.com/assets/qr/mazlo-donate.png" width="100" height="100" alt="Scan to donate through Mazlo with a tax-deductible receipt" style="display: block; margin: 0 auto; width: 100px; height: 100px; border-radius: 2px; border: 1px solid #DCDDDE;" />
                             </a>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">
-                              Mazlo
-                            </div>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin-top: 2px;">
-                              Tax-deductible receipt
-                            </div>
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 8px auto 0 auto;">
                               <tr>
                                 <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center;">
@@ -1005,15 +1025,15 @@
                         <!-- Zelle: straight to our bank, no fees -->
                         <td width="33.33%" valign="top" class="qr-col" align="center" style="padding: 0 6px;">
                           <div style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; padding: 14px 8px; text-align: center;">
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 0;">
+                              Zelle
+                            </div>
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin: 2px 0 10px 0;">
+                              clubhouse@fogrugby.com
+                            </div>
                             <a href="https://events.fogrugby.com/qr/zelle?utm_source=the-foghorn&amp;utm_medium=email_btn&amp;utm_campaign=newsletter-2026-10-29" target="_blank" style="text-decoration: none;">
                               <img src="https://events.fogrugby.com/assets/qr/zelle-clubhouse.png" width="100" height="100" alt="Scan in your banking app to send with Zelle to clubhouse@fogrugby.com" style="display: block; margin: 0 auto; width: 100px; height: 100px; border-radius: 2px; border: 1px solid #DCDDDE;" />
                             </a>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">
-                              Zelle
-                            </div>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin-top: 2px;">
-                              clubhouse@fogrugby.com
-                            </div>
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 8px auto 0 auto;">
                               <tr>
                                 <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center;">
@@ -1029,15 +1049,15 @@
                         <!-- PayPal: everything else -->
                         <td width="33.33%" valign="top" class="qr-col" align="center" style="padding: 0 6px;">
                           <div style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 2px; padding: 14px 8px; text-align: center;">
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 0;">
+                              PayPal
+                            </div>
+                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin: 2px 0 10px 0;">
+                              Everything else
+                            </div>
                             <a href="https://events.fogrugby.com/qr/paypal?utm_source=the-foghorn&amp;utm_medium=email_btn&amp;utm_campaign=newsletter-2026-10-29" target="_blank" style="text-decoration: none;">
                               <img src="https://events.fogrugby.com/assets/qr/paypal-donate.png" width="100" height="100" alt="Scan to donate through PayPal" style="display: block; margin: 0 auto; width: 100px; height: 100px; border-radius: 2px; border: 1px solid #DCDDDE;" />
                             </a>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 700; color: #00243C; margin-top: 8px;">
-                              PayPal
-                            </div>
-                            <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 11px; color: #666666; margin-top: 2px;">
-                              Everything else
-                            </div>
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 8px auto 0 auto;">
                               <tr>
                                 <td bgcolor="#006EB6" style="border-radius: 2px; text-align: center;">
@@ -1053,7 +1073,7 @@
                     </table>
 
                     <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 1.5; color: #666666; text-align: center;">
-                      San Francisco Fog RFC is an IRS-recognized 501(c)(3) amateur sports organization. EIN: 94-3372218. Mazlo sends your tax receipt automatically.
+                      The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers&#39; Group, a 501(c)(3) non-profit organization (EIN 94-2879185). Gifts through Mazlo go to Dancers&#39; Group, who send your tax receipt. Zelle and PayPal gifts are not tax-deductible.
                     </div>
 
                   </td>
@@ -1109,7 +1129,7 @@
                           </div>
                           
                           <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: 600; color: #24A0F1; margin-top: 2px;">
-                            Founded 2000 &middot; California Non-Profit 501(c)(3)
+                            Founded 2000 · Fiscally sponsored by Dancers&#39; Group, a 501(c)(3)
                           </div>
 
                           <div style="font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 1.6; color: #DCDDDE; margin-top: 8px;">
