@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SF Fog RFC//Foghorn//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-11-01-board-meeting@events.fogrugby.com
+DTSTAMP:20261101T120000Z
+DTSTART;TZID=America/Los_Angeles:20261101T183000
+DTEND;TZID=America/Los_Angeles:20261101T200000
+SUMMARY:November Board Meeting
+LOCATION:https://meet.google.com/nzr-ptjs-ogi
+DESCRIPTION:Monthly board meeting. All members welcome\, with an open floor for questions. In-depth questions in advance to secretary@fogrugby.com.
+END:VEVENT
+END:VCALENDAR

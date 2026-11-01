@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SF Fog RFC//Foghorn//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-11-07-gear-swap@events.fogrugby.com
+DTSTAMP:20261101T120000Z
+DTSTART;TZID=America/Los_Angeles:20261107T140000
+DTEND;TZID=America/Los_Angeles:20261107T170000
+SUMMARY:Gear Exchange & Swap Meet
+LOCATION:The Mothership Bar\, 3152 Mission St\, San Francisco\, CA 94110
+DESCRIPTION:Bring rugby gear to swap\, donate or pick up.
+END:VEVENT
+END:VCALENDAR

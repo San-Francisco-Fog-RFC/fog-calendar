@@ -67,6 +67,12 @@ venues:
   uptown-tavern:
     name: "Uptown Tavern"
     address: "1236 University Ave, San Diego"
+  usf-negoesco:
+    name: "USF Negoesco Field"
+    address: "Negoesco Stadium, University of San Francisco, Parker Ave, San Francisco, CA 94117"
+  mothership:
+    name: "The Mothership Bar"
+    address: "3152 Mission St, San Francisco, CA 94110"
 
 # Series: events that share details. An event's own fields override its series `defaults`.
 # `listing` holds the copy promote.py submits to listing sites (Funcheap, SCRUFF, ...).
@@ -243,25 +249,38 @@ events:
     notes: "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com"
 
 # ---------------------------------------------------------------- Training (repeating, Tue/Thu 7:45–10pm)
+  # Thursdays at Crocker Amazon (keeps the original id so existing subscribers update in place)
   - id: 2026-27-training
-    title: "Fog Training"
-    date: 2026-11-03   # recurring rule starts the week after the standalone first practice (29 Oct) so it isn't doubled up
+    title: "Fog Training (Thursday)"
+    date: 2026-11-05   # recurring rule starts the week after the standalone first practice (29 Oct) so it isn't doubled up
     time: "19:45"
     end_time: "22:00"
-    location: San Francisco — field TBC weekly
+    venue: crocker-amazon
     category: training
     status: confirmed
-    rrule: "FREQ=WEEKLY;BYDAY=TU,TH;UNTIL=20270516T065959Z"
+    rrule: "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270516T065959Z"
     exdates:
       - 2026-11-26   # Thanksgiving
       - 2026-12-24
-      - 2026-12-29
       - 2026-12-31
-      - 2027-01-05
       - 2027-01-07
-      - 2027-01-12
       - 2027-01-14
-    notes: "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
+    notes: "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
+  # Tuesdays at Raymond Kimbell
+  - id: 2026-27-training-tue
+    title: "Fog Training (Tuesday)"
+    date: 2026-11-03
+    time: "19:45"
+    end_time: "22:00"
+    venue: raymond-kimbell
+    category: training
+    status: confirmed
+    rrule: "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270516T065959Z"
+    exdates:
+      - 2026-12-29
+      - 2027-01-05
+      - 2027-01-12
+    notes: "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
 
   - id: 2026-10-29-first-preseason-practice
     series: pathway-to-rugby-2026
@@ -270,21 +289,36 @@ events:
     venue: crocker-amazon
     notes: "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm."
 
-# ---------------------------------------------------------------- Preseason 2026 (email: tentative, may change)
-  - id: 2026-11-07-usf-away
-    title: "USF vs SF Fog"
+# ---------------------------------------------------------------- Gear swap (replaces the old Sat 7 Nov preseason placeholder)
+  - id: 2026-11-07-gear-swap
+    title: "Fog Gear Exchange & Swap Meet"
     date: 2026-11-07
-    location: TBC - San Francisco
+    time: "14:00"
+    end_time: "17:00"
+    venue: mothership
+    category: social
+    status: confirmed
+    image: https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png
+    url: https://www.facebook.com/events/1126630570095151/
+    notes: "Bring rugby gear to swap, donate or pick up."
+
+# ---------------------------------------------------------------- Preseason 2026 (Coach Dany, 1 Nov 2026)
+  - id: 2026-11-14-usf-away   # id kept from the original Sat 14 Nov placeholder (calendar UID)
+    title: "Preseason Match #1 vs USF"
+    date: 2026-11-15
+    time: "10:30"
+    end_time: "12:30"
+    venue: usf-negoesco
+    category: fixture
+    status: confirmed
+    notes: "Reporting time 9:30am. Kickoff 10:30am."
+  - id: 2026-11-21-preseason-2
+    title: "Preseason Match #2"
+    date: 2026-11-21
+    location: TBC
     category: fixture
     status: tentative
-    notes: "Preseason friendly. Kickoff TBD."
-  - id: 2026-11-14-usf-away
-    title: "USF vs SF Fog"
-    date: 2026-11-14
-    location: TBC - San Francisco
-    category: fixture
-    status: tentative
-    notes: "Preseason friendly. Kickoff TBD."
+    notes: "Opponent, kickoff and location to be confirmed."
 
 # ---------------------------------------------------------------- Rucktacular 2026, San Diego (Thu 3 – Sun 6 Dec)
   - id: 2026-12-03-rucktacular-weekend

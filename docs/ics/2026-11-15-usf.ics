@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SF Fog RFC//Foghorn//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-11-15-usf@events.fogrugby.com
+DTSTAMP:20261101T120000Z
+DTSTART;TZID=America/Los_Angeles:20261115T093000
+DTEND;TZID=America/Los_Angeles:20261115T123000
+SUMMARY:Preseason Match #1 vs USF
+LOCATION:Negoesco Stadium\, University of San Francisco\, Parker Ave\, San Francisco\, CA 94117
+DESCRIPTION:Preseason Match #1 vs USF. Reporting time 9:30 AM\, kickoff 10:30 AM.
+END:VEVENT
+END:VCALENDAR
