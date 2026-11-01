@@ -358,17 +358,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261103",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261103",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-11-03T19:45:00-08:00",
     "end": "2026-11-03T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -376,7 +376,7 @@
   },
   {
     "id": "2026-27-training-20261105",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-11-05T19:45:00-08:00",
@@ -384,27 +384,27 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
     }
   },
   {
-    "id": "2026-11-07-usf-away",
-    "title": "USF vs SF Fog",
-    "allDay": true,
-    "start": "2026-11-07",
-    "end": "2026-11-08",
-    "url": "https://www.fogrugby.com/season-fixtures-results",
+    "id": "2026-11-07-gear-swap",
+    "title": "Fog Gear Exchange & Swap Meet",
+    "allDay": false,
+    "start": "2026-11-07T14:00:00-08:00",
+    "end": "2026-11-07T17:00:00-08:00",
+    "url": "https://www.facebook.com/events/1126630570095151/",
     "extendedProps": {
-      "uid": "2026-11-07-usf-away@fogrugby.com",
-      "location": "TBC - San Francisco",
-      "description": "Preseason friendly. Kickoff TBD.",
-      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
-      "category": "fixture",
-      "status": "tentative"
+      "uid": "2026-11-07-gear-swap@fogrugby.com",
+      "location": "The Mothership Bar, 3152 Mission St, San Francisco, CA 94110",
+      "description": "Bring rugby gear to swap, donate or pick up.",
+      "image": "https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png",
+      "category": "social",
+      "status": "confirmed"
     }
   },
   {
@@ -425,17 +425,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261110",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261110",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-11-10T19:45:00-08:00",
     "end": "2026-11-10T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -443,7 +443,7 @@
   },
   {
     "id": "2026-27-training-20261112",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-11-12T19:45:00-08:00",
@@ -451,27 +451,11 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
-    }
-  },
-  {
-    "id": "2026-11-14-usf-away",
-    "title": "USF vs SF Fog",
-    "allDay": true,
-    "start": "2026-11-14",
-    "end": "2026-11-15",
-    "url": "https://www.fogrugby.com/season-fixtures-results",
-    "extendedProps": {
-      "uid": "2026-11-14-usf-away@fogrugby.com",
-      "location": "TBC - San Francisco",
-      "description": "Preseason friendly. Kickoff TBD.",
-      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
-      "category": "fixture",
-      "status": "tentative"
     }
   },
   {
@@ -492,17 +476,33 @@
     }
   },
   {
-    "id": "2026-27-training-20261117",
-    "title": "Fog Training",
+    "id": "2026-11-14-usf-away",
+    "title": "Preseason Match #1 vs USF",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "start": "2026-11-15T10:30:00-08:00",
+    "end": "2026-11-15T12:30:00-08:00",
+    "url": "https://www.fogrugby.com/season-fixtures-results",
+    "extendedProps": {
+      "uid": "2026-11-14-usf-away@fogrugby.com",
+      "location": "USF Negoesco Field, Negoesco Stadium, University of San Francisco, Parker Ave, San Francisco, CA 94117",
+      "description": "Reporting time 9:30am. Kickoff 10:30am.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
+      "category": "fixture",
+      "status": "confirmed"
+    }
+  },
+  {
+    "id": "2026-27-training-tue-20261117",
+    "title": "Fog Training (Tuesday)",
+    "allDay": false,
+    "groupId": "2026-27-training-tue",
     "start": "2026-11-17T19:45:00-08:00",
     "end": "2026-11-17T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -510,7 +510,7 @@
   },
   {
     "id": "2026-27-training-20261119",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-11-19T19:45:00-08:00",
@@ -518,11 +518,27 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
+    }
+  },
+  {
+    "id": "2026-11-21-preseason-2",
+    "title": "Preseason Match #2",
+    "allDay": true,
+    "start": "2026-11-21",
+    "end": "2026-11-22",
+    "url": "https://www.fogrugby.com/season-fixtures-results",
+    "extendedProps": {
+      "uid": "2026-11-21-preseason-2@fogrugby.com",
+      "location": "TBC",
+      "description": "Opponent, kickoff and location to be confirmed.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
+      "category": "fixture",
+      "status": "tentative"
     }
   },
   {
@@ -543,17 +559,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261124",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261124",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-11-24T19:45:00-08:00",
     "end": "2026-11-24T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -577,17 +593,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261201",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261201",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-12-01T19:45:00-08:00",
     "end": "2026-12-01T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -627,7 +643,7 @@
   },
   {
     "id": "2026-27-training-20261203",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-12-03T19:45:00-08:00",
@@ -635,8 +651,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -736,17 +752,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261208",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261208",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-12-08T19:45:00-08:00",
     "end": "2026-12-08T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -754,7 +770,7 @@
   },
   {
     "id": "2026-27-training-20261210",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-12-10T19:45:00-08:00",
@@ -762,8 +778,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -803,17 +819,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261215",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261215",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-12-15T19:45:00-08:00",
     "end": "2026-12-15T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -821,7 +837,7 @@
   },
   {
     "id": "2026-27-training-20261217",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2026-12-17T19:45:00-08:00",
@@ -829,8 +845,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -854,17 +870,17 @@
     }
   },
   {
-    "id": "2026-27-training-20261222",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20261222",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2026-12-22T19:45:00-08:00",
     "end": "2026-12-22T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -954,17 +970,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270119",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270119",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-01-19T19:45:00-08:00",
     "end": "2027-01-19T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -972,7 +988,7 @@
   },
   {
     "id": "2026-27-training-20270121",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-01-21T19:45:00-08:00",
@@ -980,8 +996,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1005,17 +1021,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270126",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270126",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-01-26T19:45:00-08:00",
     "end": "2027-01-26T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1023,7 +1039,7 @@
   },
   {
     "id": "2026-27-training-20270128",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-01-28T19:45:00-08:00",
@@ -1031,8 +1047,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1056,17 +1072,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270202",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270202",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-02-02T19:45:00-08:00",
     "end": "2027-02-02T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1074,7 +1090,7 @@
   },
   {
     "id": "2026-27-training-20270204",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-02-04T19:45:00-08:00",
@@ -1082,8 +1098,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1123,17 +1139,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270209",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270209",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-02-09T19:45:00-08:00",
     "end": "2027-02-09T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1141,7 +1157,7 @@
   },
   {
     "id": "2026-27-training-20270211",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-02-11T19:45:00-08:00",
@@ -1149,8 +1165,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1174,17 +1190,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270216",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270216",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-02-16T19:45:00-08:00",
     "end": "2027-02-16T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1192,7 +1208,7 @@
   },
   {
     "id": "2026-27-training-20270218",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-02-18T19:45:00-08:00",
@@ -1200,8 +1216,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1241,17 +1257,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270223",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270223",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-02-23T19:45:00-08:00",
     "end": "2027-02-23T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1259,7 +1275,7 @@
   },
   {
     "id": "2026-27-training-20270225",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-02-25T19:45:00-08:00",
@@ -1267,8 +1283,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1308,17 +1324,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270302",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270302",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-03-02T19:45:00-08:00",
     "end": "2027-03-02T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1326,7 +1342,7 @@
   },
   {
     "id": "2026-27-training-20270304",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-03-04T19:45:00-08:00",
@@ -1334,8 +1350,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1373,17 +1389,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270309",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270309",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-03-09T19:45:00-08:00",
     "end": "2027-03-09T22:00:00-08:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1391,7 +1407,7 @@
   },
   {
     "id": "2026-27-training-20270311",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-03-11T19:45:00-08:00",
@@ -1399,8 +1415,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1440,17 +1456,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270316",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270316",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-03-16T19:45:00-07:00",
     "end": "2027-03-16T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1458,7 +1474,7 @@
   },
   {
     "id": "2026-27-training-20270318",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-03-18T19:45:00-07:00",
@@ -1466,8 +1482,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1507,17 +1523,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270323",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270323",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-03-23T19:45:00-07:00",
     "end": "2027-03-23T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1525,7 +1541,7 @@
   },
   {
     "id": "2026-27-training-20270325",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-03-25T19:45:00-07:00",
@@ -1533,8 +1549,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1574,17 +1590,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270330",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270330",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-03-30T19:45:00-07:00",
     "end": "2027-03-30T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1592,7 +1608,7 @@
   },
   {
     "id": "2026-27-training-20270401",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-04-01T19:45:00-07:00",
@@ -1600,8 +1616,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1639,17 +1655,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270406",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270406",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-04-06T19:45:00-07:00",
     "end": "2027-04-06T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1657,7 +1673,7 @@
   },
   {
     "id": "2026-27-training-20270408",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-04-08T19:45:00-07:00",
@@ -1665,8 +1681,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1706,17 +1722,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270413",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270413",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-04-13T19:45:00-07:00",
     "end": "2027-04-13T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1724,7 +1740,7 @@
   },
   {
     "id": "2026-27-training-20270415",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-04-15T19:45:00-07:00",
@@ -1732,8 +1748,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1773,17 +1789,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270420",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270420",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-04-20T19:45:00-07:00",
     "end": "2027-04-20T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1791,7 +1807,7 @@
   },
   {
     "id": "2026-27-training-20270422",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-04-22T19:45:00-07:00",
@@ -1799,8 +1815,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1840,17 +1856,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270427",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270427",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-04-27T19:45:00-07:00",
     "end": "2027-04-27T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1858,7 +1874,7 @@
   },
   {
     "id": "2026-27-training-20270429",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-04-29T19:45:00-07:00",
@@ -1866,8 +1882,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1891,17 +1907,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270504",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270504",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-05-04T19:45:00-07:00",
     "end": "2027-05-04T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1909,7 +1925,7 @@
   },
   {
     "id": "2026-27-training-20270506",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-05-06T19:45:00-07:00",
@@ -1917,8 +1933,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1957,17 +1973,17 @@
     }
   },
   {
-    "id": "2026-27-training-20270511",
-    "title": "Fog Training",
+    "id": "2026-27-training-tue-20270511",
+    "title": "Fog Training (Tuesday)",
     "allDay": false,
-    "groupId": "2026-27-training",
+    "groupId": "2026-27-training-tue",
     "start": "2027-05-11T19:45:00-07:00",
     "end": "2027-05-11T22:00:00-07:00",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
-      "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "uid": "2026-27-training-tue@fogrugby.com",
+      "location": "Raymond Kimbell Playground Park, 1901 Geary Blvd, San Francisco, CA 94115",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"
@@ -1975,7 +1991,7 @@
   },
   {
     "id": "2026-27-training-20270513",
-    "title": "Fog Training",
+    "title": "Fog Training (Thursday)",
     "allDay": false,
     "groupId": "2026-27-training",
     "start": "2027-05-13T19:45:00-07:00",
@@ -1983,8 +1999,8 @@
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-27-training@fogrugby.com",
-      "location": "San Francisco — field TBC weekly",
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco, CA 94112",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
       "status": "confirmed"

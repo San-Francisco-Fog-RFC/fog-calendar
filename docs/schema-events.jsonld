@@ -602,8 +602,8 @@
     },
     {
       "@type": "SportsEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-27-training",
-      "name": "Fog Training",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue",
+      "name": "Fog Training (Tuesday)",
       "startDate": "2026-11-03T19:45:00-08:00",
       "endDate": "2026-11-03T22:00:00-08:00",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -626,15 +626,17 @@
       "image": [
         "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
       ],
-      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "location": {
         "@type": "Place",
-        "name": "San Francisco — field TBC weekly",
+        "name": "Raymond Kimbell Playground Park",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       },
       "eventSchedule": {
@@ -642,8 +644,7 @@
         "repeatFrequency": "P1W",
         "scheduleTimezone": "America/Los_Angeles",
         "byDay": [
-          "https://schema.org/Tuesday",
-          "https://schema.org/Thursday"
+          "https://schema.org/Tuesday"
         ],
         "startTime": "19:45:00",
         "endTime": "22:00:00",
@@ -652,10 +653,10 @@
     },
     {
       "@type": "SportsEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-11-07-usf-away",
-      "name": "USF vs SF Fog",
-      "startDate": "2026-11-07",
-      "endDate": "2026-11-07",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-11-05T19:45:00-08:00",
+      "endDate": "2026-11-05T22:00:00-08:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
@@ -676,24 +677,115 @@
       "image": [
         "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
       ],
-      "description": "Preseason friendly. Kickoff TBD.",
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "location": {
         "@type": "Place",
-        "name": "TBC - San Francisco",
+        "name": "Crocker Amazon Soccer Fields",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "scheduleTimezone": "America/Los_Angeles",
+        "byDay": [
+          "https://schema.org/Thursday"
+        ],
+        "startTime": "19:45:00",
+        "endTime": "22:00:00",
+        "endDate": "2027-05-16"
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-11-07-gear-swap",
+      "name": "Fog Gear Exchange & Swap Meet",
+      "startDate": "2026-11-07T14:00:00-08:00",
+      "endDate": "2026-11-07T17:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.facebook.com/events/1126630570095151/"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png"
+      ],
+      "description": "Bring rugby gear to swap, donate or pick up.",
+      "location": {
+        "@type": "Place",
+        "name": "The Mothership Bar",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "3152 Mission St",
+          "addressRegion": "CA",
+          "postalCode": "94110",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://www.facebook.com/events/1126630570095151/"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-11-14-usf-away",
+      "name": "Preseason Match #1 vs USF",
+      "startDate": "2026-11-15T10:30:00-08:00",
+      "endDate": "2026-11-15T12:30:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Reporting time 9:30am. Kickoff 10:30am.",
+      "location": {
+        "@type": "Place",
+        "name": "USF Negoesco Field",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94117",
+          "addressLocality": "San Francisco"
         }
       }
     },
     {
       "@type": "SportsEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-11-14-usf-away",
-      "name": "USF vs SF Fog",
-      "startDate": "2026-11-14",
-      "endDate": "2026-11-14",
+      "@id": "https://events.fogrugby.com/#event-2026-11-21-preseason-2",
+      "name": "Preseason Match #2",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
@@ -714,10 +806,10 @@
       "image": [
         "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
       ],
-      "description": "Preseason friendly. Kickoff TBD.",
+      "description": "Opponent, kickoff and location to be confirmed.",
       "location": {
         "@type": "Place",
-        "name": "TBC - San Francisco",
+        "name": "TBC",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "San Francisco",
