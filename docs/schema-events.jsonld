@@ -601,6 +601,44 @@
       "url": "https://www.fogrugby.com/p2r"
     },
     {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-11-01-board-meeting",
+      "name": "November Board Meeting",
+      "startDate": "2026-11-01T18:30:00-08:00",
+      "endDate": "2026-11-01T20:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://meet.google.com/nzr-ptjs-ogi"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com.",
+      "location": {
+        "@type": "Place",
+        "name": "Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://meet.google.com/nzr-ptjs-ogi"
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-27-training-tue",
       "name": "Fog Training (Tuesday)",

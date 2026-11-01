@@ -8,8 +8,8 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-11-01T13:25:42Z",
-  "total_events": 44,
+  "updated_at": "2026-11-01T13:30:47Z",
+  "total_events": 45,
   "events": [
     {
       "id": "2026-09-11-memorial-toast",
@@ -296,6 +296,25 @@
       "notes": "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm.",
       "url": "https://www.fogrugby.com/p2r",
       "image": "https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg",
+      "rrule": null,
+      "exdates": []
+    },
+    {
+      "id": "2026-11-01-board-meeting",
+      "uid": "2026-11-01-board-meeting@fogrugby.com",
+      "title": "November Board Meeting",
+      "category": "board",
+      "status": "confirmed",
+      "all_day": false,
+      "start": "2026-11-01T18:30:00-08:00",
+      "end": "2026-11-01T20:00:00-08:00",
+      "date": "2026-11-01",
+      "time": "18:30",
+      "end_time": "20:00",
+      "location": "Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi",
+      "notes": "All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com.",
+      "url": "https://meet.google.com/nzr-ptjs-ogi",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "rrule": null,
       "exdates": []
     },

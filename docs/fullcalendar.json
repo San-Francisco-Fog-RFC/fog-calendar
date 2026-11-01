@@ -358,6 +358,22 @@
     }
   },
   {
+    "id": "2026-11-01-board-meeting",
+    "title": "November Board Meeting",
+    "allDay": false,
+    "start": "2026-11-01T18:30:00-08:00",
+    "end": "2026-11-01T20:00:00-08:00",
+    "url": "https://meet.google.com/nzr-ptjs-ogi",
+    "extendedProps": {
+      "uid": "2026-11-01-board-meeting@fogrugby.com",
+      "location": "Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi",
+      "description": "All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
+      "category": "board",
+      "status": "confirmed"
+    }
+  },
+  {
     "id": "2026-27-training-tue-20261103",
     "title": "Fog Training (Tuesday)",
     "allDay": false,
