@@ -111,6 +111,11 @@
       <div id="calendar-days-container" class="calendar-days-grid" role="grid">
         <!-- Rendered dynamically -->
       </div>
+      <div class="calendar-legend" aria-label="Event colour key">
+        <span class="lg cat-fixture">Match</span><span class="lg cat-training">Training</span><span class="lg cat-pathway">Pathway</span>
+        <span class="lg cat-tournament">Tournament</span><span class="lg cat-social">Social</span><span class="lg cat-community">Community</span>
+        <span class="lg cat-board">Board</span><span class="lg lg-tbc">Dashed = to be confirmed</span>
+      </div>
     </section>
 
     <!-- Agenda List View -->
@@ -459,9 +464,10 @@
         calendarUrl: 'https://www.fogrugby.com/season-fixtures-results',
         originalEvents: [],
         events: [],
-        currentYear: 2026,
-        currentMonth: 9, // 0-indexed (9 = October 2026)
-        viewMode: 'month', // 'month' | 'agenda'
+        currentYear: new Date().getFullYear(),
+        currentMonth: new Date().getMonth(), // 0-indexed
+        viewMode: (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) ? 'agenda' : 'month', // phones open in the list
+        showPast: false,
         activeCategory: 'all',
         activeStatus: 'all',
         searchQuery: '',
@@ -575,6 +581,18 @@
         }
         return new Date(clean);
       }
+
+      function fmtTime(t) {
+        if (!t) return '';
+        const [hh, mm] = String(t).split(':').map(Number);
+        const ap = hh >= 12 ? 'PM' : 'AM'; const h12 = ((hh + 11) % 12) + 1;
+        return h12 + (mm ? ':' + pad2(mm) : '') + ' ' + ap;
+      }
+      function fmtDay(dStr) {
+        const d = parseLocalDate(formatDate(dStr));
+        return WEEKDAY_NAMES[d.getDay()] + ' ' + MONTH_NAMES[d.getMonth()].slice(0, 3) + ' ' + d.getDate();
+      }
+      const CATEGORY_LABELS = { fixture: 'Match', training: 'Training', pathway: 'Pathway', tournament: 'Tournament', social: 'Social', community: 'Community', board: 'Board' };
 
       function slugify(text) {
         return text
@@ -925,14 +943,15 @@
             '<button type="button" class="day-add-btn" data-date="' + dateStr + '" title="Add event on ' + dateStr + '">+</button>';
           cell.appendChild(header);
 
-          const dayEvents = eventDateMap.get(dateStr) || [];
+          const dayEvents = (eventDateMap.get(dateStr) || []).slice().sort((a, b) => (a.time || '00:00').localeCompare(b.time || '00:00'));
           dayEvents.forEach(ev => {
             const chip = document.createElement('a');
             chip.className = 'event-chip cat-' + (ev.category || 'fixture') +
               (ev.status === 'tentative' ? ' status-tentative' : '');
             chip.href = '#';
-            chip.title = (ev.time ? ev.time + ' — ' : '') + ev.title;
-            chip.textContent = (ev.time ? ev.time + ' ' : '') + ev.title;
+            chip.title = (ev.time ? fmtTime(ev.time) + ' · ' : '') + ev.title + ' (' + (CATEGORY_LABELS[ev.category] || 'Event') + ')' + (ev.location ? ' · ' + ev.location : '');
+            chip.innerHTML = (ev.time ? '<span class="chip-time">' + fmtTime(ev.time) + '</span> ' : '') +
+              escapeHtml(ev.title) + (ev.status === 'tentative' ? ' <span class="chip-tbc">TBC</span>' : '');
             chip.addEventListener('click', function (e) {
               e.preventDefault();
               openEventModal(ev.id);
@@ -963,7 +982,16 @@
       // --- Rendering: Chronological Agenda List (Zero NaN) ---
       function renderAgendaList() {
         elements.viewAgendaList.innerHTML = '';
-        const filtered = filterEventsList(displayEvents());
+        const todayKey = formatDate(new Date());
+        const filtered = filterEventsList(displayEvents()).filter(ev =>
+          state.showPast || ev.rrule || formatDate(ev.end || ev.date || ev.start) >= todayKey);
+
+        const toggle = document.createElement('div');
+        toggle.className = 'agenda-past-toggle';
+        toggle.innerHTML = '<span>' + (state.showPast ? 'Showing all events' : 'Showing upcoming events') + '</span>' +
+          '<button type="button" class="btn btn-secondary btn-sm" id="btn-toggle-past">' + (state.showPast ? 'Hide past events' : 'Show past events') + '</button>';
+        elements.viewAgendaList.appendChild(toggle);
+        toggle.querySelector('button').addEventListener('click', () => { state.showPast = !state.showPast; renderViews(); });
 
         const sorted = [...filtered].sort((a, b) => {
           const da = formatDate(a.date || a.start || '');
@@ -972,12 +1000,13 @@
         });
 
         if (sorted.length === 0) {
-          elements.viewAgendaList.innerHTML = '<div style="padding: 40px; text-align: center; color: #666; font-size: 1.1rem;">No events match the selected filters.</div>';
+          elements.viewAgendaList.innerHTML += '<div style="padding: 40px; text-align: center; color: #666; font-size: 1.1rem;">No events match the selected filters.</div>';
           return;
         }
 
         const groups = new Map();
-        sorted.forEach(ev => {
+        const weekly = sorted.filter(ev => ev.rrule);
+        sorted.filter(ev => !ev.rrule).forEach(ev => {
           const dStr = formatDate(ev.date || ev.start);
           const dateObj = parseLocalDate(dStr);
           const groupKey = MONTH_NAMES[dateObj.getMonth()] + ' ' + dateObj.getFullYear();
@@ -986,6 +1015,7 @@
           groups.set(groupKey, list);
         });
 
+        if (weekly.length) groups.set('Every week', weekly);
         groups.forEach((groupEvents, groupKey) => {
           const groupSec = document.createElement('div');
           groupSec.className = 'agenda-month-group';
@@ -1005,14 +1035,19 @@
             const dStr = formatDate(ev.date || ev.start);
             const dateObj = parseLocalDate(dStr);
             const weekday = WEEKDAY_NAMES[dateObj.getDay()] || 'TBD';
-            const dayNum = dateObj.getDate() || 1;
+            const dayNum = ev.rrule ? '' : (dateObj.getDate() || 1);
 
-            let timeLabel = 'All Day / Kickoff TBD';
+            let timeLabel = ev.status === 'tentative' ? 'Time TBC' : 'All day';
             if (ev.time) {
-              timeLabel = ev.time + (ev.end_time ? ' – ' + ev.end_time : '');
+              timeLabel = fmtTime(ev.time) + (ev.end_time ? ' – ' + fmtTime(ev.end_time) : '');
             }
             if (ev.start && ev.end) {
-              timeLabel = 'Multi-day: ' + formatDate(ev.start) + ' to ' + formatDate(ev.end);
+              timeLabel = fmtDay(ev.start) + ' – ' + fmtDay(ev.end);
+            }
+            if (ev.rrule) {
+              const days = (String(ev.rrule).match(/BYDAY=([A-Z,]+)/) || [, ''])[1].split(',')
+                .map(x => ({ MO: 'Mon', TU: 'Tue', WE: 'Wed', TH: 'Thu', FR: 'Fri', SA: 'Sat', SU: 'Sun' })[x]).filter(Boolean);
+              timeLabel = 'Every ' + (days.join(' & ') || 'week') + (ev.time ? ' · ' + timeLabel : '');
             }
 
             const catClass = 'pill-' + (ev.category || 'fixture');
@@ -1027,7 +1062,7 @@
               '</div>' +
               '<div class="agenda-card-info">' +
                 '<div class="card-meta-line">' +
-                  '<span class="card-pill ' + catClass + '">' + (ev.category || 'fixture') + '</span>' +
+                  '<span class="card-pill ' + catClass + '">' + (CATEGORY_LABELS[ev.category] || 'Event') + '</span>' +
                   '<span class="card-status-pill ' + statusClass + '">' + statusText + '</span>' +
                 '</div>' +
                 '<h3 class="agenda-card-title">' + escapeHtml(ev.title) + '</h3>' +
@@ -1075,6 +1110,9 @@
       }
 
       function renderViews() {
+        elements.labelCurrentMonth.textContent = MONTH_NAMES[state.currentMonth] + ' ' + state.currentYear;
+        if (elements.btnPrevMonth && elements.btnPrevMonth.parentElement)
+          elements.btnPrevMonth.parentElement.style.display = state.viewMode === 'month' ? '' : 'none';
         if (state.viewMode === 'month') {
           elements.viewMonthGrid.style.display = 'block';
           elements.viewAgendaList.style.display = 'none';
@@ -1082,6 +1120,8 @@
         } else {
           elements.viewMonthGrid.style.display = 'none';
           elements.viewAgendaList.style.display = 'flex';
+          elements.btnViewAgenda.classList.add('active');
+          elements.btnViewMonth.classList.remove('active');
           renderAgendaList();
         }
       }

@@ -289,6 +289,18 @@ events:
     venue: crocker-amazon
     notes: "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm."
 
+# ---------------------------------------------------------------- Board
+  - id: 2026-11-01-board-meeting
+    title: "November Board Meeting"
+    date: 2026-11-01
+    time: "18:30"
+    end_time: "20:00"
+    location: "Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi"
+    category: board
+    status: confirmed
+    url: https://meet.google.com/nzr-ptjs-ogi
+    notes: "All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com."
+
 # ---------------------------------------------------------------- Gear swap (replaces the old Sat 7 Nov preseason placeholder)
   - id: 2026-11-07-gear-swap
     title: "Fog Gear Exchange & Swap Meet"

@@ -1136,3 +1136,75 @@ dialog.fog-dialog::backdrop {
   font-weight: 700;
 }
 
+
+
+/* --------------------------------------------------------------------------
+   13. Readability pass (Nov 2026)
+   Equal columns, light category tints + coloured edge, wrapped titles, legend.
+   -------------------------------------------------------------------------- */
+:root {
+  --cat-fixture: #C81E1E;    --cat-fixture-bg: #FDECEC;
+  --cat-training: #006EB6;   --cat-training-bg: #EAF3FB;
+  --cat-pathway: #4F46E5;    --cat-pathway-bg: #EEEFFE;
+  --cat-tournament: #D97706; --cat-tournament-bg: #FFF3E0;
+  --cat-social: #008026;     --cat-social-bg: #E8F6EC;
+  --cat-community: #750787;  --cat-community-bg: #F5ECF8;
+  --cat-board: #5F6B73;      --cat-board-bg: #F1F2F3;
+}
+.calendar-weekdays-header, .calendar-days-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.calendar-day-cell { min-height: 118px; padding: 8px 6px 10px; }
+.calendar-day-cell.other-month { background-color: #F7F8F9; }
+.calendar-day-cell.other-month .day-number { opacity: 0.55; }
+.calendar-day-cell.today { background-color: #F0F7FC; box-shadow: inset 0 0 0 2px var(--fog-blue); }
+.day-number { font-size: 0.9rem; }
+
+.event-chip {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+  white-space: normal; overflow: hidden; text-overflow: clip;
+  font-size: 0.78rem; font-weight: 600; line-height: 1.3; padding: 4px 6px 4px 7px;
+  border-left-width: 4px; border-radius: 3px; color: #141718;
+}
+.chip-time { font-weight: 800; }
+.chip-tbc { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.04em; color: #8A5A00; }
+.event-chip.cat-fixture    { background-color: var(--cat-fixture-bg);    border-left-color: var(--cat-fixture);    color: #141718; }
+.event-chip.cat-training   { background-color: var(--cat-training-bg);   border-left-color: var(--cat-training);   color: #141718; }
+.event-chip.cat-pathway    { background-color: var(--cat-pathway-bg);    border-left-color: var(--cat-pathway);    color: #141718; }
+.event-chip.cat-tournament { background-color: var(--cat-tournament-bg); border-left-color: var(--cat-tournament); color: #141718; }
+.event-chip.cat-social     { background-color: var(--cat-social-bg);     border-left-color: var(--cat-social);     color: #141718; }
+.event-chip.cat-community  { background-color: var(--cat-community-bg);  border-left-color: var(--cat-community);  color: #141718; }
+.event-chip.cat-board      { background-color: var(--cat-board-bg);      border-left-color: var(--cat-board);      color: #141718; }
+.event-chip.status-tentative { border: 1px dashed #7A8288; border-left: 4px dashed #7A8288; font-style: normal; }
+.event-chip:focus-visible { outline: 2px solid var(--fog-blue); outline-offset: 1px; }
+
+.pill-fixture    { background: var(--cat-fixture);    color: #fff; }
+.pill-training   { background: var(--cat-training);   color: #fff; }
+.pill-pathway    { background: var(--cat-pathway);    color: #fff; }
+.pill-tournament { background: var(--cat-tournament); color: #fff; }
+.pill-social     { background: var(--cat-social);     color: #fff; }
+.pill-community  { background: var(--cat-community);  color: #fff; }
+.pill-board      { background: var(--cat-board);      color: #fff; }
+
+.calendar-legend { display: flex; flex-wrap: wrap; gap: 8px 14px; padding: 12px 14px; border-top: 1px solid var(--fog-gray); font-size: 0.78rem; font-weight: 600; color: #3A4248; }
+.calendar-legend .lg { display: inline-flex; align-items: center; gap: 6px; }
+.calendar-legend .lg::before { content: ""; width: 14px; height: 12px; border-radius: 2px; border-left: 4px solid; }
+.calendar-legend .cat-fixture::before    { background: var(--cat-fixture-bg);    border-color: var(--cat-fixture); }
+.calendar-legend .cat-training::before   { background: var(--cat-training-bg);   border-color: var(--cat-training); }
+.calendar-legend .cat-pathway::before    { background: var(--cat-pathway-bg);    border-color: var(--cat-pathway); }
+.calendar-legend .cat-tournament::before { background: var(--cat-tournament-bg); border-color: var(--cat-tournament); }
+.calendar-legend .cat-social::before     { background: var(--cat-social-bg);     border-color: var(--cat-social); }
+.calendar-legend .cat-community::before  { background: var(--cat-community-bg);  border-color: var(--cat-community); }
+.calendar-legend .cat-board::before      { background: var(--cat-board-bg);      border-color: var(--cat-board); }
+.calendar-legend .lg-tbc::before         { background: #fff; border: 1px dashed #7A8288; border-left: 4px dashed #7A8288; }
+
+.agenda-card-notes { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+.agenda-past-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; font-size: 0.85rem; font-weight: 600; color: #3A4248; }
+
+/* hide the admin bar completely unless there are unsaved changes */
+.changes-bar { visibility: hidden; }
+.changes-bar.visible { visibility: visible; }
+
+@media (max-width: 860px) {
+  .calendar-day-cell { min-height: 84px; padding: 4px 3px 6px; gap: 3px; }
+  .event-chip { font-size: 0.66rem; padding: 2px 3px 2px 4px; border-left-width: 3px; -webkit-line-clamp: 3; }
+  .chip-time { display: block; }
+}
