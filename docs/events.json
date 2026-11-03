@@ -8,7 +8,7 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-11-03T15:28:54Z",
+  "updated_at": "2026-11-03T15:46:56Z",
   "total_events": 45,
   "events": [
     {
@@ -407,7 +407,7 @@
     {
       "id": "2026-11-21-preseason-2",
       "uid": "2026-11-21-preseason-2@fogrugby.com",
-      "title": "Preseason Match #2",
+      "title": "Fog vs Baracus (Home)",
       "category": "fixture",
       "status": "tentative",
       "all_day": true,
@@ -416,8 +416,8 @@
       "date": "2026-11-21",
       "time": null,
       "end_time": null,
-      "location": "TBC",
-      "notes": "Opponent, kickoff and location to be confirmed.",
+      "location": "TBC - San Francisco",
+      "notes": "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.",
       "url": null,
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "rrule": null,

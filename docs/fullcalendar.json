@@ -543,15 +543,15 @@
   },
   {
     "id": "2026-11-21-preseason-2",
-    "title": "Preseason Match #2",
+    "title": "Fog vs Baracus (Home)",
     "allDay": true,
     "start": "2026-11-21",
     "end": "2026-11-22",
     "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-11-21-preseason-2@fogrugby.com",
-      "location": "TBC",
-      "description": "Opponent, kickoff and location to be confirmed.",
+      "location": "TBC - San Francisco",
+      "description": "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
       "status": "tentative"
