@@ -303,7 +303,7 @@ events:
 
 # ---------------------------------------------------------------- Gear swap (replaces the old Sat 7 Nov preseason placeholder)
   - id: 2026-11-07-gear-swap
-    title: "Fog Gear Exchange & Swap Meet"
+    title: "Fog Rugby Gear Swap Party"
     date: 2026-11-07
     time: "14:00"
     end_time: "17:00"
@@ -311,8 +311,8 @@ events:
     category: social
     status: confirmed
     image: https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png
-    url: https://www.facebook.com/events/1126630570095151/
-    notes: "Bring rugby gear to swap, donate or pick up."
+    url: https://fogrugby.com/gear-swap
+    notes: "Swap, sell, or donate rugby gear to this season's Fog players. Featuring drag performances by Foggers, St. Anthony's donation drive, and Mothership drink specials."
 
 # ---------------------------------------------------------------- Preseason 2026 (Coach Dany, 1 Nov 2026)
   - id: 2026-11-14-usf-away   # id kept from the original Sat 14 Nov placeholder (calendar UID)

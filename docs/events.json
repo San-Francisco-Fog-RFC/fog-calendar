@@ -8,7 +8,7 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-11-01T13:30:47Z",
+  "updated_at": "2026-11-03T15:06:41Z",
   "total_events": 45,
   "events": [
     {
@@ -369,7 +369,7 @@
     {
       "id": "2026-11-07-gear-swap",
       "uid": "2026-11-07-gear-swap@fogrugby.com",
-      "title": "Fog Gear Exchange & Swap Meet",
+      "title": "Fog Rugby Gear Swap Party",
       "category": "social",
       "status": "confirmed",
       "all_day": false,
@@ -379,8 +379,8 @@
       "time": "14:00",
       "end_time": "17:00",
       "location": "The Mothership Bar, 3152 Mission St, San Francisco, CA 94110",
-      "notes": "Bring rugby gear to swap, donate or pick up.",
-      "url": "https://www.facebook.com/events/1126630570095151/",
+      "notes": "Swap, sell, or donate rugby gear to this season's Fog players. Featuring drag performances by Foggers, St. Anthony's donation drive, and Mothership drink specials.",
+      "url": "https://fogrugby.com/gear-swap",
       "image": "https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png",
       "rrule": null,
       "exdates": []
