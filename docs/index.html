@@ -21,22 +21,20 @@
   <style>
     /* ==========================================================================
        SF FOG RUGBY FOOTBALL CLUB - FULLSCREEN ATMOSPHERIC CALENDAR HUB
-       - Random Full-Window Pitch Photography Background Pool
-       - 11-Stripe Progress Pride Top Bar (100vw edge-to-edge)
-       - Semi-Transparent Frosted Glass Calendar Card (Takes up most of the room)
-       - Edge-to-Edge Universal Footer with Logo/Title/Mission (Left),
-         White Divider Line, Links/Sponsor/Copyright (Right)
+       Official Design System: Futura PT, Fog Brand Tokens, Progress Pride System
        ========================================================================== */
     :root {
       --fog-blue: #006EB6;
       --fog-light-blue: #24A0F1;
       --fog-dark-blue: #00243C;
       --fog-gray: #DCDDDE;
-      --fog-gray-50: #F8FAFC;
+      --fog-gray-50: #F1F2F3;
       --fog-dark-gray: #141718;
       --fog-white: #FFFFFF;
       --fog-radius-btn: 2px;
       --fog-radius-card: 4px;
+      --focus-ring: 0 0 0 2px var(--fog-white), 0 0 0 4px var(--fog-blue);
+      --focus-ring-dark: 0 0 0 2px var(--fog-dark-blue), 0 0 0 4px var(--fog-white);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,33 +48,54 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* FULL-WINDOW RANDOM BACKGROUND & ATMOSPHERIC VIGNETTE */
-    .fog-backdrop {
+    /* FULL-WINDOW ROTATING BACKGROUND & ATMOSPHERIC VIGNETTE */
+    .fog-bg-container {
       position: fixed;
       inset: 0;
       width: 100vw;
       height: 100vh;
-      background-color: var(--fog-dark-blue);
-      background-image: url('assets/img/calling-ceremony-circle.jpg');
+      z-index: 0;
+      overflow: hidden;
+    }
+    .fog-bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      z-index: -2;
-      transition: background-image 0.5s ease-in-out;
+      transition: opacity 1.4s ease-in-out;
+      opacity: 0;
     }
-    .fog-backdrop-overlay {
+    .fog-bg-layer.active {
+      opacity: 1;
+    }
+    .fog-bg-overlay {
       position: fixed;
       inset: 0;
       width: 100vw;
       height: 100vh;
-      background: linear-gradient(180deg, rgba(0, 24, 44, 0.68) 0%, rgba(0, 15, 28, 0.86) 100%);
-      z-index: -1;
+      background: radial-gradient(circle at center, rgba(0, 36, 60, 0.42) 0%, rgba(0, 18, 30, 0.78) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* PROGRESS PRIDE STRIPE ACROSS ENTIRE TOP WINDOW */
+    /* PROGRESS PRIDE BARS (Top & Bottom Windows) */
     .pride-stripe-top {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 5px;
+      display: flex;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    .pride-stripe-bottom {
+      position: fixed;
+      bottom: 0;
       left: 0;
       right: 0;
       width: 100vw;
@@ -92,83 +111,210 @@
     /* PAGE LAYOUT CONTAINER */
     .page-layout {
       position: relative;
+      z-index: 2;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-top: 5px; /* Offset for top pride bar */
+      padding-top: 5px;   /* Top Pride Bar offset */
+      padding-bottom: 5px;/* Bottom Pride Bar offset */
     }
 
     /* TOP HEADER BAR */
     .top-header {
       width: 100%;
-      max-width: 1140px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 24px 28px 12px 28px;
+      padding: 16px 20px 8px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
     }
-    .back-link {
+    .quicklinks-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      background: rgba(0, 24, 44, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       color: #FFFFFF;
-      background: rgba(0, 36, 60, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       padding: 8px 16px;
       border-radius: var(--fog-radius-btn);
+      font-family: inherit;
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
     }
-    .back-link:hover {
-      background: rgba(0, 110, 182, 0.85);
+    .quicklinks-btn:hover {
+      background: var(--fog-blue);
       border-color: var(--fog-light-blue);
       color: #FFFFFF;
     }
-    .back-link:focus-visible {
-      outline: 2px solid var(--fog-light-blue);
-      outline-offset: 2px;
+    .quicklinks-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
     }
-    .top-controls {
+    .quicklinks-btn .pride-pip {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #E40303, #FF8C00, #008026, #004DFF);
+      flex-shrink: 0;
+    }
+    .top-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--fog-light-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 10px;
+      transition: color 0.15s ease;
+    }
+    .top-back-link:hover {
+      color: #FFFFFF;
+    }
+    .top-back-link:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
+    }
+
+    /* SLIDE-DOWN QUICKLINKS DRAWER */
+    .quicklinks-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 18, 30, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 9990;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .quicklinks-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .quicklinks-drawer {
+      position: fixed;
+      top: 5px; /* right below top pride stripe */
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      width: min(94%, 880px);
+      max-height: 85vh;
+      overflow-y: auto;
+      background: var(--fog-dark-blue);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-top: none;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      border-radius: 0 0 4px 4px;
+      z-index: 9995;
+      padding: 28px 32px 32px 32px;
+      color: #FFFFFF;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .quicklinks-drawer.open {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 12px;
+    }
+    .drawer-title {
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .photo-shuffle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: rgba(255, 255, 255, 0.95);
-      background: rgba(0, 36, 60, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 8px 14px;
-      border-radius: var(--fog-radius-btn);
-      font-family: inherit;
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
+    .drawer-title-crest {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
     }
-    .photo-shuffle-btn:hover {
-      background: rgba(0, 36, 60, 0.9);
-      border-color: rgba(255, 255, 255, 0.5);
+    .drawer-close-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .drawer-close-btn:hover {
+      background: var(--fog-blue);
       color: #FFFFFF;
     }
-    .photo-shuffle-btn svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--fog-light-blue);
+    .drawer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .drawer-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--fog-radius-btn);
+      padding: 12px 14px;
+      text-decoration: none;
+      color: #FFFFFF;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+    }
+    .drawer-card:hover {
+      background: rgba(0, 110, 182, 0.35);
+      border-color: var(--fog-light-blue);
+      transform: translateY(-1px);
+    }
+    .drawer-card:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
+    }
+    .drawer-card-icon {
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .drawer-card-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .drawer-card-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .drawer-card-sub {
+      font-size: 11px;
+      color: var(--fog-light-blue);
+      letter-spacing: 0.02em;
     }
 
     /* MAIN CONTENT & SEMI-TRANSPARENT CARD */
@@ -177,66 +323,64 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px 20px 40px 20px;
+      padding: 16px 20px 28px 20px;
     }
     .calendar-card {
-      width: 100%;
-      max-width: 1080px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      box-shadow: 0 24px 64px rgba(0, 18, 30, 0.45), 0 4px 16px rgba(0, 0, 0, 0.12);
+      width: min(94%, 980px);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 20px 50px rgba(0, 18, 30, 0.38), 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: var(--fog-radius-card);
-      padding: 40px 48px 36px 48px;
+      padding: 34px 40px 30px 40px;
     }
 
     /* CARD HEADER */
     .card-header {
-      margin-bottom: 28px;
-      border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #DCDDDE;
+      padding-bottom: 18px;
     }
     .card-eyebrow-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
-    .card-eyebrow-icon {
+    .card-crest {
       width: 22px;
       height: 22px;
       object-fit: contain;
-      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
     }
     .card-eyebrow {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--fog-blue);
     }
     .card-title {
-      font-size: 32px;
+      font-size: 30px;
       line-height: 1.15;
       font-weight: 800;
       color: var(--fog-dark-blue);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .card-subtitle {
-      font-size: 15.5px;
+      font-size: 14.5px;
       line-height: 1.5;
       color: #334155;
-      max-width: 840px;
+      max-width: 820px;
     }
 
-    /* 2-COLUMN INNER GRID (Desktop) */
+    /* 2-COLUMN INNER GRID */
     .card-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      gap: 32px;
       align-items: start;
     }
 
@@ -244,18 +388,18 @@
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
     .fog-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      min-height: 50px;
-      padding: 12px 20px;
+      min-height: 48px;
+      padding: 10px 18px;
       font-family: inherit;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -274,24 +418,24 @@
       color: #FFFFFF;
     }
     .fog-btn-primary:hover {
-      background-color: #005691;
+      background-color: var(--fog-dark-blue);
       color: #FFFFFF;
     }
     .fog-btn-primary:focus-visible {
-      outline: 3px solid var(--fog-light-blue);
-      outline-offset: 3px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
     .fog-btn-secondary {
       background-color: var(--fog-dark-blue);
       color: #FFFFFF;
     }
     .fog-btn-secondary:hover {
-      background-color: #00365a;
+      background-color: #00385e;
       color: #FFFFFF;
     }
     .fog-btn-secondary:focus-visible {
-      outline: 3px solid var(--fog-light-blue);
-      outline-offset: 3px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
     .fog-btn-outline {
       background-color: #FFFFFF;
@@ -304,17 +448,17 @@
       color: var(--fog-dark-blue);
     }
     .fog-btn-outline:focus-visible {
-      outline: 3px solid var(--fog-blue);
-      outline-offset: 3px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     /* URL BOX */
     .url-box-section {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .url-box-label {
       display: block;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--fog-dark-blue);
       margin-bottom: 6px;
@@ -327,9 +471,9 @@
     .url-input {
       flex: 1;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 13px;
-      padding: 10px 14px;
-      min-height: 44px;
+      font-size: 12.5px;
+      padding: 9px 12px;
+      min-height: 42px;
       border: 1.5px solid #CBD5E1;
       border-radius: var(--fog-radius-btn);
       background-color: #FFFFFF;
@@ -337,18 +481,18 @@
       user-select: all;
     }
     .url-input:focus {
-      outline: 2px solid var(--fog-blue);
-      outline-offset: 1px;
-      background-color: #FFFFFF;
+      outline: none;
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 1px var(--fog-blue);
     }
     .copy-btn {
-      padding: 0 18px;
-      min-height: 44px;
+      padding: 0 16px;
+      min-height: 42px;
       background-color: #F1F5F9;
       border: 1.5px solid #CBD5E1;
       border-radius: var(--fog-radius-btn);
       font-family: inherit;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -366,10 +510,14 @@
       border-color: #157A38;
       color: #FFFFFF;
     }
+    .copy-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
 
     .card-footnote {
-      font-size: 12.5px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.5;
       color: #64748B;
     }
     .card-footnote a {
@@ -377,22 +525,25 @@
       text-decoration: underline;
       font-weight: 700;
     }
+    .card-footnote a:hover {
+      color: var(--fog-dark-blue);
+    }
 
     /* RIGHT COLUMN: SETUP STEPS */
     .setup-steps {
-      background-color: rgba(248, 250, 252, 0.85);
-      border: 1px solid #E2E8F0;
+      background-color: rgba(241, 242, 243, 0.75);
+      border: 1px solid #DCDDDE;
       border-radius: var(--fog-radius-card);
-      padding: 18px 20px;
-      margin-bottom: 22px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
     }
     .setup-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--fog-dark-blue);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -403,23 +554,23 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
     .step-item {
-      font-size: 13px;
+      font-size: 12.5px;
       line-height: 1.45;
       color: #334155;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 9px;
     }
     .step-num {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background-color: var(--fog-blue);
       color: #FFFFFF;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -433,16 +584,16 @@
 
     /* DEVELOPER FEEDS */
     .feeds-section {
-      border-top: 1px solid #E2E8F0;
-      padding-top: 18px;
+      border-top: 1px solid #DCDDDE;
+      padding-top: 14px;
     }
     .feeds-header {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--fog-blue);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .feeds-grid {
       display: grid;
@@ -453,30 +604,34 @@
       display: block;
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      border-radius: var(--fog-radius-card);
-      padding: 9px 12px;
+      border-radius: var(--fog-radius-btn);
+      padding: 8px 10px;
       text-decoration: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .feed-card:hover {
       border-color: var(--fog-blue);
-      box-shadow: 0 2px 8px rgba(0, 110, 182, 0.08);
+      box-shadow: 0 2px 8px rgba(0, 110, 182, 0.1);
+    }
+    .feed-card:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
     .feed-name {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--fog-blue);
       margin-bottom: 2px;
     }
     .feed-desc {
-      font-size: 11px;
+      font-size: 10.5px;
       line-height: 1.35;
       color: #64748B;
     }
 
     /* ==========================================================================
-       EDGE-TO-EDGE UNIVERSAL FOOTER (Runs along bottom of the whole page)
+       EDGE-TO-EDGE UNIVERSAL FOOTER (Along bottom of whole page)
        ========================================================================== */
     .site-footer {
       width: 100%;
@@ -485,41 +640,41 @@
       -webkit-backdrop-filter: blur(16px);
       border-top: 1px solid rgba(255, 255, 255, 0.22);
       color: #FFFFFF;
-      padding: 30px 48px 34px 48px;
+      padding: 24px 36px 26px 36px;
       margin-top: auto;
     }
     .footer-inner {
-      max-width: 1140px;
+      max-width: 1040px;
       margin: 0 auto;
       display: flex;
       align-items: stretch;
       justify-content: space-between;
-      gap: 40px;
+      gap: 36px;
     }
     .footer-left {
       flex: 1 1 52%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .footer-brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
     .footer-crest {
-      width: 50px;
-      height: 50px;
+      width: 44px;
+      height: 44px;
       object-fit: contain;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
     }
     .footer-brand-text {
       display: flex;
       flex-direction: column;
     }
     .footer-title {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.15;
       font-weight: 800;
       letter-spacing: 0.04em;
@@ -527,7 +682,7 @@
       color: #FFFFFF;
     }
     .footer-subline {
-      font-size: 12px;
+      font-size: 11px;
       line-height: 1.25;
       color: var(--fog-light-blue);
       letter-spacing: 0.08em;
@@ -536,8 +691,8 @@
       margin-top: 2px;
     }
     .footer-mission {
-      font-size: 12.5px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.5;
       color: rgba(255, 255, 255, 0.85);
       margin: 0;
     }
@@ -549,7 +704,7 @@
     /* WHITE LITTLE DIVIDER LINE */
     .footer-divider {
       width: 1px;
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.32);
       flex-shrink: 0;
       align-self: stretch;
     }
@@ -560,70 +715,81 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
     }
     .footer-links {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--fog-light-blue);
       line-height: 1.5;
     }
     .footer-links a {
       color: var(--fog-light-blue);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
       transition: color 0.15s ease;
     }
     .footer-links a:hover {
       color: #FFFFFF;
-      text-decoration: underline;
+    }
+    .footer-links a:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
     }
     .footer-links .sep {
       color: rgba(255, 255, 255, 0.4);
-      padding: 0 6px;
+      padding: 0 5px;
+      text-decoration: none;
+      display: inline-block;
     }
     .footer-sponsor {
-      font-size: 11.5px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.82);
+      font-size: 11px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.8);
       margin: 0;
     }
     .footer-bottom-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 14px;
-      padding-top: 4px;
+      gap: 12px;
+      padding-top: 2px;
     }
     .footer-copyright {
-      font-size: 11.5px;
+      font-size: 11px;
       line-height: 1.4;
-      color: rgba(255, 255, 255, 0.68);
+      color: rgba(255, 255, 255, 0.65);
     }
     .footer-back-link {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--fog-light-blue);
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
     .footer-back-link:hover {
       color: #FFFFFF;
     }
+    .footer-back-link:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
+    }
 
     /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 960px) {
+    @media (max-width: 900px) {
       .card-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 24px;
       }
       .calendar-card {
-        padding: 32px 28px;
+        padding: 28px 24px;
       }
       .card-title {
-        font-size: 26px;
+        font-size: 24px;
       }
       .footer-inner {
         flex-direction: column;
-        gap: 22px;
+        gap: 18px;
       }
       .footer-divider {
         width: 100%;
@@ -631,22 +797,19 @@
         min-height: 1px;
       }
       .site-footer {
-        padding: 28px 24px 36px 24px;
+        padding: 24px 20px 28px 20px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 540px) {
       .top-header {
-        padding: 16px 16px 8px 16px;
+        padding: 12px 14px 6px 14px;
       }
       .calendar-card {
-        padding: 24px 18px;
+        padding: 22px 16px;
       }
       .card-title {
-        font-size: 22px;
-      }
-      .card-subtitle {
-        font-size: 14px;
+        font-size: 21px;
       }
       .feeds-grid {
         grid-template-columns: 1fr;
@@ -654,7 +817,7 @@
       .footer-bottom-row {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 6px;
       }
     }
   </style>
@@ -2440,8 +2603,8 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 </head>
 <body>
 
-  <!-- FULL-WIDTH PROGRESS PRIDE BAR (Spans 100vw across top) -->
-  <div class="pride-stripe-top" aria-hidden="true">
+  <!-- TOP FULL-WIDTH PROGRESS PRIDE BAR (Clickable for Quicklinks) -->
+  <div class="pride-stripe-top" id="top-pride-stripe" role="button" tabindex="0" aria-label="Toggle Fog Quicklinks Menu">
     <span class="pride-bar" style="background:#000000"></span>
     <span class="pride-bar" style="background:#613915"></span>
     <span class="pride-bar" style="background:#74D7EE"></span>
@@ -2455,42 +2618,129 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
     <span class="pride-bar" style="background:#750787"></span>
   </div>
 
-  <!-- FULL-WINDOW DYNAMIC BACKGROUND & ATMOSPHERIC VIGNETTE -->
-  <div id="fog-backdrop" class="fog-backdrop" aria-hidden="true"></div>
-  <div class="fog-backdrop-overlay" aria-hidden="true"></div>
+  <!-- BOTTOM FULL-WIDTH PROGRESS PRIDE BAR -->
+  <div class="pride-stripe-bottom" aria-hidden="true">
+    <span class="pride-bar" style="background:#000000"></span>
+    <span class="pride-bar" style="background:#613915"></span>
+    <span class="pride-bar" style="background:#74D7EE"></span>
+    <span class="pride-bar" style="background:#FFAFC8"></span>
+    <span class="pride-bar" style="background:#FFFFFF"></span>
+    <span class="pride-bar" style="background:#E40303"></span>
+    <span class="pride-bar" style="background:#FF8C00"></span>
+    <span class="pride-bar" style="background:#FFED00"></span>
+    <span class="pride-bar" style="background:#008026"></span>
+    <span class="pride-bar" style="background:#004DFF"></span>
+    <span class="pride-bar" style="background:#750787"></span>
+  </div>
+
+  <!-- FULL-WINDOW ROTATING BACKGROUND & ATMOSPHERIC VIGNETTE -->
+  <div class="fog-bg-container" aria-hidden="true">
+    <div id="fog-bg-a" class="fog-bg-layer active" style="background-image: url('assets/img/calling-ceremony-circle.jpg');"></div>
+    <div id="fog-bg-b" class="fog-bg-layer"></div>
+  </div>
+  <div class="fog-bg-overlay" aria-hidden="true"></div>
+
+  <!-- QUICKLINKS OVERLAY & DRAWER -->
+  <div class="quicklinks-overlay" id="quicklinks-overlay" aria-hidden="true"></div>
+  <div class="quicklinks-drawer" id="quicklinks-drawer" role="dialog" aria-modal="true" aria-label="SF Fog RFC Quicklinks">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <img src="assets/img/fog-shield.png" alt="" class="drawer-title-crest">
+        <span>Fog Quicklinks &amp; Systems</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Quicklinks">&times;</button>
+    </div>
+    <div class="drawer-grid">
+      <a href="https://www.fogrugby.com/" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">🏉</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Official Club Website</span>
+          <span class="drawer-card-sub">fogrugby.com</span>
+        </div>
+      </a>
+      <a href="https://www.fogrugby.com/season-fixtures-results" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">🏆</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">25-Year Match Archive</span>
+          <span class="drawer-card-sub">Scores, fixtures &amp; reports</span>
+        </div>
+      </a>
+      <a href="portal.html" class="drawer-card">
+        <span class="drawer-card-icon">📱</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Calendar Portal</span>
+          <span class="drawer-card-sub">Interactive agenda &amp; venues</span>
+        </div>
+      </a>
+      <a href="links.html" class="drawer-card">
+        <span class="drawer-card-icon">🔗</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Official Links Hub</span>
+          <span class="drawer-card-sub">All club link-in-bio paths</span>
+        </div>
+      </a>
+      <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">💬</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Club Suggestion Box</span>
+          <span class="drawer-card-sub">Direct feedback to President</span>
+        </div>
+      </a>
+      <a href="https://mautic.fogrugby.com/fog-rugby/join-the-foghorn" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">✉️</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Join The Foghorn</span>
+          <span class="drawer-card-sub">Official club email newsletter</span>
+        </div>
+      </a>
+      <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">💚</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Donate to the Team</span>
+          <span class="drawer-card-sub">Tax-deductible 501(c)(3) gift</span>
+        </div>
+      </a>
+      <a href="https://instagram.com/sffog" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">📸</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Instagram (@sffog)</span>
+          <span class="drawer-card-sub">Stories, photos &amp; highlights</span>
+        </div>
+      </a>
+      <a href="https://facebook.com/sffog" target="_blank" rel="noopener" class="drawer-card">
+        <span class="drawer-card-icon">👥</span>
+        <div class="drawer-card-info">
+          <span class="drawer-card-name">Facebook (@sffog)</span>
+          <span class="drawer-card-sub">Events, alumni &amp; photos</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
   <!-- MAIN PAGE LAYOUT -->
   <div class="page-layout">
     
     <!-- Top Header -->
-    <header class="top-header">
-      <a href="https://www.fogrugby.com/" class="back-link">&larr; Return to fogrugby.com</a>
-      <div class="top-controls">
-        <button type="button" id="shuffle-bg-btn" class="photo-shuffle-btn" title="Cycle random background pitch photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="16 3 21 3 21 8"></polyline>
-            <line x1="4" y1="20" x2="21" y2="3"></line>
-            <polyline points="21 16 21 21 16 21"></polyline>
-            <line x1="15" y1="15" x2="21" y2="21"></line>
-            <line x1="4" y1="4" x2="9" y2="9"></line>
-          </svg>
-          <span id="photo-label">Random Photo</span>
-        </button>
-      </div>
+    <header class="top-header" role="banner">
+      <button type="button" class="quicklinks-btn" id="quicklinks-trigger" aria-expanded="false" aria-controls="quicklinks-drawer">
+        <span class="pride-pip" aria-hidden="true"></span>
+        <span>Fog Quicklinks &dtrif;</span>
+      </button>
+      <a href="https://www.fogrugby.com/" class="top-back-link">&larr; Return to fogrugby.com</a>
     </header>
 
-    <!-- Main Content: Semi-Transparent Card -->
+    <!-- Main Content: Semi-Transparent Frosted Card -->
     <main class="main-wrap" role="main">
       <div class="calendar-card">
         
         <header class="card-header">
           <div class="card-eyebrow-row">
-            <img src="assets/img/fog-shield.png" alt="" class="card-eyebrow-icon">
+            <img src="assets/img/fog-shield.png" alt="" class="card-crest">
             <span class="card-eyebrow">Official Club Calendar &amp; Fixtures</span>
           </div>
           <h1 class="card-title">Never Miss a Kickoff</h1>
           <p class="card-subtitle">
-            Subscribe once to the official SF Fog RFC calendar. Matches, trainings at Kimbell &amp; Crocker Amazon, socials, and tournament fixtures automatically sync and update across iPhone, Mac, Android, and Google Calendar.
+            Subscribe once to the official SF Fog RFC calendar. Matches, practice sessions at Kimbell Playground &amp; Crocker Amazon, socials, and tournament fixtures automatically sync and update across Apple, Google, and Outlook calendars.
           </p>
         </header>
 
@@ -2532,11 +2782,11 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
               <ul class="steps-list">
                 <li class="step-item">
                   <span class="step-num">1</span>
-                  <div><strong>iPhone &amp; Mac:</strong> Tap <em>Subscribe (Apple / Outlook)</em> and confirm. Schedule, pitch, and kickoff updates will sync automatically.</div>
+                  <div><strong>iPhone &amp; Mac:</strong> Tap <em>Subscribe (Apple / Outlook)</em> and confirm. Schedule, pitch, and kickoff updates sync automatically.</div>
                 </li>
                 <li class="step-item">
                   <span class="step-num">2</span>
-                  <div><strong>Google Calendar:</strong> Tap <em>Add to Google Calendar</em>, or go to <em>Other calendars &rarr; + &rarr; From URL</em> in Google Calendar web and paste the link.</div>
+                  <div><strong>Google Calendar:</strong> Tap <em>Add to Google Calendar</em>, or in Google Calendar web select <em>Other calendars &rarr; + &rarr; From URL</em> and paste the link.</div>
                 </li>
                 <li class="step-item">
                   <span class="step-num">3</span>
@@ -2551,19 +2801,19 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
               <div class="feeds-grid">
                 <a href="events.json" target="_blank" class="feed-card">
                   <div class="feed-name">events.json</div>
-                  <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venue details.</div>
+                  <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venues.</div>
                 </a>
                 <a href="fog.ics" target="_blank" class="feed-card">
                   <div class="feed-name">fog.ics</div>
-                  <div class="feed-desc">RFC 5545 iCalendar feed with embedded Pacific timezone.</div>
+                  <div class="feed-desc">RFC 5545 iCalendar feed with Pacific timezone.</div>
                 </a>
                 <a href="schema-events.jsonld" target="_blank" class="feed-card">
                   <div class="feed-name">schema-events.jsonld</div>
-                  <div class="feed-desc">Schema.org Google Events Rich Results graph payload.</div>
+                  <div class="feed-desc">Schema.org Google Events Rich Results payload.</div>
                 </a>
                 <a href="openapi.yaml" target="_blank" class="feed-card">
                   <div class="feed-name">openapi.yaml</div>
-                  <div class="feed-desc">OpenAPI 3.1 specification contract for developers.</div>
+                  <div class="feed-desc">OpenAPI 3.1 contract specification.</div>
                 </a>
               </div>
             </div>
@@ -2598,7 +2848,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
         <!-- Right: Links, Sponsor, Copyright -->
         <div class="footer-right">
-          <nav class="footer-links" aria-label="Club Links">
+          <nav class="footer-links" aria-label="Club Directory Links">
             <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep">&middot;</span>
             <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram</a><span class="sep">&middot;</span>
             <a href="https://facebook.com/sffog" target="_blank" rel="noopener">Facebook</a><span class="sep">&middot;</span>
@@ -2622,56 +2872,100 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
   <script>
     (function() {
-      // 1. RANDOM BACKGROUND IMAGE POOL
+      // 1. AUTO-ROTATING RANDOM BACKGROUND IMAGE POOL (NO BUTTONS NEEDED)
       const bgPool = [
-        {
-          url: 'assets/img/calling-ceremony-circle.jpg',
-          title: 'Calling Ceremony Circle'
-        },
-        {
-          url: 'assets/img/bingham-cup-2026-squad.jpg',
-          title: 'Bingham Cup Squad'
-        },
-        {
-          url: 'assets/img/pathway-to-rugby-banner.jpg',
-          title: 'Pathway to Rugby Match'
-        },
-        {
-          url: 'assets/img/pathways-rookies-calling-ceremony.jpg',
-          title: 'Rookies & Veterans Ceremony'
-        },
-        {
-          url: 'assets/img/pathways-practice-kimbell.jpg',
-          title: 'Kimbell Practice'
-        },
-        {
-          url: 'assets/img/rucktacular-san-diego.jpg',
-          title: 'Rucktacular Tournament'
-        }
+        'assets/img/calling-ceremony-circle.jpg',
+        'assets/img/bingham-cup-2026-squad.jpg',
+        'assets/img/pathway-to-rugby-banner.jpg',
+        'assets/img/pathways-rookies-calling-ceremony.jpg',
+        'assets/img/pathways-practice-kimbell.jpg',
+        'assets/img/rucktacular-san-diego.jpg'
       ];
 
-      const backdrop = document.getElementById('fog-backdrop');
-      const shuffleBtn = document.getElementById('shuffle-bg-btn');
-      let currentIdx = Math.floor(Math.random() * bgPool.length);
+      const layerA = document.getElementById('fog-bg-a');
+      const layerB = document.getElementById('fog-bg-b');
+      let activeLayer = 'a';
+      let poolIndex = Math.floor(Math.random() * bgPool.length);
 
-      function applyBg(index) {
-        const item = bgPool[index];
-        if (backdrop) {
-          backdrop.style.backgroundImage = 'url("' + item.url + '")';
+      // Preload next image helper
+      function preloadImg(src) {
+        const img = new Image();
+        img.src = src;
+      }
+      bgPool.forEach(preloadImg);
+
+      function crossfadeNext() {
+        poolIndex = (poolIndex + 1) % bgPool.length;
+        const nextSrc = bgPool[poolIndex];
+
+        if (activeLayer === 'a') {
+          layerB.style.backgroundImage = 'url("' + nextSrc + '")';
+          layerB.classList.add('active');
+          layerA.classList.remove('active');
+          activeLayer = 'b';
+        } else {
+          layerA.style.backgroundImage = 'url("' + nextSrc + '")';
+          layerA.classList.add('active');
+          layerB.classList.remove('active');
+          activeLayer = 'a';
         }
       }
 
-      // Apply initial random selection immediately
-      applyBg(currentIdx);
-
-      if (shuffleBtn) {
-        shuffleBtn.addEventListener('click', function() {
-          currentIdx = (currentIdx + 1) % bgPool.length;
-          applyBg(currentIdx);
-        });
+      // Initial randomized image
+      if (layerA) {
+        layerA.style.backgroundImage = 'url("' + bgPool[poolIndex] + '")';
       }
 
-      // 2. CALENDAR SUBSCRIPTION LINKS & COPY LOGIC
+      // Auto-rotate smoothly every 7 seconds
+      setInterval(crossfadeNext, 7000);
+
+      // 2. QUICKLINKS DRAWER TOGGLE
+      const trigger = document.getElementById('quicklinks-trigger');
+      const drawer = document.getElementById('quicklinks-drawer');
+      const overlay = document.getElementById('quicklinks-overlay');
+      const closeBtn = document.getElementById('drawer-close-btn');
+      const topStripe = document.getElementById('top-pride-stripe');
+
+      function openDrawer() {
+        if (!drawer) return;
+        drawer.classList.add('open');
+        if (overlay) overlay.classList.add('open');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeDrawer() {
+        if (!drawer) return;
+        drawer.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      }
+
+      if (trigger) trigger.addEventListener('click', () => {
+        drawer && drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      });
+      if (topStripe) {
+        topStripe.addEventListener('click', openDrawer);
+        topStripe.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openDrawer();
+          }
+        });
+      }
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (overlay) overlay.addEventListener('click', closeDrawer);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+          closeDrawer();
+        }
+      });
+
+      // 3. CALENDAR SUBSCRIPTION LINKS & COPY LOGIC
       const ics = new URL('fog.ics', location.href).href;
       const urlField = document.getElementById('ics-url-field');
       const webcalBtn = document.getElementById('webcal');
