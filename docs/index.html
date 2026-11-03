@@ -120,27 +120,78 @@
       padding-bottom: 5px;/* Bottom Pride Bar offset */
     }
 
-    /* TOP HEADER BAR */
-    .top-header {
+    /* SITE HEADER: Logo, Title & Mission Statement */
+    .site-header {
       width: 100%;
-      max-width: 1040px;
+      background: rgba(0, 24, 44, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+    }
+    .site-header-inner {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 16px 20px 8px 20px;
+      padding: 18px 24px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 24px;
+    }
+    .header-brand {
+      display: flex;
       align-items: center;
       gap: 16px;
+      min-width: 0;
     }
+    .header-crest {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+    }
+    .header-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+    .header-title {
+      font-size: 20px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .header-title:hover { color: var(--fog-light-blue); }
+    .header-title:focus-visible { outline: none; box-shadow: var(--focus-ring-dark); }
+    .header-subline {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fog-light-blue);
+    }
+    .header-mission {
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 620px;
+      margin-top: 2px;
+    }
+    .header-mission strong { color: #FFFFFF; }
     .quicklinks-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(0, 24, 44, 0.75);
+      background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       color: #FFFFFF;
-      padding: 8px 16px;
+      padding: 9px 16px;
+      min-height: 40px;
       border-radius: var(--fog-radius-btn);
       font-family: inherit;
       font-size: 13px;
@@ -148,12 +199,12 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
     }
     .quicklinks-btn:hover {
       background: var(--fog-blue);
       border-color: var(--fog-light-blue);
-      color: #FFFFFF;
     }
     .quicklinks-btn:focus-visible {
       outline: none;
@@ -166,26 +217,7 @@
       background: linear-gradient(135deg, #E40303, #FF8C00, #008026, #004DFF);
       flex-shrink: 0;
     }
-    .top-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--fog-light-blue);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      padding: 6px 10px;
-      transition: color 0.15s ease;
-    }
-    .top-back-link:hover {
-      color: #FFFFFF;
-    }
-    .top-back-link:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring-dark);
-    }
+
 
     /* SLIDE-DOWN QUICKLINKS DRAWER */
     .quicklinks-overlay {
@@ -321,148 +353,175 @@
     .main-wrap {
       flex: 1;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 16px 20px 28px 20px;
+      padding: 32px 20px 40px 20px;
     }
     .calendar-card {
-      width: min(94%, 980px);
-      background: rgba(255, 255, 255, 0.86);
+      width: 100%;
+      max-width: 1120px;
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(24px) saturate(160%);
       -webkit-backdrop-filter: blur(24px) saturate(160%);
       border: 1px solid rgba(255, 255, 255, 0.7);
       box-shadow: 0 20px 50px rgba(0, 18, 30, 0.38), 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: var(--fog-radius-card);
-      padding: 34px 40px 30px 40px;
+      padding: 36px 40px 32px 40px;
     }
 
     /* CARD HEADER */
     .card-header {
-      margin-bottom: 22px;
-      border-bottom: 1px solid #DCDDDE;
-      padding-bottom: 18px;
-    }
-    .card-eyebrow-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .card-crest {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
+      margin-bottom: 26px;
     }
     .card-eyebrow {
+      display: block;
       font-size: 12.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--fog-blue);
-    }
-    .card-title {
-      font-size: 30px;
-      line-height: 1.15;
-      font-weight: 800;
-      color: var(--fog-dark-blue);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
       margin-bottom: 6px;
     }
+    .card-title {
+      font-size: 32px;
+      line-height: 1.05;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
     .card-subtitle {
-      font-size: 14.5px;
-      line-height: 1.5;
-      color: #334155;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--fog-dark-gray);
       max-width: 820px;
     }
 
-    /* 2-COLUMN INNER GRID */
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: start;
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fog-dark-blue);
+      margin-bottom: 10px;
     }
 
-    /* ACTION BUTTONS GROUP */
-    .btn-group {
+    /* ROW 1: THREE SUBSCRIBE PANELS */
+    .subscribe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .subscribe-panel {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
+      background: #FFFFFF;
+      border: 1px solid var(--fog-gray);
+      border-top: 4px solid var(--fog-blue);
+      border-radius: var(--fog-radius-card);
+      padding: 20px 20px 20px 20px;
     }
+    .subscribe-panel--google { border-top-color: var(--fog-dark-blue); }
+    .subscribe-panel--outlook { border-top-color: var(--fog-light-blue); }
+    .panel-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .panel-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--fog-blue);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .subscribe-panel--google .panel-num { background: var(--fog-dark-blue); }
+    .subscribe-panel--outlook .panel-num { background: var(--fog-light-blue); color: var(--fog-dark-blue); }
+    .panel-title {
+      font-size: 16px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+    }
+    .panel-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .panel-steps li {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--fog-dark-gray);
+      padding-left: 14px;
+      position: relative;
+    }
+    .panel-steps li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      background: var(--fog-blue);
+    }
+    .panel-steps em { font-style: normal; font-weight: 700; color: var(--fog-dark-blue); }
+
     .fog-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       min-height: 48px;
-      padding: 10px 18px;
+      padding: 10px 16px;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       border-radius: var(--fog-radius-btn);
       text-decoration: none;
       cursor: pointer;
-      transition: background-color 0.15s ease, transform 0.05s ease, border-color 0.15s ease;
       text-align: center;
       border: 1.5px solid transparent;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
     }
-    .fog-btn:active {
-      transform: scale(0.99);
-    }
-    .fog-btn-primary {
-      background-color: var(--fog-blue);
-      color: #FFFFFF;
-    }
-    .fog-btn-primary:hover {
-      background-color: var(--fog-dark-blue);
-      color: #FFFFFF;
-    }
-    .fog-btn-primary:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
-    .fog-btn-secondary {
-      background-color: var(--fog-dark-blue);
-      color: #FFFFFF;
-    }
-    .fog-btn-secondary:hover {
-      background-color: #00385e;
-      color: #FFFFFF;
-    }
-    .fog-btn-secondary:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
-    .fog-btn-outline {
-      background-color: #FFFFFF;
-      color: var(--fog-dark-blue);
-      border-color: #CBD5E1;
-    }
-    .fog-btn-outline:hover {
-      background-color: #F1F5F9;
-      border-color: var(--fog-dark-blue);
-      color: var(--fog-dark-blue);
-    }
-    .fog-btn-outline:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
+    .fog-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+    .fog-btn-primary { background: var(--fog-blue); color: #FFFFFF; }
+    .fog-btn-primary:hover { background: var(--fog-dark-blue); }
+    .fog-btn-secondary { background: var(--fog-dark-blue); color: #FFFFFF; }
+    .fog-btn-secondary:hover { background: var(--fog-blue); }
+    .fog-btn-outline { background: #FFFFFF; color: var(--fog-dark-blue); border-color: var(--fog-dark-blue); }
+    .fog-btn-outline:hover { background: var(--fog-dark-blue); color: #FFFFFF; }
 
-    /* URL BOX */
+    /* ROW 2: SUBSCRIPTION URL */
     .url-box-section {
-      margin-bottom: 16px;
+      background: var(--fog-gray-50);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-card);
+      padding: 18px 20px;
+      margin-bottom: 26px;
     }
     .url-box-label {
       display: block;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--fog-dark-blue);
-      margin-bottom: 6px;
-      letter-spacing: 0.02em;
+      margin-bottom: 8px;
     }
     .url-input-wrap {
       display: flex;
@@ -470,355 +529,156 @@
     }
     .url-input {
       flex: 1;
+      min-width: 0;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12.5px;
-      padding: 9px 12px;
-      min-height: 42px;
-      border: 1.5px solid #CBD5E1;
+      font-size: 13px;
+      padding: 10px 12px;
+      min-height: 46px;
+      border: 1.5px solid #9AA0A6;
       border-radius: var(--fog-radius-btn);
-      background-color: #FFFFFF;
-      color: #1E293B;
-      user-select: all;
+      background: #FFFFFF;
+      color: var(--fog-dark-gray);
     }
-    .url-input:focus {
-      outline: none;
-      border-color: var(--fog-blue);
-      box-shadow: 0 0 0 1px var(--fog-blue);
-    }
+    .url-input:focus { outline: none; border-color: var(--fog-blue); box-shadow: 0 0 0 1px var(--fog-blue); }
     .copy-btn {
-      padding: 0 16px;
-      min-height: 42px;
-      background-color: #F1F5F9;
-      border: 1.5px solid #CBD5E1;
+      padding: 0 20px;
+      min-height: 46px;
+      background: var(--fog-blue);
+      border: 1.5px solid var(--fog-blue);
       border-radius: var(--fog-radius-btn);
       font-family: inherit;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--fog-dark-blue);
+      color: #FFFFFF;
       cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
       white-space: nowrap;
+      transition: background-color 0.15s ease;
     }
-    .copy-btn:hover {
-      background-color: #E2E8F0;
-      border-color: #94A3B8;
-    }
-    .copy-btn.copied {
-      background-color: #157A38;
-      border-color: #157A38;
-      color: #FFFFFF;
-    }
-    .copy-btn:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
-
-    .card-footnote {
-      font-size: 12px;
+    .copy-btn:hover { background: var(--fog-dark-blue); border-color: var(--fog-dark-blue); }
+    .copy-btn.copied { background: #157A38; border-color: #157A38; }
+    .copy-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+    .url-help {
+      font-size: 12.5px;
       line-height: 1.5;
-      color: #64748B;
+      color: #4A5258;
+      margin-top: 8px;
     }
-    .card-footnote a {
-      color: var(--fog-blue);
-      text-decoration: underline;
-      font-weight: 700;
-    }
-    .card-footnote a:hover {
-      color: var(--fog-dark-blue);
-    }
+    .url-help a { color: var(--fog-blue); font-weight: 700; text-decoration: underline; }
+    .url-help a:hover { color: var(--fog-dark-blue); }
 
-    /* RIGHT COLUMN: SETUP STEPS */
-    .setup-steps {
-      background-color: rgba(241, 242, 243, 0.75);
-      border: 1px solid #DCDDDE;
-      border-radius: var(--fog-radius-card);
-      padding: 16px 18px;
-      margin-bottom: 18px;
-    }
-    .setup-title {
-      font-size: 12.5px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--fog-dark-blue);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .steps-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .step-item {
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: #334155;
-      display: flex;
-      align-items: flex-start;
-      gap: 9px;
-    }
-    .step-num {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: var(--fog-blue);
-      color: #FFFFFF;
-      font-size: 11px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .step-item strong {
-      color: var(--fog-dark-blue);
-    }
-
-    /* DEVELOPER FEEDS */
+    /* ROW 3: DEVELOPER & SYNDICATION FEEDS (4 cards) */
     .feeds-section {
-      border-top: 1px solid #DCDDDE;
-      padding-top: 14px;
-    }
-    .feeds-header {
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--fog-blue);
-      margin-bottom: 8px;
+      border-top: 1px solid var(--fog-gray);
+      padding-top: 20px;
     }
     .feeds-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
     }
     .feed-card {
       display: block;
       background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: var(--fog-radius-btn);
-      padding: 8px 10px;
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-card);
+      padding: 12px 14px;
       text-decoration: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    .feed-card:hover {
-      border-color: var(--fog-blue);
-      box-shadow: 0 2px 8px rgba(0, 110, 182, 0.1);
-    }
-    .feed-card:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
+    .feed-card:hover { border-color: var(--fog-blue); box-shadow: 0 2px 8px rgba(0, 110, 182, 0.12); }
+    .feed-card:focus-visible { outline: none; box-shadow: var(--focus-ring); }
     .feed-name {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 11.5px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--fog-blue);
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      overflow-wrap: anywhere;
     }
     .feed-desc {
-      font-size: 10.5px;
-      line-height: 1.35;
-      color: #64748B;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #4A5258;
     }
+    .card-footnote {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #4A5258;
+      margin-top: 18px;
+    }
+    .card-footnote a { color: var(--fog-blue); text-decoration: underline; font-weight: 700; }
+    .card-footnote a:hover { color: var(--fog-dark-blue); }
 
     /* ==========================================================================
-       EDGE-TO-EDGE UNIVERSAL FOOTER (Along bottom of whole page)
+       FOOTER: 3 rows — links / fiscal statement / copyright
        ========================================================================== */
     .site-footer {
       width: 100%;
       background: rgba(0, 24, 44, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
       color: #FFFFFF;
-      padding: 24px 36px 26px 36px;
+      padding: 22px 24px 24px 24px;
       margin-top: auto;
     }
     .footer-inner {
-      max-width: 1040px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
-      align-items: stretch;
-      justify-content: space-between;
-      gap: 36px;
-    }
-    .footer-left {
-      flex: 1 1 52%;
-      display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-    .footer-brand {
-      display: flex;
       align-items: center;
-      gap: 12px;
-    }
-    .footer-crest {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      flex-shrink: 0;
-      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-    }
-    .footer-brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .footer-title {
-      font-size: 18px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #FFFFFF;
-    }
-    .footer-subline {
-      font-size: 11px;
-      line-height: 1.25;
-      color: var(--fog-light-blue);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-    .footer-mission {
-      font-size: 12px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85);
-      margin: 0;
-    }
-    .footer-mission strong {
-      color: #FFFFFF;
-      font-weight: 700;
-    }
-
-    /* WHITE LITTLE DIVIDER LINE */
-    .footer-divider {
-      width: 1px;
-      background: rgba(255, 255, 255, 0.32);
-      flex-shrink: 0;
-      align-self: stretch;
-    }
-
-    /* FOOTER RIGHT */
-    .footer-right {
-      flex: 1 1 48%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       gap: 10px;
+      text-align: center;
     }
     .footer-links {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
-      color: var(--fog-light-blue);
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .footer-links a {
       color: var(--fog-light-blue);
       text-decoration: underline;
       text-underline-offset: 2px;
-      transition: color 0.15s ease;
     }
-    .footer-links a:hover {
-      color: #FFFFFF;
-    }
-    .footer-links a:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring-dark);
-    }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-links a:focus-visible { outline: none; box-shadow: var(--focus-ring-dark); }
     .footer-links .sep {
       color: rgba(255, 255, 255, 0.4);
-      padding: 0 5px;
-      text-decoration: none;
-      display: inline-block;
+      padding: 0 6px;
     }
     .footer-sponsor {
-      font-size: 11px;
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.8);
-      margin: 0;
-    }
-    .footer-bottom-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding-top: 2px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.82);
     }
     .footer-copyright {
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.4;
-      color: rgba(255, 255, 255, 0.65);
-    }
-    .footer-back-link {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--fog-light-blue);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .footer-back-link:hover {
-      color: #FFFFFF;
-    }
-    .footer-back-link:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring-dark);
+      color: rgba(255, 255, 255, 0.7);
     }
 
     /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 900px) {
-      .card-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .calendar-card {
-        padding: 28px 24px;
-      }
-      .card-title {
-        font-size: 24px;
-      }
-      .footer-inner {
-        flex-direction: column;
-        gap: 18px;
-      }
-      .footer-divider {
-        width: 100%;
-        height: 1px;
-        min-height: 1px;
-      }
-      .site-footer {
-        padding: 24px 20px 28px 20px;
-      }
+    @media (max-width: 960px) {
+      .subscribe-grid { grid-template-columns: 1fr; }
+      .feeds-grid { grid-template-columns: repeat(2, 1fr); }
+      .calendar-card { padding: 28px 24px; }
+      .card-title { font-size: 26px; }
+      .header-mission { display: none; }
     }
-
     @media (max-width: 540px) {
-      .top-header {
-        padding: 12px 14px 6px 14px;
-      }
-      .calendar-card {
-        padding: 22px 16px;
-      }
-      .card-title {
-        font-size: 21px;
-      }
-      .feeds-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
+      .site-header-inner { padding: 14px 16px; gap: 12px; }
+      .header-crest { width: 42px; height: 42px; }
+      .header-title { font-size: 16px; }
+      .header-subline { font-size: 10px; }
+      .quicklinks-btn { padding: 8px 10px; font-size: 11.5px; }
+      .main-wrap { padding: 18px 10px 28px 10px; }
+      .calendar-card { padding: 22px 16px; }
+      .card-title { font-size: 22px; }
+      .url-input-wrap { flex-direction: column; }
+      .feeds-grid { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -2719,152 +2579,148 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
   <!-- MAIN PAGE LAYOUT -->
   <div class="page-layout">
-    
-    <!-- Top Header -->
-    <header class="top-header" role="banner">
-      <button type="button" class="quicklinks-btn" id="quicklinks-trigger" aria-expanded="false" aria-controls="quicklinks-drawer">
-        <span class="pride-pip" aria-hidden="true"></span>
-        <span>Fog Quicklinks ▾</span>
-      </button>
-      <a href="https://www.fogrugby.com/" class="top-back-link">&larr; Return to fogrugby.com</a>
+
+    <!-- Site Header: Logo, Title & Mission Statement -->
+    <header class="site-header" role="banner">
+      <div class="site-header-inner">
+        <div class="header-brand">
+          <img src="assets/img/fog-shield.png" alt="San Francisco Fog RFC crest" class="header-crest" width="56" height="56">
+          <div class="header-brand-text">
+            <a href="https://www.fogrugby.com/" class="header-title">San Francisco Fog Rugby</a>
+            <span class="header-subline">Rugby Football Club</span>
+            <p class="header-mission">
+              <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
+            </p>
+          </div>
+        </div>
+        <button type="button" class="quicklinks-btn" id="quicklinks-trigger" aria-expanded="false" aria-controls="quicklinks-drawer">
+          <span class="pride-pip" aria-hidden="true"></span>
+          <span>Fog Quicklinks &#9662;</span>
+        </button>
+      </div>
     </header>
 
     <!-- Main Content: Semi-Transparent Frosted Card -->
-    <main class="main-wrap" role="main">
+    <main class="main-wrap" id="main">
       <div class="calendar-card">
-        
-        <header class="card-header">
-          <div class="card-eyebrow-row">
-            <img src="assets/img/fog-shield.png" alt="" class="card-crest">
-            <span class="card-eyebrow">Official Club Calendar &amp; Fixtures</span>
-          </div>
+
+        <div class="card-header">
+          <span class="card-eyebrow">Official Club Calendar &amp; Fixtures</span>
           <h1 class="card-title">Never Miss a Kickoff</h1>
           <p class="card-subtitle">
             Subscribe once to the official SF Fog RFC calendar. Matches, practice sessions at Kimbell Playground &amp; Crocker Amazon, socials, and tournament fixtures automatically sync and update across Apple, Google, and Outlook calendars.
           </p>
-        </header>
+        </div>
 
-        <div class="card-grid">
-          
-          <!-- LEFT SUB-COLUMN: Subscription Buttons & Direct URL -->
-          <div class="card-col-left">
-            <div class="btn-group">
-              <a class="fog-btn fog-btn-primary" id="webcal" href="#">
-                Subscribe (Apple / Outlook / iOS) &rsaquo;
+        <!-- ROW 1: Three subscribe panels -->
+        <section aria-labelledby="subscribe-heading">
+          <h2 id="subscribe-heading" class="section-label">Choose your calendar app</h2>
+          <div class="subscribe-grid">
+
+            <article class="subscribe-panel subscribe-panel--apple" aria-labelledby="panel-apple-title">
+              <div class="panel-head">
+                <span class="panel-num" aria-hidden="true">1</span>
+                <h3 class="panel-title" id="panel-apple-title">iPhone &amp; Mac</h3>
+              </div>
+              <ul class="panel-steps">
+                <li>Tap <em>Subscribe in Apple Calendar</em> below.</li>
+                <li>Confirm <em>Subscribe</em> when Calendar opens.</li>
+                <li>Fixtures, pitch changes and kickoff times update automatically.</li>
+              </ul>
+              <a class="fog-btn fog-btn-primary" id="webcal" href="webcal://events.fogrugby.com/fog.ics">
+                Subscribe in Apple Calendar &rsaquo;
               </a>
+            </article>
+
+            <article class="subscribe-panel subscribe-panel--google" aria-labelledby="panel-google-title">
+              <div class="panel-head">
+                <span class="panel-num" aria-hidden="true">2</span>
+                <h3 class="panel-title" id="panel-google-title">Google Calendar</h3>
+              </div>
+              <ul class="panel-steps">
+                <li>Tap <em>Add to Google Calendar</em> below.</li>
+                <li>Click <em>Add</em> to confirm the Fog calendar.</li>
+                <li>On desktop you can also use <em>Other calendars &rarr; + &rarr; From URL</em> and paste the link below.</li>
+              </ul>
               <a class="fog-btn fog-btn-secondary" id="gcal" href="#" target="_blank" rel="noopener">
                 Add to Google Calendar &rsaquo;
               </a>
-              <a class="fog-btn fog-btn-outline" href="portal.html">
-                Open Interactive Calendar Portal &rarr;
-              </a>
-            </div>
+            </article>
 
-            <!-- Direct URL Box -->
-            <div class="url-box-section">
-              <label for="ics-url-field" class="url-box-label">Or paste this subscription URL into your calendar app:</label>
-              <div class="url-input-wrap">
-                <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics" aria-label="iCalendar Subscription URL">
-                <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
+            <article class="subscribe-panel subscribe-panel--outlook" aria-labelledby="panel-outlook-title">
+              <div class="panel-head">
+                <span class="panel-num" aria-hidden="true">3</span>
+                <h3 class="panel-title" id="panel-outlook-title">Outlook &amp; Others</h3>
               </div>
-            </div>
-
-            <p class="card-footnote">
-              Single source of truth: <code>events.yml</code> &middot; View interactive agenda in the <a href="portal.html">Calendar Portal</a> &middot; Questions: <a href="mailto:secretary@fogrugby.com">secretary@fogrugby.com</a>
-            </p>
-          </div>
-
-          <!-- RIGHT SUB-COLUMN: Setup Guide & Developer Feeds -->
-          <div class="card-col-right">
-            
-            <div class="setup-steps">
-              <div class="setup-title">&#128197; Quick Setup Guide</div>
-              <ul class="steps-list">
-                <li class="step-item">
-                  <span class="step-num">1</span>
-                  <div><strong>iPhone &amp; Mac:</strong> Tap <em>Subscribe (Apple / Outlook)</em> and confirm. Schedule, pitch, and kickoff updates sync automatically.</div>
-                </li>
-                <li class="step-item">
-                  <span class="step-num">2</span>
-                  <div><strong>Google Calendar:</strong> Tap <em>Add to Google Calendar</em>, or in Google Calendar web select <em>Other calendars &rarr; + &rarr; From URL</em> and paste the link.</div>
-                </li>
-                <li class="step-item">
-                  <span class="step-num">3</span>
-                  <div><strong>Outlook &amp; Others:</strong> Select <em>Add calendar &rarr; Subscribe from web</em> and paste the subscription URL.</div>
-                </li>
+              <ul class="panel-steps">
+                <li>Tap <em>Add to Outlook</em> below to subscribe in Outlook.com or Microsoft 365.</li>
+                <li>For other apps, choose <em>Add calendar &rarr; Subscribe from web</em>.</li>
+                <li>Paste the subscription URL below.</li>
               </ul>
-            </div>
-
-            <!-- Developer & Syndication Feeds -->
-            <div class="feeds-section">
-              <div class="feeds-header">Developer &amp; Syndication Feeds</div>
-              <div class="feeds-grid">
-                <a href="events.json" target="_blank" class="feed-card">
-                  <div class="feed-name">events.json</div>
-                  <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venues.</div>
-                </a>
-                <a href="fog.ics" target="_blank" class="feed-card">
-                  <div class="feed-name">fog.ics</div>
-                  <div class="feed-desc">RFC 5545 iCalendar feed with Pacific timezone.</div>
-                </a>
-                <a href="schema-events.jsonld" target="_blank" class="feed-card">
-                  <div class="feed-name">schema-events.jsonld</div>
-                  <div class="feed-desc">Schema.org Google Events Rich Results payload.</div>
-                </a>
-                <a href="openapi.yaml" target="_blank" class="feed-card">
-                  <div class="feed-name">openapi.yaml</div>
-                  <div class="feed-desc">OpenAPI 3.1 contract specification.</div>
-                </a>
-              </div>
-            </div>
+              <a class="fog-btn fog-btn-outline" id="outlook" href="#" target="_blank" rel="noopener">
+                Add to Outlook &rsaquo;
+              </a>
+            </article>
 
           </div>
+        </section>
 
-        </div>
+        <!-- ROW 2: Subscription URL -->
+        <section class="url-box-section" aria-label="Calendar subscription URL">
+          <label for="ics-url-field" class="url-box-label">Or paste this subscription URL into any calendar app:</label>
+          <div class="url-input-wrap">
+            <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics">
+            <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
+          </div>
+          <p class="url-help">
+            Prefer to browse? Open the interactive agenda in the <a href="portal.html">Calendar Portal &rarr;</a>
+          </p>
+        </section>
+
+        <!-- ROW 3: Developer & Syndication Feeds -->
+        <section class="feeds-section" aria-labelledby="feeds-heading">
+          <h2 id="feeds-heading" class="section-label">Developer &amp; Syndication Feeds</h2>
+          <div class="feeds-grid">
+            <a href="events.json" target="_blank" rel="noopener" class="feed-card">
+              <div class="feed-name">events.json</div>
+              <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venues.</div>
+            </a>
+            <a href="fog.ics" target="_blank" rel="noopener" class="feed-card">
+              <div class="feed-name">fog.ics</div>
+              <div class="feed-desc">RFC 5545 iCalendar feed with Pacific timezone.</div>
+            </a>
+            <a href="schema-events.jsonld" target="_blank" rel="noopener" class="feed-card">
+              <div class="feed-name">schema-events.jsonld</div>
+              <div class="feed-desc">Schema.org Google Events Rich Results payload.</div>
+            </a>
+            <a href="openapi.yaml" target="_blank" rel="noopener" class="feed-card">
+              <div class="feed-name">openapi.yaml</div>
+              <div class="feed-desc">OpenAPI 3.1 contract specification.</div>
+            </a>
+          </div>
+          <p class="card-footnote">
+            Single source of truth: <code>events.yml</code> &middot; Questions: <a href="mailto:secretary@fogrugby.com">secretary@fogrugby.com</a>
+          </p>
+        </section>
 
       </div>
     </main>
 
-    <!-- FULL-WIDTH FOOTER ACROSS BOTTOM OF WHOLE PAGE -->
+    <!-- FOOTER: Links / Fiscal Statement / Copyright -->
     <footer class="site-footer" role="contentinfo">
       <div class="footer-inner">
-        
-        <!-- Left: Logo, Title, Underneath Mission Statement -->
-        <div class="footer-left">
-          <div class="footer-brand">
-            <img src="assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="footer-crest">
-            <div class="footer-brand-text">
-              <div class="footer-title">San Francisco Fog Rugby</div>
-              <div class="footer-subline">Rugby Football Club</div>
-            </div>
-          </div>
-          <p class="footer-mission">
-            <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
-          </p>
-        </div>
-
-        <!-- White Little Divider Line -->
-        <div class="footer-divider" aria-hidden="true"></div>
-
-        <!-- Right: Links, Sponsor, Copyright -->
-        <div class="footer-right">
-          <nav class="footer-links" aria-label="Club Directory Links">
-            <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep">&middot;</span>
-            <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram</a><span class="sep">&middot;</span>
-            <a href="https://facebook.com/sffog" target="_blank" rel="noopener">Facebook</a><span class="sep">&middot;</span>
-            <a href="portal.html">Calendar Portal</a><span class="sep">&middot;</span>
-            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep">&middot;</span>
-            <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" rel="noopener">Donate</a>
-          </nav>
-          <p class="footer-sponsor">
-            The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
-          </p>
-          <div class="footer-bottom-row">
-            <span class="footer-copyright">&copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club</span>
-            <a href="https://www.fogrugby.com/" class="footer-back-link">&larr; Return to fogrugby.com</a>
-          </div>
-        </div>
-
+        <nav class="footer-links" aria-label="Club links">
+          <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep" aria-hidden="true">&middot;</span>
+          <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram</a><span class="sep" aria-hidden="true">&middot;</span>
+          <a href="https://facebook.com/sffog" target="_blank" rel="noopener">Facebook</a><span class="sep" aria-hidden="true">&middot;</span>
+          <a href="portal.html">Calendar Portal</a><span class="sep" aria-hidden="true">&middot;</span>
+          <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep" aria-hidden="true">&middot;</span>
+          <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" rel="noopener">Donate</a>
+        </nav>
+        <p class="footer-sponsor">
+          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+        </p>
+        <p class="footer-copyright">&copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club</p>
       </div>
     </footer>
 
@@ -2976,6 +2832,8 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
       if (urlField) urlField.value = ics;
       if (webcalBtn) webcalBtn.href = ics.replace(/^https?:/, 'webcal:');
+      const outlookBtn = document.getElementById('outlook');
+      if (outlookBtn) outlookBtn.href = 'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(ics) + '&name=' + encodeURIComponent('SF Fog RFC');
       if (gcalBtn) gcalBtn.href = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(ics.replace(/^https?:/, 'webcal:'));
 
       if (copyBtn && urlField) {
