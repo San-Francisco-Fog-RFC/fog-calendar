@@ -325,12 +325,12 @@ events:
     status: confirmed
     notes: "Reporting time 9:30am. Kickoff 10:30am."
   - id: 2026-11-21-preseason-2
-    title: "Preseason Match #2"
+    title: "Fog vs Baracus (Home)"
     date: 2026-11-21
-    location: TBC
+    location: TBC - San Francisco
     category: fixture
     status: tentative
-    notes: "Opponent, kickoff and location to be confirmed."
+    notes: "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed."
 
 # ---------------------------------------------------------------- Rucktacular 2026, San Diego (Thu 3 – Sun 6 Dec)
   - id: 2026-12-03-rucktacular-weekend

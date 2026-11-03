@@ -8,9 +8,9 @@ UID:2026-11-21-preseason-2@events.fogrugby.com
 DTSTAMP:20261101T120000Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
-SUMMARY:Preseason Match #2
-LOCATION:TBC
-DESCRIPTION:Preseason Match #2. Opponent\, time and location to be confirmed.
+SUMMARY:Fog vs Baracus (Home)
+LOCATION:San Francisco (field TBC)
+DESCRIPTION:Preseason match #2\, home vs Baracus. Field and kickoff to be confirmed.
 STATUS:TENTATIVE
 END:VEVENT
 END:VCALENDAR
