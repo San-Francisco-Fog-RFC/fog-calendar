@@ -20,8 +20,12 @@
 
   <style>
     /* ==========================================================================
-       SF FOG RUGBY FOOTBALL CLUB - SPLIT-SCREEN CALENDAR HUB
-       Design System: Progress Pride Stripe, Deep Pitch Navy Hero, Elevated Card
+       SF FOG RUGBY FOOTBALL CLUB - FULLSCREEN ATMOSPHERIC CALENDAR HUB
+       - Random Full-Window Pitch Photography Background Pool
+       - 11-Stripe Progress Pride Top Bar (100vw edge-to-edge)
+       - Semi-Transparent Frosted Glass Calendar Card (Takes up most of the room)
+       - Edge-to-Edge Universal Footer with Logo/Title/Mission (Left),
+         White Divider Line, Links/Sponsor/Copyright (Right)
        ========================================================================== */
     :root {
       --fog-blue: #006EB6;
@@ -38,15 +42,38 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
       font-family: 'Futura PT', -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
-      background-color: var(--fog-gray-50);
       color: var(--fog-dark-gray);
+      background-color: var(--fog-dark-blue);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* FULL-WIDTH TOP PROGRESS PRIDE BAR */
+    /* FULL-WINDOW RANDOM BACKGROUND & ATMOSPHERIC VIGNETTE */
+    .fog-backdrop {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--fog-dark-blue);
+      background-image: url('assets/img/calling-ceremony-circle.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      z-index: -2;
+      transition: background-image 0.5s ease-in-out;
+    }
+    .fog-backdrop-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 24, 44, 0.68) 0%, rgba(0, 15, 28, 0.86) 100%);
+      z-index: -1;
+    }
+
+    /* PROGRESS PRIDE STRIPE ACROSS ENTIRE TOP WINDOW */
     .pride-stripe-top {
       position: fixed;
       top: 0;
@@ -62,205 +89,162 @@
       height: 100%;
     }
 
-    .split-container {
-      display: flex;
+    /* PAGE LAYOUT CONTAINER */
+    .page-layout {
+      position: relative;
       min-height: 100vh;
-      width: 100%;
-      padding-top: 5px; /* Offset for top pride bar */
-    }
-
-    /* LEFT HERO COLUMN: Atmospheric Photography + Top Brand Lockup */
-    .hero-col {
-      width: 44%;
-      min-height: calc(100vh - 5px);
-      background: linear-gradient(180deg, rgba(0, 36, 60, 0.82) 0%, rgba(0, 18, 30, 0.95) 100%),
-                  url('assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 40px 44px 36px 44px;
-      color: #FFFFFF;
-      position: relative;
+      padding-top: 5px; /* Offset for top pride bar */
     }
 
-    .hero-top-section {
+    /* TOP HEADER BAR */
+    .top-header {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px 28px 12px 28px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .hero-top-nav {
-      display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
     .back-link {
-      color: var(--fog-light-blue);
-      text-decoration: underline;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #FFFFFF;
+      background: rgba(0, 36, 60, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 16px;
+      border-radius: var(--fog-radius-btn);
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.02em;
-      transition: color 0.15s ease;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
     .back-link:hover {
+      background: rgba(0, 110, 182, 0.85);
+      border-color: var(--fog-light-blue);
       color: #FFFFFF;
     }
     .back-link:focus-visible {
       outline: 2px solid var(--fog-light-blue);
       outline-offset: 2px;
     }
-
-    /* BOTTOM-ANCHORED HERO SECTION */
-    .hero-bottom-section {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .hero-brand-lockup {
+    .top-controls {
       display: flex;
       align-items: center;
-      gap: 18px;
-      max-width: 520px;
+      gap: 10px;
     }
-    .hero-crest {
-      width: 76px;
-      height: 76px;
-      object-fit: contain;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
-    }
-    .hero-brand-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
-    }
-    .hero-title {
-      font-size: 26px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      margin: 0;
-    }
-    .hero-subline {
-      font-size: 13.5px;
-      line-height: 1.3;
-      color: var(--fog-light-blue);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-top: 5px;
-    }
-    .hero-blurb {
-      font-size: 13px;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.88);
-      background: rgba(0, 36, 60, 0.45);
-      border-left: 3px solid var(--fog-light-blue);
-      padding: 10px 14px;
-      border-radius: 0 4px 4px 0;
-      backdrop-filter: blur(4px);
-    }
-    .hero-blurb strong {
-      color: #FFFFFF;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    /* Desktop Footer at bottom of Left Hero */
-    .desktop-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .footer-links {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--fog-light-blue);
-      line-height: 1.5;
-    }
-    .footer-links a {
-      color: var(--fog-light-blue);
-      text-decoration: none;
-      transition: color 0.15s ease, text-decoration 0.15s ease;
-    }
-    .footer-links a:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
-    }
-    .footer-links .sep {
-      color: rgba(255, 255, 255, 0.4);
-      padding: 0 6px;
-    }
-    .footer-sponsor {
-      font-size: 12px;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.88);
-    }
-    .footer-copyright {
-      font-size: 12px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.72);
-    }
-
-    /* RIGHT COLUMN: Elevated Accessible Calendar Hub Card */
-    .content-col {
-      width: 56%;
-      min-height: calc(100vh - 5px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .photo-shuffle-btn {
+      display: inline-flex;
       align-items: center;
-      padding: 40px 48px;
-      background-color: var(--fog-gray-50);
-      overflow-y: auto;
+      gap: 7px;
+      color: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 36, 60, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      border-radius: var(--fog-radius-btn);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .photo-shuffle-btn:hover {
+      background: rgba(0, 36, 60, 0.9);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: #FFFFFF;
+    }
+    .photo-shuffle-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--fog-light-blue);
     }
 
+    /* MAIN CONTENT & SEMI-TRANSPARENT CARD */
+    .main-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px 40px 20px;
+    }
     .calendar-card {
       width: 100%;
-      max-width: 620px;
-      background-color: #FFFFFF;
-      border: 1px solid #D0D7DE;
-      box-shadow: 0 8px 30px rgba(0, 36, 60, 0.09);
+      max-width: 1080px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 24px 64px rgba(0, 18, 30, 0.45), 0 4px 16px rgba(0, 0, 0, 0.12);
       border-radius: var(--fog-radius-card);
-      padding: 40px 44px 36px 44px;
+      padding: 40px 48px 36px 48px;
     }
 
+    /* CARD HEADER */
     .card-header {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 22px;
+    }
+    .card-eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .card-eyebrow-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
     }
     .card-eyebrow {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--fog-blue);
-      margin-bottom: 6px;
-      display: block;
     }
     .card-title {
-      font-size: 28px;
-      line-height: 1.2;
+      font-size: 32px;
+      line-height: 1.15;
       font-weight: 800;
       color: var(--fog-dark-blue);
-      margin-bottom: 8px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+      margin-bottom: 8px;
     }
     .card-subtitle {
-      font-size: 15px;
+      font-size: 15.5px;
       line-height: 1.5;
-      color: #374151;
+      color: #334155;
+      max-width: 840px;
     }
 
-    /* Action Buttons Group */
+    /* 2-COLUMN INNER GRID (Desktop) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* ACTION BUTTONS GROUP */
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 24px;
     }
     .fog-btn {
@@ -310,7 +294,7 @@
       outline-offset: 3px;
     }
     .fog-btn-outline {
-      background-color: transparent;
+      background-color: #FFFFFF;
       color: var(--fog-dark-blue);
       border-color: #CBD5E1;
     }
@@ -324,9 +308,9 @@
       outline-offset: 3px;
     }
 
-    /* Copy URL Box */
+    /* URL BOX */
     .url-box-section {
-      margin-bottom: 26px;
+      margin-bottom: 20px;
     }
     .url-box-label {
       display: block;
@@ -348,7 +332,7 @@
       min-height: 44px;
       border: 1.5px solid #CBD5E1;
       border-radius: var(--fog-radius-btn);
-      background-color: #F8FAFC;
+      background-color: #FFFFFF;
       color: #1E293B;
       user-select: all;
     }
@@ -358,7 +342,7 @@
       background-color: #FFFFFF;
     }
     .copy-btn {
-      padding: 0 16px;
+      padding: 0 18px;
       min-height: 44px;
       background-color: #F1F5F9;
       border: 1.5px solid #CBD5E1;
@@ -383,14 +367,25 @@
       color: #FFFFFF;
     }
 
-    /* Subscription Steps */
+    .card-footnote {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #64748B;
+    }
+    .card-footnote a {
+      color: var(--fog-blue);
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    /* RIGHT COLUMN: SETUP STEPS */
     .setup-steps {
-      background-color: #F8FAFC;
+      background-color: rgba(248, 250, 252, 0.85);
       border: 1px solid #E2E8F0;
       border-radius: var(--fog-radius-card);
       padding: 18px 20px;
-      margin-bottom: 24px;
-    }}
+      margin-bottom: 22px;
+    }
     .setup-title {
       font-size: 13px;
       font-weight: 800;
@@ -411,7 +406,7 @@
       gap: 10px;
     }
     .step-item {
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.45;
       color: #334155;
       display: flex;
@@ -436,11 +431,10 @@
       color: var(--fog-dark-blue);
     }
 
-    /* Developer & Syndication Feeds Grid */
+    /* DEVELOPER FEEDS */
     .feeds-section {
       border-top: 1px solid #E2E8F0;
-      padding-top: 20px;
-      margin-bottom: 18px;
+      padding-top: 18px;
     }
     .feeds-header {
       font-size: 12.5px;
@@ -448,19 +442,19 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--fog-blue);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .feeds-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 8px;
     }
     .feed-card {
       display: block;
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
       border-radius: var(--fog-radius-card);
-      padding: 10px 12px;
+      padding: 9px 12px;
       text-decoration: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
@@ -470,139 +464,197 @@
     }
     .feed-name {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--fog-blue);
       margin-bottom: 2px;
     }
     .feed-desc {
-      font-size: 11.5px;
+      font-size: 11px;
       line-height: 1.35;
       color: #64748B;
     }
 
-    /* Card Footnote */
-    .card-footnote {
-      font-size: 12.5px;
-      line-height: 1.5;
-      color: #64748B;
-      text-align: center;
-      margin-top: 16px;
+    /* ==========================================================================
+       EDGE-TO-EDGE UNIVERSAL FOOTER (Runs along bottom of the whole page)
+       ========================================================================== */
+    .site-footer {
+      width: 100%;
+      background: rgba(0, 24, 44, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      padding: 30px 48px 34px 48px;
+      margin-top: auto;
     }
-    .card-footnote a {
-      color: var(--fog-blue);
-      text-decoration: underline;
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-left {
+      flex: 1 1 52%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .footer-crest {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-title {
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    .footer-subline {
+      font-size: 12px;
+      line-height: 1.25;
+      color: var(--fog-light-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .footer-mission {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+    }
+    .footer-mission strong {
+      color: #FFFFFF;
       font-weight: 700;
     }
 
-    /* MOBILE FOOTER */
-    .mobile-footer {
-      display: none;
+    /* WHITE LITTLE DIVIDER LINE */
+    .footer-divider {
+      width: 1px;
+      background: rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+      align-self: stretch;
     }
 
-    /* RESPONSIVE MOBILE LAYOUT */
-    @media (max-width: 899px) {
-      .split-container {
-        flex-direction: column;
-        min-height: auto;
-      }
-      .hero-col {
-        width: 100%;
-        min-height: auto;
-        padding: 26px 20px 24px 20px;
-        background: linear-gradient(180deg, rgba(0, 36, 60, 0.88) 0%, rgba(0, 18, 30, 0.96) 100%),
-                    url('assets/img/calling-ceremony-circle.jpg') center/cover no-repeat;
-      }
-      .hero-top-section {
-        gap: 14px;
-      }
-      .hero-brand-lockup {
-        gap: 15px;
-      }
-      .hero-crest {
-        width: 58px;
-        height: 58px;
-      }
-      .hero-title {
-        font-size: 19px;
-        line-height: 1.15;
-        letter-spacing: 0.03em;
-        white-space: normal;
-      }
-      .hero-subline {
-        font-size: 11.5px;
-        line-height: 1.3;
-        letter-spacing: 0.08em;
-        margin-top: 3px;
-      }
-      .hero-blurb {
-        font-size: 12px;
-        line-height: 1.5;
-        padding: 8px 12px;
-        margin-top: 12px;
-      }
+    /* FOOTER RIGHT */
+    .footer-right {
+      flex: 1 1 48%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .footer-links {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fog-light-blue);
+      line-height: 1.5;
+    }
+    .footer-links a {
+      color: var(--fog-light-blue);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+    .footer-links .sep {
+      color: rgba(255, 255, 255, 0.4);
+      padding: 0 6px;
+    }
+    .footer-sponsor {
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0;
+    }
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding-top: 4px;
+    }
+    .footer-copyright {
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.68);
+    }
+    .footer-back-link {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--fog-light-blue);
+      text-decoration: underline;
+    }
+    .footer-back-link:hover {
+      color: #FFFFFF;
+    }
 
-      /* Hide desktop footer on mobile */
-      .desktop-footer {
-        display: none;
-      }
-
-      .content-col {
-        width: 100%;
-        min-height: auto;
-        padding: 24px 16px 32px 16px;
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 960px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
       .calendar-card {
-        padding: 28px 20px;
-        box-shadow: none;
-        border: 1px solid #E2E8F0;
+        padding: 32px 28px;
       }
       .card-title {
-        font-size: 24px;
+        font-size: 26px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .footer-divider {
+        width: 100%;
+        height: 1px;
+        min-height: 1px;
+      }
+      .site-footer {
+        padding: 28px 24px 36px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .top-header {
+        padding: 16px 16px 8px 16px;
+      }
+      .calendar-card {
+        padding: 24px 18px;
+      }
+      .card-title {
+        font-size: 22px;
+      }
+      .card-subtitle {
+        font-size: 14px;
       }
       .feeds-grid {
         grid-template-columns: 1fr;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
-      }
-
-      /* Show full footer at very bottom on mobile */
-      .mobile-footer {
-        display: block;
-        background-color: var(--fog-dark-blue);
-        color: #FFFFFF;
-        padding: 32px 20px 44px 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        text-align: center;
-      }
-      .mobile-footer .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 8px 14px;
-        font-size: 13.5px;
-        margin-bottom: 16px;
-        line-height: 1.5;
-      }
-      .mobile-footer .sep {
-        display: none;
-      }
-      .mobile-footer .footer-sponsor {
-        font-size: 12px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.88);
-        max-width: 480px;
-        margin: 0 auto 8px auto;
-      }
-      .mobile-footer .footer-copyright {
-        font-size: 12px;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.72);
-        margin-bottom: 16px;
-      }
-      .mobile-footer .back-link {
-        display: inline-block;
-        font-size: 13px;
       }
     }
   </style>
@@ -2388,7 +2440,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 </head>
 <body>
 
-  <!-- FULL-WIDTH PROGRESS PRIDE BAR ACROSS ENTIRE WINDOW -->
+  <!-- FULL-WIDTH PROGRESS PRIDE BAR (Spans 100vw across top) -->
   <div class="pride-stripe-top" aria-hidden="true">
     <span class="pride-bar" style="background:#000000"></span>
     <span class="pride-bar" style="background:#613915"></span>
@@ -2403,155 +2455,223 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
     <span class="pride-bar" style="background:#750787"></span>
   </div>
 
-  <div class="split-container">
+  <!-- FULL-WINDOW DYNAMIC BACKGROUND & ATMOSPHERIC VIGNETTE -->
+  <div id="fog-backdrop" class="fog-backdrop" aria-hidden="true"></div>
+  <div class="fog-backdrop-overlay" aria-hidden="true"></div>
+
+  <!-- MAIN PAGE LAYOUT -->
+  <div class="page-layout">
     
-    <!-- LEFT PANEL: Atmospheric Photo + Bottom-Anchored Brand & Mission Blurb -->
-    <div class="hero-col">
-      <div class="hero-top-nav">
-        <a href="https://www.fogrugby.com/" class="back-link">&larr; Return to fogrugby.com</a>
+    <!-- Top Header -->
+    <header class="top-header">
+      <a href="https://www.fogrugby.com/" class="back-link">&larr; Return to fogrugby.com</a>
+      <div class="top-controls">
+        <button type="button" id="shuffle-bg-btn" class="photo-shuffle-btn" title="Cycle random background pitch photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="16 3 21 3 21 8"></polyline>
+            <line x1="4" y1="20" x2="21" y2="3"></line>
+            <polyline points="21 16 21 21 16 21"></polyline>
+            <line x1="15" y1="15" x2="21" y2="21"></line>
+            <line x1="4" y1="4" x2="9" y2="9"></line>
+          </svg>
+          <span id="photo-label">Random Photo</span>
+        </button>
       </div>
+    </header>
 
-      <!-- Bottom Hero Section -->
-      <div class="hero-bottom-section">
-        <div class="hero-brand-lockup">
-          <img src="assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="hero-crest">
-          <div class="hero-brand-text">
-            <h1 class="hero-title">San Francisco Fog Rugby</h1>
-            <div class="hero-subline">Rugby Football Club</div>
-          </div>
-        </div>
-
-        <!-- 25+ Year Mission Blurb -->
-        <div class="hero-blurb">
-          <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
-        </div>
-
-        <!-- Desktop Footer (At bottom of Left Hero on Desktop) -->
-        <div class="desktop-footer">
-          <div class="footer-links">
-            <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
-            <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
-            <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
-            <a href="portal.html">Calendar Portal</a><span class="sep">&middot;</span>
-            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank">Suggestion Box</a><span class="sep">&middot;</span>
-            <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
-          </div>
-          <div class="footer-sponsor">
-            The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
-          </div>
-          <div class="footer-copyright">
-            &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT PANEL: Elevated Accessible Calendar Hub Card -->
-    <main class="content-col" role="main">
+    <!-- Main Content: Semi-Transparent Card -->
+    <main class="main-wrap" role="main">
       <div class="calendar-card">
         
-        <div class="card-header">
-          <span class="card-eyebrow">Official Club Calendar</span>
-          <h2 class="card-title">Never Miss a Kickoff</h2>
-          <p class="card-subtitle">Subscribe once to the SF Fog RFC calendar. Matches, practices, socials, and tournament details sync automatically to your phone or desktop.</p>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="btn-group">
-          <a class="fog-btn fog-btn-primary" id="webcal" href="#">
-            Subscribe (Apple / Outlook / iOS) &rsaquo;
-          </a>
-          <a class="fog-btn fog-btn-secondary" id="gcal" href="#" target="_blank" rel="noopener">
-            Add to Google Calendar &rsaquo;
-          </a>
-          <a class="fog-btn fog-btn-outline" href="portal.html">
-            Open Interactive Calendar Portal &rarr;
-          </a>
-        </div>
-
-        <!-- Direct Subscription URL with One-Click Copy -->
-        <div class="url-box-section">
-          <label for="ics-url-field" class="url-box-label">Or paste this subscription URL into your calendar app:</label>
-          <div class="url-input-wrap">
-            <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics" aria-label="iCalendar Subscription URL">
-            <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
+        <header class="card-header">
+          <div class="card-eyebrow-row">
+            <img src="assets/img/fog-shield.png" alt="" class="card-eyebrow-icon">
+            <span class="card-eyebrow">Official Club Calendar &amp; Fixtures</span>
           </div>
-        </div>
+          <h1 class="card-title">Never Miss a Kickoff</h1>
+          <p class="card-subtitle">
+            Subscribe once to the official SF Fog RFC calendar. Matches, trainings at Kimbell &amp; Crocker Amazon, socials, and tournament fixtures automatically sync and update across iPhone, Mac, Android, and Google Calendar.
+          </p>
+        </header>
 
-        <!-- Setup Instructions -->
-        <div class="setup-steps">
-          <div class="setup-title">&#128197; Quick Setup Instructions</div>
-          <ul class="steps-list">
-            <li class="step-item">
-              <span class="step-num">1</span>
-              <div><strong>iPhone &amp; Mac:</strong> Tap <em>Subscribe (Apple / Outlook)</em> above and confirm. All schedule and venue updates sync automatically.</div>
-            </li>
-            <li class="step-item">
-              <span class="step-num">2</span>
-              <div><strong>Google Calendar:</strong> Tap <em>Add to Google Calendar</em>, or in Google Calendar web go to <em>Other calendars &rarr; + &rarr; From URL</em> and paste the link.</div>
-            </li>
-            <li class="step-item">
-              <span class="step-num">3</span>
-              <div><strong>Outlook &amp; Others:</strong> Select <em>Add calendar &rarr; Subscribe from web</em> and paste the subscription URL.</div>
-            </li>
-          </ul>
-        </div>
+        <div class="card-grid">
+          
+          <!-- LEFT SUB-COLUMN: Subscription Buttons & Direct URL -->
+          <div class="card-col-left">
+            <div class="btn-group">
+              <a class="fog-btn fog-btn-primary" id="webcal" href="#">
+                Subscribe (Apple / Outlook / iOS) &rsaquo;
+              </a>
+              <a class="fog-btn fog-btn-secondary" id="gcal" href="#" target="_blank" rel="noopener">
+                Add to Google Calendar &rsaquo;
+              </a>
+              <a class="fog-btn fog-btn-outline" href="portal.html">
+                Open Interactive Calendar Portal &rarr;
+              </a>
+            </div>
 
-        <!-- Developer & Syndication Feeds -->
-        <div class="feeds-section">
-          <div class="feeds-header">Developer &amp; Syndication Feeds</div>
-          <div class="feeds-grid">
-            <a href="events.json" target="_blank" class="feed-card">
-              <div class="feed-name">events.json</div>
-              <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venue details.</div>
-            </a>
-            <a href="fog.ics" target="_blank" class="feed-card">
-              <div class="feed-name">fog.ics</div>
-              <div class="feed-desc">RFC 5545 iCalendar feed with embedded Pacific timezone.</div>
-            </a>
-            <a href="schema-events.jsonld" target="_blank" class="feed-card">
-              <div class="feed-name">schema-events.jsonld</div>
-              <div class="feed-desc">Schema.org Google Events Rich Results graph payload.</div>
-            </a>
-            <a href="openapi.yaml" target="_blank" class="feed-card">
-              <div class="feed-name">openapi.yaml</div>
-              <div class="feed-desc">OpenAPI 3.1 specification contract for developers.</div>
-            </a>
+            <!-- Direct URL Box -->
+            <div class="url-box-section">
+              <label for="ics-url-field" class="url-box-label">Or paste this subscription URL into your calendar app:</label>
+              <div class="url-input-wrap">
+                <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics" aria-label="iCalendar Subscription URL">
+                <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
+              </div>
+            </div>
+
+            <p class="card-footnote">
+              Single source of truth: <code>events.yml</code> &middot; View interactive agenda in the <a href="portal.html">Calendar Portal</a> &middot; Questions: <a href="mailto:secretary@fogrugby.com">secretary@fogrugby.com</a>
+            </p>
           </div>
-        </div>
 
-        <p class="card-footnote">
-          Single source of truth: <code>events.yml</code> &middot; View interactive agenda in the <a href="portal.html">Calendar Portal</a> &middot; Questions: <a href="mailto:secretary@fogrugby.com">secretary@fogrugby.com</a>
-        </p>
+          <!-- RIGHT SUB-COLUMN: Setup Guide & Developer Feeds -->
+          <div class="card-col-right">
+            
+            <div class="setup-steps">
+              <div class="setup-title">&#128197; Quick Setup Guide</div>
+              <ul class="steps-list">
+                <li class="step-item">
+                  <span class="step-num">1</span>
+                  <div><strong>iPhone &amp; Mac:</strong> Tap <em>Subscribe (Apple / Outlook)</em> and confirm. Schedule, pitch, and kickoff updates will sync automatically.</div>
+                </li>
+                <li class="step-item">
+                  <span class="step-num">2</span>
+                  <div><strong>Google Calendar:</strong> Tap <em>Add to Google Calendar</em>, or go to <em>Other calendars &rarr; + &rarr; From URL</em> in Google Calendar web and paste the link.</div>
+                </li>
+                <li class="step-item">
+                  <span class="step-num">3</span>
+                  <div><strong>Outlook &amp; Others:</strong> Select <em>Add calendar &rarr; Subscribe from web</em> and paste the subscription URL.</div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Developer & Syndication Feeds -->
+            <div class="feeds-section">
+              <div class="feeds-header">Developer &amp; Syndication Feeds</div>
+              <div class="feeds-grid">
+                <a href="events.json" target="_blank" class="feed-card">
+                  <div class="feed-name">events.json</div>
+                  <div class="feed-desc">REST JSON API with ISO-8601 timestamps &amp; venue details.</div>
+                </a>
+                <a href="fog.ics" target="_blank" class="feed-card">
+                  <div class="feed-name">fog.ics</div>
+                  <div class="feed-desc">RFC 5545 iCalendar feed with embedded Pacific timezone.</div>
+                </a>
+                <a href="schema-events.jsonld" target="_blank" class="feed-card">
+                  <div class="feed-name">schema-events.jsonld</div>
+                  <div class="feed-desc">Schema.org Google Events Rich Results graph payload.</div>
+                </a>
+                <a href="openapi.yaml" target="_blank" class="feed-card">
+                  <div class="feed-name">openapi.yaml</div>
+                  <div class="feed-desc">OpenAPI 3.1 specification contract for developers.</div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
     </main>
 
-  </div>
+    <!-- FULL-WIDTH FOOTER ACROSS BOTTOM OF WHOLE PAGE -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        
+        <!-- Left: Logo, Title, Underneath Mission Statement -->
+        <div class="footer-left">
+          <div class="footer-brand">
+            <img src="assets/img/fog-shield.png" alt="San Francisco Fog RFC Crest" class="footer-crest">
+            <div class="footer-brand-text">
+              <div class="footer-title">San Francisco Fog Rugby</div>
+              <div class="footer-subline">Rugby Football Club</div>
+            </div>
+          </div>
+          <p class="footer-mission">
+            <strong>EST 2000 | 25+ YEARS</strong> &mdash; Dedicated to creating an inclusive, competitive, and supportive environment where LGBTQ+ people and allies can learn, excel in, and celebrate rugby.
+          </p>
+        </div>
 
-  <!-- MOBILE FOOTER -->
-  <footer class="mobile-footer" role="contentinfo">
-    <div class="footer-links">
-      <a href="https://www.fogrugby.com/" target="_blank">Website</a><span class="sep">&middot;</span>
-      <a href="https://instagram.com/sffog" target="_blank">Instagram</a><span class="sep">&middot;</span>
-      <a href="https://facebook.com/sffog" target="_blank">Facebook</a><span class="sep">&middot;</span>
-      <a href="portal.html">Calendar Portal</a><span class="sep">&middot;</span>
-      <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank">Suggestion Box</a><span class="sep">&middot;</span>
-      <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank">Donate</a>
-    </div>
-    <div class="footer-sponsor">
-      The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
-    </div>
-    <div class="footer-copyright">
-      &copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club
-    </div>
-    <div style="margin-top: 14px;">
-      <a href="https://www.fogrugby.com/" class="back-link">&larr; Return to fogrugby.com</a>
-    </div>
-  </footer>
+        <!-- White Little Divider Line -->
+        <div class="footer-divider" aria-hidden="true"></div>
+
+        <!-- Right: Links, Sponsor, Copyright -->
+        <div class="footer-right">
+          <nav class="footer-links" aria-label="Club Links">
+            <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep">&middot;</span>
+            <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram</a><span class="sep">&middot;</span>
+            <a href="https://facebook.com/sffog" target="_blank" rel="noopener">Facebook</a><span class="sep">&middot;</span>
+            <a href="portal.html">Calendar Portal</a><span class="sep">&middot;</span>
+            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-team" target="_blank" rel="noopener">Donate</a>
+          </nav>
+          <p class="footer-sponsor">
+            The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+          </p>
+          <div class="footer-bottom-row">
+            <span class="footer-copyright">&copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club</span>
+            <a href="https://www.fogrugby.com/" class="footer-back-link">&larr; Return to fogrugby.com</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
 
   <script>
     (function() {
+      // 1. RANDOM BACKGROUND IMAGE POOL
+      const bgPool = [
+        {
+          url: 'assets/img/calling-ceremony-circle.jpg',
+          title: 'Calling Ceremony Circle'
+        },
+        {
+          url: 'assets/img/bingham-cup-2026-squad.jpg',
+          title: 'Bingham Cup Squad'
+        },
+        {
+          url: 'assets/img/pathway-to-rugby-banner.jpg',
+          title: 'Pathway to Rugby Match'
+        },
+        {
+          url: 'assets/img/pathways-rookies-calling-ceremony.jpg',
+          title: 'Rookies & Veterans Ceremony'
+        },
+        {
+          url: 'assets/img/pathways-practice-kimbell.jpg',
+          title: 'Kimbell Practice'
+        },
+        {
+          url: 'assets/img/rucktacular-san-diego.jpg',
+          title: 'Rucktacular Tournament'
+        }
+      ];
+
+      const backdrop = document.getElementById('fog-backdrop');
+      const shuffleBtn = document.getElementById('shuffle-bg-btn');
+      let currentIdx = Math.floor(Math.random() * bgPool.length);
+
+      function applyBg(index) {
+        const item = bgPool[index];
+        if (backdrop) {
+          backdrop.style.backgroundImage = 'url("' + item.url + '")';
+        }
+      }
+
+      // Apply initial random selection immediately
+      applyBg(currentIdx);
+
+      if (shuffleBtn) {
+        shuffleBtn.addEventListener('click', function() {
+          currentIdx = (currentIdx + 1) % bgPool.length;
+          applyBg(currentIdx);
+        });
+      }
+
+      // 2. CALENDAR SUBSCRIPTION LINKS & COPY LOGIC
       const ics = new URL('fog.ics', location.href).href;
       const urlField = document.getElementById('ics-url-field');
       const webcalBtn = document.getElementById('webcal');
