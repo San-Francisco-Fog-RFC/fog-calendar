@@ -20,7 +20,42 @@
 
   <style>
     /* ==========================================================================
-       SF FOG RUGBY FOOTBALL CLUB - FULLSCREEN ATMOSPHERIC CALENDAR HUB
+       SF FOG RUGBY FOOTBALL CLUB — OFFICIAL SELF-HOSTED FUTURA PT TYPEFACES
+       ========================================================================== */
+    @font-face {
+      font-family: "Futura PT";
+      src: url("assets/fonts/futura-pt-book.woff2") format("woff2"),
+           url("assets/fonts/FuturaPT-Book.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("assets/fonts/FuturaPT-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("assets/fonts/futura-pt-demi.woff2") format("woff2"),
+           url("assets/fonts/FuturaPT-Demi.otf") format("opentype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("assets/fonts/futura-pt-bold.woff2") format("woff2"),
+           url("assets/fonts/FuturaPT-Bold.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ==========================================================================
+       SF FOG RUGBY FOOTBALL CLUB — FULLSCREEN ATMOSPHERIC CALENDAR HUB
        Official Design System: Futura PT, Fog Brand Tokens, Drupal Progress Pride Menu
        ========================================================================== */
     :root {
@@ -50,8 +85,8 @@
       --fog-radius-card: 4px;
       --fog-container-max: 1360px;
       --fog-container-pad: 24px;
-      --fog-font-display: 'Futura PT', Futura, Arial, Helvetica, sans-serif;
-      --fog-font-body: 'Futura PT', Futura, Arial, Helvetica, sans-serif;
+      --fog-font-display: "Futura PT", Futura, Arial, Helvetica, sans-serif;
+      --fog-font-body: "Futura PT", Futura, Arial, Helvetica, sans-serif;
       --focus-ring: 0 0 0 2px var(--fog-white), 0 0 0 4px var(--fog-blue);
       --focus-ring-dark: 0 0 0 2px var(--fog-dark-blue), 0 0 0 4px var(--fog-light-blue);
     }
@@ -61,10 +96,12 @@
     html, body {
       min-height: 100dvh;
       font-family: var(--fog-font-body);
+      font-weight: 400;
       color: var(--fog-dark-gray);
       background-color: var(--fog-dark-blue);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Lock desktop viewports cleanly to 100vh with zero page scroll */
@@ -120,14 +157,13 @@
       inset: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle at center, rgba(0, 36, 60, 0.38) 0%, rgba(0, 18, 30, 0.76) 100%);
+      background: radial-gradient(circle at center, rgba(0, 36, 60, 0.36) 0%, rgba(0, 18, 30, 0.74) 100%);
       z-index: 1;
       pointer-events: none;
     }
 
     /* ==========================================================================
-       DRUPAL WINDOW-TOP FIXED PROGRESS PRIDE INTERACTIVE MENU BAR
-       Ported from fog_theme/components/site-header
+       DRUPAL WINDOW-TOP FIXED PROGRESS PRIDE INTERACTIVE BAR & CHAPTER DRAWER
        ========================================================================== */
     .fog-window-progress-strip {
       position: fixed;
@@ -135,15 +171,14 @@
       left: 0;
       right: 0;
       height: 8px;
-      z-index: 99999;
+      z-index: 10002;
       background-color: var(--fog-dark-blue);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       box-sizing: border-box;
       transition: height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .fog-window-progress-strip:hover {
-      height: 12px;
+      height: 11px;
     }
 
     .fog-window-progress-strip__bar {
@@ -170,8 +205,8 @@
 
     .fog-window-progress-strip__seg:hover,
     .fog-window-progress-strip__seg:focus-visible {
-      filter: brightness(1.3);
-      transform: scaleY(1.4);
+      filter: brightness(1.25);
+      transform: scaleY(1.35);
       z-index: 2;
     }
     .fog-window-progress-strip__seg:focus-visible {
@@ -190,69 +225,14 @@
     .fog-window-progress-strip__seg--blue       { background-color: var(--pride-blue); }
     .fog-window-progress-strip__seg--violet     { background-color: var(--pride-violet); }
 
-    /* Floating Toggle Badge */
-    .fog-window-progress-strip__toggle {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--fog-dark-blue);
-      color: var(--fog-white);
-      border: 1px solid var(--fog-light-blue);
-      border-top: none;
-      border-radius: 0;
-      padding: 4px 14px;
-      font-family: var(--fog-font-display);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      z-index: 100000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
-      white-space: nowrap;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
-    }
-
-    .fog-window-progress-strip__toggle:hover,
-    .fog-window-progress-strip__toggle[aria-expanded="true"] {
-      background-color: var(--fog-blue);
-      border-color: var(--fog-white);
-    }
-
-    .fog-window-progress-strip__toggle:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring-dark);
-    }
-
-    .fog-window-progress-strip__toggle-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 0;
-      flex-shrink: 0;
-      background: linear-gradient(135deg, var(--pride-red), var(--pride-yellow), var(--pride-blue));
-    }
-
-    .fog-window-progress-strip__toggle-arrow {
-      font-size: 9px;
-      transition: transform 0.2s ease;
-    }
-
-    .fog-window-progress-strip__toggle[aria-expanded="true"] .fog-window-progress-strip__toggle-arrow {
-      transform: rotate(180deg);
-    }
-
-    /* Backdrop & Chapter Flyout Drawer */
+    /* Backdrop & Chapter Flyout Drawer (opens cleanly right below the white header) */
     .fog-pride-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 18, 30, 0.62);
+      background: rgba(0, 18, 30, 0.58);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
-      z-index: 99997;
+      z-index: 9995;
     }
     .fog-pride-backdrop[hidden] {
       display: none !important;
@@ -260,14 +240,14 @@
 
     .fog-window-progress-strip__drawer {
       position: fixed;
-      top: 8px;
+      top: 68px;
       left: 0;
       right: 0;
       background-color: var(--fog-dark-blue);
       border-bottom: 4px solid var(--fog-blue);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-      z-index: 99998;
-      max-height: calc(100vh - 48px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      z-index: 9998;
+      max-height: calc(100vh - 80px);
       overflow-y: auto;
       border-radius: 0;
       box-sizing: border-box;
@@ -280,7 +260,7 @@
     .fog-window-progress-strip__drawer-inner {
       max-width: var(--fog-container-max);
       margin: 0 auto;
-      padding: 28px var(--fog-container-pad) 24px var(--fog-container-pad);
+      padding: 24px var(--fog-container-pad) 20px var(--fog-container-pad);
     }
 
     .fog-window-progress-strip__drawer-header {
@@ -288,26 +268,26 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 14px;
+      padding-bottom: 12px;
     }
 
     .fog-window-progress-strip__drawer-eyebrow {
       font-family: var(--fog-font-display);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--fog-light-blue);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .fog-window-progress-strip__drawer-title {
       font-family: var(--fog-font-display);
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 21px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--fog-white);
@@ -318,12 +298,12 @@
       background: transparent;
       color: var(--fog-white);
       border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 0;
+      border-radius: var(--fog-radius-btn);
       font-family: var(--fog-font-display);
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 11.5px;
+      font-weight: 600;
       letter-spacing: 0.08em;
-      padding: 6px 14px;
+      padding: 6px 13px;
       cursor: pointer;
       flex-shrink: 0;
       transition: background-color 0.15s ease, border-color 0.15s ease;
@@ -341,8 +321,8 @@
 
     .fog-window-progress-strip__chapters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+      gap: 12px;
     }
 
     .fog-window-progress-strip__chapter-card {
@@ -351,17 +331,16 @@
       background-color: var(--fog-white);
       color: var(--fog-dark-gray);
       text-decoration: none;
-      padding: 14px 16px;
+      padding: 13px 15px;
       border-radius: 0;
       border-left: 6px solid var(--fog-blue);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .fog-window-progress-strip__chapter-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      filter: brightness(1.02);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
     }
 
     .fog-window-progress-strip__chapter-card:focus-visible {
@@ -384,36 +363,36 @@
     .fog-window-progress-strip__chapter-tag {
       font-family: var(--fog-font-display);
       font-size: 10px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.1em;
       color: var(--fog-blue);
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .fog-window-progress-strip__chapter-name {
       font-family: var(--fog-font-display);
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--fog-dark-blue);
-      margin: 0 0 5px 0;
+      margin: 0 0 4px 0;
     }
 
     .fog-window-progress-strip__chapter-desc {
-      font-size: 12.5px;
+      font-size: 13px;
+      font-weight: 400;
       line-height: 1.42;
       color: var(--fog-dark-gray);
-      opacity: 0.84;
-      margin: 0 0 10px 0;
+      margin: 0 0 9px 0;
       flex: 1;
     }
 
     .fog-window-progress-strip__chapter-action {
       font-family: var(--fog-font-display);
       font-size: 11.5px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--fog-blue);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -423,8 +402,8 @@
 
     /* Quick Systems Strip at Bottom of Pride Drawer */
     .fog-window-progress-strip__systems {
-      margin-top: 18px;
-      padding-top: 14px;
+      margin-top: 16px;
+      padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.15);
       display: flex;
       flex-wrap: wrap;
@@ -434,14 +413,14 @@
     .fog-window-progress-strip__systems-label {
       font-family: var(--fog-font-display);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--fog-light-blue);
     }
     .fog-window-progress-strip__systems a {
-      font-size: 12.5px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--fog-white);
       text-decoration: underline;
       text-underline-offset: 2px;
@@ -463,7 +442,7 @@
       width: 100vw;
       height: 5px;
       display: flex;
-      z-index: 9999;
+      z-index: 9990;
     }
     .pride-bar {
       flex: 1;
@@ -474,8 +453,6 @@
        PAGE LAYOUT CONTAINER (Fits cleanly inside 100vh)
        ========================================================================== */
     .page-layout {
-      position: relative;
-      z-index: 2;
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
@@ -484,65 +461,159 @@
       padding-bottom: 5px; /* Bottom 5px Pride Strip offset */
     }
 
-    /* SITE HEADER: Crest & Club Title */
+    /* ==========================================================================
+       WHITE SITE HEADER (Matches fogrugby.com & drupal.fogrugby.com)
+       Left: Official Horizontal Logo | Right: Calendar Icon | Log In | Join | Pride Menu
+       ========================================================================== */
     .site-header {
+      position: relative;
+      z-index: 10001;
       width: 100%;
       flex-shrink: 0;
-      background: rgba(0, 24, 44, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-      color: var(--fog-white);
+      background-color: var(--fog-white);
+      border-bottom: 1px solid var(--fog-gray);
+      color: var(--fog-dark-blue);
     }
     .site-header-inner {
       max-width: var(--fog-container-max);
       margin: 0 auto;
-      padding: 10px 28px;
+      height: 60px;
+      padding: 0 var(--fog-container-pad);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
     }
-    .header-brand {
-      display: flex;
+    .header-logo-link {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .header-crest {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      flex-shrink: 0;
-      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-    }
-    .header-brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
-    }
-    .header-title {
-      font-size: 18px;
-      line-height: 1.05;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--fog-white);
       text-decoration: none;
+      flex-shrink: 0;
     }
-    .header-title:hover { color: var(--fog-light-blue); }
-    .header-title:focus-visible { outline: none; box-shadow: var(--focus-ring-dark); }
-    .header-subline {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--fog-light-blue);
+    .header-logo-link:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .header-logo-img {
+      height: 38px;
+      width: auto;
+      display: block;
     }
 
-    /* MAIN CONTENT & SEMI-TRANSPARENT FROSTED CARD */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .header-divider {
+      width: 1px;
+      height: 22px;
+      background-color: var(--fog-gray);
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+    .header-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      color: var(--fog-dark-blue);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--fog-radius-btn);
+      text-decoration: none;
+      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .header-icon-btn:hover {
+      color: var(--fog-blue);
+      background-color: var(--fog-gray-50);
+      border-color: var(--fog-gray);
+    }
+    .header-icon-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .header-icon-btn svg {
+      width: 19px;
+      height: 19px;
+      display: block;
+    }
+
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 36px;
+      padding: 0 14px;
+      font-family: var(--fog-font-display);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--fog-radius-btn);
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .header-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .header-btn--secondary {
+      background-color: var(--fog-white);
+      color: var(--fog-dark-blue);
+      border-color: var(--fog-gray);
+    }
+    .header-btn--secondary:hover {
+      border-color: var(--fog-dark-blue);
+      background-color: var(--fog-gray-50);
+    }
+    .header-btn--primary {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-blue);
+    }
+    .header-btn--primary:hover {
+      background-color: var(--fog-dark-blue);
+      border-color: var(--fog-dark-blue);
+    }
+    .header-btn--pride {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-dark-blue);
+    }
+    .header-btn--pride:hover,
+    .header-btn--pride[aria-expanded="true"] {
+      background-color: var(--fog-blue);
+      border-color: var(--fog-blue);
+    }
+    .pride-menu-pip {
+      width: 9px;
+      height: 9px;
+      border-radius: 0;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--pride-red), var(--pride-yellow), var(--pride-green), var(--pride-blue));
+    }
+    .pride-menu-arrow {
+      font-size: 9px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+    .header-btn--pride[aria-expanded="true"] .pride-menu-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* ==========================================================================
+       MAIN CONTENT & SEMI-TRANSPARENT FROSTED CARD
+       ========================================================================== */
     .main-wrap {
+      position: relative;
+      z-index: 2;
       flex: 1;
       min-height: 0;
       display: flex;
@@ -553,69 +624,84 @@
     .calendar-card {
       width: 100%;
       max-width: 960px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.93);
       backdrop-filter: blur(24px) saturate(160%);
       -webkit-backdrop-filter: blur(24px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.76);
-      box-shadow: 0 20px 50px rgba(0, 18, 30, 0.4), 0 2px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 20px 48px rgba(0, 18, 30, 0.36), 0 2px 10px rgba(0, 0, 0, 0.08);
       border-radius: var(--fog-radius-card);
       padding: 22px 28px 20px 28px;
     }
 
-    /* CARD HEADER */
+    /* CARD HEADER (Simplified: Title + Subtitle on Left, View Calendar Button on Top Right) */
     .card-header {
       margin-bottom: 14px;
       display: flex;
-      flex-direction: column;
-    }
-    .card-header-top {
-      display: flex;
-      align-items: baseline;
+      align-items: flex-start;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px 16px;
-      margin-bottom: 4px;
+      gap: 20px;
     }
-    .card-eyebrow {
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--fog-blue);
+    .card-header-copy {
+      min-width: 0;
+      flex: 1;
     }
-    .card-portal-link {
-      font-size: 12.5px;
-      line-height: 1.3;
-      color: var(--fog-dark-gray);
-    }
-    .card-portal-link a {
-      color: var(--fog-blue);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .card-portal-link a:hover { color: var(--fog-dark-blue); }
-    .card-portal-link a:focus-visible { outline: none; box-shadow: var(--focus-ring); }
-
     .card-title {
-      font-size: 26px;
+      font-family: var(--fog-font-display);
+      font-size: 27px;
       line-height: 1.05;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--fog-dark-blue);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       margin-bottom: 5px;
     }
     .card-subtitle {
-      font-size: 13.5px;
+      font-size: 14.5px;
+      font-weight: 400;
       line-height: 1.42;
       color: var(--fog-dark-gray);
-      max-width: 840px;
+      max-width: 720px;
+    }
+
+    .card-view-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 36px;
+      padding: 0 14px;
+      background-color: var(--fog-white);
+      color: var(--fog-blue);
+      border: 1px solid var(--fog-blue);
+      border-radius: var(--fog-radius-btn);
+      font-family: var(--fog-font-display);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .card-view-btn:hover {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+    }
+    .card-view-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+    .card-view-btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
 
     .section-label {
-      font-size: 11px;
-      font-weight: 800;
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--fog-dark-blue);
@@ -624,7 +710,7 @@
 
     /* GUIDED SINGLE-PANEL CALENDAR PICKER */
     .picker {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .picker-options {
       display: grid;
@@ -638,7 +724,7 @@
       justify-content: flex-start;
       gap: 11px;
       background: var(--fog-white);
-      border: 1.5px solid var(--fog-gray);
+      border: 1px solid var(--fog-gray);
       border-top: 3px solid var(--fog-gray);
       border-radius: var(--fog-radius-btn);
       padding: 11px 14px;
@@ -664,8 +750,8 @@
       color: var(--fog-white);
     }
     .picker-logo {
-      width: 24px;
-      height: 24px;
+      width: 23px;
+      height: 23px;
       fill: currentColor;
       color: var(--fog-dark-blue);
       flex-shrink: 0;
@@ -688,32 +774,34 @@
       min-width: 0;
     }
     .picker-name {
+      font-family: var(--fog-font-display);
       font-size: 14px;
       line-height: 1.1;
-      font-weight: 800;
+      font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: inherit;
     }
     .picker-sub {
-      font-size: 11.5px;
+      font-size: 12.5px;
+      font-weight: 400;
       line-height: 1.2;
       color: var(--fog-dark-gray);
-      opacity: 0.8;
+      opacity: 0.82;
     }
     .picker-option[aria-expanded="true"] .picker-sub {
       color: var(--fog-light-blue);
       opacity: 1;
     }
 
-    /* REVEALED INSTRUCTION DRAWER (Compact 2-Column Horizontal Split) */
+    /* REVEALED INSTRUCTION DRAWER (Clean & Compact) */
     .guide-drawer {
       margin-top: 10px;
       background: var(--fog-white);
-      border: 1.5px solid var(--fog-dark-blue);
+      border: 1px solid var(--fog-gray);
       border-left: 4px solid var(--fog-blue);
       border-radius: var(--fog-radius-card);
-      padding: 13px 16px;
+      padding: 12px 16px;
     }
     .guide-drawer[hidden],
     .guide-pane[hidden],
@@ -726,13 +814,14 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 8px;
-      padding-bottom: 7px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--fog-gray-50);
     }
     .guide-title {
+      font-family: var(--fog-font-display);
       font-size: 14.5px;
       line-height: 1.15;
-      font-weight: 800;
+      font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--fog-dark-blue);
@@ -742,12 +831,12 @@
       border: 1px solid var(--fog-gray);
       border-radius: var(--fog-radius-btn);
       color: var(--fog-dark-blue);
-      font-family: inherit;
+      font-family: var(--fog-font-display);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 3px 10px;
       cursor: pointer;
       flex-shrink: 0;
       transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -764,9 +853,12 @@
 
     .guide-body {
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
+      grid-template-columns: 1.35fr 0.85fr;
       gap: 16px;
       align-items: center;
+    }
+    .guide-body--full {
+      grid-template-columns: 1fr;
     }
 
     .guide-steps {
@@ -776,15 +868,16 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
     .guide-steps li {
       counter-increment: step;
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      font-size: 13px;
-      line-height: 1.38;
+      font-size: 13.5px;
+      font-weight: 400;
+      line-height: 1.36;
       color: var(--fog-dark-gray);
     }
     .guide-steps li::before {
@@ -794,8 +887,9 @@
       background: var(--fog-blue);
       color: var(--fog-white);
       border-radius: var(--fog-radius-btn);
+      font-family: var(--fog-font-display);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 600;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -804,15 +898,8 @@
     }
     .guide-steps em {
       font-style: normal;
-      font-weight: 700;
+      font-weight: 500;
       color: var(--fog-dark-blue);
-    }
-
-    .guide-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      min-width: 0;
     }
 
     .fog-btn {
@@ -822,62 +909,69 @@
       width: 100%;
       min-height: 40px;
       padding: 8px 18px;
-      font-family: inherit;
-      font-size: 12.5px;
-      font-weight: 800;
+      font-family: var(--fog-font-display);
+      font-size: 13px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       border-radius: var(--fog-radius-btn);
       text-decoration: none;
       cursor: pointer;
       text-align: center;
-      border: 1.5px solid transparent;
+      border: 1px solid transparent;
       transition: background-color 0.15s ease, border-color 0.15s ease;
     }
     .fog-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
-    .fog-btn-primary { background: var(--fog-blue); color: var(--fog-white); }
-    .fog-btn-primary:hover { background: var(--fog-dark-blue); color: var(--fog-white); }
+    .fog-btn-primary { background: var(--fog-blue); color: var(--fog-white); border-color: var(--fog-blue); }
+    .fog-btn-primary:hover { background: var(--fog-dark-blue); border-color: var(--fog-dark-blue); color: var(--fog-white); }
 
-    /* SUBSCRIPTION URL INSIDE REVEALED DRAWER */
-    .url-box-section {
+    /* STANDALONE DIRECT FEED URL SUB-CARD (Between Top Picker/Instructions & Developer Feeds) */
+    .url-subcard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       background: var(--fog-gray-50);
       border: 1px solid var(--fog-gray);
-      border-radius: var(--fog-radius-btn);
-      padding: 8px 10px;
+      border-radius: var(--fog-radius-card);
+      padding: 9px 14px;
+      margin-bottom: 12px;
     }
     .url-box-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 13.5px;
+      font-weight: 500;
       color: var(--fog-dark-blue);
-      margin-bottom: 4px;
+      white-space: nowrap;
     }
     .url-input-wrap {
       display: flex;
-      gap: 6px;
+      flex: 1;
+      max-width: 560px;
+      gap: 8px;
     }
     .url-input {
       flex: 1;
       min-width: 0;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 12px;
-      padding: 6px 9px;
+      font-weight: 400;
+      padding: 6px 10px;
       min-height: 34px;
-      border: 1.5px solid var(--fog-gray);
+      border: 1px solid var(--fog-gray);
       border-radius: var(--fog-radius-btn);
       background: var(--fog-white);
       color: var(--fog-dark-gray);
     }
     .url-input:focus { outline: none; border-color: var(--fog-blue); box-shadow: 0 0 0 1px var(--fog-blue); }
     .copy-btn {
-      padding: 0 13px;
+      padding: 0 14px;
       min-height: 34px;
       background: var(--fog-dark-blue);
-      border: 1.5px solid var(--fog-dark-blue);
+      border: 1px solid var(--fog-dark-blue);
       border-radius: var(--fog-radius-btn);
-      font-family: inherit;
-      font-size: 11.5px;
-      font-weight: 800;
+      font-family: var(--fog-font-display);
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--fog-white);
@@ -892,7 +986,7 @@
     /* DEVELOPER & SYNDICATION FEEDS (Row of 4 cards) */
     .feeds-section {
       border-top: 1px solid var(--fog-gray);
-      padding-top: 12px;
+      padding-top: 11px;
     }
     .feeds-grid {
       display: grid;
@@ -914,29 +1008,32 @@
     .feed-name {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--fog-blue);
       margin-bottom: 2px;
       overflow-wrap: anywhere;
     }
     .feed-desc {
-      font-size: 11.5px;
+      font-size: 12px;
+      font-weight: 400;
       line-height: 1.35;
       color: var(--fog-dark-gray);
     }
 
     /* ==========================================================================
-       FOOTER: 3 rows — links / fiscal statement / copyright
+       FOOTER: Row 1 (Social Icons | Text Links) / Row 2 Fiscal / Row 3 Copyright
        ========================================================================== */
     .site-footer {
+      position: relative;
+      z-index: 2;
       width: 100%;
       flex-shrink: 0;
       background: rgba(0, 24, 44, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
       color: var(--fog-white);
-      padding: 10px 24px 12px 24px;
+      padding: 9px 24px 11px 24px;
       margin-top: auto;
     }
     .footer-inner {
@@ -949,30 +1046,76 @@
       text-align: center;
     }
     .footer-links {
-      font-size: 12.5px;
-      font-weight: 700;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4px 8px;
+      font-size: 13px;
+      font-weight: 400;
       line-height: 1.4;
     }
-    .footer-links a {
+    .footer-socials {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--fog-light-blue);
+      text-decoration: none;
+      padding: 2px;
+      border-radius: var(--fog-radius-btn);
+      transition: color 0.15s ease;
+    }
+    .footer-social-link:hover {
+      color: var(--fog-white);
+    }
+    .footer-social-link:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring-dark);
+    }
+    .footer-social-link svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+    .footer-pipe {
+      color: rgba(255, 255, 255, 0.38);
+      padding: 0 4px;
+      font-weight: 400;
+    }
+    .footer-text-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-text-links a {
+      color: var(--fog-light-blue);
+      font-weight: 500;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
-    .footer-links a:hover { color: var(--fog-white); }
-    .footer-links a:focus-visible { outline: none; box-shadow: var(--focus-ring-dark); }
-    .footer-links .sep {
+    .footer-text-links a:hover { color: var(--fog-white); }
+    .footer-text-links a:focus-visible { outline: none; box-shadow: var(--focus-ring-dark); }
+    .footer-text-links .sep {
       color: rgba(255, 255, 255, 0.4);
       padding: 0 6px;
     }
     .footer-sponsor {
-      font-size: 11.5px;
+      font-size: 12px;
+      font-weight: 400;
       line-height: 1.35;
       color: rgba(255, 255, 255, 0.82);
     }
     .footer-copyright {
-      font-size: 11px;
+      font-size: 11.5px;
+      font-weight: 400;
       line-height: 1.3;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.68);
     }
 
     /* ==========================================================================
@@ -980,25 +1123,29 @@
        ========================================================================== */
     @media (max-width: 860px) {
       .picker-options { grid-template-columns: repeat(2, 1fr); }
-      .guide-body { grid-template-columns: 1fr; gap: 12px; }
+      .guide-body { grid-template-columns: 1fr; gap: 10px; }
+      .url-subcard { flex-direction: column; align-items: stretch; gap: 6px; }
+      .url-input-wrap { max-width: 100%; }
       .feeds-grid { grid-template-columns: repeat(2, 1fr); }
-      .calendar-card { padding: 22px 20px; }
+      .calendar-card { padding: 20px 20px; }
       .card-title { font-size: 24px; }
     }
-    @media (max-width: 780px) {
-      .site-header-inner { padding: 26px 16px 10px 16px; }
-    }
     @media (max-width: 680px) {
-      .card-header-top { flex-direction: column; gap: 2px; }
-      .card-portal-link { margin-top: 2px; font-size: 12px; }
+      .site-header-inner { padding: 0 14px; height: 54px; }
+      .header-logo-img { height: 32px; }
+      .header-actions { gap: 6px; }
+      .header-divider { display: none; }
+      .header-btn { height: 32px; padding: 0 10px; font-size: 11.5px; }
+      .header-icon-btn { width: 32px; height: 32px; }
+      .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
     }
     @media (max-width: 540px) {
-      .header-crest { width: 36px; height: 36px; }
-      .header-title { font-size: 15.5px; }
-      .header-subline { font-size: 9.5px; }
+      .hide-xs { display: none; }
+      .header-logo-img { height: 28px; }
+      .header-btn { padding: 0 8px; font-size: 11px; gap: 5px; }
       .main-wrap { padding: 14px 12px 20px 12px; }
       .calendar-card { padding: 18px 15px; }
-      .card-title { font-size: 21px; }
+      .card-title { font-size: 22px; }
       .picker-options { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .picker-option { padding: 10px 10px; gap: 8px; }
       .url-input-wrap { flex-direction: column; }
@@ -2832,131 +2979,123 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         <span class="fog-sr-only">Philanthropy &amp; Giving</span>
       </button>
     </div>
-
-    <!-- Prominent Floating Chapter Badge / Menu Toggle -->
-    <button type="button" class="fog-window-progress-strip__toggle" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Interactive Progress Pride Chapter Menu">
-      <span class="fog-window-progress-strip__toggle-dot" aria-hidden="true"></span>
-      <span class="fog-window-progress-strip__toggle-text">PRIDE MENU</span>
-      <span class="fog-window-progress-strip__toggle-arrow" aria-hidden="true">&#9662;</span>
-    </button>
-
-    <!-- Backdrop -->
-    <div class="fog-pride-backdrop" id="pride-backdrop" hidden></div>
-
-    <!-- Interactive 11-Chapter Flyout Drawer -->
-    <div class="fog-window-progress-strip__drawer" id="pride-chapter-drawer" role="region" aria-label="Progress Pride Chapters Menu" hidden>
-      <div class="fog-window-progress-strip__drawer-inner">
-        <div class="fog-window-progress-strip__drawer-header">
-          <div class="fog-window-progress-strip__drawer-title-group">
-            <span class="fog-window-progress-strip__drawer-eyebrow">SF Fog RFC &bull; Interactive Waypoint Navigator</span>
-            <h3 class="fog-window-progress-strip__drawer-title">11 Chapters of Fog Rugby</h3>
-          </div>
-          <button type="button" class="fog-window-progress-strip__drawer-close" id="pride-drawer-close" aria-label="Close Pride Menu">&#10005; CLOSE</button>
-        </div>
-
-        <div class="fog-window-progress-strip__chapters-grid">
-          <!-- 1. Black: Heritage -->
-          <a href="https://www.fogrugby.com/mark-bingham" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--black" data-chapter-target="heritage">
-            <div class="fog-window-progress-strip__chapter-tag">01 &bull; BLACK</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Heritage &amp; Mark Bingham</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Hero of Flight 93, 2000 founding legacy, perpetual honors &amp; memorial roll.</p>
-            <span class="fog-window-progress-strip__chapter-action">Explore Memorial &rarr;</span>
-          </a>
-
-          <!-- 2. Brown: Foundations -->
-          <a href="https://www.fogrugby.com/board-of-directors" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--brown" data-chapter-target="foundations">
-            <div class="fog-window-progress-strip__chapter-tag">02 &bull; BROWN</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Foundations &amp; Charity</h4>
-            <p class="fog-window-progress-strip__chapter-desc">501(c)(3) fiscal sponsorship, Alice Hoagland legacy, bylaws &amp; board governance.</p>
-            <span class="fog-window-progress-strip__chapter-action">View Governance &rarr;</span>
-          </a>
-
-          <!-- 3. Light Blue: Identity -->
-          <a href="https://www.fogrugby.com/25-years-of-inclusive-rugby" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--light-blue" data-chapter-target="identity">
-            <div class="fog-window-progress-strip__chapter-tag">03 &bull; SKY BLUE</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Club Identity &amp; 25 Years</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Official crest, Barry Nebuly cloud waves, West Coast pioneers &amp; 25-year story.</p>
-            <span class="fog-window-progress-strip__chapter-action">Read Our Story &rarr;</span>
-          </a>
-
-          <!-- 4. Pink: Community -->
-          <a href="https://www.fogrugby.com/fog-fan-zone" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--pink" data-chapter-target="community">
-            <div class="fog-window-progress-strip__chapter-tag">04 &bull; PINK</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Community &amp; Third Half</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Supporters club, social gatherings, Pilsner Inn &amp; SF Eagle partner nights.</p>
-            <span class="fog-window-progress-strip__chapter-action">Join Supporters &rarr;</span>
-          </a>
-
-          <!-- 5. White: Inclusion -->
-          <a href="https://www.fogrugby.com/igr-clubs" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--white" data-chapter-target="inclusion">
-            <div class="fog-window-progress-strip__chapter-tag">05 &bull; WHITE</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Inclusion &amp; Belonging</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Inclusive rugby charter, USA Rugby &amp; IGR global club network, open to every body.</p>
-            <span class="fog-window-progress-strip__chapter-action">Global Community &rarr;</span>
-          </a>
-
-          <!-- 6. Red: Pathway to Rugby -->
-          <a href="https://www.fogrugby.com/p2r" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--red" data-chapter-target="pathway">
-            <div class="fog-window-progress-strip__chapter-tag">06 &bull; RED</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Pathway to Rugby</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Rookie clinics, boots &amp; mouthguard guide, non-contact touch &amp; player onboarding.</p>
-            <span class="fog-window-progress-strip__chapter-action">Start Rugby &rarr;</span>
-          </a>
-
-          <!-- 7. Orange: Squad Roster -->
-          <a href="https://www.fogrugby.com/squad" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--orange" data-chapter-target="squad">
-            <div class="fog-window-progress-strip__chapter-tag">07 &bull; ORANGE</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Squad Roster &amp; Coaches</h4>
-            <p class="fog-window-progress-strip__chapter-desc">A-Side &amp; B-Side lineups, coaching credentials, player trading cards &amp; caps.</p>
-            <span class="fog-window-progress-strip__chapter-action">Meet the Squad &rarr;</span>
-          </a>
-
-          <!-- 8. Yellow: Tournaments & Cups -->
-          <a href="https://www.fogrugby.com/bingham-cup" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--yellow" data-chapter-target="tournaments">
-            <div class="fog-window-progress-strip__chapter-tag">08 &bull; YELLOW</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Bingham Cups &amp; Silver</h4>
-            <p class="fog-window-progress-strip__chapter-desc">12 Bingham Cups, 25-year match archive, NorCal championships &amp; rivalries.</p>
-            <span class="fog-window-progress-strip__chapter-action">Tournament Hub &rarr;</span>
-          </a>
-
-          <!-- 9. Green: Grounds & Schedule -->
-          <a href="https://www.fogrugby.com/training" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--green" data-chapter-target="training">
-            <div class="fog-window-progress-strip__chapter-tag">09 &bull; GREEN</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Grounds &amp; Fixtures</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Tuesday @ Raymond Kimbell, Thursday @ Crocker Amazon, Saturday @ Treasure Island.</p>
-            <span class="fog-window-progress-strip__chapter-action">Pitch Directions &rarr;</span>
-          </a>
-
-          <!-- 10. Blue: Calendar & Systems -->
-          <a href="portal.html" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--blue" data-chapter-target="portals">
-            <div class="fog-window-progress-strip__chapter-tag">10 &bull; FOG BLUE</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Calendar &amp; Club Systems</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Interactive agenda portal, official links hub, suggestion box &amp; The Foghorn.</p>
-            <span class="fog-window-progress-strip__chapter-action">Open Portal &rarr;</span>
-          </a>
-
-          <!-- 11. Violet: Philanthropy -->
-          <a href="https://www.fogrugby.com/donate-to-the-fog" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--violet" data-chapter-target="giving">
-            <div class="fog-window-progress-strip__chapter-tag">11 &bull; VIOLET</div>
-            <h4 class="fog-window-progress-strip__chapter-name">Philanthropy &amp; Giving</h4>
-            <p class="fog-window-progress-strip__chapter-desc">Annual Giving Fund, player scholarships, community outreach &amp; corporate matching.</p>
-            <span class="fog-window-progress-strip__chapter-action">Support the Fog &rarr;</span>
-          </a>
-        </div>
-
-        <nav class="fog-window-progress-strip__systems" aria-label="Club quicklinks">
-          <span class="fog-window-progress-strip__systems-label">Quick Systems:</span>
-          <a href="https://www.fogrugby.com/">fogrugby.com</a>
-          <a href="https://www.fogrugby.com/season-fixtures-results">25-Year Match Archive</a>
-          <a href="portal.html">Calendar Portal</a>
-          <a href="links.html">Official Links Hub</a>
-          <a href="https://mautic.fogrugby.com/fog-rugby/suggestions">Suggestion Box</a>
-          <a href="https://mautic.fogrugby.com/fog-rugby/join-the-foghorn">Join The Foghorn</a>
-          <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram (@sffog)</a>
-        </nav>
-      </div>
-    </div>
   </aside>
+
+  <!-- PROGRESS PRIDE BACKDROP & 11-CHAPTER FLYOUT DRAWER -->
+  <div class="fog-pride-backdrop" id="pride-backdrop" hidden></div>
+
+  <div class="fog-window-progress-strip__drawer" id="pride-chapter-drawer" role="region" aria-label="Progress Pride Chapters Menu" hidden>
+    <div class="fog-window-progress-strip__drawer-inner">
+      <div class="fog-window-progress-strip__drawer-header">
+        <div class="fog-window-progress-strip__drawer-title-group">
+          <span class="fog-window-progress-strip__drawer-eyebrow">SF Fog RFC &bull; Interactive Waypoint Navigator</span>
+          <h3 class="fog-window-progress-strip__drawer-title">11 Chapters of Fog Rugby</h3>
+        </div>
+        <button type="button" class="fog-window-progress-strip__drawer-close" id="pride-drawer-close" aria-label="Close Pride Menu">&#10005; CLOSE</button>
+      </div>
+
+      <div class="fog-window-progress-strip__chapters-grid">
+        <!-- 1. Black: Heritage -->
+        <a href="https://www.fogrugby.com/mark-bingham" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--black" data-chapter-target="heritage">
+          <div class="fog-window-progress-strip__chapter-tag">01 &bull; BLACK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Heritage &amp; Mark Bingham</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Hero of Flight 93, 2000 founding legacy, perpetual honors &amp; memorial roll.</p>
+          <span class="fog-window-progress-strip__chapter-action">Explore Memorial &rarr;</span>
+        </a>
+
+        <!-- 2. Brown: Foundations -->
+        <a href="https://www.fogrugby.com/board-of-directors" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--brown" data-chapter-target="foundations">
+          <div class="fog-window-progress-strip__chapter-tag">02 &bull; BROWN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Foundations &amp; Charity</h4>
+          <p class="fog-window-progress-strip__chapter-desc">501(c)(3) fiscal sponsorship, Alice Hoagland legacy, bylaws &amp; board governance.</p>
+          <span class="fog-window-progress-strip__chapter-action">View Governance &rarr;</span>
+        </a>
+
+        <!-- 3. Light Blue: Identity -->
+        <a href="https://www.fogrugby.com/25-years-of-inclusive-rugby" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--light-blue" data-chapter-target="identity">
+          <div class="fog-window-progress-strip__chapter-tag">03 &bull; SKY BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Club Identity &amp; 25 Years</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Official crest, Barry Nebuly cloud waves, West Coast pioneers &amp; 25-year story.</p>
+          <span class="fog-window-progress-strip__chapter-action">Read Our Story &rarr;</span>
+        </a>
+
+        <!-- 4. Pink: Community -->
+        <a href="https://www.fogrugby.com/fog-fan-zone" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--pink" data-chapter-target="community">
+          <div class="fog-window-progress-strip__chapter-tag">04 &bull; PINK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Community &amp; Third Half</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Supporters club, social gatherings, Pilsner Inn &amp; SF Eagle partner nights.</p>
+          <span class="fog-window-progress-strip__chapter-action">Join Supporters &rarr;</span>
+        </a>
+
+        <!-- 5. White: Inclusion -->
+        <a href="https://www.fogrugby.com/igr-clubs" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--white" data-chapter-target="inclusion">
+          <div class="fog-window-progress-strip__chapter-tag">05 &bull; WHITE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Inclusion &amp; Belonging</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Inclusive rugby charter, USA Rugby &amp; IGR global club network, open to every body.</p>
+          <span class="fog-window-progress-strip__chapter-action">Global Community &rarr;</span>
+        </a>
+
+        <!-- 6. Red: Pathway to Rugby -->
+        <a href="https://www.fogrugby.com/p2r" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--red" data-chapter-target="pathway">
+          <div class="fog-window-progress-strip__chapter-tag">06 &bull; RED</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Pathway to Rugby</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Rookie clinics, boots &amp; mouthguard guide, non-contact touch &amp; player onboarding.</p>
+          <span class="fog-window-progress-strip__chapter-action">Start Rugby &rarr;</span>
+        </a>
+
+        <!-- 7. Orange: Squad Roster -->
+        <a href="https://www.fogrugby.com/squad" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--orange" data-chapter-target="squad">
+          <div class="fog-window-progress-strip__chapter-tag">07 &bull; ORANGE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Squad Roster &amp; Coaches</h4>
+          <p class="fog-window-progress-strip__chapter-desc">A-Side &amp; B-Side lineups, coaching credentials, player trading cards &amp; caps.</p>
+          <span class="fog-window-progress-strip__chapter-action">Meet the Squad &rarr;</span>
+        </a>
+
+        <!-- 8. Yellow: Tournaments & Cups -->
+        <a href="https://www.fogrugby.com/bingham-cup" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--yellow" data-chapter-target="tournaments">
+          <div class="fog-window-progress-strip__chapter-tag">08 &bull; YELLOW</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Bingham Cups &amp; Silver</h4>
+          <p class="fog-window-progress-strip__chapter-desc">12 Bingham Cups, 25-year match archive, NorCal championships &amp; rivalries.</p>
+          <span class="fog-window-progress-strip__chapter-action">Tournament Hub &rarr;</span>
+        </a>
+
+        <!-- 9. Green: Grounds & Schedule -->
+        <a href="https://www.fogrugby.com/training" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--green" data-chapter-target="training">
+          <div class="fog-window-progress-strip__chapter-tag">09 &bull; GREEN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Grounds &amp; Fixtures</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Tuesday @ Raymond Kimbell, Thursday @ Crocker Amazon, Saturday @ Treasure Island.</p>
+          <span class="fog-window-progress-strip__chapter-action">Pitch Directions &rarr;</span>
+        </a>
+
+        <!-- 10. Blue: Calendar & Systems -->
+        <a href="portal.html" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--blue" data-chapter-target="portals">
+          <div class="fog-window-progress-strip__chapter-tag">10 &bull; FOG BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Calendar &amp; Club Systems</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Interactive agenda portal, official links hub, suggestion box &amp; The Foghorn.</p>
+          <span class="fog-window-progress-strip__chapter-action">Open Portal &rarr;</span>
+        </a>
+
+        <!-- 11. Violet: Philanthropy -->
+        <a href="https://www.fogrugby.com/donate-to-the-fog" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--violet" data-chapter-target="giving">
+          <div class="fog-window-progress-strip__chapter-tag">11 &bull; VIOLET</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Philanthropy &amp; Giving</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Annual Giving Fund, player scholarships, community outreach &amp; corporate matching.</p>
+          <span class="fog-window-progress-strip__chapter-action">Support the Fog &rarr;</span>
+        </a>
+      </div>
+
+      <nav class="fog-window-progress-strip__systems" aria-label="Club quicklinks">
+        <span class="fog-window-progress-strip__systems-label">Quick Systems:</span>
+        <a href="https://www.fogrugby.com/">fogrugby.com</a>
+        <a href="https://www.fogrugby.com/season-fixtures-results">25-Year Match Archive</a>
+        <a href="portal.html">Calendar Portal</a>
+        <a href="links.html">Official Links Hub</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/suggestions">Suggestion Box</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/join-the-foghorn">Join The Foghorn</a>
+        <a href="https://www.instagram.com/fogrugby/" target="_blank" rel="noopener">Instagram (@fogrugby)</a>
+      </nav>
+    </div>
+  </div>
 
   <!-- BOTTOM FULL-WIDTH PROGRESS PRIDE BAR -->
   <div class="pride-stripe-bottom" aria-hidden="true">
@@ -2983,15 +3122,28 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
   <!-- MAIN PAGE LAYOUT -->
   <div class="page-layout">
 
-    <!-- Site Header: Crest & Club Title -->
-    <header class="site-header" role="banner">
+    <!-- White Site Header: Official Logo | Calendar Icon | Log In | Join | Pride Menu -->
+    <header class="site-header" id="site-header" role="banner">
       <div class="site-header-inner">
-        <div class="header-brand">
-          <img src="assets/img/fog-shield.png" alt="San Francisco Fog RFC crest" class="header-crest" width="40" height="40">
-          <div class="header-brand-text">
-            <a href="https://www.fogrugby.com/" class="header-title">San Francisco Fog Rugby</a>
-            <span class="header-subline">Rugby Football Club</span>
-          </div>
+        <a href="https://www.fogrugby.com/" class="header-logo-link">
+          <img src="assets/img/logo.svg" alt="San Francisco Fog Rugby Football Club" class="header-logo-img" width="114" height="38">
+        </a>
+
+        <div class="header-actions">
+          <a href="portal.html" class="header-icon-btn" aria-label="View Club Calendar" title="Club Calendar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="0"/>
+              <path d="M3.5 9.5h17M8 3v4M16 3v4"/>
+            </svg>
+          </a>
+          <span class="header-divider" aria-hidden="true"></span>
+          <a href="https://drupal.fogrugby.com/user/login" class="header-btn header-btn--secondary">Log In</a>
+          <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
+          <button type="button" class="header-btn header-btn--pride" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Interactive Progress Pride Menu">
+            <span class="pride-menu-pip" aria-hidden="true"></span>
+            <span><span class="hide-xs">Pride </span>Menu</span>
+            <span class="pride-menu-arrow" aria-hidden="true">&#9662;</span>
+          </button>
         </div>
       </div>
     </header>
@@ -3001,17 +3153,22 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       <div class="calendar-card">
 
         <div class="card-header">
-          <div class="card-header-top">
-            <span class="card-eyebrow">Official Club Calendar &amp; Fixtures</span>
-            <span class="card-portal-link">Prefer browser view? Open the <a href="portal.html">Calendar Portal</a>.</span>
+          <div class="card-header-copy">
+            <h1 class="card-title">Never Miss a Kickoff</h1>
+            <p class="card-subtitle">
+              Subscribe once to the official SF Fog RFC calendar. Matches, practice sessions at Kimbell Playground &amp; Crocker Amazon, socials, and tournament fixtures sync automatically across your devices.
+            </p>
           </div>
-          <h1 class="card-title">Never Miss a Kickoff</h1>
-          <p class="card-subtitle">
-            Subscribe once to the official SF Fog RFC calendar. Matches, practice sessions at Kimbell Playground &amp; Crocker Amazon, socials, and tournament fixtures sync automatically across your devices.
-          </p>
+          <a href="portal.html" class="card-view-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="0"/>
+              <path d="M3.5 9.5h17M8 3v4M16 3v4"/>
+            </svg>
+            <span>View Calendar</span>
+          </a>
         </div>
 
-        <!-- GUIDED CALENDAR PICKER -->
+        <!-- TOP PART: GUIDED CALENDAR APP PICKER & REVEALED INSTRUCTIONS -->
         <section class="picker" aria-labelledby="picker-heading">
           <h2 id="picker-heading" class="section-label">Select your calendar app</h2>
 
@@ -3047,7 +3204,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             </button>
 
             <button type="button" class="picker-option" data-guide="other" aria-expanded="false" aria-controls="guide-drawer">
-              <svg class="picker-logo picker-logo--stroke" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" aria-hidden="true" focusable="false">
+              <svg class="picker-logo picker-logo--stroke" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="square" aria-hidden="true" focusable="false">
                 <rect x="3" y="4.5" width="18" height="16.5"/>
                 <path d="M3 9.5h18M8 2.5v4M16 2.5v4M12 12.5v6M9 15.5h6"/>
               </svg>
@@ -3058,24 +3215,24 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             </button>
           </div>
 
-          <!-- Revealed Instructions Drawer (Compact 2-Column Split) -->
+          <!-- Revealed Instructions Drawer -->
           <div class="guide-drawer" id="guide-drawer" role="region" aria-live="polite" hidden>
             <div class="guide-header">
               <h3 class="guide-title" id="guide-active-title">Subscribe in Apple Calendar</h3>
               <button type="button" class="guide-close" id="guide-close-btn" aria-label="Close setup instructions">Close &times;</button>
             </div>
 
-            <div class="guide-body">
+            <div class="guide-body" id="guide-body">
               <div class="guide-steps-col">
-                <div class="guide-pane" id="guide-apple" data-title="Subscribe in Apple Calendar" data-cta-label="Subscribe in Apple Calendar" data-cta-type="webcal" data-url-label="Or copy direct feed URL:">
+                <div class="guide-pane" id="guide-apple" data-title="Subscribe in Apple Calendar" data-cta-label="Subscribe in Apple Calendar" data-cta-type="webcal">
                   <ol class="guide-steps">
-                    <li><span>Tap <em>Subscribe in Apple Calendar</em> on the right.</span></li>
+                    <li><span>Select <em>Subscribe in Apple Calendar</em>.</span></li>
                     <li><span>Confirm <em>Subscribe</em> when Calendar opens (on Mac, click <em>Subscribe</em> then <em>OK</em>).</span></li>
                     <li><span>Matches, pitch updates, and kickoff times sync automatically.</span></li>
                   </ol>
                 </div>
 
-                <div class="guide-pane" id="guide-google" data-title="Add to Google Calendar" data-cta-label="Add to Google Calendar" data-cta-type="gcal" data-url-label="Or paste in Google Calendar web (Other calendars &rarr; + &rarr; From URL):" hidden>
+                <div class="guide-pane" id="guide-google" data-title="Add to Google Calendar" data-cta-label="Add to Google Calendar" data-cta-type="gcal" hidden>
                   <ol class="guide-steps">
                     <li><span>Click <em>Add to Google Calendar</em> while signed in to Google.</span></li>
                     <li><span>Confirm <em>Add</em> &mdash; <em>SF Fog RFC</em> appears under <em>Other calendars</em>.</span></li>
@@ -3083,40 +3240,40 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
                   </ol>
                 </div>
 
-                <div class="guide-pane" id="guide-outlook" data-title="Add to Microsoft Outlook" data-cta-label="Add to Outlook" data-cta-type="outlook" data-url-label="Desktop Outlook? Copy &amp; paste (Add calendar &rarr; Subscribe from web):" hidden>
+                <div class="guide-pane" id="guide-outlook" data-title="Add to Microsoft Outlook" data-cta-label="Add to Outlook" data-cta-type="outlook" hidden>
                   <ol class="guide-steps">
                     <li><span>Click <em>Add to Outlook</em> for Outlook.com / Microsoft 365 web, then click <em>Import</em>.</span></li>
-                    <li><span>Using desktop Outlook? Copy the URL on the right &rarr; <em>Subscribe from web</em>.</span></li>
+                    <li><span>Using desktop Outlook? Copy the direct feed URL below &rarr; <em>Subscribe from web</em>.</span></li>
                     <li><span>Fixtures, venues, and kickoff changes update automatically.</span></li>
                   </ol>
                 </div>
 
-                <div class="guide-pane" id="guide-other" data-title="Subscribe in Any Calendar App" data-cta-type="none" data-url-label="Copy this iCalendar subscription URL:" hidden>
+                <div class="guide-pane" id="guide-other" data-title="Subscribe in Any Calendar App" data-cta-type="none" hidden>
                   <ol class="guide-steps">
-                    <li><span>Click <em>Copy Link</em> on the right to copy the official iCalendar URL.</span></li>
+                    <li><span>Click <em>Copy Link</em> in the direct feed URL bar below.</span></li>
                     <li><span>In your calendar app, choose <em>Add calendar</em>, <em>Subscribe from web</em>, or <em>From URL</em>.</span></li>
                     <li><span>Paste the link and save &mdash; schedule updates sync automatically.</span></li>
                   </ol>
                 </div>
               </div>
 
-              <div class="guide-actions">
-                <div class="guide-cta-wrap" id="guide-cta-wrap">
-                  <a class="fog-btn fog-btn-primary" id="guide-primary-cta" href="webcal://events.fogrugby.com/fog.ics">Subscribe in Apple Calendar</a>
-                </div>
-                <div class="url-box-section">
-                  <label for="ics-url-field" class="url-box-label" id="ics-url-label">Or copy direct feed URL:</label>
-                  <div class="url-input-wrap">
-                    <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics">
-                    <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
-                  </div>
-                </div>
+              <div class="guide-cta-wrap" id="guide-cta-wrap">
+                <a class="fog-btn fog-btn-primary" id="guide-primary-cta" href="webcal://events.fogrugby.com/fog.ics">Subscribe in Apple Calendar</a>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- DEVELOPER & SYNDICATION FEEDS -->
+        <!-- MIDDLE SUB-CARD: DIRECT FEED URL (Between Top Instructions & Developer Card) -->
+        <div class="url-subcard" role="region" aria-labelledby="ics-url-label">
+          <label for="ics-url-field" class="url-box-label" id="ics-url-label">Or copy direct feed URL:</label>
+          <div class="url-input-wrap">
+            <input type="text" id="ics-url-field" class="url-input" readonly value="https://events.fogrugby.com/fog.ics">
+            <button type="button" id="copy-btn" class="copy-btn">Copy Link</button>
+          </div>
+        </div>
+
+        <!-- BOTTOM PART: DEVELOPER & SYNDICATION FEEDS -->
         <section class="feeds-section" aria-labelledby="feeds-heading">
           <h2 id="feeds-heading" class="section-label">Developer &amp; Syndication Feeds</h2>
           <div class="feeds-grid">
@@ -3142,16 +3299,36 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       </div>
     </main>
 
-    <!-- FOOTER: Links / Fiscal Statement / Copyright -->
+    <!-- FOOTER: Social Icons | Links / Fiscal Statement / Copyright -->
     <footer class="site-footer" role="contentinfo">
       <div class="footer-inner">
-        <nav class="footer-links" aria-label="Club links">
-          <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep" aria-hidden="true">&middot;</span>
-          <a href="https://instagram.com/sffog" target="_blank" rel="noopener">Instagram</a><span class="sep" aria-hidden="true">&middot;</span>
-          <a href="https://facebook.com/sffog" target="_blank" rel="noopener">Facebook</a><span class="sep" aria-hidden="true">&middot;</span>
-          <a href="portal.html">Calendar Portal</a><span class="sep" aria-hidden="true">&middot;</span>
-          <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep" aria-hidden="true">&middot;</span>
-          <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener">Donate</a>
+        <nav class="footer-links" aria-label="Club social media and links">
+          <span class="footer-socials">
+            <a href="https://www.instagram.com/fogrugby/" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com/sffog" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917"/>
+              </svg>
+            </a>
+          </span>
+          <span class="footer-pipe" aria-hidden="true">|</span>
+          <span class="footer-text-links">
+            <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="portal.html">Calendar Portal</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener">Donate</a>
+          </span>
         </nav>
         <p class="footer-sponsor">
           The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
@@ -3214,16 +3391,25 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
       // 2. DRUPAL PROGRESS PRIDE CHAPTER MENU (fog-pride-menu)
       const stripContainer = document.querySelector('[data-component="fog-pride-menu"]');
+      const siteHeader = document.getElementById('site-header');
       const stripToggle = document.getElementById('progress-strip-toggle');
       const stripDrawer = document.getElementById('pride-chapter-drawer');
       const stripBackdrop = document.getElementById('pride-backdrop');
       const drawerClose = document.getElementById('pride-drawer-close');
       const segButtons = stripContainer ? Array.from(stripContainer.querySelectorAll('.fog-window-progress-strip__seg')) : [];
 
+      function syncDrawerTop() {
+        if (!stripDrawer || !siteHeader) return;
+        const bottom = Math.round(siteHeader.getBoundingClientRect().bottom);
+        stripDrawer.style.top = bottom + 'px';
+        stripDrawer.style.maxHeight = 'calc(100vh - ' + (bottom + 12) + 'px)';
+      }
+
       function togglePrideDrawer(open) {
         if (!stripDrawer || !stripToggle) return;
         const isCurrentlyOpen = !stripDrawer.hidden;
         const shouldOpen = open !== undefined ? open : !isCurrentlyOpen;
+        if (shouldOpen) syncDrawerTop();
         stripDrawer.hidden = !shouldOpen;
         if (stripBackdrop) stripBackdrop.hidden = !shouldOpen;
         stripToggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
@@ -3231,6 +3417,10 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
           btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
         });
       }
+
+      window.addEventListener('resize', function() {
+        if (stripDrawer && !stripDrawer.hidden) syncDrawerTop();
+      });
 
       if (stripToggle) {
         stripToggle.addEventListener('click', function(e) {
@@ -3287,12 +3477,12 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       const copyBtn = document.getElementById('copy-btn');
       const pickerButtons = Array.from(document.querySelectorAll('.picker-option[data-guide]'));
       const guideDrawer = document.getElementById('guide-drawer');
+      const guideBody = document.getElementById('guide-body');
       const guideTitle = document.getElementById('guide-active-title');
       const guideCloseBtn = document.getElementById('guide-close-btn');
       const guidePanes = Array.from(document.querySelectorAll('.guide-pane'));
       const guideCtaWrap = document.getElementById('guide-cta-wrap');
       const guidePrimaryCta = document.getElementById('guide-primary-cta');
-      const urlLabel = document.getElementById('ics-url-label');
       let activeGuideKey = null;
 
       if (urlField) urlField.value = ics;
@@ -3321,12 +3511,13 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             if (guideTitle && pane.dataset.title) {
               guideTitle.textContent = pane.dataset.title;
             }
-            if (urlLabel && pane.dataset.urlLabel) {
-              urlLabel.textContent = pane.dataset.urlLabel;
-            }
             const ctaType = pane.dataset.ctaType;
+            const hasCta = Boolean(ctaType && ctaType !== 'none');
+            if (guideBody) {
+              guideBody.classList.toggle('guide-body--full', !hasCta);
+            }
             if (guideCtaWrap && guidePrimaryCta) {
-              if (!ctaType || ctaType === 'none') {
+              if (!hasCta) {
                 guideCtaWrap.hidden = true;
               } else {
                 guideCtaWrap.hidden = false;
