@@ -5,11 +5,14 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:2026-11-07-gear-swap@events.fogrugby.com
-DTSTAMP:20261101T120000Z
+DTSTAMP:20261104T060000Z
+SEQUENCE:2
 DTSTART;TZID=America/Los_Angeles:20261107T140000
 DTEND;TZID=America/Los_Angeles:20261107T170000
-SUMMARY:Gear Exchange & Swap Meet
+SUMMARY:Fog Rugby Gear Exchange
 LOCATION:The Mothership Bar\, 3152 Mission St\, San Francisco\, CA 94110
-DESCRIPTION:Bring rugby gear to swap\, donate or pick up.
+DESCRIPTION:Swap\, sell\, or donate new or gently used rugby gear to this season's Fog players (Station 1: free gear with rookie priority\; Station 2: peer-to-peer sales & trades). Featuring drag performances by Foggers\, Mothership drink specials (21+)\, and a St. Anthony's donation drive (prioritizing men's clothing/new underwear/jeans/sneakers/sweatshirts\, children's shoes\, and unopened menstrual products). Details: https://fogrugby.com/gear-swap
+URL:https://fogrugby.com/gear-swap
+STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
