@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: San Francisco Fog RFC Events API
+  description: Public machine-readable event syndication feed for SF Fog Rugby fixtures, trainings, tournaments, and community events.
+  version: 1.0.0
+  contact:
+    name: San Francisco Fog RFC
+    url: https://www.fogrugby.com
+    email: secretary@fogrugby.com
+servers:
+  - url: https://events.fogrugby.com
+    description: Production CDN (GitHub Pages)
+paths:
+  /events.json:
+    get:
+      summary: Retrieve all club events and fixtures
+      description: Returns all upcoming matches, trainings, clinics, and club events in structured JSON.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calendar_name:
+                    type: string
+                  total_events:
+                    type: integer
+                  events:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        title:
+                          type: string
+                        start:
+                          type: string
+                        end:
+                          type: string
+                        location:
+                          type: string
+                        category:
+                          type: string
+  /fog.ics:
+    get:
+      summary: RFC 5545 iCalendar subscription feed
+      description: Standard iCal feed compatible with Apple Calendar, Google Calendar, Outlook, and feed readers.
+      responses:
+        '200':
+          description: iCalendar feed
+          content:
+            text/calendar:
+              schema:
+                type: string
+  /schema-events.jsonld:
+    get:
+      summary: Schema.org JSON-LD graph
+      description: Google Events Rich Results graph containing SportsEvent, SocialEvent, and Schedule entities.
+      responses:
+        '200':
+          description: Schema.org Event graph
+          content:
+            application/ld+json:
+              schema:
+                type: object

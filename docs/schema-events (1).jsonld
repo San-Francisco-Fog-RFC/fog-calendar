@@ -1,0 +1,1488 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-11-memorial-toast",
+      "name": "Fog 9/11 Memorial Toast — Pilsner Inn",
+      "startDate": "2026-09-11T19:00:00-07:00",
+      "endDate": "2026-09-11T23:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome.",
+      "location": {
+        "@type": "Place",
+        "name": "Pilsner Inn, 225 Church St, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-09-13T09:00:00-07:00",
+      "endDate": "2026-09-13T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center - 95 Justin Drive, San Francisco, CA 94112",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US",
+          "streetAddress": "St Mary's Rec Center - 95 Justin Drive"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "scheduleTimezone": "America/Los_Angeles",
+        "byDay": [
+          "https://schema.org/Sunday"
+        ],
+        "startTime": "09:00:00",
+        "endTime": "11:00:00",
+        "endDate": "2027-05-30"
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-kangaroo-court-beach-bash",
+      "name": "Kangaroo Court and Beach Bash",
+      "startDate": "2026-09-13T15:00:00-07:00",
+      "endDate": "2026-09-13T19:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E"
+      },
+      "description": "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful.",
+      "location": {
+        "@type": "Place",
+        "name": "Ocean Beach, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-09-26-magnitude-coat-check",
+      "name": "Magnitude Coat Check (volunteers)",
+      "startDate": "2026-09-26T20:00:00-07:00",
+      "endDate": "2026-09-27T04:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659"
+      },
+      "description": "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com",
+      "location": {
+        "@type": "Place",
+        "name": "SVN West, 10 Van Ness Ave, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-09-27-folsom-sunscreen-booth",
+      "name": "Folsom Street Fair Sunscreen Booth (volunteers)",
+      "startDate": "2026-09-27T10:00:00-07:00",
+      "endDate": "2026-09-27T19:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com",
+      "location": {
+        "@type": "Place",
+        "name": "Folsom Street Fair, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-06-pathways-1",
+      "name": "Pathway to Rugby — Session 1",
+      "startDate": "2026-10-06T19:30:00-07:00",
+      "endDate": "2026-10-06T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "description": "Check-in 7:30pm, session 8–10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-08-pathways-2",
+      "name": "Pathway to Rugby — Session 2",
+      "startDate": "2026-10-08T20:00:00-07:00",
+      "endDate": "2026-10-08T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-13-pathways-3",
+      "name": "Pathway to Rugby — Session 3",
+      "startDate": "2026-10-13T20:00:00-07:00",
+      "endDate": "2026-10-13T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-10-14-fog-turns-26",
+      "name": "The Fog turns 26",
+      "startDate": "2026-10-14",
+      "endDate": "2026-10-14",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Club anniversary. 26 years of inclusive rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-15-pathways-4",
+      "name": "Pathway to Rugby — Session 4",
+      "startDate": "2026-10-15T20:00:00-07:00",
+      "endDate": "2026-10-15T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-10-18-eagle-beer-bust",
+      "name": "Eagle Beer Bust (volunteers)",
+      "startDate": "2026-10-18T15:00:00-07:00",
+      "endDate": "2026-10-18T19:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com",
+      "location": {
+        "@type": "Place",
+        "name": "SF Eagle, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-20-pathways-5",
+      "name": "Pathway to Rugby — Session 5",
+      "startDate": "2026-10-20T20:00:00-07:00",
+      "endDate": "2026-10-20T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-22-pathways-6",
+      "name": "Pathway to Rugby — Session 6",
+      "startDate": "2026-10-22T20:00:00-07:00",
+      "endDate": "2026-10-22T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "description": "Session 8–10pm, then social at the Pilsner Inn afterwards.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields, Moscow St & Italy Ave, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-27-pathways-7",
+      "name": "Pathway to Rugby — Session 7",
+      "startDate": "2026-10-27T20:00:00-07:00",
+      "endDate": "2026-10-27T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/p2r"
+      },
+      "sport": "Rugby Union",
+      "description": "Final Pathways session. Preseason practice starts Thu 29 Oct — see you there.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground, Geary Blvd & Steiner St, San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-10-29-first-preseason-practice",
+      "name": "First Preseason Practice",
+      "startDate": "2026-10-29T19:45:00-07:00",
+      "endDate": "2026-10-29T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Preseason 2026 kicks off. Pathways graduates — this is your first full-squad session.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco — field TBC",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training",
+      "name": "Fog Training",
+      "startDate": "2026-11-03T19:45:00-08:00",
+      "endDate": "2026-11-03T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Tuesdays & Thursdays 7:45–10:00pm. First preseason practice Thu 29 Oct 2026; regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco — field TBC weekly",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "scheduleTimezone": "America/Los_Angeles",
+        "byDay": [
+          "https://schema.org/Tuesday",
+          "https://schema.org/Thursday"
+        ],
+        "startTime": "19:45:00",
+        "endTime": "22:00:00",
+        "endDate": "2027-05-16"
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-11-07-usf-away",
+      "name": "USF vs SF Fog",
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Preseason friendly. Kickoff TBD.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-11-14-usf-away",
+      "name": "USF vs SF Fog",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Preseason friendly. Kickoff TBD.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-03-rucktacular-weekend",
+      "name": "Rucktacular 2026 — San Diego",
+      "startDate": "2026-12-03",
+      "endDate": "2026-12-06",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform"
+      },
+      "sport": "Rugby Union",
+      "description": "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat.",
+      "location": {
+        "@type": "Place",
+        "name": "San Diego, CA",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-03-rucktacular-blacks-beach",
+      "name": "Rucktacular: Black's Beach Naked Rugby",
+      "startDate": "2026-12-03T14:00:00-08:00",
+      "endDate": "2026-12-03T18:00:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm.",
+      "location": {
+        "@type": "Place",
+        "name": "Black's Beach, San Diego",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://events.fogrugby.com/#event-2026-12-04-rucktacular-presidents-meeting",
+      "name": "Rucktacular: Presidents' Meeting",
+      "startDate": "2026-12-04T16:00:00-08:00",
+      "endDate": "2026-12-04T17:30:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Club presidents meetup. Hotel check-in and welcome table open all day Friday.",
+      "location": {
+        "@type": "Place",
+        "name": "San Diego — location TBD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-04-rucktacular-drink-up",
+      "name": "Rucktacular: Drink-Up at Number One Fifth",
+      "startDate": "2026-12-04T19:00:00-08:00",
+      "endDate": "2026-12-04T23:00:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "description": "Kick off the weekend together.",
+      "location": {
+        "@type": "Place",
+        "name": "Number One Fifth Ave, 3845 5th Ave, San Diego",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-05-rucktacular-tournament",
+      "name": "Rucktacular 2026 Tournament Day",
+      "startDate": "2026-12-05T07:00:00-08:00",
+      "endDate": "2026-12-05T17:00:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony.",
+      "location": {
+        "@type": "Place",
+        "name": "San Diego — pitch TBC",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-05-rucktacular-after-party",
+      "name": "Rucktacular: Official After Party at Rich's",
+      "startDate": "2026-12-05T21:00:00-08:00",
+      "endDate": "2026-12-05T23:59:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Rich's, 1051 University Ave, San Diego",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-06-rucktacular-survivors-brunch",
+      "name": "Rucktacular: Survivors Brunch",
+      "startDate": "2026-12-06T10:00:00-08:00",
+      "endDate": "2026-12-06T12:00:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Uptown Tavern, 1236 University Ave, San Diego",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-06-rucktacular-goodbye-drinks",
+      "name": "Rucktacular: Final Goodbye Drinks",
+      "startDate": "2026-12-06T12:00:00-08:00",
+      "endDate": "2026-12-06T14:00:00-08:00",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Number One Fifth Ave, 3845 5th Ave, San Diego",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Diego",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-12-12-preseason-closer",
+      "name": "Friendly TBD / Preseason closer",
+      "startDate": "2026-12-12",
+      "endDate": "2026-12-12",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Additional preseason friendlies may be added based on availability — details to players in early October.",
+      "location": {
+        "@type": "Place",
+        "name": "TBD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-01-19-regular-season-practice-begins",
+      "name": "Regular Season practice begins",
+      "startDate": "2027-01-19",
+      "endDate": "2027-01-19",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-02-06-fresno-home",
+      "name": "SF Fog vs Fresno (H)",
+      "startDate": "2027-02-06",
+      "endDate": "2027-02-06",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-02-20-ba-baracus-away",
+      "name": "BA Baracus vs SF Fog (A)",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-02-27-berkeley-home",
+      "name": "SF Fog vs Berkeley (H)",
+      "startDate": "2027-02-27",
+      "endDate": "2027-02-27",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-03-06-bye",
+      "name": "Bye Weekend",
+      "startDate": "2027-03-06",
+      "endDate": "2027-03-06",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-03-13-golden-dogs-away",
+      "name": "Golden Dogs vs SF Fog (A)",
+      "startDate": "2027-03-13",
+      "endDate": "2027-03-13",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - Fresno",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fresno",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-03-20-mendocino-home",
+      "name": "SF Fog vs Mendocino Steam Donkeys (H)",
+      "startDate": "2027-03-20",
+      "endDate": "2027-03-20",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-03-27-redding-away",
+      "name": "Redding vs SF Fog (A)",
+      "startDate": "2027-03-27",
+      "endDate": "2027-03-27",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - Redding",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Redding",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-04-03-bye",
+      "name": "Bye Weekend",
+      "startDate": "2027-04-03",
+      "endDate": "2027-04-03",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-04-10-stanislaus-home",
+      "name": "SF Fog vs Stanislaus Harlots (H)",
+      "startDate": "2027-04-10",
+      "endDate": "2027-04-10",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "San Francisco",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-04-17-marin-away",
+      "name": "Marin vs SF Fog (A)",
+      "startDate": "2027-04-17",
+      "endDate": "2027-04-17",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - Marin",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Marin County",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-04-24-chico-away",
+      "name": "Chico vs SF Fog (A)",
+      "startDate": "2027-04-24",
+      "endDate": "2027-04-24",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.",
+      "location": {
+        "@type": "Place",
+        "name": "TBC - Chico",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chico",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-05-08-ncrfu-semifinals",
+      "name": "NCRFU Semifinals (if qualified)",
+      "startDate": "2027-05-08",
+      "endDate": "2027-05-08",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "TBD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-05-15-ncrfu-finals",
+      "name": "NCRFU Finals (if qualified)",
+      "startDate": "2027-05-15",
+      "endDate": "2027-05-15",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "location": {
+        "@type": "Place",
+        "name": "TBD",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2027-05-28-igr-noram",
+      "name": "IGR NorAm 2027 — New Orleans",
+      "startDate": "2027-05-28",
+      "endDate": "2027-05-31",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "description": "Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come.",
+      "location": {
+        "@type": "Place",
+        "name": "New Orleans, LA",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New Orleans",
+          "addressRegion": "LA",
+          "addressCountry": "US"
+        }
+      }
+    }
+  ]
+}
