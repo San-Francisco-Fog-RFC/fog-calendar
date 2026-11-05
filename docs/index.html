@@ -100,20 +100,9 @@
       color: var(--fog-dark-gray);
       background-color: var(--fog-dark-blue);
       overflow-x: hidden;
+      overflow-y: auto;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Lock desktop viewports cleanly to 100vh with zero page scroll */
-    @media (min-width: 861px) and (min-height: 650px) {
-      html, body {
-        height: 100vh;
-        overflow: hidden;
-      }
-      .page-layout {
-        height: 100vh;
-        overflow: hidden;
-      }
     }
 
     /* Screen reader only utility */
@@ -2958,30 +2947,372 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       background: rgba(0, 36, 60, 0.65);
       backdrop-filter: blur(4px);
     }
-    /* Harmonize calendar controls inside card */
-    .control-bar {
-      background: transparent !important;
-      box-shadow: none !important;
-      border: none !important;
-      padding: 0 0 16px 0 !important;
+
+    /* Fullscreen Page & Card Layout */
+    .page-layout {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 8px;
+      padding-bottom: 24px;
     }
-    .control-inner {
-      padding: 0 !important;
-      max-width: 100% !important;
+    .main-wrap {
+      position: relative;
+      z-index: 2;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px 20px 48px 20px;
+      width: 100%;
     }
+    .calendar-card {
+      width: 100%;
+      max-width: 1320px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 48px rgba(0, 18, 30, 0.36), 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-radius: var(--fog-radius-card);
+      padding: 28px 32px 36px 32px;
+      margin: 0 auto;
+    }
+
+    /* CARD HEADER */
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--fog-dark-blue);
+    }
+    .card-header-copy {
+      min-width: 0;
+      flex: 1;
+    }
+    .card-header-eyebrow {
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--fog-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 4px;
+    }
+    .card-title {
+      font-family: var(--fog-font-display);
+      font-size: 32px;
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--fog-dark-blue);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .card-subtitle {
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--fog-dark-gray);
+      margin-top: 6px;
+      max-width: 760px;
+    }
+    .card-header-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    /* CONTROLS HUB */
+    .calendar-controls-hub {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .controls-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background-color: var(--fog-gray-50);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-card);
+      padding: 10px 16px;
+    }
+
+    .month-nav-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .month-heading-label {
+      font-family: var(--fog-font-display);
+      font-weight: 800;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--fog-dark-blue);
+      min-width: 180px;
+      text-align: center;
+    }
+
+    .ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 12px;
+      background-color: var(--fog-white);
+      color: var(--fog-dark-blue);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-btn);
+      font-family: var(--fog-font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .ctrl-btn:hover {
+      border-color: var(--fog-blue);
+      color: var(--fog-blue);
+      background-color: var(--fog-white);
+    }
+    .ctrl-btn--today {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-dark-blue);
+    }
+    .ctrl-btn--today:hover {
+      background-color: var(--fog-blue);
+      border-color: var(--fog-blue);
+      color: var(--fog-white);
+    }
+    .ctrl-btn--add {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-blue);
+    }
+    .ctrl-btn--add:hover {
+      background-color: var(--fog-dark-blue);
+      border-color: var(--fog-dark-blue);
+    }
+
+    .view-toggle-group {
+      display: inline-flex;
+      background-color: var(--fog-gray);
+      border-radius: var(--fog-radius-btn);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .view-toggle-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fog-dark-gray);
+      padding: 6px 14px;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .view-toggle-btn.active {
+      background-color: var(--fog-white);
+      color: var(--fog-blue);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .search-wrap {
+      position: relative;
+      min-width: 240px;
+      flex-grow: 1;
+      max-width: 320px;
+    }
+    .search-icon-svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: #6a737d;
+      pointer-events: none;
+    }
+    .search-field {
+      width: 100%;
+      height: 34px;
+      font-family: var(--fog-font-body);
+      font-size: 13px;
+      padding: 0 12px 0 32px;
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-btn);
+      background-color: var(--fog-white);
+      color: var(--fog-dark-gray);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .search-field:focus {
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
+    }
+
+    /* Filter Row */
+    .controls-filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      padding: 0 4px;
+    }
+
+    .filter-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group-title {
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #555555;
+      margin-right: 2px;
+    }
+
+    .filter-chips {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      background-color: var(--fog-white);
+      border: 1px solid var(--fog-gray);
+      color: var(--fog-dark-blue);
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 11px;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1;
+    }
+    .chip:hover {
+      border-color: var(--fog-blue);
+      color: var(--fog-blue);
+      background-color: var(--fog-gray-50);
+    }
+    .chip.active {
+      background-color: var(--fog-blue) !important;
+      color: var(--fog-white) !important;
+      border-color: var(--fog-blue) !important;
+    }
+    .filter-group--status .chip.active {
+      background-color: var(--fog-dark-blue) !important;
+      border-color: var(--fog-dark-blue) !important;
+      color: var(--fog-white) !important;
+    }
+
+    /* Calendar Grid Enhancements */
     .main-container {
       padding: 0 !important;
       max-width: 100% !important;
     }
     .calendar-grid-card {
-      box-shadow: none !important;
-      border: 1px solid #DCDDDE !important;
-      border-radius: 2px !important;
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-card);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 36, 60, 0.08);
+      background-color: var(--fog-white);
     }
-    @media (max-width: 768px) {
-      .card-header { flex-direction: column; align-items: flex-start; }
-      .control-row-top { flex-direction: column; align-items: stretch; gap: 12px; }
-      .header-actions { flex-wrap: wrap; }
+    .calendar-weekdays-header {
+      background-color: var(--fog-dark-blue);
+      border-bottom: 2px solid var(--fog-blue);
+    }
+    .calendar-weekday {
+      padding: 10px 4px;
+      font-family: var(--fog-font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fog-white);
+    }
+
+    /* Footer admin utility links */
+    .footer-admin-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 11px;
+    }
+    .footer-admin-badge {
+      font-family: var(--fog-font-display);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--fog-radius-btn);
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--fog-gray);
+    }
+    .footer-admin-btn {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--fog-gray);
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: var(--fog-radius-btn);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .footer-admin-btn:hover {
+      color: var(--fog-white);
+      border-color: var(--fog-white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 860px) {
+      .calendar-card { padding: 20px 16px 24px 16px; }
+      .card-title { font-size: 24px; }
+      .controls-top-row { flex-direction: column; align-items: stretch; gap: 12px; }
+      .month-nav-group { justify-content: center; }
+      .view-toggle-group { justify-content: center; }
+      .search-wrap { max-width: 100%; min-width: 0; }
+      .controls-filter-row { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 
@@ -3177,7 +3508,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
           <img src="assets/img/logo.svg" alt="San Francisco Fog Rugby Football Club" class="header-logo-img" width="114" height="38">
         </a>
 
-                <div class="header-actions">
+        <div class="header-actions">
           <button type="button" id="btn-open-subscribe" class="header-btn header-btn--primary" style="display: inline-flex; align-items: center; gap: 6px;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true" focusable="false">
               <rect x="3.5" y="5" width="17" height="15.5" rx="0"/>
@@ -3185,10 +3516,6 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             </svg>
             <span>Subscribe &amp; Sync</span>
           </button>
-          <span class="header-divider" aria-hidden="true"></span>
-          <span id="auth-status-badge" class="auth-badge" style="font-size: 11px; padding: 4px 8px; border-radius: 2px; font-weight: 700; background: rgba(0,36,60,0.06); color: #00243C;">Public Schedule</span>
-          <button id="btn-open-verifier" class="header-btn header-btn--secondary" aria-haspopup="dialog" style="padding: 6px 10px; font-size: 12px;">Verify Files</button>
-          <button id="btn-toggle-admin" class="header-btn header-btn--secondary" aria-haspopup="dialog" style="padding: 6px 10px; font-size: 12px;">Admin Access</button>
           <span class="header-divider" aria-hidden="true"></span>
           <a href="https://drupal.fogrugby.com/user/login" class="header-btn header-btn--secondary">Log In</a>
           <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
@@ -3201,81 +3528,83 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       </div>
     </header>
 
-    <!-- Main Content: Guided Single-Panel Frosted Card -->
-    
     <!-- Main Content: Floating Atmospheric Team Calendar Card -->
-    <main class="main-wrap" id="main" style="max-width: 1280px; width: 100%; margin: 0 auto; padding: 20px 16px;">
-      <div class="calendar-card" style="padding: 24px 28px; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: 0 16px 40px rgba(0, 36, 60, 0.16); border-radius: 4px;">
+    <main class="main-wrap" id="main">
+      <div class="calendar-card">
 
-        <div class="card-header" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid #00243C;">
+        <div class="card-header">
           <div class="card-header-copy">
-            <div style="font-size: 11px; font-weight: 800; color: #006EB6; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px;">Official Match Fixtures &amp; Events</div>
-            <h1 class="card-title" style="margin: 0; font-size: 28px; line-height: 1.15; font-weight: 800; color: #00243C; letter-spacing: 0.02em;">SF Fog RFC &middot; Team Calendar</h1>
-            <p class="card-subtitle" style="margin: 6px 0 0 0; font-size: 14px; color: #444444; line-height: 1.5;">
+            <div class="card-header-eyebrow">Official Match Fixtures &amp; Events</div>
+            <h1 class="card-title">SF Fog RFC &middot; Team Calendar</h1>
+            <p class="card-subtitle">
               Matches, practice sessions at Raymond Kimbell &amp; Crocker Amazon, tournaments, and social events.
             </p>
           </div>
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <button type="button" class="fog-btn fog-btn--secondary" id="btn-card-subscribe" style="background: #006EB6; color: #FFFFFF; border-radius: 2px; padding: 8px 14px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; border: none; cursor: pointer;">
-              📲 Subscribe &amp; Sync Calendar
+          <div class="card-header-cta">
+            <button type="button" class="header-btn header-btn--primary" id="btn-card-subscribe" style="display: inline-flex; align-items: center; gap: 8px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true" focusable="false">
+                <rect x="3.5" y="5" width="17" height="15.5" rx="0"/>
+                <path d="M3.5 9.5h17M8 3v4M16 3v4"/>
+              </svg>
+              <span>Subscribe &amp; Sync Calendar</span>
             </button>
           </div>
         </div>
 
-        <nav class="control-bar" aria-label="Calendar Controls">
-    <div class="control-inner">
-      <div class="control-row-top">
-        <div class="view-nav-group">
-          <!-- Segmented View Toggle -->
-          <div class="segmented-control" role="group" aria-label="View Mode">
-            <button id="btn-view-month" class="segmented-btn active" type="button">Month Grid</button>
-            <button id="btn-view-agenda" class="segmented-btn" type="button">Agenda List</button>
+        <nav class="calendar-controls-hub" aria-label="Calendar Controls">
+          <!-- Top Controls: Month Nav, View Toggle, Search -->
+          <div class="controls-top-row">
+            <div class="month-nav-group">
+              <button id="btn-prev-month" class="ctrl-btn" aria-label="Previous Month">&lsaquo; Prev</button>
+              <span id="label-current-month" class="month-heading-label">November 2026</span>
+              <button id="btn-next-month" class="ctrl-btn" aria-label="Next Month">Next &rsaquo;</button>
+              <button id="btn-today" class="ctrl-btn ctrl-btn--today">Today</button>
+            </div>
+
+            <div class="view-toggle-group" role="group" aria-label="View Mode">
+              <button id="btn-view-month" class="view-toggle-btn active" type="button">Month Grid</button>
+              <button id="btn-view-agenda" class="view-toggle-btn" type="button">Agenda List</button>
+            </div>
+
+            <div class="search-wrap">
+              <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="search-input" class="search-field" placeholder="Search fixtures, venues, notes..." aria-label="Search events">
+            </div>
+
+            <!-- Add Event (Admin Mode) -->
+            <button id="btn-new-event" class="ctrl-btn ctrl-btn--add" style="display: none;">+ Add Event</button>
           </div>
 
-          <!-- Month Navigation -->
-          <div class="month-nav">
-            <button id="btn-prev-month" class="btn btn-secondary btn-sm" aria-label="Previous Month">&lt; Prev</button>
-            <span id="label-current-month" class="month-label">October 2026</span>
-            <button id="btn-next-month" class="btn btn-secondary btn-sm" aria-label="Next Month">Next &gt;</button>
-            <button id="btn-today" class="btn btn-secondary btn-sm">Today</button>
+          <!-- Filter Chips Row -->
+          <div class="controls-filter-row filter-chips-row">
+            <div class="filter-group">
+              <span class="filter-group-title">Category:</span>
+              <div class="filter-chips">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="fixture">Fixtures</button>
+                <button class="chip" data-filter="training">Training</button>
+                <button class="chip" data-filter="pathway">Pathway</button>
+                <button class="chip" data-filter="tournament">Tournaments</button>
+                <button class="chip" data-filter="social">Socials</button>
+                <button class="chip" data-filter="community">Community</button>
+                <button class="chip" data-filter="board">Board</button>
+              </div>
+            </div>
+
+            <div class="filter-group filter-group--status">
+              <span class="filter-group-title">Status:</span>
+              <div class="filter-chips">
+                <button class="chip active" data-status="all">All</button>
+                <button class="chip" data-status="confirmed">Confirmed</button>
+                <button class="chip" data-status="tentative">Tentative</button>
+                <button class="chip" data-status="cancelled">Cancelled</button>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="header-actions">
-          <!-- Search Input -->
-          <div class="search-box">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="search-input" placeholder="Search fixtures, venues, notes..." aria-label="Search events">
-          </div>
-
-          <!-- Add Event (Admin Mode) -->
-          <button id="btn-new-event" class="btn btn-primary btn-sm" style="display: none;">+ Add Event</button>
-        </div>
-      </div>
-
-      <!-- Filter Chips Row -->
-      <div class="filter-chips-row">
-        <span class="filter-label">Category:</span>
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="fixture">Fixtures</button>
-        <button class="chip" data-filter="training">Training</button>
-        <button class="chip" data-filter="pathway">Pathway</button>
-        <button class="chip" data-filter="tournament">Tournaments</button>
-        <button class="chip" data-filter="social">Socials</button>
-        <button class="chip" data-filter="community">Community</button>
-        <button class="chip" data-filter="board">Board</button>
-
-        <span class="filter-label" style="margin-left: 12px;">Status:</span>
-        <button class="chip active" data-status="all">All</button>
-        <button class="chip" data-status="confirmed">Confirmed</button>
-        <button class="chip" data-status="tentative">Tentative</button>
-        <button class="chip" data-status="cancelled">Cancelled</button>
-      </div>
-    </div>
-  </nav>
+        </nav>
 
   <!-- Main Content Container -->
   <main class="main-container">
@@ -3797,6 +4126,11 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener">Donate</a>
           </span>
         </nav>
+        <nav class="footer-admin-links" aria-label="Developer and Admin Tools">
+          <span id="auth-status-badge" class="auth-badge footer-admin-badge">Public Schedule</span>
+          <button id="btn-open-verifier" type="button" class="footer-admin-btn" aria-haspopup="dialog">Verify Files</button>
+          <button id="btn-toggle-admin" type="button" class="footer-admin-btn" aria-haspopup="dialog">Admin Access</button>
+        </nav>
         <p class="footer-sponsor">
           The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
         </p>
@@ -4110,6 +4444,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       const FILE_PATH = 'events.yml';
       const LOCAL_PATH = '../events.yml';
       const CIVICRM_API_URL = 'https://drupal.fogrugby.com/api/events.json';
+      const CIVICRM_FALLBACK_URL = 'https://fogrugby.koalahug.life/api/events.json';
       const GITHUB_RAW_FALLBACK = 'https://raw.githubusercontent.com/' + REPO_OWNER + '/' + REPO_NAME + '/main/' + FILE_PATH;
       const GITHUB_API_URL = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + FILE_PATH;
 
@@ -4449,8 +4784,19 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       async function loadCalendarData() {
         // 1. First attempt to load real-time events from CiviCRM REST endpoint
         try {
-          const civiRes = await fetch(CIVICRM_API_URL, { headers: { 'Accept': 'application/json' } });
-          if (civiRes.ok) {
+          let civiRes = null;
+          try {
+            civiRes = await fetch(CIVICRM_API_URL, { headers: { 'Accept': 'application/json' } });
+            if (!civiRes.ok) civiRes = null;
+          } catch (e) {
+            civiRes = null;
+          }
+
+          if (!civiRes) {
+            civiRes = await fetch(CIVICRM_FALLBACK_URL, { headers: { 'Accept': 'application/json' } });
+          }
+
+          if (civiRes && civiRes.ok) {
             const civiData = await civiRes.json();
             if (civiData && Array.isArray(civiData.events) && civiData.events.length > 0) {
               const mappedEvents = civiData.events.map(ev => {
