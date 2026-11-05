@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Board Executive Resource Hub | San Francisco Fog RFC</title>
+  <meta name="description" content="San Francisco Fog RFC Board Executive Resource Hub. Fiduciary ledgers, IRS tax status, athletic operations, corporate bylaws, and club administration.">
+  <base target="_blank">
+  <link rel="icon" type="image/png" href="https://events.fogrugby.com/assets/img/fog-crest-white.png">
+
+  <!-- Self-Hosted Futura PT Typography -->
+  <style>
+    @font-face {
+      font-family: "Futura PT";
+      src: url("https://events.fogrugby.com/assets/fonts/futura-pt-book.woff2") format("woff2"),
+           url("https://events.fogrugby.com/assets/fonts/FuturaPT-Book.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("https://events.fogrugby.com/assets/fonts/FuturaPT-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("https://events.fogrugby.com/assets/fonts/futura-pt-demi.woff2") format("woff2"),
+           url("https://events.fogrugby.com/assets/fonts/FuturaPT-Demi.otf") format("opentype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Futura PT";
+      src: url("https://events.fogrugby.com/assets/fonts/futura-pt-bold.woff2") format("woff2"),
+           url("https://events.fogrugby.com/assets/fonts/FuturaPT-Bold.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ==========================================================================
+       SF FOG RUGBY FOOTBALL CLUB &middot; OFFICIAL DESIGN SYSTEM TOKENS
+       Strict Six-Color System: #006EB6, #24A0F1, #00243C, #DCDDDE, #141718, #FFFFFF
+       Zero-Pill Law: border-radius strictly 2px on buttons/badges; 4px on cards.
+       ========================================================================== */
+    :root {
+      --fog-blue: #006EB6;
+      --fog-light-blue: #24A0F1;
+      --fog-dark-blue: #00243C;
+      --fog-gray: #DCDDDE;
+      --fog-gray-50: #F1F2F3;
+      --fog-dark-gray: #141718;
+      --fog-white: #FFFFFF;
+      --fog-black: #000000;
+      --fog-green: #157A38;
+      --fog-red: #C4321F;
+
+      --pride-black: #000000;
+      --pride-brown: #613915;
+      --pride-light-blue: #74D7EE;
+      --pride-pink: #FFAFC8;
+      --pride-white: #FFFFFF;
+      --pride-red: #E40303;
+      --pride-orange: #FF8C00;
+      --pride-yellow: #FFED00;
+      --pride-green: #008026;
+      --pride-blue: #004DFF;
+      --pride-violet: #750787;
+
+      --fog-radius-btn: 2px;
+      --fog-radius-card: 4px;
+      --fog-container-max: 1280px;
+      --fog-container-pad: 20px;
+      --fog-font-display: "Futura PT", Futura, Arial, Helvetica, sans-serif;
+      --fog-font-body: "Futura PT", Futura, Arial, Helvetica, sans-serif;
+      --focus-ring: 0 0 0 2px var(--fog-white), 0 0 0 4px var(--fog-blue);
+      --focus-ring-dark: 0 0 0 2px var(--fog-dark-blue), 0 0 0 4px var(--fog-light-blue);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: var(--fog-font-body);
+      font-weight: 400;
+      color: var(--fog-dark-gray);
+      background-color: var(--fog-dark-blue);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Screen Reader Only Utility */
+    .fog-sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    /* ATMOSPHERIC BACKGROUND & VIGNETTE */
+    .fog-bg-container {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .fog-bg-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: opacity 1.4s ease-in-out;
+      opacity: 0;
+    }
+    .fog-bg-layer.active {
+      opacity: 1;
+    }
+    .fog-bg-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(0, 36, 60, 0.42) 0%, rgba(0, 18, 30, 0.82) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* TOP PROGRESS PRIDE STRIP */
+    .fog-window-progress-strip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      z-index: 10002;
+      background-color: var(--fog-dark-blue);
+      transition: height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fog-window-progress-strip:hover {
+      height: 11px;
+    }
+    .fog-window-progress-strip__bar {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .fog-window-progress-strip__seg {
+      flex: 1;
+      height: 100%;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      outline: none;
+      border-radius: 0;
+      transition: filter 0.15s ease, transform 0.15s ease;
+    }
+    .fog-window-progress-strip__seg:hover,
+    .fog-window-progress-strip__seg:focus-visible {
+      filter: brightness(1.25);
+      transform: scaleY(1.35);
+      z-index: 2;
+    }
+    .fog-window-progress-strip__seg--black      { background-color: var(--pride-black); }
+    .fog-window-progress-strip__seg--brown      { background-color: var(--pride-brown); }
+    .fog-window-progress-strip__seg--light-blue { background-color: var(--pride-light-blue); }
+    .fog-window-progress-strip__seg--pink       { background-color: var(--pride-pink); }
+    .fog-window-progress-strip__seg--white      { background-color: var(--pride-white); box-shadow: inset 0 -1px 0 var(--fog-gray); }
+    .fog-window-progress-strip__seg--red        { background-color: var(--pride-red); }
+    .fog-window-progress-strip__seg--orange     { background-color: var(--pride-orange); }
+    .fog-window-progress-strip__seg--yellow     { background-color: var(--pride-yellow); }
+    .fog-window-progress-strip__seg--green      { background-color: var(--pride-green); }
+    .fog-window-progress-strip__seg--blue       { background-color: var(--pride-blue); }
+    .fog-window-progress-strip__seg--violet     { background-color: var(--pride-violet); }
+
+    /* PROGRESS PRIDE FLYOUT DRAWER & BACKDROP */
+    .fog-pride-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 18, 30, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 9995;
+    }
+    .fog-pride-backdrop[hidden] {
+      display: none !important;
+    }
+    .fog-window-progress-strip__drawer {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background-color: var(--fog-dark-blue);
+      border-bottom: 4px solid var(--fog-blue);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+    .fog-window-progress-strip__drawer[hidden] {
+      display: none !important;
+    }
+    .fog-window-progress-strip__drawer-inner {
+      max-width: var(--fog-container-max);
+      margin: 0 auto;
+      padding: 24px var(--fog-container-pad) 20px var(--fog-container-pad);
+    }
+    .fog-window-progress-strip__drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 12px;
+    }
+    .fog-window-progress-strip__drawer-eyebrow {
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fog-light-blue);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .fog-window-progress-strip__drawer-title {
+      font-family: var(--fog-font-display);
+      font-size: 21px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--fog-white);
+      margin: 0;
+    }
+    .fog-window-progress-strip__drawer-close {
+      background: transparent;
+      color: var(--fog-white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: var(--fog-radius-btn);
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 6px 13px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .fog-window-progress-strip__drawer-close:hover {
+      background-color: var(--fog-blue);
+      border-color: var(--fog-blue);
+    }
+    .fog-window-progress-strip__chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+      gap: 12px;
+    }
+    .fog-window-progress-strip__chapter-card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--fog-white);
+      color: var(--fog-dark-gray);
+      text-decoration: none;
+      padding: 13px 15px;
+      border-radius: 0;
+      border-left: 6px solid var(--fog-blue);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .fog-window-progress-strip__chapter-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+    }
+    .fog-window-progress-strip__chapter-card--black      { border-left-color: var(--pride-black); }
+    .fog-window-progress-strip__chapter-card--brown      { border-left-color: var(--pride-brown); }
+    .fog-window-progress-strip__chapter-card--light-blue { border-left-color: var(--pride-light-blue); }
+    .fog-window-progress-strip__chapter-card--pink       { border-left-color: var(--pride-pink); }
+    .fog-window-progress-strip__chapter-card--white      { border-left-color: var(--fog-gray); }
+    .fog-window-progress-strip__chapter-card--red        { border-left-color: var(--pride-red); }
+    .fog-window-progress-strip__chapter-card--orange     { border-left-color: var(--pride-orange); }
+    .fog-window-progress-strip__chapter-card--yellow     { border-left-color: var(--pride-yellow); }
+    .fog-window-progress-strip__chapter-card--green      { border-left-color: var(--pride-green); }
+    .fog-window-progress-strip__chapter-card--blue       { border-left-color: var(--pride-blue); }
+    .fog-window-progress-strip__chapter-card--violet     { border-left-color: var(--pride-violet); }
+
+    .fog-window-progress-strip__chapter-tag {
+      font-family: var(--fog-font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--fog-blue);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .fog-window-progress-strip__chapter-name {
+      font-family: var(--fog-font-display);
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--fog-dark-blue);
+      margin: 0 0 4px 0;
+    }
+    .fog-window-progress-strip__chapter-desc {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.42;
+      color: var(--fog-dark-gray);
+      margin: 0 0 9px 0;
+      flex: 1;
+    }
+    .fog-window-progress-strip__chapter-action {
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--fog-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .fog-window-progress-strip__systems {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 18px;
+    }
+    .fog-window-progress-strip__systems-label {
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fog-light-blue);
+    }
+    .fog-window-progress-strip__systems a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--fog-white);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .fog-window-progress-strip__systems a:hover {
+      color: var(--fog-light-blue);
+    }
+
+    /* BOTTOM PROGRESS PRIDE BAR */
+    .pride-stripe-bottom {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 5px;
+      display: flex;
+      z-index: 9990;
+    }
+    .pride-bar {
+      flex: 1;
+      height: 100%;
+    }
+
+    /* PAGE LAYOUT */
+    .page-layout {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 8px;
+      padding-bottom: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SITE HEADER */
+    .site-header {
+      position: relative;
+      z-index: 10001;
+      width: 100%;
+      flex-shrink: 0;
+      background-color: var(--fog-white);
+      border-bottom: 1px solid var(--fog-gray);
+      color: var(--fog-dark-blue);
+    }
+    .site-header-inner {
+      max-width: var(--fog-container-max);
+      margin: 0 auto;
+      height: 60px;
+      padding: 0 var(--fog-container-pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .header-logo-img {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .header-divider {
+      width: 1px;
+      height: 22px;
+      background-color: var(--fog-gray);
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 36px;
+      padding: 0 14px;
+      font-family: var(--fog-font-display);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--fog-radius-btn);
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .header-btn--secondary {
+      background-color: var(--fog-white);
+      color: var(--fog-dark-blue);
+      border-color: var(--fog-gray);
+    }
+    .header-btn--secondary:hover {
+      border-color: var(--fog-dark-blue);
+      background-color: var(--fog-gray-50);
+    }
+    .header-btn--primary {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-blue);
+    }
+    .header-btn--primary:hover {
+      background-color: var(--fog-dark-blue);
+      border-color: var(--fog-dark-blue);
+    }
+    .header-btn--pride {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-dark-blue);
+    }
+    .header-btn--pride:hover,
+    .header-btn--pride[aria-expanded="true"] {
+      background-color: var(--fog-blue);
+      border-color: var(--fog-blue);
+    }
+    .pride-menu-pip {
+      width: 9px;
+      height: 9px;
+      border-radius: 0;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--pride-red), var(--pride-yellow), var(--pride-green), var(--pride-blue));
+    }
+    .pride-menu-arrow {
+      font-size: 9px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+    .header-btn--pride[aria-expanded="true"] .pride-menu-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* MAIN BOARD CONTENT WRAPPER */
+    .main-wrap {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px 20px 32px 20px;
+    }
+    .board-card {
+      width: 100%;
+      max-width: var(--fog-container-max);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 20px 48px rgba(0, 18, 30, 0.4), 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-radius: var(--fog-radius-card);
+      padding: 28px 32px;
+    }
+
+    /* BOARD CARD HEADER */
+    .board-header {
+      border-bottom: 1px solid var(--fog-gray);
+      padding-bottom: 20px;
+      margin-bottom: 22px;
+    }
+    .board-header__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .board-header__eyebrow {
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fog-blue);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .board-header__title {
+      font-family: var(--fog-font-display);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+      margin-bottom: 6px;
+    }
+    .board-header__subtitle {
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: #33383B;
+      max-width: 820px;
+    }
+    .board-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .badge-pill {
+      font-family: var(--fog-font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--fog-radius-btn);
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .badge-pill--shield {
+      background-color: rgba(0, 110, 182, 0.1);
+      color: var(--fog-blue);
+      border-color: rgba(0, 110, 182, 0.3);
+    }
+    .badge-pill--success {
+      background-color: rgba(21, 122, 56, 0.12);
+      color: var(--fog-green);
+      border-color: rgba(21, 122, 56, 0.3);
+    }
+    .badge-pill--dark {
+      background-color: var(--fog-dark-blue);
+      color: var(--fog-white);
+    }
+    .badge-pill--gray {
+      background-color: var(--fog-gray-50);
+      color: var(--fog-dark-gray);
+      border-color: var(--fog-gray);
+    }
+
+    /* CONTROLS & FILTER BAR */
+    .controls-hub {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .filter-tab {
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: var(--fog-radius-btn);
+      border: 1px solid var(--fog-gray);
+      background-color: var(--fog-white);
+      color: var(--fog-dark-blue);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-tab:hover {
+      border-color: var(--fog-blue);
+      color: var(--fog-blue);
+    }
+    .filter-tab.active {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border-color: var(--fog-blue);
+    }
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+    .search-input {
+      width: 100%;
+      height: 36px;
+      padding: 0 12px 0 34px;
+      font-family: var(--fog-font-body);
+      font-size: 13.5px;
+      color: var(--fog-dark-gray);
+      background-color: var(--fog-white);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-btn);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: #71767A;
+      pointer-events: none;
+    }
+
+    /* RESOURCES GRID */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .resource-card {
+      background-color: var(--fog-white);
+      border: 1px solid var(--fog-gray);
+      border-radius: var(--fog-radius-card);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .resource-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 36, 60, 0.12);
+      border-color: var(--fog-blue);
+    }
+    .resource-card__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .resource-card__eyebrow {
+      font-family: var(--fog-font-display);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #61666A;
+    }
+    .resource-badge {
+      font-family: var(--fog-font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: var(--fog-radius-btn);
+    }
+    .resource-badge--blue {
+      background-color: rgba(0, 110, 182, 0.12);
+      color: var(--fog-blue);
+    }
+    .resource-badge--green {
+      background-color: rgba(21, 122, 56, 0.12);
+      color: var(--fog-green);
+    }
+    .resource-badge--orange {
+      background-color: rgba(228, 3, 3, 0.1);
+      color: #B42318;
+    }
+    .resource-card__title {
+      font-family: var(--fog-font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--fog-dark-blue);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .resource-card__desc {
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--fog-dark-gray);
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .resource-card__meta {
+      border-top: 1px dashed var(--fog-gray);
+      padding-top: 8px;
+      margin-bottom: 14px;
+      font-size: 11.5px;
+      color: #555A5D;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .resource-meta-row strong {
+      color: var(--fog-dark-blue);
+    }
+    .resource-card__actions {
+      display: flex;
+      gap: 8px;
+    }
+    .resource-btn {
+      font-family: var(--fog-font-display);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: var(--fog-radius-btn);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .resource-btn--primary {
+      background-color: var(--fog-blue);
+      color: var(--fog-white);
+      border: 1px solid var(--fog-blue);
+    }
+    .resource-btn--primary:hover {
+      background-color: var(--fog-dark-blue);
+      border-color: var(--fog-dark-blue);
+    }
+    .resource-btn--secondary {
+      background-color: var(--fog-gray-50);
+      color: var(--fog-dark-blue);
+      border: 1px solid var(--fog-gray);
+    }
+    .resource-btn--secondary:hover {
+      background-color: var(--fog-gray);
+      border-color: #B5B7B9;
+    }
+
+    .empty-search-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      color: #61666A;
+      font-size: 14px;
+      display: none;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      flex-shrink: 0;
+      background: rgba(0, 24, 44, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--fog-white);
+      padding: 12px 24px 14px 24px;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px 10px;
+      font-size: 13px;
+    }
+    .footer-socials {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-social-link {
+      color: var(--fog-light-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.15s ease;
+    }
+    .footer-social-link:hover {
+      color: var(--fog-white);
+    }
+    .footer-social-link svg {
+      width: 16px;
+      height: 16px;
+    }
+    .footer-pipe {
+      color: rgba(255, 255, 255, 0.38);
+      padding: 0 4px;
+    }
+    .footer-text-links a {
+      color: var(--fog-light-blue);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .footer-text-links a:hover {
+      color: var(--fog-white);
+    }
+    .footer-text-links .sep {
+      color: rgba(255, 255, 255, 0.4);
+      padding: 0 6px;
+    }
+    .footer-admin-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .footer-admin-badge {
+      font-family: var(--fog-font-display);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--fog-radius-btn);
+      color: var(--fog-light-blue);
+    }
+    .footer-sponsor {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.35;
+    }
+    .footer-copyright {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.68);
+    }
+    .footer-platform-note {
+      font-size: 11px;
+      color: var(--fog-light-blue);
+      font-family: var(--fog-font-display);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .board-card {
+        padding: 20px 16px;
+      }
+      .site-header-inner {
+        padding: 0 14px;
+      }
+      .board-header__title {
+        font-size: 22px;
+      }
+      .controls-hub {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        width: 100%;
+      }
+      .hide-xs {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP PROGRESS PRIDE BAR -->
+  <aside class="fog-window-progress-strip" aria-label="Progress Pride Navigation Strip">
+    <div class="fog-window-progress-strip__bar" role="toolbar" aria-label="Progress Pride Colors">
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--black" data-chapter="heritage" title="Heritage &amp; Mark Bingham"><span class="fog-sr-only">Heritage</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--brown" data-chapter="foundations" title="Foundations &amp; Charity"><span class="fog-sr-only">Foundations</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--light-blue" data-chapter="identity" title="Club Identity &amp; 25 Years"><span class="fog-sr-only">Identity</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--pink" data-chapter="community" title="Community &amp; Supporters"><span class="fog-sr-only">Community</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--white" data-chapter="inclusion" title="Inclusion &amp; Global Rugby"><span class="fog-sr-only">Inclusion</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--red" data-chapter="pathway" title="Pathway to Rugby"><span class="fog-sr-only">Pathway</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--orange" data-chapter="squad" title="Squad Roster &amp; Leadership"><span class="fog-sr-only">Squad</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--yellow" data-chapter="tournaments" title="Tournaments &amp; Bingham Cups"><span class="fog-sr-only">Tournaments</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--green" data-chapter="training" title="Grounds &amp; Fixtures"><span class="fog-sr-only">Grounds</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--blue" data-chapter="portals" title="Calendar Portal &amp; Systems"><span class="fog-sr-only">Portals</span></button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--violet" data-chapter="giving" title="Philanthropy &amp; Giving"><span class="fog-sr-only">Giving</span></button>
+    </div>
+  </aside>
+
+  <!-- PROGRESS PRIDE FLYOUT DRAWER & BACKDROP -->
+  <div class="fog-pride-backdrop" id="pride-backdrop" hidden></div>
+  <div class="fog-window-progress-strip__drawer" id="pride-chapter-drawer" role="region" aria-label="Progress Pride Chapters Menu" hidden>
+    <div class="fog-window-progress-strip__drawer-inner">
+      <div class="fog-window-progress-strip__drawer-header">
+        <div>
+          <span class="fog-window-progress-strip__drawer-eyebrow">SF Fog RFC &middot; Interactive Waypoint Navigator</span>
+          <h3 class="fog-window-progress-strip__drawer-title">11 Chapters of Fog Rugby</h3>
+        </div>
+        <button type="button" class="fog-window-progress-strip__drawer-close" id="pride-drawer-close" aria-label="Close Pride Menu">&#10005; CLOSE</button>
+      </div>
+
+      <div class="fog-window-progress-strip__chapters-grid">
+        <a href="https://www.fogrugby.com/mark-bingham" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--black">
+          <div class="fog-window-progress-strip__chapter-tag">01 &middot; BLACK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Heritage &amp; Mark Bingham</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Hero of Flight 93, 2000 founding legacy, perpetual honors &amp; memorial roll.</p>
+          <span class="fog-window-progress-strip__chapter-action">Explore Memorial &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/board-of-directors" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--brown">
+          <div class="fog-window-progress-strip__chapter-tag">02 &middot; BROWN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Foundations &amp; Charity</h4>
+          <p class="fog-window-progress-strip__chapter-desc">501(c)(3) fiscal sponsorship, Alice Hoagland legacy, bylaws &amp; board governance.</p>
+          <span class="fog-window-progress-strip__chapter-action">View Governance &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/25-years-of-inclusive-rugby" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--light-blue">
+          <div class="fog-window-progress-strip__chapter-tag">03 &middot; SKY BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Club Identity &amp; 25 Years</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Official crest, Barry Nebuly cloud waves, West Coast pioneers &amp; 25-year story.</p>
+          <span class="fog-window-progress-strip__chapter-action">Read Our Story &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/fog-fan-zone" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--pink">
+          <div class="fog-window-progress-strip__chapter-tag">04 &middot; PINK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Community &amp; Third Half</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Supporters club, social gatherings, Pilsner Inn &amp; SF Eagle partner nights.</p>
+          <span class="fog-window-progress-strip__chapter-action">Join Supporters &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/igr-clubs" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--white">
+          <div class="fog-window-progress-strip__chapter-tag">05 &middot; WHITE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Inclusion &amp; Belonging</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Inclusive rugby charter, USA Rugby &amp; IGR global club network, open to every body.</p>
+          <span class="fog-window-progress-strip__chapter-action">Global Community &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/p2r" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--red">
+          <div class="fog-window-progress-strip__chapter-tag">06 &middot; RED</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Pathway to Rugby</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Rookie clinics, boots &amp; mouthguard guide, non-contact touch &amp; player onboarding.</p>
+          <span class="fog-window-progress-strip__chapter-action">Start Rugby &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/squad" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--orange">
+          <div class="fog-window-progress-strip__chapter-tag">07 &middot; ORANGE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Squad Roster &amp; Coaches</h4>
+          <p class="fog-window-progress-strip__chapter-desc">A-Side &amp; B-Side lineups, coaching credentials, player trading cards &amp; caps.</p>
+          <span class="fog-window-progress-strip__chapter-action">Meet the Squad &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/bingham-cup" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--yellow">
+          <div class="fog-window-progress-strip__chapter-tag">08 &middot; YELLOW</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Bingham Cups &amp; Silver</h4>
+          <p class="fog-window-progress-strip__chapter-desc">12 Bingham Cups, 25-year match archive, NorCal championships &amp; rivalries.</p>
+          <span class="fog-window-progress-strip__chapter-action">Tournament Hub &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/training" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--green">
+          <div class="fog-window-progress-strip__chapter-tag">09 &middot; GREEN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Grounds &amp; Fixtures</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Tuesday @ Raymond Kimbell, Thursday @ Crocker Amazon, Saturday @ Treasure Island.</p>
+          <span class="fog-window-progress-strip__chapter-action">Pitch Directions &rarr;</span>
+        </a>
+        <a href="https://events.fogrugby.com/portal.html" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--blue">
+          <div class="fog-window-progress-strip__chapter-tag">10 &middot; FOG BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Calendar &amp; Club Systems</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Interactive agenda portal, official links hub, suggestion box &amp; The Foghorn.</p>
+          <span class="fog-window-progress-strip__chapter-action">Open Portal &rarr;</span>
+        </a>
+        <a href="https://www.fogrugby.com/donate-to-the-fog" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--violet">
+          <div class="fog-window-progress-strip__chapter-tag">11 &middot; VIOLET</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Philanthropy &amp; Giving</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Annual Giving Fund, player scholarships, community outreach &amp; corporate matching.</p>
+          <span class="fog-window-progress-strip__chapter-action">Support the Fog &rarr;</span>
+        </a>
+      </div>
+
+      <nav class="fog-window-progress-strip__systems" aria-label="Club quicklinks">
+        <span class="fog-window-progress-strip__systems-label">Quick Systems:</span>
+        <a href="https://www.fogrugby.com/">fogrugby.com</a>
+        <a href="https://www.fogrugby.com/results">25-Year Match Archive</a>
+        <a href="https://events.fogrugby.com/portal.html">Calendar Portal</a>
+        <a href="https://events.fogrugby.com/links.html">Official Links Hub</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/suggestions">Suggestion Box</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/join-the-foghorn">Join The Foghorn</a>
+        <a href="https://www.instagram.com/fogrugby/">Instagram (@fogrugby)</a>
+        <a href="https://www.facebook.com/FogRugby/">Facebook (@FogRugby)</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- BOTTOM PROGRESS PRIDE BAR -->
+  <div class="pride-stripe-bottom" aria-hidden="true">
+    <span class="pride-bar" style="background:#000000"></span>
+    <span class="pride-bar" style="background:#613915"></span>
+    <span class="pride-bar" style="background:#74D7EE"></span>
+    <span class="pride-bar" style="background:#FFAFC8"></span>
+    <span class="pride-bar" style="background:#FFFFFF"></span>
+    <span class="pride-bar" style="background:#E40303"></span>
+    <span class="pride-bar" style="background:#FF8C00"></span>
+    <span class="pride-bar" style="background:#FFED00"></span>
+    <span class="pride-bar" style="background:#008026"></span>
+    <span class="pride-bar" style="background:#004DFF"></span>
+    <span class="pride-bar" style="background:#750787"></span>
+  </div>
+
+  <!-- ROTATING BACKGROUND AND VIGNETTE -->
+  <div class="fog-bg-container" aria-hidden="true">
+    <div id="fog-bg-a" class="fog-bg-layer active" style="background-image: url('https://events.fogrugby.com/assets/img/panels/fog-waiver-1-welcome.jpg');"></div>
+    <div id="fog-bg-b" class="fog-bg-layer"></div>
+  </div>
+  <div class="fog-bg-overlay" aria-hidden="true"></div>
+
+  <!-- FULL PAGE LAYOUT -->
+  <div class="page-layout">
+
+    <!-- WHITE SITE HEADER (IDENTICAL TO EVENTS.FOGRUGBY.COM) -->
+    <header class="site-header" id="site-header" role="banner">
+      <div class="site-header-inner">
+        <a href="https://www.fogrugby.com/" class="header-logo-link" title="SF Fog RFC Homepage">
+          <img src="https://events.fogrugby.com/assets/img/logo.svg" alt="San Francisco Fog Rugby Football Club" class="header-logo-img" width="114" height="38">
+        </a>
+
+        <div class="header-actions">
+          <a href="https://events.fogrugby.com/" class="header-btn header-btn--secondary" title="View Full Club Schedule">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="0"/>
+              <path d="M3.5 9.5h17M8 3v4M16 3v4"/>
+            </svg>
+            <span><span class="hide-xs">Club </span>Calendar</span>
+          </a>
+          <a href="https://fogrugby.koalahug.life/board" class="header-btn header-btn--primary" title="CiviCRM &amp; Drupal Board Hub">
+            <span>Board Hub</span>
+          </a>
+          <span class="header-divider" aria-hidden="true"></span>
+          <a href="https://drupal.fogrugby.com/user/login" class="header-btn header-btn--secondary">Log In</a>
+          <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
+          <button type="button" class="header-btn header-btn--pride" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Progress Pride Navigation Menu">
+            <span class="pride-menu-pip" aria-hidden="true"></span>
+            <span><span class="hide-xs">Pride </span>Menu</span>
+            <span class="pride-menu-arrow" aria-hidden="true">&#9662;</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN BOARD EXECUTIVE HUB -->
+    <main class="main-wrap" id="main">
+      <div class="board-card">
+
+        <!-- BOARD CARD HEADER & EXECUTIVE METRICS -->
+        <header class="board-header">
+          <div class="board-header__top">
+            <div>
+              <span class="board-header__eyebrow">Confidential &middot; Board of Directors &middot; San Francisco Fog RFC</span>
+              <h1 class="board-header__title">Board Executive Resource Hub</h1>
+            </div>
+          </div>
+          <p class="board-header__subtitle">
+            Consolidated directory of fiduciary ledgers, tax status restoration, official athletic logistics, corporate bylaws, and club member management tools.
+          </p>
+          <div class="board-badges">
+            <span class="badge-pill badge-pill--shield">Corp ID: C2354705</span>
+            <span class="badge-pill badge-pill--shield">EIN: 57-1147298</span>
+            <span class="badge-pill badge-pill--success">Fiscal Shield: Dancers' Group 501(c)(3)</span>
+            <span class="badge-pill badge-pill--dark">FTB: &sect;23301 Revivor Active</span>
+            <span class="badge-pill badge-pill--gray">Season 2026&ndash;27 Active</span>
+          </div>
+        </header>
+
+        <!-- CONTROLS & FILTER BAR -->
+        <nav class="controls-hub" aria-label="Resource Filters">
+          <div class="filter-tabs" role="tablist">
+            <button type="button" class="filter-tab active" data-filter="all">All Resources</button>
+            <button type="button" class="filter-tab" data-filter="governance">Fiduciary &amp; Legal</button>
+            <button type="button" class="filter-tab" data-filter="treasury">Finance &amp; Dues</button>
+            <button type="button" class="filter-tab" data-filter="operations">Athletics &amp; Venues</button>
+            <button type="button" class="filter-tab" data-filter="portals">Portals &amp; CRM</button>
+            
+          <button type="button" class="filter-tab" data-filter="workspace">Microsoft 365</button>
+        
+          </div>
+
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" class="search-input" id="resource-search" placeholder="Search board resources..." aria-label="Search board resources">
+          </div>
+        </nav>
+
+        <!-- RESOURCE CARDS GRID -->
+        <div class="resources-grid" id="resources-grid">
+
+          <!-- 1. CiviCRM & Drupal Executive Hub -->
+          <article class="resource-card" data-category="portals governance" data-title="Executive Board Portal (Drupal & CiviCRM)" data-keywords="drupal civicrm board portal executive members dues volunteer approval scorecard">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Core Platform &middot; Executive Hub</span>
+              <span class="resource-badge resource-badge--blue">Native Portal</span>
+            </div>
+            <h3 class="resource-card__title">Executive Board Portal</h3>
+            <p class="resource-card__desc">
+              Direct access to the 100% branded Drupal 11 + CiviCRM 6.x executive command center. Monitor registered athlete rosters, approve volunteer hours, review treasury KPIs, and manage match operations without raw backend links.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Role Gating:</strong> board + administrator</div>
+              <div class="resource-meta-row"><strong>Zero Raw Links:</strong> High-contrast native portal</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://fogrugby.koalahug.life/board" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Open Board Portal &rarr;
+              </a>
+              <a href="https://drupal.fogrugby.com/user/login" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">
+                Drupal Login
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. Treasury & Squad Dues Ledger -->
+          <article class="resource-card" data-category="treasury" data-title="Treasury & Squad Dues Ledger" data-keywords="treasury dues finance money wells fargo installment budget bank payment square stripe">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Finance &middot; Operating Account</span>
+              <span class="resource-badge resource-badge--green">Solvent &middot; 87% Match</span>
+            </div>
+            <h3 class="resource-card__title">Treasury &amp; Squad Dues Ledger</h3>
+            <p class="resource-card__desc">
+              Wells Fargo Operating Account (Card ending 7367), player dues installment tracking ($2.88/wk up to $150 lump sum), operating cash flow reports, and player hardship fee assistance.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Cash Assets:</strong> Wells Fargo Commercial Checking</div>
+              <div class="resource-meta-row"><strong>Installment Plans:</strong> Weekly, Monthly, Half-Season</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://fogrugby.koalahug.life/board/treasury" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                View Dues Ledger &rarr;
+              </a>
+              <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">
+                Scholarship Fund
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. Corporate Legal & Tax Restoration -->
+          <article class="resource-card" data-category="governance" data-title="IRS Tax Status & Corporate Shield" data-keywords="irs 501c3 tax dancers group ftb revivor legal compliance bylaws corp shield">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Corporate Shield &middot; Legal Compliance</span>
+              <span class="resource-badge resource-badge--orange">&sect;23301 Revivor Active</span>
+            </div>
+            <h3 class="resource-card__title">IRS Tax Status &amp; Fiscal Shield</h3>
+            <p class="resource-card__desc">
+              Comprehensive Fiscal Sponsorship Agreement with Dancers' Group (EIN: 94-2879185), California FTB &sect;23301 corporate revivor roadmap, IRS Letter 947, and 2025&ndash;2026 club liability insurance certificate.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Fiscal Sponsor:</strong> Dancers' Group 501(c)(3)</div>
+              <div class="resource-meta-row"><strong>State DOJ EVOKE:</strong> Registration Not Required</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://www.fogrugby.com/board-of-directors" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Corporate Records &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. Team Calendar & Live Feeds -->
+          <article class="resource-card" data-category="operations" data-title="Club Calendar & Live Fixtures Feed" data-keywords="calendar fixtures matches training ical google calendar outlook subscribe schedule">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Match Operations &middot; Live Schedules</span>
+              <span class="resource-badge resource-badge--blue">iCal Sync Active</span>
+            </div>
+            <h3 class="resource-card__title">Club Calendar &amp; Fixture Feeds</h3>
+            <p class="resource-card__desc">
+              Authoritative fixture feed and match calendar hosted at events.fogrugby.com. One-click sync to Google Calendar, Microsoft Outlook, and Apple Calendar for all club games, practices, and fundraisers.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Format:</strong> RFC 5545 iCalendar (.ics)</div>
+              <div class="resource-meta-row"><strong>Webcal:</strong> webcal://events.fogrugby.com/fog.ics</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://events.fogrugby.com/" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Live Calendar Hub &rarr;
+              </a>
+              <a href="https://events.fogrugby.com/fog.ics" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">
+                Direct .ics Feed
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. Official Grounds & Field Logistics -->
+          <article class="resource-card" data-category="operations" data-title="Official Grounds & Field Logistics" data-keywords="training grounds venues raymond kimbell crocker amazon treasure island pitch permits">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Athletic Grounds &middot; Official Venues</span>
+              <span class="resource-badge resource-badge--green">Permits Verified</span>
+            </div>
+            <h3 class="resource-card__title">Official Grounds &amp; Logistics</h3>
+            <p class="resource-card__desc">
+              Verified practice and match ground logistics. Strict adherence to official club grounds: Tuesday training at Raymond Kimbell Playground, Thursday training at Crocker Amazon Park, and Saturday Home Matches at Treasure Island.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Tuesday:</strong> Raymond Kimbell Playground Park (7-9 PM)</div>
+              <div class="resource-meta-row"><strong>Thursday:</strong> Crocker Amazon Park (7-9 PM)</div>
+              <div class="resource-meta-row"><strong>Saturday Home:</strong> Treasure Island Pitch (San Francisco)</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://www.fogrugby.com/training" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Pitch Directions &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. USA Rugby & SafeSport Compliance -->
+          <article class="resource-card" data-category="operations governance" data-title="USA Rugby & SafeSport Compliance" data-keywords="usa rugby cipp rx rugby xplorer safesport medical aed insurance waivers">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Risk Management &middot; Athletic Safety</span>
+              <span class="resource-badge resource-badge--blue">USAR Registered</span>
+            </div>
+            <h3 class="resource-card__title">USA Rugby &amp; SafeSport Vetting</h3>
+            <p class="resource-card__desc">
+              Player CIPP registration vetting via Rugby Xplorer (RX), coaching staff SafeSport background clearances, Concussion Protocol compliance, and pitch-side AED emergency response action plans.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Governing Body:</strong> USA Rugby / NorCal RFU</div>
+              <div class="resource-meta-row"><strong>Referees:</strong> NCRRS Match Allocations</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://fogrugby.koalahug.life/coaches/compliance" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Medical &amp; CIPP Roster &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 7. 25-Year Match Archive & Rivalries -->
+          <article class="resource-card" data-category="operations" data-title="25-Year Match Archive & Rivalries Hub" data-keywords="results archive match history bingham cup rivalries scores stats fixtures">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Historical Record &middot; Headless Hub</span>
+              <span class="resource-badge resource-badge--blue">322 Matches Audited</span>
+            </div>
+            <h3 class="resource-card__title">25-Year Match Archive</h3>
+            <p class="resource-card__desc">
+              Complete relational sports archive covering 2000&ndash;2026. Explore 322 scored matches, 182 head-to-head rivalries, 12 Bingham Cup campaigns, and individual match reports with zero-orphan data integrity.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Coverage:</strong> 25 Years of Fixtures &amp; Tournament Silver</div>
+              <div class="resource-meta-row"><strong>API:</strong> Headless REST Micro-API on PHP 8.3 PDO</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://www.fogrugby.com/results" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Explore Match Archive &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 8. Communications & The Foghorn Mailer -->
+          <article class="resource-card" data-category="portals" data-title="The Foghorn & Mautic Communications" data-keywords="foghorn newsletter mautic mail email marketing announcements suggestions">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Club Communications &middot; Mautic</span>
+              <span class="resource-badge resource-badge--green">Mail Delivery Live</span>
+            </div>
+            <h3 class="resource-card__title">The Foghorn &amp; Cloud Mailer</h3>
+            <p class="resource-card__desc">
+              Self-hosted Mautic cloud mailer orchestrating weekly Foghorn editions, alumni updates, sponsor dispatches, and incoming community feedback via the digital suggestion box.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Platform:</strong> Mautic Marketing Automation</div>
+              <div class="resource-meta-row"><strong>Newsletter:</strong> Bi-Weekly In-Season Foghorn</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://mautic.fogrugby.com/" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Open Mautic Mailer &rarr;
+              </a>
+              <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">
+                Suggestion Box
+              </a>
+            </div>
+          </article>
+
+          <!-- 9. Corporate Governance & Bylaws Library -->
+          <article class="resource-card" data-category="governance" data-title="Corporate Bylaws & Governance Library" data-keywords="bylaws constitution governance agm meeting minutes policies expectations">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Corporate Records &middot; Governance</span>
+              <span class="resource-badge resource-badge--blue">Official Charters</span>
+            </div>
+            <h3 class="resource-card__title">Bylaws &amp; Governance Library</h3>
+            <p class="resource-card__desc">
+              San Francisco Fog RFC Constitution, official amended bylaws, Board Member Expectations &amp; Roles charter, Annual General Meeting (AGM) voting records, and non-profit officer job descriptions.
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Corporate Entity:</strong> SF Fog RFC Inc. (California)</div>
+              <div class="resource-meta-row"><strong>Bylaws:</strong> Amended &amp; Restated by Membership</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://fogrugby.koalahug.life/board/governance" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+                Governance Vault &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 10. Role-Namespaced Portal Hubs -->
+          <article class="resource-card" data-category="portals" data-title="Role-Namespaced Member Hubs" data-keywords="players coaches supporters alumni portal routing crm squad access">
+            <div class="resource-card__head">
+              <span class="resource-card__eyebrow">Cross-Club Portals &middot; Role Routing</span>
+              <span class="resource-badge resource-badge--blue">All 4 Hubs Active</span>
+            </div>
+            <h3 class="resource-card__title">Squad &amp; Supporter Hubs</h3>
+            <p class="resource-card__desc">
+              Direct links into the three operational member hubs: Players Hub (squad dues, attendance, volunteer quota), Coaches Hub (lineups, tactical playbooks, injury logs), and Supporters Hub (booster club passes).
+            </p>
+            <div class="resource-card__meta">
+              <div class="resource-meta-row"><strong>Players:</strong> /players (Active Squad Athletes)</div>
+              <div class="resource-meta-row"><strong>Coaches:</strong> /coaches (Selectors &amp; Medics)</div>
+              <div class="resource-meta-row"><strong>Supporters:</strong> /supporters (Fans &amp; Donors)</div>
+            </div>
+            <div class="resource-card__actions">
+              <a href="https://fogrugby.koalahug.life/players" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">Players</a>
+              <a href="https://fogrugby.koalahug.life/coaches" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">Coaches</a>
+              <a href="https://fogrugby.koalahug.life/supporters" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">Supporters</a>
+            </div>
+          </article>
+
+          
+        <!-- SharePoint / M365 Collaboration Card -->
+        <article class="resource-card" data-category="workspace" data-title="SharePoint Board Document Library & Archives" data-keywords="sharepoint m365 microsoft teams minutes records drive cloud storage">
+          <div class="resource-card__head">
+            <span class="resource-card__eyebrow">Microsoft 365 &middot; Document Vault</span>
+            <span class="resource-badge resource-badge--blue">M365 Cloud</span>
+          </div>
+          <h3 class="resource-card__title">SharePoint Board Document Library</h3>
+          <p class="resource-card__desc">
+            Primary cloud repository for official board meeting minutes, executed sponsorship contracts, corporate tax returns, and officer transition binders.
+          </p>
+          <div class="resource-card__meta">
+            <div class="resource-meta-row"><strong>Folder:</strong> /sites/FogRFCBoard/Documents</div>
+            <div class="resource-meta-row"><strong>Retention:</strong> 7-Year Fiduciary Compliance</div>
+          </div>
+          <div class="resource-card__actions">
+            <a href="https://fogrugby.sharepoint.com/sites/FogRFCBoard/Shared%20Documents" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--primary">
+              Open Document Library &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Microsoft Teams & Shared Mailbox Card -->
+        <article class="resource-card" data-category="workspace" data-title="Microsoft Teams & Executive Mailbox" data-keywords="teams email board@fogrugby.com communications chat planner deliberation">
+          <div class="resource-card__head">
+            <span class="resource-card__eyebrow">Executive Communications</span>
+            <span class="resource-badge resource-badge--green">Active Channel</span>
+          </div>
+          <h3 class="resource-card__title">Microsoft Teams &amp; Executive Mailbox</h3>
+          <p class="resource-card__desc">
+            Secure deliberation workspace for the Executive Committee, confidential board channels, monthly meeting audio/video recordings, and Microsoft Planner board action tracks.
+          </p>
+          <div class="resource-card__meta">
+            <div class="resource-meta-row"><strong>Email:</strong> board@fogrugby.com</div>
+            <div class="resource-meta-row"><strong>Platform:</strong> Teams Executive Team</div>
+          </div>
+          <div class="resource-card__actions">
+            <a href="https://teams.microsoft.com/l/team/fog-board" target="_blank" rel="noopener noreferrer" class="resource-btn resource-btn--secondary">
+              Open Teams Channel &rarr;
+            </a>
+          </div>
+        </article>
+        
+
+          <div class="empty-search-state" id="empty-search">
+            No matching board resources found. Try searching with different keywords like "treasury", "bylaws", "permits", or "minutes".
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- OFFICIAL SITE FOOTER (IDENTICAL TO EVENTS.FOGRUGBY.COM) -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Club social media and links">
+          <span class="footer-socials">
+            <a href="https://www.instagram.com/fogrugby/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="San Francisco Fog Rugby on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/FogRugby/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="San Francisco Fog Rugby on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="San Francisco Fog Rugby on TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917"/>
+              </svg>
+            </a>
+          </span>
+          <span class="footer-pipe" aria-hidden="true">|</span>
+          <span class="footer-text-links">
+            <a href="https://www.fogrugby.com/" target="_blank" rel="noopener noreferrer">Website</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://events.fogrugby.com/" target="_blank" rel="noopener noreferrer">Calendar &amp; Fixtures</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://www.fogrugby.com/results" target="_blank" rel="noopener noreferrer">25-Year Match Archive</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener noreferrer">Suggestion Box</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener noreferrer">Donate</a>
+          </span>
+        </nav>
+        <div class="footer-admin-links">
+          <span class="footer-admin-badge">Confidential &middot; Executive Board Resource Portal</span>
+        </div>
+        <p class="footer-sponsor">
+          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+        </p>
+        <p class="footer-copyright">&copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club</p>
+        <p class="footer-platform-note">Optimized for Microsoft SharePoint Modern Pages (Embed Web Part &amp; Script Editor)</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- CLIENT-SIDE SCRIPTS: ROTATING BACKGROUND, PRIDE DRAWER, FILTERING & AUTO-RESIZE -->
+  <script>
+    (function() {
+      // 1. AUTO-ROTATING BACKGROUND IMAGE POOL
+      const bgPool = [
+        'https://events.fogrugby.com/assets/img/panels/fog-waiver-1-welcome.jpg',
+        'https://events.fogrugby.com/assets/img/panels/fog-waiver-2-contact.jpg',
+        'https://events.fogrugby.com/assets/img/panels/fog-waiver-3-waiver.jpg',
+        'https://events.fogrugby.com/assets/img/panels/fog-waiver-4-sign.jpg'
+      ];
+      const layerA = document.getElementById('fog-bg-a');
+      const layerB = document.getElementById('fog-bg-b');
+      let activeLayer = 'a';
+      let poolIndex = 0;
+
+      function crossfadeNext() {
+        poolIndex = (poolIndex + 1) % bgPool.length;
+        const nextSrc = bgPool[poolIndex];
+        if (activeLayer === 'a') {
+          layerB.style.backgroundImage = 'url("' + nextSrc + '")';
+          layerB.classList.add('active');
+          layerA.classList.remove('active');
+          activeLayer = 'b';
+        } else {
+          layerA.style.backgroundImage = 'url("' + nextSrc + '")';
+          layerA.classList.add('active');
+          layerB.classList.remove('active');
+          activeLayer = 'a';
+        }
+      }
+      setInterval(crossfadeNext, 12000);
+
+      // 2. PRIDE DRAWER INTERACTION
+      const siteHeader = document.getElementById('site-header');
+      const stripToggle = document.getElementById('progress-strip-toggle');
+      const stripDrawer = document.getElementById('pride-chapter-drawer');
+      const stripBackdrop = document.getElementById('pride-backdrop');
+      const drawerClose = document.getElementById('pride-drawer-close');
+      const segButtons = Array.from(document.querySelectorAll('.fog-window-progress-strip__seg'));
+
+      function syncDrawerTop() {
+        if (!stripDrawer || !siteHeader) return;
+        const bottom = Math.round(siteHeader.getBoundingClientRect().bottom);
+        stripDrawer.style.top = bottom + 'px';
+      }
+
+      function openDrawer() {
+        syncDrawerTop();
+        stripDrawer.removeAttribute('hidden');
+        stripBackdrop.removeAttribute('hidden');
+        if (stripToggle) stripToggle.setAttribute('aria-expanded', 'true');
+        segButtons.forEach(btn => btn.setAttribute('aria-expanded', 'true'));
+      }
+
+      function closeDrawer() {
+        stripDrawer.setAttribute('hidden', '');
+        stripBackdrop.setAttribute('hidden', '');
+        if (stripToggle) stripToggle.setAttribute('aria-expanded', 'false');
+        segButtons.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+      }
+
+      if (stripToggle) {
+        stripToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (stripDrawer.hasAttribute('hidden')) {
+            openDrawer();
+          } else {
+            closeDrawer();
+          }
+        });
+      }
+
+      if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+      if (stripBackdrop) stripBackdrop.addEventListener('click', closeDrawer);
+
+      segButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openDrawer();
+        });
+      });
+
+      window.addEventListener('resize', syncDrawerTop);
+
+      // 3. RESOURCE SEARCH & CATEGORY FILTERING
+      const searchInput = document.getElementById('resource-search');
+      const filterTabs = Array.from(document.querySelectorAll('.filter-tab'));
+      const cards = Array.from(document.querySelectorAll('.resource-card'));
+      const emptyState = document.getElementById('empty-search');
+      let currentFilter = 'all';
+
+      function applyFilter() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category') || '';
+          const title = (card.getAttribute('data-title') || '').toLowerCase();
+          const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          const text = card.textContent.toLowerCase();
+
+          const matchesCategory = (currentFilter === 'all') || category.split(' ').includes(currentFilter);
+          const matchesQuery = !query || title.includes(query) || keywords.includes(query) || text.includes(query);
+
+          if (matchesCategory && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+        sendHeightToParent();
+      }
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentFilter = tab.getAttribute('data-filter');
+          applyFilter();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', applyFilter);
+      }
+
+      // 4. IFRAME AUTO-RESIZE COMMUNICATION (FOR GOOGLE SITES & SHAREPOINT EMBEDS)
+      function sendHeightToParent() {
+        const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        window.parent.postMessage({
+          type: 'fog-board-resize',
+          platform: 'sharepoint',
+          height: height
+        }, '*');
+      }
+      window.addEventListener('load', sendHeightToParent);
+      window.addEventListener('resize', sendHeightToParent);
+    })();
+  </script>
+</body>
+</html>
