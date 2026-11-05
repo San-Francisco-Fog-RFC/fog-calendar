@@ -3172,69 +3172,47 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
     }
 
-    /* Filter Row */
-    .controls-filter-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px 20px;
-      padding: 0 4px;
-    }
-
-    .filter-group {
+    /* Dropdown Filters */
+    .filter-dropdowns-group {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
-
-    .filter-group-title {
-      font-family: var(--fog-font-display);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #555555;
-      margin-right: 2px;
-    }
-
-    .filter-chips {
+    .filter-select-wrap {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
     }
-
-    .chip {
+    .fog-select {
+      height: 34px;
+      padding: 0 30px 0 12px;
       background-color: var(--fog-white);
-      border: 1px solid var(--fog-gray);
       color: var(--fog-dark-blue);
-      font-family: var(--fog-font-display);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 5px 11px;
+      border: 1px solid var(--fog-gray);
       border-radius: var(--fog-radius-btn);
+      font-family: var(--fog-font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       cursor: pointer;
-      transition: all 0.15s ease;
-      line-height: 1;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%2300243C' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
     }
-    .chip:hover {
+    .fog-select:hover {
       border-color: var(--fog-blue);
-      color: var(--fog-blue);
       background-color: var(--fog-gray-50);
     }
-    .chip.active {
-      background-color: var(--fog-blue) !important;
-      color: var(--fog-white) !important;
-      border-color: var(--fog-blue) !important;
-    }
-    .filter-group--status .chip.active {
-      background-color: var(--fog-dark-blue) !important;
-      border-color: var(--fog-dark-blue) !important;
-      color: var(--fog-white) !important;
+    .fog-select:focus {
+      outline: none;
+      border-color: var(--fog-blue);
+      box-shadow: 0 0 0 2px rgba(0, 110, 182, 0.2);
     }
 
     /* Calendar Grid Enhancements */
@@ -3311,8 +3289,10 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       .controls-top-row { flex-direction: column; align-items: stretch; gap: 12px; }
       .month-nav-group { justify-content: center; }
       .view-toggle-group { justify-content: center; }
+      .filter-dropdowns-group { flex-direction: column; width: 100%; gap: 8px; }
+      .filter-select-wrap { width: 100%; }
+      .fog-select { width: 100%; }
       .search-wrap { max-width: 100%; min-width: 0; }
-      .controls-filter-row { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 
@@ -3552,7 +3532,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         </div>
 
         <nav class="calendar-controls-hub" aria-label="Calendar Controls">
-          <!-- Top Controls: Month Nav, View Toggle, Search -->
+          <!-- Single Unified Controls Bar with Dropdowns -->
           <div class="controls-top-row">
             <div class="month-nav-group">
               <button id="btn-prev-month" class="ctrl-btn" aria-label="Previous Month">&lsaquo; Prev</button>
@@ -3566,6 +3546,35 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
               <button id="btn-view-agenda" class="view-toggle-btn" type="button">Agenda List</button>
             </div>
 
+            <!-- Dropdown Selectors for Category & Status/Schedule -->
+            <div class="filter-dropdowns-group">
+              <div class="filter-select-wrap">
+                <label for="select-category" class="fog-sr-only">Category</label>
+                <select id="select-category" class="fog-select" aria-label="Filter by Category">
+                  <option value="all">All Categories</option>
+                  <option value="fixture">Fixtures &amp; Matches</option>
+                  <option value="training">Training Sessions</option>
+                  <option value="pathway">Pathway to Rugby</option>
+                  <option value="tournament">Tournaments &amp; Cups</option>
+                  <option value="social">Socials &amp; Third Half</option>
+                  <option value="community">Community Events</option>
+                  <option value="board">Board &amp; Governance</option>
+                </select>
+              </div>
+
+              <div class="filter-select-wrap">
+                <label for="select-status" class="fog-sr-only">Status &amp; Schedule</label>
+                <select id="select-status" class="fog-select" aria-label="Filter by Status or Schedule">
+                  <option value="all">All Statuses &amp; Dates</option>
+                  <option value="future">Upcoming Only</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="tentative">Tentative / TBC</option>
+                  <option value="cancelled">Cancelled</option>
+                  <option value="past">Past Events</option>
+                </select>
+              </div>
+            </div>
+
             <div class="search-wrap">
               <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -3576,33 +3585,6 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
 
             <!-- Add Event (Admin Mode) -->
             <button id="btn-new-event" class="ctrl-btn ctrl-btn--add" style="display: none;">+ Add Event</button>
-          </div>
-
-          <!-- Filter Chips Row -->
-          <div class="controls-filter-row filter-chips-row">
-            <div class="filter-group">
-              <span class="filter-group-title">Category:</span>
-              <div class="filter-chips">
-                <button class="chip active" data-filter="all">All</button>
-                <button class="chip" data-filter="fixture">Fixtures</button>
-                <button class="chip" data-filter="training">Training</button>
-                <button class="chip" data-filter="pathway">Pathway</button>
-                <button class="chip" data-filter="tournament">Tournaments</button>
-                <button class="chip" data-filter="social">Socials</button>
-                <button class="chip" data-filter="community">Community</button>
-                <button class="chip" data-filter="board">Board</button>
-              </div>
-            </div>
-
-            <div class="filter-group filter-group--status">
-              <span class="filter-group-title">Status:</span>
-              <div class="filter-chips">
-                <button class="chip active" data-status="all">All</button>
-                <button class="chip" data-status="confirmed">Confirmed</button>
-                <button class="chip" data-status="tentative">Tentative</button>
-                <button class="chip" data-status="cancelled">Cancelled</button>
-              </div>
-            </div>
           </div>
         </nav>
 
@@ -4488,6 +4470,8 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         btnNextMonth: document.getElementById('btn-next-month'),
         btnToday: document.getElementById('btn-today'),
         searchInput: document.getElementById('search-input'),
+        selectCategory: document.getElementById('select-category'),
+        selectStatus: document.getElementById('select-status'),
         btnToggleAdmin: document.getElementById('btn-toggle-admin'),
         btnOpenVerifier: document.getElementById('btn-open-verifier'),
         authStatusBadge: document.getElementById('auth-status-badge'),
@@ -5145,11 +5129,19 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       }
 
       function filterEventsList(list) {
+        const today = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        const todayStr = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+
         return list.filter(ev => {
           if (state.activeCategory !== 'all' && ev.category !== state.activeCategory) {
             return false;
           }
-          if (state.activeStatus !== 'all' && (ev.status || 'confirmed') !== state.activeStatus) {
+          if (state.activeStatus === 'future') {
+            if (ev.date && ev.date < todayStr) return false;
+          } else if (state.activeStatus === 'past') {
+            if (ev.date && ev.date >= todayStr) return false;
+          } else if (state.activeStatus !== 'all' && (ev.status || 'confirmed') !== state.activeStatus) {
             return false;
           }
           if (state.searchQuery) {
@@ -5844,7 +5836,22 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         renderViews();
       });
 
-      // Filter chips
+      // Category & Status Dropdown Selectors
+      if (elements.selectCategory) {
+        elements.selectCategory.addEventListener('change', (e) => {
+          state.activeCategory = e.target.value;
+          renderViews();
+        });
+      }
+
+      if (elements.selectStatus) {
+        elements.selectStatus.addEventListener('change', (e) => {
+          state.activeStatus = e.target.value;
+          renderViews();
+        });
+      }
+
+      // Filter chips (backward compatibility)
       document.querySelectorAll('.filter-chips-row button[data-filter]').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.filter-chips-row button[data-filter]').forEach(b => b.classList.remove('active'));
