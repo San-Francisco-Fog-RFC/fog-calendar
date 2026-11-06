@@ -43,6 +43,18 @@ Rules that keep the feed sane:
 - **Series:** events that share details (e.g. Pathway to Rugby) set `series: <key>`. They inherit the series `defaults` (time, venue, image, link, category, status); anything set on the event itself wins. A series `listing:` holds the copy `promote.py` submits to listing sites.
 - The build checks `events.yml` against [`schema/events-yml.schema.json`](schema/events-yml.schema.json) and stops on typos (e.g. `venu:`), unknown venues or series, or times like `7:30pm`. Editors such as VS Code use the same schema for autocomplete and inline errors.
 
+## Where events are edited
+
+**In the Clubhouse (CiviCRM):** https://clubhouse.fogrugby.com/civicrm/event/manage. Sign in with your @fogrugby.com Google account.
+
+- `.github/workflows/sync-civicrm.yml` pulls the public events from `https://clubhouse.fogrugby.com/api/calendar/export.json` every 30 minutes, rewrites `events.yml`, and rebuilds `docs/fog.ics`. The subscribe URL and event UIDs stay the same.
+- `events.yml` is now generated: don't edit events in it. Top-level settings (`calendar_name`, `venues`, `series`) are kept and can still be edited here.
+- Set **Calendar category** and **Calendar status** on each CiviCRM event (Fog Calendar fields) so it lands in the right colour and shows TBC/cancelled correctly.
+- If the Clubhouse is unreachable or the export looks wrong (empty, or most events missing), the sync skips and the feed keeps its last good version.
+- `docs/portal.html` is the read-only club calendar; its "Edit events" button goes to the Clubhouse.
+
+The page shell (header, Pride menu, rotating background, footer) comes from `docs/assets/css/fog-chassis.css` and `docs/assets/js/fog-chassis.js`, extracted from `index.html`.
+
 ## One-time setup
 
 1. Create the repo (public) and push these files.
