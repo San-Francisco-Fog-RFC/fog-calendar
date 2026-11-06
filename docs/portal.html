@@ -2,127 +2,357 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GD8T0M6RZ9');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD8T0M6RZ9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GD8T0M6RZ9');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SF Fog Rugby — Club Calendar Portal</title>
+  <title>Club Calendar · San Francisco Fog RFC</title>
+  <meta name="description" content="San Francisco Fog RFC club calendar: matches, practice, socials and tournaments.">
   <link rel="icon" type="image/png" href="assets/img/fog-logo.png">
+  <link rel="preload" href="assets/fonts/futura-pt-book.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/portal.css">
+  <link rel="stylesheet" href="assets/css/fog-chassis.css">
+  <link rel="stylesheet" href="assets/css/portal-shell.css">
   <script src="assets/js/js-yaml.min.js"></script>
-  <style>.card-status-pill.cancelled { background: #fdecea; color: #b42318; text-decoration: line-through; }</style>
 </head>
-<body>
-
-  <!-- Top Hero & Navigation -->
-  <header class="header-hero">
-    <div class="header-inner">
-      <div class="header-branding">
-        <img src="assets/img/fog-logo.png" alt="SF Fog RFC Crest" class="header-logo" width="52" height="60">
-        <div class="header-title-block">
-          <span class="header-eyebrow">San Francisco Fog RFC</span>
-          <h1>Club Calendar Portal</h1>
-        </div>
-      </div>
-      <div class="header-actions">
-        <span id="auth-status-badge" class="auth-badge">Public Schedule</span>
-        <button id="btn-open-verifier" class="btn btn-outline-white btn-sm" aria-haspopup="dialog">Verify Files &amp; Feed</button>
-        <a href="index.html" class="btn btn-outline-white btn-sm">Subscribe Feed (.ics)</a>
-        <button id="btn-toggle-admin" class="btn btn-outline-white btn-sm" aria-haspopup="dialog">Admin Access</button>
-      </div>
+<body class="portal-page">
+  <!-- 1. DRUPAL WINDOW-TOP FIXED PROGRESS PRIDE CHAPTER NAVIGATOR & MENU -->
+  <aside class="fog-window-progress-strip" id="window-progress-strip" role="navigation" aria-label="Club Chapter Quick-Nav" data-component="fog-pride-menu">
+    <div class="fog-window-progress-strip__bar" role="group" aria-label="Progress Pride Chapters">
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--black" data-chapter="heritage" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Heritage &amp; Pioneers (Mark Bingham &amp; Founders)">
+        <span class="fog-sr-only">Heritage &amp; Pioneers</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--brown" data-chapter="foundations" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Foundations &amp; Governance (Alice Hoagland &amp; 501c3)">
+        <span class="fog-sr-only">Foundations &amp; Governance</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--light-blue" data-chapter="identity" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Club Identity (Sky Blue, Crest &amp; 25 Years)">
+        <span class="fog-sr-only">Club Identity</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--pink" data-chapter="community" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Community &amp; Supporters (Third Half &amp; Pilsner Inn)">
+        <span class="fog-sr-only">Community &amp; Supporters</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--white" data-chapter="inclusion" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Inclusion &amp; Belonging (IGR &amp; USA Rugby)">
+        <span class="fog-sr-only">Inclusion &amp; Belonging</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--red" data-chapter="pathway" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Pathway to Rugby (Rookie Clinic &amp; What to Bring)">
+        <span class="fog-sr-only">Pathway to Rugby</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--orange" data-chapter="squad" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Squad Roster &amp; Coaches (A/B Sides &amp; Lineups)">
+        <span class="fog-sr-only">Squad Roster</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--yellow" data-chapter="tournaments" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Tournaments &amp; Bingham Cups (12 Cups &amp; Archive)">
+        <span class="fog-sr-only">Tournaments &amp; Bingham Cups</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--green" data-chapter="training" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Training Grounds (Kimbell / Crocker Amazon / Treasure Island)">
+        <span class="fog-sr-only">Training Grounds</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--blue" data-chapter="portals" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Calendar Portal &amp; Club Systems">
+        <span class="fog-sr-only">Calendar Portal &amp; Club Systems</span>
+      </button>
+      <button type="button" class="fog-window-progress-strip__seg fog-window-progress-strip__seg--violet" data-chapter="giving" aria-expanded="false" aria-controls="pride-chapter-drawer" title="Philanthropy &amp; Giving (Donate to the Fog)">
+        <span class="fog-sr-only">Philanthropy &amp; Giving</span>
+      </button>
     </div>
-  </header>
+  </aside>
 
-  <!-- Controls & Filter Bar -->
-  <nav class="control-bar" aria-label="Calendar Controls">
-    <div class="control-inner">
-      <div class="control-row-top">
-        <div class="view-nav-group">
-          <!-- Segmented View Toggle -->
-          <div class="segmented-control" role="group" aria-label="View Mode">
-            <button id="btn-view-month" class="segmented-btn active" type="button">Month Grid</button>
-            <button id="btn-view-agenda" class="segmented-btn" type="button">Agenda List</button>
-          </div>
+  <!-- PROGRESS PRIDE BACKDROP & 11-CHAPTER FLYOUT DRAWER -->
+  <div class="fog-pride-backdrop" id="pride-backdrop" hidden></div>
 
-          <!-- Month Navigation -->
-          <div class="month-nav">
-            <button id="btn-prev-month" class="btn btn-secondary btn-sm" aria-label="Previous Month">&lt; Prev</button>
-            <span id="label-current-month" class="month-label">October 2026</span>
-            <button id="btn-next-month" class="btn btn-secondary btn-sm" aria-label="Next Month">Next &gt;</button>
-            <button id="btn-today" class="btn btn-secondary btn-sm">Today</button>
-          </div>
+  <div class="fog-window-progress-strip__drawer" id="pride-chapter-drawer" role="region" aria-label="Progress Pride Chapters Menu" hidden>
+    <div class="fog-window-progress-strip__drawer-inner">
+      <div class="fog-window-progress-strip__drawer-header">
+        <div class="fog-window-progress-strip__drawer-title-group">
+          <span class="fog-window-progress-strip__drawer-eyebrow">SF Fog RFC &bull; Interactive Waypoint Navigator</span>
+          <h3 class="fog-window-progress-strip__drawer-title">11 Chapters of Fog Rugby</h3>
         </div>
+        <button type="button" class="fog-window-progress-strip__drawer-close" id="pride-drawer-close" aria-label="Close Pride Menu">&#10005; CLOSE</button>
+      </div>
+
+      <div class="fog-window-progress-strip__chapters-grid">
+        <!-- 1. Black: Heritage -->
+        <a href="https://www.fogrugby.com/mark-bingham" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--black" data-chapter-target="heritage">
+          <div class="fog-window-progress-strip__chapter-tag">01 &bull; BLACK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Heritage &amp; Mark Bingham</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Hero of Flight 93, 2000 founding legacy, perpetual honors &amp; memorial roll.</p>
+          <span class="fog-window-progress-strip__chapter-action">Explore Memorial &rarr;</span>
+        </a>
+
+        <!-- 2. Brown: Foundations -->
+        <a href="https://www.fogrugby.com/board-of-directors" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--brown" data-chapter-target="foundations">
+          <div class="fog-window-progress-strip__chapter-tag">02 &bull; BROWN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Foundations &amp; Charity</h4>
+          <p class="fog-window-progress-strip__chapter-desc">501(c)(3) fiscal sponsorship, Alice Hoagland legacy, bylaws &amp; board governance.</p>
+          <span class="fog-window-progress-strip__chapter-action">View Governance &rarr;</span>
+        </a>
+
+        <!-- 3. Light Blue: Identity -->
+        <a href="https://www.fogrugby.com/25-years-of-inclusive-rugby" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--light-blue" data-chapter-target="identity">
+          <div class="fog-window-progress-strip__chapter-tag">03 &bull; SKY BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Club Identity &amp; 25 Years</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Official crest, Barry Nebuly cloud waves, West Coast pioneers &amp; 25-year story.</p>
+          <span class="fog-window-progress-strip__chapter-action">Read Our Story &rarr;</span>
+        </a>
+
+        <!-- 4. Pink: Community -->
+        <a href="https://www.fogrugby.com/fog-fan-zone" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--pink" data-chapter-target="community">
+          <div class="fog-window-progress-strip__chapter-tag">04 &bull; PINK</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Community &amp; Third Half</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Supporters club, social gatherings, Pilsner Inn &amp; SF Eagle partner nights.</p>
+          <span class="fog-window-progress-strip__chapter-action">Join Supporters &rarr;</span>
+        </a>
+
+        <!-- 5. White: Inclusion -->
+        <a href="https://www.fogrugby.com/igr-clubs" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--white" data-chapter-target="inclusion">
+          <div class="fog-window-progress-strip__chapter-tag">05 &bull; WHITE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Inclusion &amp; Belonging</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Inclusive rugby charter, USA Rugby &amp; IGR global club network, open to every body.</p>
+          <span class="fog-window-progress-strip__chapter-action">Global Community &rarr;</span>
+        </a>
+
+        <!-- 6. Red: Pathway to Rugby -->
+        <a href="https://www.fogrugby.com/p2r" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--red" data-chapter-target="pathway">
+          <div class="fog-window-progress-strip__chapter-tag">06 &bull; RED</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Pathway to Rugby</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Rookie clinics, boots &amp; mouthguard guide, non-contact touch &amp; player onboarding.</p>
+          <span class="fog-window-progress-strip__chapter-action">Start Rugby &rarr;</span>
+        </a>
+
+        <!-- 7. Orange: Squad Roster -->
+        <a href="https://www.fogrugby.com/squad" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--orange" data-chapter-target="squad">
+          <div class="fog-window-progress-strip__chapter-tag">07 &bull; ORANGE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Squad Roster &amp; Coaches</h4>
+          <p class="fog-window-progress-strip__chapter-desc">A-Side &amp; B-Side lineups, coaching credentials, player trading cards &amp; caps.</p>
+          <span class="fog-window-progress-strip__chapter-action">Meet the Squad &rarr;</span>
+        </a>
+
+        <!-- 8. Yellow: Tournaments & Cups -->
+        <a href="https://www.fogrugby.com/bingham-cup" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--yellow" data-chapter-target="tournaments">
+          <div class="fog-window-progress-strip__chapter-tag">08 &bull; YELLOW</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Bingham Cups &amp; Silver</h4>
+          <p class="fog-window-progress-strip__chapter-desc">12 Bingham Cups, 25-year match archive, NorCal championships &amp; rivalries.</p>
+          <span class="fog-window-progress-strip__chapter-action">Tournament Hub &rarr;</span>
+        </a>
+
+        <!-- 9. Green: Grounds & Schedule -->
+        <a href="https://www.fogrugby.com/training" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--green" data-chapter-target="training">
+          <div class="fog-window-progress-strip__chapter-tag">09 &bull; GREEN</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Grounds &amp; Fixtures</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Tuesday @ Raymond Kimbell, Thursday @ Crocker Amazon, Saturday @ Treasure Island.</p>
+          <span class="fog-window-progress-strip__chapter-action">Pitch Directions &rarr;</span>
+        </a>
+
+        <!-- 10. Blue: Calendar & Systems -->
+        <a href="portal.html" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--blue" data-chapter-target="portals">
+          <div class="fog-window-progress-strip__chapter-tag">10 &bull; FOG BLUE</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Calendar &amp; Club Systems</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Interactive agenda portal, official links hub, suggestion box &amp; The Foghorn.</p>
+          <span class="fog-window-progress-strip__chapter-action">Open Portal &rarr;</span>
+        </a>
+
+        <!-- 11. Violet: Philanthropy -->
+        <a href="https://www.fogrugby.com/donate-to-the-fog" class="fog-window-progress-strip__chapter-card fog-window-progress-strip__chapter-card--violet" data-chapter-target="giving">
+          <div class="fog-window-progress-strip__chapter-tag">11 &bull; VIOLET</div>
+          <h4 class="fog-window-progress-strip__chapter-name">Philanthropy &amp; Giving</h4>
+          <p class="fog-window-progress-strip__chapter-desc">Annual Giving Fund, player scholarships, community outreach &amp; corporate matching.</p>
+          <span class="fog-window-progress-strip__chapter-action">Support the Fog &rarr;</span>
+        </a>
+      </div>
+
+      <nav class="fog-window-progress-strip__systems" aria-label="Club quicklinks">
+        <span class="fog-window-progress-strip__systems-label">Quick Systems:</span>
+        <a href="https://www.fogrugby.com/">fogrugby.com</a>
+        <a href="https://www.fogrugby.com/results">25-Year Match Archive</a>
+        <a href="portal.html">Calendar Portal</a>
+        <a href="links.html">Official Links Hub</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/suggestions">Suggestion Box</a>
+        <a href="https://mautic.fogrugby.com/fog-rugby/join-the-foghorn">Join The Foghorn</a>
+        <a href="https://www.instagram.com/fogrugby/" target="_blank" rel="noopener">Instagram (@fogrugby)</a>
+        <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" rel="noopener">TikTok (@fogrugbysf)</a>
+        <a href="https://www.facebook.com/FogRugby/" target="_blank" rel="noopener">Facebook (@FogRugby)</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- BOTTOM FULL-WIDTH PROGRESS PRIDE BAR -->
+  <div class="pride-stripe-bottom" aria-hidden="true">
+    <span class="pride-bar" style="background:#000000"></span>
+    <span class="pride-bar" style="background:#613915"></span>
+    <span class="pride-bar" style="background:#74D7EE"></span>
+    <span class="pride-bar" style="background:#FFAFC8"></span>
+    <span class="pride-bar" style="background:#FFFFFF"></span>
+    <span class="pride-bar" style="background:#E40303"></span>
+    <span class="pride-bar" style="background:#FF8C00"></span>
+    <span class="pride-bar" style="background:#FFED00"></span>
+    <span class="pride-bar" style="background:#008026"></span>
+    <span class="pride-bar" style="background:#004DFF"></span>
+    <span class="pride-bar" style="background:#750787"></span>
+  </div>
+
+  <!-- FULL-WINDOW ROTATING BACKGROUND & ATMOSPHERIC VIGNETTE -->
+  <div class="fog-bg-container" aria-hidden="true">
+    <div id="fog-bg-a" class="fog-bg-layer active" style="background-image: url('assets/img/panels/fog-waiver-1-welcome.jpg');"></div>
+    <div id="fog-bg-b" class="fog-bg-layer"></div>
+  </div>
+  <div class="fog-bg-overlay" aria-hidden="true"></div>
+
+    <!-- MAIN PAGE LAYOUT -->
+  <div class="page-layout">
+
+    <!-- White Site Header: Official Logo | Calendar Icon | Log In | Join | Pride Menu -->
+    <header class="site-header" id="site-header" role="banner">
+      <div class="site-header-inner">
+        <a href="https://www.fogrugby.com/" class="header-logo-link">
+          <img src="assets/img/logo.svg" alt="San Francisco Fog Rugby Football Club" class="header-logo-img" width="114" height="38">
+        </a>
 
         <div class="header-actions">
-          <!-- Search Input -->
-          <div class="search-box">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="search-input" placeholder="Search fixtures, venues, notes..." aria-label="Search events">
-          </div>
-
-          <!-- Add Event (Admin Mode) -->
-          <button id="btn-new-event" class="btn btn-primary btn-sm" style="display: none;">+ Add Event</button>
+          <a href="index.html" class="header-icon-btn" aria-label="Subscribe to the club calendar" title="Subscribe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          </a>
+          <span class="header-divider" aria-hidden="true"></span>
+          <a id="btn-toggle-admin" href="https://clubhouse.fogrugby.com/civicrm/event/manage?reset=1" class="header-btn header-btn--secondary">Edit events</a>
+          <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
+          <button type="button" class="header-btn header-btn--pride" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Interactive Progress Pride Menu">
+            <span class="pride-menu-pip" aria-hidden="true"></span>
+            <span><span class="hide-xs">Pride </span>Menu</span>
+            <span class="pride-menu-arrow" aria-hidden="true">&#9662;</span>
+          </button>
         </div>
       </div>
+    </header>
 
-      <!-- Filter Chips Row -->
-      <div class="filter-chips-row">
-        <span class="filter-label">Category:</span>
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="fixture">Fixtures</button>
-        <button class="chip" data-filter="training">Training</button>
-        <button class="chip" data-filter="pathway">Pathway</button>
-        <button class="chip" data-filter="tournament">Tournaments</button>
-        <button class="chip" data-filter="social">Socials</button>
-        <button class="chip" data-filter="community">Community</button>
-        <button class="chip" data-filter="board">Board</button>
+    <!-- Main Content: Calendar in the frosted floating card -->
+    <main class="main-wrap main-wrap--portal" id="main">
+      <div class="calendar-card portal-card">
 
-        <span class="filter-label" style="margin-left: 12px;">Status:</span>
-        <button class="chip active" data-status="all">All</button>
-        <button class="chip" data-status="confirmed">Confirmed</button>
-        <button class="chip" data-status="tentative">Tentative</button>
-        <button class="chip" data-status="cancelled">Cancelled</button>
-      </div>
-    </div>
-  </nav>
+        <div class="card-header portal-head">
+          <div class="card-header-copy">
+            <h1 class="card-title">Club Calendar</h1>
+            <p class="card-subtitle">Matches, practice, socials and tournaments. Select any event for times, venue and links.</p>
+          </div>
+          <div class="portal-head-actions">
+            <span id="auth-status-badge" class="auth-badge" hidden>Public schedule</span>
+            <a href="index.html" class="card-view-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="0"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5"/></svg>
+              <span>Subscribe</span>
+            </a>
+          </div>
+        </div>
 
-  <!-- Main Content Container -->
-  <main class="main-container">
-    <!-- Month Grid View -->
-    <section id="view-month-grid" class="calendar-grid-card">
-      <div class="calendar-weekdays-header">
-        <div class="calendar-weekday">Sun</div>
-        <div class="calendar-weekday">Mon</div>
-        <div class="calendar-weekday">Tue</div>
-        <div class="calendar-weekday">Wed</div>
-        <div class="calendar-weekday">Thu</div>
-        <div class="calendar-weekday">Fri</div>
-        <div class="calendar-weekday">Sat</div>
-      </div>
-      <div id="calendar-days-container" class="calendar-days-grid" role="grid">
-        <!-- Rendered dynamically -->
-      </div>
-      <div class="calendar-legend" aria-label="Event colour key">
-        <span class="lg cat-fixture">Match</span><span class="lg cat-training">Training</span><span class="lg cat-pathway">Pathway</span>
-        <span class="lg cat-tournament">Tournament</span><span class="lg cat-social">Social</span><span class="lg cat-community">Community</span>
-        <span class="lg cat-board">Board</span><span class="lg lg-tbc">Dashed = to be confirmed</span>
-      </div>
-    </section>
+        <!-- Toolbar: month nav | search, view toggle, add -->
+        <nav class="cal-toolbar" aria-label="Calendar controls">
+          <div class="cal-toolbar-left">
+            <div class="month-nav">
+              <button id="btn-prev-month" class="cal-icon-btn" type="button" aria-label="Previous month">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+              </button>
+              <button id="btn-next-month" class="cal-icon-btn" type="button" aria-label="Next month">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <button id="btn-today" class="cal-text-btn" type="button">Today</button>
+            </div>
+            <h2 id="label-current-month" class="month-label" aria-live="polite">November 2026</h2>
+          </div>
+          <div class="cal-toolbar-right">
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="search" id="search-input" placeholder="Search events" aria-label="Search events">
+            </div>
+            <div class="segmented-control" role="group" aria-label="View">
+              <button id="btn-view-month" class="segmented-btn active" type="button" aria-pressed="true">Month</button>
+              <button id="btn-view-agenda" class="segmented-btn" type="button" aria-pressed="false">Agenda</button>
+            </div>
+            <button id="btn-new-event" class="header-btn header-btn--primary admin-only" type="button" hidden>+ Add event</button>
+          </div>
+        </nav>
 
-    <!-- Agenda List View -->
-    <section id="view-agenda-list" class="agenda-list" style="display: none;">
-      <!-- Rendered dynamically -->
-    </section>
-  </main>
+        <!-- Category filters double as the colour key -->
+        <div class="filter-chips-row" role="toolbar" aria-label="Filter events">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip cat-fixture" data-filter="fixture" type="button">Matches</button>
+          <button class="chip cat-training" data-filter="training" type="button">Training</button>
+          <button class="chip cat-pathway" data-filter="pathway" type="button">Pathway</button>
+          <button class="chip cat-tournament" data-filter="tournament" type="button">Tournaments</button>
+          <button class="chip cat-social" data-filter="social" type="button">Socials</button>
+          <button class="chip cat-community" data-filter="community" type="button">Community</button>
+          <button class="chip cat-board" data-filter="board" type="button">Board</button>
+          <span class="chip-sep" aria-hidden="true"></span>
+          <button class="chip chip-status active" data-status="all" type="button">Any status</button>
+          <button class="chip chip-status" data-status="confirmed" type="button">Confirmed</button>
+          <button class="chip chip-status chip-tbc-key" data-status="tentative" type="button">TBC</button>
+          <button class="chip chip-status" data-status="cancelled" type="button">Cancelled</button>
+        </div>
+
+        <!-- Month Grid View -->
+        <section id="view-month-grid" class="calendar-grid-card" aria-label="Month view">
+          <div class="calendar-weekdays-header" aria-hidden="true">
+            <div class="calendar-weekday">Sun</div><div class="calendar-weekday">Mon</div><div class="calendar-weekday">Tue</div><div class="calendar-weekday">Wed</div><div class="calendar-weekday">Thu</div><div class="calendar-weekday">Fri</div><div class="calendar-weekday">Sat</div>
+          </div>
+          <div id="calendar-days-container" class="calendar-days-grid" role="grid" aria-labelledby="label-current-month"></div>
+        </section>
+
+        <!-- Phone: selected day's events under the grid -->
+        <section id="day-detail" class="day-detail" aria-live="polite"></section>
+
+        <!-- Agenda List View -->
+        <section id="view-agenda-list" class="agenda-list portal-scroll" aria-label="Agenda" style="display: none;"></section>
+
+        <div class="portal-foot">
+          <span class="portal-foot-note">Times are Pacific. Dashed = to be confirmed. Club editors manage events in the <a href="https://clubhouse.fogrugby.com/civicrm/event/manage?reset=1">Clubhouse</a>.</span>
+          <span class="portal-foot-links">
+            <button id="btn-open-verifier" class="link-btn" type="button" aria-haspopup="dialog">Verify feed</button>
+            <span class="sep" aria-hidden="true">&middot;</span>
+            <a href="fog.ics">fog.ics</a>
+            <span class="sep" aria-hidden="true">&middot;</span>
+            <a href="events.json">events.json</a>
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER: Social Icons | Links / Fiscal Statement / Copyright -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <nav class="footer-links" aria-label="Club social media and links">
+          <span class="footer-socials">
+            <a href="https://www.instagram.com/fogrugby/" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/FogRugby/" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@fogrugbysf" target="_blank" rel="noopener" class="footer-social-link" aria-label="San Francisco Fog Rugby on TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917"/>
+              </svg>
+            </a>
+          </span>
+          <span class="footer-pipe" aria-hidden="true">|</span>
+          <span class="footer-text-links">
+            <a href="https://www.fogrugby.com/" target="_blank" rel="noopener">Website</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="portal.html">Calendar Portal</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://mautic.fogrugby.com/fog-rugby/suggestions" target="_blank" rel="noopener">Suggestion Box</a><span class="sep" aria-hidden="true">&middot;</span>
+            <a href="https://www.fogrugby.com/donate-to-the-fog" target="_blank" rel="noopener">Donate</a>
+          </span>
+        </nav>
+        <p class="footer-sponsor">
+          The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
+        </p>
+        <p class="footer-copyright">&copy; 2000&ndash;2026 San Francisco Fog Rugby Football Club</p>
+      </div>
+    </footer>
+  </div>
 
   <!-- Persistent Unsaved Changes Bar -->
   <aside id="changes-bar" class="changes-bar" role="status" aria-live="polite">
@@ -373,36 +603,13 @@
   </dialog>
 
   <!-- GitHub Authentication Dialog -->
-  <dialog id="auth-dialog" class="fog-dialog" aria-labelledby="dialog-auth-title">
+  <!-- Desktop: "+N more" day list -->
+  <dialog id="day-dialog" class="fog-dialog day-dialog" aria-labelledby="day-dialog-title">
     <div class="dialog-header">
-      <h3 id="dialog-auth-title">Admin Authentication</h3>
-      <button type="button" class="dialog-close-btn" data-close="auth-dialog" aria-label="Close dialog">&times;</button>
+      <h3 id="day-dialog-title">Events</h3>
+      <button type="button" class="dialog-close-btn" data-close="day-dialog" aria-label="Close dialog">&times;</button>
     </div>
-    <div class="dialog-body">
-      <p style="font-size: 0.9rem;">
-        Authenticate with a GitHub Personal Access Token (PAT) to commit schedule changes directly to <code>events.yml</code> in the repository.
-      </p>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label class="form-label" for="gh-token-input">GitHub Personal Access Token</label>
-        <input type="password" id="gh-token-input" class="form-input" placeholder="ghp_... or github_pat_..." autocomplete="off">
-        <span class="form-help">
-          Requires repository write permissions (<code>Contents: Read and write</code>). Your token is stored only in your local browser session and is never sent to any third-party server.
-        </span>
-      </div>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label style="font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
-          <input type="checkbox" id="gh-remember-token" checked>
-          Remember token in this browser (LocalStorage)
-        </label>
-      </div>
-      <div id="auth-error-msg" style="display: none; color: var(--fog-red); font-size: 0.85rem; margin-bottom: 12px; font-weight: 600;"></div>
-      <div id="auth-user-info" style="display: none; background: #eef7f0; padding: 10px; border-radius: 2px; border: 1px solid var(--fog-green); font-size: 0.85rem; margin-bottom: 12px;"></div>
-    </div>
-    <div class="dialog-footer">
-      <button type="button" id="btn-sign-out" class="btn btn-danger btn-sm" style="display: none; margin-right: auto;">Clear Credentials</button>
-      <button type="button" class="btn btn-secondary btn-sm" data-close="auth-dialog">Close</button>
-      <button type="button" id="btn-save-token" class="btn btn-primary btn-sm">Connect &amp; Verify</button>
-    </div>
+    <div class="dialog-body" id="day-dialog-body"></div>
   </dialog>
 
   <!-- Review & Commit Dialog -->
@@ -439,6 +646,7 @@
   <!-- =========================================================================
        Application Logic & Controller
        ========================================================================= -->
+  <script src="assets/js/fog-chassis.js"></script>
   <script>
     (function () {
       'use strict';
@@ -450,6 +658,7 @@
       const LOCAL_PATH = '../events.yml';
       const GITHUB_RAW_FALLBACK = 'https://raw.githubusercontent.com/' + REPO_OWNER + '/' + REPO_NAME + '/main/' + FILE_PATH;
       const GITHUB_API_URL = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + FILE_PATH;
+
 
       const MONTH_NAMES = [
         'January', 'February', 'March', 'April', 'May', 'June',
@@ -466,13 +675,17 @@
         events: [],
         currentYear: new Date().getFullYear(),
         currentMonth: new Date().getMonth(), // 0-indexed
-        viewMode: (window.matchMedia && window.matchMedia('(max-width: 700px)').matches) ? 'agenda' : 'month', // phones open in the list
+        viewMode: 'month',
         showPast: false,
         activeCategory: 'all',
         activeStatus: 'all',
         searchQuery: '',
         isAdmin: false,
         githubToken: '',
+        session: '',
+        authMode: '',
+        selectedDate: '',
+        dayMap: null,
         fileSha: '',
         editingEventId: null,
         currentExdates: [],
@@ -847,136 +1060,205 @@
         });
       }
 
-      // --- Recurrence Expansion for Month View ---
-      function expandRecurringEvents(year, month) {
-        const expanded = [];
-        const monthStart = new Date(year, month, 1);
-        const monthEnd = new Date(year, month + 1, 0);
-
+      // --- Recurrence Expansion over any date range ---
+      const BYDAY_IDX = { SU: 0, MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6 };
+      function expandRange(rangeStart, rangeEnd) {
+        const out = [];
         displayEvents().forEach(ev => {
-          if (ev.rrule && ev.rrule.includes('FREQ=WEEKLY')) {
-            const daysToMatch = [];
-            if (ev.rrule.includes('TU')) daysToMatch.push(2);
-            if (ev.rrule.includes('TH')) daysToMatch.push(4);
-
-            const ruleStartStr = formatDate(ev.date || '2026-11-03');
-            const ruleStart = parseLocalDate(ruleStartStr);
-            const exdatesSet = new Set((ev.exdates || []).map(formatDate));
-
-            for (let d = new Date(monthStart); d <= monthEnd; d.setDate(d.getDate() + 1)) {
-              if (d < ruleStart) continue;
-              if (daysToMatch.includes(d.getDay())) {
-                const dateStr = formatDate(d);
-                if (!exdatesSet.has(dateStr)) {
-                  expanded.push({
-                    ...ev,
-                    date: dateStr,
-                    isRecurringInstance: true
-                  });
-                }
-              }
+          const rule = String(ev.rrule || '');
+          if (/FREQ=WEEKLY/.test(rule)) {
+            const byday = ((rule.match(/BYDAY=([A-Z,]+)/) || [])[1] || '').split(',').map(x => BYDAY_IDX[x]).filter(x => x !== undefined);
+            const ruleStart = parseLocalDate(formatDate(ev.date || ev.start));
+            if (!byday.length) byday.push(ruleStart.getDay());
+            const untilM = rule.match(/UNTIL=(\d{4})(\d{2})(\d{2})/);
+            const until = untilM ? new Date(+untilM[1], +untilM[2] - 1, +untilM[3]) : null;
+            const ex = new Set((ev.exdates || []).map(formatDate));
+            for (let d = new Date(rangeStart); d <= rangeEnd; d.setDate(d.getDate() + 1)) {
+              if (d < ruleStart || (until && d > until) || !byday.includes(d.getDay())) continue;
+              const k = formatDate(d);
+              if (!ex.has(k)) out.push({ ...ev, date: k, isRecurringInstance: true });
             }
           } else {
-            expanded.push(ev);
+            out.push(ev);
           }
         });
-        return expanded;
+        return out;
+      }
+      function expandRecurringEvents(year, month) {
+        return expandRange(new Date(year, month, 1), new Date(year, month + 1, 0));
       }
 
-      // --- Rendering: Month Calendar Grid ---
+      // --- Rendering: Month Calendar Grid (always 6 weeks, multi-day bars, overflow → "+N more") ---
+      function safeUrl(u) { return /^https?:\/\//i.test(String(u || '')) ? String(u) : ''; }
+      function catLabel(c) { return CATEGORY_LABELS[c] || 'Event'; }
+      function eventsForDay(key, map) {
+        return (map.get(key) || []).slice().sort((a, b) =>
+          (b.multi - a.multi) || String(a.ev.time || '00:00').localeCompare(String(b.ev.time || '00:00')));
+      }
+      function buildDayMap(rangeStart, rangeEnd) {
+        const map = new Map();
+        const add = (k, item) => { if (!map.has(k)) map.set(k, []); map.get(k).push(item); };
+        filterEventsList(expandRange(rangeStart, rangeEnd)).forEach(ev => {
+          if (ev.start && ev.end) {
+            const s = parseLocalDate(ev.start), e = parseLocalDate(ev.end);
+            const sk = formatDate(s), ek = formatDate(e);
+            for (let c = new Date(s); c <= e; c.setDate(c.getDate() + 1)) {
+              const k = formatDate(c);
+              add(k, { ev, multi: 1, isStart: k === sk, isEnd: k === ek, weekStart: c.getDay() === 0 });
+            }
+          } else if (ev.date) {
+            add(formatDate(ev.date), { ev, multi: 0, isStart: true, isEnd: true });
+          }
+        });
+        return map;
+      }
+
       function renderMonthGrid() {
         const year = state.currentYear;
         const month = state.currentMonth;
         elements.labelCurrentMonth.textContent = MONTH_NAMES[month] + ' ' + year;
+        const box = elements.calendarDaysContainer;
+        box.innerHTML = '';
 
-        elements.calendarDaysContainer.innerHTML = '';
-
-        const firstDayOfMonth = new Date(year, month, 1);
-        const startDayIndex = firstDayOfMonth.getDay();
-        const daysInCurrentMonth = new Date(year, month + 1, 0).getDate();
-        const daysInPrevMonth = new Date(year, month, 0).getDate();
-
+        const gridStart = new Date(year, month, 1 - new Date(year, month, 1).getDay());
+        const gridEnd = new Date(gridStart); gridEnd.setDate(gridStart.getDate() + 41);
         const todayStr = formatDate(new Date());
-        const allVisibleEvents = expandRecurringEvents(year, month);
-        const filtered = filterEventsList(allVisibleEvents);
+        const map = buildDayMap(gridStart, gridEnd);
+        state.dayMap = map;
 
-        const eventDateMap = new Map();
-        filtered.forEach(ev => {
-          if (ev.date) {
-            const dKey = formatDate(ev.date);
-            const list = eventDateMap.get(dKey) || [];
-            list.push(ev);
-            eventDateMap.set(dKey, list);
-          } else if (ev.start && ev.end) {
-            const s = parseLocalDate(ev.start);
-            const e = parseLocalDate(ev.end);
-            for (let cur = new Date(s); cur <= e; cur.setDate(cur.getDate() + 1)) {
-              const curStr = formatDate(cur);
-              const list = eventDateMap.get(curStr) || [];
-              list.push(ev);
-              eventDateMap.set(curStr, list);
-            }
-          }
-        });
-
-        // Prev Month tail
-        for (let i = startDayIndex - 1; i >= 0; i--) {
-          const dayNum = daysInPrevMonth - i;
+        for (let i = 0; i < 42; i++) {
+          const d = new Date(gridStart); d.setDate(gridStart.getDate() + i);
+          const key = formatDate(d);
+          const items = eventsForDay(key, map);
           const cell = document.createElement('div');
-          cell.className = 'calendar-day-cell other-month';
-          cell.innerHTML = '<div class="day-header"><span class="day-number">' + dayNum + '</span></div>';
-          elements.calendarDaysContainer.appendChild(cell);
-        }
-
-        // Current Month
-        for (let d = 1; d <= daysInCurrentMonth; d++) {
-          const dateStr = year + '-' + pad2(month + 1) + '-' + pad2(d);
-          const isToday = (dateStr === todayStr);
-
-          const cell = document.createElement('div');
-          cell.className = 'calendar-day-cell' + (isToday ? ' today' : '');
+          cell.className = 'calendar-day-cell' +
+            (d.getMonth() === month ? '' : ' other-month') +
+            (key === todayStr ? ' today' : '') +
+            (key < todayStr ? ' past' : '') +
+            (key === state.selectedDate ? ' selected' : '') +
+            (items.length ? ' has-events' : '');
           cell.setAttribute('role', 'gridcell');
+          cell.dataset.date = key;
+          cell.setAttribute('aria-label', fmtDay(key) + (items.length ? ', ' + items.length + ' event' + (items.length > 1 ? 's' : '') : ''));
 
           const header = document.createElement('div');
           header.className = 'day-header';
-          header.innerHTML = '<span class="day-number">' + d + '</span>' +
-            '<button type="button" class="day-add-btn" data-date="' + dateStr + '" title="Add event on ' + dateStr + '">+</button>';
+          header.innerHTML = '<span class="day-number">' + d.getDate() + '</span>' +
+            (state.isAdmin ? '<button type="button" class="day-add-btn" data-date="' + key + '" title="Add event on ' + fmtDay(key) + '" aria-label="Add event on ' + fmtDay(key) + '">+</button>' : '');
           cell.appendChild(header);
 
-          const dayEvents = (eventDateMap.get(dateStr) || []).slice().sort((a, b) => (a.time || '00:00').localeCompare(b.time || '00:00'));
-          dayEvents.forEach(ev => {
+          const chips = document.createElement('div');
+          chips.className = 'day-chips';
+          items.forEach(item => {
+            const ev = item.ev;
             const chip = document.createElement('a');
-            chip.className = 'event-chip cat-' + (ev.category || 'fixture') +
-              (ev.status === 'tentative' ? ' status-tentative' : '');
             chip.href = '#';
-            chip.title = (ev.time ? fmtTime(ev.time) + ' · ' : '') + ev.title + ' (' + (CATEGORY_LABELS[ev.category] || 'Event') + ')' + (ev.location ? ' · ' + ev.location : '');
-            chip.innerHTML = (ev.time ? '<span class="chip-time">' + fmtTime(ev.time) + '</span> ' : '') +
-              escapeHtml(ev.title) + (ev.status === 'tentative' ? ' <span class="chip-tbc">TBC</span>' : '');
-            chip.addEventListener('click', function (e) {
-              e.preventDefault();
-              openEventModal(ev.id);
-            });
-            cell.appendChild(chip);
+            chip.className = 'event-chip cat-' + (ev.category || 'fixture') +
+              (ev.status === 'tentative' ? ' status-tentative' : '') +
+              (ev.status === 'cancelled' ? ' status-cancelled' : '') +
+              (item.multi ? ' span' + (item.isStart ? ' span-start' : '') + (item.isEnd ? ' span-end' : '') : '');
+            chip.title = (ev.time ? fmtTime(ev.time) + ' · ' : '') + ev.title + ' (' + catLabel(ev.category) + ')' + (ev.location ? ' · ' + ev.location : '');
+            const showText = !item.multi || item.isStart || item.weekStart;
+            chip.innerHTML = showText
+              ? (ev.time && !item.multi ? '<span class="chip-time">' + fmtTime(ev.time).replace(' ', '').toLowerCase() + '</span> ' : '') +
+                '<span class="chip-title">' + escapeHtml(ev.title) + '</span>' +
+                (ev.status === 'tentative' ? ' <span class="chip-tbc">TBC</span>' : '')
+              : '<span class="chip-title chip-cont" aria-hidden="true">' + escapeHtml(ev.title) + '</span>';
+            chip.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); openEventModal(ev.id); });
+            chips.appendChild(chip);
           });
+          cell.appendChild(chips);
 
-          elements.calendarDaysContainer.appendChild(cell);
+          if (items.length) {
+            const dots = document.createElement('div');
+            dots.className = 'day-dots';
+            dots.setAttribute('aria-hidden', 'true');
+            dots.innerHTML = items.slice(0, 4).map(it => '<i class="dot cat-' + (it.ev.category || 'fixture') + '"></i>').join('');
+            cell.appendChild(dots);
+
+            const more = document.createElement('button');
+            more.type = 'button';
+            more.className = 'day-more';
+            more.hidden = true;
+            more.addEventListener('click', e => { e.stopPropagation(); openDayDialog(key); });
+            cell.appendChild(more);
+          }
+
+          cell.addEventListener('click', () => selectDay(key));
+          box.appendChild(cell);
         }
 
-        // Next Month leading
-        const totalRendered = startDayIndex + daysInCurrentMonth;
-        const remainder = (7 - (totalRendered % 7)) % 7;
-        for (let n = 1; n <= remainder; n++) {
-          const cell = document.createElement('div');
-          cell.className = 'calendar-day-cell other-month';
-          cell.innerHTML = '<div class="day-header"><span class="day-number">' + n + '</span></div>';
-          elements.calendarDaysContainer.appendChild(cell);
-        }
-
-        elements.calendarDaysContainer.querySelectorAll('.day-add-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            openNewEventModal(btn.dataset.date);
-          });
+        box.querySelectorAll('.day-add-btn').forEach(btn => {
+          btn.addEventListener('click', e => { e.stopPropagation(); openNewEventModal(btn.dataset.date); });
         });
+
+        requestAnimationFrame(fitDayCells);
+        renderDayDetail();
+      }
+
+      // Hide chips that don't fit a cell and show "+N more" instead (keeps rows equal height).
+      function fitDayCells() {
+        elements.calendarDaysContainer.querySelectorAll('.calendar-day-cell').forEach(cell => {
+          const chips = Array.from(cell.querySelectorAll('.event-chip'));
+          const more = cell.querySelector('.day-more');
+          chips.forEach(c => { c.hidden = false; });
+          if (!more || !chips.length) return;
+          more.hidden = true;
+          const wrap = cell.querySelector('.day-chips');
+          if (wrap.scrollHeight <= wrap.clientHeight + 1) return;
+          more.hidden = false;
+          let hiddenCount = 0;
+          for (let i = chips.length - 1; i >= 0 && wrap.scrollHeight > wrap.clientHeight + 1; i--) {
+            chips[i].hidden = true; hiddenCount++;
+          }
+          more.textContent = '+' + hiddenCount + ' more';
+        });
+      }
+      let fitTimer = null;
+      window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitDayCells, 80); });
+
+      function dayListHtml(key) {
+        const items = eventsForDay(key, state.dayMap || new Map());
+        if (!items.length) return '<p class="day-empty">Nothing scheduled.</p>';
+        return '<ul class="day-list">' + items.map(({ ev }) => {
+          const when = ev.start && ev.end ? fmtDay(ev.start) + ' – ' + fmtDay(ev.end)
+            : (ev.time ? fmtTime(ev.time) + (ev.end_time ? ' – ' + fmtTime(ev.end_time) : '') : (ev.status === 'tentative' ? 'Time TBC' : 'All day'));
+          return '<li><button type="button" class="day-item cat-' + (ev.category || 'fixture') + (ev.status === 'tentative' ? ' status-tentative' : '') + (ev.status === 'cancelled' ? ' status-cancelled' : '') + '" data-edit-id="' + escapeHtml(ev.id) + '">' +
+            '<span class="day-item-when">' + escapeHtml(when) + '</span>' +
+            '<span class="day-item-title">' + escapeHtml(ev.title) + (ev.status === 'tentative' ? ' <span class="chip-tbc">TBC</span>' : '') + (ev.status === 'cancelled' ? ' <span class="chip-tbc">Cancelled</span>' : '') + '</span>' +
+            (ev.location ? '<span class="day-item-where">' + escapeHtml(ev.location) + '</span>' : '') +
+            '</button></li>';
+        }).join('') + '</ul>';
+      }
+      function wireDayList(root) {
+        root.querySelectorAll('[data-edit-id]').forEach(b => b.addEventListener('click', () => {
+          const dd = document.getElementById('day-dialog'); if (dd.open) dd.close();
+          openEventModal(b.dataset.editId);
+        }));
+      }
+      function selectDay(key) {
+        state.selectedDate = key;
+        elements.calendarDaysContainer.querySelectorAll('.calendar-day-cell').forEach(c => c.classList.toggle('selected', c.dataset.date === key));
+        renderDayDetail();
+      }
+      function renderDayDetail() {
+        const panel = document.getElementById('day-detail');
+        const key = state.selectedDate || formatDate(new Date());
+        const d = parseLocalDate(key);
+        if (d.getMonth() !== state.currentMonth || d.getFullYear() !== state.currentYear) { panel.innerHTML = ''; return; }
+        panel.innerHTML = '<h3 class="day-detail-title">' + fmtDay(key) + '</h3>' + dayListHtml(key) +
+          (state.isAdmin ? '<button type="button" class="btn btn-secondary btn-sm day-detail-add">+ Add event this day</button>' : '');
+        wireDayList(panel);
+        const add = panel.querySelector('.day-detail-add');
+        if (add) add.addEventListener('click', () => openNewEventModal(key));
+      }
+      function openDayDialog(key) {
+        const dlg = document.getElementById('day-dialog');
+        document.getElementById('day-dialog-title').textContent = fmtDay(key);
+        const body = document.getElementById('day-dialog-body');
+        body.innerHTML = dayListHtml(key);
+        wireDayList(body);
+        dlg.showModal();
       }
 
       // --- Rendering: Chronological Agenda List (Zero NaN) ---
@@ -1072,10 +1354,10 @@
                     '<span>' + escapeHtml(ev.location) + '</span>' +
                   '</div>' : '') +
                 (ev.notes ? '<p class="agenda-card-notes">' + escapeHtml(ev.notes) + '</p>' : '') +
-                (ev.url ? '<div style="margin-top:4px;"><a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener">Event Link &rarr;</a></div>' : '') +
+                (safeUrl(ev.url) ? '<div class="agenda-card-link"><a href="' + escapeHtml(safeUrl(ev.url)) + '" target="_blank" rel="noopener">Event link &rarr;</a></div>' : '') +
               '</div>' +
               '<div class="agenda-card-actions">' +
-                '<button type="button" class="btn btn-secondary btn-sm" data-edit-id="' + ev.id + '">View Details</button>' +
+                '<button type="button" class="btn btn-secondary btn-sm" data-edit-id="' + escapeHtml(ev.id) + '">Details</button>' +
               '</div>';
 
             container.appendChild(card);
@@ -1110,20 +1392,20 @@
       }
 
       function renderViews() {
-        elements.labelCurrentMonth.textContent = MONTH_NAMES[state.currentMonth] + ' ' + state.currentYear;
-        if (elements.btnPrevMonth && elements.btnPrevMonth.parentElement)
-          elements.btnPrevMonth.parentElement.style.display = state.viewMode === 'month' ? '' : 'none';
-        if (state.viewMode === 'month') {
-          elements.viewMonthGrid.style.display = 'block';
-          elements.viewAgendaList.style.display = 'none';
-          renderMonthGrid();
-        } else {
-          elements.viewMonthGrid.style.display = 'none';
-          elements.viewAgendaList.style.display = 'flex';
-          elements.btnViewAgenda.classList.add('active');
-          elements.btnViewMonth.classList.remove('active');
-          renderAgendaList();
-        }
+        elements.labelCurrentMonth.textContent = state.viewMode === 'month'
+          ? MONTH_NAMES[state.currentMonth] + ' ' + state.currentYear
+          : (state.showPast ? 'All events' : 'Upcoming');
+        const isMonth = state.viewMode === 'month';
+        document.body.classList.toggle('view-agenda', !isMonth);
+        elements.btnViewMonth.classList.toggle('active', isMonth);
+        elements.btnViewAgenda.classList.toggle('active', !isMonth);
+        elements.btnViewMonth.setAttribute('aria-pressed', String(isMonth));
+        elements.btnViewAgenda.setAttribute('aria-pressed', String(!isMonth));
+        elements.btnPrevMonth.parentElement.style.display = isMonth ? '' : 'none';
+        elements.viewMonthGrid.style.display = isMonth ? '' : 'none';
+        document.getElementById('day-detail').style.display = isMonth ? '' : 'none';
+        elements.viewAgendaList.style.display = isMonth ? 'none' : 'flex';
+        if (isMonth) renderMonthGrid(); else renderAgendaList();
       }
 
       // --- Event Modal & Form Management ---
@@ -1660,80 +1942,8 @@
         }
       });
 
-      // --- Admin Auth ---
-      function initAuth() {
-        const savedToken = localStorage.getItem('fog_gh_token') || sessionStorage.getItem('fog_gh_token');
-        if (savedToken) {
-          state.githubToken = savedToken;
-          verifyToken(savedToken, false);
-        }
-      }
-
-      async function verifyToken(token, showSuccessAlert) {
-        elements.authErrorMsg.style.display = 'none';
-        elements.authUserInfo.style.display = 'none';
-
-        try {
-          const res = await fetch('https://api.github.com/user', {
-            headers: { 'Authorization': 'Bearer ' + token }
-          });
-          if (!res.ok) throw new Error('Invalid token or insufficient scope.');
-          const user = await res.json();
-
-          state.isAdmin = true;
-          state.githubToken = token;
-          document.body.classList.add('admin-mode');
-          elements.btnNewEvent.style.display = 'inline-flex';
-          elements.authStatusBadge.className = 'auth-badge authenticated';
-          elements.authStatusBadge.textContent = 'Admin: @' + user.login;
-          elements.btnSignOut.style.display = 'inline-flex';
-
-          elements.authUserInfo.style.display = 'block';
-          elements.authUserInfo.textContent = 'Connected as ' + (user.name || user.login) + ' (@' + user.login + '). Write access enabled.';
-
-          if (elements.ghRememberCheckbox.checked) {
-            localStorage.setItem('fog_gh_token', token);
-          } else {
-            sessionStorage.setItem('fog_gh_token', token);
-          }
-
-          if (showSuccessAlert) {
-            setTimeout(() => {
-              elements.authDialog.close();
-              renderViews();
-            }, 1000);
-          }
-        } catch (err) {
-          elements.authErrorMsg.style.display = 'block';
-          elements.authErrorMsg.textContent = 'Verification error: ' + err.message;
-        }
-      }
-
-      elements.btnSaveToken.addEventListener('click', () => {
-        const tok = elements.ghTokenInput.value.trim();
-        if (!tok) {
-          elements.authErrorMsg.style.display = 'block';
-          elements.authErrorMsg.textContent = 'Please enter a GitHub Personal Access Token.';
-          return;
-        }
-        verifyToken(tok, true);
-      });
-
-      elements.btnSignOut.addEventListener('click', () => {
-        localStorage.removeItem('fog_gh_token');
-        sessionStorage.removeItem('fog_gh_token');
-        state.githubToken = '';
-        state.isAdmin = false;
-        document.body.classList.remove('admin-mode');
-        elements.btnNewEvent.style.display = 'none';
-        elements.authStatusBadge.className = 'auth-badge';
-        elements.authStatusBadge.textContent = 'Public Schedule';
-        elements.btnSignOut.style.display = 'none';
-        elements.authUserInfo.style.display = 'none';
-        elements.ghTokenInput.value = '';
-        renderViews();
-        elements.authDialog.close();
-      });
+      // --- Editing moved to CiviCRM (clubhouse.fogrugby.com). This page is read-only. ---
+      async function initAuth() { return false; }
 
       // Dialog Close buttons
       document.querySelectorAll('[data-close]').forEach(btn => {
@@ -1743,9 +1953,6 @@
         });
       });
 
-      elements.btnToggleAdmin.addEventListener('click', () => {
-        elements.authDialog.showModal();
-      });
 
       elements.btnNewEvent.addEventListener('click', () => {
         openNewEventModal();
@@ -1841,8 +2048,7 @@
       });
 
       // --- Start Application ---
-      initAuth();
-      loadCalendarData();
+      initAuth().finally(loadCalendarData);
 
     })();
   </script>

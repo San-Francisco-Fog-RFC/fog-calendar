@@ -1,0 +1,45 @@
+name: Sync calendar from the Clubhouse (CiviCRM)
+
+# Events are edited in CiviCRM at clubhouse.fogrugby.com. Every 30 minutes this
+# pulls the public export, rewrites events.yml and rebuilds docs/fog.ics, so the
+# subscribe URL (events.fogrugby.com/fog.ics) and event UIDs never change.
+# If the Clubhouse is down or the export looks wrong, nothing is changed.
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calendar-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml python-dateutil jsonschema
+      - name: Pull events from CiviCRM
+        id: pull
+        run: |
+          out=$(python3 tools/sync_from_civicrm.py)
+          echo "$out"
+          case "$out" in CHANGED*) echo "changed=true" >> "$GITHUB_OUTPUT";; esac
+      - name: Build feeds
+        if: steps.pull.outputs.changed == 'true'
+        run: python3 build_ics.py
+      - name: Commit
+        if: steps.pull.outputs.changed == 'true'
+        run: |
+          git config user.name "fog-calendar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add events.yml docs/fog.ics docs/events.json docs/fullcalendar.json docs/schema-events.jsonld docs/openapi.yaml docs/index.html
+          git diff --cached --quiet || git commit -m "sync: calendar from the Clubhouse (CiviCRM)"
+          git push
