@@ -30,7 +30,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-09-11-memorial-toast@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20260911T190000
 DTEND;TZID=America/Los_Angeles:20260911T230000
 SUMMARY:Fog 9/11 Memorial Toast — Pilsner Inn
@@ -45,16 +45,13 @@ DESCRIPTION:Doors 7pm. Toast at 8pm in memory of Mark Bingham\, those lost
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:9459
+SEQUENCE:43372
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-13-drop-in-touch-st-marys-optional@fogrugby.com
-DTSTAMP:20261104T071628Z
+UID:2026-09-13-drop-in-touch-st-marys-optional-20260913@fogrugby.com
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20260913T090000
 DTEND;TZID=America/Los_Angeles:20260913T110000
-RRULE:FREQ=WEEKLY;BYDAY=SU;UNTIL=20270530T180000Z
-EXDATE;TZID=America/Los_Angeles:20261206T090000
-EXDATE;TZID=America/Los_Angeles:20270530T090000
 SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
 LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
 URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
@@ -71,11 +68,11 @@ DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\,
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:20098
+SEQUENCE:47239
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-13-kangaroo-court-beach-bash@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20260913T150000
 DTEND;TZID=America/Los_Angeles:20260913T190000
 SUMMARY:Kangaroo Court and Beach Bash
@@ -91,11 +88,34 @@ DESCRIPTION:Beach touch and potluck at Ocean Beach\, then Kangaroo Court s
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:32267
+SEQUENCE:43553
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20260920@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20260920T090000
+DTEND;TZID=America/Los_Angeles:20260920T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:27241
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-26-magnitude-coat-check@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20260926T200000
 DTEND;TZID=America/Los_Angeles:20260927T040000
 SUMMARY:Magnitude Coat Check (volunteers)
@@ -114,11 +134,34 @@ DESCRIPTION:The Fog runs the coat check at Magnitude\, the Saturday night
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:41722
+SEQUENCE:92933
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20260927@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20260927T090000
+DTEND;TZID=America/Los_Angeles:20260927T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:55570
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-09-27-folsom-sunscreen-booth@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20260927T100000
 DTEND;TZID=America/Los_Angeles:20260927T190000
 SUMMARY:Folsom Street Fair Sunscreen Booth (volunteers)
@@ -133,11 +176,34 @@ DESCRIPTION:Sunscreen on strangers\, talk rugby\, hand out Pathway to Rugb
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:11338
+SEQUENCE:58495
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261004@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261004T090000
+DTEND;TZID=America/Los_Angeles:20261004T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:10523
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-06-pathways-1@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261006T193000
 DTEND;TZID=America/Los_Angeles:20261006T220000
 SUMMARY:Pathway to Rugby — Session 1
@@ -154,11 +220,11 @@ DESCRIPTION:Check-in from 7:30pm\; session until 10pm. First sessions are
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:80746
+SEQUENCE:39935
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-08-pathways-2@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261008T193000
 DTEND;TZID=America/Los_Angeles:20261008T220000
 SUMMARY:Pathway to Rugby — Session 2
@@ -174,11 +240,34 @@ DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:73158
+SEQUENCE:81787
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261011@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261011T090000
+DTEND;TZID=America/Los_Angeles:20261011T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:33263
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-13-pathways-3@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261013T193000
 DTEND;TZID=America/Los_Angeles:20261013T220000
 SUMMARY:Pathway to Rugby — Session 3
@@ -193,11 +282,11 @@ DESCRIPTION:https://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:15948
+SEQUENCE:32430
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-14-fog-turns-26@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:The Fog turns 26
@@ -210,11 +299,11 @@ DESCRIPTION:Club anniversary. 26 years of inclusive rugby.
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:41068
+SEQUENCE:42752
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-15-pathways-4@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261015T193000
 DTEND;TZID=America/Los_Angeles:20261015T220000
 SUMMARY:Pathway to Rugby — Session 4
@@ -230,11 +319,34 @@ DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:53756
+SEQUENCE:5702
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261018@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261018T090000
+DTEND;TZID=America/Los_Angeles:20261018T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:94513
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-18-eagle-beer-bust@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261018T150000
 DTEND;TZID=America/Los_Angeles:20261018T190000
 SUMMARY:Eagle Beer Bust (volunteers)
@@ -248,11 +360,11 @@ DESCRIPTION:Fog beer bust at the Eagle\, 3–7pm. Volunteers needed: fundr
 CATEGORIES:COMMUNITY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:28653
+SEQUENCE:36879
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-20-pathways-5@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261020T193000
 DTEND;TZID=America/Los_Angeles:20261020T220000
 SUMMARY:Pathway to Rugby — Session 5
@@ -267,11 +379,11 @@ DESCRIPTION:https://www.fogrugby.com/p2r
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:80361
+SEQUENCE:74318
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-22-pathways-6@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261022T193000
 DTEND;TZID=America/Los_Angeles:20261022T220000
 SUMMARY:Pathway to Rugby — Session 6
@@ -287,11 +399,34 @@ DESCRIPTION:Check-in from 7:30pm\; session until 10pm\, then social at the
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:70932
+SEQUENCE:84399
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261025@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261025T090000
+DTEND;TZID=America/Los_Angeles:20261025T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:44875
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-27-pathways-7@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261027T193000
 DTEND;TZID=America/Los_Angeles:20261027T220000
 SUMMARY:Pathway to Rugby — Session 7
@@ -308,11 +443,11 @@ DESCRIPTION:Check-in from 7:30pm\; session until 10pm. Next up: Thu 29 Oct
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:79498
+SEQUENCE:11965
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-29-first-preseason-practice@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261029T193000
 DTEND;TZID=America/Los_Angeles:20261029T220000
 SUMMARY:Pathway to Rugby — Session 8 + First Preseason Practice
@@ -330,11 +465,34 @@ DESCRIPTION:Mixed session: the final Pathway to Rugby session and the firs
 CATEGORIES:PATHWAY
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:34346
+SEQUENCE:549
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261101@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261101T090000
+DTEND;TZID=America/Los_Angeles:20261101T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:92463
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-01-board-meeting@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261101T183000
 DTEND;TZID=America/Los_Angeles:20261101T200000
 SUMMARY:November Board Meeting
@@ -350,17 +508,13 @@ DESCRIPTION:All members welcome\, with an open floor for questions. Send i
 CATEGORIES:BOARD
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:13086
+SEQUENCE:58781
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-27-training-tue@fogrugby.com
-DTSTAMP:20261104T071628Z
+UID:2026-27-training-tue-20261103@fogrugby.com
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261103T194500
 DTEND;TZID=America/Los_Angeles:20261103T220000
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270516T065959Z
-EXDATE;TZID=America/Los_Angeles:20261229T194500
-EXDATE;TZID=America/Los_Angeles:20270105T194500
-EXDATE;TZID=America/Los_Angeles:20270112T194500
 SUMMARY:Fog Training (Tuesday)
 LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
  \, CA 94115
@@ -374,19 +528,13 @@ DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
 CATEGORIES:TRAINING
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:79036
+SEQUENCE:8658
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-27-training@fogrugby.com
-DTSTAMP:20261104T071628Z
+UID:2026-27-training-20261105@fogrugby.com
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261105T194500
 DTEND;TZID=America/Los_Angeles:20261105T220000
-RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270516T065959Z
-EXDATE;TZID=America/Los_Angeles:20261126T194500
-EXDATE;TZID=America/Los_Angeles:20261224T194500
-EXDATE;TZID=America/Los_Angeles:20261231T194500
-EXDATE;TZID=America/Los_Angeles:20270107T194500
-EXDATE;TZID=America/Los_Angeles:20270114T194500
 SUMMARY:Fog Training (Thursday)
 LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
  sco\, CA 94112
@@ -400,11 +548,11 @@ DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
 CATEGORIES:TRAINING
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:52561
+SEQUENCE:27175
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-07-gear-swap@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261107T140000
 DTEND;TZID=America/Los_Angeles:20261107T170000
 SUMMARY:Fog Rugby Gear Exchange
@@ -424,11 +572,97 @@ DESCRIPTION:Swap\, sell\, or donate new or gently used rugby gear to this
 CATEGORIES:SOCIAL
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:16103
+SEQUENCE:48703
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261108@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261108T090000
+DTEND;TZID=America/Los_Angeles:20261108T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:67844
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261110@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261110T194500
+DTEND;TZID=America/Los_Angeles:20261110T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:44090
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20261112@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261112T194500
+DTEND;TZID=America/Los_Angeles:20261112T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:75130
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261115@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261115T090000
+DTEND;TZID=America/Los_Angeles:20261115T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:91606
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-14-usf-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261115T103000
 DTEND;TZID=America/Los_Angeles:20261115T123000
 SUMMARY:Preseason Match #1 vs USF
@@ -442,11 +676,51 @@ DESCRIPTION:Reporting time 9:30am. Kickoff 10:30am.
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:3052
+SEQUENCE:9189
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261117@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261117T194500
+DTEND;TZID=America/Los_Angeles:20261117T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:17918
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20261119@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261119T194500
+DTEND;TZID=America/Los_Angeles:20261119T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:37305
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-11-21-preseason-2@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 SUMMARY:Fog vs Baracus (Home)
@@ -460,11 +734,97 @@ DESCRIPTION:Preseason match #2\, home match vs Baracus. Field and kickoff
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:83631
+SEQUENCE:35987
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261122@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261122T090000
+DTEND;TZID=America/Los_Angeles:20261122T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:57907
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261124@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261124T194500
+DTEND;TZID=America/Los_Angeles:20261124T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:52960
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261129@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261129T090000
+DTEND;TZID=America/Los_Angeles:20261129T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:7185
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261201@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261201T194500
+DTEND;TZID=America/Los_Angeles:20261201T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:14784
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-rucktacular-weekend@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20261203
 DTEND;VALUE=DATE:20261207
 SUMMARY:Rucktacular 2026 — San Diego
@@ -481,13 +841,13 @@ DESCRIPTION:Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugb
  ails via the team chat.\n\nhttps://docs.google.com/forms/d/e/1FAIpQLSc6M-
  ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
 CATEGORIES:TOURNAMENT
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:64819
+SEQUENCE:50685
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-03-rucktacular-blacks-beach@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261203T140000
 DTEND;TZID=America/Los_Angeles:20261203T180000
 SUMMARY:Rucktacular: Black's Beach Naked Rugby
@@ -499,13 +859,33 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 DESCRIPTION:Everyone welcome. All bodies. All fun. Clothing optional. Hang
   out for sunset from 6pm.
 CATEGORIES:TOURNAMENT
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:13556
+SEQUENCE:49560
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20261203@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261203T194500
+DTEND;TZID=America/Los_Angeles:20261203T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:20508
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-04-rucktacular-presidents-meeting@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261204T160000
 DTEND;TZID=America/Los_Angeles:20261204T173000
 SUMMARY:Rucktacular: Presidents' Meeting
@@ -517,13 +897,13 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 DESCRIPTION:Club presidents meetup. Hotel check-in and welcome table open 
  all day Friday.
 CATEGORIES:BOARD
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:64841
+SEQUENCE:57535
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-04-rucktacular-drink-up@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261204T190000
 DTEND;TZID=America/Los_Angeles:20261204T230000
 SUMMARY:Rucktacular: Drink-Up at Number One Fifth
@@ -534,13 +914,13 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
  f-arms.png
 DESCRIPTION:Kick off the weekend together.
 CATEGORIES:SOCIAL
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:59289
+SEQUENCE:30360
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-05-rucktacular-tournament@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261205T070000
 DTEND;TZID=America/Los_Angeles:20261205T170000
 SUMMARY:Rucktacular 2026 Tournament Day
@@ -553,13 +933,13 @@ DESCRIPTION:7:00am coffee & snacks. 8:00am tournament begins — all-day r
  ugby. Merch\, vendors and free concessions all day. 4:30pm awards & closi
  ng ceremony.
 CATEGORIES:TOURNAMENT
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:31429
+SEQUENCE:65634
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-05-rucktacular-after-party@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261205T210000
 DTEND;TZID=America/Los_Angeles:20261205T235900
 SUMMARY:Rucktacular: Official After Party at Rich's
@@ -569,13 +949,13 @@ IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
 ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
  f-arms.png
 CATEGORIES:SOCIAL
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:71952
+SEQUENCE:60749
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-06-rucktacular-survivors-brunch@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261206T100000
 DTEND;TZID=America/Los_Angeles:20261206T120000
 SUMMARY:Rucktacular: Survivors Brunch
@@ -585,13 +965,13 @@ IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
 ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
  f-arms.png
 CATEGORIES:SOCIAL
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:74243
+SEQUENCE:64994
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-06-rucktacular-goodbye-drinks@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;TZID=America/Los_Angeles:20261206T120000
 DTEND;TZID=America/Los_Angeles:20261206T140000
 SUMMARY:Rucktacular: Final Goodbye Drinks
@@ -601,13 +981,53 @@ IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
 ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
  f-arms.png
 CATEGORIES:SOCIAL
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 TRANSP:OPAQUE
-SEQUENCE:15636
+SEQUENCE:36735
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261208@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261208T194500
+DTEND;TZID=America/Los_Angeles:20261208T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:30135
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20261210@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261210T194500
+DTEND;TZID=America/Los_Angeles:20261210T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:55919
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-12-12-preseason-closer@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261213
 SUMMARY:Friendly TBD / Preseason closer
@@ -621,11 +1041,209 @@ DESCRIPTION:Additional preseason friendlies may be added based on availabi
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:27674
+SEQUENCE:66643
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261213@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261213T090000
+DTEND;TZID=America/Los_Angeles:20261213T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:84952
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261215@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261215T194500
+DTEND;TZID=America/Los_Angeles:20261215T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:7721
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20261217@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261217T194500
+DTEND;TZID=America/Los_Angeles:20261217T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:24669
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261220@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261220T090000
+DTEND;TZID=America/Los_Angeles:20261220T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:92867
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20261222@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261222T194500
+DTEND;TZID=America/Los_Angeles:20261222T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:64823
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20261227@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20261227T090000
+DTEND;TZID=America/Los_Angeles:20261227T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:46919
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270103@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270103T090000
+DTEND;TZID=America/Los_Angeles:20270103T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:96989
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270110@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270110T090000
+DTEND;TZID=America/Los_Angeles:20270110T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:85057
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270117@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270117T090000
+DTEND;TZID=America/Los_Angeles:20270117T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:37361
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-01-19-regular-season-practice-begins@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270119
 DTEND;VALUE=DATE:20270120
 SUMMARY:Regular Season practice begins
@@ -637,11 +1255,177 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 CATEGORIES:TRAINING
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:68595
+SEQUENCE:83103
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270119@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270119T194500
+DTEND;TZID=America/Los_Angeles:20270119T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:22985
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270121@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270121T194500
+DTEND;TZID=America/Los_Angeles:20270121T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:30816
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270124@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270124T090000
+DTEND;TZID=America/Los_Angeles:20270124T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:29576
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270126@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270126T194500
+DTEND;TZID=America/Los_Angeles:20270126T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:5529
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270128@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270128T194500
+DTEND;TZID=America/Los_Angeles:20270128T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:43415
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270131@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270131T090000
+DTEND;TZID=America/Los_Angeles:20270131T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:98407
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270202@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270202T194500
+DTEND;TZID=America/Los_Angeles:20270202T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:98434
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270204@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270204T194500
+DTEND;TZID=America/Los_Angeles:20270204T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:67226
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-06-fresno-home@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270206
 DTEND;VALUE=DATE:20270207
 SUMMARY:SF Fog vs Fresno (H)
@@ -655,11 +1439,137 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:82578
+SEQUENCE:46139
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270207@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270207T090000
+DTEND;TZID=America/Los_Angeles:20270207T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:12210
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270209@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270209T194500
+DTEND;TZID=America/Los_Angeles:20270209T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:85636
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270211@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270211T194500
+DTEND;TZID=America/Los_Angeles:20270211T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:51889
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270214@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270214T090000
+DTEND;TZID=America/Los_Angeles:20270214T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:26660
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270216@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270216T194500
+DTEND;TZID=America/Los_Angeles:20270216T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:89870
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270218@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270218T194500
+DTEND;TZID=America/Los_Angeles:20270218T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:6084
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-20-ba-baracus-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
 SUMMARY:BA Baracus vs SF Fog (A)
@@ -673,11 +1583,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:78958
+SEQUENCE:69463
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270221@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270221T090000
+DTEND;TZID=America/Los_Angeles:20270221T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:83221
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270223@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270223T194500
+DTEND;TZID=America/Los_Angeles:20270223T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:20016
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270225@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270225T194500
+DTEND;TZID=America/Los_Angeles:20270225T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:63638
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-02-27-berkeley-home@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270227
 DTEND;VALUE=DATE:20270228
 SUMMARY:SF Fog vs Berkeley (H)
@@ -691,11 +1664,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:85921
+SEQUENCE:16026
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270228@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270228T090000
+DTEND;TZID=America/Los_Angeles:20270228T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:77092
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270302@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270302T194500
+DTEND;TZID=America/Los_Angeles:20270302T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:9993
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270304@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270304T194500
+DTEND;TZID=America/Los_Angeles:20270304T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:5571
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-06-bye@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270306
 DTEND;VALUE=DATE:20270307
 SUMMARY:Bye Weekend
@@ -706,11 +1742,74 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:17981
+SEQUENCE:1574
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270307@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270307T090000
+DTEND;TZID=America/Los_Angeles:20270307T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:17289
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270309@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270309T194500
+DTEND;TZID=America/Los_Angeles:20270309T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:39700
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270311@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270311T194500
+DTEND;TZID=America/Los_Angeles:20270311T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:3461
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-13-golden-dogs-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270313
 DTEND;VALUE=DATE:20270314
 SUMMARY:Golden Dogs vs SF Fog (A)
@@ -724,11 +1823,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:25066
+SEQUENCE:35190
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270314@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270314T090000
+DTEND;TZID=America/Los_Angeles:20270314T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:41638
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270316@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270316T194500
+DTEND;TZID=America/Los_Angeles:20270316T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:40888
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270318@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270318T194500
+DTEND;TZID=America/Los_Angeles:20270318T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:45121
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-20-mendocino-home@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270320
 DTEND;VALUE=DATE:20270321
 SUMMARY:SF Fog vs Mendocino Steam Donkeys (H)
@@ -742,11 +1904,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:63235
+SEQUENCE:55145
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270321@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270321T090000
+DTEND;TZID=America/Los_Angeles:20270321T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:50261
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270323@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270323T194500
+DTEND;TZID=America/Los_Angeles:20270323T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:38556
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270325@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270325T194500
+DTEND;TZID=America/Los_Angeles:20270325T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:97606
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-03-27-redding-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270327
 DTEND;VALUE=DATE:20270328
 SUMMARY:Redding vs SF Fog (A)
@@ -760,11 +1985,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:75585
+SEQUENCE:54736
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270328@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270328T090000
+DTEND;TZID=America/Los_Angeles:20270328T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:9295
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270330@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270330T194500
+DTEND;TZID=America/Los_Angeles:20270330T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:61286
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270401@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270401T194500
+DTEND;TZID=America/Los_Angeles:20270401T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:30136
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-03-bye@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270403
 DTEND;VALUE=DATE:20270404
 SUMMARY:Bye Weekend
@@ -775,11 +2063,74 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:46934
+SEQUENCE:17980
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270404@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270404T090000
+DTEND;TZID=America/Los_Angeles:20270404T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:42738
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270406@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270406T194500
+DTEND;TZID=America/Los_Angeles:20270406T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:10518
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270408@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270408T194500
+DTEND;TZID=America/Los_Angeles:20270408T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:71762
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-10-stanislaus-home@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270410
 DTEND;VALUE=DATE:20270411
 SUMMARY:SF Fog vs Stanislaus Harlots (H)
@@ -793,11 +2144,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:91617
+SEQUENCE:63713
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270411@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270411T090000
+DTEND;TZID=America/Los_Angeles:20270411T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:474
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270413@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270413T194500
+DTEND;TZID=America/Los_Angeles:20270413T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:17860
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270415@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270415T194500
+DTEND;TZID=America/Los_Angeles:20270415T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:94547
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-17-marin-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270417
 DTEND;VALUE=DATE:20270418
 SUMMARY:Marin vs SF Fog (A)
@@ -811,11 +2225,74 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:32570
+SEQUENCE:61044
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270418@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270418T090000
+DTEND;TZID=America/Los_Angeles:20270418T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:35092
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270420@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270420T194500
+DTEND;TZID=America/Los_Angeles:20270420T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:14012
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270422@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270422T194500
+DTEND;TZID=America/Los_Angeles:20270422T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:28745
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-04-24-chico-away@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270424
 DTEND;VALUE=DATE:20270425
 SUMMARY:Chico vs SF Fog (A)
@@ -829,11 +2306,137 @@ DESCRIPTION:NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to No
 CATEGORIES:FIXTURE
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:65610
+SEQUENCE:40495
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270425@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270425T090000
+DTEND;TZID=America/Los_Angeles:20270425T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:70414
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270427@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270427T194500
+DTEND;TZID=America/Los_Angeles:20270427T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:4476
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270429@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270429T194500
+DTEND;TZID=America/Los_Angeles:20270429T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:12195
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270502@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270502T090000
+DTEND;TZID=America/Los_Angeles:20270502T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:73337
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270504@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270504T194500
+DTEND;TZID=America/Los_Angeles:20270504T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:59126
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270506@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270506T194500
+DTEND;TZID=America/Los_Angeles:20270506T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:36359
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-08-ncrfu-semifinals@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270509
 SUMMARY:NCRFU Semifinals (if qualified)
@@ -845,11 +2448,74 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:32657
+SEQUENCE:30477
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270509@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270509T090000
+DTEND;TZID=America/Los_Angeles:20270509T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:67109
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-tue-20270511@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270511T194500
+DTEND;TZID=America/Los_Angeles:20270511T220000
+SUMMARY:Fog Training (Tuesday)
+LOCATION:Raymond Kimbell Playground Park\, 1901 Geary Blvd\, San Francisco
+ \, CA 94115
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season pra
+ ctice resumes 19 Jan 2027. Holiday break dates are best-guess — edit ex
+ dates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:62830
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-27-training-20270513@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270513T194500
+DTEND;TZID=America/Los_Angeles:20270513T220000
+SUMMARY:Fog Training (Thursday)
+LOCATION:Crocker Amazon Soccer Fields\, Moscow St & Italy Ave\, San Franci
+ sco\, CA 94112
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Thursdays 7:45–10:00pm at Crocker Amazon\, then drinks at Pi
+ lsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dat
+ es are best-guess — edit exdates once the coaches confirm.
+CATEGORIES:TRAINING
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:45412
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-15-ncrfu-finals@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270515
 DTEND;VALUE=DATE:20270516
 SUMMARY:NCRFU Finals (if qualified)
@@ -861,11 +2527,57 @@ ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
 CATEGORIES:FIXTURE
 STATUS:TENTATIVE
 TRANSP:TRANSPARENT
-SEQUENCE:48860
+SEQUENCE:76242
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270516@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270516T090000
+DTEND;TZID=America/Los_Angeles:20270516T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:7029
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-13-drop-in-touch-st-marys-optional-20270523@fogrugby.com
+DTSTAMP:20261106T055500Z
+DTSTART;TZID=America/Los_Angeles:20270523T090000
+DTEND;TZID=America/Los_Angeles:20270523T110000
+SUMMARY:Sunday Drop-In Touch (SF Vintage) [Optional]
+LOCATION:St Mary's Rec Center\, 95 Justin Drive\, San Francisco\, CA 94112
+URL:https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE=image/png:https://events.fogrugby.co
+ m/assets/img/fog-coat-of-arms.png
+ATTACH;FMTTYPE=image/png:https://events.fogrugby.com/assets/img/fog-coat-o
+ f-arms.png
+DESCRIPTION:Cost: Free!\n\nWho Can Play:\n - Open to all ages\, genders\, 
+ orientations\, and skill levels.\n - Completely beginner-friendly—no pr
+ ior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.
+ \n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.f
+ acebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q
+ 5WLorWvwK7\n\nhttps://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+CATEGORIES:SOCIAL
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:33810
 END:VEVENT
 BEGIN:VEVENT
 UID:2027-05-28-igr-noram@fogrugby.com
-DTSTAMP:20261104T071628Z
+DTSTAMP:20261106T055500Z
 DTSTART;VALUE=DATE:20270528
 DTEND;VALUE=DATE:20270601
 SUMMARY:IGR NorAm 2027 — New Orleans
@@ -879,6 +2591,6 @@ DESCRIPTION:Memorial Day weekend. Arrive by Friday at the latest\; Thursda
 CATEGORIES:TOURNAMENT
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-SEQUENCE:20886
+SEQUENCE:12379
 END:VEVENT
 END:VCALENDAR

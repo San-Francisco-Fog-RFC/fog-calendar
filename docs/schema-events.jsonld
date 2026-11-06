@@ -41,7 +41,7 @@
     },
     {
       "@type": "SocialEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20260913",
       "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
       "startDate": "2026-09-13T09:00:00-07:00",
       "endDate": "2026-09-13T11:00:00-07:00",
@@ -77,18 +77,7 @@
           "addressLocality": "San Francisco"
         }
       },
-      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt",
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1W",
-        "scheduleTimezone": "America/Los_Angeles",
-        "byDay": [
-          "https://schema.org/Sunday"
-        ],
-        "startTime": "09:00:00",
-        "endTime": "11:00:00",
-        "endDate": "2027-05-30"
-      }
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
     },
     {
       "@type": "SocialEvent",
@@ -127,6 +116,46 @@
         }
       },
       "url": "https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20260920",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-09-20T09:00:00-07:00",
+      "endDate": "2026-09-20T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
     },
     {
       "@type": "Event",
@@ -168,6 +197,46 @@
       "url": "https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659"
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20260927",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-09-27T09:00:00-07:00",
+      "endDate": "2026-09-27T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "Event",
       "@id": "https://events.fogrugby.com/#event-2026-09-27-folsom-sunscreen-booth",
       "name": "Folsom Street Fair Sunscreen Booth (volunteers)",
@@ -203,6 +272,46 @@
           "addressCountry": "US"
         }
       }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261004",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-10-04T09:00:00-07:00",
+      "endDate": "2026-10-04T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
     },
     {
       "@type": "SportsEvent",
@@ -284,6 +393,46 @@
         }
       },
       "url": "https://www.fogrugby.com/p2r"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261011",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-10-11T09:00:00-07:00",
+      "endDate": "2026-10-11T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
     },
     {
       "@type": "SportsEvent",
@@ -403,6 +552,46 @@
       "url": "https://www.fogrugby.com/p2r"
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261018",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-10-18T09:00:00-07:00",
+      "endDate": "2026-10-18T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "Event",
       "@id": "https://events.fogrugby.com/#event-2026-10-18-eagle-beer-bust",
       "name": "Eagle Beer Bust (volunteers)",
@@ -520,6 +709,46 @@
       "url": "https://www.fogrugby.com/p2r"
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261025",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-10-25T09:00:00-07:00",
+      "endDate": "2026-10-25T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-10-27-pathways-7",
       "name": "Pathway to Rugby — Session 7",
@@ -601,6 +830,46 @@
       "url": "https://www.fogrugby.com/p2r"
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261101",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-11-01T09:00:00-08:00",
+      "endDate": "2026-11-01T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "Event",
       "@id": "https://events.fogrugby.com/#event-2026-11-01-board-meeting",
       "name": "November Board Meeting",
@@ -640,7 +909,7 @@
     },
     {
       "@type": "SportsEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261103",
       "name": "Fog Training (Tuesday)",
       "startDate": "2026-11-03T19:45:00-08:00",
       "endDate": "2026-11-03T22:00:00-08:00",
@@ -676,22 +945,11 @@
           "postalCode": "94115",
           "addressLocality": "San Francisco"
         }
-      },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1W",
-        "scheduleTimezone": "America/Los_Angeles",
-        "byDay": [
-          "https://schema.org/Tuesday"
-        ],
-        "startTime": "19:45:00",
-        "endTime": "22:00:00",
-        "endDate": "2027-05-16"
       }
     },
     {
       "@type": "SportsEvent",
-      "@id": "https://events.fogrugby.com/#event-2026-27-training",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261105",
       "name": "Fog Training (Thursday)",
       "startDate": "2026-11-05T19:45:00-08:00",
       "endDate": "2026-11-05T22:00:00-08:00",
@@ -726,17 +984,6 @@
           "postalCode": "94112",
           "addressLocality": "San Francisco"
         }
-      },
-      "eventSchedule": {
-        "@type": "Schedule",
-        "repeatFrequency": "P1W",
-        "scheduleTimezone": "America/Los_Angeles",
-        "byDay": [
-          "https://schema.org/Thursday"
-        ],
-        "startTime": "19:45:00",
-        "endTime": "22:00:00",
-        "endDate": "2027-05-16"
       }
     },
     {
@@ -780,6 +1027,165 @@
       "url": "https://fogrugby.com/gear-swap"
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261108",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-11-08T09:00:00-08:00",
+      "endDate": "2026-11-08T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261110",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-11-10T19:45:00-08:00",
+      "endDate": "2026-11-10T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261112",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-11-12T19:45:00-08:00",
+      "endDate": "2026-11-12T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261115",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-11-15T09:00:00-08:00",
+      "endDate": "2026-11-15T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-11-14-usf-away",
       "name": "Preseason Match #1 vs USF",
@@ -820,6 +1226,85 @@
     },
     {
       "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261117",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-11-17T19:45:00-08:00",
+      "endDate": "2026-11-17T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261119",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-11-19T19:45:00-08:00",
+      "endDate": "2026-11-19T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-11-21-preseason-2",
       "name": "Fog vs Baracus (Home)",
       "startDate": "2026-11-21",
@@ -853,6 +1338,166 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261122",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-11-22T09:00:00-08:00",
+      "endDate": "2026-11-22T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261124",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-11-24T19:45:00-08:00",
+      "endDate": "2026-11-24T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261129",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-11-29T09:00:00-08:00",
+      "endDate": "2026-11-29T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261201",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-12-01T19:45:00-08:00",
+      "endDate": "2026-12-01T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -930,6 +1575,45 @@
           "addressCountry": "US",
           "addressRegion": "CA",
           "addressLocality": "San Diego"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261203",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-12-03T19:45:00-08:00",
+      "endDate": "2026-12-03T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1159,6 +1843,85 @@
     },
     {
       "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261208",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-12-08T19:45:00-08:00",
+      "endDate": "2026-12-08T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261210",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-12-10T19:45:00-08:00",
+      "endDate": "2026-12-10T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-12-12-preseason-closer",
       "name": "Friendly TBD / Preseason closer",
       "startDate": "2026-12-12",
@@ -1196,6 +1959,365 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261213",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-12-13T09:00:00-08:00",
+      "endDate": "2026-12-13T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261215",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-12-15T19:45:00-08:00",
+      "endDate": "2026-12-15T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20261217",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2026-12-17T19:45:00-08:00",
+      "endDate": "2026-12-17T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261220",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-12-20T09:00:00-08:00",
+      "endDate": "2026-12-20T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20261222",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2026-12-22T19:45:00-08:00",
+      "endDate": "2026-12-22T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20261227",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2026-12-27T09:00:00-08:00",
+      "endDate": "2026-12-27T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270103",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-01-03T09:00:00-08:00",
+      "endDate": "2027-01-03T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270110",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-01-10T09:00:00-08:00",
+      "endDate": "2027-01-10T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270117",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-01-17T09:00:00-08:00",
+      "endDate": "2027-01-17T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-01-19-regular-season-practice-begins",
       "name": "Regular Season practice begins",
@@ -1229,6 +2351,323 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270119",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-01-19T19:45:00-08:00",
+      "endDate": "2027-01-19T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270121",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-01-21T19:45:00-08:00",
+      "endDate": "2027-01-21T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270124",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-01-24T09:00:00-08:00",
+      "endDate": "2027-01-24T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270126",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-01-26T19:45:00-08:00",
+      "endDate": "2027-01-26T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270128",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-01-28T19:45:00-08:00",
+      "endDate": "2027-01-28T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270131",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-01-31T09:00:00-08:00",
+      "endDate": "2027-01-31T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270202",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-02-02T19:45:00-08:00",
+      "endDate": "2027-02-02T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270204",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-02-04T19:45:00-08:00",
+      "endDate": "2027-02-04T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1271,6 +2710,244 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270207",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-02-07T09:00:00-08:00",
+      "endDate": "2027-02-07T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270209",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-02-09T19:45:00-08:00",
+      "endDate": "2027-02-09T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270211",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-02-11T19:45:00-08:00",
+      "endDate": "2027-02-11T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270214",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-02-14T09:00:00-08:00",
+      "endDate": "2027-02-14T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270216",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-02-16T19:45:00-08:00",
+      "endDate": "2027-02-16T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270218",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-02-18T19:45:00-08:00",
+      "endDate": "2027-02-18T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-02-20-ba-baracus-away",
       "name": "BA Baracus vs SF Fog (A)",
@@ -1305,6 +2982,125 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270221",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-02-21T09:00:00-08:00",
+      "endDate": "2027-02-21T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270223",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-02-23T19:45:00-08:00",
+      "endDate": "2027-02-23T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270225",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-02-25T19:45:00-08:00",
+      "endDate": "2027-02-25T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1347,6 +3143,125 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270228",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-02-28T09:00:00-08:00",
+      "endDate": "2027-02-28T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270302",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-03-02T19:45:00-08:00",
+      "endDate": "2027-03-02T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270304",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-03-04T19:45:00-08:00",
+      "endDate": "2027-03-04T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-03-06-bye",
       "name": "Bye Weekend",
@@ -1380,6 +3295,125 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270307",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-03-07T09:00:00-08:00",
+      "endDate": "2027-03-07T11:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270309",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-03-09T19:45:00-08:00",
+      "endDate": "2027-03-09T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270311",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-03-11T19:45:00-08:00",
+      "endDate": "2027-03-11T22:00:00-08:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1422,6 +3456,125 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270314",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-03-14T09:00:00-07:00",
+      "endDate": "2027-03-14T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270316",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-03-16T19:45:00-07:00",
+      "endDate": "2027-03-16T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270318",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-03-18T19:45:00-07:00",
+      "endDate": "2027-03-18T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-03-20-mendocino-home",
       "name": "SF Fog vs Mendocino Steam Donkeys (H)",
@@ -1456,6 +3609,125 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270321",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-03-21T09:00:00-07:00",
+      "endDate": "2027-03-21T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270323",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-03-23T19:45:00-07:00",
+      "endDate": "2027-03-23T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270325",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-03-25T19:45:00-07:00",
+      "endDate": "2027-03-25T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1498,6 +3770,125 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270328",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-03-28T09:00:00-07:00",
+      "endDate": "2027-03-28T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270330",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-03-30T19:45:00-07:00",
+      "endDate": "2027-03-30T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270401",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-04-01T19:45:00-07:00",
+      "endDate": "2027-04-01T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-04-03-bye",
       "name": "Bye Weekend",
@@ -1531,6 +3922,125 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270404",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-04-04T09:00:00-07:00",
+      "endDate": "2027-04-04T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270406",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-04-06T19:45:00-07:00",
+      "endDate": "2027-04-06T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270408",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-04-08T19:45:00-07:00",
+      "endDate": "2027-04-08T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1573,6 +4083,125 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270411",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-04-11T09:00:00-07:00",
+      "endDate": "2027-04-11T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270413",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-04-13T19:45:00-07:00",
+      "endDate": "2027-04-13T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270415",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-04-15T19:45:00-07:00",
+      "endDate": "2027-04-15T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-04-17-marin-away",
       "name": "Marin vs SF Fog (A)",
@@ -1607,6 +4236,125 @@
           "addressLocality": "Marin County",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270418",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-04-18T09:00:00-07:00",
+      "endDate": "2027-04-18T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270420",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-04-20T19:45:00-07:00",
+      "endDate": "2027-04-20T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270422",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-04-22T19:45:00-07:00",
+      "endDate": "2027-04-22T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1649,6 +4397,244 @@
       }
     },
     {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270425",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-04-25T09:00:00-07:00",
+      "endDate": "2027-04-25T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270427",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-04-27T19:45:00-07:00",
+      "endDate": "2027-04-27T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270429",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-04-29T19:45:00-07:00",
+      "endDate": "2027-04-29T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270502",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-05-02T09:00:00-07:00",
+      "endDate": "2027-05-02T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270504",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-05-04T19:45:00-07:00",
+      "endDate": "2027-05-04T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270506",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-05-06T19:45:00-07:00",
+      "endDate": "2027-05-06T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2027-05-08-ncrfu-semifinals",
       "name": "NCRFU Semifinals (if qualified)",
@@ -1682,6 +4668,125 @@
           "addressLocality": "San Francisco",
           "addressRegion": "CA",
           "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270509",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-05-09T09:00:00-07:00",
+      "endDate": "2027-05-09T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-tue-20270511",
+      "name": "Fog Training (Tuesday)",
+      "startDate": "2027-05-11T19:45:00-07:00",
+      "endDate": "2027-05-11T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Raymond Kimbell Playground Park",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "1901 Geary Blvd",
+          "addressRegion": "CA",
+          "postalCode": "94115",
+          "addressLocality": "San Francisco"
+        }
+      }
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-27-training-20270513",
+      "name": "Fog Training (Thursday)",
+      "startDate": "2027-05-13T19:45:00-07:00",
+      "endDate": "2027-05-13T22:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fogrugby.com/season-fixtures-results"
+      },
+      "sport": "Rugby Union",
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
+      "location": {
+        "@type": "Place",
+        "name": "Crocker Amazon Soccer Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
@@ -1721,6 +4826,86 @@
           "addressCountry": "US"
         }
       }
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270516",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-05-16T09:00:00-07:00",
+      "endDate": "2027-05-16T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+    },
+    {
+      "@type": "SocialEvent",
+      "@id": "https://events.fogrugby.com/#event-2026-09-13-drop-in-touch-st-marys-optional-20270523",
+      "name": "Sunday Drop-In Touch (SF Vintage) [Optional]",
+      "startDate": "2027-05-23T09:00:00-07:00",
+      "endDate": "2027-05-23T11:00:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "organizer": {
+        "@type": "SportsTeam",
+        "name": "San Francisco Fog RFC",
+        "url": "https://www.fogrugby.com",
+        "sport": "Rugby Union",
+        "logo": "https://www.fogrugby.com/assets/crest/fog_crest_navy_crest_vector.png"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
+      },
+      "image": [
+        "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
+      ],
+      "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
+      "location": {
+        "@type": "Place",
+        "name": "St Mary's Rec Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "streetAddress": "95 Justin Drive",
+          "addressRegion": "CA",
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "url": "https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt"
     },
     {
       "@type": "SportsEvent",

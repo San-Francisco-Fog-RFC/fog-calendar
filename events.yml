@@ -1,104 +1,84 @@
-# yaml-language-server: $schema=schema/events-yml.schema.json
-# San Francisco Fog RFC — club calendar (single source of truth for fog.ics)
-#
-# SOURCES
-#   • "SF Fog 2026–2027 Season Update" — Dany Samreth → players@ / FogRookies@, 2 Sep 2026 (preseason, league, playoffs, NorAm)
-#   • "Rucktacular 2026 SAN DIEGO" — Danny Jimenez (SD Armada) → club presidents, 3 Sep 2026 + weekend schedule graphic
-#   • Pathway to Rugby 2026 and 9/11 toast details — President, 3 Sep 2026
-#
-# HOW TO ADD/EDIT:  one entry per event. Commit to main → GitHub Action rebuilds docs/fog.ics.
-# Times are America/Los_Angeles. Leave `time:` out for all-day / TBD-kickoff events.
-# Location convention for matches: home = "San Francisco"; away = "TBC - <City>" until the venue is confirmed.
-#
-# Fields:
-#   id        stable slug, never change once published (it's the calendar UID)
-#   title     what shows on the calendar
-#   date      YYYY-MM-DD           (or multi-day: start: YYYY-MM-DD, end: YYYY-MM-DD — end is inclusive)
-#   time      HH:MM (24h, optional) end_time: HH:MM (optional, default +2h)
-#   location  free text
-#   category  fixture | training | pathway | tournament | social | board | community
-#   status    confirmed | tentative
-#   notes     description text (optional)
-#   url       link (optional)
-#   image     picture for the event (optional; otherwise default_image below is used): full URL, e.g. https://events.fogrugby.com/assets/img/flyer.jpg
-#             (put the file in docs/assets/img/; the build checks it exists). JPG or PNG.
-#   rrule     RFC5545 RRULE for repeating events (optional)
-#   exdates   list of YYYY-MM-DD to skip within a repeating event (optional)
-
+# GENERATED FROM THE CLUBHOUSE (CiviCRM) - do not edit events here.
+# Add or change events at https://clubhouse.fogrugby.com/civicrm/event/manage
+# tools/sync_from_civicrm.py rewrites this file every 30 minutes; top-level
+# settings (calendar_name, venues, series) are kept as they are.
 calendar_name: SF Fog Rugby
-default_image: https://events.fogrugby.com/assets/img/fog-coat-of-arms.png   # used by events without their own `image`
+default_image: https://events.fogrugby.com/assets/img/fog-coat-of-arms.png
 calendar_url: https://www.fogrugby.com/season-fixtures-results
-
-
-# Venues: each place is written once and referenced by key (`venue: raymond-kimbell`).
-# Its location text in the feeds is "name, address". Events can still use free-text
-# `location:` for placeholders like "TBC - Fresno".
 venues:
   raymond-kimbell:
-    name: "Raymond Kimbell Playground Park"
-    address: "1901 Geary Blvd, San Francisco, CA 94115"
+    name: Raymond Kimbell Playground Park
+    address: 1901 Geary Blvd, San Francisco, CA 94115
   crocker-amazon:
-    name: "Crocker Amazon Soccer Fields"
-    address: "Moscow St & Italy Ave, San Francisco, CA 94112"
+    name: Crocker Amazon Soccer Fields
+    address: Moscow St & Italy Ave, San Francisco, CA 94112
   st-marys-rec-center:
-    name: "St Mary's Rec Center"
-    address: "95 Justin Drive, San Francisco, CA 94112"
+    name: St Mary's Rec Center
+    address: 95 Justin Drive, San Francisco, CA 94112
   pilsner-inn:
-    name: "Pilsner Inn"
-    address: "225 Church St, San Francisco"
+    name: Pilsner Inn
+    address: 225 Church St, San Francisco
   ocean-beach:
-    name: "Ocean Beach"
-    address: "San Francisco"
+    name: Ocean Beach
+    address: San Francisco
   svn-west:
-    name: "SVN West"
-    address: "10 Van Ness Ave, San Francisco"
+    name: SVN West
+    address: 10 Van Ness Ave, San Francisco
   sf-eagle:
-    name: "SF Eagle"
-    address: "San Francisco"
+    name: SF Eagle
+    address: San Francisco
   blacks-beach:
-    name: "Black's Beach"
-    address: "San Diego"
+    name: Black's Beach
+    address: San Diego
   number-one-fifth:
-    name: "Number One Fifth Ave"
-    address: "3845 5th Ave, San Diego"
+    name: Number One Fifth Ave
+    address: 3845 5th Ave, San Diego
   richs-san-diego:
-    name: "Rich's"
-    address: "1051 University Ave, San Diego"
+    name: Rich's
+    address: 1051 University Ave, San Diego
   uptown-tavern:
-    name: "Uptown Tavern"
-    address: "1236 University Ave, San Diego"
+    name: Uptown Tavern
+    address: 1236 University Ave, San Diego
   usf-negoesco:
-    name: "USF Negoesco Field"
-    address: "Negoesco Stadium, University of San Francisco, Parker Ave, San Francisco, CA 94117"
+    name: USF Negoesco Field
+    address: Negoesco Stadium, University of San Francisco, Parker Ave, San Francisco, CA 94117
   mothership:
-    name: "The Mothership Bar"
-    address: "3152 Mission St, San Francisco, CA 94110"
-
-# Series: events that share details. An event's own fields override its series `defaults`.
-# `listing` holds the copy promote.py submits to listing sites (Funcheap, SCRUFF, ...).
+    name: The Mothership Bar
+    address: 3152 Mission St, San Francisco, CA 94110
 series:
   pathway-to-rugby-2026:
-    name: "Pathway to Rugby 2026"
+    name: Pathway to Rugby 2026
     defaults:
       category: pathway
       status: confirmed
-      time: "19:30"
-      end_time: "22:00"
+      time: '19:30'
+      end_time: '22:00'
       image: https://events.fogrugby.com/assets/img/pathway-to-rugby-flyer.jpg
       url: https://www.fogrugby.com/p2r
     listing:
-      title: "Pathway to Rugby - SF Fog Rugby"
+      title: Pathway to Rugby - SF Fog Rugby
       url: https://fogrugby.com/p2r
       signup_url: https://fogrugby.com/p2r
       contact:
-        email: recruiting@fogrugby.com   # overrides promote.yml's default contact
-      image: docs/assets/img/pathway-to-rugby-banner.jpg   # landscape for listing sites (Funcheap max 1 MB; SCRUFF ~1920x1080)
+        email: recruiting@fogrugby.com
+      image: docs/assets/img/pathway-to-rugby-banner.jpg
       image_credit: San Francisco Fog RFC
-      cost: 0                       # adult GA price in USD incl. fees; 0 = free
+      cost: 0
       region: San Francisco
-      tags: [LGBTQ+, Sports & Wellness, Community, Outdoors]
-      sites: [funcheap, scruff, thegaycalendar, dothebay, eventbrite, plai, google]
-      summary: "A free crash course in rugby for people who have never played, run by San Francisco's inclusive LGBTQ+ rugby club."
+      tags:
+      - LGBTQ+
+      - Sports & Wellness
+      - Community
+      - Outdoors
+      sites:
+      - funcheap
+      - scruff
+      - thegaycalendar
+      - dothebay
+      - eventbrite
+      - plai
+      - google
+      summary: A free crash course in rugby for people who have never played, run by San Francisco's inclusive LGBTQ+ rugby club.
       description: |
         Pathway to Rugby is a crash course for people who have never played. Guided practices on Tuesdays and Thursdays throughout October, built so each session picks up where the last one left off.
 
@@ -113,409 +93,1596 @@ series:
 
         Check-in from 7:30pm; sessions run until 10pm. Questions? Email recruiting@fogrugby.com
   rucktacular-2026:
-    name: "Rucktacular 2026, San Diego"
+    name: Rucktacular 2026, San Diego
     defaults:
       status: tentative
-
 events:
+- id: 2026-09-11-memorial-toast
+  title: Fog 9/11 Memorial Toast — Pilsner Inn
+  date: '2026-09-11'
+  time: '19:00'
+  end_time: '23:00'
+  venue: pilsner-inn
+  category: social
+  status: confirmed
+  notes: Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20260913
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-09-13'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-# ---------------------------------------------------------------- September 2026
-  - id: 2026-09-11-memorial-toast
-    title: "Fog 9/11 Memorial Toast — Pilsner Inn"
-    date: 2026-09-11
-    time: "19:00"
-    end_time: "23:00"
-    venue: pilsner-inn
-    category: social
-    status: confirmed
-    notes: "Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome."
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-  - id: 2026-09-13-drop-in-touch-st-marys-optional
-    title: "Sunday Drop-In Touch (SF Vintage) [Optional]"
-    date: 2026-09-13
-    time: "09:00"
-    end_time: "11:00"
-    venue: st-marys-rec-center
-    category: social
-    status: confirmed
-    rrule: "FREQ=WEEKLY;BYDAY=SU;UNTIL=20270530T180000Z"
-    exdates:
-      - 2026-12-06   # Rucktacular (San Diego)
-      - 2027-05-30   # IGR NorAm (New Orleans)
-    notes: |-
-      Cost: Free!
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-      Who Can Play:
-       - Open to all ages, genders, orientations, and skill levels.
-       - Completely beginner-friendly—no prior experience necessary.
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-13-kangaroo-court-beach-bash
+  title: Kangaroo Court and Beach Bash
+  date: '2026-09-13'
+  time: '15:00'
+  end_time: '19:00'
+  venue: ocean-beach
+  category: social
+  status: confirmed
+  notes: Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful.
+  url: https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20260920
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-09-20'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-      What to Bring:
-       - Cleats or athletic shoes.
-       - A blue or red shirt.
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-      Website: sfvrfc.org
-      Facebook: https://www.facebook.com/groups/139383596170951/
-      Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
-    url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-  - id: 2026-09-13-kangaroo-court-beach-bash
-    title: "Kangaroo Court and Beach Bash"
-    date: 2026-09-13
-    time: "15:00"
-    end_time: "19:00"
-    venue: ocean-beach
-    category: social
-    status: confirmed
-    notes: "Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful."
-    url: https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E
-  - id: 2026-09-26-magnitude-coat-check
-    title: "Magnitude Coat Check (volunteers)"
-    date: 2026-09-26
-    time: "20:00"
-    end_time: "04:00"
-    venue: svn-west
-    category: community
-    status: confirmed
-    notes: "The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com"
-    url: https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659
-  - id: 2026-09-27-folsom-sunscreen-booth
-    title: "Folsom Street Fair Sunscreen Booth (volunteers)"
-    date: 2026-09-27
-    time: "10:00"
-    end_time: "19:00"
-    location: Folsom Street Fair, San Francisco
-    category: community
-    status: confirmed
-    notes: "Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com"
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-26-magnitude-coat-check
+  title: Magnitude Coat Check (volunteers)
+  date: '2026-09-26'
+  time: '20:00'
+  end_time: 04:00
+  venue: svn-west
+  category: community
+  status: confirmed
+  notes: 'The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com'
+  url: https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20260927
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-09-27'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-# ---------------------------------------------------------------- Pathway to Rugby 2026 (Tue = Raymond Kimbell, Thu = Crocker Amazon)
-  - id: 2026-10-06-pathways-1
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 1"
-    date: 2026-10-06
-    venue: raymond-kimbell
-    notes: "Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one."
-  - id: 2026-10-08-pathways-2
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 2"
-    date: 2026-10-08
-    venue: crocker-amazon
-    notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-  - id: 2026-10-13-pathways-3
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 3"
-    date: 2026-10-13
-    venue: raymond-kimbell
-  - id: 2026-10-15-pathways-4
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 4"
-    date: 2026-10-15
-    venue: crocker-amazon
-    notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-  - id: 2026-10-20-pathways-5
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 5"
-    date: 2026-10-20
-    venue: raymond-kimbell
-  - id: 2026-10-22-pathways-6
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 6"
-    date: 2026-10-22
-    venue: crocker-amazon
-    notes: "Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards."
-  - id: 2026-10-27-pathways-7
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 7"
-    date: 2026-10-27
-    venue: raymond-kimbell
-    notes: "Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together."
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-# ---------------------------------------------------------------- October 2026 (club dates)
-  - id: 2026-10-14-fog-turns-26
-    title: "The Fog turns 26"
-    date: 2026-10-14
-    location: San Francisco
-    category: community
-    status: confirmed
-    notes: "Club anniversary. 26 years of inclusive rugby."
-  - id: 2026-10-18-eagle-beer-bust
-    title: "Eagle Beer Bust (volunteers)"
-    date: 2026-10-18
-    time: "15:00"
-    end_time: "19:00"
-    venue: sf-eagle
-    category: community
-    status: confirmed
-    notes: "Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com"
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-# ---------------------------------------------------------------- Training (repeating, Tue/Thu 7:45–10pm)
-  # Thursdays at Crocker Amazon (keeps the original id so existing subscribers update in place)
-  - id: 2026-27-training
-    title: "Fog Training (Thursday)"
-    date: 2026-11-05   # recurring rule starts the week after the standalone first practice (29 Oct) so it isn't doubled up
-    time: "19:45"
-    end_time: "22:00"
-    venue: crocker-amazon
-    category: training
-    status: confirmed
-    rrule: "FREQ=WEEKLY;BYDAY=TH;UNTIL=20270516T065959Z"
-    exdates:
-      - 2026-11-26   # Thanksgiving
-      - 2026-12-24
-      - 2026-12-31
-      - 2027-01-07
-      - 2027-01-14
-    notes: "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
-  # Tuesdays at Raymond Kimbell
-  - id: 2026-27-training-tue
-    title: "Fog Training (Tuesday)"
-    date: 2026-11-03
-    time: "19:45"
-    end_time: "22:00"
-    venue: raymond-kimbell
-    category: training
-    status: confirmed
-    rrule: "FREQ=WEEKLY;BYDAY=TU;UNTIL=20270516T065959Z"
-    exdates:
-      - 2026-12-29
-      - 2027-01-05
-      - 2027-01-12
-    notes: "Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm."
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-27-folsom-sunscreen-booth
+  title: Folsom Street Fair Sunscreen Booth (volunteers)
+  date: '2026-09-27'
+  time: '10:00'
+  end_time: '19:00'
+  location: Folsom Street Fair, San Francisco
+  category: community
+  status: confirmed
+  notes: 'Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com'
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261004
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-10-04'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-  - id: 2026-10-29-first-preseason-practice
-    series: pathway-to-rugby-2026
-    title: "Pathway to Rugby — Session 8 + First Preseason Practice"
-    date: 2026-10-29
-    venue: crocker-amazon
-    notes: "Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm."
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-# ---------------------------------------------------------------- Board
-  - id: 2026-11-01-board-meeting
-    title: "November Board Meeting"
-    date: 2026-11-01
-    time: "18:30"
-    end_time: "20:00"
-    location: "Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi"
-    category: board
-    status: confirmed
-    url: https://meet.google.com/nzr-ptjs-ogi
-    notes: "All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com."
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-# ---------------------------------------------------------------- Gear swap (replaces the old Sat 7 Nov preseason placeholder)
-  - id: 2026-11-07-gear-swap
-    title: "Fog Rugby Gear Exchange"
-    date: 2026-11-07
-    time: "14:00"
-    end_time: "17:00"
-    venue: mothership
-    category: social
-    status: confirmed
-    image: https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png
-    url: https://fogrugby.com/gear-swap
-    notes: "Swap, sell, or donate new or gently used rugby gear to this season's Fog players (Station 1: free gear with rookie priority; Station 2: peer-to-peer sales and trades). Featuring drag performances by Foggers, Mothership drink specials (21+), and a St. Anthony's donation drive (partnering with Tenderloin Tessie's — prioritizing men's clothing/new underwear/jeans/sneakers/sweatshirts, children's shoes, and unopened menstrual products)."
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-10-06-pathways-1
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 1
+  date: '2026-10-06'
+  venue: raymond-kimbell
+  status: confirmed
+  notes: Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.
+- id: 2026-10-08-pathways-2
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 2
+  date: '2026-10-08'
+  venue: crocker-amazon
+  status: confirmed
+  notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261011
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-10-11'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-# ---------------------------------------------------------------- Preseason 2026 (Coach Dany, 1 Nov 2026)
-  - id: 2026-11-14-usf-away   # id kept from the original Sat 14 Nov placeholder (calendar UID)
-    title: "Preseason Match #1 vs USF"
-    date: 2026-11-15
-    time: "10:30"
-    end_time: "12:30"
-    venue: usf-negoesco
-    category: fixture
-    status: confirmed
-    notes: "Reporting time 9:30am. Kickoff 10:30am."
-  - id: 2026-11-21-preseason-2
-    title: "Fog vs Baracus (Home)"
-    date: 2026-11-21
-    location: TBC - San Francisco
-    category: fixture
-    status: tentative
-    notes: "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed."
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-# ---------------------------------------------------------------- Rucktacular 2026, San Diego (Thu 3 – Sun 6 Dec)
-  - id: 2026-12-03-rucktacular-weekend
-    series: rucktacular-2026
-    title: "Rucktacular 2026 — San Diego"
-    start: 2026-12-03
-    end: 2026-12-06
-    location: San Diego, CA
-    category: tournament
-    image: https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg
-    notes: "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat."
-    url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
-  - id: 2026-12-03-rucktacular-blacks-beach
-    series: rucktacular-2026
-    title: "Rucktacular: Black's Beach Naked Rugby"
-    date: 2026-12-03
-    time: "14:00"
-    end_time: "18:00"
-    venue: blacks-beach
-    category: tournament
-    notes: "Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm."
-  - id: 2026-12-04-rucktacular-presidents-meeting
-    series: rucktacular-2026
-    title: "Rucktacular: Presidents' Meeting"
-    date: 2026-12-04
-    time: "16:00"
-    end_time: "17:30"
-    location: San Diego — location TBD
-    category: board
-    notes: "Club presidents meetup. Hotel check-in and welcome table open all day Friday."
-  - id: 2026-12-04-rucktacular-drink-up
-    series: rucktacular-2026
-    title: "Rucktacular: Drink-Up at Number One Fifth"
-    date: 2026-12-04
-    time: "19:00"
-    end_time: "23:00"
-    venue: number-one-fifth
-    category: social
-    notes: "Kick off the weekend together."
-  - id: 2026-12-05-rucktacular-tournament
-    series: rucktacular-2026
-    title: "Rucktacular 2026 Tournament Day"
-    date: 2026-12-05
-    time: "07:00"
-    end_time: "17:00"
-    location: San Diego — pitch TBC
-    category: tournament
-    notes: "7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony."
-  - id: 2026-12-05-rucktacular-after-party
-    series: rucktacular-2026
-    title: "Rucktacular: Official After Party at Rich's"
-    date: 2026-12-05
-    time: "21:00"
-    end_time: "23:59"
-    venue: richs-san-diego
-    category: social
-  - id: 2026-12-06-rucktacular-survivors-brunch
-    series: rucktacular-2026
-    title: "Rucktacular: Survivors Brunch"
-    date: 2026-12-06
-    time: "10:00"
-    end_time: "12:00"
-    venue: uptown-tavern
-    category: social
-  - id: 2026-12-06-rucktacular-goodbye-drinks
-    series: rucktacular-2026
-    title: "Rucktacular: Final Goodbye Drinks"
-    date: 2026-12-06
-    time: "12:00"
-    end_time: "14:00"
-    venue: number-one-fifth
-    category: social
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-# ---------------------------------------------------------------- Preseason closer
-  - id: 2026-12-12-preseason-closer
-    title: "Friendly TBD / Preseason closer"
-    date: 2026-12-12
-    location: TBD
-    category: fixture
-    status: tentative
-    notes: "Additional preseason friendlies may be added based on availability — details to players in early October."
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-10-13-pathways-3
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 3
+  date: '2026-10-13'
+  venue: raymond-kimbell
+  status: confirmed
+- id: 2026-10-14-fog-turns-26
+  title: The Fog turns 26
+  date: '2026-10-14'
+  location: San Francisco
+  category: community
+  status: confirmed
+  notes: Club anniversary. 26 years of inclusive rugby.
+- id: 2026-10-15-pathways-4
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 4
+  date: '2026-10-15'
+  venue: crocker-amazon
+  status: confirmed
+  notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261018
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-10-18'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-# ---------------------------------------------------------------- 2027 regular season
-  - id: 2027-01-19-regular-season-practice-begins
-    title: "Regular Season practice begins"
-    date: 2027-01-19
-    location: San Francisco
-    category: training
-    status: confirmed
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
 
-# ---------------------------------------------------------------- 2027 NCRFU Tier 3 League
-  - id: 2027-02-06-fresno-home
-    title: "SF Fog vs Fresno (H)"
-    date: 2027-02-06
-    location: San Francisco
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-02-20-ba-baracus-away
-    title: "BA Baracus vs SF Fog (A)"
-    date: 2027-02-20
-    location: TBC - San Francisco
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-02-27-berkeley-home
-    title: "SF Fog vs Berkeley (H)"
-    date: 2027-02-27
-    location: San Francisco
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-03-06-bye
-    title: "Bye Weekend"
-    date: 2027-03-06
-    category: fixture
-    status: confirmed
-  - id: 2027-03-13-golden-dogs-away
-    title: "Golden Dogs vs SF Fog (A)"
-    date: 2027-03-13
-    location: TBC - Fresno
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-03-20-mendocino-home
-    title: "SF Fog vs Mendocino Steam Donkeys (H)"
-    date: 2027-03-20
-    location: San Francisco
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-03-27-redding-away
-    title: "Redding vs SF Fog (A)"
-    date: 2027-03-27
-    location: TBC - Redding
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-04-03-bye
-    title: "Bye Weekend"
-    date: 2027-04-03
-    category: fixture
-    status: confirmed
-  - id: 2027-04-10-stanislaus-home
-    title: "SF Fog vs Stanislaus Harlots (H)"
-    date: 2027-04-10
-    location: San Francisco
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-04-17-marin-away
-    title: "Marin vs SF Fog (A)"
-    date: 2027-04-17
-    location: TBC - Marin
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
-  - id: 2027-04-24-chico-away
-    title: "Chico vs SF Fog (A)"
-    date: 2027-04-24
-    location: TBC - Chico
-    category: fixture
-    status: confirmed
-    notes: "NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby."
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
 
-# ---------------------------------------------------------------- Playoffs (conditional)
-  - id: 2027-05-08-ncrfu-semifinals
-    title: "NCRFU Semifinals (if qualified)"
-    date: 2027-05-08
-    location: TBD
-    category: fixture
-    status: tentative
-  - id: 2027-05-15-ncrfu-finals
-    title: "NCRFU Finals (if qualified)"
-    date: 2027-05-15
-    location: TBD
-    category: fixture
-    status: tentative
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-10-18-eagle-beer-bust
+  title: Eagle Beer Bust (volunteers)
+  date: '2026-10-18'
+  time: '15:00'
+  end_time: '19:00'
+  venue: sf-eagle
+  category: community
+  status: confirmed
+  notes: 'Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com'
+- id: 2026-10-20-pathways-5
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 5
+  date: '2026-10-20'
+  venue: raymond-kimbell
+  status: confirmed
+- id: 2026-10-22-pathways-6
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 6
+  date: '2026-10-22'
+  venue: crocker-amazon
+  status: confirmed
+  notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261025
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-10-25'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
 
-# ---------------------------------------------------------------- IGR NorAm 2027
-  - id: 2027-05-28-igr-noram
-    title: "IGR NorAm 2027 — New Orleans"
-    start: 2027-05-28
-    end: 2027-05-31
-    location: New Orleans, LA
-    category: tournament
-    status: confirmed
-    notes: "Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come."
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-10-27-pathways-7
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 7
+  date: '2026-10-27'
+  venue: raymond-kimbell
+  status: confirmed
+  notes: 'Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together.'
+- id: 2026-10-29-first-preseason-practice
+  series: pathway-to-rugby-2026
+  title: Pathway to Rugby — Session 8 + First Preseason Practice
+  date: '2026-10-29'
+  venue: crocker-amazon
+  status: confirmed
+  notes: 'Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm.'
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261101
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-11-01'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-11-01-board-meeting
+  title: November Board Meeting
+  date: '2026-11-01'
+  time: '18:30'
+  end_time: '20:00'
+  location: 'Online — Google Meet: https://meet.google.com/nzr-ptjs-ogi'
+  category: board
+  status: confirmed
+  notes: All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com.
+  url: https://meet.google.com/nzr-ptjs-ogi
+- id: 2026-27-training-tue-20261103
+  title: Fog Training (Tuesday)
+  date: '2026-11-03'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20261105
+  title: Fog Training (Thursday)
+  date: '2026-11-05'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-11-07-gear-swap
+  title: Fog Rugby Gear Exchange
+  date: '2026-11-07'
+  time: '14:00'
+  end_time: '17:00'
+  venue: mothership
+  category: social
+  status: confirmed
+  notes: 'Swap, sell, or donate new or gently used rugby gear to this season''s Fog players (Station 1: free gear with rookie priority; Station 2: peer-to-peer sales and trades). Featuring drag performances by Foggers, Mothership drink specials (21+), and a St. Anthony''s donation drive (partnering with Tenderloin Tessie''s — prioritizing men''s clothing/new underwear/jeans/sneakers/sweatshirts, children''s shoes, and unopened menstrual products).'
+  url: https://fogrugby.com/gear-swap
+  image: https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261108
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-11-08'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20261110
+  title: Fog Training (Tuesday)
+  date: '2026-11-10'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20261112
+  title: Fog Training (Thursday)
+  date: '2026-11-12'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261115
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-11-15'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-11-14-usf-away
+  title: 'Preseason Match #1 vs USF'
+  date: '2026-11-15'
+  time: '10:30'
+  end_time: '12:30'
+  venue: usf-negoesco
+  category: fixture
+  status: confirmed
+  notes: Reporting time 9:30am. Kickoff 10:30am.
+- id: 2026-27-training-tue-20261117
+  title: Fog Training (Tuesday)
+  date: '2026-11-17'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20261119
+  title: Fog Training (Thursday)
+  date: '2026-11-19'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-11-21-preseason-2
+  title: Fog vs Baracus (Home)
+  date: '2026-11-21'
+  location: TBC - San Francisco
+  category: fixture
+  status: tentative
+  notes: 'Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.'
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261122
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-11-22'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20261124
+  title: Fog Training (Tuesday)
+  date: '2026-11-24'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261129
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-11-29'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20261201
+  title: Fog Training (Tuesday)
+  date: '2026-12-01'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-12-03-rucktacular-weekend
+  series: rucktacular-2026
+  title: Rucktacular 2026 — San Diego
+  start: '2026-12-03'
+  end: '2026-12-06'
+  location: San Diego, CA
+  category: tournament
+  status: confirmed
+  notes: 'Hosted by San Diego Armada. Thu: arrivals + Black''s Beach rugby. Fri: hotel check-in, Presidents'' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat.'
+  url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
+  image: https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg
+- id: 2026-12-03-rucktacular-blacks-beach
+  series: rucktacular-2026
+  title: 'Rucktacular: Black''s Beach Naked Rugby'
+  date: '2026-12-03'
+  time: '14:00'
+  end_time: '18:00'
+  venue: blacks-beach
+  category: tournament
+  status: confirmed
+  notes: Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm.
+- id: 2026-27-training-20261203
+  title: Fog Training (Thursday)
+  date: '2026-12-03'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-12-04-rucktacular-presidents-meeting
+  series: rucktacular-2026
+  title: 'Rucktacular: Presidents'' Meeting'
+  date: '2026-12-04'
+  time: '16:00'
+  end_time: '17:30'
+  location: San Diego — location TBD
+  category: board
+  status: confirmed
+  notes: Club presidents meetup. Hotel check-in and welcome table open all day Friday.
+- id: 2026-12-04-rucktacular-drink-up
+  series: rucktacular-2026
+  title: 'Rucktacular: Drink-Up at Number One Fifth'
+  date: '2026-12-04'
+  time: '19:00'
+  end_time: '23:00'
+  venue: number-one-fifth
+  category: social
+  status: confirmed
+  notes: Kick off the weekend together.
+- id: 2026-12-05-rucktacular-tournament
+  series: rucktacular-2026
+  title: Rucktacular 2026 Tournament Day
+  date: '2026-12-05'
+  time: 07:00
+  end_time: '17:00'
+  location: San Diego — pitch TBC
+  category: tournament
+  status: confirmed
+  notes: 7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony.
+- id: 2026-12-05-rucktacular-after-party
+  series: rucktacular-2026
+  title: 'Rucktacular: Official After Party at Rich''s'
+  date: '2026-12-05'
+  time: '21:00'
+  end_time: '23:59'
+  venue: richs-san-diego
+  category: social
+  status: confirmed
+- id: 2026-12-06-rucktacular-survivors-brunch
+  series: rucktacular-2026
+  title: 'Rucktacular: Survivors Brunch'
+  date: '2026-12-06'
+  time: '10:00'
+  end_time: '12:00'
+  venue: uptown-tavern
+  category: social
+  status: confirmed
+- id: 2026-12-06-rucktacular-goodbye-drinks
+  series: rucktacular-2026
+  title: 'Rucktacular: Final Goodbye Drinks'
+  date: '2026-12-06'
+  time: '12:00'
+  end_time: '14:00'
+  venue: number-one-fifth
+  category: social
+  status: confirmed
+- id: 2026-27-training-tue-20261208
+  title: Fog Training (Tuesday)
+  date: '2026-12-08'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20261210
+  title: Fog Training (Thursday)
+  date: '2026-12-10'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-12-12-preseason-closer
+  title: Friendly TBD / Preseason closer
+  date: '2026-12-12'
+  location: TBD
+  category: fixture
+  status: tentative
+  notes: Additional preseason friendlies may be added based on availability — details to players in early October.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261213
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-12-13'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20261215
+  title: Fog Training (Tuesday)
+  date: '2026-12-15'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20261217
+  title: Fog Training (Thursday)
+  date: '2026-12-17'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261220
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-12-20'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20261222
+  title: Fog Training (Tuesday)
+  date: '2026-12-22'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20261227
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2026-12-27'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270103
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-01-03'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270110
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-01-10'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270117
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-01-17'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2027-01-19-regular-season-practice-begins
+  title: Regular Season practice begins
+  date: '2027-01-19'
+  location: San Francisco
+  category: training
+  status: confirmed
+- id: 2026-27-training-tue-20270119
+  title: Fog Training (Tuesday)
+  date: '2027-01-19'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270121
+  title: Fog Training (Thursday)
+  date: '2027-01-21'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270124
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-01-24'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270126
+  title: Fog Training (Tuesday)
+  date: '2027-01-26'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270128
+  title: Fog Training (Thursday)
+  date: '2027-01-28'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270131
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-01-31'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270202
+  title: Fog Training (Tuesday)
+  date: '2027-02-02'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270204
+  title: Fog Training (Thursday)
+  date: '2027-02-04'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-02-06-fresno-home
+  title: SF Fog vs Fresno (H)
+  date: '2027-02-06'
+  location: San Francisco
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270207
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-02-07'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270209
+  title: Fog Training (Tuesday)
+  date: '2027-02-09'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270211
+  title: Fog Training (Thursday)
+  date: '2027-02-11'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270214
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-02-14'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270216
+  title: Fog Training (Tuesday)
+  date: '2027-02-16'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270218
+  title: Fog Training (Thursday)
+  date: '2027-02-18'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-02-20-ba-baracus-away
+  title: BA Baracus vs SF Fog (A)
+  date: '2027-02-20'
+  location: TBC - San Francisco
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270221
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-02-21'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270223
+  title: Fog Training (Tuesday)
+  date: '2027-02-23'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270225
+  title: Fog Training (Thursday)
+  date: '2027-02-25'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-02-27-berkeley-home
+  title: SF Fog vs Berkeley (H)
+  date: '2027-02-27'
+  location: San Francisco
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270228
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-02-28'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270302
+  title: Fog Training (Tuesday)
+  date: '2027-03-02'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270304
+  title: Fog Training (Thursday)
+  date: '2027-03-04'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-03-06-bye
+  title: Bye Weekend
+  date: '2027-03-06'
+  category: fixture
+  status: confirmed
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270307
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-03-07'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270309
+  title: Fog Training (Tuesday)
+  date: '2027-03-09'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270311
+  title: Fog Training (Thursday)
+  date: '2027-03-11'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-03-13-golden-dogs-away
+  title: Golden Dogs vs SF Fog (A)
+  date: '2027-03-13'
+  location: TBC - Fresno
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270314
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-03-14'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270316
+  title: Fog Training (Tuesday)
+  date: '2027-03-16'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270318
+  title: Fog Training (Thursday)
+  date: '2027-03-18'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-03-20-mendocino-home
+  title: SF Fog vs Mendocino Steam Donkeys (H)
+  date: '2027-03-20'
+  location: San Francisco
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270321
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-03-21'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270323
+  title: Fog Training (Tuesday)
+  date: '2027-03-23'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270325
+  title: Fog Training (Thursday)
+  date: '2027-03-25'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-03-27-redding-away
+  title: Redding vs SF Fog (A)
+  date: '2027-03-27'
+  location: TBC - Redding
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270328
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-03-28'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270330
+  title: Fog Training (Tuesday)
+  date: '2027-03-30'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270401
+  title: Fog Training (Thursday)
+  date: '2027-04-01'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-04-03-bye
+  title: Bye Weekend
+  date: '2027-04-03'
+  category: fixture
+  status: confirmed
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270404
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-04-04'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270406
+  title: Fog Training (Tuesday)
+  date: '2027-04-06'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270408
+  title: Fog Training (Thursday)
+  date: '2027-04-08'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-04-10-stanislaus-home
+  title: SF Fog vs Stanislaus Harlots (H)
+  date: '2027-04-10'
+  location: San Francisco
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270411
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-04-11'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270413
+  title: Fog Training (Tuesday)
+  date: '2027-04-13'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270415
+  title: Fog Training (Thursday)
+  date: '2027-04-15'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-04-17-marin-away
+  title: Marin vs SF Fog (A)
+  date: '2027-04-17'
+  location: TBC - Marin
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270418
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-04-18'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270420
+  title: Fog Training (Tuesday)
+  date: '2027-04-20'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270422
+  title: Fog Training (Thursday)
+  date: '2027-04-22'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-04-24-chico-away
+  title: Chico vs SF Fog (A)
+  date: '2027-04-24'
+  location: TBC - Chico
+  category: fixture
+  status: confirmed
+  notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270425
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-04-25'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270427
+  title: Fog Training (Tuesday)
+  date: '2027-04-27'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270429
+  title: Fog Training (Thursday)
+  date: '2027-04-29'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270502
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-05-02'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270504
+  title: Fog Training (Tuesday)
+  date: '2027-05-04'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270506
+  title: Fog Training (Thursday)
+  date: '2027-05-06'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-05-08-ncrfu-semifinals
+  title: NCRFU Semifinals (if qualified)
+  date: '2027-05-08'
+  location: TBD
+  category: fixture
+  status: tentative
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270509
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-05-09'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-27-training-tue-20270511
+  title: Fog Training (Tuesday)
+  date: '2027-05-11'
+  time: '19:45'
+  end_time: '22:00'
+  venue: raymond-kimbell
+  category: training
+  status: confirmed
+  notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2026-27-training-20270513
+  title: Fog Training (Thursday)
+  date: '2027-05-13'
+  time: '19:45'
+  end_time: '22:00'
+  venue: crocker-amazon
+  category: training
+  status: confirmed
+  notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: 2027-05-15-ncrfu-finals
+  title: NCRFU Finals (if qualified)
+  date: '2027-05-15'
+  location: TBD
+  category: fixture
+  status: tentative
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270516
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-05-16'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2026-09-13-drop-in-touch-st-marys-optional-20270523
+  title: Sunday Drop-In Touch (SF Vintage) [Optional]
+  date: '2027-05-23'
+  time: 09:00
+  end_time: '11:00'
+  venue: st-marys-rec-center
+  category: social
+  status: confirmed
+  notes: |-
+    Cost: Free!
+
+    Who Can Play:
+     - Open to all ages, genders, orientations, and skill levels.
+     - Completely beginner-friendly—no prior experience necessary.
+
+    What to Bring:
+     - Cleats or athletic shoes.
+     - A blue or red shirt.
+
+    Website: sfvrfc.org
+    Facebook: https://www.facebook.com/groups/139383596170951/
+    Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
+  url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
+- id: 2027-05-28-igr-noram
+  title: IGR NorAm 2027 — New Orleans
+  start: '2027-05-28'
+  end: '2027-05-31'
+  location: New Orleans, LA
+  category: tournament
+  status: confirmed
+  notes: Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come.
