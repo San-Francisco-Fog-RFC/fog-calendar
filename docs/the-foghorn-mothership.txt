@@ -13,7 +13,7 @@ IN THIS ISSUE
 * Gear Exchange @ The Mothership (Today 2–5 PM)
 * Transgender Awareness Month (November)
 * President's Update: 71 CIPP'd & 3 Sides to RuckTacular
-* Key Dates & November 13 Board Meeting
+* Key Dates & December 13 Board Meeting
 * Coach Dany: Match Availability & Good Gym S&C
 * Team Gear Deals & Club Sponsors
 
@@ -78,7 +78,7 @@ BY THE NUMBERS:
 A few quick notes as you check out the dispatches below:
 * Submit your availability forms: This helps the board and coaches plan for practices and matches.
 * Suggestion Box & Honors: I'd love to hear from you — we have a suggestion box for any ideas you have, and a nomination form if you'd like to recognise someone who has gone above and beyond to improve the team.
-* November Board Meeting: You are cordially invited to our next board meeting on Friday, November 13 from 6:30 to 8:30 PM (held virtually via Google Meet).
+* December Board Meeting: You are cordially invited to our next board meeting on Sunday, December 13 from 6:30 to 8:30 PM (held virtually via Google Meet).
 
 Thank you for reading, see you around the pitch!
 
@@ -103,10 +103,6 @@ KEY DATES & CLUB CALENDAR (NOV – DEC 2026)
   Good Gym Oakland
   Pass: https://goodgym.pushpress.com/landing/plans/plan_339fa620266e4e
 
-* FRI NOV 13 · 6:30–8:30 PM
-  November Board Meeting (Virtual)
-  Google Meet: https://meet.google.com/nzr-ptjs-ogi
-
 * SUN NOV 15 · 10:30 AM KICKOFF
   Preseason Match #1 vs USF & Pathways Graduation
   USF Negoesco Field, Parker Ave, SF · Graduation at Pilsner Inn after!
@@ -122,6 +118,10 @@ KEY DATES & CLUB CALENDAR (NOV – DEC 2026)
   Robb Field, Ocean Beach, San Diego
   Info: https://www.sandiegoarmada.com/rucktacular
 
+* SUN DEC 13 · 6:30–8:30 PM
+  December Board Meeting (Virtual)
+  Google Meet: https://meet.google.com/nzr-ptjs-ogi
+
 WEEKLY PRACTICE SCHEDULE:
 * Tuesdays (7:45–10:00 PM): Raymond Kimbell Playground Park (1901 Geary Blvd)
 * Thursdays (7:45–10:00 PM): Crocker Amazon Soccer Fields (drinks at Pilsner Inn after!)
@@ -132,9 +132,11 @@ WEEKLY PRACTICE SCHEDULE:
 AROUND THE CLUBHOUSE
 ======================================================================
 
-1. COACH'S WIRE: MATCH AVAILABILITY
-   Coaches are building match rosters for USF (Nov 15), Baracus (Nov 21), and RuckTacular (Dec 3–6). Fill out your availability form today:
-   https://docs.google.com/forms/d/e/1FAIpQLSfURq4b6ptyyInb-EoJ2zi7JN3iOVfAGeakevMtQMyDYK6rLw/viewform
+1. COACH'S WIRE: MATCH & TRAINING AVAILABILITY
+   Coaches are building match rosters for USF (Nov 15), Baracus (Nov 21), and RuckTacular (Dec 3–6). Please fill out the applicable form:
+   * Veterans (until 11/15): https://forms.gle/hDmV7Zkz6GDnYvyL7
+   * Rookies (until 11/15): https://forms.gle/5bianNie4ZfU93mW9
+   * All Squad (until RuckTacular 12/5): https://forms.gle/Gtq571WJ8nizbtU8A
 
 2. FITNESS & S&C: GOOD GYM OAKLAND PASS
    "People were huffing more Thursday night, and we have not done a full 80 yet." — Coach Dany
@@ -143,8 +145,8 @@ AROUND THE CLUBHOUSE
 
 3. TOURNAMENT TRAVEL: RUCKTACULAR & SCRUM DUMP TICKETS
    Book flights to SAN (fly in Thurs Dec 3 or Fri morning Dec 4). Coordinate rooms and cars on Discord!
-   Scrum Dump tickets: https://www.eventbrite.com/e/scrum-dump-the-official-after-party-for-rucktacular-2026-tickets-2003680230507
-   Fog Discord: https://discord.gg/fogrugby
+   * Scrum Dump Tickets: https://www.eventbrite.com/e/scrum-dump-the-official-after-party-for-rucktacular-2026-tickets-2003680230507
+   * Fog Discord (Travel & Room Coordination): https://discord.gg/fogrugby
 
 4. MATCH DAY & SOCIAL MEDIA CREW: CALLING ALL CONTENT CREATORS
    Luke Kushner, our Director of Match Day & Social Media, is building a subcommittee to capture match footage and social content. If you want to help out or love capturing the action, reach out to Luke at matchday@fogrugby.com!
@@ -188,7 +190,7 @@ Special thanks to our generous team sponsors for fueling the Fog on and off the 
 SAN FRANCISCO FOG RUGBY FOOTBALL CLUB
 ======================================================================
 Founded 2000 · 501(c)(3) Nonprofit Organization
-West Coast Premier Inclusive Rugby Club
+San Francisco Fog RFC is a fiscally sponsored project of Dancers' Group, a 501(c)(3) nonprofit organization (EIN 94-2879185).
 
 Practice Grounds:
 * Tuesdays: Raymond Kimbell Playground Park (7:45–10:00 PM)
@@ -205,4 +207,4 @@ Events: https://events.fogrugby.com
 
 (c) 2000–2026 San Francisco Fog RFC. All rights reserved.
 Unsubscribe: {action.unsubscribeUrl}
-View in Browser: {action.viewInBrowser}
+View in Browser: {action.forwardUrl}
