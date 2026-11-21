@@ -48,6 +48,11 @@
       "items": {
         "$ref": "#/$defs/event"
       }
+    },
+    "event_page_base": {
+      "type": "string",
+      "pattern": "^https://",
+      "description": "When set, each event with a civicrm_id links to <event_page_base><civicrm_id> (the Clubhouse event page); the event's own url becomes its RSVP link, served via /go/<civicrm_id>/."
     }
   },
   "$defs": {
@@ -280,6 +285,11 @@
             "description": "YYYY-MM-DD"
           },
           "description": "Dates to skip within a repeating event"
+        },
+        "civicrm_id": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "CiviCRM event id, written by tools/sync_from_civicrm.py. Never edit by hand."
         }
       }
     },

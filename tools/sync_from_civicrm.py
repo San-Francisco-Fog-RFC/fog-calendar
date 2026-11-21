@@ -26,7 +26,7 @@ import yaml
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 EVENTS_YML = ROOT / "events.yml"
 DEFAULT_SOURCE = "https://clubhouse.fogrugby.com/api/calendar/export.json"
-KEY_ORDER = ["id", "series", "title", "date", "start", "end", "time", "end_time",
+KEY_ORDER = ["id", "civicrm_id", "series", "title", "date", "start", "end", "time", "end_time",
              "venue", "location", "category", "status", "notes", "url", "image", "rrule", "exdates"]
 HEADER = (
     "# GENERATED FROM THE CLUBHOUSE (CiviCRM) - do not edit events here.\n"
@@ -70,7 +70,7 @@ def convert(export: dict, current: dict) -> list[dict]:
 
     out = []
     for e in export["events"]:
-        row = {k: e[k] for k in ("id", "title", "date", "start", "end", "time", "end_time",
+        row = {k: e[k] for k in ("id", "civicrm_id", "title", "date", "start", "end", "time", "end_time",
                                  "category", "status", "notes", "url", "image") if e.get(k)}
         if e["id"] in old_series:
             row["series"] = old_series[e["id"]]

@@ -35,6 +35,11 @@ OUT_JSON = ROOT / "docs" / "events.json"
 OUT_FULLCALENDAR = ROOT / "docs" / "fullcalendar.json"
 OUT_SCHEMA = ROOT / "docs" / "schema-events.jsonld"
 OUT_OPENAPI = ROOT / "docs" / "openapi.yaml"
+OUT_GO = ROOT / "docs" / "go"
+GO_BASE = "https://events.fogrugby.com/go/"
+GA_IDS = ("G-GD8T0M6RZ9", "G-WTRRT4XDS5")
+# Hosts where UTM params are pointless or could break the link
+NO_UTM_HOSTS = ("chat.whatsapp.com", "meet.google.com", "docs.google.com", "forms.gle")
 INDEX_HTML = ROOT / "docs" / "index.html"
 
 TZID = "America/Los_Angeles"
@@ -186,9 +191,75 @@ def resolve_events(data: dict) -> list[str]:
                 v = venues[vid]
                 r["location"] = f"{v['name']}, {v['address']}" if v.get("address") else v["name"]
                 r["_venue"] = v
+        # Clubhouse event pages: the event links to its CiviCRM page and its own
+        # url becomes the RSVP target (served through /go/<civicrm_id>/).
+        base = data.get("event_page_base")
+        if base and r.get("civicrm_id"):
+            if r.get("url"):
+                r["rsvp_url"] = r["url"]
+            r["url"] = f"{base}{r['civicrm_id']}"
         resolved.append(r)
     data["events"] = resolved
     return errors
+
+
+def with_utm(url: str, campaign: str) -> str:
+    """Add UTM params (unless the link already has them or the host shouldn't get them)."""
+    from urllib.parse import urlsplit, urlunsplit, urlencode, parse_qsl
+    parts = urlsplit(url)
+    if parts.hostname in NO_UTM_HOSTS:
+        return url
+    q = parse_qsl(parts.query, keep_blank_values=True)
+    if any(k.startswith("utm_") for k, _ in q):
+        return url
+    q = [(k, v) for k, v in q if k != "c"]  # drop Partiful personal invite codes
+    q += [("utm_source", "fog-calendar"), ("utm_medium", "event_page"), ("utm_campaign", campaign)]
+    return urlunsplit(parts._replace(query=urlencode(q)))
+
+
+def build_go_pages(events: list[dict]) -> int:
+    """Write docs/go/<civicrm_id>/index.html: fire GA, then forward to the RSVP link."""
+    import html as _html
+    OUT_GO.mkdir(parents=True, exist_ok=True)
+    keep = set()
+    for ev in events:
+        target = ev.get("rsvp_url") or (ev.get("url") if not str(ev.get("url", "")).startswith(GO_BASE) else None)
+        cid = ev.get("civicrm_id")
+        if not cid or not target or str(target).startswith("https://clubhouse.fogrugby.com/e/"):
+            continue
+        dest = with_utm(str(target).strip(), str(ev.get("id")))
+        keep.add(str(cid))
+        js_dest = json.dumps(dest).replace("</", "<\\/")
+        title = _html.escape(str(ev.get("title", "Fog event")))
+        gtag = "".join(f"gtag('config','{g}',{{send_page_view:false}});" for g in GA_IDS)
+        page = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{title} · SF Fog RFC</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_IDS[0]}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());{gtag}
+var d={js_dest},done=false;function go(){{if(!done){{done=true;location.replace(d);}}}}
+gtag('event','rsvp_click',{{event_id:{json.dumps(str(ev.get('id')))},civicrm_id:{int(cid)},link_url:d,event_callback:go,event_timeout:1500}});
+setTimeout(go,1800);
+</script>
+<noscript><meta http-equiv="refresh" content="0;url={_html.escape(dest)}"></noscript>
+</head><body style="font-family:system-ui,sans-serif;padding:24px">
+<p>Taking you to the RSVP for <strong>{title}</strong>&hellip; <a href="{_html.escape(dest)}">Continue</a></p>
+</body></html>
+"""
+        d = OUT_GO / str(cid)
+        d.mkdir(exist_ok=True)
+        (d / "index.html").write_text(page, encoding="utf-8")
+    # Remove pages for events that no longer have an RSVP link
+    for d in OUT_GO.iterdir():
+        if d.is_dir() and d.name not in keep:
+            for f in d.iterdir():
+                f.unlink()
+            d.rmdir()
+    return len(keep)
 
 
 def validate_events(data: dict) -> tuple[list[str], list[str]]:
@@ -358,6 +429,8 @@ def event_lines(ev: dict, stamp: str) -> list[str]:
     if ev.get("url"):
         lines.append(f"URL:{ev['url']}")
         desc = (desc + "\n\n" if desc else "") + ev["url"]
+    if ev.get("rsvp_url") and ev.get("civicrm_id"):
+        desc = (desc + "\n\n" if desc else "") + f"RSVP: {GO_BASE}{ev['civicrm_id']}/"
     img = image_url(ev)
     if img:
         lines.append(f"IMAGE;VALUE=URI;DISPLAY=BADGE;FMTTYPE={image_type(img)}:{img}")
@@ -477,6 +550,8 @@ def build_events_json(data: dict) -> dict:
             "location": ev.get("location"),
             "notes": (ev.get("notes") or "").strip() or None,
             "url": ev.get("url"),
+            "rsvp_url": ev.get("rsvp_url"),
+            "civicrm_id": ev.get("civicrm_id"),
             "image": image_url(ev),
             "rrule": ev.get("rrule"),
             "exdates": [str(parse_date(x)) for x in (ev.get("exdates") or [])],
@@ -964,6 +1039,9 @@ def main() -> int:
     # 4. Build OpenAPI Spec
     OUT_OPENAPI.write_text(generate_openapi_spec(), encoding="utf-8")
     print(f"wrote {OUT_OPENAPI.relative_to(ROOT)}")
+
+    n_go = build_go_pages(events)
+    print(f"wrote {OUT_GO.relative_to(ROOT)}/ — {n_go} RSVP redirect pages")
 
     # 5. Update index.html with Schema.org JSON-LD
     update_index_html(schema_ld)
