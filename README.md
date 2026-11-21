@@ -53,6 +53,12 @@ Rules that keep the feed sane:
 - If the Clubhouse is unreachable or the export looks wrong (empty, or most events missing), the sync skips and the feed keeps its last good version.
 - `docs/portal.html` is the read-only club calendar; its "Edit events" button goes to the Clubhouse.
 
+### Event pages and RSVP links
+
+- Each event carries its `civicrm_id` (written by the sync; never edit it).
+- `docs/go/<civicrm_id>/` is generated for every event with a link: it fires a GA `rsvp_click` event, then forwards to the link with UTM tags (`utm_source=fog-calendar&utm_medium=event_page&utm_campaign=<event id>`). Partiful personal `?c=` codes are stripped. WhatsApp/Meet/Google Forms links get no UTMs.
+- Set `event_page_base: https://clubhouse.fogrugby.com/e/` (top level of `events.yml`) **once the Clubhouse `/e/{id}` page is deployed**. Every event's link in the feed, `events.json`, Schema.org and bay.lgbt then becomes its Clubhouse page, and the original link moves to `rsvp_url` (served via `/go/<id>/`).
+
 The page shell (header, Pride menu, rotating background, footer) comes from `docs/assets/css/fog-chassis.css` and `docs/assets/js/fog-chassis.js`, extracted from `index.html`.
 
 ## One-time setup

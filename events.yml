@@ -101,6 +101,7 @@ series:
       status: tentative
 events:
 - id: 2026-09-11-memorial-toast
+  civicrm_id: 1
   title: Fog 9/11 Memorial Toast — Pilsner Inn
   date: '2026-09-11'
   time: '19:00'
@@ -110,6 +111,7 @@ events:
   status: confirmed
   notes: Doors 7pm. Toast at 8pm in memory of Mark Bingham, those lost on 9/11, and departed Fog alumni. Players, supporters and friends welcome.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20260913
+  civicrm_id: 2
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-09-13'
   time: 09:00
@@ -133,6 +135,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-13-kangaroo-court-beach-bash
+  civicrm_id: 38
   title: Kangaroo Court and Beach Bash
   date: '2026-09-13'
   time: '15:00'
@@ -143,6 +146,7 @@ events:
   notes: Beach touch and potluck at Ocean Beach, then Kangaroo Court sits. RSVP on Partiful.
   url: https://partiful.com/e/ANPVBHCNveMygh8Ws3mX?c=Byz1a63E
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20260920
+  civicrm_id: 3
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-09-20'
   time: 09:00
@@ -166,6 +170,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-26-magnitude-coat-check
+  civicrm_id: 39
   title: Magnitude Coat Check (volunteers)
   date: '2026-09-26'
   time: '20:00'
@@ -176,6 +181,7 @@ events:
   notes: 'The Fog runs the coat check at Magnitude, the Saturday night main event of Folsom Street Fair. Shifts run from 8pm to 4am; every tip goes to the club. 21+. Volunteer: fundraising@fogrugby.com'
   url: https://www.eventbrite.com/e/magnitude-2026-the-saturday-night-main-event-of-folsom-street-fairtm-tickets-1894668557659
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20260927
+  civicrm_id: 4
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-09-27'
   time: 09:00
@@ -199,6 +205,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-27-folsom-sunscreen-booth
+  civicrm_id: 40
   title: Folsom Street Fair Sunscreen Booth (volunteers)
   date: '2026-09-27'
   time: '10:00'
@@ -208,6 +215,7 @@ events:
   status: confirmed
   notes: 'Sunscreen on strangers, talk rugby, hand out Pathway to Rugby flyers. Shifts between 10am and 7pm. Volunteer: fundraising@fogrugby.com'
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261004
+  civicrm_id: 5
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-10-04'
   time: 09:00
@@ -231,6 +239,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-10-06-pathways-1
+  civicrm_id: 41
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 1
   date: '2026-10-06'
@@ -238,6 +247,7 @@ events:
   status: confirmed
   notes: Check-in from 7:30pm; session until 10pm. First sessions are free — bring boots or runners, water, and a mouthguard if you have one.
 - id: 2026-10-08-pathways-2
+  civicrm_id: 42
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 2
   date: '2026-10-08'
@@ -245,6 +255,7 @@ events:
   status: confirmed
   notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261011
+  civicrm_id: 6
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-10-11'
   time: 09:00
@@ -268,12 +279,14 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-10-13-pathways-3
+  civicrm_id: 43
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 3
   date: '2026-10-13'
   venue: raymond-kimbell
   status: confirmed
 - id: 2026-10-14-fog-turns-26
+  civicrm_id: 48
   title: The Fog turns 26
   date: '2026-10-14'
   location: San Francisco
@@ -281,6 +294,7 @@ events:
   status: confirmed
   notes: Club anniversary. 26 years of inclusive rugby.
 - id: 2026-10-15-pathways-4
+  civicrm_id: 44
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 4
   date: '2026-10-15'
@@ -288,6 +302,7 @@ events:
   status: confirmed
   notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261018
+  civicrm_id: 7
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-10-18'
   time: 09:00
@@ -311,6 +326,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-10-18-eagle-beer-bust
+  civicrm_id: 49
   title: Eagle Beer Bust (volunteers)
   date: '2026-10-18'
   time: '15:00'
@@ -320,12 +336,14 @@ events:
   status: confirmed
   notes: 'Fog beer bust at the Eagle, 3–7pm. Volunteers needed: fundraising@fogrugby.com'
 - id: 2026-10-20-pathways-5
+  civicrm_id: 45
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 5
   date: '2026-10-20'
   venue: raymond-kimbell
   status: confirmed
 - id: 2026-10-22-pathways-6
+  civicrm_id: 46
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 6
   date: '2026-10-22'
@@ -333,6 +351,7 @@ events:
   status: confirmed
   notes: Check-in from 7:30pm; session until 10pm, then social at the Pilsner Inn afterwards.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261025
+  civicrm_id: 8
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-10-25'
   time: 09:00
@@ -356,6 +375,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-10-27-pathways-7
+  civicrm_id: 47
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 7
   date: '2026-10-27'
@@ -363,6 +383,7 @@ events:
   status: confirmed
   notes: 'Check-in from 7:30pm; session until 10pm. Next up: Thu 29 Oct, the final Pathways session and first preseason practice together.'
 - id: 2026-10-29-first-preseason-practice
+  civicrm_id: 98
   series: pathway-to-rugby-2026
   title: Pathway to Rugby — Session 8 + First Preseason Practice
   date: '2026-10-29'
@@ -370,6 +391,7 @@ events:
   status: confirmed
   notes: 'Mixed session: the final Pathway to Rugby session and the first preseason practice of 2026. Pathways players train alongside the full squad. Check-in from 7:30pm; session until 10pm.'
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261101
+  civicrm_id: 9
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-01'
   time: 09:00
@@ -393,6 +415,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-11-01-board-meeting
+  civicrm_id: 99
   title: November Board Meeting
   date: '2026-11-01'
   time: '18:30'
@@ -403,6 +426,7 @@ events:
   notes: All members welcome, with an open floor for questions. Send in-depth questions in advance to secretary@fogrugby.com.
   url: https://meet.google.com/nzr-ptjs-ogi
 - id: 2026-27-training-tue-20261103
+  civicrm_id: 73
   title: Fog Training (Tuesday)
   date: '2026-11-03'
   time: '19:45'
@@ -412,6 +436,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20261105
+  civicrm_id: 50
   title: Fog Training (Thursday)
   date: '2026-11-05'
   time: '19:45'
@@ -421,6 +446,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-11-07-gear-swap
+  civicrm_id: 100
   title: Fog Rugby Gear Exchange
   date: '2026-11-07'
   time: '14:00'
@@ -432,6 +458,7 @@ events:
   url: https://fogrugby.com/gear-swap
   image: https://events.fogrugby.com/assets/img/mothership-gear-exchange-banner.png
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261108
+  civicrm_id: 10
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-08'
   time: 09:00
@@ -455,6 +482,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20261110
+  civicrm_id: 74
   title: Fog Training (Tuesday)
   date: '2026-11-10'
   time: '19:45'
@@ -464,6 +492,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20261112
+  civicrm_id: 51
   title: Fog Training (Thursday)
   date: '2026-11-12'
   time: '19:45'
@@ -473,6 +502,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261115
+  civicrm_id: 11
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-15'
   time: 09:00
@@ -496,6 +526,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-11-14-usf-away
+  civicrm_id: 101
   title: 'Preseason Match #1 vs USF'
   date: '2026-11-15'
   time: '10:30'
@@ -505,6 +536,7 @@ events:
   status: confirmed
   notes: Reporting time 9:30am. Kickoff 10:30am.
 - id: 2026-27-training-tue-20261117
+  civicrm_id: 75
   title: Fog Training (Tuesday)
   date: '2026-11-17'
   time: '19:45'
@@ -514,6 +546,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20261119
+  civicrm_id: 52
   title: Fog Training (Thursday)
   date: '2026-11-19'
   time: '19:45'
@@ -523,6 +556,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-11-21-preseason-2
+  civicrm_id: 102
   title: Fog vs Baracus (Home)
   date: '2026-11-21'
   time: '15:30'
@@ -539,6 +573,7 @@ events:
     ROLL FOG ROLL!
   url: https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT?utm_source=fog-calendar&utm_medium=calendar&utm_campaign=preseason-baracus-2026-11-21
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261122
+  civicrm_id: 12
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-22'
   time: 09:00
@@ -562,6 +597,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20261124
+  civicrm_id: 76
   title: Fog Training (Tuesday)
   date: '2026-11-24'
   time: '19:45'
@@ -571,6 +607,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261129
+  civicrm_id: 13
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-29'
   time: 09:00
@@ -594,6 +631,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20261201
+  civicrm_id: 77
   title: Fog Training (Tuesday)
   date: '2026-12-01'
   time: '19:45'
@@ -603,6 +641,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-12-03-rucktacular-weekend
+  civicrm_id: 103
   series: rucktacular-2026
   title: Rucktacular 2026 — San Diego
   start: '2026-12-03'
@@ -614,6 +653,7 @@ events:
   url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
   image: https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg
 - id: 2026-12-03-rucktacular-blacks-beach
+  civicrm_id: 104
   series: rucktacular-2026
   title: 'Rucktacular: Black''s Beach Naked Rugby'
   date: '2026-12-03'
@@ -624,6 +664,7 @@ events:
   status: confirmed
   notes: Everyone welcome. All bodies. All fun. Clothing optional. Hang out for sunset from 6pm.
 - id: 2026-27-training-20261203
+  civicrm_id: 53
   title: Fog Training (Thursday)
   date: '2026-12-03'
   time: '19:45'
@@ -633,6 +674,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-12-04-rucktacular-presidents-meeting
+  civicrm_id: 105
   series: rucktacular-2026
   title: 'Rucktacular: Presidents'' Meeting'
   date: '2026-12-04'
@@ -643,6 +685,7 @@ events:
   status: confirmed
   notes: Club presidents meetup. Hotel check-in and welcome table open all day Friday.
 - id: 2026-12-04-rucktacular-drink-up
+  civicrm_id: 106
   series: rucktacular-2026
   title: 'Rucktacular: Drink-Up at Number One Fifth'
   date: '2026-12-04'
@@ -653,6 +696,7 @@ events:
   status: confirmed
   notes: Kick off the weekend together.
 - id: 2026-12-05-rucktacular-tournament
+  civicrm_id: 107
   series: rucktacular-2026
   title: Rucktacular 2026 Tournament Day
   date: '2026-12-05'
@@ -663,6 +707,7 @@ events:
   status: confirmed
   notes: 7:00am coffee & snacks. 8:00am tournament begins — all-day rugby. Merch, vendors and free concessions all day. 4:30pm awards & closing ceremony.
 - id: 2026-12-05-rucktacular-after-party
+  civicrm_id: 108
   series: rucktacular-2026
   title: 'Rucktacular: Official After Party at Rich''s'
   date: '2026-12-05'
@@ -672,6 +717,7 @@ events:
   category: social
   status: confirmed
 - id: 2026-12-06-rucktacular-survivors-brunch
+  civicrm_id: 109
   series: rucktacular-2026
   title: 'Rucktacular: Survivors Brunch'
   date: '2026-12-06'
@@ -681,6 +727,7 @@ events:
   category: social
   status: confirmed
 - id: 2026-12-06-rucktacular-goodbye-drinks
+  civicrm_id: 110
   series: rucktacular-2026
   title: 'Rucktacular: Final Goodbye Drinks'
   date: '2026-12-06'
@@ -690,6 +737,7 @@ events:
   category: social
   status: confirmed
 - id: 2026-27-training-tue-20261208
+  civicrm_id: 78
   title: Fog Training (Tuesday)
   date: '2026-12-08'
   time: '19:45'
@@ -699,6 +747,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20261210
+  civicrm_id: 54
   title: Fog Training (Thursday)
   date: '2026-12-10'
   time: '19:45'
@@ -708,6 +757,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-12-12-preseason-closer
+  civicrm_id: 111
   title: Friendly TBD / Preseason closer
   date: '2026-12-12'
   location: TBD
@@ -715,6 +765,7 @@ events:
   status: tentative
   notes: Additional preseason friendlies may be added based on availability — details to players in early October.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261213
+  civicrm_id: 14
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-12-13'
   time: 09:00
@@ -738,6 +789,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20261215
+  civicrm_id: 79
   title: Fog Training (Tuesday)
   date: '2026-12-15'
   time: '19:45'
@@ -747,6 +799,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20261217
+  civicrm_id: 55
   title: Fog Training (Thursday)
   date: '2026-12-17'
   time: '19:45'
@@ -756,6 +809,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261220
+  civicrm_id: 15
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-12-20'
   time: 09:00
@@ -779,6 +833,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20261222
+  civicrm_id: 80
   title: Fog Training (Tuesday)
   date: '2026-12-22'
   time: '19:45'
@@ -788,6 +843,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261227
+  civicrm_id: 16
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-12-27'
   time: 09:00
@@ -811,6 +867,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270103
+  civicrm_id: 17
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-01-03'
   time: 09:00
@@ -834,6 +891,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270110
+  civicrm_id: 18
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-01-10'
   time: 09:00
@@ -857,6 +915,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270117
+  civicrm_id: 19
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-01-17'
   time: 09:00
@@ -880,12 +939,14 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2027-01-19-regular-season-practice-begins
+  civicrm_id: 112
   title: Regular Season practice begins
   date: '2027-01-19'
   location: San Francisco
   category: training
   status: confirmed
 - id: 2026-27-training-tue-20270119
+  civicrm_id: 81
   title: Fog Training (Tuesday)
   date: '2027-01-19'
   time: '19:45'
@@ -895,6 +956,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270121
+  civicrm_id: 56
   title: Fog Training (Thursday)
   date: '2027-01-21'
   time: '19:45'
@@ -904,6 +966,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270124
+  civicrm_id: 20
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-01-24'
   time: 09:00
@@ -927,6 +990,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270126
+  civicrm_id: 82
   title: Fog Training (Tuesday)
   date: '2027-01-26'
   time: '19:45'
@@ -936,6 +1000,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270128
+  civicrm_id: 57
   title: Fog Training (Thursday)
   date: '2027-01-28'
   time: '19:45'
@@ -945,6 +1010,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270131
+  civicrm_id: 21
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-01-31'
   time: 09:00
@@ -968,6 +1034,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270202
+  civicrm_id: 83
   title: Fog Training (Tuesday)
   date: '2027-02-02'
   time: '19:45'
@@ -977,6 +1044,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270204
+  civicrm_id: 58
   title: Fog Training (Thursday)
   date: '2027-02-04'
   time: '19:45'
@@ -986,6 +1054,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-02-06-fresno-home
+  civicrm_id: 113
   title: SF Fog vs Fresno (H)
   date: '2027-02-06'
   location: San Francisco
@@ -993,6 +1062,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270207
+  civicrm_id: 22
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-02-07'
   time: 09:00
@@ -1016,6 +1086,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270209
+  civicrm_id: 84
   title: Fog Training (Tuesday)
   date: '2027-02-09'
   time: '19:45'
@@ -1025,6 +1096,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270211
+  civicrm_id: 59
   title: Fog Training (Thursday)
   date: '2027-02-11'
   time: '19:45'
@@ -1034,6 +1106,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270214
+  civicrm_id: 23
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-02-14'
   time: 09:00
@@ -1057,6 +1130,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270216
+  civicrm_id: 85
   title: Fog Training (Tuesday)
   date: '2027-02-16'
   time: '19:45'
@@ -1066,6 +1140,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270218
+  civicrm_id: 60
   title: Fog Training (Thursday)
   date: '2027-02-18'
   time: '19:45'
@@ -1075,6 +1150,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-02-20-ba-baracus-away
+  civicrm_id: 114
   title: BA Baracus vs SF Fog (A)
   date: '2027-02-20'
   location: TBC - San Francisco
@@ -1082,6 +1158,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270221
+  civicrm_id: 24
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-02-21'
   time: 09:00
@@ -1105,6 +1182,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270223
+  civicrm_id: 86
   title: Fog Training (Tuesday)
   date: '2027-02-23'
   time: '19:45'
@@ -1114,6 +1192,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270225
+  civicrm_id: 61
   title: Fog Training (Thursday)
   date: '2027-02-25'
   time: '19:45'
@@ -1123,6 +1202,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-02-27-berkeley-home
+  civicrm_id: 115
   title: SF Fog vs Berkeley (H)
   date: '2027-02-27'
   location: San Francisco
@@ -1130,6 +1210,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270228
+  civicrm_id: 25
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-02-28'
   time: 09:00
@@ -1153,6 +1234,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270302
+  civicrm_id: 87
   title: Fog Training (Tuesday)
   date: '2027-03-02'
   time: '19:45'
@@ -1162,6 +1244,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270304
+  civicrm_id: 62
   title: Fog Training (Thursday)
   date: '2027-03-04'
   time: '19:45'
@@ -1171,11 +1254,13 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-03-06-bye
+  civicrm_id: 116
   title: Bye Weekend
   date: '2027-03-06'
   category: fixture
   status: confirmed
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270307
+  civicrm_id: 26
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-03-07'
   time: 09:00
@@ -1199,6 +1284,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270309
+  civicrm_id: 88
   title: Fog Training (Tuesday)
   date: '2027-03-09'
   time: '19:45'
@@ -1208,6 +1294,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270311
+  civicrm_id: 63
   title: Fog Training (Thursday)
   date: '2027-03-11'
   time: '19:45'
@@ -1217,6 +1304,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-03-13-golden-dogs-away
+  civicrm_id: 117
   title: Golden Dogs vs SF Fog (A)
   date: '2027-03-13'
   location: TBC - Fresno
@@ -1224,6 +1312,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270314
+  civicrm_id: 27
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-03-14'
   time: 09:00
@@ -1247,6 +1336,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270316
+  civicrm_id: 89
   title: Fog Training (Tuesday)
   date: '2027-03-16'
   time: '19:45'
@@ -1256,6 +1346,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270318
+  civicrm_id: 64
   title: Fog Training (Thursday)
   date: '2027-03-18'
   time: '19:45'
@@ -1265,6 +1356,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-03-20-mendocino-home
+  civicrm_id: 118
   title: SF Fog vs Mendocino Steam Donkeys (H)
   date: '2027-03-20'
   location: San Francisco
@@ -1272,6 +1364,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270321
+  civicrm_id: 28
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-03-21'
   time: 09:00
@@ -1295,6 +1388,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270323
+  civicrm_id: 90
   title: Fog Training (Tuesday)
   date: '2027-03-23'
   time: '19:45'
@@ -1304,6 +1398,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270325
+  civicrm_id: 65
   title: Fog Training (Thursday)
   date: '2027-03-25'
   time: '19:45'
@@ -1313,6 +1408,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-03-27-redding-away
+  civicrm_id: 119
   title: Redding vs SF Fog (A)
   date: '2027-03-27'
   location: TBC - Redding
@@ -1320,6 +1416,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270328
+  civicrm_id: 29
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-03-28'
   time: 09:00
@@ -1343,6 +1440,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270330
+  civicrm_id: 91
   title: Fog Training (Tuesday)
   date: '2027-03-30'
   time: '19:45'
@@ -1352,6 +1450,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270401
+  civicrm_id: 66
   title: Fog Training (Thursday)
   date: '2027-04-01'
   time: '19:45'
@@ -1361,11 +1460,13 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-04-03-bye
+  civicrm_id: 120
   title: Bye Weekend
   date: '2027-04-03'
   category: fixture
   status: confirmed
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270404
+  civicrm_id: 30
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-04-04'
   time: 09:00
@@ -1389,6 +1490,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270406
+  civicrm_id: 92
   title: Fog Training (Tuesday)
   date: '2027-04-06'
   time: '19:45'
@@ -1398,6 +1500,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270408
+  civicrm_id: 67
   title: Fog Training (Thursday)
   date: '2027-04-08'
   time: '19:45'
@@ -1407,6 +1510,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-04-10-stanislaus-home
+  civicrm_id: 121
   title: SF Fog vs Stanislaus Harlots (H)
   date: '2027-04-10'
   location: San Francisco
@@ -1414,6 +1518,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270411
+  civicrm_id: 31
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-04-11'
   time: 09:00
@@ -1437,6 +1542,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270413
+  civicrm_id: 93
   title: Fog Training (Tuesday)
   date: '2027-04-13'
   time: '19:45'
@@ -1446,6 +1552,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270415
+  civicrm_id: 68
   title: Fog Training (Thursday)
   date: '2027-04-15'
   time: '19:45'
@@ -1455,6 +1562,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-04-17-marin-away
+  civicrm_id: 122
   title: Marin vs SF Fog (A)
   date: '2027-04-17'
   location: TBC - Marin
@@ -1462,6 +1570,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270418
+  civicrm_id: 32
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-04-18'
   time: 09:00
@@ -1485,6 +1594,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270420
+  civicrm_id: 94
   title: Fog Training (Tuesday)
   date: '2027-04-20'
   time: '19:45'
@@ -1494,6 +1604,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270422
+  civicrm_id: 69
   title: Fog Training (Thursday)
   date: '2027-04-22'
   time: '19:45'
@@ -1503,6 +1614,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-04-24-chico-away
+  civicrm_id: 123
   title: Chico vs SF Fog (A)
   date: '2027-04-24'
   location: TBC - Chico
@@ -1510,6 +1622,7 @@ events:
   status: confirmed
   notes: NCRFU Tier 3. Kickoff TBD. Subject to change — welcome to NorCal rugby.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270425
+  civicrm_id: 33
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-04-25'
   time: 09:00
@@ -1533,6 +1646,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270427
+  civicrm_id: 95
   title: Fog Training (Tuesday)
   date: '2027-04-27'
   time: '19:45'
@@ -1542,6 +1656,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270429
+  civicrm_id: 70
   title: Fog Training (Thursday)
   date: '2027-04-29'
   time: '19:45'
@@ -1551,6 +1666,7 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270502
+  civicrm_id: 34
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-05-02'
   time: 09:00
@@ -1574,6 +1690,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270504
+  civicrm_id: 96
   title: Fog Training (Tuesday)
   date: '2027-05-04'
   time: '19:45'
@@ -1583,6 +1700,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270506
+  civicrm_id: 71
   title: Fog Training (Thursday)
   date: '2027-05-06'
   time: '19:45'
@@ -1592,12 +1710,14 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-05-08-ncrfu-semifinals
+  civicrm_id: 124
   title: NCRFU Semifinals (if qualified)
   date: '2027-05-08'
   location: TBD
   category: fixture
   status: tentative
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270509
+  civicrm_id: 35
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-05-09'
   time: 09:00
@@ -1621,6 +1741,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-27-training-tue-20270511
+  civicrm_id: 97
   title: Fog Training (Tuesday)
   date: '2027-05-11'
   time: '19:45'
@@ -1630,6 +1751,7 @@ events:
   status: confirmed
   notes: Tuesdays 7:45–10:00pm at Raymond Kimbell. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-27-training-20270513
+  civicrm_id: 72
   title: Fog Training (Thursday)
   date: '2027-05-13'
   time: '19:45'
@@ -1639,12 +1761,14 @@ events:
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2027-05-15-ncrfu-finals
+  civicrm_id: 125
   title: NCRFU Finals (if qualified)
   date: '2027-05-15'
   location: TBD
   category: fixture
   status: tentative
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270516
+  civicrm_id: 36
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-05-16'
   time: 09:00
@@ -1668,6 +1792,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20270523
+  civicrm_id: 37
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2027-05-23'
   time: 09:00
@@ -1691,6 +1816,7 @@ events:
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
 - id: 2027-05-28-igr-noram
+  civicrm_id: 126
   title: IGR NorAm 2027 — New Orleans
   start: '2027-05-28'
   end: '2027-05-31'
