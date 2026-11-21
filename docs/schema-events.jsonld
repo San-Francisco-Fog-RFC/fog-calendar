@@ -1323,7 +1323,7 @@
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT"
+        "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT?utm_source=fog-calendar&utm_medium=calendar&utm_campaign=preseason-baracus-2026-11-21"
       },
       "sport": "Rugby Union",
       "image": [
@@ -1342,7 +1342,7 @@
           "addressLocality": "San Francisco"
         }
       },
-      "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT"
+      "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT?utm_source=fog-calendar&utm_medium=calendar&utm_campaign=preseason-baracus-2026-11-21"
     },
     {
       "@type": "SocialEvent",
