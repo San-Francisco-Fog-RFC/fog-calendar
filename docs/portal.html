@@ -215,7 +215,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
           </a>
           <span class="header-divider" aria-hidden="true"></span>
-          <a id="btn-toggle-admin" href="https://clubhouse.fogrugby.com/civicrm/event/manage?reset=1" class="header-btn header-btn--secondary">Edit events</a>
           <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
           <button type="button" class="header-btn header-btn--pride" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Interactive Progress Pride Menu">
             <span class="pride-menu-pip" aria-hidden="true"></span>
@@ -518,15 +517,15 @@
       <div class="explainer-box">
         <div class="explainer-title">Why are there two files? (events.yml vs fog.ics)</div>
         <p style="font-size: 0.82rem; margin: 0 0 6px;">
-          <strong>1. <code>events.yml</code> (The Human Editor):</strong> The human-friendly source of truth stored in this repository. Humans edit dates, venues, and match notes here.
+          <strong>1. <code>events.yml</code> (The Human Editor):</strong> Generated every 30 minutes from the Clubhouse (CiviCRM), which is the source of truth for dates, venues and match notes. Don&rsquo;t edit events here.
         </p>
         <p style="font-size: 0.82rem; margin: 0 0 8px;">
           <strong>2. <code>docs/fog.ics</code> (The Machine Feed):</strong> An RFC 5545 calendar standard file compiled from <code>events.yml</code>. Apple Calendar, Google Calendar, and Outlook cannot read YAML—they strictly read <code>.ics</code> calendar feeds.
         </p>
         <div class="flow-diagram">
-          <div class="flow-step">1. You edit events.yml</div>
+          <div class="flow-step">1. Events are edited in the Clubhouse (CiviCRM)</div>
           <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step">2. GitHub Action runs build_ics.py</div>
+          <div class="flow-step">2. Sync rebuilds events.yml &amp; runs build_ics.py</div>
           <div class="flow-arrow">&rarr;</div>
           <div class="flow-step">3. docs/fog.ics is generated</div>
           <div class="flow-arrow">&rarr;</div>

@@ -7110,7 +7110,6 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
             <span>Subscribe &amp; Sync</span>
           </button>
           <span class="header-divider" aria-hidden="true"></span>
-          <a href="https://drupal.fogrugby.com/user/login" class="header-btn header-btn--secondary">Log In</a>
           <a href="https://www.fogrugby.com/join" class="header-btn header-btn--primary">Join</a>
           <button type="button" class="header-btn header-btn--pride" id="progress-strip-toggle" aria-expanded="false" aria-controls="pride-chapter-drawer" aria-label="Toggle Interactive Progress Pride Menu">
             <span class="pride-menu-pip" aria-hidden="true"></span>
@@ -7394,15 +7393,15 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       <div class="explainer-box">
         <div class="explainer-title">Why are there two files? (events.yml vs fog.ics)</div>
         <p style="font-size: 0.82rem; margin: 0 0 6px;">
-          <strong>1. <code>events.yml</code> (The Human Editor):</strong> The human-friendly source of truth stored in this repository. Humans edit dates, venues, and match notes here.
+          <strong>1. <code>events.yml</code> (The Human Editor):</strong> Generated every 30 minutes from the Clubhouse (CiviCRM), which is the source of truth for dates, venues and match notes. Don&rsquo;t edit events here.
         </p>
         <p style="font-size: 0.82rem; margin: 0 0 8px;">
           <strong>2. <code>docs/fog.ics</code> (The Machine Feed):</strong> An RFC 5545 calendar standard file compiled from <code>events.yml</code>. Apple Calendar, Google Calendar, and Outlook cannot read YAML—they strictly read <code>.ics</code> calendar feeds.
         </p>
         <div class="flow-diagram">
-          <div class="flow-step">1. You edit events.yml</div>
+          <div class="flow-step">1. Events are edited in the Clubhouse (CiviCRM)</div>
           <div class="flow-arrow">&rarr;</div>
-          <div class="flow-step">2. GitHub Action runs build_ics.py</div>
+          <div class="flow-step">2. Sync rebuilds events.yml &amp; runs build_ics.py</div>
           <div class="flow-arrow">&rarr;</div>
           <div class="flow-step">3. docs/fog.ics is generated</div>
           <div class="flow-arrow">&rarr;</div>
@@ -7475,39 +7474,6 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
     </div>
     <div class="dialog-footer">
       <button type="button" class="btn btn-secondary btn-sm" data-close="verifier-dialog">Close</button>
-    </div>
-  </dialog>
-
-  <!-- GitHub Authentication Dialog -->
-  <dialog id="auth-dialog" class="fog-dialog" aria-labelledby="dialog-auth-title">
-    <div class="dialog-header">
-      <h3 id="dialog-auth-title">Admin Authentication</h3>
-      <button type="button" class="dialog-close-btn" data-close="auth-dialog" aria-label="Close dialog">&times;</button>
-    </div>
-    <div class="dialog-body">
-      <p style="font-size: 0.9rem;">
-        Authenticate with a GitHub Personal Access Token (PAT) to commit schedule changes directly to <code>events.yml</code> in the repository.
-      </p>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label class="form-label" for="gh-token-input">GitHub Personal Access Token</label>
-        <input type="password" id="gh-token-input" class="form-input" placeholder="ghp_... or github_pat_..." autocomplete="off">
-        <span class="form-help">
-          Requires repository write permissions (<code>Contents: Read and write</code>). Your token is stored only in your local browser session and is never sent to any third-party server.
-        </span>
-      </div>
-      <div class="form-group" style="margin-bottom: 16px;">
-        <label style="font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
-          <input type="checkbox" id="gh-remember-token" checked>
-          Remember token in this browser (LocalStorage)
-        </label>
-      </div>
-      <div id="auth-error-msg" style="display: none; color: var(--fog-red); font-size: 0.85rem; margin-bottom: 12px; font-weight: 600;"></div>
-      <div id="auth-user-info" style="display: none; background: #eef7f0; padding: 10px; border-radius: 2px; border: 1px solid var(--fog-green); font-size: 0.85rem; margin-bottom: 12px;"></div>
-    </div>
-    <div class="dialog-footer">
-      <button type="button" id="btn-sign-out" class="btn btn-danger btn-sm" style="display: none; margin-right: auto;">Clear Credentials</button>
-      <button type="button" class="btn btn-secondary btn-sm" data-close="auth-dialog">Close</button>
-      <button type="button" id="btn-save-token" class="btn btn-primary btn-sm">Connect &amp; Verify</button>
     </div>
   </dialog>
 
@@ -7722,9 +7688,7 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
           </span>
         </nav>
         <nav class="footer-admin-links" aria-label="Developer and Admin Tools">
-          <span id="auth-status-badge" class="auth-badge footer-admin-badge">Public Schedule</span>
           <button id="btn-open-verifier" type="button" class="footer-admin-btn" aria-haspopup="dialog">Verify Files</button>
-          <button id="btn-toggle-admin" type="button" class="footer-admin-btn" aria-haspopup="dialog">Admin Access</button>
         </nav>
         <p class="footer-sponsor">
           The San Francisco Fog Rugby Football Club is a fiscally sponsored project of Dancers' Group, a 501(c)(3) non-profit organization.
@@ -9317,80 +9281,11 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         }
       });
 
-      // --- Admin Auth ---
+      // --- Admin editing removed: events are managed in the Clubhouse (CiviCRM). ---
+      // Purge any GitHub token an earlier version of this page saved in the browser.
       function initAuth() {
-        const savedToken = localStorage.getItem('fog_gh_token') || sessionStorage.getItem('fog_gh_token');
-        if (savedToken) {
-          state.githubToken = savedToken;
-          verifyToken(savedToken, false);
-        }
+        try { localStorage.removeItem('fog_gh_token'); sessionStorage.removeItem('fog_gh_token'); } catch (e) {}
       }
-
-      async function verifyToken(token, showSuccessAlert) {
-        elements.authErrorMsg.style.display = 'none';
-        elements.authUserInfo.style.display = 'none';
-
-        try {
-          const res = await fetch('https://api.github.com/user', {
-            headers: { 'Authorization': 'Bearer ' + token }
-          });
-          if (!res.ok) throw new Error('Invalid token or insufficient scope.');
-          const user = await res.json();
-
-          state.isAdmin = true;
-          state.githubToken = token;
-          document.body.classList.add('admin-mode');
-          elements.btnNewEvent.style.display = 'inline-flex';
-          elements.authStatusBadge.className = 'auth-badge authenticated';
-          elements.authStatusBadge.textContent = 'Admin: @' + user.login;
-          elements.btnSignOut.style.display = 'inline-flex';
-
-          elements.authUserInfo.style.display = 'block';
-          elements.authUserInfo.textContent = 'Connected as ' + (user.name || user.login) + ' (@' + user.login + '). Write access enabled.';
-
-          if (elements.ghRememberCheckbox.checked) {
-            localStorage.setItem('fog_gh_token', token);
-          } else {
-            sessionStorage.setItem('fog_gh_token', token);
-          }
-
-          if (showSuccessAlert) {
-            setTimeout(() => {
-              elements.authDialog.close();
-              renderViews();
-            }, 1000);
-          }
-        } catch (err) {
-          elements.authErrorMsg.style.display = 'block';
-          elements.authErrorMsg.textContent = 'Verification error: ' + err.message;
-        }
-      }
-
-      elements.btnSaveToken.addEventListener('click', () => {
-        const tok = elements.ghTokenInput.value.trim();
-        if (!tok) {
-          elements.authErrorMsg.style.display = 'block';
-          elements.authErrorMsg.textContent = 'Please enter a GitHub Personal Access Token.';
-          return;
-        }
-        verifyToken(tok, true);
-      });
-
-      elements.btnSignOut.addEventListener('click', () => {
-        localStorage.removeItem('fog_gh_token');
-        sessionStorage.removeItem('fog_gh_token');
-        state.githubToken = '';
-        state.isAdmin = false;
-        document.body.classList.remove('admin-mode');
-        elements.btnNewEvent.style.display = 'none';
-        elements.authStatusBadge.className = 'auth-badge';
-        elements.authStatusBadge.textContent = 'Public Schedule';
-        elements.btnSignOut.style.display = 'none';
-        elements.authUserInfo.style.display = 'none';
-        elements.ghTokenInput.value = '';
-        renderViews();
-        elements.authDialog.close();
-      });
 
       // Dialog Close buttons
       document.querySelectorAll('[data-close]').forEach(btn => {
@@ -9400,9 +9295,6 @@ Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
         });
       });
 
-      elements.btnToggleAdmin.addEventListener('click', () => {
-        elements.authDialog.showModal();
-      });
 
       elements.btnNewEvent.addEventListener('click', () => {
         openNewEventModal();
