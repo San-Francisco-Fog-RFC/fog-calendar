@@ -45,6 +45,9 @@ venues:
   mothership:
     name: The Mothership Bar
     address: 3152 Mission St, San Francisco, CA 94110
+  minnie-lovie-ward:
+    name: Minnie & Lovie Ward Recreation Center
+    address: 650 Capitol Ave, San Francisco, CA 94112
 series:
   pathway-to-rugby-2026:
     name: Pathway to Rugby 2026
@@ -522,10 +525,19 @@ events:
 - id: 2026-11-21-preseason-2
   title: Fog vs Baracus (Home)
   date: '2026-11-21'
-  location: TBC - San Francisco
+  time: '15:30'
+  end_time: '17:00'
+  venue: minnie-lovie-ward
   category: fixture
-  status: tentative
-  notes: 'Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.'
+  status: confirmed
+  notes: |-
+    Preseason match #2 vs our friends at BA Baracus RFC.
+
+    Match: reporting time 2:00 PM, kick-off 3:30 PM at Minnie & Lovie Ward Recreation Center.
+    Post-game social: from 5:45 PM at Pilsner Inn, 225 Church St, San Francisco, CA 94114.
+
+    ROLL FOG ROLL!
+  url: https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT?utm_source=fog-calendar&utm_medium=calendar&utm_campaign=preseason-baracus-2026-11-21
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261122
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
   date: '2026-11-22'
