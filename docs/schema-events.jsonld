@@ -1307,8 +1307,8 @@
       "@type": "SportsEvent",
       "@id": "https://events.fogrugby.com/#event-2026-11-21-preseason-2",
       "name": "Fog vs Baracus (Home)",
-      "startDate": "2026-11-21",
-      "endDate": "2026-11-21",
+      "startDate": "2026-11-21T15:30:00-08:00",
+      "endDate": "2026-11-21T17:00:00-08:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "organizer": {
@@ -1329,15 +1329,17 @@
       "image": [
         "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png"
       ],
-      "description": "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.",
+      "description": "Preseason match #2 vs our friends at BA Baracus RFC.\n\nMatch: reporting time 2:00 PM, kick-off 3:30 PM at Minnie & Lovie Ward Recreation Center.\nPost-game social: from 5:45 PM at Pilsner Inn, 225 Church St, San Francisco, CA 94114.\n\nROLL FOG ROLL!",
       "location": {
         "@type": "Place",
-        "name": "TBC - San Francisco",
+        "name": "Minnie & Lovie Ward Recreation Center",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
+          "addressCountry": "US",
+          "streetAddress": "650 Capitol Ave",
           "addressRegion": "CA",
-          "addressCountry": "US"
+          "postalCode": "94112",
+          "addressLocality": "San Francisco"
         }
       }
     },
