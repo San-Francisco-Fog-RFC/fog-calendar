@@ -8,7 +8,7 @@
   "schema_org_url": "https://events.fogrugby.com/schema-events.jsonld",
   "openapi_url": "https://events.fogrugby.com/openapi.yaml",
   "timezone": "America/Los_Angeles",
-  "updated_at": "2026-11-21T12:46:30Z",
+  "updated_at": "2026-11-21T12:56:01Z",
   "total_events": 126,
   "events": [
     {
@@ -652,7 +652,7 @@
       "end_time": "17:00",
       "location": "Minnie & Lovie Ward Recreation Center, 650 Capitol Ave, San Francisco, CA 94112",
       "notes": "Preseason match #2 vs our friends at BA Baracus RFC.\n\nMatch: reporting time 2:00 PM, kick-off 3:30 PM at Minnie & Lovie Ward Recreation Center.\nPost-game social: from 5:45 PM at Pilsner Inn, 225 Church St, San Francisco, CA 94114.\n\nROLL FOG ROLL!",
-      "url": null,
+      "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "rrule": null,
       "exdates": []

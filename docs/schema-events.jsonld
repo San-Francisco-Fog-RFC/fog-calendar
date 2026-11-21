@@ -1323,7 +1323,7 @@
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.fogrugby.com/season-fixtures-results"
+        "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT"
       },
       "sport": "Rugby Union",
       "image": [
@@ -1341,7 +1341,8 @@
           "postalCode": "94112",
           "addressLocality": "San Francisco"
         }
-      }
+      },
+      "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT"
     },
     {
       "@type": "SocialEvent",

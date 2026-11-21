@@ -23,7 +23,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:2026-11-21-preseason-2@events.fogrugby.com
 DTSTAMP:20261121T120000Z
-SEQUENCE:1
+SEQUENCE:2
 DTSTART;TZID=America/Los_Angeles:20261121T153000
 DTEND;TZID=America/Los_Angeles:20261121T170000
 SUMMARY:Fog vs Baracus (Home)
@@ -34,5 +34,6 @@ DESCRIPTION:Preseason match #2 vs our friends at BA Baracus RFC.\n\nMatch:
  PM at Pilsner Inn\, 225 Church St\, San Francisco\, CA 94114.\n\nROLL FOG
   ROLL!
 STATUS:CONFIRMED
+URL:https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT
 END:VEVENT
 END:VCALENDAR
