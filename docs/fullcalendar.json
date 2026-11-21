@@ -528,17 +528,17 @@
   {
     "id": "2026-11-21-preseason-2",
     "title": "Fog vs Baracus (Home)",
-    "allDay": false,
-    "start": "2026-11-21T15:30:00-08:00",
-    "end": "2026-11-21T17:00:00-08:00",
-    "url": "https://partiful.com/e/pMrvhBOF8ZQVnk0XzKdT?utm_source=fog-calendar&utm_medium=calendar&utm_campaign=preseason-baracus-2026-11-21",
+    "allDay": true,
+    "start": "2026-11-21",
+    "end": "2026-11-22",
+    "url": "https://www.fogrugby.com/season-fixtures-results",
     "extendedProps": {
       "uid": "2026-11-21-preseason-2@fogrugby.com",
-      "location": "Minnie & Lovie Ward Recreation Center, 650 Capitol Ave, San Francisco, CA 94112",
-      "description": "Preseason match #2 vs our friends at BA Baracus RFC.\n\nMatch: reporting time 2:00 PM, kick-off 3:30 PM at Minnie & Lovie Ward Recreation Center.\nPost-game social: from 5:45 PM at Pilsner Inn, 225 Church St, San Francisco, CA 94114.\n\nROLL FOG ROLL!",
+      "location": "TBC - San Francisco",
+      "description": "Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "fixture",
-      "status": "confirmed"
+      "status": "tentative"
     }
   },
   {
