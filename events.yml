@@ -557,11 +557,13 @@ events:
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
 - id: 2026-11-21-preseason-2
   civicrm_id: 102
-  title: Fog vs Baracus (Home)
+  title: 'Preseason Match #2 - Fog vs Baracus (Home)'
   date: '2026-11-21'
-  location: TBC - San Francisco
+  time: '15:00'
+  end_time: '21:00'
+  location: Minnie & Lovie Ward Recreational Center
   category: fixture
-  status: tentative
+  status: confirmed
   notes: 'Preseason match #2, home match vs Baracus. Field and kickoff to be confirmed.'
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261122
   civicrm_id: 12
