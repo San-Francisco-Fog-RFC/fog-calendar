@@ -639,11 +639,11 @@ events:
   title: Rucktacular 2026 — San Diego
   start: '2026-12-03'
   end: '2026-12-06'
-  location: San Diego, CA
+  location: San Diego
   category: tournament
   status: confirmed
   notes: 'Hosted by San Diego Armada. Thu: arrivals + Black''s Beach rugby. Fri: hotel check-in, Presidents'' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat.'
-  url: https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform
+  url: https://www.rucktacular.com
   image: https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg
 - id: 2026-12-03-rucktacular-blacks-beach
   civicrm_id: 104
@@ -801,6 +801,16 @@ events:
   category: training
   status: confirmed
   notes: Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.
+- id: civi-128
+  civicrm_id: 128
+  title: Balls Out Ball
+  start: '2026-12-18'
+  end: '2026-12-19'
+  location: The Stud
+  category: social
+  status: confirmed
+  notes: "Join us in merry and spirited celebration at our festive Jingle Balls Out! Ball!! Friday, December 18th, nestled within the heartwarming ambiance of The Stud, proudly presented by the San Francisco Fog RFC.\r\n\r\nDon your most cheerful attire—whether it's jolly reds, festive greens, or cozy winter wear. This soirée is your chance to embrace the holiday magic!\r\n\r\nFeaturing:\r\n\U0001F384 Dazzling Drag Performances\r\n\U0001F381 Enchanting Go-Go Elves\r\n\U0001F385\U0001F3FD Sexy Santa Photoshoot\r\n\U0001F98C Reindeer Games & More!\r\n\U0001F3B6 Vibrant Tunes spun by SF's Local DJs\r\n\U0001F457 Coat Check Available, along with a selection of Fog-themed goodies to brighten your night.\r\n\r\nCome and rein down the yuletide joy as we sleigh down, and revel in the holiday cheer. All proceeds from tickets and donations go towards training equipment, uniforms, field rentals, and travel expenses."
+  url: https://forbiddentickets.com/events/san-francisco-fog-rugby/370331a7da?token=8985e032ee1041971262f79020b50bd6c461af28
 - id: 2026-09-13-drop-in-touch-st-marys-optional-20261220
   civicrm_id: 15
   title: Sunday Drop-In Touch (SF Vintage) [Optional]
@@ -1808,12 +1818,3 @@ events:
     Facebook: https://www.facebook.com/groups/139383596170951/
     Map: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7
   url: https://chat.whatsapp.com/Hou5lyxuAIRLQS6Pfne2Bt?mode=wwt
-- id: 2027-05-28-igr-noram
-  civicrm_id: 126
-  title: IGR NorAm 2027 — New Orleans
-  start: '2027-05-28'
-  end: '2027-05-31'
-  location: New Orleans, LA
-  category: tournament
-  status: confirmed
-  notes: Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come.

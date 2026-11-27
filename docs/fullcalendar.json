@@ -611,10 +611,10 @@
     "allDay": true,
     "start": "2026-12-03",
     "end": "2026-12-07",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSc6M-ecafkMOcoYP1G5bvMXemTBt3O7dI7NUL8NOSVm04Rndw/viewform",
+    "url": "https://www.rucktacular.com",
     "extendedProps": {
       "uid": "2026-12-03-rucktacular-weekend@fogrugby.com",
-      "location": "San Diego, CA",
+      "location": "San Diego",
       "description": "Hosted by San Diego Armada. Thu: arrivals + Black's Beach rugby. Fri: hotel check-in, Presidents' meeting, drink-up. Sat: tournament + after party. Sun: Survivors Brunch. Interest form: see link. Travel details via the team chat.",
       "image": "https://events.fogrugby.com/assets/img/rucktacular-san-diego.jpg",
       "category": "tournament",
@@ -839,6 +839,22 @@
       "description": "Thursdays 7:45–10:00pm at Crocker Amazon, then drinks at Pilsner Inn. Regular-season practice resumes 19 Jan 2027. Holiday break dates are best-guess — edit exdates once the coaches confirm.",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "training",
+      "status": "confirmed"
+    }
+  },
+  {
+    "id": "civi-128",
+    "title": "Balls Out Ball",
+    "allDay": true,
+    "start": "2026-12-18",
+    "end": "2026-12-20",
+    "url": "https://forbiddentickets.com/events/san-francisco-fog-rugby/370331a7da?token=8985e032ee1041971262f79020b50bd6c461af28",
+    "extendedProps": {
+      "uid": "civi-128@fogrugby.com",
+      "location": "The Stud",
+      "description": "Join us in merry and spirited celebration at our festive Jingle Balls Out! Ball!! Friday, December 18th, nestled within the heartwarming ambiance of The Stud, proudly presented by the San Francisco Fog RFC.\r\n\r\nDon your most cheerful attire—whether it's jolly reds, festive greens, or cozy winter wear. This soirée is your chance to embrace the holiday magic!\r\n\r\nFeaturing:\r\n🎄 Dazzling Drag Performances\r\n🎁 Enchanting Go-Go Elves\r\n🎅🏽 Sexy Santa Photoshoot\r\n🦌 Reindeer Games & More!\r\n🎶 Vibrant Tunes spun by SF's Local DJs\r\n👗 Coat Check Available, along with a selection of Fog-themed goodies to brighten your night.\r\n\r\nCome and rein down the yuletide joy as we sleigh down, and revel in the holiday cheer. All proceeds from tickets and donations go towards training equipment, uniforms, field rentals, and travel expenses.",
+      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
+      "category": "social",
       "status": "confirmed"
     }
   },
@@ -1984,22 +2000,6 @@
       "description": "Cost: Free!\n\nWho Can Play:\n - Open to all ages, genders, orientations, and skill levels.\n - Completely beginner-friendly—no prior experience necessary.\n\nWhat to Bring:\n - Cleats or athletic shoes.\n - A blue or red shirt.\n\nWebsite: sfvrfc.org\nFacebook: https://www.facebook.com/groups/139383596170951/\nMap: https://maps.app.goo.gl/D8iDm2Q5WLorWvwK7",
       "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
       "category": "social",
-      "status": "confirmed"
-    }
-  },
-  {
-    "id": "2027-05-28-igr-noram",
-    "title": "IGR NorAm 2027 — New Orleans",
-    "allDay": true,
-    "start": "2027-05-28",
-    "end": "2027-06-01",
-    "url": "https://www.fogrugby.com/season-fixtures-results",
-    "extendedProps": {
-      "uid": "2027-05-28-igr-noram@fogrugby.com",
-      "location": "New Orleans, LA",
-      "description": "Memorial Day weekend. Arrive by Friday at the latest; Thursday preferred so players can acclimate. More details to come.",
-      "image": "https://events.fogrugby.com/assets/img/fog-coat-of-arms.png",
-      "category": "tournament",
       "status": "confirmed"
     }
   }
