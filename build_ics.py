@@ -36,6 +36,8 @@ OUT_FULLCALENDAR = ROOT / "docs" / "fullcalendar.json"
 OUT_SCHEMA = ROOT / "docs" / "schema-events.jsonld"
 OUT_OPENAPI = ROOT / "docs" / "openapi.yaml"
 OUT_GO = ROOT / "docs" / "go"
+GOLINKS = ROOT / "golinks.yml"  # hand-made short links (QR codes, flyers)
+GOLINK_SLUG = re.compile(r"^(?![0-9]+$)[a-z0-9]+(?:-[a-z0-9]+)*$")
 GO_BASE = "https://events.fogrugby.com/go/"
 GA_IDS = ("G-GD8T0M6RZ9", "G-WTRRT4XDS5")
 # Hosts where UTM params are pointless or could break the link
@@ -217,6 +219,68 @@ def with_utm(url: str, campaign: str) -> str:
     return urlunsplit(parts._replace(query=urlencode(q)))
 
 
+def build_golink_pages() -> set[str]:
+    """Write docs/go/<slug>/index.html for each entry in golinks.yml.
+
+    Fires a GA4 `go_link_click` event (slug + UTM fields as params), then forwards
+    to the destination with utm_source/utm_medium/utm_campaign appended.
+    Returns the set of slugs written so build_go_pages() doesn't delete them.
+    """
+    import html as _html
+    from urllib.parse import urlsplit, urlunsplit, urlencode, parse_qsl
+
+    if not GOLINKS.exists():
+        return set()
+    data = yaml.safe_load(GOLINKS.read_text(encoding="utf-8")) or {}
+    links = data.get("links") or {}
+    written: set[str] = set()
+    for slug, cfg in links.items():
+        slug = str(slug)
+        if not GOLINK_SLUG.match(slug):
+            sys.exit(f"golinks.yml: bad slug {slug!r} (lowercase, digits, hyphens; not all digits)")
+        url = str((cfg or {}).get("url", "")).strip()
+        if not url.startswith("https://"):
+            sys.exit(f"golinks.yml: {slug} needs an https:// url")
+        source = str(cfg.get("source", "qr"))
+        medium = str(cfg.get("medium", "print"))
+        campaign = str(cfg.get("campaign", slug))
+        parts = urlsplit(url)
+        q = parse_qsl(parts.query, keep_blank_values=True)
+        if parts.hostname not in NO_UTM_HOSTS and not any(k.startswith("utm_") for k, _ in q):
+            q += [("utm_source", source), ("utm_medium", medium), ("utm_campaign", campaign)]
+        dest = urlunsplit(parts._replace(query=urlencode(q)))
+
+        js_dest = json.dumps(dest).replace("</", "<\\/")
+        title = _html.escape(str(cfg.get("title", "Fog Rugby")))
+        gtag = "".join(f"gtag('config','{g}',{{send_page_view:false}});" for g in GA_IDS)
+        params = json.dumps({"link_slug": slug, "campaign_source": source,
+                             "campaign_medium": medium, "campaign_name": campaign})
+        page = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{title} · Fog Rugby</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_IDS[0]}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());{gtag}
+var d={js_dest},done=false;function go(){{if(!done){{done=true;location.replace(d);}}}}
+var p={params};p.link_url=d;p.event_callback=go;p.event_timeout=1500;
+gtag('event','go_link_click',p);
+setTimeout(go,1800);
+</script>
+<noscript><meta http-equiv="refresh" content="0;url={_html.escape(dest)}"></noscript>
+</head><body style="font-family:system-ui,sans-serif;padding:24px">
+<p>Taking you to <strong>{title}</strong>&hellip; <a href="{_html.escape(dest)}">Continue</a></p>
+</body></html>
+"""
+        d = OUT_GO / slug
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(page, encoding="utf-8")
+        written.add(slug)
+    return written
+
+
 def build_go_pages(events: list[dict]) -> int:
     """Write docs/go/<civicrm_id>/index.html: fire GA, then forward to the RSVP link."""
     import html as _html
@@ -253,6 +317,8 @@ setTimeout(go,1800);
         d = OUT_GO / str(cid)
         d.mkdir(exist_ok=True)
         (d / "index.html").write_text(page, encoding="utf-8")
+    # Hand-made short links from golinks.yml — kept out of the cleanup below
+    keep |= build_golink_pages()
     # Remove pages for events that no longer have an RSVP link
     for d in OUT_GO.iterdir():
         if d.is_dir() and d.name not in keep:
